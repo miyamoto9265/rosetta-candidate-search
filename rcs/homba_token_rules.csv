@@ -1,0 +1,57 @@
+term,kind,weight,notes
+a,stopword,0,Article
+an,stopword,0,Article
+and,stopword,0,Conjunction
+of,stopword,0,Preposition
+the,stopword,0,Article
+area,stopword,0,Generic structure word
+areas,stopword,0,Generic structure word
+region,stopword,0,Generic structure word
+regions,stopword,0,Generic structure word
+division,stopword,0,Generic subdivision word
+subdivision,stopword,0,Generic subdivision word
+part,stopword,0,Generic subdivision word
+left,laterality,0,Do not map laterality
+right,laterality,0,Do not map laterality
+bilateral,laterality,0,Do not map laterality
+ipsilateral,laterality,0,Do not map laterality
+contralateral,laterality,0,Do not map laterality
+anterior,weak,0.4,Direction term
+posterior,modifier,1,Direction or specific limb modifier
+ventral,modifier,1,Direction modifier
+dorsal,modifier,1,Direction modifier
+lateral,modifier,1,Direction modifier
+medial,modifier,1,Direction modifier
+superior,weak,0.4,Direction term
+inferior,weak,0.4,Direction term
+external,modifier,1,Subdivision modifier
+accessory,modifier,1,Subdivision modifier
+principal,modifier,1,Subdivision modifier
+caudal,modifier,1,Subdivision modifier
+caudalis,modifier,1,Subdivision modifier
+interpolar,modifier,1,Subdivision modifier
+interpolaris,modifier,1,Subdivision modifier
+oral,modifier,1,Subdivision modifier
+oralis,modifier,1,Subdivision modifier
+magnocellular,modifier,1,Subdivision modifier
+parvicellular,modifier,1,Subdivision modifier
+compact,modifier,1,Subdivision modifier
+reticular,modifier,1,Subdivision modifier
+core,modifier,1,Nucleus accumbens subregion
+shell,modifier,1,Nucleus accumbens subregion
+limb,modifier,1,White matter subregion
+layer,modifier,1,Cortical or cerebellar layer
+molecular,modifier,1,Cerebellar layer
+purkinje,modifier,1,Cerebellar layer
+granular,modifier,1,Cerebellar layer
+decussation,modifier,1,White matter crossing
+opercular,weak,0.4,Often atlas label and ambiguous alone
+parietal,weak,0.4,Large lobe label
+frontal,weak,0.4,Large lobe label
+temporal,weak,0.4,Large lobe label
+occipital,weak,0.4,Large lobe label
+cortex,weak,0.4,Generic structure word
+nucleus,weak,0.4,Generic structure word
+tract,weak,0.4,Generic structure word
+gyrus,weak,0.4,Generic structure word
+sulcus,weak,0.4,Generic structure word

@@ -1,0 +1,49 @@
+structure_name,category,notes
+Vestibular nuclei,edge_case,plural form - should map to both pons and medulla groups
+Locus ceruleus,spelling_variant,alternative spelling without 'o'
+Thalamic nuclei,collective,plural of thalamic nucleus
+Hippocampal formation,synonym,alternative name for hippocampus group
+Subiculum,subregion,hippocampal subregion
+Presubiculum,subregion,hippocampal subregion
+Entorhinal area,synonym,alternative name for entorhinal cortex
+Primary motor area,synonym,alternative name for M1
+Orbitofrontal cortex,functional_name,OFC - should match orbitofrontal region
+Lateral orbitofrontal cortex,functional_name,lateral OFC
+Medial orbitofrontal cortex,functional_name,medial OFC
+Septal nuclei,plural,septal area
+Septum,common,septal area common name
+Bed nucleus of stria terminalis,full_name,BNST
+BNST,abbreviation,bed nucleus of stria terminalis
+Nucleus of the solitary tract,full_name,NTS
+NTS,abbreviation,nucleus tractus solitarius
+NTS,abbreviation,nucleus tractus solitarius
+Periaqueductal grey,spelling,British English spelling
+Anterior cingulate cortex,compound,ACC
+ACC,abbreviation,anterior cingulate cortex
+Posterior cingulate cortex,compound,PCC
+PCC,abbreviation,posterior cingulate cortex
+Medial geniculate body,synonym,medial geniculate nucleus alternative name
+Lateral geniculate body,synonym,LGN alternative
+Dorsal raphe,abbreviation,missing nucleus
+Median raphe nucleus,compound,alternative raphe nucleus
+Superior colliculus (deep layers),parenthetical,specific layer
+Inferior colliculus (central nucleus),parenthetical,specific sub-region
+Spinal trigeminal nucleus,compound,without subdivision
+Spinal trigeminal nucleus caudalis,modifier,specific subdivision
+Dorsomedial hypothalamic nucleus,compound,DMH
+Lateral hypothalamic area,compound,LHA
+Medial hypothalamus,modifier,
+Ventral striatum,compound,should match ventral striatum
+Dorsal striatum,compound,should match dorsal striatum
+Nucleus basalis of Meynert,eponym,cholinergic nucleus
+Locus coeruleus (pontine),parenthetical,with location qualifier
+Substantia innominata,name,basal forebrain structure
+Diagonal band of Broca,eponym,fiber tract
+Arcuate nucleus,name,hypothalamic - disambiguation needed
+Arcuate fasciculus,white_matter,language fiber tract vs hypothalamic nucleus
+Raphe nuclei,collective,all raphe nuclei
+Paraventricular nucleus,name,hypothalamic or thalamic - ambiguous
+Lateral septum,modifier,
+Medial septum,modifier,
+Cingulate cortex,synonym,should match HOMBA cingulate cortex
+Insular cortex,synonym,insula synonym

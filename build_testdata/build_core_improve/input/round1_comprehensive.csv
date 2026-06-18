@@ -1,0 +1,57 @@
+structure_name,expected_homba_id,category,notes
+Vestibular nucleus,HOMBA:12448,level1_issue,hierarchy_parent_promoted_over_correct_match
+Habenula,HOMBA:10452,level1_issue,habenular_triangle_wrong_match
+Insula,HOMBA:12176,level1_issue,limen_insula_wrong_match
+Cingulate gyrus,HOMBA:10277,level1_issue,paracingulate_gyrus_wrong_match
+Inferior olivary nucleus,HOMBA:12600,level1_issue,inferior_olive_naming_mismatch
+Pituitary gland,HOMBA:10505,level1_issue,pituitary_body_naming_mismatch
+Pulvinar nucleus,HOMBA:10409,level1_issue,low_score_0_74
+Locus coeruleus,HOMBA:12499,level1_issue,correct_but_specificity_penalty_0_86
+Thalamus (excluding pulvinar),,parenthetical_excluding,should_match_thalamus_not_pulvinar
+Left hippocampus,,laterality,should_match_hippocampus
+Right amygdala,,laterality,should_match_amygdala
+Amygdaloid complex,,synonym,should_match_amygdaloid_complex_HOMBA
+amygdala,,synonym,should_match_amygdaloid_complex_via_alias
+Dentate gyrus,,gyrus_name,
+Entorhinal cortex,,cortex_name,
+Parahippocampal gyrus,,gyrus_name,
+Fusiform gyrus,,gyrus_name,
+Angular gyrus,,gyrus_name,
+Supramarginal gyrus,,gyrus_name,
+Precuneus,,lobe_structure,
+Cuneus,,lobe_structure,
+Lingual gyrus,,gyrus_name,
+Basal ganglia,,collective_term,
+Limbic system,,collective_term,
+Brainstem,,collective_term,
+Cerebral cortex,,collective_term,
+Medial temporal lobe,,compound_term,
+Dorsolateral prefrontal cortex,,compound_term,
+Ventromedial prefrontal cortex,,compound_term,
+Primary motor cortex,,functional_name,
+Primary somatosensory cortex,,functional_name,
+Primary visual cortex,,functional_name,
+Primary auditory cortex,,functional_name,
+Broca area,,eponym,
+Wernicke area,,eponym,
+Substantia nigra pars compacta,,compound_modifier,
+Substantia nigra pars reticulata,,compound_modifier,
+Nucleus accumbens core,,compound_modifier,
+Nucleus accumbens shell,,compound_modifier,
+Basolateral amygdala,,compound_modifier,
+Central amygdala,,compound_modifier,
+Dentate nucleus,,cerebellar_nucleus,
+Fastigial nucleus,,cerebellar_nucleus,
+Emboliform nucleus,,cerebellar_nucleus,
+Globose nucleus,,cerebellar_nucleus,
+Stria terminalis,,fiber_tract,
+Medial forebrain bundle,,fiber_tract,
+Perforant path,,fiber_tract,
+Fimbria of hippocampus,,fiber_tract,
+CA1,,abbreviation,hippocampal_subfield
+CA3,,abbreviation,hippocampal_subfield
+STN,,abbreviation,subthalamic_nucleus
+VTA,,abbreviation,ventral_tegmental_area
+LC,,abbreviation,locus_coeruleus
+SN,,abbreviation,substantia_nigra
+PAG,,abbreviation,periaqueductal_gray

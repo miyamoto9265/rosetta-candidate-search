@@ -1,0 +1,41 @@
+pu_abbrev,structure_name,lobe,source
+CALCi,"Intracalcarine cortex, inferior",occipital,Rushmore2022_Table6
+CALCs,"Intracalcarine cortex, superior",occipital,Rushmore2022_Table6
+CGa,"Cingulate gyrus, anterior",paralimbic,Rushmore2022_Table6
+CGp,"Cingulate gyrus, posterior",paralimbic,Rushmore2022_Table6
+COa,"Central opercular cortex, anterior",insula,Rushmore2022_Table6
+COp,"Central opercular cortex, posterior",insula,Rushmore2022_Table6
+F1dli,Middle frontal gyrus,frontal,Rushmore2022_Table6
+F1dls,Superior frontal gyrus,frontal,Rushmore2022_Table6
+F1dm,"Superior frontal gyrus, medial",frontal,Rushmore2022_Table6
+F2,Inferior frontal gyrus,frontal,Rushmore2022_Table6
+FMC,Frontal medial cortex,frontal,Rushmore2022_Table6
+FOCa,"Frontal orbital cortex, anterior",frontal,Rushmore2022_Table6
+FOCL,"Frontal orbital cortex, lateral",frontal,Rushmore2022_Table6
+FOCm,"Frontal orbital cortex, medial",frontal,Rushmore2022_Table6
+FOCp,"Frontal orbital cortex, posterior",frontal,Rushmore2022_Table6
+FP,Frontal pole,frontal,Rushmore2022_Table6
+INS,Insular cortex,insula,Rushmore2022_Table6
+ITG,Inferior temporal gyrus,temporal,Rushmore2022_Table6
+LPCi,"Lateral parietal cortex, inferior",parietal,Rushmore2022_Table6
+LPCs,"Lateral parietal cortex, superior",parietal,Rushmore2022_Table6
+MPC,Medial parietal cortex,parietal,Rushmore2022_Table6
+PH,Parahippocampal gyrus,paralimbic,Rushmore2022_Table6
+PO,Parietal opercular cortex,parietal,Rushmore2022_Table6
+POGL,"Postcentral gyrus, lateral",parietal,Rushmore2022_Table6
+POGm,"Postcentral gyrus, medial",parietal,Rushmore2022_Table6
+PMd,"Premotor cortex, dorsal",frontal,Rushmore2022_Table6
+PMv,"Premotor cortex, ventral",frontal,Rushmore2022_Table6
+PreSMA,Pre-supplementary motor area,frontal,Rushmore2022_Table6
+PRGL,"Precentral gyrus, lateral",frontal,Rushmore2022_Table6
+PRGm/SMA,"Precentral gyrus, medial/supplementary motor area",frontal,Rushmore2022_Table6
+PRL,Prelunate gyrus,parietal,Rushmore2022_Table6
+SC,Subcallosal cortex,frontal,Rushmore2022_Table6
+STG,Superior temporal gyrus,temporal,Rushmore2022_Table6
+STPa,"Supratemporal plane, anterior",temporal,Rushmore2022_Table6
+STPp,"Supratemporal plane, posterior",temporal,Rushmore2022_Table6
+STRdli,"Striate cortex, dorsolateral, inferior",occipital,Rushmore2022_Table6
+STRdls,"Striate cortex, dorsolateral, superior",occipital,Rushmore2022_Table6
+STRm,"Striate cortex, medial",occipital,Rushmore2022_Table6
+TP,Temporal pole,temporal,Rushmore2022_Table6
+VMO,Ventromedial occipital cortex,occipital,Rushmore2022_Table6

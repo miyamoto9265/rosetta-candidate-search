@@ -1,0 +1,4233 @@
+{
+  "run_input": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\rcs_corpus_source.csv",
+  "run_output": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\build_core_improve\\output\\rcs_corpus_source_run1.csv",
+  "total_rows": 559,
+  "unique_names": 493,
+  "row_review_flags": {
+    "high_confidence": 262,
+    "needs_review": 165,
+    "modifier_conflict": 25,
+    "low_confidence": 107
+  },
+  "unique_review_flags": {
+    "low_confidence": 107,
+    "needs_review": 160,
+    "high_confidence": 201,
+    "modifier_conflict": 25
+  },
+  "high_conf_rate_rows": 0.4687,
+  "high_conf_rate_unique": 0.4077,
+  "core_overlap_unique": 91,
+  "core_exact_match": 91,
+  "core_mismatch_count": 0,
+  "core_mismatches": [],
+  "improvable_count": 259,
+  "limited_count": 32,
+  "homba_gap_count": 1,
+  "ok_count": 201,
+  "improvable_pattern_tags": {
+    "low_confidence": 98,
+    "human_paper_specific": 222,
+    "needs_review": 140,
+    "parenthetical": 89,
+    "known_challenge": 1,
+    "modifier_conflict": 21,
+    "core_regression": 1
+  },
+  "species_unique_flags": {
+    "Human": {
+      "low_confidence": 98,
+      "needs_review": 111,
+      "high_confidence": 156,
+      "modifier_conflict": 14
+    },
+    "Macaque": {
+      "needs_review": 35,
+      "high_confidence": 33,
+      "low_confidence": 7,
+      "modifier_conflict": 2
+    },
+    "Rat": {
+      "needs_review": 14,
+      "high_confidence": 12,
+      "modifier_conflict": 9,
+      "low_confidence": 2
+    }
+  },
+  "paper_stats": {
+    "Adil2021": {
+      "total": 49,
+      "high": 42,
+      "needs_review": 6,
+      "low": 0
+    },
+    "Agostinelli2023": {
+      "total": 62,
+      "high": 42,
+      "needs_review": 13,
+      "low": 4
+    },
+    "TzourioMazoyer2002": {
+      "total": 45,
+      "high": 27,
+      "needs_review": 12,
+      "low": 4
+    },
+    "Yelnik2007": {
+      "total": 31,
+      "high": 21,
+      "needs_review": 5,
+      "low": 3
+    },
+    "Yushkevich2009": {
+      "total": 7,
+      "high": 5,
+      "needs_review": 1,
+      "low": 1
+    },
+    "Hwang2017": {
+      "total": 15,
+      "high": 6,
+      "needs_review": 9,
+      "low": 0
+    },
+    "Kiernan2012": {
+      "total": 26,
+      "high": 21,
+      "needs_review": 2,
+      "low": 2
+    },
+    "Hartig2020": {
+      "total": 100,
+      "high": 55,
+      "needs_review": 36,
+      "low": 7
+    },
+    "Leergaard2023": {
+      "total": 33,
+      "high": 12,
+      "needs_review": 13,
+      "low": 1
+    },
+    "Swanson2018": {
+      "total": 11,
+      "high": 5,
+      "needs_review": 3,
+      "low": 1
+    },
+    "Rushmore2022": {
+      "total": 73,
+      "high": 14,
+      "needs_review": 50,
+      "low": 5
+    },
+    "Glasser2016": {
+      "total": 107,
+      "high": 12,
+      "needs_review": 15,
+      "low": 79
+    }
+  },
+  "improvable": [
+    {
+      "structure_name": "Somatosensory area 1",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.597131",
+      "rcs_candidate_homba_id": "HOMBA:AA30014",
+      "rcs_candidate_name": "area 1 of primary somatosensory cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Somatosensory area 2",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.597131",
+      "rcs_candidate_homba_id": "HOMBA:AA30015",
+      "rcs_candidate_name": "area 2 of primary somatosensory cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PFcm",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.586571",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Central opercular cortex (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.5859",
+      "rcs_candidate_homba_id": "HOMBA:12841",
+      "rcs_candidate_name": "lobule III (central lobule and wing, posterior part)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PFop",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.585182",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Central opercular cortex (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.584399",
+      "rcs_candidate_homba_id": "HOMBA:12840",
+      "rcs_candidate_name": "lobule II (central lobule and wing, anterior part)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PFm",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.583394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal area SFL",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.578925",
+      "rcs_candidate_homba_id": "HOMBA:12113",
+      "rcs_candidate_name": "frontal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area IP0",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area IP1",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area IP2",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PFt",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PGi",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PGp",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PGs",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.573394",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Calcarine fissure and surrounding cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.571632",
+      "rcs_candidate_homba_id": "HOMBA:10612",
+      "rcs_candidate_name": "calcarine sulcus (fissure)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area TF",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.568329",
+      "rcs_candidate_homba_id": "HOMBA:10260",
+      "rcs_candidate_name": "lateral division of PHC (area TF)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cuneal cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.566442",
+      "rcs_candidate_homba_id": "HOMBA:12308",
+      "rcs_candidate_name": "external shell (cortex) of inferior colliculus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V4",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.558971",
+      "rcs_candidate_homba_id": "HOMBA:AA30020",
+      "rcs_candidate_name": "sixth visual area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V8",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.558971",
+      "rcs_candidate_homba_id": "HOMBA:AA30020",
+      "rcs_candidate_name": "sixth visual area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area PSL",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.554306",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area TGd",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.554306",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor eye field",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.552086",
+      "rcs_candidate_homba_id": "HOMBA:AA30010",
+      "rcs_candidate_name": "frontal eye field of premotor cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area TE1a",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.546003",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area TE1m",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.546003",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area TE1p",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.546003",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area TE2a",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.546003",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "A1 catecholaminergic cell group",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.545644",
+      "rcs_candidate_homba_id": "HOMBA:AA30843",
+      "rcs_candidate_name": "A8 dopamine cell group",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "A4 catecholaminergic cell group",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.545644",
+      "rcs_candidate_homba_id": "HOMBA:AA30843",
+      "rcs_candidate_name": "A8 dopamine cell group",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "V4 transitional area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.545395",
+      "rcs_candidate_homba_id": "HOMBA:AA30818",
+      "rcs_candidate_name": "transitional fourth visual area (V4T)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 9-46d",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.544428",
+      "rcs_candidate_homba_id": "HOMBA:10181",
+      "rcs_candidate_name": "intermediate division of DFC (area 9/46)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 9-46v",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.544428",
+      "rcs_candidate_homba_id": "HOMBA:10181",
+      "rcs_candidate_name": "intermediate division of DFC (area 9/46)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Somatosensory area 3a",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.543669",
+      "rcs_candidate_homba_id": "HOMBA:AA30495",
+      "rcs_candidate_name": "somatosensory radiation",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Somatosensory area 3b",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.543669",
+      "rcs_candidate_homba_id": "HOMBA:AA30495",
+      "rcs_candidate_name": "somatosensory radiation",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V3A",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.54361",
+      "rcs_candidate_homba_id": "HOMBA:AA30020",
+      "rcs_candidate_name": "sixth visual area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V3B",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.54361",
+      "rcs_candidate_homba_id": "HOMBA:AA30020",
+      "rcs_candidate_name": "sixth visual area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area STGg",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.541845",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Meyer's loop (geniculocalcarine tract)",
+      "species": "Human",
+      "category": "white_matter",
+      "paper": [
+        "Kiernan2012"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.537451",
+      "rcs_candidate_homba_id": "HOMBA:266441617",
+      "rcs_candidate_name": "Meyer's loop of optic radiation",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Precuneal cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.534309",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area STSda",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.533888",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area STSdp",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.533888",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area STSva",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.533888",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal area STSvp",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.533888",
+      "rcs_candidate_homba_id": "HOMBA:267499039",
+      "rcs_candidate_name": "fifth visual area (middle temporal area, MT)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Area PH",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.529821",
+      "rcs_candidate_homba_id": "HOMBA:AA30351",
+      "rcs_candidate_name": "subincertal nucleus (area)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Opercular area OP4",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.527183",
+      "rcs_candidate_homba_id": "HOMBA:266441161",
+      "rcs_candidate_name": "opercular subdivision of area 44",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Opercular area OP1",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.520183",
+      "rcs_candidate_homba_id": "HOMBA:266441161",
+      "rcs_candidate_name": "opercular subdivision of area 44",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Supracalcarine cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.513508",
+      "rcs_candidate_homba_id": "HOMBA:13322",
+      "rcs_candidate_name": "dorsolateral temporal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Laterodorsal tegmentum",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.50405",
+      "rcs_candidate_homba_id": "HOMBA:AA30860",
+      "rcs_candidate_name": "laterodorsal subdivision of PuM",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular area FOP1",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497719",
+      "rcs_candidate_homba_id": "HOMBA:12176",
+      "rcs_candidate_name": "insular lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular area FOP2",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497719",
+      "rcs_candidate_homba_id": "HOMBA:12176",
+      "rcs_candidate_name": "insular lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular area FOP3",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497719",
+      "rcs_candidate_homba_id": "HOMBA:12176",
+      "rcs_candidate_name": "insular lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular area FOP4",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497719",
+      "rcs_candidate_homba_id": "HOMBA:12176",
+      "rcs_candidate_name": "insular lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular area FOP5",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497719",
+      "rcs_candidate_homba_id": "HOMBA:12176",
+      "rcs_candidate_name": "insular lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor area 6a",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497602",
+      "rcs_candidate_homba_id": "HOMBA:10168",
+      "rcs_candidate_name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor area 6d",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497602",
+      "rcs_candidate_homba_id": "HOMBA:10168",
+      "rcs_candidate_name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor area 6m",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497602",
+      "rcs_candidate_homba_id": "HOMBA:10168",
+      "rcs_candidate_name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor area 6r",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497602",
+      "rcs_candidate_homba_id": "HOMBA:10168",
+      "rcs_candidate_name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor area 6v",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.497602",
+      "rcs_candidate_homba_id": "HOMBA:10168",
+      "rcs_candidate_name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parahippocampal area PeEc",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.496577",
+      "rcs_candidate_homba_id": "HOMBA:12162",
+      "rcs_candidate_name": "parahippocampal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area 23c",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.492396",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area 23d",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.492396",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area 31a",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.492396",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area a24",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.492396",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area p24",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.492396",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Premotor area 6mp",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.490129",
+      "rcs_candidate_homba_id": "HOMBA:10168",
+      "rcs_candidate_name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Opercular area OP2-3",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.488444",
+      "rcs_candidate_homba_id": "HOMBA:266441161",
+      "rcs_candidate_name": "opercular subdivision of area 44",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Vestigial hippocampal sulcus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yushkevich2009"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.487623",
+      "rcs_candidate_homba_id": "HOMBA:10560",
+      "rcs_candidate_name": "hippocampal commissure",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area 24dd",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.487422",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate area 24dv",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.487422",
+      "rcs_candidate_homba_id": "HOMBA:10217",
+      "rcs_candidate_name": "cingulate subdivision of area 5",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Rolandic operculum",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.48302",
+      "rcs_candidate_homba_id": "HOMBA:12127",
+      "rcs_candidate_name": "frontal operculum",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 8C",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.479662",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 9a",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.479662",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 9m",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.479662",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 9p",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.479662",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paracentral area 5L",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.473494",
+      "rcs_candidate_homba_id": "HOMBA:12126",
+      "rcs_candidate_name": "paracentral lobule, rostral part",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paracentral area 5m",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.473494",
+      "rcs_candidate_homba_id": "HOMBA:12126",
+      "rcs_candidate_name": "paracentral lobule, rostral part",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 10d",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 10r",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 47l",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 47m",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 47r",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 47s",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 8Ad",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 8Av",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 8BL",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 8BM",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.472638",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paracentral area 5mv",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.468572",
+      "rcs_candidate_homba_id": "HOMBA:12126",
+      "rcs_candidate_name": "paracentral lobule, rostral part",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Area 55b",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.467534",
+      "rcs_candidate_homba_id": "HOMBA:AA30011",
+      "rcs_candidate_name": "area 55b of premotor cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 10pp",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.466038",
+      "rcs_candidate_homba_id": "HOMBA:10172",
+      "rcs_candidate_name": "prefrontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Median cingulate and paracingulate gyri",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.455226",
+      "rcs_candidate_homba_id": "HOMBA:146034872",
+      "rcs_candidate_name": "paracingulate gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Anterior cingulate and paracingulate gyri",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.449679",
+      "rcs_candidate_homba_id": "HOMBA:146034872",
+      "rcs_candidate_name": "paracingulate gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontoinsular area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.4375",
+      "rcs_candidate_homba_id": "HOMBA:12176",
+      "rcs_candidate_name": "insular lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventralis intermedius",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.37625",
+      "rcs_candidate_homba_id": "HOMBA:12187",
+      "rcs_candidate_name": "anterior (ventral /principal) pretectal nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Posterior opercular area POS2",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.359171",
+      "rcs_candidate_homba_id": "HOMBA:AA30485",
+      "rcs_candidate_name": "caudal (posterior) branch of anterior commissure",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Forel's field H",
+      "species": "Human",
+      "category": "white_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.285352",
+      "rcs_candidate_homba_id": "HOMBA:10653",
+      "rcs_candidate_name": "gray matter of hindbrain (rhombencephalon)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "A5 catecholaminergic cell group",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.284777",
+      "rcs_candidate_homba_id": "HOMBA:AA30467",
+      "rcs_candidate_name": "inner granular cell zone of cerebellum",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Centre median parafascicular complex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.284714",
+      "rcs_candidate_homba_id": "HOMBA:13338",
+      "rcs_candidate_name": "median eminence",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Uncus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Kiernan2012"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.223334",
+      "rcs_candidate_homba_id": "HOMBA:12165",
+      "rcs_candidate_name": "uncus of (para)hippocampal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior olive (principal nucleus)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "1.0",
+      "rcs_candidate_homba_id": "HOMBA:12600",
+      "rcs_candidate_name": "inferior olive",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral reticular nucleus (magnocellular)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "1.0",
+      "rcs_candidate_homba_id": "HOMBA:12634",
+      "rcs_candidate_name": "lateral reticular nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral reticular nucleus (parvicellular)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "1.0",
+      "rcs_candidate_homba_id": "HOMBA:12634",
+      "rcs_candidate_name": "lateral reticular nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral septal nucleus (rostral division)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Swanson2018"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "1.0",
+      "rcs_candidate_homba_id": "HOMBA:10352",
+      "rcs_candidate_name": "lateral septal nuclear complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal pole (middle temporal gyrus)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "1.0",
+      "rcs_candidate_homba_id": "HOMBA:12146",
+      "rcs_candidate_name": "temporal pole (temporopolar cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal pole (superior temporal gyrus)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "1.0",
+      "rcs_candidate_homba_id": "HOMBA:12146",
+      "rcs_candidate_name": "temporal pole (temporopolar cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate gyrus (anterior anterior part)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.9775",
+      "rcs_candidate_homba_id": "HOMBA:10278",
+      "rcs_candidate_name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cingulate gyrus (anterior posterior part)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.895",
+      "rcs_candidate_homba_id": "HOMBA:10278",
+      "rcs_candidate_name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "External globus pallidus (lateral part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.859777",
+      "rcs_candidate_homba_id": "HOMBA:10343",
+      "rcs_candidate_name": "external division of globus pallidus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "External globus pallidus (medial part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.859777",
+      "rcs_candidate_homba_id": "HOMBA:10343",
+      "rcs_candidate_name": "external division of globus pallidus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral occipital cortex (inferior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.840855",
+      "rcs_candidate_homba_id": "HOMBA:AA30024",
+      "rcs_candidate_name": "lateral temporal-occipital cortex (area 37l, area TEO)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral occipital cortex (superior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.840855",
+      "rcs_candidate_homba_id": "HOMBA:AA30024",
+      "rcs_candidate_name": "lateral temporal-occipital cortex (area 37l, area TEO)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial geniculate complex (dorsal division)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.825834",
+      "rcs_candidate_homba_id": "HOMBA:AA30307",
+      "rcs_candidate_name": "medial geniculate nuclear complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial geniculate complex (ventral division)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.825834",
+      "rcs_candidate_homba_id": "HOMBA:AA30307",
+      "rcs_candidate_name": "medial geniculate nuclear complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Transverse temporal gyri (Heschl's gyri)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Kiernan2012"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.825032",
+      "rcs_candidate_homba_id": "HOMBA:12144",
+      "rcs_candidate_name": "transverse temporal gyrus (Heschl's gyrus)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral amygdaloid nucleus (dorsal)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.754779",
+      "rcs_candidate_homba_id": "HOMBA:10367",
+      "rcs_candidate_name": "lateral nucleus of amygdala",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral amygdaloid nucleus (ventral)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.754779",
+      "rcs_candidate_homba_id": "HOMBA:10367",
+      "rcs_candidate_name": "lateral nucleus of amygdala",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Vagus (spinal accessory) neurons",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.615401",
+      "rcs_candidate_homba_id": "HOMBA:AA30691",
+      "rcs_candidate_name": "lamina IX of spinal cord (spinal motor neurons)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral posterior internal thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.589648",
+      "rcs_candidate_homba_id": "HOMBA:12053",
+      "rcs_candidate_name": "posterior thalamic radiation",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral posterior external thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.588529",
+      "rcs_candidate_homba_id": "HOMBA:12799",
+      "rcs_candidate_name": "ventral external fibers in hindbrain",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral intraparietal area (ventral)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.578664",
+      "rcs_candidate_homba_id": "HOMBA:267498979",
+      "rcs_candidate_name": "lateral subdivision of area 7",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Angular gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12136",
+      "rcs_candidate_name": "angular gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Angular gyrus (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12136",
+      "rcs_candidate_name": "angular gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "CA4 (dentate hilus)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yushkevich2009"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10300",
+      "rcs_candidate_name": "CA4 region of hippocampus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Cerebellar cortex (granular layer)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10657",
+      "rcs_candidate_name": "cerebellar cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Corticospinal tract (pyramids)",
+      "species": "Human",
+      "category": "white_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12047",
+      "rcs_candidate_name": "corticospinal tract",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Edinger-Westphal nucleus (preganglionic)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12197",
+      "rcs_candidate_name": "Edinger-Westphal nucleus (accessory oculomotor nucleus)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Fornix (anterior columns)",
+      "species": "Human",
+      "category": "white_matter",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10576",
+      "rcs_candidate_name": "fornix",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal pole (lateral)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:146034888",
+      "rcs_candidate_name": "frontal pole",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal pole (medial)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:146034888",
+      "rcs_candidate_name": "frontal pole",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Habenula (lateral part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10452",
+      "rcs_candidate_name": "habenular nuclei",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Habenula (medial part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10452",
+      "rcs_candidate_name": "habenular nuclei",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior frontal gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12117",
+      "rcs_candidate_name": "inferior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior frontal gyrus (orbital part)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12117",
+      "rcs_candidate_name": "inferior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior frontal gyrus (pars opercularis)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12117",
+      "rcs_candidate_name": "inferior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior frontal gyrus (pars orbitalis)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12117",
+      "rcs_candidate_name": "inferior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior frontal gyrus (pars triangularis)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12117",
+      "rcs_candidate_name": "inferior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior temporal gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12142",
+      "rcs_candidate_name": "inferior temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior temporal gyrus (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12142",
+      "rcs_candidate_name": "inferior temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior temporal gyrus (temporo-occipital)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12142",
+      "rcs_candidate_name": "inferior temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular cortex (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10288",
+      "rcs_candidate_name": "major insular cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Insular cortex (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10288",
+      "rcs_candidate_name": "major insular cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lenticular nucleus (pallidum)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10338",
+      "rcs_candidate_name": "putamen (lateroventral division of the CP)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle frontal gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12116",
+      "rcs_candidate_name": "middle frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle frontal gyrus (orbital part)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12116",
+      "rcs_candidate_name": "middle frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle frontal gyrus (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12116",
+      "rcs_candidate_name": "middle frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle temporal gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12141",
+      "rcs_candidate_name": "middle temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle temporal gyrus (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12141",
+      "rcs_candidate_name": "middle temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle temporal gyrus (temporo-occipital)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12141",
+      "rcs_candidate_name": "middle temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Postcentral gyrus (lateral inferior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12132",
+      "rcs_candidate_name": "postcentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Postcentral gyrus (lateral middle)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12132",
+      "rcs_candidate_name": "postcentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Postcentral gyrus (lateral superior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12132",
+      "rcs_candidate_name": "postcentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Postcentral gyrus (medial)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12132",
+      "rcs_candidate_name": "postcentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Precentral gyrus (lateral inferior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12114",
+      "rcs_candidate_name": "precentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Precentral gyrus (lateral middle)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12114",
+      "rcs_candidate_name": "precentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Precentral gyrus (lateral superior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12114",
+      "rcs_candidate_name": "precentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Precentral gyrus (medial)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12114",
+      "rcs_candidate_name": "precentral gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Spinal trigeminal nucleus (oralis)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12572",
+      "rcs_candidate_name": "spinal trigeminal nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (dorsolateral)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (lateral anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (lateral middle)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (lateral posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (medial orbital)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (medial)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022",
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior frontal gyrus (orbital part)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12115",
+      "rcs_candidate_name": "superior frontal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior parietal lobule (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12133",
+      "rcs_candidate_name": "superior parietal lobule (gyrus)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior parietal lobule (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12133",
+      "rcs_candidate_name": "superior parietal lobule (gyrus)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior temporal gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12140",
+      "rcs_candidate_name": "superior temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior temporal gyrus (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12140",
+      "rcs_candidate_name": "superior temporal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Supramarginal gyrus (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12135",
+      "rcs_candidate_name": "supramarginal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Supramarginal gyrus (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:12135",
+      "rcs_candidate_name": "supramarginal gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Zona incerta (caudal part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10463",
+      "rcs_candidate_name": "zona incerta",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Zona incerta (dorsal part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10463",
+      "rcs_candidate_name": "zona incerta",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Zona incerta (rostral part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10463",
+      "rcs_candidate_name": "zona incerta",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Zona incerta (ventral part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10463",
+      "rcs_candidate_name": "zona incerta",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Superior parietal gyrus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.877148",
+      "rcs_candidate_homba_id": "HOMBA:12131",
+      "rcs_candidate_name": "parietal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal frontal cortex (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.868214",
+      "rcs_candidate_homba_id": "HOMBA:AA30009",
+      "rcs_candidate_name": "frontal motor cortex (posterior frontal cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial longitudinal fascicle",
+      "species": "Macaque",
+      "category": "white_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.860459",
+      "rcs_candidate_homba_id": "HOMBA:12764",
+      "rcs_candidate_name": "medial longitudinal fasciculus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Posterior thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017",
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.857117",
+      "rcs_candidate_homba_id": "HOMBA:10503",
+      "rcs_candidate_name": "posterior hypothalamic nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Retro-mammillary nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.856667",
+      "rcs_candidate_homba_id": "HOMBA:10498",
+      "rcs_candidate_name": "mammillary nuclear complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Secondary visual cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.856667",
+      "rcs_candidate_homba_id": "HOMBA:10269",
+      "rcs_candidate_name": "primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Septum and diagonal band",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.854167",
+      "rcs_candidate_homba_id": "HOMBA:12034",
+      "rcs_candidate_name": "diagonal band",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paracentral lobule",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.853333",
+      "rcs_candidate_homba_id": "HOMBA:AA30381",
+      "rcs_candidate_name": "lobule II-III (central lobule)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Crossing of the superior cerebellar peduncle",
+      "species": "Macaque",
+      "category": "white_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.852273",
+      "rcs_candidate_homba_id": "HOMBA:12354",
+      "rcs_candidate_name": "superior cerebellar peduncle (brachium conjunctivum)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Accumbens nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.848686",
+      "rcs_candidate_homba_id": "HOMBA:10339",
+      "rcs_candidate_name": "nucleus accumbens",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal orbital cortex (posterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.844665",
+      "rcs_candidate_homba_id": "HOMBA:AA30009",
+      "rcs_candidate_name": "frontal motor cortex (posterior frontal cortex)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral posterior thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.843653",
+      "rcs_candidate_homba_id": "HOMBA:10424",
+      "rcs_candidate_name": "ventral posterior lateral nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Nucleus ambiguus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.838077",
+      "rcs_candidate_homba_id": "HOMBA:12540",
+      "rcs_candidate_name": "ambiguus nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal medial cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.837395",
+      "rcs_candidate_homba_id": "HOMBA:10195",
+      "rcs_candidate_name": "medial orbital frontal cortex (area 14)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal horn of the lateral ventricle",
+      "species": "Human",
+      "category": "ventricle",
+      "paper": [
+        "Kiernan2012"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.830903",
+      "rcs_candidate_homba_id": "HOMBA:10597",
+      "rcs_candidate_name": "rostral horn of lateral ventricles",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Intermediate reticular zone",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.818505",
+      "rcs_candidate_homba_id": "HOMBA:12620",
+      "rcs_candidate_name": "intermediate reticular nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial geniculate complex (marginal zone)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.818191",
+      "rcs_candidate_homba_id": "HOMBA:266441523",
+      "rcs_candidate_name": "marginal zone of medial geniculate nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral posterior thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.817129",
+      "rcs_candidate_homba_id": "HOMBA:10408",
+      "rcs_candidate_name": "lateral posterior nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Preoptic area",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.815",
+      "rcs_candidate_homba_id": "HOMBA:10468",
+      "rcs_candidate_name": "preoptic region of HTH",
+      "in_core": true,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral endopiriform claustrum",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.814019",
+      "rcs_candidate_homba_id": "HOMBA:10348",
+      "rcs_candidate_name": "ventral claustrum",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Dorsal endopiriform claustrum",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.810419",
+      "rcs_candidate_homba_id": "HOMBA:10347",
+      "rcs_candidate_name": "dorsal claustrum",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral lateral thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017",
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.804396",
+      "rcs_candidate_homba_id": "HOMBA:10420",
+      "rcs_candidate_name": "ventral lateral nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral medial thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.803215",
+      "rcs_candidate_homba_id": "HOMBA:10427",
+      "rcs_candidate_name": "ventral medial nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Basolateral amygdaloid nucleus (intermediate)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.795203",
+      "rcs_candidate_homba_id": "HOMBA:11518",
+      "rcs_candidate_name": "intermediate division of BL",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Occipital fusiform gyrus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.791667",
+      "rcs_candidate_homba_id": "HOMBA:AA30549",
+      "rcs_candidate_name": "fusiform (occipitotemporal) gyrus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Optic tract/chiasma",
+      "species": "Macaque",
+      "category": "white_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.788377",
+      "rcs_candidate_homba_id": "HOMBA:10589",
+      "rcs_candidate_name": "optic tract",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Posterior pituitary",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.787763",
+      "rcs_candidate_homba_id": "HOMBA:AA30485",
+      "rcs_candidate_name": "caudal (posterior) branch of anterior commissure",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Arcuate nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.786859",
+      "rcs_candidate_homba_id": "HOMBA:12536",
+      "rcs_candidate_name": "arcuate nucleus of medulla oblongata",
+      "in_core": false,
+      "in_challenge": true
+    },
+    {
+      "structure_name": "Basolateral amygdaloid nucleus (dorsal)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.785842",
+      "rcs_candidate_homba_id": "HOMBA:11516",
+      "rcs_candidate_name": "magnocellular (dorsal) division of BL",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Basolateral amygdaloid nucleus (ventral)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.785094",
+      "rcs_candidate_homba_id": "HOMBA:11519",
+      "rcs_candidate_name": "parvicellular (ventral) division of BL",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V6",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.784952",
+      "rcs_candidate_homba_id": "HOMBA:AA30020",
+      "rcs_candidate_name": "sixth visual area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Stria medullaris",
+      "species": "Macaque",
+      "category": "white_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.782738",
+      "rcs_candidate_homba_id": "HOMBA:10590",
+      "rcs_candidate_name": "stria medullaris of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Anterior pulvinar",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7809",
+      "rcs_candidate_homba_id": "HOMBA:AA30282",
+      "rcs_candidate_name": "lateroposterior-pulvinar complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Basomedial amygdaloid nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7809",
+      "rcs_candidate_homba_id": "HOMBA:10372",
+      "rcs_candidate_name": "corticomedial nuclear group of amygdala",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Inferior pulvinar",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7809",
+      "rcs_candidate_homba_id": "HOMBA:AA30282",
+      "rcs_candidate_name": "lateroposterior-pulvinar complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prepositus nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.778698",
+      "rcs_candidate_homba_id": "HOMBA:AA30453",
+      "rcs_candidate_name": "other nuclei in dorsal medulla",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "A11 dopamine cell group",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.775734",
+      "rcs_candidate_homba_id": "HOMBA:AA30843",
+      "rcs_candidate_name": "A8 dopamine cell group",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "A13 dopamine cell group",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.775734",
+      "rcs_candidate_homba_id": "HOMBA:AA30843",
+      "rcs_candidate_name": "A8 dopamine cell group",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Juxtaparaventricular nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.773333",
+      "rcs_candidate_homba_id": "HOMBA:10457",
+      "rcs_candidate_name": "paraventricular nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Limen insulae",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Kiernan2012"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.773333",
+      "rcs_candidate_homba_id": "HOMBA:12179",
+      "rcs_candidate_name": "limen insula",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral cortical amygdaloid nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7722",
+      "rcs_candidate_homba_id": "HOMBA:10373",
+      "rcs_candidate_name": "cortical nucleus of amygdala",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Forel's field H1",
+      "species": "Human",
+      "category": "white_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.767331",
+      "rcs_candidate_homba_id": "HOMBA:10593",
+      "rcs_candidate_name": "thalamic fasciculus (field H1)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Forel's field H2",
+      "species": "Human",
+      "category": "white_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.767331",
+      "rcs_candidate_homba_id": "HOMBA:10585",
+      "rcs_candidate_name": "lenticular fasciculus (field H2)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Central amygdaloid nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.76283",
+      "rcs_candidate_homba_id": "HOMBA:10372",
+      "rcs_candidate_name": "corticomedial nuclear group of amygdala",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Pedunculopontine tegmentum",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.761218",
+      "rcs_candidate_homba_id": "HOMBA:12416",
+      "rcs_candidate_name": "pontine tegmentum",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Accessory trigeminal nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.760807",
+      "rcs_candidate_homba_id": "HOMBA:12419",
+      "rcs_candidate_name": "accessory facial nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Peduncular lateral hypothalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.760122",
+      "rcs_candidate_homba_id": "HOMBA:13070",
+      "rcs_candidate_name": "magnocellular nucleus of lateral hypothalamic area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal frontal cortex (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.75894",
+      "rcs_candidate_homba_id": "HOMBA:10241",
+      "rcs_candidate_name": "rostral division of area 22",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paralaminar amygdaloid nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.752254",
+      "rcs_candidate_homba_id": "HOMBA:10370",
+      "rcs_candidate_name": "paralaminar nucleus of amygdala",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Posterior insular area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.739318",
+      "rcs_candidate_homba_id": "HOMBA:AA30485",
+      "rcs_candidate_name": "caudal (posterior) branch of anterior commissure",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Raphe obscurus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.734583",
+      "rcs_candidate_homba_id": "HOMBA:12643",
+      "rcs_candidate_name": "raphe obscurus nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Mediodorsal thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020",
+        "Leergaard2023",
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.730692",
+      "rcs_candidate_homba_id": "HOMBA:AA30276",
+      "rcs_candidate_name": "ventral midline nuclei of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Reticular perithalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Yelnik2007"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.724388",
+      "rcs_candidate_homba_id": "HOMBA:10464",
+      "rcs_candidate_name": "reticular nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventrolateral medulla",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.72379",
+      "rcs_candidate_homba_id": "HOMBA:10662",
+      "rcs_candidate_name": "myelencephalon (medulla oblongata)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial dorsal thalamic nucleus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.71886",
+      "rcs_candidate_homba_id": "HOMBA:10435",
+      "rcs_candidate_name": "dorsal (rostral) division of medial geniculate nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Anterior ventral insular area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.717423",
+      "rcs_candidate_homba_id": "HOMBA:AA30890",
+      "rcs_candidate_name": "anterior (ventral) spinal artery",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Pre-supplementary motor area (inferior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7172",
+      "rcs_candidate_homba_id": "HOMBA:AA30012",
+      "rcs_candidate_name": "medial division of area 6 (supplementary motor area)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Pre-supplementary motor area (superior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7172",
+      "rcs_candidate_homba_id": "HOMBA:AA30012",
+      "rcs_candidate_name": "medial division of area 6 (supplementary motor area)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal orbital cortex (anterior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.715158",
+      "rcs_candidate_homba_id": "HOMBA:10194",
+      "rcs_candidate_name": "orbital frontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V7",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.715038",
+      "rcs_candidate_homba_id": "HOMBA:267499179",
+      "rcs_candidate_name": "seventh visual area V7",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Roots of the trigeminal nerve",
+      "species": "Human",
+      "category": "cranial_nerve",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.713953",
+      "rcs_candidate_homba_id": "HOMBA:12865",
+      "rcs_candidate_name": "root of trigeminal nerve",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Median raphe",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.711952",
+      "rcs_candidate_homba_id": "HOMBA:12235",
+      "rcs_candidate_name": "median raphe nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Raphe magnus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.711952",
+      "rcs_candidate_homba_id": "HOMBA:12642",
+      "rcs_candidate_name": "raphe magnus nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Roots of the abducens nerve",
+      "species": "Human",
+      "category": "cranial_nerve",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.699804",
+      "rcs_candidate_homba_id": "HOMBA:12861",
+      "rcs_candidate_name": "root of abducens nerve",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal opercular cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.697665",
+      "rcs_candidate_homba_id": "HOMBA:10208",
+      "rcs_candidate_name": "parietal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Roots of the facial nerve",
+      "species": "Human",
+      "category": "cranial_nerve",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.682345",
+      "rcs_candidate_homba_id": "HOMBA:12862",
+      "rcs_candidate_name": "root of facial nerve",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Intracalcarine cortex (inferior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.681147",
+      "rcs_candidate_homba_id": "HOMBA:10225",
+      "rcs_candidate_name": "inferior lateral parietal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal opercular cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.678206",
+      "rcs_candidate_homba_id": "HOMBA:10161",
+      "rcs_candidate_name": "frontal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Temporal occipital fusiform cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.674113",
+      "rcs_candidate_homba_id": "HOMBA:13324",
+      "rcs_candidate_name": "ventrolateral temporal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "A8 catecholaminergic cell group",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Agostinelli2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.673483",
+      "rcs_candidate_homba_id": "HOMBA:AA30843",
+      "rcs_candidate_name": "A8 dopamine cell group",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial insular area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.669342",
+      "rcs_candidate_homba_id": "HOMBA:12402",
+      "rcs_candidate_name": "fastigial (medial) nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Intracalcarine cortex (superior)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.666879",
+      "rcs_candidate_homba_id": "HOMBA:10215",
+      "rcs_candidate_name": "superior medial parietal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Subcallosal cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Rushmore2022"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.662917",
+      "rcs_candidate_homba_id": "HOMBA:10281",
+      "rcs_candidate_name": "subgenual (subcallosal) cingulate cortex (area 25)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Parietal area PF",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.660848",
+      "rcs_candidate_homba_id": "HOMBA:10226",
+      "rcs_candidate_name": "rostral division of IPC (IPCr, area 40, area PF)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Middle occipital gyrus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.643946",
+      "rcs_candidate_homba_id": "HOMBA:12148",
+      "rcs_candidate_name": "occipital lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral intraparietal area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.641675",
+      "rcs_candidate_homba_id": "HOMBA:12261",
+      "rcs_candidate_name": "ventral tegmental area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Olfactory cortex",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.640418",
+      "rcs_candidate_homba_id": "HOMBA:11371",
+      "rcs_candidate_name": "olfactory division of entorhinal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Anterior intraparietal area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.628671",
+      "rcs_candidate_homba_id": "HOMBA:10559",
+      "rcs_candidate_name": "anterior commissure",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Prefrontal area 46",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.628609",
+      "rcs_candidate_homba_id": "HOMBA:10184",
+      "rcs_candidate_name": "rostroventral division of DFC (area 46, DFCv)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Heschl gyrus",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "TzourioMazoyer2002"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.625",
+      "rcs_candidate_homba_id": "HOMBA:12150",
+      "rcs_candidate_name": "cuneus (gyrus)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Fundal superior temporal area",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.623082",
+      "rcs_candidate_homba_id": "HOMBA:12139",
+      "rcs_candidate_name": "temporal lobe",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Frontal eye field",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.616698",
+      "rcs_candidate_homba_id": "HOMBA:AA30010",
+      "rcs_candidate_name": "frontal eye field of premotor cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Intralaminar thalamic nuclei",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Hwang2017"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.614232",
+      "rcs_candidate_homba_id": "HOMBA:AA30276",
+      "rcs_candidate_name": "ventral midline nuclei of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lateral intraparietal area (dorsal)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.612761",
+      "rcs_candidate_homba_id": "HOMBA:12227",
+      "rcs_candidate_name": "dorsal raphe nucleus, lateral division",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V6A",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.612459",
+      "rcs_candidate_homba_id": "HOMBA:AA30020",
+      "rcs_candidate_name": "sixth visual area",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Visual area V3",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Glasser2016"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.604532",
+      "rcs_candidate_homba_id": "HOMBA:AA30824",
+      "rcs_candidate_name": "dorsal third visual area (V3D, V3)",
+      "in_core": false,
+      "in_challenge": false
+    }
+  ],
+  "limited": [
+    {
+      "structure_name": "Reticular thalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.74003",
+      "rcs_candidate_homba_id": "HOMBA:10464",
+      "rcs_candidate_name": "reticular nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Anterior pituitary",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.725833",
+      "rcs_candidate_homba_id": "HOMBA:10559",
+      "rcs_candidate_name": "anterior commissure",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paraventricular hypothalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.717674",
+      "rcs_candidate_homba_id": "HOMBA:10457",
+      "rcs_candidate_name": "paraventricular nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Orbital cortex (ventrolateral)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Swanson2018"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.716079",
+      "rcs_candidate_homba_id": "HOMBA:13324",
+      "rcs_candidate_name": "ventrolateral temporal cortex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Zona incerta and H fields",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.715161",
+      "rcs_candidate_homba_id": "HOMBA:10463",
+      "rcs_candidate_name": "zona incerta",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Intermediodorsal thalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.703156",
+      "rcs_candidate_homba_id": "HOMBA:AA30276",
+      "rcs_candidate_name": "ventral midline nuclei of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Caudate putamen",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.7009",
+      "rcs_candidate_homba_id": "HOMBA:10338",
+      "rcs_candidate_name": "putamen (lateroventral division of the CP)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Intra-amygdaloid division of the bed nucleus of the stria terminalis",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.699768",
+      "rcs_candidate_homba_id": "HOMBA:10384",
+      "rcs_candidate_name": "bed nucleus of stria terminalis",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Laterodorsal thalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.691518",
+      "rcs_candidate_homba_id": "HOMBA:AA30276",
+      "rcs_candidate_name": "ventral midline nuclei of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Subparafascicular parvocellular thalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.690948",
+      "rcs_candidate_homba_id": "HOMBA:AA30276",
+      "rcs_candidate_name": "ventral midline nuclei of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Amygdaloid area (unspecified)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.680018",
+      "rcs_candidate_homba_id": "HOMBA:10557",
+      "rcs_candidate_name": "forebrain white matter (unspecified region)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Septimbrial nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.672904",
+      "rcs_candidate_homba_id": "HOMBA:13032",
+      "rcs_candidate_name": "septofimbrial nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventrolateral thalamic nucleus (posteroventral part)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.660551",
+      "rcs_candidate_homba_id": "HOMBA:146034754",
+      "rcs_candidate_name": "ventral subdivision of PuC",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Reticular (pre)thalamic nucleus",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.65503",
+      "rcs_candidate_homba_id": "HOMBA:10464",
+      "rcs_candidate_name": "reticular nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventrolateral thalamic nucleus (posterodorsal part)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.643986",
+      "rcs_candidate_homba_id": "HOMBA:12286",
+      "rcs_candidate_name": "posterodorsal tegmental nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Paraventricular hypothalamic nucleus (medial parvicellular dorsal zone)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Swanson2018"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.639773",
+      "rcs_candidate_homba_id": "HOMBA:10489",
+      "rcs_candidate_name": "dorsal division of VMHco",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Anterior olfactory area",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Swanson2018"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.635146",
+      "rcs_candidate_homba_id": "HOMBA:10308",
+      "rcs_candidate_name": "anterior olfactory nuclear complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Posterior thalamic nuclear group (triangular part)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.631933",
+      "rcs_candidate_homba_id": "HOMBA:12053",
+      "rcs_candidate_name": "posterior thalamic radiation",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Orbital cortex (ventral)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Swanson2018"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.62947",
+      "rcs_candidate_homba_id": "HOMBA:12187",
+      "rcs_candidate_name": "anterior (ventral /principal) pretectal nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventroposterior inferior thalamic nucleus",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.617892",
+      "rcs_candidate_homba_id": "HOMBA:AA30276",
+      "rcs_candidate_name": "ventral midline nuclei of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventromedial thalamic nucleus (posterior and basal)",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.614541",
+      "rcs_candidate_homba_id": "HOMBA:10488",
+      "rcs_candidate_name": "ventromedial hypothalamic nucleus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Medial cerebellar peduncle",
+      "species": "Macaque",
+      "category": "white_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.606877",
+      "rcs_candidate_homba_id": "HOMBA:12768",
+      "rcs_candidate_name": "middle cerebellar peduncle (brachium pontis)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventral striatal region (unspecified)",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "modifier_conflict",
+      "rcs_score": "0.597151",
+      "rcs_candidate_homba_id": "HOMBA:AA30195",
+      "rcs_candidate_name": "ventral striatum (STRv)",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Peri-basal region",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.568257",
+      "rcs_candidate_homba_id": "HOMBA:10349",
+      "rcs_candidate_name": "basal forebrain",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Oculomotor complex",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.51706",
+      "rcs_candidate_homba_id": "HOMBA:266441673",
+      "rcs_candidate_name": "subicular complex",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Ventroposterior medial and lateral thalamic nuclei",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.480901",
+      "rcs_candidate_homba_id": "HOMBA:10392",
+      "rcs_candidate_name": "anterior nuclear complex of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Centrolateral and paracentral thalamic nuclei",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.47996",
+      "rcs_candidate_homba_id": "HOMBA:10446",
+      "rcs_candidate_name": "paracentral nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Linear raphe",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.475616",
+      "rcs_candidate_homba_id": "HOMBA:12230",
+      "rcs_candidate_name": "linear nucleus of the midbrain",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Fields of Forel",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Leergaard2023"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.446243",
+      "rcs_candidate_homba_id": "HOMBA:10462",
+      "rcs_candidate_name": "nucleus of the field of Forel",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Infundibulum",
+      "species": "Rat",
+      "category": "gray_matter",
+      "paper": [
+        "Swanson2018"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.396",
+      "rcs_candidate_homba_id": "HOMBA:10643",
+      "rcs_candidate_name": "infundibular stalk",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Centromedian and parafascicular thalamic complex",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.392733",
+      "rcs_candidate_homba_id": "HOMBA:10450",
+      "rcs_candidate_name": "parafascicular nucleus of thalamus",
+      "in_core": false,
+      "in_challenge": false
+    },
+    {
+      "structure_name": "Lamina terminalis and vascular organ",
+      "species": "Macaque",
+      "category": "gray_matter",
+      "paper": [
+        "Hartig2020"
+      ],
+      "rcs_review_flag": "low_confidence",
+      "rcs_score": "0.328577",
+      "rcs_candidate_homba_id": "HOMBA:12105",
+      "rcs_candidate_name": "lamina terminalis",
+      "in_core": false,
+      "in_challenge": false
+    }
+  ],
+  "homba_gap": [
+    {
+      "structure_name": "Thalamus (excluding pulvinar)",
+      "species": "Human",
+      "category": "gray_matter",
+      "paper": [
+        "Adil2021"
+      ],
+      "rcs_review_flag": "needs_review",
+      "rcs_score": "0.88",
+      "rcs_candidate_homba_id": "HOMBA:10390",
+      "rcs_candidate_name": "thalamus",
+      "in_core": true,
+      "in_challenge": false
+    }
+  ],
+  "challenge_in_corpus": [
+    "Arcuate nucleus"
+  ]
+}

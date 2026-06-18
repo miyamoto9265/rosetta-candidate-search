@@ -1,0 +1,218 @@
+structure_name,category,notes
+Cerebral cortex,basic,basic brain region
+Cerebellum,basic,
+Brainstem,basic,no single HOMBA entry
+Hippocampus,basic,
+Thalamus,basic,
+Hypothalamus,basic,
+Amygdala,basic,
+Striatum,basic,
+Cerebral hemisphere,basic,
+Spinal cord,basic,
+Frontal lobe,lobe,
+Parietal lobe,lobe,
+Temporal lobe,lobe,
+Occipital lobe,lobe,
+Insular lobe,lobe,exact HOMBA name
+Insula,lobe,common synonym
+Cingulate cortex,cortex,
+Prefrontal cortex,cortex,
+Motor cortex,cortex,common name
+Primary motor cortex,cortex,M1
+Supplementary motor area,cortex,SMA
+Premotor cortex,cortex,
+Primary somatosensory cortex,cortex,S1
+Secondary somatosensory cortex,cortex,S2
+Somatosensory cortex,cortex,generic
+Primary visual cortex,cortex,V1
+Visual cortex,cortex,generic
+Primary auditory cortex,cortex,A1
+Auditory cortex,cortex,generic
+Entorhinal cortex,cortex,
+Perirhinal cortex,cortex,
+Parahippocampal cortex,cortex,
+Retrosplenial cortex,cortex,
+Orbitofrontal cortex,cortex,OFC
+Prefrontal cortex,cortex,
+Dorsolateral prefrontal cortex,cortex,dlPFC
+Medial prefrontal cortex,cortex,mPFC
+Anterior cingulate cortex,cortex,ACC
+Posterior cingulate cortex,cortex,PCC
+Cingulate gyrus,gyrus,gyrus vs cortex synonym
+Paracingulate gyrus,gyrus,
+Precentral gyrus,gyrus,M1 gyrus
+Postcentral gyrus,gyrus,S1 gyrus
+Superior temporal gyrus,gyrus,STG
+Middle temporal gyrus,gyrus,MTG
+Inferior temporal gyrus,gyrus,ITG
+Fusiform gyrus,gyrus,
+Angular gyrus,gyrus,
+Supramarginal gyrus,gyrus,
+Inferior frontal gyrus,gyrus,Broca area region
+Superior frontal gyrus,gyrus,
+Middle frontal gyrus,gyrus,
+Lingual gyrus,gyrus,
+Parahippocampal gyrus,gyrus,
+Dentate gyrus,gyrus,hippocampal subregion
+Cuneus,gyrus,occipital
+Precuneus,gyrus,parietal
+Hippocampus proper,hippocampus,
+CA1,abbrev,hippocampal subfield
+CA2,abbrev,hippocampal subfield
+CA3,abbrev,hippocampal subfield
+Subiculum,hippocampus,
+Presubiculum,hippocampus,
+Parasubiculum,hippocampus,
+Hippocampal formation,synonym,
+Entorhinal area,synonym,alternative for entorhinal cortex
+Caudate nucleus,basal_ganglia,
+Putamen,basal_ganglia,
+Globus pallidus,basal_ganglia,
+Globus pallidus externa,basal_ganglia,GPe variant
+Globus pallidus interna,basal_ganglia,GPi variant
+GPe,abbrev,external globus pallidus
+GPi,abbrev,internal globus pallidus
+Subthalamic nucleus,basal_ganglia,
+STN,abbrev,subthalamic nucleus
+Nucleus accumbens,basal_ganglia,
+Nucleus accumbens core,basal_ganglia,modifier
+Nucleus accumbens shell,basal_ganglia,modifier
+Ventral striatum,basal_ganglia,
+Dorsal striatum,basal_ganglia,
+Basal ganglia,collective,
+Substantia nigra,midbrain,
+Substantia nigra pars compacta,midbrain,SNc
+Substantia nigra pars reticulata,midbrain,SNr
+SNc,abbrev,substantia nigra compacta
+SNr,abbrev,substantia nigra reticulata
+SN,abbrev,substantia nigra
+VTA,abbrev,ventral tegmental area
+Ventral tegmental area,midbrain,
+Periaqueductal gray,midbrain,PAG
+PAG,abbrev,periaqueductal gray
+Periaqueductal grey,midbrain,British spelling
+Red nucleus,midbrain,
+Superior colliculus,midbrain,
+Inferior colliculus,midbrain,
+Substantia innominata,basal_forebrain,
+Nucleus basalis of Meynert,eponym,basal forebrain
+Diagonal band of Broca,eponym,basal forebrain
+Septum,basal_forebrain,septal area generic
+Septal area,basal_forebrain,
+Septal nuclei,basal_forebrain,
+Lateral septal nucleus,basal_forebrain,
+Medial septal nucleus,basal_forebrain,
+Stria terminalis,fiber_tract,
+Bed nucleus of stria terminalis,full_name,BNST
+BNST,abbrev,
+Thalamus (excluding pulvinar),parenthetical,parenthetical exclusion
+Left hippocampus,laterality,
+Right amygdala,laterality,
+Bilateral amygdala,laterality,
+Pulvinar,thalamus,
+Pulvinar nucleus,thalamus,
+Mediodorsal thalamus,thalamus,MD
+Ventrolateral thalamus,thalamus,VL
+Ventral posterolateral nucleus,thalamus,VPL
+Ventral posteromedial nucleus,thalamus,VPM
+Anterior thalamic nuclei,thalamus,
+Habenula,epithalamus,
+Habenular nuclei,epithalamus,exact HOMBA name
+Lateral habenula,epithalamus,LHb
+Medial habenula,epithalamus,MHb
+Mammillary body,hypothalamus,
+Mammillary bodies,hypothalamus,plural
+Suprachiasmatic nucleus,hypothalamus,SCN
+SCN,abbrev,suprachiasmatic
+Paraventricular nucleus,hypothalamus,PVN ambiguous thalamus vs hypothalamus
+PVN,abbrev,hypothalamic paraventricular nucleus
+Arcuate nucleus,hypothalamus,
+ARC,abbrev,arcuate nucleus
+Lateral hypothalamic area,hypothalamus,LHA
+Dorsomedial hypothalamic nucleus,hypothalamus,DMH
+Ventromedial hypothalamic nucleus,hypothalamus,VMH
+Locus coeruleus,pons,LC
+LC,abbrev,locus coeruleus
+Locus ceruleus,pons,British spelling
+Dorsal raphe nucleus,raphe,DRN
+DRN,abbrev,dorsal raphe
+Median raphe nucleus,raphe,MRN
+Raphe nuclei,raphe,collective
+Inferior olive,medulla,
+Inferior olivary nucleus,medulla,synonym
+Nucleus of the solitary tract,medulla,NTS full name
+Solitary nucleus,medulla,
+NTS,abbrev,nucleus tractus solitarii
+Facial nucleus,medulla,cranial nerve VII
+Hypoglossal nucleus,medulla,cranial nerve XII
+Dorsal motor nucleus of vagus,medulla,cranial nerve X
+Trigeminal nucleus,pons,cranial nerve V
+Spinal trigeminal nucleus,pons,
+Spinal trigeminal nucleus caudalis,pons,latin subdivision
+Principal trigeminal nucleus,pons,sensory
+Abducens nucleus,pons,cranial nerve VI
+Facial motor nucleus,pons,cranial nerve VII
+Pontine nuclei,pons,collective
+Cerebellum,cerebellum,
+Cerebellar cortex,cerebellum,
+Purkinje cell layer,cerebellum,layer name
+Dentate nucleus,cerebellum,
+Fastigial nucleus,cerebellum,
+Interposed nucleus,cerebellum,
+Emboliform nucleus,cerebellum,
+Globose nucleus,cerebellum,
+Cerebellar deep nuclei,cerebellum,
+Vestibular nucleus,cranial_nerve,
+Cochlear nucleus,cranial_nerve,
+Basolateral amygdala,amygdala,BLA
+Central amygdala,amygdala,CeA
+Medial amygdaloid nucleus,amygdala,
+Fimbria of hippocampus,fiber_tract,
+Fornix,fiber_tract,
+Corpus callosum,fiber_tract,
+Internal capsule,fiber_tract,
+External capsule,fiber_tract,
+Extreme capsule,fiber_tract,
+Anterior commissure,fiber_tract,
+Posterior commissure,fiber_tract,
+Medial forebrain bundle,fiber_tract,MFB
+MFB,abbrev,medial forebrain bundle
+Arcuate fasciculus,fiber_tract,language white matter
+Uncinate fasciculus,fiber_tract,
+Cingulum,fiber_tract,
+Superior longitudinal fasciculus,fiber_tract,SLF
+Inferior longitudinal fasciculus,fiber_tract,ILF
+Inferior fronto-occipital fasciculus,fiber_tract,IFOF
+Optic tract,fiber_tract,
+Optic chiasm,fiber_tract,
+Corticospinal tract,fiber_tract,
+Pyramidal tract,fiber_tract,synonym for CST
+Brainstem,collective,no single HOMBA entry
+Limbic system,collective,no HOMBA entry
+Broca area,eponym,inferior frontal gyrus
+Broca's area,eponym,with possessive
+Wernicke area,eponym,
+Wernicke's area,eponym,with possessive
+Area 17,cytoarchitectonic,Brodmann area - primary visual
+Brodmann area 4,cytoarchitectonic,M1
+Preoptic area,hypothalamus,
+Zona incerta,thalamus,
+Claustrum,subcortical,
+Pineal gland,epithalamus,
+Pons,basic,
+Medulla,basic,abbreviation of medulla oblongata
+Medulla oblongata,basic,
+Midbrain,basic,
+Diencephalon,basic,
+Telencephalon,basic,
+Lenticular nucleus,basal_ganglia,putamen+GP combined
+Striatum,basal_ganglia,
+Neostriatum,basal_ganglia,synonym caudate+putamen
+Pallidum,basal_ganglia,synonym globus pallidus
+Lateral ventricle,ventricle,
+Third ventricle,ventricle,
+Fourth ventricle,ventricle,
+Nucleus coeruleus,pons,HOMBA name for locus coeruleus
+Flocculus,cerebellum,
+Vermis,cerebellum,
+Cerebellar hemisphere,cerebellum,

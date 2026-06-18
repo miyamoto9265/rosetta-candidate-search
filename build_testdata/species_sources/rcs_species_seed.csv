@@ -1,0 +1,145 @@
+structure_name,species,source_atlas,category,notes
+Claustrum,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Piriform cortex,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Dorsal endopiriform claustrum,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventral endopiriform claustrum,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Endopiriform nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Hippocampus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Subicular complex,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Fimbria,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Fornix,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Anterior amygdaloid area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Amygdalohippocampal area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Amygdalopiriform transition area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Amygdalostriatal transition area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Basolateral amygdaloid nucleus (dorsal),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Basolateral amygdaloid nucleus (intermediate),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Basolateral amygdaloid nucleus (ventral),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Basomedial amygdaloid nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Basal nucleus (of Meynert),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Peri-basal region,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Central amygdaloid nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Extended amygdala,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Posterior interstitial nucleus of the anterior commissure,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Lateral amygdaloid nucleus (dorsal),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Lateral amygdaloid nucleus (ventral),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Medial amygdaloid nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Paralaminar amygdaloid nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Intra-amygdaloid division of the bed nucleus of the stria terminalis,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventral cortical amygdaloid nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Head of caudate nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Tail of caudate nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Caudate nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Putamen,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Accumbens nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Olfactory tubercle,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+External globus pallidus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Internal globus pallidus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventral pallidum,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Bed nucleus of the stria terminalis,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Septum and diagonal band,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Septimbrial nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Preoptic area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Lamina terminalis and vascular organ,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Anterior hypothalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventromedial hypothalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Arcuate nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Lateral hypothalamic area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Peduncular lateral hypothalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Juxtaparaventricular nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Paraventricular hypothalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Posterior hypothalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Dorsomedial hypothalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Mammillary nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Retro-mammillary nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Perifornical nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Supraoptic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Medial eminence,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Anterior pituitary,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Posterior pituitary,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Subthalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Pineal gland,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Habenula,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Anterior thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Centrolateral and paracentral thalamic nuclei,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Centromedian and parafascicular thalamic complex,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Mediodorsal thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Intermediodorsal thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Laterodorsal thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Reticular thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventrolateral thalamic nucleus (posterodorsal part),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventrolateral thalamic nucleus (posteroventral part),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventromedial thalamic nucleus (posterior and basal),Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventroposterior medial and lateral thalamic nuclei,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventroposterior inferior thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Dorsal lateral geniculate nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Medial geniculate nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Subparafascicular parvocellular thalamic nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Zona incerta and H fields,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Precommissural nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Periaqueductal gray,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Superior colliculus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Inferior colliculus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Substantia nigra,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Red nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Oculomotor complex,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Ventral tegmental area,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Dorsal raphe,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Linear raphe,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Midbrain reticular formation,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Pontine nucleus,Macaque,Hartig2020_SARM,gray_matter,migrated from rcs_corpus_source.csv
+Internal capsule,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Anterior commissure,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Medial cerebellar peduncle,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Medial longitudinal fascicle,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Fasciculus retroflexus,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Stria medullaris,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Optic tract/chiasma,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Cerebral peduncle,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Crossing of the superior cerebellar peduncle,Macaque,Hartig2020_SARM,white_matter,migrated from rcs_corpus_source.csv
+Lateral ventricle,Macaque,Hartig2020_SARM,ventricle,migrated from rcs_corpus_source.csv
+Third ventricle,Macaque,Hartig2020_SARM,ventricle,migrated from rcs_corpus_source.csv
+Caudate putamen,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Nucleus accumbens (core),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Nucleus accumbens (shell),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Ventral striatal region (unspecified),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+External globus pallidus (medial part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+External globus pallidus (lateral part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Ventral pallidum,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Entopeduncular nucleus,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Reticular (pre)thalamic nucleus,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Zona incerta (rostral part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Zona incerta (dorsal part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Zona incerta (ventral part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Zona incerta (caudal part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+A13 dopamine cell group,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+A11 dopamine cell group,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Fields of Forel,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Habenula (lateral part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Habenula (medial part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Mediodorsal thalamic nucleus,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Medial geniculate complex (dorsal division),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Medial geniculate complex (ventral division),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Medial geniculate complex (medial division),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Medial geniculate complex (marginal zone),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Suprageniculate nucleus,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Posterior thalamic nucleus,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Posterior thalamic nuclear group (triangular part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Substantia nigra (reticular part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Substantia nigra (compact part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Substantia nigra (lateral part),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Ventral tegmental area,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Claustrum,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Endopiriform nucleus,Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Amygdaloid area (unspecified),Rat,Leergaard2023_WHS,gray_matter,migrated from rcs_corpus_source.csv
+Anterior olfactory area,Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+CA1 (hippocampus),Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Entorhinal area (medial part),Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Lateral septal nucleus (rostral division),Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Paraventricular hypothalamic nucleus (medial parvicellular dorsal zone),Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Infundibulum,Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Median eminence,Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Periaqueductal gray,Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Orbital cortex (ventral),Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Orbital cortex (ventrolateral),Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv
+Striatum,Rat,Swanson2018_BrainMaps4,gray_matter,migrated from rcs_corpus_source.csv

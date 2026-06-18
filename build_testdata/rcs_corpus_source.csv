@@ -1,0 +1,416 @@
+structure_name,category,species,paper
+Mammillary body,gray_matter,Human,Adil2021
+Pineal gland,gray_matter,Human,Adil2021
+Pulvinar nucleus,gray_matter,Human,Adil2021
+Subthalamic nucleus,gray_matter,Human,Adil2021
+Thalamus (excluding pulvinar),gray_matter,Human,Adil2021
+Inferior colliculus,gray_matter,Human,Adil2021
+Red nucleus,gray_matter,Human,Adil2021
+Substantia nigra,gray_matter,Human,Adil2021
+Superior colliculus,gray_matter,Human,Adil2021
+Abducens nucleus,gray_matter,Human,Adil2021
+Facial nucleus,gray_matter,Human,Adil2021
+Trigeminal nucleus (motor),gray_matter,Human,Adil2021
+Trigeminal nucleus (principal sensory),gray_matter,Human,Adil2021
+Cuneate nucleus,gray_matter,Human,Adil2021
+Cuneate nucleus (external),gray_matter,Human,Adil2021
+Gracile nucleus,gray_matter,Human,Adil2021
+Hypoglossal nucleus,gray_matter,Human,Adil2021
+Inferior olive (principal nucleus),gray_matter,Human,Adil2021
+Spinal trigeminal nucleus (caudalis),gray_matter,Human,Adil2021
+Spinal trigeminal nucleus (interpolaris),gray_matter,Human,Adil2021
+Spinal trigeminal nucleus (oralis),gray_matter,Human,Adil2021
+Vestibular nucleus,gray_matter,Human,Adil2021
+Optic chiasm,cranial_nerve,Human,Adil2021
+Optic tract,cranial_nerve,Human,Adil2021
+Roots of the abducens nerve,cranial_nerve,Human,Adil2021
+Roots of the facial nerve,cranial_nerve,Human,Adil2021
+Roots of the trigeminal nerve,cranial_nerve,Human,Adil2021
+Corticospinal tract,white_matter,Human,Adil2021
+Medial lemniscus,white_matter,Human,Adil2021
+Medial longitudinal fasciculus,white_matter,Human,Adil2021
+Spinothalamic tract,white_matter,Human,Adil2021
+Cerebral peduncle,white_matter,Human,Adil2021
+Trigeminal tract (mesencephalic),white_matter,Human,Adil2021
+Inferior cerebellar peduncle,white_matter,Human,Adil2021
+Middle cerebellar peduncle,white_matter,Human,Adil2021
+Superior cerebellar peduncle,white_matter,Human,Adil2021
+Superior cerebellar peduncle (decussation),white_matter,Human,Adil2021
+Cuneate fasciculus,white_matter,Human,Adil2021
+Gracile fasciculus,white_matter,Human,Adil2021
+Pyramidal decussation,white_matter,Human,Adil2021
+Spinal trigeminal tract,white_matter,Human,Adil2021
+Anterior commissure,white_matter,Human,Adil2021
+Fornix (anterior columns),white_matter,Human,Adil2021
+Internal capsule (posterior limb),white_matter,Human,Adil2021
+Mammillothalamic tract,white_matter,Human,Adil2021
+Posterior commissure,white_matter,Human,Adil2021
+Cerebral aqueduct,ventricle,Human,Adil2021
+Fourth ventricle,ventricle,Human,Adil2021
+Obex,ventricle,Human,Adil2021
+Oculomotor nucleus,gray_matter,Human,Agostinelli2023
+Edinger-Westphal nucleus (preganglionic),gray_matter,Human,Agostinelli2023
+Trochlear nucleus,gray_matter,Human,Agostinelli2023
+Motor trigeminal nucleus,gray_matter,Human,Agostinelli2023
+Principal sensory trigeminal nucleus,gray_matter,Human,Agostinelli2023
+Spinal trigeminal nucleus,gray_matter,Human,Agostinelli2023
+Abducens nucleus,gray_matter,Human,Agostinelli2023
+Facial nucleus,gray_matter,Human,Agostinelli2023
+Accessory trigeminal nucleus,gray_matter,Human,Agostinelli2023
+Accessory facial nucleus,gray_matter,Human,Agostinelli2023
+Superior salivatory nucleus,gray_matter,Human,Agostinelli2023
+Inferior salivatory nucleus,gray_matter,Human,Agostinelli2023
+Ventral cochlear nucleus,gray_matter,Human,Agostinelli2023
+Dorsal cochlear nucleus,gray_matter,Human,Agostinelli2023
+Pontobulbar nucleus,gray_matter,Human,Agostinelli2023
+Dorsal motor nucleus of vagus,gray_matter,Human,Agostinelli2023
+Nucleus ambiguus,gray_matter,Human,Agostinelli2023
+Vagus (spinal accessory) neurons,gray_matter,Human,Agostinelli2023
+Hypoglossal nucleus,gray_matter,Human,Agostinelli2023
+Nucleus of the solitary tract,gray_matter,Human,Agostinelli2023
+Area postrema,gray_matter,Human,Agostinelli2023
+Prepositus nucleus,gray_matter,Human,Agostinelli2023
+Intermediate reticular zone,gray_matter,Human,Agostinelli2023
+Lateral reticular nucleus (magnocellular),gray_matter,Human,Agostinelli2023
+Lateral reticular nucleus (parvicellular),gray_matter,Human,Agostinelli2023
+Ventrolateral medulla,gray_matter,Human,Agostinelli2023
+Pedunculopontine tegmentum,gray_matter,Human,Agostinelli2023
+Laterodorsal tegmentum,gray_matter,Human,Agostinelli2023
+Lateral parabrachial nucleus,gray_matter,Human,Agostinelli2023
+Medial parabrachial nucleus,gray_matter,Human,Agostinelli2023
+External lateral parabrachial nucleus,gray_matter,Human,Agostinelli2023
+Periaqueductal gray,gray_matter,Human,Agostinelli2023
+Superior colliculus,gray_matter,Human,Agostinelli2023
+Inferior colliculus,gray_matter,Human,Agostinelli2023
+Locus coeruleus,gray_matter,Human,Agostinelli2023
+A1 catecholaminergic cell group,gray_matter,Human,Agostinelli2023
+A4 catecholaminergic cell group,gray_matter,Human,Agostinelli2023
+A5 catecholaminergic cell group,gray_matter,Human,Agostinelli2023
+A8 catecholaminergic cell group,gray_matter,Human,Agostinelli2023
+Substantia nigra,gray_matter,Human,Agostinelli2023
+Ventral tegmental area,gray_matter,Human,Agostinelli2023
+Dorsal raphe,gray_matter,Human,Agostinelli2023
+Median raphe,gray_matter,Human,Agostinelli2023
+Raphe magnus,gray_matter,Human,Agostinelli2023
+Raphe obscurus,gray_matter,Human,Agostinelli2023
+Solitary tract,white_matter,Human,Agostinelli2023
+Medial longitudinal fasciculus,white_matter,Human,Agostinelli2023
+Medial lemniscus,white_matter,Human,Agostinelli2023
+Superior cerebellar peduncle,white_matter,Human,Agostinelli2023
+Middle cerebellar peduncle,white_matter,Human,Agostinelli2023
+Corticospinal tract (pyramids),white_matter,Human,Agostinelli2023
+Cerebellar cortex (molecular layer),gray_matter,Human,Agostinelli2023
+Cerebellar cortex (Purkinje cell layer),gray_matter,Human,Agostinelli2023
+Cerebellar cortex (granular layer),gray_matter,Human,Agostinelli2023
+Cerebellar vermis,gray_matter,Human,Agostinelli2023
+Cerebellar hemisphere,gray_matter,Human,Agostinelli2023
+Flocculus,gray_matter,Human,Agostinelli2023
+Fastigial nucleus,gray_matter,Human,Agostinelli2023
+Globose nucleus,gray_matter,Human,Agostinelli2023
+Emboliform nucleus,gray_matter,Human,Agostinelli2023
+Dentate nucleus,gray_matter,Human,Agostinelli2023
+Inferior olive,gray_matter,Human,Agostinelli2023
+Precentral gyrus,gray_matter,Human,TzourioMazoyer2002
+Postcentral gyrus,gray_matter,Human,TzourioMazoyer2002
+Rolandic operculum,gray_matter,Human,TzourioMazoyer2002
+Superior frontal gyrus (dorsolateral),gray_matter,Human,TzourioMazoyer2002
+Middle frontal gyrus,gray_matter,Human,TzourioMazoyer2002
+Inferior frontal gyrus (opercular part),gray_matter,Human,TzourioMazoyer2002
+Inferior frontal gyrus (triangular part),gray_matter,Human,TzourioMazoyer2002
+Superior frontal gyrus (medial),gray_matter,Human,TzourioMazoyer2002
+Supplementary motor area,gray_matter,Human,TzourioMazoyer2002
+Paracentral lobule,gray_matter,Human,TzourioMazoyer2002
+Superior frontal gyrus (orbital part),gray_matter,Human,TzourioMazoyer2002
+Superior frontal gyrus (medial orbital),gray_matter,Human,TzourioMazoyer2002
+Middle frontal gyrus (orbital part),gray_matter,Human,TzourioMazoyer2002
+Inferior frontal gyrus (orbital part),gray_matter,Human,TzourioMazoyer2002
+Gyrus rectus,gray_matter,Human,TzourioMazoyer2002
+Olfactory cortex,gray_matter,Human,TzourioMazoyer2002
+Superior temporal gyrus,gray_matter,Human,TzourioMazoyer2002
+Heschl gyrus,gray_matter,Human,TzourioMazoyer2002
+Middle temporal gyrus,gray_matter,Human,TzourioMazoyer2002
+Inferior temporal gyrus,gray_matter,Human,TzourioMazoyer2002
+Superior parietal gyrus,gray_matter,Human,TzourioMazoyer2002
+Inferior parietal lobule,gray_matter,Human,TzourioMazoyer2002
+Angular gyrus,gray_matter,Human,TzourioMazoyer2002
+Supramarginal gyrus,gray_matter,Human,TzourioMazoyer2002
+Precuneus,gray_matter,Human,TzourioMazoyer2002
+Superior occipital gyrus,gray_matter,Human,TzourioMazoyer2002
+Middle occipital gyrus,gray_matter,Human,TzourioMazoyer2002
+Inferior occipital gyrus,gray_matter,Human,TzourioMazoyer2002
+Cuneus,gray_matter,Human,TzourioMazoyer2002
+Calcarine fissure and surrounding cortex,gray_matter,Human,TzourioMazoyer2002
+Lingual gyrus,gray_matter,Human,TzourioMazoyer2002
+Fusiform gyrus,gray_matter,Human,TzourioMazoyer2002
+Temporal pole (superior temporal gyrus),gray_matter,Human,TzourioMazoyer2002
+Temporal pole (middle temporal gyrus),gray_matter,Human,TzourioMazoyer2002
+Anterior cingulate and paracingulate gyri,gray_matter,Human,TzourioMazoyer2002
+Median cingulate and paracingulate gyri,gray_matter,Human,TzourioMazoyer2002
+Posterior cingulate gyrus,gray_matter,Human,TzourioMazoyer2002
+Hippocampus,gray_matter,Human,TzourioMazoyer2002
+Parahippocampal gyrus,gray_matter,Human,TzourioMazoyer2002
+Insula,gray_matter,Human,TzourioMazoyer2002
+Amygdala,gray_matter,Human,TzourioMazoyer2002
+Caudate nucleus,gray_matter,Human,TzourioMazoyer2002
+Lenticular nucleus (putamen),gray_matter,Human,TzourioMazoyer2002
+Lenticular nucleus (pallidum),gray_matter,Human,TzourioMazoyer2002
+Thalamus,gray_matter,Human,TzourioMazoyer2002
+Caudate nucleus,gray_matter,Human,Yelnik2007
+Putamen,gray_matter,Human,Yelnik2007
+External globus pallidus,gray_matter,Human,Yelnik2007
+Internal globus pallidus,gray_matter,Human,Yelnik2007
+Subthalamic nucleus,gray_matter,Human,Yelnik2007
+Substantia nigra,gray_matter,Human,Yelnik2007
+Nucleus accumbens,gray_matter,Human,Yelnik2007
+Red nucleus,gray_matter,Human,Yelnik2007
+Zona incerta,gray_matter,Human,Yelnik2007
+Mammillary body,gray_matter,Human,Yelnik2007
+Anterior thalamic nucleus,gray_matter,Human,Yelnik2007
+Ventral anterior thalamic nucleus,gray_matter,Human,Yelnik2007
+Ventral lateral thalamic nucleus,gray_matter,Human,Yelnik2007
+Ventralis intermedius,gray_matter,Human,Yelnik2007
+Ventral posterior internal thalamic nucleus,gray_matter,Human,Yelnik2007
+Ventral posterior external thalamic nucleus,gray_matter,Human,Yelnik2007
+Mediodorsal thalamic nucleus,gray_matter,Human,Yelnik2007
+Pulvinar,gray_matter,Human,Yelnik2007
+Centre median parafascicular complex,gray_matter,Human,Yelnik2007
+Reticular perithalamic nucleus,gray_matter,Human,Yelnik2007
+Internal capsule,white_matter,Human,Yelnik2007
+Cerebral peduncle,white_matter,Human,Yelnik2007
+Forel's field H,white_matter,Human,Yelnik2007
+Forel's field H1,white_matter,Human,Yelnik2007
+Forel's field H2,white_matter,Human,Yelnik2007
+Ansa lenticularis,white_matter,Human,Yelnik2007
+Brachium conjunctivum,white_matter,Human,Yelnik2007
+Fornix,white_matter,Human,Yelnik2007
+Mammillothalamic tract,white_matter,Human,Yelnik2007
+Optic tract,white_matter,Human,Yelnik2007
+Lateral ventricle,ventricle,Human,Yelnik2007
+CA1,gray_matter,Human,Yushkevich2009
+CA2,gray_matter,Human,Yushkevich2009
+CA3,gray_matter,Human,Yushkevich2009
+CA4 (dentate hilus),gray_matter,Human,Yushkevich2009
+Dentate gyrus,gray_matter,Human,Yushkevich2009
+Subiculum,gray_matter,Human,Yushkevich2009
+Vestigial hippocampal sulcus,gray_matter,Human,Yushkevich2009
+Anterior nucleus (thalamus),gray_matter,Human,Hwang2017
+Lateral geniculate nucleus,gray_matter,Human,Hwang2017
+Medial geniculate nucleus,gray_matter,Human,Hwang2017
+Ventral lateral thalamic nucleus,gray_matter,Human,Hwang2017
+Ventral anterior thalamic nucleus,gray_matter,Human,Hwang2017
+Ventral posterior thalamic nucleus,gray_matter,Human,Hwang2017
+Intralaminar thalamic nuclei,gray_matter,Human,Hwang2017
+Medial dorsal thalamic nucleus,gray_matter,Human,Hwang2017
+Lateral posterior thalamic nucleus,gray_matter,Human,Hwang2017
+Posterior thalamic nucleus,gray_matter,Human,Hwang2017
+Medial pulvinar,gray_matter,Human,Hwang2017
+Inferior pulvinar,gray_matter,Human,Hwang2017
+Lateral pulvinar,gray_matter,Human,Hwang2017
+Anterior pulvinar,gray_matter,Human,Hwang2017
+Ventral medial thalamic nucleus,gray_matter,Human,Hwang2017
+Superior temporal gyrus,gray_matter,Human,Kiernan2012
+Middle temporal gyrus,gray_matter,Human,Kiernan2012
+Inferior temporal gyrus,gray_matter,Human,Kiernan2012
+Transverse temporal gyri (Heschl's gyri),gray_matter,Human,Kiernan2012
+Planum temporale,gray_matter,Human,Kiernan2012
+Temporal pole,gray_matter,Human,Kiernan2012
+Insula,gray_matter,Human,Kiernan2012
+Limen insulae,gray_matter,Human,Kiernan2012
+Fusiform gyrus,gray_matter,Human,Kiernan2012
+Parahippocampal gyrus,gray_matter,Human,Kiernan2012
+Uncus,gray_matter,Human,Kiernan2012
+Hippocampus,gray_matter,Human,Kiernan2012
+Dentate gyrus,gray_matter,Human,Kiernan2012
+Subiculum,gray_matter,Human,Kiernan2012
+Entorhinal area,gray_matter,Human,Kiernan2012
+Amygdala,gray_matter,Human,Kiernan2012
+Periamygdaloid cortex,gray_matter,Human,Kiernan2012
+Septal area,gray_matter,Human,Kiernan2012
+Arcuate fasciculus,white_matter,Human,Kiernan2012
+Inferior longitudinal fasciculus,white_matter,Human,Kiernan2012
+Uncinate fasciculus,white_matter,Human,Kiernan2012
+Meyer's loop (geniculocalcarine tract),white_matter,Human,Kiernan2012
+Fimbria,white_matter,Human,Kiernan2012
+Alveus,white_matter,Human,Kiernan2012
+Fornix,white_matter,Human,Kiernan2012
+Temporal horn of the lateral ventricle,ventricle,Human,Kiernan2012
+Angular gyrus (anterior),gray_matter,Human,Rushmore2022
+Angular gyrus (posterior),gray_matter,Human,Rushmore2022
+Intracalcarine cortex (inferior),gray_matter,Human,Rushmore2022
+Intracalcarine cortex (superior),gray_matter,Human,Rushmore2022
+Cingulate gyrus (anterior anterior part),gray_matter,Human,Rushmore2022
+Cingulate gyrus (anterior posterior part),gray_matter,Human,Rushmore2022
+Cingulate gyrus (posterior),gray_matter,Human,Rushmore2022
+Cuneal cortex,gray_matter,Human,Rushmore2022
+Central opercular cortex (anterior),gray_matter,Human,Rushmore2022
+Central opercular cortex (posterior),gray_matter,Human,Rushmore2022
+Superior frontal gyrus (lateral anterior),gray_matter,Human,Rushmore2022
+Superior frontal gyrus (lateral middle),gray_matter,Human,Rushmore2022
+Superior frontal gyrus (lateral posterior),gray_matter,Human,Rushmore2022
+Superior frontal gyrus (medial),gray_matter,Human,Rushmore2022
+Middle frontal gyrus (anterior),gray_matter,Human,Rushmore2022
+Middle frontal gyrus (middle),gray_matter,Human,Rushmore2022
+Middle frontal gyrus (posterior),gray_matter,Human,Rushmore2022
+Inferior frontal gyrus (anterior),gray_matter,Human,Rushmore2022
+Inferior frontal gyrus (pars opercularis),gray_matter,Human,Rushmore2022
+Inferior frontal gyrus (pars orbitalis),gray_matter,Human,Rushmore2022
+Inferior frontal gyrus (pars triangularis),gray_matter,Human,Rushmore2022
+Frontal medial cortex,gray_matter,Human,Rushmore2022
+Frontal opercular cortex,gray_matter,Human,Rushmore2022
+Frontal orbital cortex (anterior),gray_matter,Human,Rushmore2022
+Frontal orbital cortex (lateral),gray_matter,Human,Rushmore2022
+Frontal orbital cortex (medial),gray_matter,Human,Rushmore2022
+Frontal orbital cortex (posterior),gray_matter,Human,Rushmore2022
+Frontal pole (lateral),gray_matter,Human,Rushmore2022
+Frontal pole (medial),gray_matter,Human,Rushmore2022
+Heschl's gyrus,gray_matter,Human,Rushmore2022
+Insular cortex (anterior),gray_matter,Human,Rushmore2022
+Insular cortex (posterior),gray_matter,Human,Rushmore2022
+Lingual gyrus,gray_matter,Human,Rushmore2022
+Occipital fusiform gyrus,gray_matter,Human,Rushmore2022
+Lateral occipital cortex (inferior),gray_matter,Human,Rushmore2022
+Lateral occipital cortex (superior),gray_matter,Human,Rushmore2022
+Occipital pole,gray_matter,Human,Rushmore2022
+Paracingulate gyrus,gray_matter,Human,Rushmore2022
+Precuneal cortex,gray_matter,Human,Rushmore2022
+Parahippocampal gyrus (anterior),gray_matter,Human,Rushmore2022
+Parahippocampal gyrus (posterior),gray_matter,Human,Rushmore2022
+Parietal opercular cortex,gray_matter,Human,Rushmore2022
+Postcentral gyrus (lateral inferior),gray_matter,Human,Rushmore2022
+Postcentral gyrus (lateral middle),gray_matter,Human,Rushmore2022
+Postcentral gyrus (lateral superior),gray_matter,Human,Rushmore2022
+Postcentral gyrus (medial),gray_matter,Human,Rushmore2022
+Planum polare,gray_matter,Human,Rushmore2022
+Pre-supplementary motor area (inferior),gray_matter,Human,Rushmore2022
+Pre-supplementary motor area (superior),gray_matter,Human,Rushmore2022
+Precentral gyrus (lateral inferior),gray_matter,Human,Rushmore2022
+Precentral gyrus (lateral middle),gray_matter,Human,Rushmore2022
+Precentral gyrus (lateral superior),gray_matter,Human,Rushmore2022
+Precentral gyrus (medial),gray_matter,Human,Rushmore2022
+Planum temporale,gray_matter,Human,Rushmore2022
+Subcallosal cortex,gray_matter,Human,Rushmore2022
+Supracalcarine cortex,gray_matter,Human,Rushmore2022
+Supramarginal gyrus (anterior),gray_matter,Human,Rushmore2022
+Supramarginal gyrus (posterior),gray_matter,Human,Rushmore2022
+Supplementary motor area,gray_matter,Human,Rushmore2022
+Superior parietal lobule (anterior),gray_matter,Human,Rushmore2022
+Superior parietal lobule (posterior),gray_matter,Human,Rushmore2022
+Superior temporal gyrus (anterior),gray_matter,Human,Rushmore2022
+Superior temporal gyrus (posterior),gray_matter,Human,Rushmore2022
+Middle temporal gyrus (anterior),gray_matter,Human,Rushmore2022
+Middle temporal gyrus (posterior),gray_matter,Human,Rushmore2022
+Inferior temporal gyrus (anterior),gray_matter,Human,Rushmore2022
+Inferior temporal gyrus (posterior),gray_matter,Human,Rushmore2022
+Temporal frontal cortex (anterior),gray_matter,Human,Rushmore2022
+Temporal frontal cortex (posterior),gray_matter,Human,Rushmore2022
+Middle temporal gyrus (temporo-occipital),gray_matter,Human,Rushmore2022
+Inferior temporal gyrus (temporo-occipital),gray_matter,Human,Rushmore2022
+Temporal occipital fusiform cortex,gray_matter,Human,Rushmore2022
+Temporal pole,gray_matter,Human,Rushmore2022
+Primary visual cortex,gray_matter,Human,Glasser2016
+Secondary visual cortex,gray_matter,Human,Glasser2016
+Visual area V3,gray_matter,Human,Glasser2016
+Visual area V3A,gray_matter,Human,Glasser2016
+Visual area V3B,gray_matter,Human,Glasser2016
+Visual area V4,gray_matter,Human,Glasser2016
+Visual area V6,gray_matter,Human,Glasser2016
+Visual area V6A,gray_matter,Human,Glasser2016
+Visual area V7,gray_matter,Human,Glasser2016
+Visual area V8,gray_matter,Human,Glasser2016
+Middle temporal area,gray_matter,Human,Glasser2016
+Medial superior temporal area,gray_matter,Human,Glasser2016
+Fundal superior temporal area,gray_matter,Human,Glasser2016
+Area PH,gray_matter,Human,Glasser2016
+V4 transitional area,gray_matter,Human,Glasser2016
+Primary motor cortex,gray_matter,Human,Glasser2016
+Somatosensory area 3a,gray_matter,Human,Glasser2016
+Somatosensory area 3b,gray_matter,Human,Glasser2016
+Somatosensory area 1,gray_matter,Human,Glasser2016
+Somatosensory area 2,gray_matter,Human,Glasser2016
+Frontal eye field,gray_matter,Human,Glasser2016
+Premotor eye field,gray_matter,Human,Glasser2016
+Area 55b,gray_matter,Human,Glasser2016
+Premotor area 6a,gray_matter,Human,Glasser2016
+Premotor area 6v,gray_matter,Human,Glasser2016
+Premotor area 6d,gray_matter,Human,Glasser2016
+Premotor area 6m,gray_matter,Human,Glasser2016
+Premotor area 6r,gray_matter,Human,Glasser2016
+Premotor area 6mp,gray_matter,Human,Glasser2016
+Prefrontal area 8Av,gray_matter,Human,Glasser2016
+Prefrontal area 8Ad,gray_matter,Human,Glasser2016
+Prefrontal area 8BL,gray_matter,Human,Glasser2016
+Prefrontal area 8BM,gray_matter,Human,Glasser2016
+Prefrontal area 8C,gray_matter,Human,Glasser2016
+Prefrontal area 9-46v,gray_matter,Human,Glasser2016
+Prefrontal area 9-46d,gray_matter,Human,Glasser2016
+Prefrontal area 46,gray_matter,Human,Glasser2016
+Prefrontal area 47s,gray_matter,Human,Glasser2016
+Prefrontal area 47m,gray_matter,Human,Glasser2016
+Prefrontal area 47l,gray_matter,Human,Glasser2016
+Prefrontal area 47r,gray_matter,Human,Glasser2016
+Prefrontal area 9a,gray_matter,Human,Glasser2016
+Prefrontal area 9m,gray_matter,Human,Glasser2016
+Prefrontal area 9p,gray_matter,Human,Glasser2016
+Prefrontal area 10d,gray_matter,Human,Glasser2016
+Prefrontal area 10r,gray_matter,Human,Glasser2016
+Prefrontal area 10pp,gray_matter,Human,Glasser2016
+Frontal area SFL,gray_matter,Human,Glasser2016
+Retrosplenial cortex,gray_matter,Human,Glasser2016
+Posterior opercular area POS2,gray_matter,Human,Glasser2016
+Lateral intraparietal area (ventral),gray_matter,Human,Glasser2016
+Lateral intraparietal area (dorsal),gray_matter,Human,Glasser2016
+Ventral intraparietal area,gray_matter,Human,Glasser2016
+Anterior intraparietal area,gray_matter,Human,Glasser2016
+Primary auditory cortex,gray_matter,Human,Glasser2016
+Temporal area TE1a,gray_matter,Human,Glasser2016
+Temporal area TE1m,gray_matter,Human,Glasser2016
+Temporal area TE1p,gray_matter,Human,Glasser2016
+Temporal area TE2a,gray_matter,Human,Glasser2016
+Cingulate area 23c,gray_matter,Human,Glasser2016
+Cingulate area 23d,gray_matter,Human,Glasser2016
+Cingulate area 31a,gray_matter,Human,Glasser2016
+Cingulate area a24,gray_matter,Human,Glasser2016
+Cingulate area p24,gray_matter,Human,Glasser2016
+Insular area FOP1,gray_matter,Human,Glasser2016
+Insular area FOP2,gray_matter,Human,Glasser2016
+Insular area FOP3,gray_matter,Human,Glasser2016
+Insular area FOP4,gray_matter,Human,Glasser2016
+Insular area FOP5,gray_matter,Human,Glasser2016
+Retroinsular cortex,gray_matter,Human,Glasser2016
+Posterior insular area,gray_matter,Human,Glasser2016
+Anterior ventral insular area,gray_matter,Human,Glasser2016
+Medial insular area,gray_matter,Human,Glasser2016
+Frontoinsular area,gray_matter,Human,Glasser2016
+Parietal area IP0,gray_matter,Human,Glasser2016
+Parietal area IP1,gray_matter,Human,Glasser2016
+Parietal area IP2,gray_matter,Human,Glasser2016
+Parietal area PFt,gray_matter,Human,Glasser2016
+Parietal area PF,gray_matter,Human,Glasser2016
+Parietal area PFm,gray_matter,Human,Glasser2016
+Parietal area PFcm,gray_matter,Human,Glasser2016
+Parietal area PFop,gray_matter,Human,Glasser2016
+Parietal area PGi,gray_matter,Human,Glasser2016
+Parietal area PGs,gray_matter,Human,Glasser2016
+Parietal area PGp,gray_matter,Human,Glasser2016
+Temporal area STGg,gray_matter,Human,Glasser2016
+Temporal area PSL,gray_matter,Human,Glasser2016
+Temporal area STSdp,gray_matter,Human,Glasser2016
+Temporal area STSda,gray_matter,Human,Glasser2016
+Temporal area STSva,gray_matter,Human,Glasser2016
+Temporal area STSvp,gray_matter,Human,Glasser2016
+Temporal area TF,gray_matter,Human,Glasser2016
+Temporal area TGd,gray_matter,Human,Glasser2016
+Entorhinal cortex,gray_matter,Human,Glasser2016
+Presubiculum,gray_matter,Human,Glasser2016
+Parahippocampal area PeEc,gray_matter,Human,Glasser2016
+Hippocampal formation,gray_matter,Human,Glasser2016
+Paracentral area 5L,gray_matter,Human,Glasser2016
+Paracentral area 5mv,gray_matter,Human,Glasser2016
+Paracentral area 5m,gray_matter,Human,Glasser2016
+Cingulate area 24dd,gray_matter,Human,Glasser2016
+Cingulate area 24dv,gray_matter,Human,Glasser2016
+Area 43,gray_matter,Human,Glasser2016
+Opercular area OP1,gray_matter,Human,Glasser2016
+Opercular area OP2-3,gray_matter,Human,Glasser2016
+Opercular area OP4,gray_matter,Human,Glasser2016
+Area 52,gray_matter,Human,Glasser2016

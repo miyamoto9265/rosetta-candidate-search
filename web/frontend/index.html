@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ROSETTA Candidate Search</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">ROSETTA Candidate Search</p>
+        <h1>脳領域名からHOMBA候補を検索</h1>
+        <p class="lead">
+          脳領域・解剖学的構造名を1つ入力すると、HOMBA IDと名称の候補を返します。
+        </p>
+      </section>
+
+      <section class="search-card" aria-label="候補検索フォーム">
+        <label for="query">入力テキスト</label>
+        <textarea
+          id="query"
+          rows="3"
+          placeholder="例: Pulvinar nucleus"
+        ></textarea>
+
+        <div class="controls">
+          <div class="control-group">
+            <label for="topK">候補数</label>
+            <input id="topK" type="number" min="1" max="20" value="5" />
+          </div>
+          <div class="control-group">
+            <label for="dhbaFilter">DHBAフィルター</label>
+            <select id="dhbaFilter">
+              <option value="both">両方</option>
+              <option value="with">DHBA名あり</option>
+              <option value="without">DHBA名なし</option>
+            </select>
+          </div>
+          <button id="searchButton" type="button">検索</button>
+        </div>
+
+        <p id="status" class="status" role="status"></p>
+      </section>
+
+      <section class="results-card" aria-label="検索結果">
+        <div class="results-header">
+          <h2>候補</h2>
+          <p id="summary"></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>順位</th>
+                <th>HOMBA ID</th>
+                <th>名称</th>
+                <th>Acronym</th>
+                <th>DHBA Name</th>
+                <th>DHBA Acronym</th>
+                <th>Score</th>
+                <th>Flag</th>
+                <th>一致根拠</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody">
+              <tr>
+                <td colspan="9" class="empty">検索すると候補がここに表示されます。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
