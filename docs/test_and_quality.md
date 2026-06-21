@@ -47,7 +47,7 @@
 | RCS エンジン | `rcs/` | アルゴリズム本体・辞書・HOMBA データ・テスト CLI |
 | データセット | `build_testdata/rcs_*.csv` | Core / Challenge / Species / Corpus |
 | LLM-based Recursive Improvement | `build_testdata/build_core_improve/` | Round 別テスト入力・出力・分析ツール |
-| 本番 | `web/backend/lambda_function.py` | AWS Lambda デプロイ版 |
+| 本番 | `web/backend/lambda_function.py` + `rcs/`（zip 同梱） | Lambda HTTP アダプター |
 
 詳細なデータセット計画・プロセス命名は `build_testdata/PLAN.md` を参照。v0.3.0 の精度は LLM-based Recursive Improvement（Round 0–4）の成果。
 
@@ -62,6 +62,7 @@ rcs/                              ← RCS エンジン（開発の正本）
   HOMBA_v1_fixed.csv
   rcs_test_list.py
   rcs_test_interactive.py
+  review.py                       ← review_flag（Lambda / CLI 共通）
 
 build_testdata/
   PLAN.md
@@ -160,13 +161,15 @@ python cursor_compare_results.py \
 
 ## 4. 開発→本番への反映手順
 
-`rcs/` での改善が完了したら、`web/backend/lambda_function.py` および S3 辞書ファイルへ反映する。
+`rcs/` が唯一の正本。Lambda は `scripts/package_lambda.ps1`（または `.sh`）で `rcs/` を zip 同梱してデプロイする。
 
-| 開発版（`rcs/`） | 本番版 |
+| 開発版（`rcs/`） | 本番への反映 |
 |---|---|
-| `rcs/rosetta_candidate_generator.py` | `web/backend/lambda_function.py`（ロジックを移植） |
+| `rcs/rosetta_candidate_generator.py` | zip 同梱（手動コピー不要） |
+| `rcs/review.py` | zip 同梱 |
 | `rcs/homba_alias_rules.csv` | S3 `homba_alias_rules.csv` |
 | `rcs/homba_abbrev_rules.csv` | S3 `homba_abbrev_rules.csv` |
+| `web/backend/lambda_function.py` | zip に含める（HTTP/S3 アダプター） |
 
 Lambda への反映手順は `docs/aws_operations_guide.md` の「4. データファイルの更新手順」を参照。
 ---

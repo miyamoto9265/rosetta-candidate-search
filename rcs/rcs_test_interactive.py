@@ -8,12 +8,20 @@ Run from repo root:
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
-from rosetta_candidate_generator import DEFAULT_ALIAS_RULES_CSV, DEFAULT_TOKEN_RULES_CSV, RosettaCandidateGenerator
-
-
 RCS_DIR = Path(__file__).resolve().parent
+REPO_ROOT = RCS_DIR.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from rcs.review import review_flag_for
+from rcs.rosetta_candidate_generator import (
+    DEFAULT_ALIAS_RULES_CSV,
+    DEFAULT_TOKEN_RULES_CSV,
+    RosettaCandidateGenerator)
+
 DEFAULT_HOMBA_CSV = RCS_DIR / "HOMBA_v1_fixed.csv"
 
 
