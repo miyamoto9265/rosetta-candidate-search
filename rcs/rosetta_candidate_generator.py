@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# VERSION: 0.3.0
+# VERSION: 0.3.1
 # Versioning rule:
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
@@ -661,7 +661,9 @@ class RosettaCandidateGenerator:
         best_by_term: dict[int, tuple[float, str, str]] = {}
         for variant in variants:
             query_tokens = tokenize(variant, config=self.config)
-            entry_indexes = self._entry_indexes_for_tokens(query_tokens, rarest_limit=2)
+            entry_indexes = self._entry_indexes_for_tokens(
+                query_tokens, rarest_limit=2, combine="intersection"
+            )
             if not entry_indexes and len(normalize_text(variant)) > 5:
                 entry_indexes = range(len(self.alias_entries))
 
@@ -717,13 +719,28 @@ class RosettaCandidateGenerator:
         ranked = sorted(best_by_term.items(), key=lambda item: item[1][0], reverse=True)
         return [(term_index, score, alias, matched_query) for term_index, (score, alias, matched_query) in ranked[:limit]]
 
-    def _entry_indexes_for_tokens(self, tokens: list[str], rarest_limit: int | None = None) -> Iterable[int]:
-        entry_indexes: set[int] = set()
+    def _entry_indexes_for_tokens(
+        self,
+        tokens: list[str],
+        rarest_limit: int | None = None,
+        *,
+        combine: str = "union",
+    ) -> Iterable[int]:
         search_tokens = list(dict.fromkeys(tokens))
         if rarest_limit is not None and len(search_tokens) > rarest_limit:
             search_tokens.sort(key=lambda token: self._bm25_doc_freq.get(token, 0))
             search_tokens = search_tokens[:rarest_limit]
 
+        if not search_tokens:
+            return set()
+
+        if combine == "intersection":
+            entry_indexes = self.token_to_entries.get(search_tokens[0], set()).copy()
+            for token in search_tokens[1:]:
+                entry_indexes &= self.token_to_entries.get(token, set())
+            return entry_indexes
+
+        entry_indexes: set[int] = set()
         for token in search_tokens:
             entry_indexes.update(self.token_to_entries.get(token, set()))
         return entry_indexes
