@@ -15,14 +15,18 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 from datetime import datetime
 from pathlib import Path
 
-from rosetta_candidate_generator import RosettaCandidateGenerator
-
-
 RCS_DIR = Path(__file__).resolve().parent
 REPO_ROOT = RCS_DIR.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from rcs.review import review_flag_for
+from rcs.rosetta_candidate_generator import RosettaCandidateGenerator
+
 DEFAULT_HOMBA_CSV = RCS_DIR / "HOMBA_v1_fixed.csv"
 DEFAULT_ALIAS_RULES_CSV = RCS_DIR / "homba_alias_rules.csv"
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "build_testdata" / "build_core_improve" / "output"
@@ -86,19 +90,6 @@ def resolve_output_csv(args: argparse.Namespace) -> Path:
     if args.output_csv is not None:
         return args.output_csv
     return build_output_path(args.input_csv, args.output_dir)
-
-
-def review_flag_for(candidate: dict[str, object]) -> str:
-    score = float(candidate["score"])
-    modifier_terms = str(candidate.get("modifier_terms", ""))
-    modifier_score = float(candidate.get("modifier_match_score", 1.0) or 1.0)
-    if modifier_terms and modifier_score < 1.0:
-        return "modifier_conflict"
-    if score >= 0.90:
-        return "high_confidence"
-    if score < 0.60:
-        return "low_confidence"
-    return "needs_review"
 
 
 def rcs_fields_from_candidate(

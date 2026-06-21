@@ -4,7 +4,7 @@
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
 # - Backward-incompatible API/input/output changes: increment MAJOR (e.g. 0.1.0 -> 1.0.0)
-# Keep this version synchronized with web/backend/lambda_function.py.
+# Lambda imports this module from rcs/ via scripts/package_lambda.* (no duplicate copy).
 """ROSETTA Candidate Search — candidate generation for mapping brain-region mentions to HOMBA terms.
 
 This module intentionally stays dependency-free.  It implements the practical

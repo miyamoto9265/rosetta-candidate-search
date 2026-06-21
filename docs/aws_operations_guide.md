@@ -213,19 +213,34 @@ window.ROSETTA_SEARCH_CONFIG = {
 2. S3 データバケットの該当ファイルを上書きアップロード
 3. Lambda の実行環境キャッシュを更新するため、環境変数を一度保存し直す（任意の変数を追加・変更でよい）
 
-### 4-2. Lambda コード（`lambda_function.py`）を更新する
+### 4-2. Lambda コードを更新する
 
-**方法 1: コンソールで直接貼り替え**
-1. Lambda コンソールの `コード` タブを開く
-2. `lambda_function.py` の内容を全置換
-3. `Deploy` を押す
+コアロジックは `rcs/` に1か所だけあり、Lambda には zip 同梱で import する。`web/backend/lambda_function.py` は S3 読込・HTTP・CORS の薄いアダプター。
 
-**方法 2: zip アップロード**
-```bash
-cd web/backend
-sh package_lambda.sh
+**方法 1: zip アップロード（推奨）**
+
+```powershell
+# Windows（repo ルートから）
+.\scripts\package_lambda.ps1
+aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1
 ```
-Lambda の `コード` → `アップロード元` から `rcs-lambda.zip` をアップロード → `Deploy`
+
+```bash
+# macOS / Linux
+./scripts/package_lambda.sh
+aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1
+```
+
+zip の構成:
+
+```
+lambda_function.py      ← web/backend/ からコピー
+rcs/                    ← エンジン本体 + CSV（テスト CLI は除外）
+```
+
+**方法 2: コンソールで直接貼り替え（非推奨）**
+
+`rcs/` を同梱しないと動作しないため、通常は zip デプロイを使う。
 
 ### 4-3. HOMBA データ（`HOMBA_v1_fixed.csv`）を更新する
 

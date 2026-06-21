@@ -14,8 +14,9 @@
 ## 構成
 
 ```
-rcs/              コアアルゴリズム
-web/              フロントエンド + Lambda バックエンド
+rcs/              コアアルゴリズム（正本。Lambda もここを import）
+web/              フロントエンド + Lambda HTTP アダプター
+scripts/          package_lambda.ps1 / .sh（デプロイ zip 作成）
 build_testdata/   コーパス構築・評価データ
 docs/             仕様書
 ```
