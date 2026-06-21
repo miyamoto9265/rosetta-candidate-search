@@ -1,7 +1,7 @@
 # ROSETTA Candidate Search — アルゴリズム仕様
 
-**バージョン**: v0.3.0  
-**最終更新**: 2026-06-07
+**バージョン**: v0.3.1  
+**最終更新**: 2026-06-21
 
 ---
 
@@ -95,11 +95,50 @@ pag,periaqueductal gray,
 
 複数手法でヒットした場合は同一 HOMBA エントリとして統合する。各手法のスコアは手法ごとに最大値を保持し、最終スコアは後述の式で合成する（単純加算ではない）。
 
+#### 3-4-1. 倒排インデックスと候補の絞り込み
+
+起動時に HOMBA 全別名から以下のインデックスを構築する。
+
+| インデックス | 内容 |
+|---|---|
+| `alias_map` | 正規化別名 → HOMBA エントリ index（exact 用） |
+| `alias_entries` | 別名ごとのトークン列・トークン頻度（BM25 / fuzzy 用） |
+| `token_to_entries` | トークン → 別名 entry index の集合（fuzzy / BM25 用） |
+| `_bm25_doc_freq` | トークンの document frequency（`df`） |
+
+fuzzy と BM25 は全別名（約 9,000 件）に対して `string_similarity` / BM25 を毎回実行せず、クエリトークンで候補別名を絞り込んでからスコアリングする。絞り込み方式は手法ごとに異なる。
+
+**fuzzy（v0.3.1 以降: INTERSECTION）**
+
+1. クエリバリアントをトークン化（stopword 除去）
+2. トークンが 3 個以上ある場合、document frequency が低い（レアな）**2 トークン**に限定（`rarest_limit=2`）
+3. 選ばれた各トークンの posting list の **積集合（INTERSECTION）** を fuzzy 比較対象とする
+4. 積集合が空で、正規化後バリアント長が 5 文字超の場合のみ **全別名スキャン** にフォールバック
+5. 各別名に `string_similarity()` を適用し、スコア ≥ 0.45 のものを候補化（エントリごとに最大値）
+
+INTERSECTION により、`nucleus` のような高頻度トークン単体では候補が膨らまない。例: `Subthalamic nucleus` は `subthalamic`（df≈3）と `nucleus`（df≈1,400）の積集合 ≈ 3 件のみを比較する（旧 UNION 方式では ≈ 1,400 件）。
+
+**BM25（UNION）**
+
+1. クエリバリアントの **全トークン** について posting list を取得
+2. posting list の **和集合（UNION）** を BM25 比較対象とする（recall 重視）
+3. 正規化 BM25 スコア > 0 のものを候補化（エントリごとに最大値）
+
+| 手法 | トークン選択 | 集合演算 | フォールバック |
+|---|---|---|---|
+| fuzzy | レアな 2 トークン（3 トークン以上のとき） | **INTERSECTION** | 積集合が空 かつ バリアント長 > 5 → 全スキャン |
+| bm25 | 全トークン | **UNION** | なし |
+| exact | — | `alias_map` 直接参照 | — |
+
 ### 3-5. 2-pass スコアリング（v0.3 以降）
 
+階層親昇格（`hierarchy_parent`）のスコアは、子候補の **penalty 適用後 final score** に依存する。1-pass では raw method score（例: fuzzy 0.89）で親を昇格させると、子が `specificity_penalty` 後 0.77 になっても親が 0.97 で上回る、という過昇格が起きる。この循環依存（親スコア ← 子 final score ← 親が候補に未追加）を解くため、スコアリングを 2 段階に分ける。
+
 1. **第1パス（予備スコア算出）**: 昇格前の候補すべてに `_score_candidate()` を適用し、specificity_penalty 込みの暫定スコア（`prelim_scores`）を得る。
-2. **階層親昇格**: `prelim_scores` を参照し、共通親を持つ子候補が複数ある場合に親エントリを追加する（例: `pulvinar of thalamus` の複数サブリージョンが候補 → 親を昇格）。
+2. **階層親昇格**: `prelim_scores` を参照し、共通親を持つ子候補が複数ある場合に親エントリを追加する（例: `pulvinar of thalamus` の複数サブリージョンが候補 → 親を昇格）。昇格スコア = `min(max(子 prelim_scores) + 0.08, 0.97)`。
 3. **第2パス（最終スコア算出）**: 昇格後の全候補（`hierarchy_parent` 含む）を再度 `_score_candidate()` でスコア化し、ランキングに用いる。
+
+Pass 2 が必要なのは、Pass 1 時点では存在しなかった `hierarchy_parent` 候補にも、合成式・modifier 調整・penalty ルールを適用して最終順位を確定するためである。2-pass の計算コストは fuzzy 比較に比べ小さい。
 
 詳細な計算式は 3-8 を参照。
 
@@ -109,7 +148,7 @@ pag,periaqueductal gray,
 
 ただし以下の場合はペナルティを適用しない:
 - exact match で発見された候補
-- `hierarchy_parent` 手法のみで昇格した候補
+- fuzzy / bm25 マッチがなく、`hierarchy_parent` のみで昇格した候補（昇格スコアは既に子の penalized score を反映）
 
 ### 3-7. modifier_terms によるスコア調整
 
@@ -223,6 +262,8 @@ hierarchy_parent_score = min(max(子候補の prelim_scores) + 0.08, 0.97)
 
 ```
 1. exact / fuzzy / bm25 で候補収集（手法別最大スコアを保持）
+   - fuzzy: token インデックス INTERSECTION で別名を絞り込み → string_similarity
+   - bm25: token インデックス UNION で別名を絞り込み → BM25
 2. 第1パス: 全候補に _score_candidate() を適用（specificity_penalty 込み）→ prelim_scores
 3. prelim_scores を使って _promote_common_parents() で親昇格
 4. 第2パス: 昇格後の全候補を再度 _score_candidate() で最終スコア化
@@ -264,3 +305,4 @@ hierarchy_parent_score = min(max(子候補の prelim_scores) + 0.08, 0.97)
 | 曖昧略語（例: Septum） | 文脈なしでは複数候補のうち最上位を返すのみ |
 | HOMBA に存在しない概念 | `limbic system`、`brainstem`（単一エントリなし）、`IFOF` 等は低スコアになる |
 | 所有格クエリ（Broca's 等） | 標準的な ASCII アポストロフィ（`'` U+0027）は正規化時に削除される。Curly quote（`'` U+2019）は部分的に対応 |
+| 高頻度語を含む複合語（例: `* nucleus`） | fuzzy は INTERSECTION によりレアトークン共起の別名のみ比較。BM25 / exact は従来どおり動作 |
