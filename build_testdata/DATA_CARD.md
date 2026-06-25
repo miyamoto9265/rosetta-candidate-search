@@ -14,7 +14,7 @@
 | **Core** | `rcs_core.csv` | 230 | **検証済み** |
 | **Challenge** | `rcs_challenge.csv` | 13 | 未検証 |
 | **Species** | `rcs_species.csv` | 555 | 未検証 |
-| **Corpus** | `rcs_corpus.csv`（未作成） / 生データ `rcs_corpus_source.csv` | 415（生） | 未検証 |
+| **Corpus** | `rcs_corpus.csv` | 415 | 未検証 |
 
 「検証済み」とは、LLM-based Recursive Improvement の各 Round で RCS を反復実行し、期待 HOMBA ID・スコア分布・回帰が確認された状態を指す。Core 以外は、ファイルは存在するが **正式な評価サイクル・人手レビューは未実施** とする。
 
@@ -85,18 +85,17 @@ Challenge は Core 統合の副産物である。LLM-based Recursive Improvement
 
 | 項目 | 内容 |
 |------|------|
-| **生データ** | `rcs_corpus_source.csv` |
-| **正式データセット** | `rcs_corpus.csv` — **未作成** |
+| **ファイル** | `rcs_corpus.csv` |
 | **件数** | 415 行 / **379** ユニーク名称 |
 | **検証** | **未検証** |
-| **スキーマ（生）** | `structure_name`, `category`, `species`, `paper` |
+| **スキーマ** | `structure_name`, `species`, `paper` |
 
 ### 経緯
 
 1. **論文発見**: LLM による文献調査で候補を洗い出した（一覧は `archive/articles/文献整理.md`）。
 2. **PDF 選定**: 候補のうち対象論文の PDF を**人手で選定・ダウンロード**した。
 3. **名称抽出**: 各論文の Methods / Figure 等から脳部位名称を**LLM により自動抽出**した。手作業転記ではない。
-4. **整形**: 抽出結果を旧称 `brain_regions.csv` としてまとめ、現行は `rcs_corpus_source.csv`。
+4. **整形**: 抽出結果を統合し、Macaque / Rat 分を Species へ移管したうえで Human のみを `rcs_corpus.csv` に整理した（旧称 `rcs_corpus_source.csv` は廃止）。
 
 当初は Macaque / Rat 論文分も含んでいたが、種別カバレッジ用途と分離するため **Macaque 100 件・Rat 44 件を Species 側へ移管**し、現行は **Human のみ**。
 
@@ -120,8 +119,7 @@ Challenge は Core 統合の副産物である。LLM-based Recursive Improvement
 
 ### 補足資産
 
-- `reports/CORPUS_REPORT_01.md` — 旧 559 行（動物種混在）に対する探索的 RCS 実行レポート。現行 415 行との数値は一致しない。
-- `build_core_improve/output/rcs_corpus_source_run1.csv` — 上記探索実行の生結果。
+- `build_core_improve/output/rcs_corpus_source_run1.csv` — 旧 `rcs_corpus_source.csv` 構成での探索的 RCS 実行結果（現行 `rcs_corpus.csv` とはスキーマ・件数が異なる場合あり）
 
 ---
 
@@ -198,7 +196,7 @@ build_testdata/
   rcs_core.csv              ← Core（検証済み）
   rcs_challenge.csv         ← Challenge（未検証）
   rcs_species.csv           ← Species（未検証）
-  rcs_corpus_source.csv     ← Corpus 生データ（未検証）
+  rcs_corpus.csv            ← Corpus（未検証）
   build_rcs_core.py
   build_rcs_species.py
   species_sources/            ← Species 入力
@@ -206,8 +204,6 @@ build_testdata/
     input/                    ← Core 元入力
     output/                   ← 各 Round 実行結果
     cursor_playground/        ← 分析スクリプト・ANALYSIS_REPORT
-  reports/
-    CORPUS_REPORT_01.md       ← Corpus 探索レポート（旧構成ベース）
 ```
 
 ---

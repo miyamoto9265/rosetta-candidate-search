@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 RESULTS_CSV = ROOT / "build_core_improve" / "output" / "rcs_corpus_source_run1.csv"
-SOURCE_CSV = ROOT / "rcs_corpus_source.csv"
+SOURCE_CSV = ROOT / "rcs_corpus.csv"
 CORE_CSV = ROOT / "rcs_core.csv"
 CHALLENGE_CSV = ROOT / "rcs_challenge.csv"
 OUT_JSON = ROOT / "build_core_improve" / "output" / "rcs_corpus_source_analysis.json"

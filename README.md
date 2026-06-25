@@ -16,12 +16,12 @@
 ```
 rcs/              コアアルゴリズム（正本。Lambda もここを import）
 web/              フロントエンド + Lambda HTTP アダプター
-scripts/          package_lambda.ps1 / .sh（デプロイ zip 作成）
+scripts/          デプロイ・運用スクリプト（package_lambda, build_generator_cache 等）
 build_testdata/   コーパス構築・評価データ
 docs/             仕様書
 ```
 
 ## ライブ環境
 
-- **検索 UI**: https://d5keesfj4srwa.cloudfront.net/
+- **検索 UI**: https://rcs.mymt.site/ （CloudFront: https://d5keesfj4srwa.cloudfront.net/）
 - **API**: `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates`

@@ -1,7 +1,7 @@
 # ROSETTA Candidate Search — テスト・品質管理
 
-**バージョン**: v0.3.0  
-**最終更新**: 2026-06-07  
+**バージョン**: v0.3.1（エンジン） / 精度評価は v0.3.0 ベース  
+**最終更新**: 2026-06-25  
 **詳細分析**: `build_testdata/build_core_improve/cursor_playground/ANALYSIS_REPORT/ANALYSIS_REPORT_SUMMARY.md`（LLM-based Recursive Improvement 総括）を参照
 
 ---
@@ -33,7 +33,7 @@
 | v0.1.0（初期） | 初期状態 | ~60% | ~60% |
 | v0.2.0 | alias 辞書整備（38件）+ exact match penalty 修正 | ~90% | ~85% |
 | v0.3.0 | 略語 lookup table + 2-pass scoring | 98% | 92.9% |
-| v0.3.0+（辞書追加後） | alias 辞書 41 → 69 件（+28件） | **100%** | **92.9%** |
+| v0.3.0+（辞書追加後） | alias 辞書 41 → 75 件（現行 CSV） | **100%** | **92.9%** |
 | round4_large_scale | 213件の新規総合テスト | — | **96.7%** |
 
 ---
@@ -56,6 +56,7 @@
 ```
 rcs/                              ← RCS エンジン（開発の正本）
   rosetta_candidate_generator.py
+  generator_cache.py              ← Lambda 用索引キャッシュ（pickle 生成）
   homba_alias_rules.csv
   homba_abbrev_rules.csv
   homba_token_rules.csv
@@ -64,12 +65,16 @@ rcs/                              ← RCS エンジン（開発の正本）
   rcs_test_interactive.py
   review.py                       ← review_flag（Lambda / CLI 共通）
 
+scripts/
+  package_lambda.ps1 / .sh
+  build_generator_cache.py
+
 build_testdata/
   PLAN.md
   build_rcs_core.py
   rcs_core.csv
   rcs_challenge.csv
-  rcs_corpus_source.csv
+  rcs_corpus.csv
   build_core_improve/
     input/                        ← ラウンド別テスト入力 CSV
     output/                       ← rcs_test_list の実行結果

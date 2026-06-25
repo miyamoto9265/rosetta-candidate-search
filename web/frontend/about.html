@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>このサイトについて — ROSETTA Candidate Search</title>
+    <meta name="description" content="ROSETTA Candidate Search (RCS) の目的・運営情報・プライバシー方針。脳領域名を HOMBA オントロジー候補にマッピングする研究用ツールです。パスワードや決済情報は収集しません。" />
+    <meta name="author" content="ROSETTA Candidate Search" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://rcs.mymt.site/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="このサイトについて — ROSETTA Candidate Search" />
+    <meta property="og:description" content="研究用の脳領域→HOMBA 候補検索ツール。運営情報とプライバシー方針。" />
+    <meta property="og:url" content="https://rcs.mymt.site/about.html" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="ROSETTA Candidate Search" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./site-nav.css" />
+    <link rel="stylesheet" href="./site-trust.css" />
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a href="./index.html" class="site-brand">ROSETTA Candidate Search</a>
+        <nav class="site-nav-links" aria-label="サイトメニュー">
+          <a href="./index.html">候補検索</a>
+          <a href="./scoring-guide.html">スコアリング解説</a>
+          <a href="./walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="./about.html" aria-current="page">このサイトについて</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">About</p>
+        <h1>このサイトについて</h1>
+        <p class="lead">
+          ROSETTA Candidate Search（RCS）は、 neuroscience 研究向けに公開している
+          <strong>脳領域名称の検索・照合ツール</strong>です。
+          フィッシング・マルウェア配布・個人情報収集を目的としたサイトではありません。
+        </p>
+      </section>
+
+      <section class="about-card">
+        <h2>目的</h2>
+        <p>
+          論文や atlas から抽出した脳領域・解剖学的構造名（例: <code>Pulvinar nucleus</code>、
+          <code>Left basolateral amygdala (BLA)</code>）を入力すると、
+          HOMBA（Human Occipital-and-More Brain Atlas）オントロジー上の候補 ID と名称を
+          スコア付きで返します。ROSETTA プロジェクトの候補生成エンジン（Python v0.3.1）を
+          ブラウザから利用できる公開 UI です。
+        </p>
+      </section>
+
+      <section class="about-card">
+        <h2>運営</h2>
+        <ul>
+          <li><strong>名称:</strong> ROSETTA Candidate Search (RCS)</li>
+          <li><strong>ドメイン:</strong> rcs.mymt.site（mymt.site 配下の研究用サブドメイン）</li>
+          <li><strong>ホスティング:</strong> Amazon Web Services（CloudFront + S3 + Lambda + API Gateway、リージョン ap-northeast-1）</li>
+          <li><strong>ソースコード:</strong> リポジトリ内 <code>rcs/</code>（コア）、<code>web/frontend/</code>（本 UI）</li>
+        </ul>
+      </section>
+
+      <section class="about-card" id="contact">
+        <h2>お問い合わせ・セキュリティ報告</h2>
+        <p>
+          本サイトに関する問い合わせ、Safe Browsing 等の誤検知の報告、セキュリティ上の懸念は、
+          リポジトリ管理者（ROSETTA プロジェクト運営者）までご連絡ください。
+        </p>
+        <p>
+          セキュリティポリシー: <a href="/.well-known/security.txt">/.well-known/security.txt</a>
+        </p>
+      </section>
+
+      <section class="about-card">
+        <h2>プライバシー・データの扱い</h2>
+        <ul>
+          <li>検索フォームに入力した<strong>脳領域テキスト</strong>は、候補生成のため API（AWS Lambda）に POST されます。</li>
+          <li>アカウント登録・ログイン機能はありません。</li>
+          <li>決済・パスワード・氏名・メールアドレス等の個人情報は<strong>収集しません</strong>。</li>
+          <li>Cookie によるトラッキングや第三者広告は使用していません。</li>
+        </ul>
+      </section>
+
+      <section class="about-card">
+        <h2>関連ページ</h2>
+        <ul>
+          <li><a href="./index.html">候補検索</a></li>
+          <li><a href="./scoring-guide.html">スコアリング解説</a></li>
+          <li><a href="./walkthrough-bla.html">Walkthrough (BLA)</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="./index.html">候補検索</a>
+          <a href="./about.html">このサイトについて</a>
+          <a href="./scoring-guide.html">スコアリング解説</a>
+          <a href="./humans.txt">humans.txt</a>
+          <a href="./robots.txt">robots.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · Engine v0.3.1 · &copy; ROSETTA project
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

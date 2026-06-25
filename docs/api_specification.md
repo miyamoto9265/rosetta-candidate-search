@@ -1,7 +1,7 @@
 # ROSETTA Candidate Search — API 仕様
 
-**バージョン**: v0.3.0  
-**最終更新**: 2026-05-17
+**バージョン**: v0.3.1  
+**最終更新**: 2026-06-25
 
 ---
 
@@ -10,7 +10,8 @@
 | 用途 | URL |
 |---|---|
 | **API** | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| **フロントエンド（検索 UI）** | `https://d5keesfj4srwa.cloudfront.net/` |
+| **フロントエンド（検索 UI）** | `https://rcs.mymt.site/` |
+| **CloudFront（代替 URL）** | `https://d5keesfj4srwa.cloudfront.net/` |
 
 ```
 POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates
@@ -146,22 +147,17 @@ for c in resp.json()["candidates"]:
 
 ---
 
-## 6. Lambda コンソールでのテスト
+## 6. Lambda 直接呼び出し（テスト）
 
-Lambda コンソールから直接テストする場合、API Gateway 形式のラッパーが必要:
+API Gateway 経由では通常の JSON ボディで問題ない。Lambda を直接呼ぶ場合は `event["body"]` 形式が必要:
 
-```json
-{
-  "requestContext": {
-    "http": {
-      "method": "POST"
-    }
-  },
-  "body": "{\"query\": \"LC\", \"top_k\": 1}"
-}
+```bash
+aws lambda invoke \
+  --function-name rcs-api \
+  --cli-binary-format raw-in-base64-out \
+  --payload '{"requestContext":{"http":{"method":"POST"}},"body":"{\"query\":\"LC\",\"top_k\":1}"}' \
+  /tmp/rcs-response.json
 ```
-
-通常の curl / Python リクエスト（API Gateway 経由）では通常のリクエストボディで問題ない。
 
 ---
 
@@ -171,9 +167,13 @@ Lambda コンソールから直接テストする場合、API Gateway 形式の�
 
 | ファイル | 役割 |
 |---|---|
-| `web/frontend/index.html` | 画面本体 |
-| `web/frontend/app.js` | API 呼び出しと結果表示 |
-| `web/frontend/styles.css` | スタイルシート |
-| `web/frontend/config.js` | `apiBaseUrl` を設定（API Gateway の Invoke URL を記載） |
+| `index.html` | 検索 UI |
+| `app.js` | API 呼び出しと結果表示 |
+| `styles.css` | スタイルシート |
+| `config.js` | `apiBaseUrl`（API Gateway の Invoke URL） |
+| `about.html` | サイト説明 |
+| `scoring-guide.html` | スコアリング解説 |
+| `walkthrough-bla.html` | 具体例ウォークスルー |
+| `site-nav.css`, `site-trust.css` | 共通スタイル |
 
-`config.js` の `apiBaseUrl` を API Gateway の Invoke URL に合わせること。
+`config.js` の `apiBaseUrl` を API Gateway の Invoke URL に合わせること。運用手順は [AWS 運用ガイド](aws_operations_guide.md) を参照。

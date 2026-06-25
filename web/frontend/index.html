@@ -3,25 +3,79 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ROSETTA Candidate Search</title>
+    <title>ROSETTA Candidate Search — 脳領域 HOMBA 候補検索</title>
+    <meta name="description" content="ROSETTA Candidate Search (RCS): 脳領域・解剖学的構造名から HOMBA オントロジーの候補をスコア付きで検索する研究用 Web アプリ。パスワード・決済情報は収集しません。" />
+    <meta name="author" content="ROSETTA Candidate Search" />
+    <meta name="robots" content="index, follow" />
+    <meta name="application-name" content="ROSETTA Candidate Search" />
+    <link rel="canonical" href="https://rcs.mymt.site/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ROSETTA Candidate Search — 脳領域 HOMBA 候補検索" />
+    <meta property="og:description" content="研究用ツール: 脳領域名を HOMBA ID・名称の候補にマッピング。フィッシング・個人情報収集サイトではありません。" />
+    <meta property="og:url" content="https://rcs.mymt.site/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="ROSETTA Candidate Search" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="ROSETTA Candidate Search" />
+    <meta name="twitter:description" content="Brain region name to HOMBA candidate search — research tool." />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./site-nav.css" />
+    <link rel="stylesheet" href="./site-trust.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ROSETTA Candidate Search",
+      "alternateName": "RCS",
+      "url": "https://rcs.mymt.site/",
+      "description": "Research web application that maps brain region and anatomical structure names to HOMBA ontology candidates with confidence scores.",
+      "applicationCategory": "ResearchApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ROSETTA Candidate Search Project",
+        "url": "https://rcs.mymt.site/about.html"
+      }
+    }
+    </script>
   </head>
   <body>
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a href="./index.html" class="site-brand">ROSETTA Candidate Search</a>
+        <nav class="site-nav-links" aria-label="サイトメニュー">
+          <a href="./index.html" aria-current="page">候補検索</a>
+          <a href="./scoring-guide.html">スコアリング解説</a>
+          <a href="./walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="./about.html">このサイトについて</a>
+        </nav>
+      </div>
+    </header>
     <main class="page">
       <section class="hero">
         <p class="eyebrow">ROSETTA Candidate Search</p>
         <h1>脳領域名からHOMBA候補を検索</h1>
         <p class="lead">
           脳領域・解剖学的構造名を1つ入力すると、HOMBA IDと名称の候補を返します。
+          neuroscience 研究向けの公開ツールです。
         </p>
       </section>
 
       <section class="search-card" aria-label="候補検索フォーム">
-        <label for="query">入力テキスト</label>
+        <label for="query">入力テキスト（脳領域・解剖構造名）</label>
         <textarea
           id="query"
           rows="3"
           placeholder="例: Pulvinar nucleus"
+          autocomplete="off"
+          spellcheck="false"
         ></textarea>
 
         <div class="controls">
@@ -72,6 +126,24 @@
         </div>
       </section>
     </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="./index.html">候補検索</a>
+          <a href="./about.html">このサイトについて</a>
+          <a href="./scoring-guide.html">スコアリング解説</a>
+          <a href="./humans.txt">humans.txt</a>
+          <a href="./robots.txt">robots.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · Engine v0.3.1 · <a href="./about.html#contact">Contact / security</a>
+        </p>
+      </div>
+    </footer>
 
     <script src="./config.js"></script>
     <script src="./app.js"></script>

@@ -1,0 +1,62 @@
+{
+  "Comment": "Add rcs.mymt.site DNS and ACM validation",
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "_9a459e496f94c73e96856346639326e9.rcs.mymt.site.",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [{"Value": "_802b7c243e47aa795232b465674834e1.jkddzztszm.acm-validations.aws."}]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "rcs.mymt.site.",
+        "Type": "A",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "d5keesfj4srwa.cloudfront.net.",
+          "EvaluateTargetHealth": false
+        }
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "rcs.mymt.site.",
+        "Type": "AAAA",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "d5keesfj4srwa.cloudfront.net.",
+          "EvaluateTargetHealth": false
+        }
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "rcs.mymt.site.",
+        "Type": "A",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "d5keesfj4srwa.cloudfront.net.",
+          "EvaluateTargetHealth": false
+        }
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+        "Name": "rcs.mymt.site.",
+        "Type": "AAAA",
+        "AliasTarget": {
+          "HostedZoneId": "Z2FDTNDATAQYW2",
+          "DNSName": "d5keesfj4srwa.cloudfront.net.",
+          "EvaluateTargetHealth": false
+        }
+      }
+    }
+  ]
+}

@@ -4,6 +4,42 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = Split-Path -Parent $PSScriptRoot
 $PackageDir = Join-Path $RepoRoot "dist\package"
 $ZipPath = Join-Path $RepoRoot "dist\lambda.zip"
+$CachePath = Join-Path $RepoRoot "rcs\generator_cache.pkl"
+
+function Invoke-GeneratorCacheBuild {
+    $DockerImage = "public.ecr.aws/lambda/python:3.14"
+    $DockerArgs = @(
+        "run", "--rm",
+        "-v", "${RepoRoot}:/repo",
+        "-w", "/repo",
+        $DockerImage,
+        "python", "scripts/build_generator_cache.py"
+    )
+
+    try {
+        docker info *> $null
+        Write-Host "Building generator cache with Docker ($DockerImage) ..."
+        & docker @DockerArgs
+        if ($LASTEXITCODE -ne 0) {
+            throw "Docker cache build failed with exit code $LASTEXITCODE"
+        }
+        return
+    } catch {
+        Write-Warning "Docker unavailable or cache build failed; using local Python."
+    }
+
+    Write-Host "Building generator cache with local Python ..."
+    python (Join-Path $RepoRoot "scripts\build_generator_cache.py")
+    if ($LASTEXITCODE -ne 0) {
+        throw "Local cache build failed with exit code $LASTEXITCODE"
+    }
+}
+
+Invoke-GeneratorCacheBuild
+
+if (-not (Test-Path $CachePath)) {
+    throw "Missing generator cache: $CachePath"
+}
 
 if (Test-Path (Join-Path $RepoRoot "dist")) {
     Remove-Item -Recurse -Force (Join-Path $RepoRoot "dist")
