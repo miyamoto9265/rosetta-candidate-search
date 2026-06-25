@@ -16,7 +16,7 @@
 | **Core** | 標準名称集 | `rcs_core.csv` | **完成**（230件） |
 | **Challenge** | 改善課題集 | `rcs_challenge.csv` | **部分完成**（13件） |
 | **Species** | 種別カバレッジ | `rcs_species.csv` | **完成**（555件・Macaque/Rat） |
-| **Corpus** | 論文コーパス | `rcs_corpus.csv` | 未作成 |
+| **Corpus** | 論文コーパス | `rcs_corpus.csv` | **作成済み**（415件・Human のみ、未検証） |
 
 - 会話・ドキュメントでは **Core / Challenge / Species / Corpus** と呼ぶ（例: 「Core を回す」）
 - ファイル・スクリプトでは `rcs_` プレフィックスで統一（例: `build_rcs_core.py`）

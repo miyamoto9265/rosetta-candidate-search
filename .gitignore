@@ -18,3 +18,4 @@ Thumbs.db
 
 # Lambda build artifact
 dist/
+rcs/generator_cache.pkl

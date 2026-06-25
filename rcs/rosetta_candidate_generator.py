@@ -25,6 +25,8 @@ from pathlib import Path
 from typing import Iterable
 
 
+ENGINE_VERSION = "0.3.1"
+
 HOMBA_ID_FIELD = "unified_ontology_id"
 HOMBA_NAME_FIELD = "unified_ontology_name"
 HOMBA_ACRONYM_FIELD = "unified_ontology_acronym"

@@ -15,14 +15,18 @@ ROSETTA Candidate Search（RCS）は、脳領域・解剖学的構造名のテ�
 
 ## 2. 入力データファイル
 
-RCS は起動時に **`rcs/`** ディレクトリ内の以下 4 つの CSV ファイルを読み込む（`rosetta_candidate_generator.py` と同ディレクトリ）。
+RCS は **`rcs/`** ディレクトリ内の以下 4 つの CSV ファイルを読み込む（`rosetta_candidate_generator.py` と同ディレクトリ）。
 
 | ファイル名 | 役割 |
 |---|---|
 | `HOMBA_v1_fixed.csv` | HOMBA 本体データ。ID・標準名・略語・DHBA名・階層情報を含む |
 | `homba_token_rules.csv` | 語の扱いを定義。stopword・laterality語・weak_terms・modifier_terms を設定 |
-| `homba_alias_rules.csv` | エントリ側の同義語・別表記ルール（69件）。HOMBA 側の別名を拡張するために使用 |
+| `homba_alias_rules.csv` | エントリ側の同義語・別表記ルール（75件）。HOMBA 側の別名を拡張するために使用 |
 | `homba_abbrev_rules.csv` | クエリ側専用の略語展開ルール（37件）。`LC` → `locus coeruleus` のような展開 |
+
+### 2-0. Lambda デプロイ時の索引キャッシュ
+
+本番 Lambda では、起動時の索引構築を省略するため **`generator_cache.pkl`**（`scripts/build_generator_cache.py` で生成）をデプロイ zip に同梱する。キャッシュが無効な場合のみ上記 CSV から `_load_homba_csv()` → `_build_indexes()` を実行する。詳細は [AWS 運用ガイド](aws_operations_guide.md) を参照。
 
 ### 2-1. alias_rules の役割
 

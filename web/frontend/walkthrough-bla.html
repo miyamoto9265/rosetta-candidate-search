@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ROSETTA Candidate Search の処理フロー詳細（BLA クエリ例）。研究用ツールの内部動作ドキュメント。" />
+  <meta name="author" content="ROSETTA Candidate Search" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rcs.mymt.site/walkthrough-bla.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RCS Walkthrough — Left basolateral amygdala (BLA)" />
+  <meta property="og:description" content="ROSETTA Candidate Search の処理フロー詳細（BLA クエリ例）。研究用ツールの内部動作ドキュメント。" />
+  <meta property="og:url" content="https://rcs.mymt.site/walkthrough-bla.html" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="ROSETTA Candidate Search" />
+  <link rel="stylesheet" href="site-trust.css" />
+
+  <link rel="stylesheet" href="site-nav.css" />
+  <title>RCS Walkthrough — Left basolateral amygdala (BLA)</title>
+  <style>
+
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #1a1f2e;
+      --muted: #5c6478;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e2e8f0;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+      --success: #059669;
+      --warning: #d97706;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .layout {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    header.hero .eyebrow {
+      margin: 0 0 0.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    header.hero h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    header.hero p {
+      margin: 0;
+      max-width: 52em;
+      opacity: 0.92;
+      font-size: 1.02rem;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .meta-bar span {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav.toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    nav.toc h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      columns: 2;
+      column-gap: 2rem;
+    }
+
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav.toc a:hover { text-decoration: underline; }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    section h2 {
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-soft);
+    }
+
+    section h3 {
+      margin: 1.5rem 0 0.75rem;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+
+    p { margin: 0 0 1rem; }
+
+    ul, ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+
+    li { margin-bottom: 0.35rem; }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .callout.warn {
+      background: #fef3c7;
+      border-left-color: var(--warning);
+    }
+
+    pre.formula {
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      overflow-x: auto;
+      font-family: "Cascadia Code", "Consolas", "SF Mono", monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 0.75rem 0 1rem;
+    }
+
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      font-size: 0.88em;
+      background: #f1f5f9;
+      padding: 0.12em 0.35em;
+      border-radius: 4px;
+    }
+
+    pre.formula code {
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+    }
+
+    .param-table td:first-child {
+      font-family: "Cascadia Code", Consolas, monospace;
+      white-space: nowrap;
+      color: #1d4ed8;
+    }
+
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1rem 0;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .flow-num {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .flow-body {
+      flex: 1;
+      padding-bottom: 1.25rem;
+      border-left: 2px dashed var(--border);
+      margin-left: 1rem;
+      padding-left: 1.25rem;
+    }
+
+    .flow-step:last-child .flow-body {
+      border-left: none;
+      padding-bottom: 0;
+    }
+
+    .flow-body strong { display: block; margin-bottom: 0.25rem; }
+
+    .example-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      margin: 1rem 0;
+    }
+
+    .example-box h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: var(--success);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      background: #ecfdf5;
+      color: var(--success);
+      vertical-align: middle;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
+
+
+    /* Walkthrough pipeline diagram */
+    .query-input {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 1rem 0 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .query-input small {
+      display: block;
+      font-weight: 400;
+      font-size: 0.82rem;
+      opacity: 0.85;
+      margin-top: 0.35rem;
+    }
+
+    .pipeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1.5rem 0;
+    }
+
+    .pipe-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      position: relative;
+    }
+
+    .pipe-arrow-down {
+      display: flex;
+      justify-content: center;
+      padding: 0.35rem 0;
+      color: var(--accent);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .pipe-node {
+      flex: 1;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      font-size: 0.88rem;
+      position: relative;
+    }
+
+    .pipe-node .node-title {
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+
+    .pipe-node .node-value {
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .pipe-node.input-node  { border-color: #2563eb; background: #eff6ff; }
+    .pipe-node.input-node  .node-title { color: #1d4ed8; }
+    .pipe-node.search-node { border-color: #7c3aed; background: #f5f3ff; }
+    .pipe-node.search-node .node-title { color: #6d28d9; }
+    .pipe-node.score-node  { border-color: #059669; background: #ecfdf5; }
+    .pipe-node.score-node  .node-title { color: #047857; }
+    .pipe-node.rank-node   { border-color: #d97706; background: #fffbeb; }
+    .pipe-node.rank-node   .node-title { color: #b45309; }
+    .pipe-node.skip-node   { border-color: #94a3b8; background: #f8fafc; opacity: 0.85; }
+    .pipe-node.skip-node   .node-title { color: #64748b; }
+
+    .pipe-split {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .pipe-split-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.05em;
+    }
+
+    .merge-bar {
+      background: #e2e8f0;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .score-breakdown {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .score-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      background: #fafafa;
+    }
+
+    .score-card.winner {
+      border-color: var(--success);
+      background: #ecfdf5;
+    }
+
+    .score-card.loser {
+      border-color: #fca5a5;
+      background: #fef2f2;
+    }
+
+    .score-card h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .score-card .final {
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-family: "Cascadia Code", Consolas, monospace;
+      margin: 0.5rem 0;
+    }
+
+    .score-card.winner .final { color: var(--success); }
+    .score-card.loser  .final { color: #dc2626; }
+
+    .mermaid-wrap {
+      background: #fafbfc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 0.5rem;
+      margin: 1.25rem 0;
+      overflow-x: auto;
+    }
+
+    .mermaid-wrap .mermaid {
+      display: flex;
+      justify-content: center;
+    }
+
+    .text-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .text-chain .stage {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .text-chain .stage-head {
+      background: #f1f5f9;
+      padding: 0.5rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .text-chain .stage-head span {
+      font-weight: 400;
+      color: var(--muted);
+      margin-left: 0.5rem;
+    }
+
+    .text-chain ol.full-list {
+      margin: 0;
+      padding: 0.65rem 0.85rem 0.75rem 2.2rem;
+      font-family: "Cascadia Code", Consolas, monospace;
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+
+    .text-chain ol.full-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    .text-chain .stage-note {
+      padding: 0 0.85rem 0.65rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .variant-block {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin: 1rem 0;
+      overflow: hidden;
+    }
+
+    .variant-block .vb-head {
+      background: #eff6ff;
+      border-bottom: 1px solid #bfdbfe;
+      padding: 0.65rem 1rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #1e40af;
+    }
+
+    .variant-block .vb-head code {
+      font-size: 0.88em;
+    }
+
+    .variant-block .vb-body {
+      padding: 0.75rem 1rem 1rem;
+      font-size: 0.88rem;
+    }
+
+    .variant-block table {
+      margin: 0.5rem 0 0;
+      font-size: 0.82rem;
+    }
+
+    .dup-mark {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-style: italic;
+    }
+
+
+    @media (max-width: 720px) {
+      .pipe-split { grid-template-columns: 1fr; }
+      .score-breakdown { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      nav.toc ol { columns: 1; }
+      section { padding: 1.25rem; }
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.92rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav-back:hover { text-decoration: underline; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#dbeafe",
+          primaryBorderColor: "#2563eb",
+          primaryTextColor: "#1a1f2e",
+          lineColor: "#64748b",
+          secondaryColor: "#f5f3ff",
+          tertiaryColor: "#ecfdf5",
+          fontFamily: "Segoe UI, Hiragino Sans, Meiryo, sans-serif"
+        },
+        flowchart: { curve: "basis", padding: 16 }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="site-brand">ROSETTA Candidate Search</a>
+      <nav class="site-nav-links" aria-label="サイトメニュー">
+      <a href="index.html">候補検索</a>
+      <a href="scoring-guide.html">スコアリング解説</a>
+      <a href="walkthrough-bla.html" aria-current="page">Walkthrough (BLA)</a>
+      <a href="about.html">このサイトについて</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <header class="hero">
+      <p class="eyebrow">RCS Walkthrough · 詳細版</p>
+      <h1>Left basolateral amygdala (BLA)</h1>
+      <p>
+        alias / abbrev / laterality / 修飾語が絡む複合クエリの処理フロー。
+        クエリバリアント全件・バリアント別検索結果・候補リストを省略なく記載します。
+      </p>
+    </header>
+
+
+    <div class="meta-bar">
+      <span>クエリ: Left basolateral amygdala (BLA)</span>
+      <span>バリアント: 15 件</span>
+      <span>候補: 53 → top 5</span>
+      <span>エンジン: v0.3.1</span>
+    </div>
+
+<section id="walkthrough">
+      <h2>処理フロー（ダイアグラム）</h2>
+      <p class="lead">
+        ここでは <strong>「Left basolateral amygdala (BLA)」</strong> を題材に、
+        laterality 除去 · 括弧内略語 · <code>homba_alias_rules.csv</code> · <code>homba_abbrev_rules.csv</code>
+        が絡み合い <strong>15 個</strong>のクエリバリアントが生成される例を、実測値付きで追います。
+        （<code>rcs/HOMBA_v1_fixed.csv</code> + v0.3.1）
+      </p>
+
+      <div class="query-input">
+        Left basolateral amygdala (BLA)
+        <small>laterality + 括弧内略語 BLA + alias 展開（amygdala↔amygdaloid complex, basolateral amygdala↔BLA グループ）が同時に働く例</small>
+      </div>
+
+      <h3>2-1. 全体フロー（Mermaid ダイアグラム）</h3>
+      <div class="mermaid-wrap">
+        <pre class="mermaid">
+flowchart TD
+  IN["入力\nLeft basolateral amygdala (BLA)"]
+
+  subgraph PRE["前処理"]
+    NORM["正規化\nleft basolateral amygdala bla"]
+    VAR["クエリバリアント\nbase 4 → alias 12 → abbrev 18\n→ 重複除去 15 件"]
+    MOD["修飾語\nbla（括弧内）"]
+  end
+
+  subgraph SEARCH["候補収集 · 15 バリアント × 3 手法"]
+    EX["exact\n複数バリアントで HOMBA 別名完全一致"]
+    FU["fuzzy\nalias 展開後の長いバリアント含む\nINTERSECTION / 全スキャン"]
+    BM["bm25\n各バリアント UNION 絞り込み"]
+  end
+
+  MERGE["53 候補に統合"]
+
+  subgraph PASS["2-pass スコアリング"]
+    S1["第1パス → prelim_scores"]
+    HIER{"親昇格\n修飾語 bla あり?"}
+    SKIP["スキップ"]
+    S2["第2パス → 最終スコア"]
+  end
+
+  OUT["1位 · 0.733\n basolateral nuclear group of amygdala\n modifier bla 不一致 → ×0.88"]
+
+  IN --> NORM --> VAR --> MOD --> EX & FU & BM --> MERGE --> S1 --> HIER
+  HIER -->|Yes| SKIP --> S2 --> OUT
+
+  style IN fill:#2563eb,color:#fff
+  style OUT fill:#ecfdf5,stroke:#059669
+  style SKIP fill:#f1f5f9,stroke:#94a3b8
+        </pre>
+      </div>
+
+      <h3>2-2. 前処理で生成される全テキスト（省略なし）</h3>
+      <div class="text-chain">
+        <div class="stage">
+          <div class="stage-head">入力</div>
+          <ol class="full-list">
+  <li>Left basolateral amygdala (BLA)</li>
+</ol>
+        </div>
+        <div class="stage">
+          <div class="stage-head">正規化 <span>normalize_text()</span></div>
+          <ol class="full-list">
+  <li>left basolateral amygdala bla</li>
+</ol>
+        </div>
+        <div class="stage">
+          <div class="stage-head">ベースバリアント <span>4 件</span></div>
+          <ol class="full-list">
+  <li>Left basolateral amygdala (BLA)</li>
+  <li>basolateral amygdala bla <span class="dup-mark">← strip_laterality（left 除去）</span></li>
+  <li>Left basolateral amygdala   <span class="dup-mark">← strip_parenthetical（括弧 BLA 除去）</span></li>
+  <li>Left basolateral amygdala   <span class="dup-mark">← excluding 除去（本例は変化なし・重複）</span></li>
+</ol>
+        </div>
+        <div class="stage">
+          <div class="stage-head">alias_rules 適用後 <span>expand_with_alias_rules() · 12 件</span></div>
+          <ol class="full-list">
+  <li>Left basolateral amygdala (BLA)</li>
+  <li>left basolateral amygdaloid complex bla</li>
+  <li>left basolateral nuclear group of amygdala bla</li>
+  <li>basolateral amygdala bla</li>
+  <li>basolateral amygdaloid complex bla</li>
+  <li>basolateral nuclear group of amygdala bla</li>
+  <li>Left basolateral amygdala</li>
+  <li>left basolateral amygdaloid complex</li>
+  <li>left basolateral nuclear group of amygdala</li>
+  <li>Left basolateral amygdala</li>
+  <li>left basolateral amygdaloid complex</li>
+  <li>left basolateral nuclear group of amygdala</li>
+</ol>
+          <p class="stage-note">主な展開: <code>amygdala</code>→<code>amygdaloid complex</code>、
+            <code>basolateral amygdala</code>→<code>basolateral nuclear group of amygdala</code>、
+            <code>nucleus</code>↔<code>nuclei</code>（単語境界置換含む）</p>
+        </div>
+        <div class="stage">
+          <div class="stage-head">abbrev_rules 適用後 <span>apply_abbrev_rules() · 18 件</span></div>
+          <ol class="full-list">
+  <li>Left basolateral amygdala (BLA)</li>
+  <li>left basolateral amygdala basolateral nuclear group of amygdala</li>
+  <li>left basolateral amygdaloid complex bla</li>
+  <li>left basolateral amygdaloid complex basolateral nuclear group of amygdala</li>
+  <li>left basolateral nuclear group of amygdala bla</li>
+  <li>left basolateral nuclear group of amygdala basolateral nuclear group of amygdala</li>
+  <li>basolateral amygdala bla</li>
+  <li>basolateral amygdala basolateral nuclear group of amygdala</li>
+  <li>basolateral amygdaloid complex bla</li>
+  <li>basolateral amygdaloid complex basolateral nuclear group of amygdala</li>
+  <li>basolateral nuclear group of amygdala bla</li>
+  <li>basolateral nuclear group of amygdala basolateral nuclear group of amygdala</li>
+  <li>Left basolateral amygdala</li>
+  <li>left basolateral amygdaloid complex</li>
+  <li>left basolateral nuclear group of amygdala</li>
+  <li>Left basolateral amygdala</li>
+  <li>left basolateral amygdaloid complex</li>
+  <li>left basolateral nuclear group of amygdala</li>
+</ol>
+          <p class="stage-note">主な展開: 括弧内 <code>BLA</code> およびトークン <code>bla</code> →
+            <code>basolateral nuclear group of amygdala</code>（3 文字以上 abbrev の単語境界置換）</p>
+        </div>
+        <div class="stage">
+          <div class="stage-head">最終クエリバリアント <span>unique_preserve_order() 後 · 15 件</span></div>
+          <ol class="full-list">
+  <li>Left basolateral amygdala (BLA)</li>
+  <li>left basolateral amygdala basolateral nuclear group of amygdala</li>
+  <li>left basolateral amygdaloid complex bla</li>
+  <li>left basolateral amygdaloid complex basolateral nuclear group of amygdala</li>
+  <li>left basolateral nuclear group of amygdala bla</li>
+  <li>left basolateral nuclear group of amygdala basolateral nuclear group of amygdala</li>
+  <li>basolateral amygdala bla</li>
+  <li>basolateral amygdala basolateral nuclear group of amygdala</li>
+  <li>basolateral amygdaloid complex bla</li>
+  <li>basolateral amygdaloid complex basolateral nuclear group of amygdala</li>
+  <li>basolateral nuclear group of amygdala bla</li>
+  <li>basolateral nuclear group of amygdala basolateral nuclear group of amygdala</li>
+  <li>Left basolateral amygdala</li>
+  <li>left basolateral amygdaloid complex</li>
+  <li>left basolateral nuclear group of amygdala</li>
+</ol>
+        </div>
+        <div class="stage">
+          <div class="stage-head">修飾語 <span>extract_modifier_terms() · 1 件</span></div>
+          <ol class="full-list">
+  <li>bla</li>
+</ol>
+          <p class="stage-note">括弧内 <code>BLA</code> が正規化され <code>bla</code> として抽出。
+            出力: <code>bla</code></p>
+        </div>
+      </div>
+
+      <h3>2-3. 各バリアントのトークン・インデックス・検索結果（15 件すべて）</h3>
+      <p>最終 15 バリアントそれぞれについて、トークン列・df・絞り込み件数・fuzzy ヒット全件を示します。</p>
+
+      <div class="variant-block">
+        <div class="vb-head">バリアント 1: <code>Left basolateral amygdala (BLA)</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral amygdala bla</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>bla</td><td>0</td><td>INTERSECTION 選定</td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>87 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 20 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.920000</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.620066</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.613560</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.594206</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.585840</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.546762</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.546708</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.539276</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.525862</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdala</td></tr><tr><td>0.491379</td><td>HOMBA:10401</td><td>lateral (multiform) division of MD</td><td>lateral</td></tr><tr><td>0.491379</td><td>HOMBA:10454</td><td>magnocellular (lateral) division of LHN</td><td>lateral</td></tr><tr><td>0.491379</td><td>HOMBA:12396</td><td>dentate (lateral) nucleus</td><td>lateral</td></tr><tr><td>0.491379</td><td>HOMBA:12588</td><td>external (accessory/lateral) cuneate nucleus</td><td>lateral</td></tr><tr><td>0.485873</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.483311</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.483271</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.477003</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr><tr><td>0.470418</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central amygdala</td></tr><tr><td>0.466628</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus</td></tr><tr><td>0.458407</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 2: <code>left basolateral amygdala basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral amygdala basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 26 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.837302</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.674131</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.657665</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.634378</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td></tr><tr><td>0.617226</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.614284</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.596493</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td></tr><tr><td>0.584430</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.583603</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.583140</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.577295</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.567460</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.523521</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.521491</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.513901</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.499440</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.483412</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.474632</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.474045</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdala</td></tr><tr><td>0.473587</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus   of amygdala</td></tr><tr><td>0.469723</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nuclei of amygdala</td></tr><tr><td>0.468700</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.454161</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclear group</td></tr><tr><td>0.452526</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdala</td></tr><tr><td>0.451718</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdala</td></tr><tr><td>0.451429</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdala</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 3: <code>left basolateral amygdaloid complex bla</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral amygdaloid complex bla</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td></td></tr><tr><td>amygdaloid</td><td>49</td><td></td></tr><tr><td>complex</td><td>77</td><td></td></tr><tr><td>bla</td><td>0</td><td>INTERSECTION 選定</td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>123 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 34 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.711538</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdaloid complex</td></tr><tr><td>0.702089</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.670348</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.642567</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.634760</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.604950</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.570604</td><td>HOMBA:10383</td><td>extended amygdala</td><td>extended amygdaloid complex</td></tr><tr><td>0.567900</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.556042</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.555985</td><td>HOMBA:AA30222</td><td>regions of amygdaloid complex</td><td>regions of amygdaloid complex</td></tr><tr><td>0.555138</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.544753</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex</td></tr><tr><td>0.528195</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdaloid complex</td></tr><tr><td>0.524697</td><td>HOMBA:AA30243</td><td>regions of extended amygdala</td><td>regions of extended amygdaloid complex</td></tr><tr><td>0.523131</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.522393</td><td>HOMBA:10387</td><td>sublenticular extended amygdala</td><td>sublenticular extended amygdaloid complex</td></tr><tr><td>0.522175</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted   part of amygdaloid complex</td></tr><tr><td>0.517501</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdaloid complex</td></tr><tr><td>0.514072</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.491117</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nucleus of amygdaloid complex</td></tr><tr><td>0.483066</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.482951</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex</td></tr><tr><td>0.478414</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.477342</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex</td></tr><tr><td>0.475297</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted (diffuse) part of amygdaloid complex</td></tr><tr><td>0.475297</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted part of amygdaloid complex diffuse</td></tr><tr><td>0.468326</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdaloid complex</td></tr><tr><td>0.467495</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex rostral</td></tr><tr><td>0.460973</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.460335</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex accessory basal nucleus</td></tr><tr><td>0.460324</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex caudal</td></tr><tr><td>0.457008</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.454762</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.452601</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior rostral cortical nucleus of amygdaloid complex</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 4: <code>left basolateral amygdaloid complex basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral amygdaloid complex basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdaloid</td><td>49</td><td></td></tr><tr><td>complex</td><td>77</td><td></td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>204 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 34 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.772480</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.756849</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.658675</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.633685</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.613855</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.612555</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.592466</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.575971</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td></tr><tr><td>0.571976</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.561080</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td></tr><tr><td>0.538389</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.535021</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.531814</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.513441</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdala</td></tr><tr><td>0.511254</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.506516</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.496575</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdaloid complex</td></tr><tr><td>0.494651</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.493150</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.491498</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex</td></tr><tr><td>0.491007</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdaloid complex</td></tr><tr><td>0.485822</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.485496</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex accessory basal nucleus</td></tr><tr><td>0.484230</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.478011</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdaloid complex</td></tr><tr><td>0.463924</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex rostral</td></tr><tr><td>0.463183</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdaloid complex</td></tr><tr><td>0.462841</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.458529</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex caudal</td></tr><tr><td>0.456815</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.455517</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.455183</td><td>HOMBA:10406</td><td>lateral nuclear complex of thalamus</td><td>lateral nuclear complex of thalamus</td></tr><tr><td>0.451697</td><td>HOMBA:AA30289</td><td>ventroanterior-ventrolateral nuclear complex of thalamus</td><td>ventroanterior-ventrolateral nuclear complex of thalamus</td></tr><tr><td>0.450717</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nucleus of amygdaloid complex</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 5: <code>left basolateral nuclear group of amygdala bla</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral nuclear group of amygdala bla</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td></td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>bla</td><td>0</td><td>INTERSECTION 選定</td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 34 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.920000</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.793478</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.717570</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.653811</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.650371</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.642212</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td></tr><tr><td>0.627665</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.627523</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.613357</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.612661</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td></tr><tr><td>0.605893</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.563958</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.553726</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.548481</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.543754</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.539899</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.515662</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.514947</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.508016</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.503780</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus   of amygdala</td></tr><tr><td>0.499175</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nuclei of amygdala</td></tr><tr><td>0.497441</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdala</td></tr><tr><td>0.488821</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdala</td></tr><tr><td>0.482271</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclear group</td></tr><tr><td>0.478526</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdala</td></tr><tr><td>0.477455</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclei of amygdala</td></tr><tr><td>0.472415</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.470352</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus</td></tr><tr><td>0.467664</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdala</td></tr><tr><td>0.467228</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr><tr><td>0.464755</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr><tr><td>0.455377</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus)</td></tr><tr><td>0.452861</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nucleus of amygdala</td></tr><tr><td>0.451692</td><td>HOMBA:11553</td><td>lateral cell groups of basal nucleus of Meynert</td><td>lateral cell groups of basal nuclei</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 6: <code>left basolateral nuclear group of amygdala basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral nuclear group of amygdala basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 21 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.798095</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.667510</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.632893</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.627923</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.627597</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.586478</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td></tr><tr><td>0.585194</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.582803</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.562969</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td></tr><tr><td>0.555923</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.551019</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.509947</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.501525</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.496755</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.493426</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.486269</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.484470</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.477169</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.473650</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.460362</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus)</td></tr><tr><td>0.455685</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 7: <code>basolateral amygdala bla</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>basolateral amygdala bla</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>bla</td><td>0</td><td>INTERSECTION 選定</td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>87 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 25 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.920000</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.678550</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.670806</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.639678</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.629992</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.589083</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.588374</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.583333</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdala</td></tr><tr><td>0.579766</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.541667</td><td>HOMBA:10401</td><td>lateral (multiform) division of MD</td><td>lateral</td></tr><tr><td>0.541667</td><td>HOMBA:10454</td><td>magnocellular (lateral) division of LHN</td><td>lateral</td></tr><tr><td>0.541667</td><td>HOMBA:12396</td><td>dentate (lateral) nucleus</td><td>lateral</td></tr><tr><td>0.541667</td><td>HOMBA:12588</td><td>external (accessory/lateral) cuneate nucleus</td><td>lateral</td></tr><tr><td>0.524820</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.524064</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr><tr><td>0.522649</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.518657</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central amygdala</td></tr><tr><td>0.513191</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.511544</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus</td></tr><tr><td>0.493958</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr><tr><td>0.479969</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus)</td></tr><tr><td>0.464458</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.464291</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.458205</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.455430</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 8: <code>basolateral amygdala basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>basolateral amygdala basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> レアトークン <code>basolateral</code>, <code>group</code> の INTERSECTION → <strong>3 件</strong></p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 3 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.909302</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.721118</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.716448</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 9: <code>basolateral amygdaloid complex bla</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>basolateral amygdaloid complex bla</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdaloid</td><td>49</td><td></td></tr><tr><td>complex</td><td>77</td><td></td></tr><tr><td>bla</td><td>0</td><td>INTERSECTION 選定</td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>123 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 49 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.779412</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdaloid complex</td></tr><tr><td>0.758333</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.716287</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.687784</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.678744</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.649320</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.620053</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.610002</td><td>HOMBA:AA30222</td><td>regions of amygdaloid complex</td><td>regions of amygdaloid complex</td></tr><tr><td>0.609838</td><td>HOMBA:10383</td><td>extended amygdala</td><td>extended amygdaloid complex</td></tr><tr><td>0.585984</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.585417</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.584342</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex</td></tr><tr><td>0.565234</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted   part of amygdaloid complex</td></tr><tr><td>0.557989</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdaloid complex</td></tr><tr><td>0.557144</td><td>HOMBA:AA30243</td><td>regions of extended amygdala</td><td>regions of extended amygdaloid complex</td></tr><tr><td>0.554850</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdaloid complex</td></tr><tr><td>0.546756</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.541308</td><td>HOMBA:10387</td><td>sublenticular extended amygdala</td><td>sublenticular extended amygdaloid complex</td></tr><tr><td>0.539587</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.537761</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nucleus of amygdaloid complex</td></tr><tr><td>0.520057</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.514672</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.514383</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex</td></tr><tr><td>0.509280</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted part of amygdaloid complex diffuse</td></tr><tr><td>0.508140</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex</td></tr><tr><td>0.502814</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdaloid complex</td></tr><tr><td>0.500305</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted (diffuse) part of amygdaloid complex</td></tr><tr><td>0.494690</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex rostral</td></tr><tr><td>0.492054</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.487399</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex caudal</td></tr><tr><td>0.486322</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex accessory basal nucleus</td></tr><tr><td>0.485007</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.484320</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.478960</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior rostral cortical nucleus of amygdaloid complex</td></tr><tr><td>0.471668</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior caudal cortical nucleus of amygdaloid complex</td></tr><tr><td>0.468344</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.466979</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus accessory basal nucleus of amygdaloid complex</td></tr><tr><td>0.466105</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.464781</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.459046</td><td>HOMBA:11529</td><td>rostral periamygdaloid cortex (ventral division of CoA)</td><td>rostral periamygdaloid cortex</td></tr><tr><td>0.458425</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.458370</td><td>HOMBA:10362</td><td>anterior amygdaloid area</td><td>anterior amygdaloid area</td></tr><tr><td>0.455882</td><td>HOMBA:10401</td><td>lateral (multiform) division of MD</td><td>lateral</td></tr><tr><td>0.455882</td><td>HOMBA:10454</td><td>magnocellular (lateral) division of LHN</td><td>lateral</td></tr><tr><td>0.455882</td><td>HOMBA:12396</td><td>dentate (lateral) nucleus</td><td>lateral</td></tr><tr><td>0.455882</td><td>HOMBA:12588</td><td>external (accessory/lateral) cuneate nucleus</td><td>lateral</td></tr><tr><td>0.455880</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical amygdaloid nuclei</td></tr><tr><td>0.453644</td><td>HOMBA:AA30225</td><td>periamygdaloid cortex</td><td>periamygdaloid cortex</td></tr><tr><td>0.451648</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 10: <code>basolateral amygdaloid complex basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>basolateral amygdaloid complex basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdaloid</td><td>49</td><td></td></tr><tr><td>complex</td><td>77</td><td></td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> レアトークン <code>basolateral</code>, <code>group</code> の INTERSECTION → <strong>3 件</strong></p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>204 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 3 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.823109</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.794118</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.617647</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 11: <code>basolateral nuclear group of amygdala bla</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>basolateral nuclear group of amygdala bla</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>bla</td><td>0</td><td>INTERSECTION 選定</td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 54 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.924756</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.859756</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.761417</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.701429</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.698163</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.684118</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td></tr><tr><td>0.674468</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td></tr><tr><td>0.668117</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.667773</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.653147</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.644763</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.604035</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.593751</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.589083</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.580604</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.572942</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.560889</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.542095</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.538390</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus   of amygdala</td></tr><tr><td>0.534803</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.533805</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nuclei of amygdala</td></tr><tr><td>0.532177</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdala</td></tr><tr><td>0.513484</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdala</td></tr><tr><td>0.511853</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclear group</td></tr><tr><td>0.508395</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus</td></tr><tr><td>0.505564</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr><tr><td>0.501750</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclei of amygdala</td></tr><tr><td>0.501165</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdala</td></tr><tr><td>0.500149</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.498121</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr><tr><td>0.489955</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdala</td></tr><tr><td>0.489496</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nucleus of amygdala</td></tr><tr><td>0.487442</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus)</td></tr><tr><td>0.478993</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdala</td></tr><tr><td>0.478919</td><td>HOMBA:11553</td><td>lateral cell groups of basal nucleus of Meynert</td><td>lateral cell groups of basal nuclei</td></tr><tr><td>0.477529</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nuclei of amygdala</td></tr><tr><td>0.474225</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior   cortical nucleus of amygdala</td></tr><tr><td>0.472610</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior   cortical nucleus of amygdala</td></tr><tr><td>0.472382</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdala rostral</td></tr><tr><td>0.471899</td><td>HOMBA:11553</td><td>lateral cell groups of basal nucleus of Meynert</td><td>lateral cell groups of basal nucleus</td></tr><tr><td>0.469770</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nucleus of amygdala</td></tr><tr><td>0.467120</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nuclei of amygdala</td></tr><tr><td>0.465883</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nuclei of amygdala</td></tr><tr><td>0.464921</td><td>HOMBA:10406</td><td>lateral nuclear complex of thalamus</td><td>lateral nuclear complex of thalamus</td></tr><tr><td>0.464786</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nuclei of amygdala rostral</td></tr><tr><td>0.464647</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group</td></tr><tr><td>0.464015</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nuclei of amygdala</td></tr><tr><td>0.463156</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nucleus of amygdala</td></tr><tr><td>0.459032</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nuclei of amygdala</td></tr><tr><td>0.457227</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdala caudal</td></tr><tr><td>0.455778</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nuclei accessory basal nuclei of amygdala</td></tr><tr><td>0.453169</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdaloid complex</td></tr><tr><td>0.452244</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nuclei of amygdala</td></tr><tr><td>0.450009</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 12: <code>basolateral nuclear group of amygdala basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>basolateral nuclear group of amygdala basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> レアトークン <code>basolateral</code>, <code>group</code> の INTERSECTION → <strong>3 件</strong></p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 3 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.870902</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.708177</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.688103</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 13: <code>Left basolateral amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>87 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 23 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.920000</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.673925</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.666481</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.586719</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.586109</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.586109</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.577778</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.577778</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.570000</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdala</td></tr><tr><td>0.530000</td><td>HOMBA:10401</td><td>lateral (multiform) division of MD</td><td>lateral</td></tr><tr><td>0.530000</td><td>HOMBA:10454</td><td>magnocellular (lateral) division of LHN</td><td>lateral</td></tr><tr><td>0.530000</td><td>HOMBA:12396</td><td>dentate (lateral) nucleus</td><td>lateral</td></tr><tr><td>0.530000</td><td>HOMBA:12588</td><td>external (accessory/lateral) cuneate nucleus</td><td>lateral</td></tr><tr><td>0.522647</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.521628</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr><tr><td>0.520771</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.518057</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central amygdala</td></tr><tr><td>0.509596</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus</td></tr><tr><td>0.490513</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.468456</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr><tr><td>0.457951</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.455771</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus)</td></tr><tr><td>0.451116</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdala</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 14: <code>left basolateral amygdaloid complex</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral amygdaloid complex</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>amygdaloid</td><td>49</td><td></td></tr><tr><td>complex</td><td>77</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>123 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 40 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.764286</td><td>HOMBA:10361</td><td>amygdaloid complex</td><td>amygdaloid complex</td></tr><tr><td>0.748926</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.679808</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.670876</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.670876</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.640247</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.611595</td><td>HOMBA:10383</td><td>extended amygdala</td><td>extended amygdaloid complex</td></tr><tr><td>0.601176</td><td>HOMBA:AA30222</td><td>regions of amygdaloid complex</td><td>regions of amygdaloid complex</td></tr><tr><td>0.595367</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.587537</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.586998</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.576600</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex</td></tr><tr><td>0.560090</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdaloid complex</td></tr><tr><td>0.559454</td><td>HOMBA:AA30243</td><td>regions of extended amygdala</td><td>regions of extended amygdaloid complex</td></tr><tr><td>0.557578</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted   part of amygdaloid complex</td></tr><tr><td>0.550048</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nuclei of amygdaloid complex</td></tr><tr><td>0.547611</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdaloid complex</td></tr><tr><td>0.544590</td><td>HOMBA:10387</td><td>sublenticular extended amygdala</td><td>sublenticular extended amygdaloid complex</td></tr><tr><td>0.540179</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nucleus of amygdaloid complex</td></tr><tr><td>0.520951</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nucleus of amygdaloid complex</td></tr><tr><td>0.508140</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex</td></tr><tr><td>0.503046</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted (diffuse) part of amygdaloid complex</td></tr><tr><td>0.502066</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex</td></tr><tr><td>0.500886</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.496309</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdaloid complex</td></tr><tr><td>0.495837</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.494186</td><td>HOMBA:AA30240</td><td>uncharted (diffuse) part of amygdaloid complex</td><td>uncharted part of amygdaloid complex diffuse</td></tr><tr><td>0.484825</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.478756</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.477970</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.473601</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior rostral cortical nucleus of amygdaloid complex</td></tr><tr><td>0.473601</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdaloid complex rostral</td></tr><tr><td>0.468927</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus accessory basal nucleus of amygdaloid complex</td></tr><tr><td>0.466336</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior caudal cortical nucleus of amygdaloid complex</td></tr><tr><td>0.466336</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nucleus of amygdaloid complex caudal</td></tr><tr><td>0.459831</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus of amygdaloid complex accessory basal nucleus</td></tr><tr><td>0.450000</td><td>HOMBA:10401</td><td>lateral (multiform) division of MD</td><td>lateral</td></tr><tr><td>0.450000</td><td>HOMBA:10454</td><td>magnocellular (lateral) division of LHN</td><td>lateral</td></tr><tr><td>0.450000</td><td>HOMBA:12396</td><td>dentate (lateral) nucleus</td><td>lateral</td></tr><tr><td>0.450000</td><td>HOMBA:12588</td><td>external (accessory/lateral) cuneate nucleus</td><td>lateral</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="variant-block">
+        <div class="vb-head">バリアント 15: <code>left basolateral nuclear group of amygdala</code></div>
+        <div class="vb-body">
+          <p style="margin:0 0 0.5rem"><strong>正規化:</strong> <code>left basolateral nuclear group of amygdala</code></p>
+          <table>
+            <thead><tr><th>トークン</th><th>df</th><th>備考</th></tr></thead>
+            <tbody><tr><td>left</td><td>0</td><td>INTERSECTION 選定</td></tr><tr><td>basolateral</td><td>37</td><td>INTERSECTION 選定</td></tr><tr><td>nuclear</td><td>41</td><td></td></tr><tr><td>group</td><td>38</td><td></td></tr><tr><td>amygdala</td><td>58</td><td></td></tr></tbody>
+          </table>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy:</strong> 積集合空 → 全別名スキャン（9366 件）</p>
+          <p style="margin:0 0 0.35rem"><strong>bm25:</strong> UNION → <strong>151 件</strong></p>
+          <p style='margin:0 0 0.5rem'><strong>exact:</strong> ヒットなし</p>
+          <p style="margin:0.75rem 0 0.35rem"><strong>fuzzy ヒット（score ≥ 0.45 · 48 件すべて）:</strong></p>
+          <table>
+            <thead><tr><th>fuzzy</th><th>HOMBA ID</th><th>名称</th><th>一致別名</th></tr></thead>
+            <tbody><tr><td>0.920000</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdala</td></tr><tr><td>0.845238</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group</td></tr><tr><td>0.737194</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral nuclear group of amygdaloid complex</td></tr><tr><td>0.691583</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus   of amygdala</td></tr><tr><td>0.688260</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala</td></tr><tr><td>0.676091</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td></tr><tr><td>0.649260</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td></tr><tr><td>0.644613</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei of amygdala</td></tr><tr><td>0.636439</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus) of amygdala</td></tr><tr><td>0.620347</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdala basal nucleus</td></tr><tr><td>0.619907</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei of amygdala basal nuclei</td></tr><tr><td>0.594581</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdala</td></tr><tr><td>0.584307</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nuclei of amygdala</td></tr><tr><td>0.579704</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td><td>basolateral amygdala</td></tr><tr><td>0.556245</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex</td></tr><tr><td>0.551751</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td><td>anterior central nuclear group of amygdaloid complex</td></tr><tr><td>0.530472</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nucleus   of amygdala</td></tr><tr><td>0.525868</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nuclei of amygdala</td></tr><tr><td>0.525188</td><td>HOMBA:10376</td><td>medial nuclear complex of amygdala</td><td>medial nuclear complex of amygdala</td></tr><tr><td>0.523798</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td><td>corticomedial nuclear group of amygdaloid complex</td></tr><tr><td>0.521212</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus basal nucleus of amygdaloid complex</td></tr><tr><td>0.515750</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nucleus of amygdala</td></tr><tr><td>0.515033</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclear group</td></tr><tr><td>0.513995</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus of amygdaloid complex basal nucleus</td></tr><tr><td>0.504225</td><td>HOMBA:10363</td><td>central nucleus of amygdala</td><td>central nuclei of amygdala</td></tr><tr><td>0.503413</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nucleus of amygdala</td></tr><tr><td>0.499695</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus</td></tr><tr><td>0.496728</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei</td></tr><tr><td>0.492393</td><td>HOMBA:10378</td><td>intercalated nuclei of amygdala</td><td>intercalated nuclei of amygdala</td></tr><tr><td>0.475343</td><td>HOMBA:10367</td><td>lateral nucleus of amygdala</td><td>lateral nucleus of amygdaloid complex</td></tr><tr><td>0.474445</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nucleus of amygdala</td></tr><tr><td>0.472155</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nucleus of amygdala</td></tr><tr><td>0.471977</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nucleus of amygdala</td></tr><tr><td>0.471115</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nuclei basal nuclei</td></tr><tr><td>0.467957</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior   cortical nucleus of amygdala</td></tr><tr><td>0.466856</td><td>HOMBA:10406</td><td>lateral nuclear complex of thalamus</td><td>lateral nuclear complex of thalamus</td></tr><tr><td>0.466288</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior   cortical nucleus of amygdala</td></tr><tr><td>0.463820</td><td>HOMBA:AA30237</td><td>small intercalated nuclei of amygdala</td><td>small intercalated nuclei of amygdala</td></tr><tr><td>0.463519</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nucleus of amygdala</td></tr><tr><td>0.461287</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td><td>basolateral nucleus (basal nucleus)</td></tr><tr><td>0.460180</td><td>HOMBA:10370</td><td>paralaminar nucleus of amygdala</td><td>paralaminar nuclei of amygdala</td></tr><tr><td>0.460116</td><td>HOMBA:10373</td><td>cortical nucleus of amygdala</td><td>cortical nuclei of amygdala</td></tr><tr><td>0.459603</td><td>HOMBA:10375</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>posterior cortical nuclei of amygdala</td></tr><tr><td>0.457686</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nuclei of amygdala</td></tr><tr><td>0.453718</td><td>HOMBA:11553</td><td>lateral cell groups of basal nucleus of Meynert</td><td>lateral cell groups of basal nuclei</td></tr><tr><td>0.452844</td><td>HOMBA:AA30236</td><td>major intercalated nucleus of amygdala</td><td>major intercalated nuclei of amygdala</td></tr><tr><td>0.450491</td><td>HOMBA:10374</td><td>anterior (rostral) cortical nucleus of amygdala</td><td>anterior cortical nucleus of amygdala rostral</td></tr><tr><td>0.450301</td><td>HOMBA:10369</td><td>basomedial nucleus (accessory basal nucleus) of amygdala</td><td>basomedial nuclei accessory basal nuclei of amygdala</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>2-4. ステップ別パイプライン</h3>
+      <div class="merge-bar">53 候補に統合 → 第1パス → 修飾語 bla ありのため親昇格スキップ → 第2パス → top_k=5</div>
+
+      <h3>2-5. 1 位候補のスコア内訳</h3>
+      <div class="score-breakdown">
+        <div class="score-card winner">
+          <h4>1 位 — basolateral nuclear group of amygdala <span class="badge">HOMBA:10366</span></h4>
+          <p style="margin:0;font-size:0.85rem;color:#64748b">matched_query: basolateral nuclear group of amygdala bla · matched_alias: basolateral nuclear group of amygdala</p>
+          <div class="final">0.732569</div>
+          <ol style="margin:0;padding-left:1.2rem;font-size:0.88rem">
+            <li>methods: bm25+fuzzy</li>
+            <li>修飾語 <code>bla</code> は別名テキストに含まれない → modifier_match_score = 0 → base × 0.88</li>
+            <li>alias+abbrev 展開により <code>basolateral nuclear group of amygdala bla</code> バリアントから bm25+fuzzy で高スコア</li>
+          </ol>
+        </div>
+        <div class="score-card loser">
+          <h4>2 位 — basolateral nucleus (basal nucleus) of amygdala <span class="badge" style="background:#fef2f2;color:#dc2626">HOMBA:10368</span></h4>
+          <p style="margin:0;font-size:0.85rem;color:#64748b">より細かい subnucleus · 同様に modifier 不一致</p>
+          <div class="final">0.625068</div>
+        </div>
+      </div>
+
+      <div class="callout warn">
+        <strong>この例のポイント:</strong> 括弧内 <code>BLA</code> は abbrev 展開では
+        <code>basolateral nuclear group of amygdala</code> になる一方、修飾語としての <code>bla</code> は
+        別名文字列にそのまま含まれないため <code>modifier_match_score = 0</code> となり、
+        すべての候補が ×0.88 の上限を受けます。alias/abbrev によるバリアント爆発と修飾語判定の違いがここで見えます。
+      </div>
+
+      <h3>2-6. 最終返却 top_k=5（全件）</h3>
+      <table>
+        <thead>
+          <tr><th>順位</th><th>スコア</th><th>HOMBA ID</th><th>名称</th><th>methods</th><th>matched_query</th><th>matched_alias</th><th>modifier</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>0.732569</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td>
+            <td>bm25+fuzzy</td><td>basolateral nuclear group of amygdala bla</td><td>basolateral nuclear group of amygdala</td>
+            <td>0.0</td>
+          </tr>
+          <tr>
+            <td>2</td><td>0.625068</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td>
+            <td>bm25+fuzzy</td><td>left basolateral amygdala basolateral nuclear group of amygdala</td><td>basolateral nucleus   of amygdala</td>
+            <td>0.0</td>
+          </tr>
+          <tr>
+            <td>3</td><td>0.593213</td><td>HOMBA:10361</td><td>amygdaloid complex</td>
+            <td>bm25+fuzzy</td><td>left basolateral amygdala basolateral nuclear group of amygdala</td><td>amygdala</td>
+            <td>0.0</td>
+          </tr>
+          <tr>
+            <td>4</td><td>0.551676</td><td>HOMBA:10372</td><td>corticomedial nuclear group of amygdala</td>
+            <td>bm25+fuzzy</td><td>left basolateral nuclear group of amygdala basolateral nuclear group of amygdala</td><td>corticomedial nuclear group of amygdala</td>
+            <td>0.0</td>
+          </tr>
+          <tr>
+            <td>5</td><td>0.548838</td><td>HOMBA:AA30223</td><td>anterior-central nuclear group of amygdala</td>
+            <td>bm25+fuzzy</td><td>left basolateral nuclear group of amygdala basolateral nuclear group of amygdala</td><td>anterior-central nuclear group of amygdala</td>
+            <td>0.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="index.html">候補検索</a>
+          <a href="about.html">このサイトについて</a>
+          <a href="scoring-guide.html">スコアリング解説</a>
+          <a href="walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="humans.txt">humans.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · Engine v0.3.1 · <a href="about.html#contact">Contact / security</a>
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

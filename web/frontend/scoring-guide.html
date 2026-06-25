@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RCS 候補スコアの計算方法・アルゴリズム・パラメータ解説。研究用 HOMBA 候補検索ツールの技術ドキュメント。" />
+  <meta name="author" content="ROSETTA Candidate Search" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rcs.mymt.site/scoring-guide.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ROSETTA Candidate Search — スコアリング解説" />
+  <meta property="og:description" content="RCS 候補スコアの計算方法・アルゴリズム・パラメータ解説。研究用 HOMBA 候補検索ツールの技術ドキュメント。" />
+  <meta property="og:url" content="https://rcs.mymt.site/scoring-guide.html" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="ROSETTA Candidate Search" />
+  <link rel="stylesheet" href="site-trust.css" />
+
+  <link rel="stylesheet" href="site-nav.css" />
+  <title>ROSETTA Candidate Search — スコアリング解説</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #1a1f2e;
+      --muted: #5c6478;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e2e8f0;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+      --success: #059669;
+      --warning: #d97706;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .layout {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    header.hero .eyebrow {
+      margin: 0 0 0.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    header.hero h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    header.hero p {
+      margin: 0;
+      max-width: 52em;
+      opacity: 0.92;
+      font-size: 1.02rem;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .meta-bar span {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav.toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    nav.toc h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      columns: 2;
+      column-gap: 2rem;
+    }
+
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav.toc a:hover { text-decoration: underline; }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.75rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    section h2 {
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-soft);
+    }
+
+    section h3 {
+      margin: 1.5rem 0 0.75rem;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+
+    p { margin: 0 0 1rem; }
+
+    ul, ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+
+    li { margin-bottom: 0.35rem; }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 0.85rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .callout.warn {
+      background: #fef3c7;
+      border-left-color: var(--warning);
+    }
+
+    pre.formula {
+      background: var(--code-bg);
+      color: var(--code-text);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      overflow-x: auto;
+      font-family: "Cascadia Code", "Consolas", "SF Mono", monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 0.75rem 0 1rem;
+    }
+
+    code {
+      font-family: "Cascadia Code", "Consolas", monospace;
+      font-size: 0.88em;
+      background: #f1f5f9;
+      padding: 0.12em 0.35em;
+      border-radius: 4px;
+    }
+
+    pre.formula code {
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+    }
+
+    .param-table td:first-child {
+      font-family: "Cascadia Code", Consolas, monospace;
+      white-space: nowrap;
+      color: #1d4ed8;
+    }
+
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1rem 0;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .flow-num {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .flow-body {
+      flex: 1;
+      padding-bottom: 1.25rem;
+      border-left: 2px dashed var(--border);
+      margin-left: 1rem;
+      padding-left: 1.25rem;
+    }
+
+    .flow-step:last-child .flow-body {
+      border-left: none;
+      padding-bottom: 0;
+    }
+
+    .flow-body strong { display: block; margin-bottom: 0.25rem; }
+
+    .example-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      margin: 1rem 0;
+    }
+
+    .example-box h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: var(--success);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      background: #ecfdf5;
+      color: var(--success);
+      vertical-align: middle;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 720px) {
+      .pipe-split { grid-template-columns: 1fr; }
+      .score-breakdown { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      nav.toc ol { columns: 1; }
+      section { padding: 1.25rem; }
+    }
+  </style>
+
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-nav-inner">
+      <a href="index.html" class="site-brand">ROSETTA Candidate Search</a>
+      <nav class="site-nav-links" aria-label="サイトメニュー">
+      <a href="index.html">候補検索</a>
+      <a href="scoring-guide.html" aria-current="page">スコアリング解説</a>
+      <a href="walkthrough-bla.html">Walkthrough (BLA)</a>
+      <a href="about.html">このサイトについて</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <header class="hero">
+      <p class="eyebrow">ROSETTA Candidate Search (RCS)</p>
+      <h1>スコアリングの計算方法・アルゴリズム・パラメータ解説</h1>
+      <p>
+        脳領域名のテキスト入力から HOMBA 候補を返す RCS の「スコア」がどのように算出されるかを、
+        前処理から最終ランキングまで順を追って説明します。
+        実装は <code>rcs/rosetta_candidate_generator.py</code>（v0.3.1）に基づきます。
+      </p>
+    </header>
+
+
+    <div class="meta-bar">
+      <span>バージョン: v0.3.1</span>
+      <span>最終更新: 2026-06-25</span>
+      <span>参照: docs/rcs_algorithm.md</span>
+      <span>スコア範囲: 0.0 〜 1.0</span>
+    </div>
+
+    <nav class="toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#overview">全体像</a></li>
+        <li><a href="#walkthrough">具体例（詳細は別ページ）</a></li>
+        <li><a href="#preprocess">前処理とクエリバリアント</a></li>
+        <li><a href="#methods">3つの検索手法</a></li>
+        <li><a href="#index">倒排インデックスと候補絞り込み</a></li>
+        <li><a href="#fuzzy">Fuzzy スコア（string_similarity）</a></li>
+        <li><a href="#bm25">BM25 スコア</a></li>
+        <li><a href="#compose">最終スコアの合成</a></li>
+        <li><a href="#modifier">修飾語（modifier）調整</a></li>
+        <li><a href="#specificity">Specificity Penalty（過細減点）</a></li>
+        <li><a href="#hierarchy">階層親昇格（hierarchy_parent）</a></li>
+        <li><a href="#twopass">2-pass スコアリング</a></li>
+        <li><a href="#ranking">ソートと出力</a></li>
+        <li><a href="#review">レビューフラグ</a></li>
+        <li><a href="#params">パラメータ一覧</a></li>
+        <li><a href="#example">計算例</a></li>
+      </ol>
+    </nav>
+
+    <!-- 1. Overview -->
+    <section id="overview">
+      <h2>1. 全体像</h2>
+      <p class="lead">
+        RCS は単一の入力テキスト（例: <code>Subthalamic nucleus</code>、<code>Left basolateral amygdala (BLA)</code>、<code>LC</code>）を
+        HOMBA オントロジーのエントリと照合し、適合度スコア付きで候補リストを返します。
+      </p>
+      <p>
+        スコアは <strong>0〜1 の浮動小数点数</strong>です。出力時は <code>min(score, 1.0)</code> を
+        <strong>小数第 6 位</strong>で四捨五入します。
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-body">
+            <strong>前処理</strong>
+            正規化 → クエリバリアント生成 → 修飾語抽出
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <strong>候補収集</strong>
+            exact / fuzzy / bm25 の 3 手法で HOMBA エントリを検索（手法ごとに最大スコアを保持）
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-body">
+            <strong>第 1 パス</strong>
+            全候補に <code>_score_candidate()</code> を適用 → 暫定スコア <code>prelim_scores</code>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-body">
+            <strong>階層親昇格</strong>
+            兄弟候補が 2 件以上なら親エントリを追加（<code>hierarchy_parent</code>）
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-body">
+            <strong>第 2 パス</strong>
+            昇格後の全候補を再度スコア化 → 最終ランキング
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>重要:</strong> 最終スコアは各手法スコアの単純加算ではありません。
+        複数の合成式の <strong>最大値</strong> を取り、修飾語調整・過細減点を適用したうえで確定します。
+      </div>
+    </section>
+
+    <!-- 2. Walkthrough (summary) -->
+    <section id="walkthrough">
+      <h2>2. 具体例（詳細 walkthrough）</h2>
+      <p class="lead">
+        alias 展開 · abbrev 展開 · laterality 除去 · 修飾語が同時に働く複合例は、
+        クエリバリアント全件・バリアント別 fuzzy ヒット・候補リストなどの<strong>詳細データ</strong>を
+        別ページに分離しています。
+      </p>
+
+      <div class="callout" style="padding:1.25rem 1.35rem">
+        <p style="margin:0 0 0.75rem;font-size:1.05rem">
+          <a href="walkthrough-bla.html" style="font-weight:700;color:#1d4ed8">
+            → Left basolateral amygdala (BLA) — 処理フロー詳細
+          </a>
+        </p>
+        <p style="margin:0 0 0.5rem;color:#475569;font-size:0.92rem">この例で確認できること:</p>
+        <ul style="margin:0;padding-left:1.25rem;font-size:0.92rem">
+          <li>クエリバリアント <strong>15 件</strong>（base 4 → alias 12 → abbrev 18 → 重複除去）</li>
+          <li><code>homba_alias_rules.csv</code> による <code>amygdala</code>↔<code>amygdaloid complex</code> 等の展開</li>
+          <li><code>homba_abbrev_rules.csv</code> による <code>BLA</code> → <code>basolateral nuclear group of amygdala</code></li>
+          <li>15 バリアント × 3 手法 → <strong>53 候補</strong>統合 → top 5 返却</li>
+          <li>修飾語 <code>bla</code> と abbrev 展開の判定差（modifier ×0.88）</li>
+        </ul>
+      </div>
+
+      <p style="margin:1rem 0 0;font-size:0.92rem;color:var(--muted)">
+        修飾語の加点・減点だけを短く追う例は §16 例 D、前処理の一般説明は §3 を参照してください。
+      </p>
+    </section>
+
+    <!-- 3. Preprocess -->
+    <section id="preprocess">
+      <h2>3. 前処理とクエリバリアント</h2>
+
+      <h3>3-1. テキスト正規化（<code>normalize_text</code>）</h3>
+      <ol>
+        <li>Unicode NFKC 正規化</li>
+        <li><code>&amp;</code> → <code>and</code>、<code>/</code> → スペース</li>
+        <li>アポストロフィ（<code>'</code> <code>`</code> <code>´</code>）を除去</li>
+        <li>ハイフン・アンダースコアをスペースに変換</li>
+        <li>英数字以外を除去、連続スペースを 1 つに縮小</li>
+        <li>小文字化</li>
+      </ol>
+      <p>例: <code>Broca's area</code> → <code>broca s area</code>（所有格のアポストロフィは削除）</p>
+
+      <h3>3-2. クエリバリアント（<code>query_variants</code>）</h3>
+      <p>1 つの入力から複数の検索用文字列を生成し、表記ゆれに対応します。生成は次の順序で行われ、最後に <code>unique_preserve_order()</code> で正規化キーの重複を除去します。</p>
+      <ol>
+        <li>ベース 4 形（入力 · laterality 除去 · 括弧除去 · excluding 除去）</li>
+        <li>各ベース形に <code>homba_alias_rules.csv</code> を適用（単語置換・同義語追加）</li>
+        <li>各形に <code>homba_abbrev_rules.csv</code> を適用（略語展開 · クエリ側のみ）</li>
+        <li>正規化キーで重複除去 → 最終バリアントリスト</li>
+      </ol>
+      <p>各段階の<strong>すべての中間文字列</strong>（重複含む）の実例は <a href="walkthrough-bla.html">BLA walkthrough §2-2</a> を参照してください。</p>
+      <ul>
+        <li>正規化テキスト本体</li>
+        <li>laterality 語（<code>left</code> / <code>right</code> / <code>bilateral</code> 等）を除去した形</li>
+        <li>括弧部分を除去した形（括弧内は <code>modifier_terms</code> として別途保持）</li>
+        <li><code>excluding</code> / <code>except</code> / <code>without</code> 以降を除去した形</li>
+        <li><code>homba_alias_rules.csv</code> による同義語展開（クエリ側）</li>
+        <li><code>homba_abbrev_rules.csv</code> による略語展開（<strong>クエリ側のみ</strong>。例: <code>lc</code> → <code>locus coeruleus</code>）</li>
+      </ul>
+
+      <h3>3-3. 修飾語抽出（<code>extract_modifier_terms</code>）</h3>
+      <p>括弧内トークンと、<code>homba_token_rules.csv</code> で <code>kind=modifier</code> と定義された語を収集します。
+         これらは後述の修飾語一致率の計算に使われます。</p>
+
+      <h3>3-4. トークン化（<code>tokenize</code>）</h3>
+      <p>正規化後に空白分割し、<code>kind=stopword</code> の語を除去します（<code>of</code>、<code>the</code>、<code>region</code> 等）。
+         トークン Jaccard や BM25、fuzzy のインデックス絞り込みに使用します。</p>
+    </section>
+
+    <!-- 3. Methods -->
+    <section id="methods">
+      <h2>4. 三つの検索手法</h2>
+      <p>同一 HOMBA エントリが複数手法でヒットした場合、エントリは 1 つに統合され、
+         各手法のスコアは <strong>最大値</strong> が保持されます（<code>_add_candidate</code>）。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>手法</th>
+            <th>methods 値</th>
+            <th>概要</th>
+            <th>候補化条件</th>
+            <th>手法スコア</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>完全一致</td>
+            <td><code>exact</code></td>
+            <td>正規化後のクエリバリアントと HOMBA 別名が完全一致</td>
+            <td>常に候補</td>
+            <td><strong>1.0</strong></td>
+          </tr>
+          <tr>
+            <td>あいまい一致</td>
+            <td><code>fuzzy</code></td>
+            <td>文字列類似度（後述）</td>
+            <td>スコア ≥ <strong>0.45</strong></td>
+            <td>0.45 〜 1.0</td>
+          </tr>
+          <tr>
+            <td>BM25 トークン検索</td>
+            <td><code>bm25</code></td>
+            <td>トークン共起ベース（語順に頑健）</td>
+            <td>正規化 BM25 &gt; 0</td>
+            <td>0 〜 1（正規化後）</td>
+          </tr>
+          <tr>
+            <td>階層親昇格</td>
+            <td><code>hierarchy_parent</code></td>
+            <td>兄弟候補から親を推論</td>
+            <td>子候補 2 件以上</td>
+            <td>後述（最大 0.97）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><code>generate()</code> のデフォルト引数: <code>top_k=10</code>（返却件数）、<code>per_method_k=40</code>（各手法の上位候補数上限）。</p>
+    </section>
+
+    <!-- 4. Index -->
+    <section id="index">
+      <h2>5. 倒排インデックスと候補絞り込み</h2>
+      <p>全別名（約 9,000 件）に毎回フルスキャンしないため、起動時に以下のインデックスを構築します。</p>
+
+      <table>
+        <thead>
+          <tr><th>インデックス</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>alias_map</code></td><td>正規化別名 → HOMBA エントリ index（exact 用）</td></tr>
+          <tr><td><code>alias_entries</code></td><td>別名ごとのトークン列・頻度（fuzzy / BM25 用）</td></tr>
+          <tr><td><code>token_to_entries</code></td><td>トークン → 別名 entry index の posting list</td></tr>
+          <tr><td><code>_bm25_doc_freq</code></td><td>各トークンの document frequency（df）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Fuzzy: INTERSECTION（v0.3.1 以降）</h3>
+      <ol>
+        <li>クエリバリアントをトークン化</li>
+        <li>トークンが 3 個以上のとき、df が低い（レアな）<strong>2 トークン</strong>（<code>rarest_limit=2</code>）を選択</li>
+        <li>選ばれたトークンの posting list の <strong>積集合（INTERSECTION）</strong> だけを fuzzy 比較対象にする</li>
+        <li>積集合が空 <strong>かつ</strong> 正規化バリアント長 &gt; 5 のときのみ全別名スキャンにフォールバック</li>
+      </ol>
+      <p>例: <code>Subthalamic nucleus</code> では <code>subthalamic</code>（df≈3）と <code>nucleus</code>（df≈1,400）の積集合 ≈ 3 件のみ比較。
+         旧 UNION 方式だと ≈ 1,400 件になっていた。</p>
+
+      <h3>BM25: UNION</h3>
+      <ol>
+        <li>クエリバリアントの <strong>全トークン</strong> の posting list を取得</li>
+        <li>posting list の <strong>和集合（UNION）</strong> を BM25 比較対象（recall 重視）</li>
+      </ol>
+
+      <table>
+        <thead>
+          <tr><th>手法</th><th>トークン選択</th><th>集合演算</th><th>フォールバック</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>fuzzy</td>
+            <td>レアな 2 トークン（3 トークン以上のとき）</td>
+            <td><strong>INTERSECTION</strong></td>
+            <td>積集合が空 かつ 長さ &gt; 5 → 全スキャン</td>
+          </tr>
+          <tr>
+            <td>bm25</td>
+            <td>全トークン</td>
+            <td><strong>UNION</strong></td>
+            <td>なし</td>
+          </tr>
+          <tr>
+            <td>exact</td>
+            <td>—</td>
+            <td><code>alias_map</code> 直接参照</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 5. Fuzzy -->
+    <section id="fuzzy">
+      <h2>6. Fuzzy スコア（<code>string_similarity</code>）</h2>
+      <p>正規化後の 2 文字列を比較します。完全一致なら <strong>1.0</strong>。</p>
+
+      <pre class="formula">similarity = max(
+  containment_bonus,
+  0.35 × SequenceMatcher.ratio
++ 0.25 × bigram Dice
++ 0.20 × trigram Dice
++ 0.20 × token Jaccard
+)</pre>
+
+      <h3>各成分の定義</h3>
+      <table>
+        <thead>
+          <tr><th>成分</th><th>計算方法</th><th>重み</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SequenceMatcher.ratio</td>
+            <td>Python <code>difflib.SequenceMatcher</code> の文字列類似比</td>
+            <td>0.35</td>
+          </tr>
+          <tr>
+            <td>bigram Dice</td>
+            <td>空白除去後の 2-gram 集合について <code>2|A∩B| / (|A|+|B|)</code></td>
+            <td>0.25</td>
+          </tr>
+          <tr>
+            <td>trigram Dice</td>
+            <td>同上（3-gram）</td>
+            <td>0.20</td>
+          </tr>
+          <tr>
+            <td>token Jaccard</td>
+            <td>stopword 除去後トークン集合の <code>|A∩B| / |A∪B|</code></td>
+            <td>0.20</td>
+          </tr>
+          <tr>
+            <td>containment_bonus</td>
+            <td>一方が他方の部分文字列（長さ ≥ 4）のとき<br>
+                <code>min(0.92, len(短)/len(長) + 0.25)</code></td>
+            <td>max の別項</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        containment_bonus は加重平均とは別に <code>max()</code> の候補として比較されます。
+        部分一致（例: 短いクエリが長い別名に含まれる）を拾うためのボーナスです。
+      </div>
+    </section>
+
+    <!-- 6. BM25 -->
+    <section id="bm25">
+      <h2>7. BM25 スコア</h2>
+      <p>エントリ内の複数別名それぞれに BM25 を計算し、<strong>最も高い別名のスコア</strong>をそのエントリの bm25 スコアとします。</p>
+
+      <h3>パラメータ</h3>
+      <table class="param-table">
+        <tbody>
+          <tr><td>k1</td><td><strong>1.5</strong> — 語頻度の飽和度</td></tr>
+          <tr><td>b</td><td><strong>0.75</strong> — 文書長正規化の強さ</td></tr>
+          <tr><td>正規化定数</td><td><strong>4.0</strong> — 生スコアを 0〜1 に圧縮</td></tr>
+        </tbody>
+      </table>
+
+      <pre class="formula">IDF(t) = log(1 + (N - df(t) + 0.5) / (df(t) + 0.5))
+
+BM25_raw = Σ_t  IDF(t) × (freq × (k1+1)) / (freq + k1 × (1 - b + b × doc_len / avg_len)) × query_count(t)
+
+BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
+
+      <ul>
+        <li><code>N</code> = 全別名エントリ数（<code>alias_entries</code> の件数）</li>
+        <li><code>df(t)</code> = トークン <code>t</code> を含む別名数</li>
+        <li><code>avg_len</code> = 別名の平均トークン長（起動時に計算）</li>
+        <li><code>freq</code> = 当該別名内のトークン出現回数</li>
+        <li><code>query_count(t)</code> = クエリ内のトークン出現回数</li>
+      </ul>
+    </section>
+
+    <!-- 7. Compose -->
+    <section id="compose">
+      <h2>8. 最終スコアの合成（<code>_score_candidate</code>）</h2>
+      <p>各候補について、クエリ全体と HOMBA 全別名の token Jaccard 最大値を <code>token_score</code> とします。</p>
+
+      <h3>Step A — ベーススコア（base）</h3>
+      <pre class="formula">base = max(
+  hierarchy_parent_score,   // 未設定なら 0
+  exact_score,              // 未設定なら 0
+  0.5 × fuzzy + 0.3 × bm25 + 0.2 × token_score,
+  0.75 × fuzzy + 0.25 × token_score
+)</pre>
+
+      <ul>
+        <li>4 項のうち <strong>最大値</strong> を採用（未ヒットの手法は 0 として扱う）</li>
+        <li><code>exact</code> が存在する場合: <code>base = max(base, 0.96)</code> — 完全一致候補の下限を引き上げ</li>
+      </ul>
+
+      <div class="callout">
+        2 つの線形合成式（50/30/20 と 75/25）は、fuzzy 偏重と BM25 併用の両方のケースをカバーするため、
+        単純平均ではなく <strong>max で選ぶ</strong> 設計です。
+      </div>
+
+      <h3>Step B — 修飾語調整</h3>
+      <p>Step C — 過細減点の順で適用します（次セクション参照）。</p>
+    </section>
+
+    <!-- 8. Modifier -->
+    <section id="modifier">
+      <h2>9. 修飾語（modifier）調整</h2>
+      <p>
+        <code>modifier_match_score</code> = 抽出した修飾語のうち、候補別名テキスト（正規化・連結）に
+        含まれる割合（0〜1）。修飾語がない場合は <strong>1.0</strong>（調整なし）。
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>条件</th><th>調整式</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>修飾語なし</td>
+            <td>調整なし</td>
+          </tr>
+          <tr>
+            <td>修飾語あり &amp; 一致率 &gt; 0</td>
+            <td><code>base + 0.12 × modifier_match_score</code>（上限 1.0）</td>
+          </tr>
+          <tr>
+            <td>修飾語あり &amp; 一致率 = 0</td>
+            <td><code>base × 0.88</code>（上限 0.88）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="example-box">
+        <h4>例: Internal capsule (posterior limb)</h4>
+        <p>修飾語 <code>posterior</code>, <code>limb</code> が抽出される。
+           候補別名に <code>posterior limb</code> が含まれれば一致率が上がり加点。
+           含まれない候補は最大 0.88 に抑えられる。</p>
+      </div>
+    </section>
+
+    <!-- 9. Specificity -->
+    <section id="specificity">
+      <h2>10. Specificity Penalty（過細候補の減点）</h2>
+      <p>
+        クエリに存在しない細分類語（<code>inferior</code>、<code>lateral</code>、<code>core</code>、<code>shell</code>、
+        <code>molecular</code> 等）が候補側の別名に含まれる場合、スコアを減点します。
+      </p>
+
+      <h3>適用条件（すべて満たすときのみ）</h3>
+      <ol>
+        <li><code>exact</code> マッチが<strong>ない</strong></li>
+        <li><code>fuzzy</code> または <code>bm25</code> マッチが<strong>ある</strong></li>
+        <li>クエリに修飾語（<code>modifier_terms</code>）が<strong>ない</strong></li>
+        <li>候補に親 ID（<code>parent_id</code>）が<strong>ある</strong></li>
+      </ol>
+
+      <h3>減点率</h3>
+      <pre class="formula">候補別名の specificity 語 \ クエリの specificity 語 が空でない
+  → final_score × 0.86
+それ以外
+  → final_score × 1.0（減点なし）</pre>
+
+      <p>
+        specificity 語は <code>homba_token_rules.csv</code> の <code>kind=modifier</code> または <code>kind=weak</code> に該当するトークンです。
+      </p>
+
+      <div class="callout warn">
+        <strong>減点対象外:</strong>
+        <ul style="margin-bottom:0">
+          <li><code>exact</code> マッチで見つかった候補（クエリが別名を直接指している）</li>
+          <li><code>hierarchy_parent</code> のみで昇格した候補（昇格スコアが既に子の penalized score を反映）</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 10. Hierarchy -->
+    <section id="hierarchy">
+      <h2>11. 階層親昇格（<code>hierarchy_parent</code>）</h2>
+      <p>
+        複数の子領域（兄弟）が同時に候補になったとき、共通の親エントリを追加します。
+        例: thalamus の複数サブリージョンが候補 → <code>pulvinar of thalamus</code> の親を昇格。
+      </p>
+
+      <h3>昇格条件</h3>
+      <ul>
+        <li>クエリに修飾語が<strong>ない</strong></li>
+        <li>同一 <code>parent_id</code> を持つ子候補が <strong>2 件以上</strong></li>
+        <li>親エントリの別名とクエリトークンに token Jaccard 一致がある（&gt; 0）</li>
+      </ul>
+
+      <h3>昇格スコア</h3>
+      <pre class="formula">hierarchy_parent_score = min(max(子候補の prelim_scores) + 0.08, 0.97)</pre>
+
+      <p>
+        <code>prelim_scores</code> は第 1 パスで算出した<strong>過細減点込み</strong>の暫定スコアです。
+        生の fuzzy スコア（例: 0.89）だけで親を昇格させると、ペナルティ後 0.77 の子を
+        0.97 の親が上回る「過昇格」が起きるため、暫定スコアを参照します。
+      </p>
+    </section>
+
+    <!-- 11. Two-pass -->
+    <section id="twopass">
+      <h2>12. 2-pass スコアリング（v0.3 以降）</h2>
+      <p>親昇格スコアと子の final score の間に循環依存があるため、2 段階で処理します。</p>
+
+      <pre class="formula">1. exact / fuzzy / bm25 で候補収集（手法別最大スコアを保持）
+2. 第1パス: 全候補に _score_candidate() → prelim_scores（specificity_penalty 込み）
+3. prelim_scores で _promote_common_parents() → hierarchy_parent 候補を追加
+4. 第2パス: 昇格後の全候補を再度 _score_candidate() で最終スコア化
+5. ソート → top_k 件を返却</pre>
+
+      <div class="callout">
+        第 2 パスが必要な理由: 第 1 パス時点では存在しなかった <code>hierarchy_parent</code> 候補にも、
+        合成式・修飾語調整・penalty ルールを適用して最終順位を確定するため。
+        2-pass の計算コストは fuzzy 比較に比べ小さい。
+      </div>
+    </section>
+
+    <!-- 12. Ranking -->
+    <section id="ranking">
+      <h2>13. ソートと出力</h2>
+
+      <h3>ソートキー（優先順）</h3>
+      <ol>
+        <li><code>score</code> 降順</li>
+        <li><code>name</code> 昇順（小文字化して比較）</li>
+        <li><code>homba_id</code> 昇順</li>
+      </ol>
+
+      <h3>出力フィールド（主要）</h3>
+      <table>
+        <thead>
+          <tr><th>フィールド</th><th>説明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>score</code></td><td>最終マッチスコア（0〜1、6 桁丸め）</td></tr>
+          <tr><td><code>methods</code></td><td>ヒットした手法（<code>+</code> 区切り。例: <code>bm25+fuzzy</code>）</td></tr>
+          <tr><td><code>matched_query</code></td><td>照合に使われたクエリバリアント</td></tr>
+          <tr><td><code>matched_alias</code></td><td>一致した HOMBA 側別名</td></tr>
+          <tr><td><code>modifier_terms</code></td><td>抽出修飾語（<code>;</code> 区切り）</td></tr>
+          <tr><td><code>modifier_match_score</code></td><td>修飾語一致率（0〜1）</td></tr>
+          <tr><td><code>hierarchy_reason</code></td><td>階層昇格理由（該当時のみ。例: <code>common_parent_of_3_candidates</code>）</td></tr>
+          <tr><td><code>best_method_score</code></td><td>単一手法の最高生スコア（内部デバッグ用に出力）</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 13. Review -->
+    <section id="review">
+      <h2>14. レビューフラグ（<code>rcs/review.py</code>）</h2>
+      <p>
+        <code>generate()</code> の出力自体には含まれませんが、テスト・API 層では
+        <code>add_review_flags()</code> により以下のフラグが付与されます。
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>フラグ</th><th>条件</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>modifier_conflict</code></td>
+            <td>修飾語あり かつ <code>modifier_match_score &lt; 1.0</code></td>
+          </tr>
+          <tr>
+            <td><code>high_confidence</code></td>
+            <td><code>score ≥ 0.90</code>（上記より優先度低）</td>
+          </tr>
+          <tr>
+            <td><code>low_confidence</code></td>
+            <td><code>score &lt; 0.60</code></td>
+          </tr>
+          <tr>
+            <td><code>needs_review</code></td>
+            <td>上記以外（0.60 ≤ score &lt; 0.90）</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 14. Params -->
+    <section id="params">
+      <h2>15. パラメータ一覧（クイックリファレンス）</h2>
+      <table class="param-table">
+        <thead>
+          <tr><th>パラメータ</th><th>値</th><th>用途</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>fuzzy 閾値</td><td>0.45</td><td>これ未満は fuzzy 候補から除外</td></tr>
+          <tr><td>fuzzy rarest_limit</td><td>2</td><td>INTERSECTION 用に選ぶレアトークン数</td></tr>
+          <tr><td>fuzzy 全スキャン条件</td><td>積集合空 &amp; バリアント長 &gt; 5</td><td>フォールバック</td></tr>
+          <tr><td>string_similarity 重み</td><td>0.35 / 0.25 / 0.20 / 0.20</td><td>Sequence / bigram / trigram / token Jaccard</td></tr>
+          <tr><td>containment_bonus 上限</td><td>0.92</td><td>部分文字列ボーナス（長さ ≥ 4）</td></tr>
+          <tr><td>containment 加算項</td><td>+ 0.25</td><td>len(短)/len(長) に加算</td></tr>
+          <tr><td>BM25 k1</td><td>1.5</td><td>語頻度飽和</td></tr>
+          <tr><td>BM25 b</td><td>0.75</td><td>文書長正規化</td></tr>
+          <tr><td>BM25 正規化</td><td>raw / (raw + 4.0)</td><td>0〜1 圧縮</td></tr>
+          <tr><td>合成式 1</td><td>0.5·fuzzy + 0.3·bm25 + 0.2·token</td><td>base の候補</td></tr>
+          <tr><td>合成式 2</td><td>0.75·fuzzy + 0.25·token</td><td>base の候補</td></tr>
+          <tr><td>exact 下限</td><td>0.96</td><td>exact ヒット時の base フロア</td></tr>
+          <tr><td>修飾語加点係数</td><td>0.12</td><td>× modifier_match_score</td></tr>
+          <tr><td>修飾語不一致倍率</td><td>0.88</td><td>一致率 0 のとき（上限 0.88）</td></tr>
+          <tr><td>specificity_penalty</td><td>0.86</td><td>過細語が余分にあるときの乗算</td></tr>
+          <tr><td>親昇格ボーナス</td><td>+ 0.08</td><td>max(子 prelim_scores) に加算</td></tr>
+          <tr><td>親昇格上限</td><td>0.97</td><td>hierarchy_parent_score のキャップ</td></tr>
+          <tr><td>per_method_k</td><td>40（デフォルト）</td><td>各手法の候補数上限</td></tr>
+          <tr><td>top_k</td><td>10（デフォルト）</td><td>返却候補数</td></tr>
+          <tr><td>スコア丸め</td><td>round(..., 6)</td><td>出力精度</td></tr>
+          <tr><td>high_confidence</td><td>≥ 0.90</td><td>レビューフラグ</td></tr>
+          <tr><td>low_confidence</td><td>&lt; 0.60</td><td>レビューフラグ</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 15. Example -->
+    <section id="example">
+      <h2>16. 計算例（概念的ウォークスルー）</h2>
+
+      <div class="example-box">
+        <h4>例 A: 完全一致 — クエリ <code>Subthalamic nucleus</code></h4>
+        <ol>
+          <li>正規化 → そのまま <code>subthalamic nucleus</code></li>
+          <li>exact ヒット → <code>exact_score = 1.0</code></li>
+          <li>base = max(..., 1.0, ...) = 1.0 → exact 下限適用で <strong>0.96 以上</strong></li>
+          <li>修飾語なし → 調整なし。specificity_penalty も exact のため適用されない</li>
+          <li><strong>最終スコア ≈ 1.0</strong>、methods = <code>exact</code></li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <h4>例 B: Fuzzy のみ — クエリ <code>subthalamic nuc</code>（略称・typo 想定）</h4>
+        <ol>
+          <li>exact なし。fuzzy で <code>string_similarity</code> ≈ 0.82 と仮定</li>
+          <li>bm25 も正規化スコア ≈ 0.55 と仮定</li>
+          <li>token_score ≈ 0.67（<code>nucleus</code> vs <code>nuc</code> で Jaccard 低下）</li>
+          <li>base = max(0.5×0.82 + 0.3×0.55 + 0.2×0.67, 0.75×0.82 + 0.25×0.67)
+            = max(0.693, 0.782) = <strong>0.782</strong></li>
+          <li>修飾語なし、過細語も余分にない → penalty ×1.0</li>
+          <li><strong>最終スコア ≈ 0.782</strong>、review_flag = <code>needs_review</code></li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <h4>例 C: 過細減点 — クエリ <code>thalamus</code>、候補 <code>inferior thalamus</code></h4>
+        <ol>
+          <li>fuzzy ≈ 0.88、bm25 ≈ 0.40、token_score ≈ 0.50 と仮定</li>
+          <li>base ≈ max(0.5×0.88+0.3×0.40+0.2×0.50, 0.75×0.88+0.25×0.50) = max(0.692, 0.785) = 0.785</li>
+          <li>候補に <code>inferior</code>（weak 語）がありクエリにない → × 0.86</li>
+          <li><strong>最終スコア ≈ 0.785 × 0.86 ≈ 0.675</strong></li>
+          <li>兄弟候補が 2 件以上なら親が <code>min(0.675 + 0.08, 0.97) = 0.755</code> で昇格候補に</li>
+        </ol>
+      </div>
+
+      <div class="example-box">
+        <h4>例 D: 修飾語 + alias + abbrev — クエリ <code>Left basolateral amygdala (BLA)</code></h4>
+        <p>15 バリアント・alias/abbrev 展開・修飾語 <code>bla</code> の詳細フローは <a href="walkthrough-bla.html">BLA walkthrough 詳細</a> を参照。</p>
+        <ol>
+          <li>括弧内 <code>BLA</code> → abbrev 展開で <code>basolateral nuclear group of amygdala</code> が多数のバリアントに追加</li>
+          <li><code>amygdala</code> → <code>amygdaloid complex</code> 等、alias_rules も複数バリアントを生成</li>
+          <li>修飾語 <code>bla</code> は別名文字列に含まれないため modifier_match_score = 0 → 全候補 ×0.88</li>
+          <li>1 位: HOMBA:10366 basolateral nuclear group of amygdala（score ≈ 0.73）</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="index.html">候補検索</a>
+          <a href="about.html">このサイトについて</a>
+          <a href="scoring-guide.html">スコアリング解説</a>
+          <a href="walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="humans.txt">humans.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · Engine v0.3.1 · <a href="about.html#contact">Contact / security</a>
+        </p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

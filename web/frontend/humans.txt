@@ -1,0 +1,14 @@
+/* TEAM */
+Project: ROSETTA Candidate Search (RCS)
+Purpose: Research tool — map brain-region text to HOMBA ontology candidates
+Site: https://rcs.mymt.site/
+
+/* SITE */
+Last update: 2026-06-25
+Language: Japanese / English documentation
+Standards: HTML5, CSS3, JSON API
+Software: Python (rcs/rosetta_candidate_generator.py)
+Hosting: Amazon CloudFront + S3 (ap-northeast-1)
+
+/* THANKS */
+HOMBA atlas and DHBA contributors
