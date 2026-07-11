@@ -1,0 +1,14 @@
+structure_name,expected_homba_id,expected_homba_name,notes,由来
+Arcuate nucleus,,,"name | hypothalamus | hypothalamic - disambiguation needed | issue: 視床下部と延髄に同名の弓状核が存在し、文脈なしでは正解を一意に定められない（ANALYSIS_REPORT_03 §5-1, §8 T-2）",LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Brainstem,,,"collective_term | basic | collective | no single HOMBA entry | issue: 粒度・スコープの誤りにより、brainstem 全体を表す単一の HOMBA エントリが存在しない（ANALYSIS_REPORT_03 §5-1, §8 T-1）",LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Inferior fronto-occipital fasciculus,,,fiber_tract | IFOF | issue: HOMBA に IFOF エントリがなく、vertical occipital fasciculus への誤マッチとなる（ANALYSIS_REPORT_03 §5-1）,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Insular cortex,,,"synonym | insula synonym | issue: Insula（insular lobe, HOMBA:12176）と notes 上同義語だが expected が不一致",LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Lenticular nucleus,,,basal_ganglia | putamen+GP combined | issue: 解剖学的には putamen + globus pallidus だが、HOMBA ギャップにより putamen のみで近似（homba_alias_rules.csv に明記）,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Limbic system,,,"collective_term | collective | no HOMBA entry | issue: 粒度・スコープの誤りにより、limbic system を表す単一の HOMBA エントリが存在しない（機能的概念）（ANALYSIS_REPORT_03 §5-2, §8 T-1）",LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Medial hypothalamus,,,modifier | issue: 修飾語が無視され、hypothalamus 全体に汎化される,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Medial temporal lobe,,,compound_term | issue: medial の修飾が落ち、temporal lobe 全体に汎化される,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Motor cortex,,,cortex | common name | issue: 汎用名称が frontal motor cortex（上位）にマップされる。文脈により primary motor cortex が望ましい場合あり（ANALYSIS_REPORT_03 §8 T-2）,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Paraventricular nucleus,,,name | hypothalamus | hypothalamic or thalamic - ambiguous | PVN ambiguous thalamus vs hypothalamus | issue: 視床下部 PVN と視床 PVN の曖昧性。PVN 略語行は視床下部だが、フル名は視床側にマッチする（ANALYSIS_REPORT_03 §8 T-2）,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Septum,,,common | basal_forebrain | septal area common name | septal area generic | issue: テスト意図は septal area（中隔野）だが、RCS は septum pellucidum（透明中隔）にマッチする。Septal area/nuclei（HOMBA:10350）と別構造（ANALYSIS_REPORT_03 §5-1）,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Superior colliculus (deep layers),,,parenthetical | specific layer | issue: 括弧内の層指定が反映されず superior colliculus 全体にマッチする（deep gray layer が 2 位候補）,LLM-based Recursive Improvement において Core へ収録できなかったレコード
+Thalamic nuclei,,,collective | plural of thalamic nucleus | issue: 複数形の集合名詞が特定の視床核群 1 つ（ventral midline nuclei）にマップされる,LLM-based Recursive Improvement において Core へ収録できなかったレコード

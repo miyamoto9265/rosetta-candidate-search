@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2026-06-25 RCS review reports — ROSETTA Candidate Search</title>
+    <meta name="description" content="2026-06-25 に作成した RCS top-1 整合性レビューと top-1 変化55件の再評価レポートへのリンク。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://rcs.mymt.site/reports/2026-06-25.html" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../site-nav.css" />
+    <link rel="stylesheet" href="../site-trust.css" />
+    <style>
+      .report-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .report-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      .report-card h2 {
+        margin-bottom: 10px;
+      }
+
+      .report-card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .report-card a.report-link {
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 10px 14px;
+        text-decoration: none;
+      }
+
+      .report-card a.report-link:hover {
+        background: var(--accent-hover);
+      }
+
+      .meta-list {
+        margin: 18px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a href="../index.html" class="site-brand">ROSETTA Candidate Search</a>
+        <nav class="site-nav-links" aria-label="サイトメニュー">
+          <a href="../index.html">候補検索</a>
+          <a href="../scoring-guide.html">スコアリング解説</a>
+          <a href="../walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="./2026-06-25.html" aria-current="page">Reports</a>
+          <a href="../about.html">このサイトについて</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Reports / 2026-06-25</p>
+        <h1>2026-06-25 RCS review reports</h1>
+        <p class="lead">
+          ROSETTA Candidate Search の改善検証中に作成した、top-1 候補のLLMレビュー結果です。
+          どちらも確立済みの正解データではなく、レビュー補助のための分析レポートです。
+        </p>
+      </section>
+
+      <section class="report-card">
+        <h2>このページについて</h2>
+        <p>
+          今日作成した2つのHTMLレポートへアクセスするための索引ページです。
+          レポート本体は静的HTMLとして同じフロントエンド配下に配置しています。
+        </p>
+        <ul class="meta-list">
+          <li>作成日: 2026-06-25</li>
+          <li>対象: RCS top-1 candidate review</li>
+          <li>判定: DeepSeek flash 2回 + DeepSeek pro 1回の3パスレビュー</li>
+        </ul>
+      </section>
+
+      <section class="report-grid" aria-label="レポート一覧">
+        <article class="report-card">
+          <h2>Top-1 Absolute Consistency Review</h2>
+          <p>
+            入力CSVに記録された各 <code>query</code> と既存 top-1 candidate が、
+            そもそも整合しているかを全921件で判定したレポートです。
+          </p>
+          <a class="report-link" href="./2026-06-25/top1_consistency_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Report 03: Changed Top-1 Review</h2>
+          <p>
+            top-1 が変化した55件だけを対象に、baseline candidate と improved candidate の
+            どちらが元の <code>query</code> により整合するかを再判定したレポートです。
+          </p>
+          <a class="report-link" href="./2026-06-25/report_03.html">レポートを開く</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="../index.html">候補検索</a>
+          <a href="../about.html">このサイトについて</a>
+          <a href="../scoring-guide.html">スコアリング解説</a>
+          <a href="./2026-06-25.html">Reports</a>
+          <a href="../humans.txt">humans.txt</a>
+          <a href="../robots.txt">robots.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · Engine v0.3.1 · <a href="../about.html#contact">Contact / security</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

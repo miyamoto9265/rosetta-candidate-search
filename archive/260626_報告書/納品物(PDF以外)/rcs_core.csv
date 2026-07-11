@@ -1,0 +1,231 @@
+structure_name,expected_homba_id,expected_homba_name,notes
+Abducens nucleus,HOMBA:12418,abducens nucleus,pons | cranial nerve VI
+ACC,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),abbreviation | anterior cingulate cortex
+Amygdala,HOMBA:10361,amygdaloid complex,basic
+amygdala,HOMBA:10361,amygdaloid complex,synonym | should_match_amygdaloid_complex_via_alias
+Amygdaloid complex,HOMBA:10361,amygdaloid complex,synonym | should_match_amygdaloid_complex_HOMBA
+Angular gyrus,HOMBA:12136,angular gyrus,gyrus_name | gyrus
+Anterior cingulate cortex,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),compound | cortex | ACC
+Anterior commissure,HOMBA:10559,anterior commissure,fiber_tract
+Anterior thalamic nuclei,HOMBA:10392,anterior nuclear complex of thalamus,thalamus
+ARC,HOMBA:10492,arcuate nucleus of hypothalamus,abbrev | arcuate nucleus
+Arcuate fasciculus,HOMBA:10569,arcuate fasciculus,white_matter | fiber_tract | language fiber tract vs hypothalamic nucleus | language white matter
+Area 17,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",cytoarchitectonic | Brodmann area - primary visual
+Auditory cortex,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",cortex | generic
+Basal ganglia,HOMBA:10332,basal ganglia (basal nuclei),collective_term | collective
+Basolateral amygdala,HOMBA:10366,basolateral nuclear group of amygdala,compound_modifier | amygdala | BLA
+Bed nucleus of stria terminalis,HOMBA:10384,bed nucleus of stria terminalis,full_name | BNST
+Bilateral amygdala,HOMBA:10361,amygdaloid complex,laterality
+BNST,HOMBA:10384,bed nucleus of stria terminalis,abbreviation | abbrev | bed nucleus of stria terminalis
+Broca area,HOMBA:10185,ventrolateral prefrontal cortex (Broca's area in dominant hemisphere),eponym | inferior frontal gyrus
+Broca's area,HOMBA:10185,ventrolateral prefrontal cortex (Broca's area in dominant hemisphere),eponym | with possessive
+Brodmann area 4,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",cytoarchitectonic | M1
+CA1,HOMBA:10297,CA1 region of hippocampus,abbreviation | abbrev | hippocampal_subfield | hippocampal subfield
+CA2,HOMBA:10298,CA2 region of hippocampus,abbrev | hippocampal subfield
+CA3,HOMBA:10299,CA3 region of hippocampus,abbreviation | abbrev | hippocampal_subfield | hippocampal subfield
+Caudate nucleus,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),basal_ganglia
+Central amygdala,HOMBA:10363,central nucleus of amygdala,compound_modifier | amygdala | CeA
+Cerebellar cortex,HOMBA:10657,cerebellar cortex,cerebellum
+Cerebellar deep nuclei,HOMBA:10660,cerebellar deep nuclei,cerebellum
+Cerebellar hemisphere,HOMBA:10659,cerebellar hemisphere,cerebellum
+Cerebellum,HOMBA:10656,cerebellum,basic | cerebellum
+Cerebral cortex,HOMBA:10159,cerebral cortex,collective_term | basic | basic brain region
+Cerebral hemisphere,HOMBA:10158,telencephalon,basic
+Cingulate cortex,HOMBA:10277,cingulate cortex,synonym | cortex | should match HOMBA cingulate cortex
+Cingulate gyrus,HOMBA:10277,cingulate cortex,level1_issue | gyrus | paracingulate_gyrus_wrong_match | gyrus vs cortex synonym
+Cingulum,HOMBA:10572,cingulum bundle,fiber_tract
+Claustrum,HOMBA:10346,claustrum,subcortical
+Cochlear nucleus,HOMBA:12437,cochlear nuclei,cranial_nerve
+Corpus callosum,HOMBA:10561,corpus callosum,fiber_tract
+Corticospinal tract,HOMBA:12047,corticospinal tract,fiber_tract
+Cuneate nucleus,HOMBA:12589,cuneate nucleus,
+Cuneus,HOMBA:12150,cuneus (gyrus),lobe_structure | gyrus | occipital
+Dentate gyrus,HOMBA:10295,dentate gyrus,gyrus_name | gyrus | hippocampal subregion
+Dentate nucleus,HOMBA:12396,dentate (lateral) nucleus,cerebellar_nucleus | cerebellum
+Diagonal band of Broca,HOMBA:12034,diagonal band,eponym | fiber tract | basal forebrain
+Diencephalon,HOMBA:10389,diencephalon,basic
+Dorsal motor nucleus of vagus,HOMBA:12550,dorsal motor nucleus of the vagus (vagal nerve nucleus),medulla | cranial nerve X
+Dorsal raphe,HOMBA:12223,dorsal raphe nucleus,abbreviation | missing nucleus
+Dorsal raphe nucleus,HOMBA:12223,dorsal raphe nucleus,raphe | DRN
+Dorsal striatum,HOMBA:AA30192,"dorsal striatum (caudoputamen complex-CP, STRd)",compound | basal_ganglia | should match dorsal striatum
+Dorsolateral prefrontal cortex,HOMBA:10173,dorsolateral prefrontal cortex,compound_term | cortex | dlPFC
+Dorsomedial hypothalamic nucleus,HOMBA:10485,dorsomedial hypothalamic nucleus,compound | hypothalamus | DMH
+DRN,HOMBA:12223,dorsal raphe nucleus,abbrev | dorsal raphe
+Emboliform nucleus,HOMBA:12401,lateral interpositus (emboliform) nucleus,cerebellar_nucleus | cerebellum
+Entorhinal area,HOMBA:10317,entorhinal cortex,synonym | alternative name for entorhinal cortex | alternative for entorhinal cortex
+Entorhinal cortex,HOMBA:10317,entorhinal cortex,cortex_name | cortex
+External capsule,HOMBA:10573,external capsule,fiber_tract
+Extreme capsule,HOMBA:10574,extreme capsule,fiber_tract
+Facial motor nucleus,HOMBA:12420,facial nucleus,pons | cranial nerve VII
+Facial nucleus,HOMBA:12420,facial nucleus,medulla | cranial nerve VII
+Fastigial nucleus,HOMBA:12402,fastigial (medial) nucleus,cerebellar_nucleus | cerebellum
+Fimbria of hippocampus,HOMBA:10575,fimbria,fiber_tract
+Flocculus,HOMBA:AA30424,lobule Xa (flocculus),cerebellum
+Fornix,HOMBA:10576,fornix,fiber_tract
+Fourth ventricle,HOMBA:12805,fourth ventricle,ventricle
+Frontal lobe,HOMBA:12113,frontal lobe,lobe
+Fusiform gyrus,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,gyrus_name | gyrus
+Globose nucleus,HOMBA:12400,medial interpositus (globose) nucleus,cerebellar_nucleus | cerebellum
+Globus pallidus,HOMBA:10342,globus pallidus (paleostriatum),basal_ganglia
+Globus pallidus externa,HOMBA:10343,external division of globus pallidus,basal_ganglia | GPe variant
+Globus pallidus interna,HOMBA:10344,internal division of globus pallidus,basal_ganglia | GPi variant
+GPe,HOMBA:10343,external division of globus pallidus,abbrev | external globus pallidus
+GPi,HOMBA:10344,internal division of globus pallidus,abbrev | internal globus pallidus
+Gracile nucleus,HOMBA:12592,gracile nucleus,
+Habenula,HOMBA:10452,habenular nuclei,level1_issue | epithalamus | habenular_triangle_wrong_match
+Habenular nuclei,HOMBA:10452,habenular nuclei,epithalamus | exact HOMBA name
+Hippocampal formation,HOMBA:12170,hippocampal formation,synonym | alternative name for hippocampus group
+Hippocampus,HOMBA:AA30093,hippocampus,basic
+Hippocampus proper,HOMBA:10296,hippocampal proper (Cornu Ammonis),hippocampus
+Hypoglossal nucleus,HOMBA:12545,hypoglossal nucleus,medulla | cranial nerve XII
+Hypothalamus,HOMBA:10467,hypothalamus,basic
+Inferior colliculus,HOMBA:12305,inferior colliculus,midbrain
+Inferior colliculus (central nucleus),HOMBA:12309,central nucleus of inferior colliculus,parenthetical | specific sub-region
+Inferior frontal gyrus,HOMBA:12117,inferior frontal gyrus,gyrus | Broca area region
+Inferior longitudinal fasciculus,HOMBA:10580,inferior longitudinal fasciculus,fiber_tract | ILF
+Inferior olivary nucleus,HOMBA:12600,inferior olive,level1_issue | medulla | inferior_olive_naming_mismatch | synonym
+Inferior olive,HOMBA:12600,inferior olive,medulla
+Inferior temporal gyrus,HOMBA:12142,inferior temporal gyrus,gyrus | ITG
+Insula,HOMBA:12176,insular lobe,level1_issue | lobe | limen_insula_wrong_match | common synonym
+Insular lobe,HOMBA:12176,insular lobe,lobe | exact HOMBA name
+Internal capsule,HOMBA:10581,internal capsule,fiber_tract
+Interposed nucleus,HOMBA:12399,interpositus (intermediate) nucleus,cerebellum
+Lateral geniculate body,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),synonym | LGN alternative
+Lateral geniculate nucleus,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),
+Lateral habenula,HOMBA:10453,lateral habenular nucleus,epithalamus | LHb
+Lateral hypothalamic area,HOMBA:10494,"lateral hypothalamic area, tuberal part",compound | hypothalamus | LHA
+Lateral orbitofrontal cortex,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",functional_name | lateral OFC
+Lateral septal nucleus,HOMBA:10352,lateral septal nuclear complex,basal_forebrain
+Lateral septum,HOMBA:10352,lateral septal nuclear complex,modifier
+Lateral ventricle,HOMBA:10598,body of lateral ventricles,ventricle
+LC,HOMBA:12499,nucleus coeruleus (locus coeruleus),abbreviation | abbrev | locus_coeruleus | locus coeruleus
+Left hippocampus,HOMBA:AA30093,hippocampus,laterality | should_match_hippocampus
+Lingual gyrus,HOMBA:12151,lingual gyrus,gyrus_name | gyrus
+Locus ceruleus,HOMBA:12499,nucleus coeruleus (locus coeruleus),spelling_variant | pons | alternative spelling without 'o' | British spelling
+Locus coeruleus,HOMBA:12499,nucleus coeruleus (locus coeruleus),level1_issue | pons | correct_but_specificity_penalty_0_86 | LC
+Locus coeruleus (pontine),HOMBA:12499,nucleus coeruleus (locus coeruleus),parenthetical | with location qualifier
+Mammillary bodies,HOMBA:15546,mammillary body,hypothalamus | plural
+Mammillary body,HOMBA:15546,mammillary body,hypothalamus
+Medial amygdaloid nucleus,HOMBA:10376,medial nuclear complex of amygdala,amygdala
+Medial forebrain bundle,HOMBA:10587,medial forebrain bundle,fiber_tract | MFB
+Medial geniculate body,HOMBA:10434,medial geniculate nucleus,synonym | medial geniculate nucleus alternative name
+Medial geniculate nucleus,HOMBA:10434,medial geniculate nucleus,
+Medial habenula,HOMBA:10456,medial habenular nucleus,epithalamus | MHb
+Medial orbitofrontal cortex,HOMBA:10195,medial orbital frontal cortex (area 14),functional_name | medial OFC
+Medial prefrontal cortex,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),cortex | mPFC
+Medial septal nucleus,HOMBA:10351,medial septal nucleus,basal_forebrain
+Medial septum,HOMBA:10351,medial septal nucleus,modifier
+Median raphe nucleus,HOMBA:12235,median raphe nucleus,compound | raphe | alternative raphe nucleus | MRN
+Mediodorsal thalamus,HOMBA:10398,mediodorsal nucleus of thalamus,thalamus | MD
+Medulla,HOMBA:10662,myelencephalon (medulla oblongata),basic | abbreviation of medulla oblongata
+Medulla oblongata,HOMBA:10662,myelencephalon (medulla oblongata),basic
+MFB,HOMBA:10587,medial forebrain bundle,abbrev | medial forebrain bundle
+Midbrain,HOMBA:10648,"gray matter of midbrain (mesencephalon, upper brainstem)",basic
+Middle frontal gyrus,HOMBA:12116,middle frontal gyrus,gyrus
+Middle temporal gyrus,HOMBA:12141,middle temporal gyrus,gyrus | MTG
+Neostriatum,HOMBA:10333,striatum (neostriatum),basal_ganglia | synonym caudate+putamen
+NTS,HOMBA:12557,solitary nucleus,abbreviation | abbrev | nucleus tractus solitarius | nucleus tractus solitarii
+Nucleus accumbens,HOMBA:10339,nucleus accumbens,basal_ganglia
+Nucleus accumbens core,HOMBA:10340,core of nucleus accumbens,compound_modifier | basal_ganglia | modifier
+Nucleus accumbens shell,HOMBA:10341,shell of nucleus accumbens,compound_modifier | basal_ganglia | modifier
+Nucleus basalis of Meynert,HOMBA:10353,basal nucleus of Meynert,eponym | cholinergic nucleus | basal forebrain
+Nucleus coeruleus,HOMBA:12499,nucleus coeruleus (locus coeruleus),pons | HOMBA name for locus coeruleus
+Nucleus of the solitary tract,HOMBA:12557,solitary nucleus,full_name | medulla | NTS | NTS full name
+Occipital lobe,HOMBA:12148,occipital lobe,lobe
+Olfactory bulb,HOMBA:10307,olfactory bulb,
+Optic chiasm,HOMBA:10644,optic chiasm,fiber_tract
+Optic tract,HOMBA:10589,optic tract,fiber_tract
+Orbitofrontal cortex,HOMBA:10194,orbital frontal cortex,functional_name | cortex | OFC - should match orbitofrontal region | OFC
+PAG,HOMBA:12209,periaqueductal gray substance,abbreviation | abbrev | periaqueductal_gray | periaqueductal gray
+Pallidum,HOMBA:10342,globus pallidus (paleostriatum),basal_ganglia | synonym globus pallidus
+Paracingulate gyrus,HOMBA:146034872,paracingulate gyrus,gyrus
+Parahippocampal cortex,HOMBA:12162,parahippocampal gyrus,cortex
+Parahippocampal gyrus,HOMBA:12162,parahippocampal gyrus,gyrus_name | gyrus
+Parasubiculum,HOMBA:10316,parasubiculum (parasubicular cortex),hippocampus
+Parietal lobe,HOMBA:12131,parietal lobe,lobe
+PCC,HOMBA:10285,posterior cingulate cortex (PCC),abbreviation | posterior cingulate cortex
+Perforant path,HOMBA:12080,perforant path,fiber_tract
+Periaqueductal gray,HOMBA:AA30359,periaqueductal gray region,midbrain | PAG
+Periaqueductal grey,HOMBA:AA30359,periaqueductal gray region,spelling | midbrain | British English spelling | British spelling
+Perirhinal cortex,HOMBA:10320,perirhinal cortex (area 35),cortex
+Pineal gland,HOMBA:10460,pineal body,epithalamus
+Pituitary gland,HOMBA:10505,pituitary body/gland (hypophysis),level1_issue | pituitary_body_naming_mismatch
+Pons,HOMBA:10661,pons,basic
+Pontine nuclei,HOMBA:12406,pontine nucleus,pons | collective
+Postcentral gyrus,HOMBA:12132,postcentral gyrus,gyrus | S1 gyrus
+Posterior cingulate cortex,HOMBA:10285,posterior cingulate cortex (PCC),compound | cortex | PCC
+Posterior commissure,HOMBA:10567,posterior commissure,fiber_tract
+Precentral gyrus,HOMBA:12114,precentral gyrus,gyrus | M1 gyrus
+Precuneus,HOMBA:12137,precuneaus (gyrus),lobe_structure | gyrus | parietal
+Prefrontal cortex,HOMBA:10172,prefrontal cortex,cortex
+Premotor cortex,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",cortex
+Preoptic area,HOMBA:10468,preoptic region of HTH,hypothalamus
+Presubiculum,HOMBA:10315,presubiculum (presubicular cortex),subregion | hippocampus | hippocampal subregion
+Primary auditory cortex,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",functional_name | cortex | A1
+Primary motor area,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",synonym | alternative name for M1
+Primary motor cortex,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",functional_name | cortex | M1
+Primary somatosensory cortex,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",functional_name | cortex | S1
+Primary visual cortex,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",functional_name | cortex | V1
+Principal trigeminal nucleus,HOMBA:12444,principal sensory nucleus of trigeminal nerve,pons | sensory
+Pulvinar,HOMBA:10409,pulvinar of thalamus,thalamus
+Pulvinar nucleus,HOMBA:10409,pulvinar of thalamus,level1_issue | thalamus | low_score_0_74
+Purkinje cell layer,HOMBA:AA30428,Purkinje cell layer of cerebellar cortex,cerebellum | layer name
+Putamen,HOMBA:10338,putamen (lateroventral division of the CP),basal_ganglia
+PVN,HOMBA:10476,paraventricular nucleus of hypothalamus,abbrev | hypothalamic paraventricular nucleus
+Pyramidal tract,HOMBA:12773,pyramidal tract,fiber_tract | synonym for CST
+Raphe nuclei,HOMBA:12222,raphe nuclei in midbrain,collective | raphe | all raphe nuclei
+Red nucleus,HOMBA:12247,red nucleus,midbrain
+Retrosplenial cortex,HOMBA:10324,retrosplenial cortex,cortex
+Right amygdala,HOMBA:10361,amygdaloid complex,laterality | should_match_amygdala
+SCN,HOMBA:10480,suprachiasmatic nucleus,abbrev | suprachiasmatic
+Secondary somatosensory cortex,HOMBA:13010,subcentral cortex (area 43; secondary somatosensory cortex),cortex | S2
+Septal area,HOMBA:10350,septal region (septal nuclear complex),basal_forebrain
+Septal nuclei,HOMBA:10350,septal region (septal nuclear complex),plural | basal_forebrain | septal area
+SN,HOMBA:12251,substantia nigra,abbreviation | abbrev | substantia_nigra | substantia nigra
+SNc,HOMBA:12252,"substantia nigra, compact division",abbrev | substantia nigra compacta
+SNr,HOMBA:12259,"substantia nigra, reticular division",abbrev | substantia nigra reticulata
+Solitary nucleus,HOMBA:12557,solitary nucleus,medulla
+Somatosensory cortex,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",cortex | generic
+Spinal cord,HOMBA:AA30565,spinal cord,basic
+Spinal trigeminal nucleus,HOMBA:12572,spinal trigeminal nucleus,compound | pons | without subdivision
+Spinal trigeminal nucleus caudalis,HOMBA:12573,"spinal trigeminal nucleus, caudal division",modifier | pons | specific subdivision | latin subdivision
+STN,HOMBA:10466,subthalamic nucleus,abbreviation | abbrev | subthalamic_nucleus | subthalamic nucleus
+Stria terminalis,HOMBA:10591,stria terminalis,fiber_tract
+Striatum,HOMBA:10333,striatum (neostriatum),basic | basal_ganglia
+Subiculum,HOMBA:10302,subiculum proper (strictly defined subiculum),subregion | hippocampus | hippocampal subregion
+Substantia innominata,HOMBA:13034,substantia innominata,name | basal_forebrain | basal forebrain structure
+Substantia nigra,HOMBA:12251,substantia nigra,midbrain
+Substantia nigra pars compacta,HOMBA:12252,"substantia nigra, compact division",compound_modifier | midbrain | SNc
+Substantia nigra pars reticulata,HOMBA:12259,"substantia nigra, reticular division",compound_modifier | midbrain | SNr
+Subthalamic nucleus,HOMBA:10466,subthalamic nucleus,basal_ganglia
+Superior colliculus,HOMBA:12292,superior colliculus,midbrain
+Superior frontal gyrus,HOMBA:12115,superior frontal gyrus,gyrus
+Superior longitudinal fasciculus,HOMBA:10592,superior longitudinal fasciculus,fiber_tract | SLF
+Superior olivary nucleus,HOMBA:12468,superior olivary nucleus,
+Superior temporal gyrus,HOMBA:12140,superior temporal gyrus,gyrus | STG
+Supplementary motor area,HOMBA:AA30012,medial division of area 6 (supplementary motor area),cortex | SMA
+Suprachiasmatic nucleus,HOMBA:10480,suprachiasmatic nucleus,hypothalamus | SCN
+Supramarginal gyrus,HOMBA:12135,supramarginal gyrus,gyrus_name | gyrus
+Telencephalon,HOMBA:10158,telencephalon,basic
+Temporal lobe,HOMBA:12139,temporal lobe,lobe
+Thalamus,HOMBA:10390,thalamus,basic
+Thalamus (excluding pulvinar),HOMBA:10390,thalamus,parenthetical_excluding | parenthetical | should_match_thalamus_not_pulvinar | parenthetical exclusion
+Third ventricle,HOMBA:10602,third ventricle,ventricle
+Trigeminal nucleus,HOMBA:12444,principal sensory nucleus of trigeminal nerve,pons | cranial nerve V
+Trochlear nucleus,HOMBA:12206,trochlear nucleus,
+Uncinate fasciculus,HOMBA:10594,uncinate fasciculus,fiber_tract
+Ventral posterolateral nucleus,HOMBA:10424,ventral posterior lateral nucleus,thalamus | VPL
+Ventral posteromedial nucleus,HOMBA:10425,ventral posterior medial nucleus,thalamus | VPM
+Ventral striatum,HOMBA:AA30195,ventral striatum (STRv),compound | basal_ganglia | should match ventral striatum
+Ventral tegmental area,HOMBA:12261,ventral tegmental area,midbrain
+Ventrolateral thalamus,HOMBA:10420,ventral lateral nucleus of thalamus,thalamus | VL
+Ventromedial hypothalamic nucleus,HOMBA:10488,ventromedial hypothalamic nucleus,hypothalamus | VMH
+Ventromedial prefrontal cortex,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),compound_term
+Vermis,HOMBA:10658,cerebellar vermis,cerebellum
+Vestibular nuclei,HOMBA:12448,vestibular nuclei in pons,edge_case | plural form - should map to both pons and medulla groups
+Vestibular nucleus,HOMBA:12448,vestibular nuclei in pons,level1_issue | cranial_nerve | hierarchy_parent_promoted_over_correct_match
+Visual cortex,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",cortex | generic
+VTA,HOMBA:12261,ventral tegmental area,abbreviation | abbrev | ventral_tegmental_area | ventral tegmental area
+Wernicke area,HOMBA:12145,planum temporale,eponym
+Wernicke's area,HOMBA:12145,planum temporale,eponym | with possessive
+Zona incerta,HOMBA:10463,zona incerta,thalamus
