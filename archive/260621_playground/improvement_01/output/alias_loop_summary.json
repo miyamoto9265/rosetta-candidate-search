@@ -1,0 +1,2185 @@
+{
+  "baseline": {
+    "total": 876,
+    "flags": {
+      "high_confidence": 322,
+      "needs_review": 346,
+      "modifier_conflict": 41,
+      "low_confidence": 167
+    },
+    "high_conf_rate": 0.3676,
+    "by_dataset": {
+      "corpus": {
+        "high_confidence": 156,
+        "needs_review": 111,
+        "modifier_conflict": 14,
+        "low_confidence": 98
+      },
+      "species": {
+        "needs_review": 235,
+        "high_confidence": 166,
+        "low_confidence": 69,
+        "modifier_conflict": 27
+      }
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "added_count": 350,
+      "added": [
+        {
+          "input_text": "Fornix (anterior columns)",
+          "homba_text": "fornix",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:10576"
+        },
+        {
+          "input_text": "Edinger-Westphal nucleus (preganglionic)",
+          "homba_text": "pre-Edinger-Westphal nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.880->needs_review | now 1.000 HOMBA:12288"
+        },
+        {
+          "input_text": "Vagus (spinal accessory) neurons",
+          "homba_text": "spinal accessory nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.615->modifier_conflict | now 1.000 HOMBA:AA30587"
+        },
+        {
+          "input_text": "Ventrolateral medulla",
+          "homba_text": "anterolateral medullary sulcus",
+          "notes": "round 1 | auto round | homba search sim=0.75 | was 0.724->needs_review | now 1.000 HOMBA:12873"
+        },
+        {
+          "input_text": "Laterodorsal tegmentum",
+          "homba_text": "laterodorsal tegmental nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.504->low_confidence | now 1.000 HOMBA:12519"
+        },
+        {
+          "input_text": "A5 catecholaminergic cell group",
+          "homba_text": "A8 dopamine cell group",
+          "notes": "round 1 | auto round | homba search sim=0.72 | was 0.285->low_confidence | now 1.000 HOMBA:AA30843"
+        },
+        {
+          "input_text": "Corticospinal tract (pyramids)",
+          "homba_text": "corticospinal tract",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12047"
+        },
+        {
+          "input_text": "Cerebellar cortex (granular layer)",
+          "homba_text": "cerebellar cortex",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:10657"
+        },
+        {
+          "input_text": "Superior frontal gyrus (dorsolateral)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Superior frontal gyrus (medial)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.86 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Paracentral lobule",
+          "homba_text": "paracentral lobule, caudal part",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.853->needs_review | now 1.000 HOMBA:12138"
+        },
+        {
+          "input_text": "Superior frontal gyrus (orbital part)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Superior frontal gyrus (medial orbital)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Middle frontal gyrus (orbital part)",
+          "homba_text": "middle frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12116"
+        },
+        {
+          "input_text": "Inferior frontal gyrus (orbital part)",
+          "homba_text": "inferior frontal gyrus, triangular part",
+          "notes": "round 1 | auto round | homba search sim=0.88 | was 0.880->needs_review | now 1.000 HOMBA:12118"
+        },
+        {
+          "input_text": "Olfactory cortex",
+          "homba_text": "olfactory tract",
+          "notes": "round 1 | auto round | homba search sim=0.77 | was 0.640->needs_review | now 1.000 HOMBA:12073"
+        },
+        {
+          "input_text": "Superior parietal gyrus",
+          "homba_text": "superior parietal lobule (gyrus)",
+          "notes": "round 1 | auto round | homba search sim=0.87 | was 0.877->needs_review | now 1.000 HOMBA:12133"
+        },
+        {
+          "input_text": "Middle occipital gyrus",
+          "homba_text": "middle frontal gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.644->needs_review | now 1.000 HOMBA:12116"
+        },
+        {
+          "input_text": "Temporal pole (superior temporal gyrus)",
+          "homba_text": "superior temporal gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 1.000->modifier_conflict | now 1.000 HOMBA:12140"
+        },
+        {
+          "input_text": "Temporal pole (middle temporal gyrus)",
+          "homba_text": "middle temporal gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 1.000->modifier_conflict | now 1.000 HOMBA:12141"
+        },
+        {
+          "input_text": "Lenticular nucleus (pallidum)",
+          "homba_text": "reticular nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.880->needs_review | now 1.000 HOMBA:10464"
+        },
+        {
+          "input_text": "Ventral lateral thalamic nucleus",
+          "homba_text": "ventral anterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.84 | was 0.804->needs_review | now 1.000 HOMBA:AA30339"
+        },
+        {
+          "input_text": "Ventralis intermedius",
+          "homba_text": "ventral lateral nucleus of thalamus",
+          "notes": "round 1 | auto round | hint table | was 0.376->low_confidence | now 1.000 HOMBA:10420"
+        },
+        {
+          "input_text": "Mediodorsal thalamic nucleus",
+          "homba_text": "submedius thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.731->needs_review | now 1.000 HOMBA:AA30278"
+        },
+        {
+          "input_text": "Centre median parafascicular complex",
+          "homba_text": "centromedian nucleus of thalamus",
+          "notes": "round 1 | auto round | hint table | was 0.285->low_confidence | now 1.000 HOMBA:10449"
+        },
+        {
+          "input_text": "Reticular perithalamic nucleus",
+          "homba_text": "ethmoid thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.724->needs_review | now 1.000 HOMBA:AA30314"
+        },
+        {
+          "input_text": "Forel's field H",
+          "homba_text": "prerubral field (field H3)",
+          "notes": "round 1 | auto round | homba search sim=0.58 | was 0.285->low_confidence | now 1.000 HOMBA:AA30325"
+        },
+        {
+          "input_text": "CA4 (dentate hilus)",
+          "homba_text": "dentate gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.880->needs_review | now 1.000 HOMBA:10295"
+        },
+        {
+          "input_text": "Vestigial hippocampal sulcus",
+          "homba_text": "septohippocampal nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.488->low_confidence | now 1.000 HOMBA:13029"
+        },
+        {
+          "input_text": "Intralaminar thalamic nuclei",
+          "homba_text": "ventral anterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.614->needs_review | now 1.000 HOMBA:AA30339"
+        },
+        {
+          "input_text": "Medial dorsal thalamic nucleus",
+          "homba_text": "submedius thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.719->needs_review | now 1.000 HOMBA:AA30278"
+        },
+        {
+          "input_text": "Lateral posterior thalamic nucleus",
+          "homba_text": "posterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.817->needs_review | now 1.000 HOMBA:10503"
+        },
+        {
+          "input_text": "Posterior thalamic nucleus",
+          "homba_text": "posterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.93 | was 0.857->needs_review | now 1.000 HOMBA:10503"
+        },
+        {
+          "input_text": "Inferior pulvinar",
+          "homba_text": "inferior division of pulvinar",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.781->needs_review | now 1.000 HOMBA:10413"
+        },
+        {
+          "input_text": "Uncus",
+          "homba_text": "uncus of (para)hippocampal gyrus",
+          "notes": "round 1 | auto round | hint table | was 0.223->low_confidence | now 1.000 HOMBA:12165"
+        },
+        {
+          "input_text": "Meyer's loop (geniculocalcarine tract)",
+          "homba_text": "capsular part of optic radiation (geniculocalcarine tract)",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.537->low_confidence | now 1.000 HOMBA:12054"
+        },
+        {
+          "input_text": "Angular gyrus (anterior)",
+          "homba_text": "angular gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12136"
+        },
+        {
+          "input_text": "Angular gyrus (posterior)",
+          "homba_text": "angular gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12136"
+        },
+        {
+          "input_text": "Intracalcarine cortex (inferior)",
+          "homba_text": "ventral posterior inferior nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.56 | was 0.681->needs_review | now 1.000 HOMBA:10426"
+        },
+        {
+          "input_text": "Intracalcarine cortex (superior)",
+          "homba_text": "paleocortex (semicortex)",
+          "notes": "round 1 | auto round | homba search sim=0.58 | was 0.667->needs_review | now 1.000 HOMBA:10306"
+        },
+        {
+          "input_text": "Cingulate gyrus (anterior anterior part)",
+          "homba_text": "cingulate gyrus, rostral (anterior) part",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.978->modifier_conflict | now 1.000 HOMBA:12157"
+        },
+        {
+          "input_text": "Cingulate gyrus (anterior posterior part)",
+          "homba_text": "cingulate gyrus, caudal (posterior) part",
+          "notes": "round 1 | auto round | homba search sim=0.84 | was 0.895->modifier_conflict | now 1.000 HOMBA:12158"
+        },
+        {
+          "input_text": "Cuneal cortex",
+          "homba_text": "cerebral cortex",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.566->low_confidence | now 1.000 HOMBA:10159"
+        },
+        {
+          "input_text": "Central opercular cortex (posterior)",
+          "homba_text": "frontal motor cortex (posterior frontal cortex)",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.586->low_confidence | now 1.000 HOMBA:AA30009"
+        },
+        {
+          "input_text": "Superior frontal gyrus (lateral anterior)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Superior frontal gyrus (lateral middle)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Superior frontal gyrus (lateral posterior)",
+          "homba_text": "superior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12115"
+        },
+        {
+          "input_text": "Middle frontal gyrus (anterior)",
+          "homba_text": "middle frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12116"
+        },
+        {
+          "input_text": "Middle frontal gyrus (posterior)",
+          "homba_text": "middle frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12116"
+        },
+        {
+          "input_text": "Inferior frontal gyrus (anterior)",
+          "homba_text": "inferior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.83 | was 0.880->needs_review | now 1.000 HOMBA:12117"
+        },
+        {
+          "input_text": "Inferior frontal gyrus (pars opercularis)",
+          "homba_text": "inferior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12117"
+        },
+        {
+          "input_text": "Inferior frontal gyrus (pars orbitalis)",
+          "homba_text": "inferior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12117"
+        },
+        {
+          "input_text": "Inferior frontal gyrus (pars triangularis)",
+          "homba_text": "inferior frontal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12117"
+        },
+        {
+          "input_text": "Frontal medial cortex",
+          "homba_text": "frontal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.80 | was 0.837->needs_review | now 1.000 HOMBA:10161"
+        },
+        {
+          "input_text": "Frontal pole (lateral)",
+          "homba_text": "frontal pole",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:146034888"
+        },
+        {
+          "input_text": "Frontal pole (medial)",
+          "homba_text": "frontal pole",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:146034888"
+        },
+        {
+          "input_text": "Insular cortex (anterior)",
+          "homba_text": "major insular cortex",
+          "notes": "round 1 | auto round | boost exact homba sim=0.65 | was 0.880->needs_review | now 1.000 HOMBA:10288"
+        },
+        {
+          "input_text": "Insular cortex (posterior)",
+          "homba_text": "major insular cortex",
+          "notes": "round 1 | auto round | boost exact homba sim=0.64 | was 0.880->needs_review | now 1.000 HOMBA:10288"
+        },
+        {
+          "input_text": "Occipital fusiform gyrus",
+          "homba_text": "inferior occipital gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.62 | was 0.792->needs_review | now 1.000 HOMBA:12153"
+        },
+        {
+          "input_text": "Postcentral gyrus (lateral inferior)",
+          "homba_text": "postcentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12132"
+        },
+        {
+          "input_text": "Postcentral gyrus (lateral middle)",
+          "homba_text": "postcentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12132"
+        },
+        {
+          "input_text": "Postcentral gyrus (lateral superior)",
+          "homba_text": "postcentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12132"
+        },
+        {
+          "input_text": "Postcentral gyrus (medial)",
+          "homba_text": "postcentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.83 | was 0.880->needs_review | now 1.000 HOMBA:12132"
+        },
+        {
+          "input_text": "Precentral gyrus (lateral inferior)",
+          "homba_text": "precentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12114"
+        },
+        {
+          "input_text": "Precentral gyrus (lateral middle)",
+          "homba_text": "precentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12114"
+        },
+        {
+          "input_text": "Precentral gyrus (lateral superior)",
+          "homba_text": "precentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12114"
+        },
+        {
+          "input_text": "Precentral gyrus (medial)",
+          "homba_text": "precentral gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12114"
+        },
+        {
+          "input_text": "Subcallosal cortex",
+          "homba_text": "subgenual (subcallosal) cingulate cortex (area 25)",
+          "notes": "round 1 | auto round | hint table | was 0.663->needs_review | now 1.000 HOMBA:10281"
+        },
+        {
+          "input_text": "Supracalcarine cortex",
+          "homba_text": "parietal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.514->low_confidence | now 1.000 HOMBA:10208"
+        },
+        {
+          "input_text": "Supramarginal gyrus (anterior)",
+          "homba_text": "supramarginal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12135"
+        },
+        {
+          "input_text": "Supramarginal gyrus (posterior)",
+          "homba_text": "supramarginal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12135"
+        },
+        {
+          "input_text": "Superior parietal lobule (anterior)",
+          "homba_text": "superior parietal lobule (gyrus)",
+          "notes": "round 1 | auto round | boost exact homba sim=0.83 | was 0.880->needs_review | now 1.000 HOMBA:12133"
+        },
+        {
+          "input_text": "Superior parietal lobule (posterior)",
+          "homba_text": "superior parietal lobule (gyrus)",
+          "notes": "round 1 | auto round | boost exact homba sim=0.81 | was 0.880->needs_review | now 1.000 HOMBA:12133"
+        },
+        {
+          "input_text": "Superior temporal gyrus (anterior)",
+          "homba_text": "superior temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.84 | was 0.880->needs_review | now 1.000 HOMBA:12140"
+        },
+        {
+          "input_text": "Superior temporal gyrus (posterior)",
+          "homba_text": "superior temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12140"
+        },
+        {
+          "input_text": "Middle temporal gyrus (anterior)",
+          "homba_text": "middle temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12141"
+        },
+        {
+          "input_text": "Middle temporal gyrus (posterior)",
+          "homba_text": "middle temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12141"
+        },
+        {
+          "input_text": "Inferior temporal gyrus (anterior)",
+          "homba_text": "inferior temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.84 | was 0.880->needs_review | now 1.000 HOMBA:12142"
+        },
+        {
+          "input_text": "Inferior temporal gyrus (posterior)",
+          "homba_text": "inferior temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12142"
+        },
+        {
+          "input_text": "Temporal frontal cortex (anterior)",
+          "homba_text": "frontal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.759->needs_review | now 1.000 HOMBA:10161"
+        },
+        {
+          "input_text": "Temporal frontal cortex (posterior)",
+          "homba_text": "frontal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.868->needs_review | now 1.000 HOMBA:10161"
+        },
+        {
+          "input_text": "Middle temporal gyrus (temporo-occipital)",
+          "homba_text": "middle temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12141"
+        },
+        {
+          "input_text": "Inferior temporal gyrus (temporo-occipital)",
+          "homba_text": "inferior temporal gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:12142"
+        },
+        {
+          "input_text": "Temporal occipital fusiform cortex",
+          "homba_text": "occipital cortex",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.674->needs_review | now 1.000 HOMBA:10268"
+        },
+        {
+          "input_text": "Secondary visual cortex",
+          "homba_text": "dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.857->needs_review | now 1.000 HOMBA:AA30823"
+        },
+        {
+          "input_text": "Visual area V4",
+          "homba_text": "transitional fourth visual area (V4T)",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.559->low_confidence | now 1.000 HOMBA:AA30818"
+        },
+        {
+          "input_text": "Visual area V6",
+          "homba_text": "sixth visual area V6 , part A",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.785->needs_review | now 1.000 HOMBA:267499151"
+        },
+        {
+          "input_text": "Fundal superior temporal area",
+          "homba_text": "medial superior temporal area",
+          "notes": "round 1 | auto round | homba search sim=0.90 | was 0.623->needs_review | now 1.000 HOMBA:AA30021"
+        },
+        {
+          "input_text": "Area PH",
+          "homba_text": "area postrema",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.530->low_confidence | now 1.000 HOMBA:12807"
+        },
+        {
+          "input_text": "V4 transitional area",
+          "homba_text": "amygdaloid transition areas",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.545->low_confidence | now 1.000 HOMBA:10379"
+        },
+        {
+          "input_text": "Somatosensory area 1",
+          "homba_text": "somatosensory radiation",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.597->low_confidence | now 1.000 HOMBA:AA30495"
+        },
+        {
+          "input_text": "Somatosensory area 2",
+          "homba_text": "somatosensory radiation",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.597->low_confidence | now 1.000 HOMBA:AA30495"
+        },
+        {
+          "input_text": "Area 55b",
+          "homba_text": "area 55b of premotor cortex",
+          "notes": "round 1 | auto round | hint table | was 0.468->low_confidence | now 1.000 HOMBA:AA30011"
+        },
+        {
+          "input_text": "Premotor area 6a",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.498->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Premotor area 6v",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.498->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Premotor area 6d",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.498->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Premotor area 6m",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.498->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Premotor area 6r",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.498->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Premotor area 6mp",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.59 | was 0.490->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Prefrontal area 8Av",
+          "homba_text": "lateroventral subdivision of area 8",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10176"
+        },
+        {
+          "input_text": "Prefrontal area 8Ad",
+          "homba_text": "laterodorsal subdivision of area 8",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10175"
+        },
+        {
+          "input_text": "Prefrontal area 8BL",
+          "homba_text": "laterodorsal subdivision of area 8",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10175"
+        },
+        {
+          "input_text": "Prefrontal area 8BM",
+          "homba_text": "medial subdivision of area 8",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10177"
+        },
+        {
+          "input_text": "Prefrontal area 8C",
+          "homba_text": "caudal division of DFC (area 8, DFCc)",
+          "notes": "round 1 | auto round | hint table | was 0.480->low_confidence | now 1.000 HOMBA:10174"
+        },
+        {
+          "input_text": "Prefrontal area 9-46v",
+          "homba_text": "ventral subdivision of A9/46",
+          "notes": "round 1 | auto round | hint table | was 0.544->low_confidence | now 1.000 HOMBA:10183"
+        },
+        {
+          "input_text": "Prefrontal area 9-46d",
+          "homba_text": "dorsal subdivision of A9/46",
+          "notes": "round 1 | auto round | hint table | was 0.544->low_confidence | now 1.000 HOMBA:10182"
+        },
+        {
+          "input_text": "Prefrontal area 46",
+          "homba_text": "rostroventral division of DFC (area 46, DFCv)",
+          "notes": "round 1 | auto round | hint table | was 0.629->needs_review | now 1.000 HOMBA:10184"
+        },
+        {
+          "input_text": "Prefrontal area 47s",
+          "homba_text": "rostral subdivision of area 12/47",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:AA30002"
+        },
+        {
+          "input_text": "Prefrontal area 47m",
+          "homba_text": "medial part of area 12/47",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10206"
+        },
+        {
+          "input_text": "Prefrontal area 47l",
+          "homba_text": "lateral part of area 12/47",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10207"
+        },
+        {
+          "input_text": "Prefrontal area 47r",
+          "homba_text": "rostral subdivision of area 12/47",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:AA30002"
+        },
+        {
+          "input_text": "Prefrontal area 9a",
+          "homba_text": "lateral subdivision of area 9",
+          "notes": "round 1 | auto round | hint table | was 0.480->low_confidence | now 1.000 HOMBA:10179"
+        },
+        {
+          "input_text": "Prefrontal area 9m",
+          "homba_text": "medial subdivision of area 9",
+          "notes": "round 1 | auto round | hint table | was 0.480->low_confidence | now 1.000 HOMBA:10180"
+        },
+        {
+          "input_text": "Prefrontal area 9p",
+          "homba_text": "medial subdivision of area 9",
+          "notes": "round 1 | auto round | hint table | was 0.480->low_confidence | now 1.000 HOMBA:10180"
+        },
+        {
+          "input_text": "Prefrontal area 10d",
+          "homba_text": "medial subdivision of area 10",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10191"
+        },
+        {
+          "input_text": "Prefrontal area 10r",
+          "homba_text": "lateral subdivision of area 10",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10192"
+        },
+        {
+          "input_text": "Prefrontal area 10pp",
+          "homba_text": "frontal polar cortex (FP, area 10)",
+          "notes": "round 1 | auto round | hint table | was 0.466->low_confidence | now 1.000 HOMBA:10190"
+        },
+        {
+          "input_text": "Posterior opercular area POS2",
+          "homba_text": "opercular subdivision of area 44",
+          "notes": "round 1 | auto round | hint table | was 0.359->low_confidence | now 1.000 HOMBA:266441161"
+        },
+        {
+          "input_text": "Lateral intraparietal area (ventral)",
+          "homba_text": "lateral part of area 12/47",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.579->modifier_conflict | now 1.000 HOMBA:10207"
+        },
+        {
+          "input_text": "Lateral intraparietal area (dorsal)",
+          "homba_text": "lateral part of area 12/47",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.613->needs_review | now 1.000 HOMBA:10207"
+        },
+        {
+          "input_text": "Anterior intraparietal area",
+          "homba_text": "anterior (ventral) spinal artery",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.629->needs_review | now 1.000 HOMBA:AA30890"
+        },
+        {
+          "input_text": "Temporal area TE1a",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.546->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Temporal area TE1m",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.546->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Temporal area TE1p",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.546->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Temporal area TE2a",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.546->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Cingulate area 23c",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.492->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cingulate area 23d",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.492->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cingulate area 31a",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.492->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cingulate area a24",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.492->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cingulate area p24",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.492->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Posterior insular area",
+          "homba_text": "posterior commissure",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.739->needs_review | now 1.000 HOMBA:10567"
+        },
+        {
+          "input_text": "Medial insular area",
+          "homba_text": "major insular cortex",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.669->needs_review | now 1.000 HOMBA:10288"
+        },
+        {
+          "input_text": "Frontoinsular area",
+          "homba_text": "major insular cortex",
+          "notes": "round 1 | auto round | hint table | was 0.438->low_confidence | now 1.000 HOMBA:10288"
+        },
+        {
+          "input_text": "Parietal area PF",
+          "homba_text": "parietal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.661->needs_review | now 1.000 HOMBA:10208"
+        },
+        {
+          "input_text": "Temporal area STGg",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.542->low_confidence | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Temporal area PSL",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.554->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Temporal area STSdp",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.534->low_confidence | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Temporal area STSda",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.534->low_confidence | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Temporal area STSva",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.534->low_confidence | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Temporal area STSvp",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.534->low_confidence | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Temporal area TF",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.568->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Temporal area TGd",
+          "homba_text": "temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.554->low_confidence | now 1.000 HOMBA:10235"
+        },
+        {
+          "input_text": "Paracentral area 5L",
+          "homba_text": "lateral subdivision of area 5",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10218"
+        },
+        {
+          "input_text": "Paracentral area 5mv",
+          "homba_text": "medial subdivision of area 5",
+          "notes": "round 1 | auto round | hint table | was 0.469->low_confidence | now 1.000 HOMBA:10219"
+        },
+        {
+          "input_text": "Paracentral area 5m",
+          "homba_text": "medial subdivision of area 5",
+          "notes": "round 1 | auto round | hint table | was 0.473->low_confidence | now 1.000 HOMBA:10219"
+        },
+        {
+          "input_text": "Cingulate area 24dd",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.487->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cingulate area 24dv",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.487->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Opercular area OP2-3",
+          "homba_text": "molecular layer of DG",
+          "notes": "round 1 | auto round | homba search sim=0.63 | was 0.488->low_confidence | now 1.000 HOMBA:AA30159"
+        },
+        {
+          "input_text": "Abducens Motor Nucleus",
+          "homba_text": "abducens nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.84 | was 0.819->needs_review | now 1.000 HOMBA:12418"
+        },
+        {
+          "input_text": "Anterior Interposed Cerebellar Nucleus",
+          "homba_text": "anterior lobe of cerebellar cortex",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.649->needs_review | now 1.000 HOMBA:12838"
+        },
+        {
+          "input_text": "Anterior Thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.665->needs_review | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Basolateral amygdaloid nucleus (dorsal)",
+          "homba_text": "basolateral nucleus (basal nucleus) of amygdala",
+          "notes": "round 1 | auto round | homba search sim=0.66 | was 0.786->needs_review | now 1.000 HOMBA:10368"
+        },
+        {
+          "input_text": "Basolateral amygdaloid nucleus (intermediate)",
+          "homba_text": "solitary nucleus, intermediate division",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.795->needs_review | now 1.000 HOMBA:12562"
+        },
+        {
+          "input_text": "Basolateral amygdaloid nucleus (ventral)",
+          "homba_text": "lateral dorsal nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.785->needs_review | now 1.000 HOMBA:10396"
+        },
+        {
+          "input_text": "Basolateral Intermediate Amygdaloid Nucleus",
+          "homba_text": "basal ventral medial nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.770->needs_review | now 1.000 HOMBA:13040"
+        },
+        {
+          "input_text": "Basolateral Ventral Amygdaloid Nucleus",
+          "homba_text": "basal ventral medial nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.785->needs_review | now 1.000 HOMBA:13040"
+        },
+        {
+          "input_text": "Basomedial amygdaloid nucleus",
+          "homba_text": "dorsomedial tegmental nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.781->needs_review | now 1.000 HOMBA:15557"
+        },
+        {
+          "input_text": "Capsule of the Antherior Thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.302->low_confidence | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Caudate Tail",
+          "homba_text": "caudal putamen",
+          "notes": "round 1 | auto round | homba search sim=0.62 | was 0.687->needs_review | now 1.000 HOMBA:11538"
+        },
+        {
+          "input_text": "Central amygdaloid nucleus",
+          "homba_text": "rostral medial nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.71 | was 0.763->needs_review | now 1.000 HOMBA:11530"
+        },
+        {
+          "input_text": "Central Gray Nucleus",
+          "homba_text": "central oculomotor nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.671->needs_review | now 1.000 HOMBA:12201"
+        },
+        {
+          "input_text": "Central Medial Thalamus",
+          "homba_text": "central medial nucleus of thalamus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.81 | was 0.891->needs_review | now 1.000 HOMBA:10445"
+        },
+        {
+          "input_text": "Centrolateral and paracentral thalamic nuclei",
+          "homba_text": "ventrolateral tegmental nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.63 | was 0.480->low_confidence | now 1.000 HOMBA:12534"
+        },
+        {
+          "input_text": "Centrolateral and Paracentral Thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.522->low_confidence | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Centromedial-parafascicular Thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.618->needs_review | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Centromedian and parafascicular thalamic complex",
+          "homba_text": "retroparafascicular area of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.393->low_confidence | now 1.000 HOMBA:15534"
+        },
+        {
+          "input_text": "Cerebellar Lobule 1 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 10 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.80 | was 0.792->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 2 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 3 Intermediate",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.547->low_confidence | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 3 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 4 Intermediate",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.547->low_confidence | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 4 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 5 Intermediate",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.547->low_confidence | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 5 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 6 Intermediate",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.547->low_confidence | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 6 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 7 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 8 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cerebellar Lobule 9 Vermis",
+          "homba_text": "cerebellar lobules",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.798->needs_review | now 1.000 HOMBA:12837"
+        },
+        {
+          "input_text": "Cingulate gyrus, anterior",
+          "homba_text": "cingulate gyrus, rostral (anterior) part",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.758->needs_review | now 1.000 HOMBA:12157"
+        },
+        {
+          "input_text": "Copula of the Pyramis",
+          "homba_text": "column of the fornix",
+          "notes": "round 1 | auto round | homba search sim=0.63 | was 0.852->needs_review | now 1.000 HOMBA:10577"
+        },
+        {
+          "input_text": "Crossing of the superior cerebellar peduncle",
+          "homba_text": "decussation of superior cerebellar peduncle",
+          "notes": "round 1 | auto round | homba search sim=0.85 | was 0.852->needs_review | now 1.000 HOMBA:12337"
+        },
+        {
+          "input_text": "Cuneate Gracile Nuclei",
+          "homba_text": "cerebral nuclei",
+          "notes": "round 1 | auto round | homba search sim=0.70 | was 0.805->needs_review | now 1.000 HOMBA:10331"
+        },
+        {
+          "input_text": "Dorsal endopiriform claustrum",
+          "homba_text": "dorsal endopiriform nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.86 | was 0.810->needs_review | now 1.000 HOMBA:AA30264"
+        },
+        {
+          "input_text": "Dorsal Paragigantocellular Reticular Nucleus",
+          "homba_text": "dorsal paragigantocellular nucleus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.87 | was 0.894->modifier_conflict | now 1.000 HOMBA:12628"
+        },
+        {
+          "input_text": "Fastigial Cerebellar Nucleus",
+          "homba_text": "fastigial (medial) nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.77 | was 0.609->needs_review | now 1.000 HOMBA:12402"
+        },
+        {
+          "input_text": "Fourth Nerve",
+          "homba_text": "optic nerve",
+          "notes": "round 1 | auto round | homba search sim=0.70 | was 0.500->low_confidence | now 1.000 HOMBA:15544"
+        },
+        {
+          "input_text": "Frontal orbital cortex, anterior",
+          "homba_text": "orbital frontal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.75 | was 0.798->needs_review | now 1.000 HOMBA:10194"
+        },
+        {
+          "input_text": "Interanteromedial Thalamus",
+          "homba_text": "interanteromedial nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.724->needs_review | now 1.000 HOMBA:13048"
+        },
+        {
+          "input_text": "Intermediodorsal thalamic nucleus",
+          "homba_text": "intermediate (dorsal) habenular nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.80 | was 0.703->needs_review | now 1.000 HOMBA:AA30327"
+        },
+        {
+          "input_text": "Intermediodorsal Thalamus",
+          "homba_text": "dorsal thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.700->needs_review | now 1.000 HOMBA:10391"
+        },
+        {
+          "input_text": "Intra-amygdaloid division of the bed nucleus of the stria terminalis",
+          "homba_text": "stria terminalis",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.700->needs_review | now 1.000 HOMBA:10591"
+        },
+        {
+          "input_text": "Justaparaventricular Lateral Hypothalamus",
+          "homba_text": "hypothalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.614->needs_review | now 1.000 HOMBA:10467"
+        },
+        {
+          "input_text": "Juxtaparaventricular nucleus",
+          "homba_text": "paravestibular nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.80 | was 0.773->needs_review | now 1.000 HOMBA:12586"
+        },
+        {
+          "input_text": "Lateral amygdaloid nucleus (dorsal)",
+          "homba_text": "lateral dorsal nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.755->modifier_conflict | now 1.000 HOMBA:10396"
+        },
+        {
+          "input_text": "Lateral amygdaloid nucleus (ventral)",
+          "homba_text": "lateral dorsal nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.755->modifier_conflict | now 1.000 HOMBA:10396"
+        },
+        {
+          "input_text": "Lateral Cerebellar Nucleus",
+          "homba_text": "lateral habenular nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.799->needs_review | now 1.000 HOMBA:10453"
+        },
+        {
+          "input_text": "Lateral Dorsal Thalamus",
+          "homba_text": "dorsal thalamus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.903->modifier_conflict | now 1.000 HOMBA:10391"
+        },
+        {
+          "input_text": "Lateral Ventral Amygdaloid Nucleus",
+          "homba_text": "basal ventral medial nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.77 | was 0.751->needs_review | now 1.000 HOMBA:13040"
+        },
+        {
+          "input_text": "Laterodorsal thalamic nucleus",
+          "homba_text": "laterodorsal tegmental nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.692->needs_review | now 1.000 HOMBA:12519"
+        },
+        {
+          "input_text": "Linear raphe",
+          "homba_text": "internal capsule",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.476->low_confidence | now 1.000 HOMBA:10581"
+        },
+        {
+          "input_text": "Medial cerebellar peduncle",
+          "homba_text": "inferior cerebellar peduncle",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.607->needs_review | now 1.000 HOMBA:12741"
+        },
+        {
+          "input_text": "Medial Dorsal Tegmentum",
+          "homba_text": "medial orbital gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.558->modifier_conflict | now 1.000 HOMBA:12122"
+        },
+        {
+          "input_text": "Medial longitudinal fascicle",
+          "homba_text": "medial longitudinal fasciculus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.93 | was 0.860->needs_review | now 1.000 HOMBA:12764"
+        },
+        {
+          "input_text": "Medial Raphe",
+          "homba_text": "median raphe nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.807->needs_review | now 1.000 HOMBA:12235"
+        },
+        {
+          "input_text": "Medullar Reticular Nucleus",
+          "homba_text": "lateral reticular nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.816->needs_review | now 1.000 HOMBA:12634"
+        },
+        {
+          "input_text": "Mesencephalic Trigeminal Nerve",
+          "homba_text": "mesencephalic trigeminal nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.87 | was 0.636->needs_review | now 1.000 HOMBA:12208"
+        },
+        {
+          "input_text": "Occulomotor Nerve",
+          "homba_text": "root of occulomotor nerve",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.857->needs_review | now 1.000 HOMBA:12376"
+        },
+        {
+          "input_text": "Occulomotor Nuclei",
+          "homba_text": "oculomotor nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.89 | was 0.687->needs_review | now 1.000 HOMBA:12198"
+        },
+        {
+          "input_text": "Oculomotor complex",
+          "homba_text": "oculomotor nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.517->low_confidence | now 1.000 HOMBA:12198"
+        },
+        {
+          "input_text": "Paralaminar amygdaloid nucleus",
+          "homba_text": "parasolitary nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.752->needs_review | now 1.000 HOMBA:12571"
+        },
+        {
+          "input_text": "Paratenial-paraventral-thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.628->needs_review | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Paraventricular Anterior Thalamus",
+          "homba_text": "paraventricular nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.660->needs_review | now 1.000 HOMBA:10457"
+        },
+        {
+          "input_text": "Paraventricular hypothalamic nucleus",
+          "homba_text": "anterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.718->needs_review | now 1.000 HOMBA:10475"
+        },
+        {
+          "input_text": "Parvicellular and Intermediate Reticular Nuclei",
+          "homba_text": "intermediate reticular nucleus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.73 | was 0.904->modifier_conflict | now 1.000 HOMBA:12620"
+        },
+        {
+          "input_text": "Peduncular lateral hypothalamic nucleus",
+          "homba_text": "ventral anterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.760->needs_review | now 1.000 HOMBA:AA30339"
+        },
+        {
+          "input_text": "Peduncular Lateral Hypothalamus",
+          "homba_text": "hypothalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.631->needs_review | now 1.000 HOMBA:10467"
+        },
+        {
+          "input_text": "Peri-basal region",
+          "homba_text": "prerubral regions",
+          "notes": "round 1 | auto round | homba search sim=0.76 | was 0.568->low_confidence | now 1.000 HOMBA:AA30365"
+        },
+        {
+          "input_text": "Pontine Reticulum Oral",
+          "homba_text": "Pontine reticular formation",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.733->needs_review | now 1.000 HOMBA:12480"
+        },
+        {
+          "input_text": "Posterior Commissural Nuclei",
+          "homba_text": "posterior commissure",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.788->needs_review | now 1.000 HOMBA:10567"
+        },
+        {
+          "input_text": "Posterior Interstitial Nucleus",
+          "homba_text": "posterior limitans nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.821->needs_review | now 1.000 HOMBA:AA30313"
+        },
+        {
+          "input_text": "Posterior pituitary",
+          "homba_text": "posterior parietal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.788->needs_review | now 1.000 HOMBA:10214"
+        },
+        {
+          "input_text": "Precentral gyrus, medial/supplementary motor area",
+          "homba_text": "precentral gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.827->needs_review | now 1.000 HOMBA:12114"
+        },
+        {
+          "input_text": "Premotor cortex, dorsal",
+          "homba_text": "prefrontal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.62 | was 0.754->needs_review | now 1.000 HOMBA:10172"
+        },
+        {
+          "input_text": "Premotor cortex, ventral",
+          "homba_text": "region of fourth ventricle",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.742->needs_review | now 1.000 HOMBA:AA30479"
+        },
+        {
+          "input_text": "Pyramidal Tract Decussation",
+          "homba_text": "pyramidal decussation",
+          "notes": "round 1 | auto round | boost exact homba sim=0.88 | was 0.895->needs_review | now 1.000 HOMBA:12772"
+        },
+        {
+          "input_text": "Reticular thalamic nucleus",
+          "homba_text": "ethmoid thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.80 | was 0.740->needs_review | now 1.000 HOMBA:AA30314"
+        },
+        {
+          "input_text": "Reticulotegmentum",
+          "homba_text": "reticulotegmental nucleus",
+          "notes": "round 1 | auto round | hint table | was 0.388->low_confidence | now 1.000 HOMBA:12497"
+        },
+        {
+          "input_text": "Retro-mammillary nucleus",
+          "homba_text": "tuberomammillary nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.88 | was 0.857->needs_review | now 1.000 HOMBA:10496"
+        },
+        {
+          "input_text": "Reuniens-rhomboid-xiphoid Thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.571->low_confidence | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Saginum Nucleus",
+          "homba_text": "supragenual nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.76 | was 0.611->needs_review | now 1.000 HOMBA:12662"
+        },
+        {
+          "input_text": "Septum and diagonal band",
+          "homba_text": "diagonal band",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.854->needs_review | now 1.000 HOMBA:12034"
+        },
+        {
+          "input_text": "Septum Diagonal Band",
+          "homba_text": "diagonal band",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.857->needs_review | now 1.000 HOMBA:12034"
+        },
+        {
+          "input_text": "Solitary Tract Nucleus",
+          "homba_text": "solitary tract",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.854->needs_review | now 1.000 HOMBA:12783"
+        },
+        {
+          "input_text": "Spinal Trigeminal Nucleus Intermediate",
+          "homba_text": "spinal trigeminal nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.781->needs_review | now 1.000 HOMBA:12572"
+        },
+        {
+          "input_text": "Striate cortex, dorsolateral, inferior",
+          "homba_text": "rostral horn of lateral ventricles",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.636->needs_review | now 1.000 HOMBA:10597"
+        },
+        {
+          "input_text": "Striate cortex, dorsolateral, superior",
+          "homba_text": "striatal-cortical (cortical-striatal) boundary",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.636->needs_review | now 1.000 HOMBA:AA30209"
+        },
+        {
+          "input_text": "Striate cortex, medial",
+          "homba_text": "juxtastriate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.70 | was 0.752->needs_review | now 1.000 HOMBA:AA30033"
+        },
+        {
+          "input_text": "Subceruleus",
+          "homba_text": "subcoeruleus nucleus",
+          "notes": "round 1 | auto round | hint table | was 0.396->low_confidence | now 1.000 HOMBA:12500"
+        },
+        {
+          "input_text": "Subparafascicular Nucleus",
+          "homba_text": "subparafascicular nucleus of thalamus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.857->needs_review | now 1.000 HOMBA:13054"
+        },
+        {
+          "input_text": "Subparafascicular parvocellular thalamic nucleus",
+          "homba_text": "nanocellular hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.691->needs_review | now 1.000 HOMBA:13071"
+        },
+        {
+          "input_text": "Superior Olive",
+          "homba_text": "inferior olive",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.735->needs_review | now 1.000 HOMBA:12600"
+        },
+        {
+          "input_text": "Supra Geniculate",
+          "homba_text": "suprageniculate nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.77 | was 0.428->low_confidence | now 1.000 HOMBA:13044"
+        },
+        {
+          "input_text": "Supratemporal plane, anterior",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.590->low_confidence | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Supratemporal plane, posterior",
+          "homba_text": "temporal claustrum",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.639->needs_review | now 1.000 HOMBA:146034762"
+        },
+        {
+          "input_text": "Ventral cortical amygdaloid nucleus",
+          "homba_text": "ventral division of rostral medial nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.772->needs_review | now 1.000 HOMBA:AA30227"
+        },
+        {
+          "input_text": "Ventral endopiriform claustrum",
+          "homba_text": "ventral endopiriform nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.86 | was 0.814->needs_review | now 1.000 HOMBA:AA30854"
+        },
+        {
+          "input_text": "Ventral Lateral Posterodorsal Thalamus",
+          "homba_text": "dorsal thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.766->needs_review | now 1.000 HOMBA:10391"
+        },
+        {
+          "input_text": "Ventral Medial Thalamus",
+          "homba_text": "ventral medial nucleus of thalamus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.81 | was 0.891->needs_review | now 1.000 HOMBA:10427"
+        },
+        {
+          "input_text": "Ventrolateral Tegmentum",
+          "homba_text": "ventrolateral tegmental nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.507->low_confidence | now 1.000 HOMBA:12534"
+        },
+        {
+          "input_text": "Ventrolateral thalamic nucleus (posterodorsal part)",
+          "homba_text": "ventrolateral nucleus of Pr5",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.644->needs_review | now 1.000 HOMBA:12446"
+        },
+        {
+          "input_text": "Ventrolateral thalamic nucleus (posteroventral part)",
+          "homba_text": "ventrolateral nucleus of Pr5",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.661->needs_review | now 1.000 HOMBA:12446"
+        },
+        {
+          "input_text": "Ventromedial occipital cortex",
+          "homba_text": "occipital cortex",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.864->needs_review | now 1.000 HOMBA:10268"
+        },
+        {
+          "input_text": "Ventroposterior inferior thalamic nucleus",
+          "homba_text": "ventral posterior inferior nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.618->needs_review | now 1.000 HOMBA:10426"
+        },
+        {
+          "input_text": "Ventroposterior Inferior Thalamus",
+          "homba_text": "thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.502->low_confidence | now 1.000 HOMBA:10390"
+        },
+        {
+          "input_text": "Visceral Motor Nuclei",
+          "homba_text": "central oculomotor nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.72 | was 0.509->low_confidence | now 1.000 HOMBA:12201"
+        },
+        {
+          "input_text": "4th ventricle",
+          "homba_text": "third ventricle",
+          "notes": "round 1 | auto round | homba search sim=0.86 | was 0.815->needs_review | now 1.000 HOMBA:10602"
+        },
+        {
+          "input_text": "Acoustic striae",
+          "homba_text": "dorsal acoustic stria",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.547->low_confidence | now 1.000 HOMBA:12733"
+        },
+        {
+          "input_text": "Amygdaloid area (unspecified)",
+          "homba_text": "amygdaloid transition areas",
+          "notes": "round 1 | auto round | homba search sim=0.59 | was 0.680->needs_review | now 1.000 HOMBA:10379"
+        },
+        {
+          "input_text": "Angular thalamic nucleus",
+          "homba_text": "nanocellular hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.705->needs_review | now 1.000 HOMBA:13071"
+        },
+        {
+          "input_text": "Anterior commissure, anterior limb",
+          "homba_text": "anterior commissure",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.716->needs_review | now 1.000 HOMBA:10559"
+        },
+        {
+          "input_text": "Anterior commissure, posterior limb",
+          "homba_text": "anterior commissure",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.778->needs_review | now 1.000 HOMBA:10559"
+        },
+        {
+          "input_text": "Anterior olfactory area",
+          "homba_text": "lateral olfactory area",
+          "notes": "round 1 | auto round | homba search sim=0.84 | was 0.635->needs_review | now 1.000 HOMBA:146034694"
+        },
+        {
+          "input_text": "Anterodorsal thalamic nucleus",
+          "homba_text": "anterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.690->needs_review | now 1.000 HOMBA:10475"
+        },
+        {
+          "input_text": "Anteromedial thalamic nucleus",
+          "homba_text": "ventromedial hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.87 | was 0.718->needs_review | now 1.000 HOMBA:10488"
+        },
+        {
+          "input_text": "Anteroventral thalamic nucleus, dorsomedial part",
+          "homba_text": "anteroventral nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.604->needs_review | now 1.000 HOMBA:10395"
+        },
+        {
+          "input_text": "Anteroventral thalamic nucleus, ventrolateral part",
+          "homba_text": "periventricular nucleus, tuberal part",
+          "notes": "round 1 | auto round | homba search sim=0.66 | was 0.598->low_confidence | now 1.000 HOMBA:10484"
+        },
+        {
+          "input_text": "Brainstem, unspecified",
+          "homba_text": "brain",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.583->low_confidence | now 1.000 HOMBA:10155"
+        },
+        {
+          "input_text": "Caudate putamen",
+          "homba_text": "caudal putamen",
+          "notes": "round 1 | auto round | homba search sim=0.90 | was 0.701->needs_review | now 1.000 HOMBA:11538"
+        },
+        {
+          "input_text": "Central lateral thalamic nucleus",
+          "homba_text": "ventral anterior hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.804->needs_review | now 1.000 HOMBA:AA30339"
+        },
+        {
+          "input_text": "Cingulate area 1",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.75 | was 0.503->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cingulate area 2",
+          "homba_text": "cingulate cortex",
+          "notes": "round 1 | auto round | homba search sim=0.75 | was 0.503->low_confidence | now 1.000 HOMBA:10277"
+        },
+        {
+          "input_text": "Cornu ammonis 1",
+          "homba_text": "hippocampal proper (Cornu Ammonis)",
+          "notes": "round 1 | auto round | boost exact homba sim=0.55 | was 0.857->needs_review | now 1.000 HOMBA:10296"
+        },
+        {
+          "input_text": "Cornu ammonis 2",
+          "homba_text": "hippocampal proper (Cornu Ammonis)",
+          "notes": "round 1 | auto round | boost exact homba sim=0.55 | was 0.857->needs_review | now 1.000 HOMBA:10296"
+        },
+        {
+          "input_text": "Cornu ammonis 3",
+          "homba_text": "hippocampal proper (Cornu Ammonis)",
+          "notes": "round 1 | auto round | boost exact homba sim=0.55 | was 0.857->needs_review | now 1.000 HOMBA:10296"
+        },
+        {
+          "input_text": "Corpus callosum and associated subcortical white matter",
+          "homba_text": "corpus callosum",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.598->low_confidence | now 1.000 HOMBA:10561"
+        },
+        {
+          "input_text": "Deeper layers of the superior colliculus",
+          "homba_text": "deep gray layer of superior colliculus",
+          "notes": "round 1 | auto round | homba search sim=0.87 | was 0.321->low_confidence | now 1.000 HOMBA:12302"
+        },
+        {
+          "input_text": "Dorsolateral orbital area",
+          "homba_text": "dorsolateral temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.75 | was 0.528->low_confidence | now 1.000 HOMBA:13322"
+        },
+        {
+          "input_text": "External globus pallidus (lateral part)",
+          "homba_text": "external division of globus pallidus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.66 | was 0.860->modifier_conflict | now 1.000 HOMBA:10343"
+        },
+        {
+          "input_text": "External globus pallidus (medial part)",
+          "homba_text": "external division of globus pallidus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.67 | was 0.860->modifier_conflict | now 1.000 HOMBA:10343"
+        },
+        {
+          "input_text": "Frontal association area 3",
+          "homba_text": "rostral subdivision of area 39",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.304->low_confidence | now 1.000 HOMBA:10233"
+        },
+        {
+          "input_text": "Habenula (lateral part)",
+          "homba_text": "habenular nuclei",
+          "notes": "round 1 | auto round | boost exact homba sim=0.59 | was 0.880->needs_review | now 1.000 HOMBA:10452"
+        },
+        {
+          "input_text": "Habenula (medial part)",
+          "homba_text": "habenular nuclei",
+          "notes": "round 1 | auto round | boost exact homba sim=0.61 | was 0.880->needs_review | now 1.000 HOMBA:10452"
+        },
+        {
+          "input_text": "Hypothalamic region, unspecified",
+          "homba_text": "hypothalamospinal fibers",
+          "notes": "round 1 | auto round | homba search sim=0.62 | was 0.582->low_confidence | now 1.000 HOMBA:12740"
+        },
+        {
+          "input_text": "Inferior colliculus, brachium",
+          "homba_text": "inferior colliculus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.874->needs_review | now 1.000 HOMBA:12305"
+        },
+        {
+          "input_text": "Inferior colliculus, commissure",
+          "homba_text": "inferior colliculus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.865->needs_review | now 1.000 HOMBA:12305"
+        },
+        {
+          "input_text": "Infralimbic area",
+          "homba_text": "intralimbic gyrus",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.561->low_confidence | now 1.000 HOMBA:12168"
+        },
+        {
+          "input_text": "Interanteromedial thalamic nucleus",
+          "homba_text": "ventromedial hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.748->needs_review | now 1.000 HOMBA:10488"
+        },
+        {
+          "input_text": "Internal medullary lamina",
+          "homba_text": "internal medullary lamina of globus pallidus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.877->needs_review | now 1.000 HOMBA:12062"
+        },
+        {
+          "input_text": "Intramedullary thalamic area",
+          "homba_text": "anterior hypothalamic area",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.259->low_confidence | now 1.000 HOMBA:266441551"
+        },
+        {
+          "input_text": "Lateral orbital area",
+          "homba_text": "lateral orbital gyrus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.83 | was 0.854->needs_review | now 1.000 HOMBA:12125"
+        },
+        {
+          "input_text": "Lateral posterior thalamic nucleus, mediocaudal part",
+          "homba_text": "lateral posterior nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.597->modifier_conflict | now 1.000 HOMBA:10408"
+        },
+        {
+          "input_text": "Lateral posterior thalamic nucleus, mediorostral part",
+          "homba_text": "lateral posterior nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.70 | was 0.601->modifier_conflict | now 1.000 HOMBA:10408"
+        },
+        {
+          "input_text": "Laterodorsal thalamic nucleus, dorsomedial part",
+          "homba_text": "lateral hypothalamic area, tuberal part",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.622->needs_review | now 1.000 HOMBA:10494"
+        },
+        {
+          "input_text": "Laterodorsal thalamic nucleus, ventrolateral part",
+          "homba_text": "dorsal raphe nucleus, ventrolateral division",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.600->needs_review | now 1.000 HOMBA:12229"
+        },
+        {
+          "input_text": "Medial geniculate body, dorsal division",
+          "homba_text": "dorsal raphe nucleus, lateral division",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.774->needs_review | now 1.000 HOMBA:12227"
+        },
+        {
+          "input_text": "Medial geniculate body, suprageniculate nucleus",
+          "homba_text": "suprageniculate nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.819->needs_review | now 1.000 HOMBA:13044"
+        },
+        {
+          "input_text": "Medial geniculate body, ventral division",
+          "homba_text": "dentate nucleus, lateroventral division",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.775->needs_review | now 1.000 HOMBA:12397"
+        },
+        {
+          "input_text": "Medial geniculate complex (marginal zone)",
+          "homba_text": "medial geniculate nuclear complex",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.818->needs_review | now 1.000 HOMBA:AA30307"
+        },
+        {
+          "input_text": "Mediodorsal thalamic nucleus, central part",
+          "homba_text": "mediodorsal nucleus of thalamus",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.644->needs_review | now 1.000 HOMBA:10398"
+        },
+        {
+          "input_text": "Mediodorsal thalamic nucleus, lateral part",
+          "homba_text": "submedius thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.66 | was 0.776->needs_review | now 1.000 HOMBA:AA30278"
+        },
+        {
+          "input_text": "Mediodorsal thalamic nucleus, medial part",
+          "homba_text": "submedius thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.521->low_confidence | now 1.000 HOMBA:AA30278"
+        },
+        {
+          "input_text": "Molecular cell layer of the cerebellum",
+          "homba_text": "cerebellum",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.719->needs_review | now 1.000 HOMBA:10656"
+        },
+        {
+          "input_text": "Nucleus of the stria medullaris",
+          "homba_text": "linear nucleus of the medulla",
+          "notes": "round 1 | auto round | homba search sim=0.73 | was 0.645->needs_review | now 1.000 HOMBA:266441717"
+        },
+        {
+          "input_text": "Orbital cortex (ventral)",
+          "homba_text": "parietal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.629->needs_review | now 1.000 HOMBA:10208"
+        },
+        {
+          "input_text": "Orbital cortex (ventrolateral)",
+          "homba_text": "facial nucleus, ventrolateral subnucleus",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.716->needs_review | now 1.000 HOMBA:12427"
+        },
+        {
+          "input_text": "Paracentral thalamic nucleus",
+          "homba_text": "parasubthalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.690->needs_review | now 1.000 HOMBA:13058"
+        },
+        {
+          "input_text": "Parafascicular thalamic nucleus",
+          "homba_text": "parasubthalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.683->needs_review | now 1.000 HOMBA:13058"
+        },
+        {
+          "input_text": "Parataenial thalamic nucleus",
+          "homba_text": "parasubthalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.695->needs_review | now 1.000 HOMBA:13058"
+        },
+        {
+          "input_text": "Paraventricular thalamic nuclei (anterior and posterior)",
+          "homba_text": "periventricular nucleus, tuberal part",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.717->modifier_conflict | now 1.000 HOMBA:10484"
+        },
+        {
+          "input_text": "Parietal association cortex, lateral area",
+          "homba_text": "larger associate white matter bundles",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.717->needs_review | now 1.000 HOMBA:AA30489"
+        },
+        {
+          "input_text": "Parietal association cortex, posterior area",
+          "homba_text": "frontal motor cortex (posterior frontal cortex)",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.787->needs_review | now 1.000 HOMBA:AA30009"
+        },
+        {
+          "input_text": "Perirhinal area 36",
+          "homba_text": "perirhinal cortex (area 35)",
+          "notes": "round 1 | auto round | homba search sim=0.79 | was 0.623->needs_review | now 1.000 HOMBA:10320"
+        },
+        {
+          "input_text": "Periventricular gray",
+          "homba_text": "periventricular gray of pons",
+          "notes": "round 1 | auto round | boost exact homba sim=0.83 | was 0.857->needs_review | now 1.000 HOMBA:AA30845"
+        },
+        {
+          "input_text": "Posterior thalamic nuclear group (triangular part)",
+          "homba_text": "inferior frontal gyrus, triangular part",
+          "notes": "round 1 | auto round | homba search sim=0.67 | was 0.632->modifier_conflict | now 1.000 HOMBA:12118"
+        },
+        {
+          "input_text": "Prelimbic area",
+          "homba_text": "precuneiform area",
+          "notes": "round 1 | auto round | homba search sim=0.65 | was 0.542->low_confidence | now 1.000 HOMBA:12241"
+        },
+        {
+          "input_text": "Pretectothalamic lamina",
+          "homba_text": "dentatothalamic tract",
+          "notes": "round 1 | auto round | homba search sim=0.64 | was 0.245->low_confidence | now 1.000 HOMBA:12357"
+        },
+        {
+          "input_text": "Primary auditory area",
+          "homba_text": "lateral olfactory area",
+          "notes": "round 1 | auto round | homba search sim=0.60 | was 0.647->needs_review | now 1.000 HOMBA:146034694"
+        },
+        {
+          "input_text": "Primary somatosensory area, barrel field",
+          "homba_text": "barrel field of S1fm (rodents)",
+          "notes": "round 1 | auto round | hint table | was 0.314->low_confidence | now 1.000 HOMBA:AA30880"
+        },
+        {
+          "input_text": "Primary somatosensory area, dysgranular zone",
+          "homba_text": "area 1 of primary somatosensory cortex",
+          "notes": "round 1 | auto round | homba search sim=0.59 | was 0.505->low_confidence | now 1.000 HOMBA:AA30014"
+        },
+        {
+          "input_text": "Primary somatosensory area, face representation",
+          "homba_text": "somatosensory radiation",
+          "notes": "round 1 | auto round | homba search sim=0.58 | was 0.270->low_confidence | now 1.000 HOMBA:AA30495"
+        },
+        {
+          "input_text": "Primary somatosensory area, forelimb representation",
+          "homba_text": "somatosensory radiation",
+          "notes": "round 1 | auto round | homba search sim=0.58 | was 0.270->low_confidence | now 1.000 HOMBA:AA30495"
+        },
+        {
+          "input_text": "Primary somatosensory area, hindlimb representation",
+          "homba_text": "somatosensory radiation",
+          "notes": "round 1 | auto round | homba search sim=0.58 | was 0.270->low_confidence | now 1.000 HOMBA:AA30495"
+        },
+        {
+          "input_text": "Primary somatosensory area, trunk representation",
+          "homba_text": "somatosensory radiation",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.270->low_confidence | now 1.000 HOMBA:AA30495"
+        },
+        {
+          "input_text": "Primary visual area",
+          "homba_text": "sixth visual area",
+          "notes": "round 1 | auto round | homba search sim=0.72 | was 0.627->needs_review | now 1.000 HOMBA:AA30020"
+        },
+        {
+          "input_text": "Reticular (pre)thalamic nucleus",
+          "homba_text": "ethmoid thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.74 | was 0.655->modifier_conflict | now 1.000 HOMBA:AA30314"
+        },
+        {
+          "input_text": "Retroreuniens thalamic nucleus",
+          "homba_text": "retroethmoid thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.81 | was 0.694->needs_review | now 1.000 HOMBA:AA30315"
+        },
+        {
+          "input_text": "Retrosplenial dysgranular area",
+          "homba_text": "rostral dysgranular insular cortex",
+          "notes": "round 1 | auto round | homba search sim=0.66 | was 0.490->low_confidence | now 1.000 HOMBA:15513"
+        },
+        {
+          "input_text": "Reuniens thalamic nucleus",
+          "homba_text": "submedius thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.78 | was 0.720->needs_review | now 1.000 HOMBA:AA30278"
+        },
+        {
+          "input_text": "Rhomboid thalamic nucleus",
+          "homba_text": "ethmoid thalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.90 | was 0.779->needs_review | now 1.000 HOMBA:AA30314"
+        },
+        {
+          "input_text": "Secondary auditory area, dorsal part",
+          "homba_text": "secondary auditory cortex (auditory belt region, area 42, area TB)",
+          "notes": "round 1 | auto round | homba search sim=0.58 | was 0.642->needs_review | now 1.000 HOMBA:10239"
+        },
+        {
+          "input_text": "Secondary auditory area, ventral part",
+          "homba_text": "secondary auditory cortex (auditory belt region, area 42, area TB)",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.651->needs_review | now 1.000 HOMBA:10239"
+        },
+        {
+          "input_text": "Secondary somatosensory area",
+          "homba_text": "subareas of primary somatosensory cortex",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.670->needs_review | now 1.000 HOMBA:AA30811"
+        },
+        {
+          "input_text": "Secondary visual area, lateral part",
+          "homba_text": "second dorsal third visual area, part A",
+          "notes": "round 1 | auto round | homba search sim=0.69 | was 0.558->low_confidence | now 1.000 HOMBA:AA30817"
+        },
+        {
+          "input_text": "Secondary visual area, medial part",
+          "homba_text": "second dorsal third visual area, part A",
+          "notes": "round 1 | auto round | homba search sim=0.70 | was 0.488->low_confidence | now 1.000 HOMBA:AA30817"
+        },
+        {
+          "input_text": "Transverse fibers of the pons",
+          "homba_text": "pons",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.801->needs_review | now 1.000 HOMBA:10661"
+        },
+        {
+          "input_text": "Ventral cochlear nucleus, posterior part",
+          "homba_text": "ventral cochlear nucleus",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.897->modifier_conflict | now 1.000 HOMBA:12439"
+        },
+        {
+          "input_text": "Ventral orbital area",
+          "homba_text": "ventral tegmental area",
+          "notes": "round 1 | auto round | homba search sim=0.76 | was 0.695->needs_review | now 1.000 HOMBA:12261"
+        },
+        {
+          "input_text": "Ventral periolivary nuclei",
+          "homba_text": "lateral periolivary nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.781->needs_review | now 1.000 HOMBA:12465"
+        },
+        {
+          "input_text": "Ventral striatal region, unspecified",
+          "homba_text": "central gray region of pons",
+          "notes": "round 1 | auto round | homba search sim=0.61 | was 0.458->low_confidence | now 1.000 HOMBA:146034964"
+        },
+        {
+          "input_text": "Ventricular system, unspecified",
+          "homba_text": "lenticular fasciculus (field H2)",
+          "notes": "round 1 | auto round | homba search sim=0.57 | was 0.275->low_confidence | now 1.000 HOMBA:10585"
+        },
+        {
+          "input_text": "Ventrolateral orbital area",
+          "homba_text": "ventrolateral temporal cortex",
+          "notes": "round 1 | auto round | homba search sim=0.76 | was 0.521->low_confidence | now 1.000 HOMBA:13324"
+        },
+        {
+          "input_text": "Ventrolateral thalamic nucleus",
+          "homba_text": "ventromedial hypothalamic nucleus",
+          "notes": "round 1 | auto round | homba search sim=0.83 | was 0.680->needs_review | now 1.000 HOMBA:10488"
+        },
+        {
+          "input_text": "Vestibular apparatus",
+          "homba_text": "spinovestibular tract",
+          "notes": "round 1 | auto round | homba search sim=0.68 | was 0.450->low_confidence | now 1.000 HOMBA:12790"
+        },
+        {
+          "input_text": "Vestibular nerve",
+          "homba_text": "nucleus of origin of vestibular efferents of vestibular nerve",
+          "notes": "round 1 | auto round | homba search sim=0.82 | was 0.665->needs_review | now 1.000 HOMBA:12584"
+        },
+        {
+          "input_text": "Zona incerta (caudal part)",
+          "homba_text": "zona incerta",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:10463"
+        },
+        {
+          "input_text": "Zona incerta (dorsal part)",
+          "homba_text": "zona incerta",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:10463"
+        },
+        {
+          "input_text": "Zona incerta (rostral part)",
+          "homba_text": "zona incerta",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:10463"
+        },
+        {
+          "input_text": "Zona incerta (ventral part)",
+          "homba_text": "zona incerta",
+          "notes": "round 1 | auto round | boost exact homba sim=0.82 | was 0.880->needs_review | now 1.000 HOMBA:10463"
+        }
+      ],
+      "before": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 322,
+          "needs_review": 346,
+          "modifier_conflict": 41,
+          "low_confidence": 167
+        },
+        "high_conf_rate": 0.3676,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 156,
+            "needs_review": 111,
+            "modifier_conflict": 14,
+            "low_confidence": 98
+          },
+          "species": {
+            "needs_review": 235,
+            "high_confidence": 166,
+            "low_confidence": 69,
+            "modifier_conflict": 27
+          }
+        }
+      },
+      "after": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 704,
+          "modifier_conflict": 21,
+          "needs_review": 114,
+          "low_confidence": 37
+        },
+        "high_conf_rate": 0.8037,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 305,
+            "modifier_conflict": 11,
+            "needs_review": 43,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 399,
+            "needs_review": 71,
+            "low_confidence": 17,
+            "modifier_conflict": 10
+          }
+        }
+      }
+    },
+    {
+      "round": 2,
+      "added_count": 22,
+      "added": [
+        {
+          "input_text": "Accessory trigeminal nucleus",
+          "homba_text": "accessory facial nucleus",
+          "notes": "round 2 | auto round | homba search sim=0.81 | was 0.762->needs_review | now 1.000 HOMBA:12419"
+        },
+        {
+          "input_text": "Cerebellar cortex (molecular layer)",
+          "homba_text": "cerebellar cortex",
+          "notes": "round 2 | auto round | boost exact homba sim=0.82 | was 1.000->modifier_conflict | now 1.000 HOMBA:10657"
+        },
+        {
+          "input_text": "Cerebellar cortex (Purkinje cell layer)",
+          "homba_text": "cerebellar cortex",
+          "notes": "round 2 | auto round | boost exact homba sim=0.82 | was 1.000->modifier_conflict | now 1.000 HOMBA:10657"
+        },
+        {
+          "input_text": "Ventral posterior thalamic nucleus",
+          "homba_text": "ventral anterior hypothalamic nucleus",
+          "notes": "round 2 | auto round | homba search sim=0.87 | was 0.938->modifier_conflict | now 1.000 HOMBA:AA30339"
+        },
+        {
+          "input_text": "Anterior pulvinar",
+          "homba_text": "lateral division of pulvinar",
+          "notes": "round 2 | auto round | homba search sim=0.67 | was 0.737->needs_review | now 1.000 HOMBA:10412"
+        },
+        {
+          "input_text": "Precuneal cortex",
+          "homba_text": "prefrontal cortex",
+          "notes": "round 2 | auto round | homba search sim=0.79 | was 0.773->needs_review | now 1.000 HOMBA:10172"
+        },
+        {
+          "input_text": "Parietal opercular cortex",
+          "homba_text": "parietal cortex",
+          "notes": "round 2 | auto round | homba search sim=0.75 | was 0.643->needs_review | now 1.000 HOMBA:10208"
+        },
+        {
+          "input_text": "Visual area V3",
+          "homba_text": "dorsal third visual area (V3D, V3)",
+          "notes": "round 2 | auto round | homba search sim=0.82 | was 0.683->needs_review | now 1.000 HOMBA:AA30824"
+        },
+        {
+          "input_text": "Visual area V3A",
+          "homba_text": "seventh visual area V7",
+          "notes": "round 2 | auto round | homba search sim=0.70 | was 0.660->needs_review | now 1.000 HOMBA:267499179"
+        },
+        {
+          "input_text": "Visual area V3B",
+          "homba_text": "seventh visual area V7",
+          "notes": "round 2 | auto round | homba search sim=0.70 | was 0.660->needs_review | now 1.000 HOMBA:267499179"
+        },
+        {
+          "input_text": "Visual area V8",
+          "homba_text": "seventh visual area V7",
+          "notes": "round 2 | auto round | homba search sim=0.72 | was 0.683->needs_review | now 1.000 HOMBA:267499179"
+        },
+        {
+          "input_text": "Ventral intraparietal area",
+          "homba_text": "ventral tegmental area",
+          "notes": "round 2 | auto round | homba search sim=0.71 | was 0.887->needs_review | now 1.000 HOMBA:12261"
+        },
+        {
+          "input_text": "Anterior pituitary",
+          "homba_text": "anterior commissure",
+          "notes": "round 2 | auto round | homba search sim=0.65 | was 0.717->needs_review | now 1.000 HOMBA:10559"
+        },
+        {
+          "input_text": "Central opercular cortex, anterior",
+          "homba_text": "frontal polar cortex (FP, area 10)",
+          "notes": "round 2 | auto round | homba search sim=0.59 | was 0.666->needs_review | now 1.000 HOMBA:10190"
+        },
+        {
+          "input_text": "P1 Mesencephalic Reticulum",
+          "homba_text": "spinomesencephalic tract",
+          "notes": "round 2 | auto round | homba search sim=0.68 | was 0.214->low_confidence | now 1.000 HOMBA:12787"
+        },
+        {
+          "input_text": "Paraventricular Posterior Thalamus",
+          "homba_text": "periventricular area of posterior thalamus",
+          "notes": "round 2 | auto round | homba search sim=0.84 | was 0.895->needs_review | now 1.000 HOMBA:13046"
+        },
+        {
+          "input_text": "Posterior Interposed Cerebellar Nucleus",
+          "homba_text": "posterior lobe of cerebellar cortex",
+          "notes": "round 2 | auto round | homba search sim=0.70 | was 0.712->needs_review | now 1.000 HOMBA:12844"
+        },
+        {
+          "input_text": "External medullary lamina, auditory radiation",
+          "homba_text": "external medullary lamina of thalamus",
+          "notes": "round 2 | auto round | homba search sim=0.69 | was 0.566->low_confidence | now 1.000 HOMBA:12038"
+        },
+        {
+          "input_text": "Frontal association cortex",
+          "homba_text": "frontal cortex",
+          "notes": "round 2 | auto round | homba search sim=0.70 | was 0.690->needs_review | now 1.000 HOMBA:10161"
+        },
+        {
+          "input_text": "Medial geniculate complex (dorsal division)",
+          "homba_text": "medial geniculate nuclear complex",
+          "notes": "round 2 | auto round | boost exact homba sim=0.68 | was 0.878->modifier_conflict | now 1.000 HOMBA:AA30307"
+        },
+        {
+          "input_text": "Medial geniculate complex (ventral division)",
+          "homba_text": "medial geniculate nuclear complex",
+          "notes": "round 2 | auto round | boost exact homba sim=0.67 | was 0.878->modifier_conflict | now 1.000 HOMBA:AA30307"
+        },
+        {
+          "input_text": "Ventral cochlear nucleus, granule cell layer",
+          "homba_text": "ventral cochlear nucleus",
+          "notes": "round 2 | auto round | boost exact homba sim=0.82 | was 0.875->modifier_conflict | now 1.000 HOMBA:12439"
+        }
+      ],
+      "before": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 704,
+          "modifier_conflict": 21,
+          "needs_review": 114,
+          "low_confidence": 37
+        },
+        "high_conf_rate": 0.8037,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 305,
+            "modifier_conflict": 11,
+            "needs_review": 43,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 399,
+            "needs_review": 71,
+            "low_confidence": 17,
+            "modifier_conflict": 10
+          }
+        }
+      },
+      "after": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 728,
+          "modifier_conflict": 15,
+          "needs_review": 98,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8311,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 318,
+            "modifier_conflict": 8,
+            "needs_review": 33,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 410,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 7
+          }
+        }
+      }
+    },
+    {
+      "round": 3,
+      "added_count": 3,
+      "added": [
+        {
+          "input_text": "Ventral posterior external thalamic nucleus",
+          "homba_text": "ventral anterior hypothalamic nucleus",
+          "notes": "round 3 | auto round | boost exact homba sim=0.78 | was 0.923->modifier_conflict | now 1.000 HOMBA:AA30339"
+        },
+        {
+          "input_text": "Frontal opercular cortex",
+          "homba_text": "frontal cortex",
+          "notes": "round 3 | auto round | homba search sim=0.74 | was 0.617->needs_review | now 1.000 HOMBA:10161"
+        },
+        {
+          "input_text": "Dorsal cochlear nucleus, fusiform and granule layer",
+          "homba_text": "dorsal cochlear nucleus",
+          "notes": "round 3 | auto round | homba search sim=0.82 | was 0.713->modifier_conflict | now 1.000 HOMBA:12438"
+        }
+      ],
+      "before": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 728,
+          "modifier_conflict": 15,
+          "needs_review": 98,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8311,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 318,
+            "modifier_conflict": 8,
+            "needs_review": 33,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 410,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 7
+          }
+        }
+      },
+      "after": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 731,
+          "modifier_conflict": 13,
+          "needs_review": 97,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8345,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 320,
+            "modifier_conflict": 7,
+            "needs_review": 32,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 411,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 6
+          }
+        }
+      }
+    },
+    {
+      "round": 4,
+      "added_count": 2,
+      "added": [
+        {
+          "input_text": "Dorsal cochlear nucleus, deep core",
+          "homba_text": "dorsal cochlear nucleus",
+          "notes": "round 4 | auto round | boost exact homba sim=0.82 | was 0.900->modifier_conflict | now 1.000 HOMBA:12438"
+        },
+        {
+          "input_text": "Dorsal cochlear nucleus, molecular layer",
+          "homba_text": "dorsal cochlear nucleus",
+          "notes": "round 4 | auto round | boost exact homba sim=0.82 | was 0.920->modifier_conflict | now 1.000 HOMBA:12438"
+        }
+      ],
+      "before": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 731,
+          "modifier_conflict": 13,
+          "needs_review": 97,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8345,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 320,
+            "modifier_conflict": 7,
+            "needs_review": 32,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 411,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 6
+          }
+        }
+      },
+      "after": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 733,
+          "modifier_conflict": 11,
+          "needs_review": 97,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8368,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 320,
+            "modifier_conflict": 7,
+            "needs_review": 32,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 413,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 4
+          }
+        }
+      }
+    },
+    {
+      "round": 5,
+      "added_count": 0,
+      "added": [],
+      "before": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 733,
+          "modifier_conflict": 11,
+          "needs_review": 97,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8368,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 320,
+            "modifier_conflict": 7,
+            "needs_review": 32,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 413,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 4
+          }
+        }
+      },
+      "after": {
+        "total": 876,
+        "flags": {
+          "high_confidence": 733,
+          "modifier_conflict": 11,
+          "needs_review": 97,
+          "low_confidence": 35
+        },
+        "high_conf_rate": 0.8368,
+        "by_dataset": {
+          "corpus": {
+            "high_confidence": 320,
+            "modifier_conflict": 7,
+            "needs_review": 32,
+            "low_confidence": 20
+          },
+          "species": {
+            "high_confidence": 413,
+            "needs_review": 65,
+            "low_confidence": 15,
+            "modifier_conflict": 4
+          }
+        }
+      }
+    }
+  ],
+  "playground_alias_count": 377,
+  "playground_alias_file": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\260621_playground\\homba_alias_rules_playground.csv",
+  "merged_alias_file": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\260621_playground\\homba_alias_rules_merged.csv"
+}

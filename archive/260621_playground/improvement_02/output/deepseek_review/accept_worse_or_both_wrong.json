@@ -1,0 +1,52 @@
+[
+  {
+    "dataset": "species",
+    "query": "Cuneate Gracile Nuclei",
+    "role": "llm_accept_top1",
+    "base": "sensory relay nuclei in medulla oblongata",
+    "improved": "gracile nucleus",
+    "label": "improved_worse",
+    "conf": "0.85",
+    "reason": "Query refers to both cuneate and gracile nuclei. Baseline 'sensory relay nuclei in medulla oblongata' broadly encompasses both. Improved 'gracile nucleus' matches only one, leaving cuneate unrepresented, thus less correct."
+  },
+  {
+    "dataset": "species",
+    "query": "Lateral Dorsal Thalamus",
+    "role": "llm_accept_top1",
+    "base": "lateral dorsal nucleus of thalamus",
+    "improved": "dorsal thalamus",
+    "label": "improved_worse",
+    "conf": "0.9",
+    "reason": "Query likely refers to the lateral dorsal nucleus of thalamus (a specific nucleus). Improved candidate 'dorsal thalamus' is a broader superstructure, making it less specific and thus worse."
+  },
+  {
+    "dataset": "species",
+    "query": "Lateral Dorsal Tegmentum",
+    "role": "llm_accept_top1",
+    "base": "lateral cell group of medulla tegmentum",
+    "improved": "dorsal cell group of medulla tegmentum",
+    "label": "both_wrong",
+    "conf": "0.8",
+    "reason": "Query 'Lateral Dorsal Tegmentum' requires both lateral and dorsal specification. Baseline captures only lateral, improved only dorsal; neither represents the combined region."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventroposterior Medial and Lateral Thalamus",
+    "role": "llm_accept_top1",
+    "base": "ventral lateral nucleus of thalamus",
+    "improved": "lateral posterior nucleus of thalamus",
+    "label": "both_wrong",
+    "conf": "0.9",
+    "reason": "Query 'Ventroposterior Medial and Lateral Thalamus' points to VPM and VPL nuclei. Neither baseline (ventral lateral nucleus) nor improved (lateral posterior nucleus) matches these."
+  },
+  {
+    "dataset": "species",
+    "query": "Lateral Dorsal Amygdaloid Nucleus",
+    "role": "llm_accept_top1",
+    "base": "lateral nucleus of amygdala",
+    "improved": "dorsal division of anterior amygdaloid area",
+    "label": "both_wrong",
+    "conf": "0.7",
+    "reason": "Query 'Lateral Dorsal Amygdaloid Nucleus' suggests a specific nucleus with lateral and dorsal features. Baseline ('lateral nucleus') and improved ('dorsal division of anterior amygdaloid area') each miss the other modifier and do not match the combined concept."
+  }
+]

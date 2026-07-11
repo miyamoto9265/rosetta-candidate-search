@@ -1,0 +1,18 @@
+dataset,query,review_target_name_substr,note
+species,Kolliker-Fuse Nucleus,koelliker,spelling kolliker->koelliker
+species,Saginum Nucleus,sagulum,spelling saginum->sagulum
+species,Septimbrial nucleus,septofimbrial,spelling septimbrial->septofimbrial
+species,Intergeniculate leaflet,intergeniculate leaf,leaflet->leaf
+species,Stria medullaris thalami,stria medullaris of thalamus,latin word order
+corpus,Medial dorsal thalamic nucleus,mediodorsal nucleus of thalamus,fused/split medial dorsal->mediodorsal
+species,Laterodorsal thalamic nucleus,lateral dorsal nucleus of thalamus,fused/split laterodorsal->lateral dorsal
+species,Ventrolateral thalamic nucleus,ventral lateral nucleus of thalamus,fused/split ventrolateral->ventral lateral
+species,Ventromedial thalamic nucleus,ventral medial nucleus of thalamus,fused/split ventromedial->ventral medial
+species,Interanteromedial Thalamus,interanteromedial nucleus of thalamus,hierarchy/word-order
+species,Intermediodorsal Thalamus,intermediodorsal nucleus of thalamus,hierarchy/word-order
+species,Abducens Motor Nucleus,abducens nucleus,hierarchy over-promotion
+species,Anterior Interposed Cerebellar Nucleus,interpositus,hierarchy over-promotion
+species,Spinal Trigeminal Nucleus Intermediate,spinal trigeminal nucleus,hierarchy over-promotion
+species,Dorsal Lateral Leminscus Nucleus,nucleus of lateral lemniscus,spelling+word-order
+corpus,Centre median parafascicular complex,centromedian,word-order/synonym
+species,Superior Olive,superior olivary,containment floor / parent

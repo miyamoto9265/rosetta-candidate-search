@@ -1,0 +1,15 @@
+{
+  "prompt_a": {
+    "proxy_accuracy": 0.7692307692307693,
+    "hit": 10,
+    "total": 13,
+    "resolved": 14
+  },
+  "prompt_b": {
+    "proxy_accuracy": 0.8461538461538461,
+    "hit": 11,
+    "total": 13,
+    "resolved": 14
+  },
+  "chosen_prompt": "B"
+}

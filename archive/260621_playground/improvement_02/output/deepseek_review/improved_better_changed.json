@@ -1,0 +1,292 @@
+[
+  {
+    "dataset": "corpus",
+    "query": "Secondary visual cortex",
+    "role": "llm_accept_top1",
+    "base": "dorsolateral extrastriate occipital cortex",
+    "improved": "dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)",
+    "label": "improved_better",
+    "conf": "0.8",
+    "reason": "Improved candidate directly includes 'secondary visual cortex' and area 18, matching the query more precisely than the baseline term 'dorsolateral extrastriate occipital cortex', which is broader."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Superior parietal gyrus",
+    "role": "llm_accept_top1",
+    "base": "parietal lobe",
+    "improved": "superior parietal lobule (gyrus)",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'superior parietal lobule (gyrus)' is more specific and matches query 'Superior parietal gyrus' exactly, while baseline 'parietal lobe' is a broader region."
+  },
+  {
+    "dataset": "species",
+    "query": "Anterior pituitary",
+    "role": "llm_accept_top1",
+    "base": "pituitary body/gland (hypophysis)",
+    "improved": "anterior lobe of pituitary body (adenohypophysis)",
+    "label": "improved_better",
+    "conf": "0.95",
+    "reason": "Query 'Anterior pituitary' specifically refers to the anterior lobe (adenohypophysis), not the whole pituitary gland. Improved candidate is more specific and correct."
+  },
+  {
+    "dataset": "species",
+    "query": "Basolateral Intermediate Amygdaloid Nucleus",
+    "role": "llm_accept_top1",
+    "base": "basolateral nuclear group of amygdala",
+    "improved": "basolateral nucleus (basal nucleus) of amygdala",
+    "label": "improved_better",
+    "conf": "0.75",
+    "reason": "Query specifies 'Basolateral Intermediate Amygdaloid Nucleus', a subpart of the basolateral nucleus. Baseline 'basolateral nuclear group of amygdala' is a broader group. Improved 'basolateral nucleus (basal nucleus) of amygdala' is the parent nucleus, which is closer to the query than the group, though still missing the intermediate subdivision."
+  },
+  {
+    "dataset": "species",
+    "query": "Frontal orbital cortex, anterior",
+    "role": "llm_accept_top1",
+    "base": "frontal cortex",
+    "improved": "orbital frontal cortex",
+    "label": "improved_better",
+    "conf": "1.0",
+    "reason": "Improved 'orbital frontal cortex' is more specific and accurate for 'Frontal orbital cortex, anterior' than baseline 'frontal cortex'."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventromedial occipital cortex",
+    "role": "llm_accept_top1",
+    "base": "extrastriate occipital cortex",
+    "improved": "ventromedial extrastriate occipital cortex",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate adds 'ventromedial' to match the query more specifically than baseline's broader 'extrastriate occipital cortex'."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventromedial thalamic nucleus (posterior and basal)",
+    "role": "llm_accept_top1",
+    "base": "posterior nucleus of thalamus",
+    "improved": "ventral medial nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'ventral medial nucleus of thalamus' correctly matches 'ventromedial thalamic nucleus', while baseline 'posterior nucleus of thalamus' is incorrect."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Lateral intraparietal area (dorsal)",
+    "role": "llm_reject_top1",
+    "base": "dorsal raphe nucleus, lateral division",
+    "improved": "lateral subdivision of area 7",
+    "label": "improved_better",
+    "conf": "0.8",
+    "reason": "Baseline refers to a brainstem nucleus, improved refers to a parietal cortical area (area 7) which is a plausible match for lateral intraparietal area, though modifier conflict suggests possible uncertainty."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Medial dorsal thalamic nucleus",
+    "role": "llm_reject_top1",
+    "base": "central medial nucleus of thalamus",
+    "improved": "mediodorsal nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "1.0",
+    "reason": "Improved candidate 'mediodorsal nucleus of thalamus' is a synonym for the query 'Medial dorsal thalamic nucleus', while baseline 'central medial nucleus of thalamus' is a different nucleus."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventral striatal region, unspecified",
+    "role": "llm_reject_top1",
+    "base": "anterior (ventral /principal) pretectal nucleus",
+    "improved": "ventral striatum (STRv)",
+    "label": "improved_better",
+    "conf": "1.0",
+    "reason": "Baseline candidate 'anterior (ventral/principal) pretectal nucleus' is a midbrain structure unrelated to ventral striatum. Improved candidate 'ventral striatum (STRv)' correctly matches the query 'Ventral striatal region, unspecified'."
+  },
+  {
+    "dataset": "species",
+    "query": "Orbital cortex (ventral)",
+    "role": "llm_reject_top1",
+    "base": "anterior (ventral /principal) pretectal nucleus",
+    "improved": "orbital frontal cortex",
+    "label": "improved_better",
+    "conf": "1.0",
+    "reason": "Baseline candidate (pretectal nucleus) is unrelated; improved candidate ('orbital frontal cortex') matches the query."
+  },
+  {
+    "dataset": "species",
+    "query": "Interanteromedial Thalamus",
+    "role": "llm_reject_top1",
+    "base": "ventral midline nuclei of thalamus",
+    "improved": "interanteromedial nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "1.0",
+    "reason": "Improved 'interanteromedial nucleus of thalamus' exactly matches the query 'Interanteromedial Thalamus'. Baseline 'ventral midline nuclei of thalamus' is a broader parent group, less specific. Improved is more correct."
+  },
+  {
+    "dataset": "species",
+    "query": "Basomedial amygdaloid nucleus",
+    "role": "llm_reject_top1",
+    "base": "basolateral nuclear group of amygdala",
+    "improved": "basomedial nucleus (accessory basal nucleus) of amygdala",
+    "label": "improved_better",
+    "conf": "0.95",
+    "reason": "Improved candidate is the specific nucleus request (basomedial nucleus), while baseline is a broader group (basolateral nuclear group)."
+  },
+  {
+    "dataset": "species",
+    "query": "Intermediodorsal Thalamus",
+    "role": "llm_reject_top1",
+    "base": "dorsal midline nuclei of thalamus",
+    "improved": "intermediodorsal  nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "0.95",
+    "reason": "Improved candidate is the specific intermediodorsal nucleus, matching the query exactly, while baseline is a broader group (dorsal midline nuclei)."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventrolateral thalamic nucleus",
+    "role": "llm_reject_top1",
+    "base": "rostral intralaminar nuclei of thalamus",
+    "improved": "ventral lateral nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'ventral lateral nucleus of thalamus' directly matches the query 'Ventrolateral thalamic nucleus', while baseline 'rostral intralaminar nuclei' is a different group."
+  },
+  {
+    "dataset": "species",
+    "query": "Laterodorsal thalamic nucleus",
+    "role": "llm_reject_top1",
+    "base": "anterodorsal nucleus of thalamus",
+    "improved": "lateral dorsal nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'lateral dorsal nucleus of thalamus' matches the query 'Laterodorsal thalamic nucleus', while baseline 'anterodorsal nucleus' is a different nucleus."
+  },
+  {
+    "dataset": "species",
+    "query": "Spinal Trigeminal Nucleus Intermediate",
+    "role": "llm_reject_top1",
+    "base": "afferent nuclei of cranial nerves in pons",
+    "improved": "spinal trigeminal nucleus",
+    "label": "improved_better",
+    "conf": "0.8",
+    "reason": "Baseline 'afferent nuclei of cranial nerves in pons' is incorrect (wrong region and too broad). Improved 'spinal trigeminal nucleus' is the parent structure of the query 'Spinal Trigeminal Nucleus Intermediate', making it more specific and correct than baseline, though not an exact match."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 3 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'cerebellar vermis' is a more specific and accurate parent structure for 'Cerebellar Lobule 3 Vermis' than baseline 'cerebellar morphology', which is too broad."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 4 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'cerebellar vermis' is a more specific and accurate parent structure for 'Cerebellar Lobule 4 Vermis' than baseline 'cerebellar morphology'."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 5 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'cerebellar vermis' is a more specific and accurate parent structure for 'Cerebellar Lobule 5 Vermis' than baseline 'cerebellar morphology'."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 6 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'cerebellar vermis' is a more specific and accurate parent structure for 'Cerebellar Lobule 6 Vermis' than baseline 'cerebellar morphology'."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 7 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Improved candidate 'cerebellar vermis' is a more specific and accurate parent structure for 'Cerebellar Lobule 7 Vermis' than baseline 'cerebellar morphology'."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 8 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.7",
+    "reason": "Baseline 'cerebellar morphology' is too broad; improved 'cerebellar vermis' is a more specific region that includes the queried lobule, though not exact."
+  },
+  {
+    "dataset": "species",
+    "query": "Cerebellar Lobule 9 Vermis",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "cerebellar morphology",
+    "improved": "cerebellar vermis",
+    "label": "improved_better",
+    "conf": "0.7",
+    "reason": "Same as 870: improved 'cerebellar vermis' is a closer match than baseline 'cerebellar morphology'."
+  },
+  {
+    "dataset": "species",
+    "query": "Medial Raphe",
+    "role": "llm_reject_top1",
+    "base": "fastigial (medial) nucleus",
+    "improved": "median raphe nucleus",
+    "label": "improved_better",
+    "conf": "0.8",
+    "reason": "Baseline 'fastigial nucleus' is unrelated; improved 'median raphe nucleus' is a plausible match for 'Medial Raphe'."
+  },
+  {
+    "dataset": "species",
+    "query": "Dorsal Lateral Leminscus Nucleus",
+    "role": "llm_reject_top1",
+    "base": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+    "improved": "dorsal nucleus of lateral lemniscus",
+    "label": "improved_better",
+    "conf": "0.9",
+    "reason": "Baseline 'lateral geniculate nucleus' is incorrect; improved 'dorsal nucleus of lateral lemniscus' correctly matches the query."
+  },
+  {
+    "dataset": "species",
+    "query": "Abducens Motor Nucleus",
+    "role": "llm_reject_top1",
+    "base": "efferent nuclei of cranial nerves in pons",
+    "improved": "abducens nucleus",
+    "label": "improved_better",
+    "conf": "0.95",
+    "reason": "Improved candidate 'abducens nucleus' is a specific and correct match for 'Abducens Motor Nucleus', while baseline is a broader grouping."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventromedial thalamic nucleus",
+    "role": "llm_reject_top1",
+    "base": "caudal intralaminar nuclei of thalamus",
+    "improved": "ventral medial nucleus of thalamus",
+    "label": "improved_better",
+    "conf": "0.95",
+    "reason": "Improved candidate 'ventral medial nucleus of thalamus' is a correct synonym for 'Ventromedial thalamic nucleus', while baseline is a different thalamic nuclear group."
+  },
+  {
+    "dataset": "species",
+    "query": "Medial Dorsal Tegmentum",
+    "role": "llm_reject_top1",
+    "base": "magnocellular (dorsal) division of BM",
+    "improved": "dorsal cell group of medulla tegmentum",
+    "label": "improved_better",
+    "conf": "0.7",
+    "reason": "Improved candidate 'dorsal cell group of medulla tegmentum' is more specific to tegmentum than baseline 'magnocellular (dorsal) division of BM', which does not appear related to tegmentum."
+  }
+]

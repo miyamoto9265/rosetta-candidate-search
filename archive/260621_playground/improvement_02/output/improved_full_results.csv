@@ -1,0 +1,922 @@
+dataset,query,role,review_reference_top1_id,impr_id,impr_name,impr_score,impr_flag,changed_vs_baseline,base_id,base_name,base_score,base_flag
+corpus,Abducens nucleus,llm_accept_top1,HOMBA:12418,HOMBA:12418,abducens nucleus,1.0,high_confidence,,HOMBA:12418,abducens nucleus,1.0,high_confidence
+corpus,Accessory facial nucleus,llm_accept_top1,HOMBA:12419,HOMBA:12419,accessory facial nucleus,1.0,high_confidence,,HOMBA:12419,accessory facial nucleus,1.0,high_confidence
+corpus,Alveus,llm_accept_top1,HOMBA:10570,HOMBA:10570,alveus,1.0,high_confidence,,HOMBA:10570,alveus,1.0,high_confidence
+corpus,Amygdala,llm_accept_top1,HOMBA:10361,HOMBA:10361,amygdaloid complex,1.0,high_confidence,,HOMBA:10361,amygdaloid complex,1.0,high_confidence
+corpus,Angular gyrus,llm_accept_top1,HOMBA:12136,HOMBA:12136,angular gyrus,1.0,high_confidence,,HOMBA:12136,angular gyrus,1.0,high_confidence
+corpus,Ansa lenticularis,llm_accept_top1,HOMBA:10571,HOMBA:10571,ansa lenticularis,1.0,high_confidence,,HOMBA:10571,ansa lenticularis,1.0,high_confidence
+corpus,Anterior commissure,llm_accept_top1,HOMBA:10559,HOMBA:10559,anterior commissure,1.0,high_confidence,,HOMBA:10559,anterior commissure,1.0,high_confidence
+corpus,Anterior thalamic nucleus,llm_accept_top1,HOMBA:10392,HOMBA:10392,anterior nuclear complex of thalamus,1.0,high_confidence,,HOMBA:10392,anterior nuclear complex of thalamus,1.0,high_confidence
+corpus,Arcuate fasciculus,llm_accept_top1,HOMBA:10569,HOMBA:10569,arcuate fasciculus,1.0,high_confidence,,HOMBA:10569,arcuate fasciculus,1.0,high_confidence
+corpus,Area 52,llm_accept_top1,HOMBA:10267,HOMBA:10267,parainsular cortex (area 52),1.0,high_confidence,,HOMBA:10267,parainsular cortex (area 52),1.0,high_confidence
+corpus,Area postrema,llm_accept_top1,HOMBA:12807,HOMBA:12807,area postrema,1.0,high_confidence,,HOMBA:12807,area postrema,1.0,high_confidence
+corpus,Brachium conjunctivum,llm_accept_top1,HOMBA:12354,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),1.0,high_confidence,,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),1.0,high_confidence
+corpus,CA1,llm_accept_top1,HOMBA:10297,HOMBA:10297,CA1 region of hippocampus,1.0,high_confidence,,HOMBA:10297,CA1 region of hippocampus,1.0,high_confidence
+corpus,CA2,llm_accept_top1,HOMBA:10298,HOMBA:10298,CA2 region of hippocampus,1.0,high_confidence,,HOMBA:10298,CA2 region of hippocampus,1.0,high_confidence
+corpus,CA3,llm_accept_top1,HOMBA:10299,HOMBA:10299,CA3 region of hippocampus,1.0,high_confidence,,HOMBA:10299,CA3 region of hippocampus,1.0,high_confidence
+corpus,Caudate nucleus,llm_accept_top1,HOMBA:10334,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),1.0,high_confidence,,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),1.0,high_confidence
+corpus,Cerebellar cortex (Purkinje cell layer),llm_accept_top1,HOMBA:AA30428,HOMBA:AA30428,Purkinje cell layer of cerebellar cortex,1.0,high_confidence,,HOMBA:AA30428,Purkinje cell layer of cerebellar cortex,1.0,high_confidence
+corpus,Cerebellar hemisphere,llm_accept_top1,HOMBA:10659,HOMBA:10659,cerebellar hemisphere,1.0,high_confidence,,HOMBA:10659,cerebellar hemisphere,1.0,high_confidence
+corpus,Cerebellar vermis,llm_accept_top1,HOMBA:10658,HOMBA:10658,cerebellar vermis,1.0,high_confidence,,HOMBA:10658,cerebellar vermis,1.0,high_confidence
+corpus,Cerebral aqueduct,llm_accept_top1,HOMBA:12369,HOMBA:12369,cerebral aqueduct,1.0,high_confidence,,HOMBA:12369,cerebral aqueduct,1.0,high_confidence
+corpus,Cerebral peduncle,llm_accept_top1,HOMBA:12330,HOMBA:12330,cerebral peduncle (crus cerebri),1.0,high_confidence,,HOMBA:12330,cerebral peduncle (crus cerebri),1.0,high_confidence
+corpus,Cingulate gyrus (posterior),llm_accept_top1,HOMBA:10285,HOMBA:10285,posterior cingulate cortex (PCC),1.0,high_confidence,,HOMBA:10285,posterior cingulate cortex (PCC),1.0,high_confidence
+corpus,Corticospinal tract,llm_accept_top1,HOMBA:12047,HOMBA:12047,corticospinal tract,1.0,high_confidence,,HOMBA:12047,corticospinal tract,1.0,high_confidence
+corpus,Cuneate fasciculus,llm_accept_top1,HOMBA:12731,HOMBA:12731,cuneate fasciculus,1.0,high_confidence,,HOMBA:12731,cuneate fasciculus,1.0,high_confidence
+corpus,Cuneate nucleus,llm_accept_top1,HOMBA:12589,HOMBA:12589,cuneate nucleus,1.0,high_confidence,,HOMBA:12589,cuneate nucleus,1.0,high_confidence
+corpus,Cuneate nucleus (external),llm_accept_top1,HOMBA:12588,HOMBA:12588,external (accessory/lateral) cuneate nucleus,1.0,high_confidence,,HOMBA:12588,external (accessory/lateral) cuneate nucleus,1.0,high_confidence
+corpus,Cuneus,llm_accept_top1,HOMBA:12150,HOMBA:12150,cuneus (gyrus),1.0,high_confidence,,HOMBA:12150,cuneus (gyrus),1.0,high_confidence
+corpus,Dentate gyrus,llm_accept_top1,HOMBA:10295,HOMBA:10295,dentate gyrus,1.0,high_confidence,,HOMBA:10295,dentate gyrus,1.0,high_confidence
+corpus,Dentate nucleus,llm_accept_top1,HOMBA:12396,HOMBA:12396,dentate (lateral) nucleus,1.0,high_confidence,,HOMBA:12396,dentate (lateral) nucleus,1.0,high_confidence
+corpus,Dorsal cochlear nucleus,llm_accept_top1,HOMBA:12438,HOMBA:12438,dorsal cochlear nucleus,1.0,high_confidence,,HOMBA:12438,dorsal cochlear nucleus,1.0,high_confidence
+corpus,Dorsal motor nucleus of vagus,llm_accept_top1,HOMBA:12550,HOMBA:12550,dorsal motor nucleus of the vagus (vagal nerve nucleus),1.0,high_confidence,,HOMBA:12550,dorsal motor nucleus of the vagus (vagal nerve nucleus),1.0,high_confidence
+corpus,Emboliform nucleus,llm_accept_top1,HOMBA:12401,HOMBA:12401,lateral interpositus (emboliform) nucleus,1.0,high_confidence,,HOMBA:12401,lateral interpositus (emboliform) nucleus,1.0,high_confidence
+corpus,Entorhinal area,llm_accept_top1,HOMBA:10317,HOMBA:10317,entorhinal cortex,1.0,high_confidence,,HOMBA:10317,entorhinal cortex,1.0,high_confidence
+corpus,Entorhinal cortex,llm_accept_top1,HOMBA:10317,HOMBA:10317,entorhinal cortex,1.0,high_confidence,,HOMBA:10317,entorhinal cortex,1.0,high_confidence
+corpus,External lateral parabrachial nucleus,llm_accept_top1,HOMBA:12485,HOMBA:12485,"lateral parabrachial nucleus, external division",1.0,high_confidence,,HOMBA:12485,"lateral parabrachial nucleus, external division",1.0,high_confidence
+corpus,Facial nucleus,llm_accept_top1,HOMBA:12420,HOMBA:12420,facial nucleus,1.0,high_confidence,,HOMBA:12420,facial nucleus,1.0,high_confidence
+corpus,Fastigial nucleus,llm_accept_top1,HOMBA:12402,HOMBA:12402,fastigial (medial) nucleus,1.0,high_confidence,,HOMBA:12402,fastigial (medial) nucleus,1.0,high_confidence
+corpus,Fimbria,llm_accept_top1,HOMBA:10575,HOMBA:10575,fimbria,1.0,high_confidence,,HOMBA:10575,fimbria,1.0,high_confidence
+corpus,Flocculus,llm_accept_top1,HOMBA:AA30424,HOMBA:AA30424,lobule Xa (flocculus),1.0,high_confidence,,HOMBA:AA30424,lobule Xa (flocculus),1.0,high_confidence
+corpus,Fornix,llm_accept_top1,HOMBA:10576,HOMBA:10576,fornix,1.0,high_confidence,,HOMBA:10576,fornix,1.0,high_confidence
+corpus,Fourth ventricle,llm_accept_top1,HOMBA:12805,HOMBA:12805,fourth ventricle,1.0,high_confidence,,HOMBA:12805,fourth ventricle,1.0,high_confidence
+corpus,Fusiform gyrus,llm_accept_top1,HOMBA:AA30549,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,1.0,high_confidence,,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,1.0,high_confidence
+corpus,Globose nucleus,llm_accept_top1,HOMBA:12400,HOMBA:12400,medial interpositus (globose) nucleus,1.0,high_confidence,,HOMBA:12400,medial interpositus (globose) nucleus,1.0,high_confidence
+corpus,Gracile fasciculus,llm_accept_top1,HOMBA:12739,HOMBA:12739,gracile fasciculus,1.0,high_confidence,,HOMBA:12739,gracile fasciculus,1.0,high_confidence
+corpus,Gracile nucleus,llm_accept_top1,HOMBA:12592,HOMBA:12592,gracile nucleus,1.0,high_confidence,,HOMBA:12592,gracile nucleus,1.0,high_confidence
+corpus,Gyrus rectus,llm_accept_top1,HOMBA:12121,HOMBA:12121,rectus gyrus,1.0,high_confidence,,HOMBA:12121,rectus gyrus,1.0,high_confidence
+corpus,Heschl gyrus,llm_accept_top1,HOMBA:12144,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),1.0,high_confidence,,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),1.0,high_confidence
+corpus,Heschl's gyrus,llm_accept_top1,HOMBA:12144,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),1.0,high_confidence,,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),1.0,high_confidence
+corpus,Hippocampal formation,llm_accept_top1,HOMBA:12170,HOMBA:12170,hippocampal formation,1.0,high_confidence,,HOMBA:12170,hippocampal formation,1.0,high_confidence
+corpus,Hippocampus,llm_accept_top1,HOMBA:AA30093,HOMBA:AA30093,hippocampus,1.0,high_confidence,,HOMBA:AA30093,hippocampus,1.0,high_confidence
+corpus,Hypoglossal nucleus,llm_accept_top1,HOMBA:12545,HOMBA:12545,hypoglossal nucleus,1.0,high_confidence,,HOMBA:12545,hypoglossal nucleus,1.0,high_confidence
+corpus,Inferior cerebellar peduncle,llm_accept_top1,HOMBA:12741,HOMBA:12741,inferior cerebellar peduncle,1.0,high_confidence,,HOMBA:12741,inferior cerebellar peduncle,1.0,high_confidence
+corpus,Inferior colliculus,llm_accept_top1,HOMBA:12305,HOMBA:12305,inferior colliculus,1.0,high_confidence,,HOMBA:12305,inferior colliculus,1.0,high_confidence
+corpus,Inferior frontal gyrus (opercular part),llm_accept_top1,HOMBA:12119,HOMBA:12119,"inferior frontal gyrus, opercular part",1.0,high_confidence,,HOMBA:12119,"inferior frontal gyrus, opercular part",1.0,high_confidence
+corpus,Inferior frontal gyrus (triangular part),llm_accept_top1,HOMBA:12118,HOMBA:12118,"inferior frontal gyrus, triangular part",1.0,high_confidence,,HOMBA:12118,"inferior frontal gyrus, triangular part",1.0,high_confidence
+corpus,Inferior longitudinal fasciculus,llm_accept_top1,HOMBA:10580,HOMBA:10580,inferior longitudinal fasciculus,1.0,high_confidence,,HOMBA:10580,inferior longitudinal fasciculus,1.0,high_confidence
+corpus,Inferior occipital gyrus,llm_accept_top1,HOMBA:12153,HOMBA:12153,inferior occipital gyrus,1.0,high_confidence,,HOMBA:12153,inferior occipital gyrus,1.0,high_confidence
+corpus,Inferior olive,llm_accept_top1,HOMBA:12600,HOMBA:12600,inferior olive,1.0,high_confidence,,HOMBA:12600,inferior olive,1.0,high_confidence
+corpus,Inferior parietal lobule,llm_accept_top1,HOMBA:12134,HOMBA:12134,inferior parietal lobule (gyrus),1.0,high_confidence,,HOMBA:12134,inferior parietal lobule (gyrus),1.0,high_confidence
+corpus,Inferior pulvinar,llm_accept_top1,HOMBA:10413,HOMBA:10413,inferior division of pulvinar,1.0,high_confidence,,HOMBA:10413,inferior division of pulvinar,1.0,high_confidence
+corpus,Inferior salivatory nucleus,llm_accept_top1,HOMBA:12544,HOMBA:12544,inferior salivatory nucleus,1.0,high_confidence,,HOMBA:12544,inferior salivatory nucleus,1.0,high_confidence
+corpus,Inferior temporal gyrus,llm_accept_top1,HOMBA:12142,HOMBA:12142,inferior temporal gyrus,1.0,high_confidence,,HOMBA:12142,inferior temporal gyrus,1.0,high_confidence
+corpus,Insula,llm_accept_top1,HOMBA:12176,HOMBA:12176,insular lobe,1.0,high_confidence,,HOMBA:12176,insular lobe,1.0,high_confidence
+corpus,Intermediate reticular zone,llm_accept_top1,HOMBA:12620,HOMBA:12620,intermediate reticular nucleus,1.0,high_confidence,,HOMBA:12620,intermediate reticular nucleus,1.0,high_confidence
+corpus,Internal capsule,llm_accept_top1,HOMBA:10581,HOMBA:10581,internal capsule,1.0,high_confidence,,HOMBA:10581,internal capsule,1.0,high_confidence
+corpus,Lateral geniculate nucleus,llm_accept_top1,HOMBA:10429,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),1.0,high_confidence,,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),1.0,high_confidence
+corpus,Lateral parabrachial nucleus,llm_accept_top1,HOMBA:12482,HOMBA:12482,lateral parabrachial nucleus,1.0,high_confidence,,HOMBA:12482,lateral parabrachial nucleus,1.0,high_confidence
+corpus,Lateral posterior thalamic nucleus,llm_accept_top1,HOMBA:10408,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence
+corpus,Lateral pulvinar,llm_accept_top1,HOMBA:10412,HOMBA:10412,lateral division of pulvinar,0.9784,high_confidence,,HOMBA:10412,lateral division of pulvinar,0.9784,high_confidence
+corpus,Lenticular nucleus (putamen),llm_accept_top1,HOMBA:10338,HOMBA:10338,putamen (lateroventral division of the CP),1.0,high_confidence,,HOMBA:10338,putamen (lateroventral division of the CP),1.0,high_confidence
+corpus,Limen insulae,llm_accept_top1,HOMBA:12179,HOMBA:12179,limen insula,1.0,high_confidence,,HOMBA:12179,limen insula,1.0,high_confidence
+corpus,Lingual gyrus,llm_accept_top1,HOMBA:12151,HOMBA:12151,lingual gyrus,1.0,high_confidence,,HOMBA:12151,lingual gyrus,1.0,high_confidence
+corpus,Locus coeruleus,llm_accept_top1,HOMBA:12499,HOMBA:12499,nucleus coeruleus (locus coeruleus),1.0,high_confidence,,HOMBA:12499,nucleus coeruleus (locus coeruleus),1.0,high_confidence
+corpus,Mammillary body,llm_accept_top1,HOMBA:15546,HOMBA:15546,mammillary body,1.0,high_confidence,,HOMBA:15546,mammillary body,1.0,high_confidence
+corpus,Mammillothalamic tract,llm_accept_top1,HOMBA:10586,HOMBA:10586,mammillothalamic tract,1.0,high_confidence,,HOMBA:10586,mammillothalamic tract,1.0,high_confidence
+corpus,Medial geniculate nucleus,llm_accept_top1,HOMBA:10434,HOMBA:10434,medial geniculate nucleus,1.0,high_confidence,,HOMBA:10434,medial geniculate nucleus,1.0,high_confidence
+corpus,Medial lemniscus,llm_accept_top1,HOMBA:12763,HOMBA:12763,medial lemniscus,1.0,high_confidence,,HOMBA:12763,medial lemniscus,1.0,high_confidence
+corpus,Medial longitudinal fasciculus,llm_accept_top1,HOMBA:12764,HOMBA:12764,medial longitudinal fasciculus,1.0,high_confidence,,HOMBA:12764,medial longitudinal fasciculus,1.0,high_confidence
+corpus,Medial parabrachial nucleus,llm_accept_top1,HOMBA:12487,HOMBA:12487,medial parabrachial nucleus,1.0,high_confidence,,HOMBA:12487,medial parabrachial nucleus,1.0,high_confidence
+corpus,Medial pulvinar,llm_accept_top1,HOMBA:10411,HOMBA:10411,medial division of pulvinar,0.9757,high_confidence,,HOMBA:10411,medial division of pulvinar,0.9757,high_confidence
+corpus,Medial superior temporal area,llm_accept_top1,HOMBA:AA30021,HOMBA:AA30021,medial superior temporal area,1.0,high_confidence,,HOMBA:AA30021,medial superior temporal area,1.0,high_confidence
+corpus,Median raphe,llm_accept_top1,HOMBA:12235,HOMBA:12235,median raphe nucleus,1.0,high_confidence,,HOMBA:12235,median raphe nucleus,1.0,high_confidence
+corpus,Mediodorsal thalamic nucleus,llm_accept_top1,HOMBA:10398,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,high_confidence,,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,high_confidence
+corpus,Middle cerebellar peduncle,llm_accept_top1,HOMBA:12768,HOMBA:12768,middle cerebellar peduncle (brachium pontis),1.0,high_confidence,,HOMBA:12768,middle cerebellar peduncle (brachium pontis),1.0,high_confidence
+corpus,Middle frontal gyrus,llm_accept_top1,HOMBA:12116,HOMBA:12116,middle frontal gyrus,1.0,high_confidence,,HOMBA:12116,middle frontal gyrus,1.0,high_confidence
+corpus,Middle temporal area,llm_accept_top1,HOMBA:267499039,HOMBA:267499039,"fifth visual area (middle temporal area, MT)",1.0,high_confidence,,HOMBA:267499039,"fifth visual area (middle temporal area, MT)",1.0,high_confidence
+corpus,Middle temporal gyrus,llm_accept_top1,HOMBA:12141,HOMBA:12141,middle temporal gyrus,1.0,high_confidence,,HOMBA:12141,middle temporal gyrus,1.0,high_confidence
+corpus,Motor trigeminal nucleus,llm_accept_top1,HOMBA:12429,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",1.0,high_confidence,,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",1.0,high_confidence
+corpus,Nucleus accumbens,llm_accept_top1,HOMBA:10339,HOMBA:10339,nucleus accumbens,1.0,high_confidence,,HOMBA:10339,nucleus accumbens,1.0,high_confidence
+corpus,Nucleus ambiguus,llm_accept_top1,HOMBA:12540,HOMBA:12540,ambiguus nucleus,1.0,high_confidence,,HOMBA:12540,ambiguus nucleus,1.0,high_confidence
+corpus,Nucleus of the solitary tract,llm_accept_top1,HOMBA:12557,HOMBA:12557,solitary nucleus,1.0,high_confidence,,HOMBA:12557,solitary nucleus,1.0,high_confidence
+corpus,Obex,llm_accept_top1,HOMBA:12812,HOMBA:12812,obex,1.0,high_confidence,,HOMBA:12812,obex,1.0,high_confidence
+corpus,Occipital pole,llm_accept_top1,HOMBA:12149,HOMBA:12149,occipital pole,1.0,high_confidence,,HOMBA:12149,occipital pole,1.0,high_confidence
+corpus,Oculomotor nucleus,llm_accept_top1,HOMBA:12198,HOMBA:12198,oculomotor nucleus,1.0,high_confidence,,HOMBA:12198,oculomotor nucleus,1.0,high_confidence
+corpus,Optic chiasm,llm_accept_top1,HOMBA:10644,HOMBA:10644,optic chiasm,1.0,high_confidence,,HOMBA:10644,optic chiasm,1.0,high_confidence
+corpus,Optic tract,llm_accept_top1,HOMBA:10589,HOMBA:10589,optic tract,1.0,high_confidence,,HOMBA:10589,optic tract,1.0,high_confidence
+corpus,Paracingulate gyrus,llm_accept_top1,HOMBA:146034872,HOMBA:146034872,paracingulate gyrus,1.0,high_confidence,,HOMBA:146034872,paracingulate gyrus,1.0,high_confidence
+corpus,Parahippocampal gyrus,llm_accept_top1,HOMBA:12162,HOMBA:12162,parahippocampal gyrus,1.0,high_confidence,,HOMBA:12162,parahippocampal gyrus,1.0,high_confidence
+corpus,Parahippocampal gyrus (anterior),llm_accept_top1,HOMBA:12163,HOMBA:12163,anterior parahippocampal gyrus,1.0,high_confidence,,HOMBA:12163,anterior parahippocampal gyrus,1.0,high_confidence
+corpus,Parahippocampal gyrus (posterior),llm_accept_top1,HOMBA:12164,HOMBA:12164,posterior parahippocampal gyrus,1.0,high_confidence,,HOMBA:12164,posterior parahippocampal gyrus,1.0,high_confidence
+corpus,Periamygdaloid cortex,llm_accept_top1,HOMBA:AA30225,HOMBA:AA30225,periamygdaloid cortex,1.0,high_confidence,,HOMBA:AA30225,periamygdaloid cortex,1.0,high_confidence
+corpus,Pineal gland,llm_accept_top1,HOMBA:10460,HOMBA:10460,pineal body,1.0,high_confidence,,HOMBA:10460,pineal body,1.0,high_confidence
+corpus,Planum polare,llm_accept_top1,HOMBA:12147,HOMBA:12147,planum polare,1.0,high_confidence,,HOMBA:12147,planum polare,1.0,high_confidence
+corpus,Planum temporale,llm_accept_top1,HOMBA:12145,HOMBA:12145,planum temporale,1.0,high_confidence,,HOMBA:12145,planum temporale,1.0,high_confidence
+corpus,Pontobulbar nucleus,llm_accept_top1,HOMBA:12614,HOMBA:12614,pontobulbar nucleus,1.0,high_confidence,,HOMBA:12614,pontobulbar nucleus,1.0,high_confidence
+corpus,Postcentral gyrus,llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,1.0,high_confidence,,HOMBA:12132,postcentral gyrus,1.0,high_confidence
+corpus,Posterior cingulate gyrus,llm_accept_top1,HOMBA:10285,HOMBA:10285,posterior cingulate cortex (PCC),1.0,high_confidence,,HOMBA:10285,posterior cingulate cortex (PCC),1.0,high_confidence
+corpus,Posterior commissure,llm_accept_top1,HOMBA:10567,HOMBA:10567,posterior commissure,1.0,high_confidence,,HOMBA:10567,posterior commissure,1.0,high_confidence
+corpus,Posterior thalamic nucleus,llm_accept_top1,HOMBA:10440,HOMBA:10440,posterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10440,posterior nucleus of thalamus,1.0,high_confidence
+corpus,Precentral gyrus,llm_accept_top1,HOMBA:12114,HOMBA:12114,precentral gyrus,1.0,high_confidence,,HOMBA:12114,precentral gyrus,1.0,high_confidence
+corpus,Precuneus,llm_accept_top1,HOMBA:12137,HOMBA:12137,precuneaus (gyrus),1.0,high_confidence,,HOMBA:12137,precuneaus (gyrus),1.0,high_confidence
+corpus,Prepositus nucleus,llm_accept_top1,HOMBA:12615,HOMBA:12615,prepositus hypoglossal nucleus,1.0,high_confidence,,HOMBA:12615,prepositus hypoglossal nucleus,1.0,high_confidence
+corpus,Presubiculum,llm_accept_top1,HOMBA:10315,HOMBA:10315,presubiculum (presubicular cortex),1.0,high_confidence,,HOMBA:10315,presubiculum (presubicular cortex),1.0,high_confidence
+corpus,Primary auditory cortex,llm_accept_top1,HOMBA:10236,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",1.0,high_confidence,,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",1.0,high_confidence
+corpus,Primary motor cortex,llm_accept_top1,HOMBA:10163,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",1.0,high_confidence,,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",1.0,high_confidence
+corpus,Primary visual cortex,llm_accept_top1,HOMBA:10269,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",1.0,high_confidence,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",1.0,high_confidence
+corpus,Principal sensory trigeminal nucleus,llm_accept_top1,HOMBA:12444,HOMBA:12444,principal sensory nucleus of trigeminal nerve,1.0,high_confidence,,HOMBA:12444,principal sensory nucleus of trigeminal nerve,1.0,high_confidence
+corpus,Pulvinar,llm_accept_top1,HOMBA:10409,HOMBA:10409,pulvinar of thalamus,1.0,high_confidence,,HOMBA:10409,pulvinar of thalamus,1.0,high_confidence
+corpus,Pulvinar nucleus,llm_accept_top1,HOMBA:10409,HOMBA:10409,pulvinar of thalamus,1.0,high_confidence,,HOMBA:10409,pulvinar of thalamus,1.0,high_confidence
+corpus,Putamen,llm_accept_top1,HOMBA:10338,HOMBA:10338,putamen (lateroventral division of the CP),1.0,high_confidence,,HOMBA:10338,putamen (lateroventral division of the CP),1.0,high_confidence
+corpus,Pyramidal decussation,llm_accept_top1,HOMBA:12772,HOMBA:12772,pyramidal decussation,1.0,high_confidence,,HOMBA:12772,pyramidal decussation,1.0,high_confidence
+corpus,Raphe magnus,llm_accept_top1,HOMBA:12642,HOMBA:12642,raphe magnus nucleus,1.0,high_confidence,,HOMBA:12642,raphe magnus nucleus,1.0,high_confidence
+corpus,Raphe obscurus,llm_accept_top1,HOMBA:12643,HOMBA:12643,raphe obscurus nucleus,1.0,high_confidence,,HOMBA:12643,raphe obscurus nucleus,1.0,high_confidence
+corpus,Red nucleus,llm_accept_top1,HOMBA:12247,HOMBA:12247,red nucleus,1.0,high_confidence,,HOMBA:12247,red nucleus,1.0,high_confidence
+corpus,Retroinsular cortex,llm_accept_top1,HOMBA:13323,HOMBA:13323,retroinsular cortex,1.0,high_confidence,,HOMBA:13323,retroinsular cortex,1.0,high_confidence
+corpus,Retrosplenial cortex,llm_accept_top1,HOMBA:10324,HOMBA:10324,retrosplenial cortex,1.0,high_confidence,,HOMBA:10324,retrosplenial cortex,1.0,high_confidence
+corpus,Roots of the abducens nerve,llm_accept_top1,HOMBA:12861,HOMBA:12861,root of abducens nerve,1.0,high_confidence,,HOMBA:12861,root of abducens nerve,1.0,high_confidence
+corpus,Roots of the facial nerve,llm_accept_top1,HOMBA:12862,HOMBA:12862,root of facial nerve,1.0,high_confidence,,HOMBA:12862,root of facial nerve,1.0,high_confidence
+corpus,Roots of the trigeminal nerve,llm_accept_top1,HOMBA:12865,HOMBA:12865,root of trigeminal nerve,1.0,high_confidence,,HOMBA:12865,root of trigeminal nerve,1.0,high_confidence
+corpus,Septal area,llm_accept_top1,HOMBA:10350,HOMBA:10350,septal region (septal nuclear complex),1.0,high_confidence,,HOMBA:10350,septal region (septal nuclear complex),1.0,high_confidence
+corpus,Solitary tract,llm_accept_top1,HOMBA:12783,HOMBA:12783,solitary tract,1.0,high_confidence,,HOMBA:12783,solitary tract,1.0,high_confidence
+corpus,Spinal trigeminal nucleus,llm_accept_top1,HOMBA:12572,HOMBA:12572,spinal trigeminal nucleus,1.0,high_confidence,,HOMBA:12572,spinal trigeminal nucleus,1.0,high_confidence
+corpus,Spinal trigeminal nucleus (caudalis),llm_accept_top1,HOMBA:12573,HOMBA:12573,"spinal trigeminal nucleus, caudal division",1.0,high_confidence,,HOMBA:12573,"spinal trigeminal nucleus, caudal division",1.0,high_confidence
+corpus,Spinal trigeminal nucleus (interpolaris),llm_accept_top1,HOMBA:12578,HOMBA:12578,"spinal trigeminal nucleus, interpolar division",1.0,high_confidence,,HOMBA:12578,"spinal trigeminal nucleus, interpolar division",1.0,high_confidence
+corpus,Spinal trigeminal tract,llm_accept_top1,HOMBA:12792,HOMBA:12792,spinal trigeminal tract,1.0,high_confidence,,HOMBA:12792,spinal trigeminal tract,1.0,high_confidence
+corpus,Spinothalamic tract,llm_accept_top1,HOMBA:12789,HOMBA:12789,spinothalamic tract,1.0,high_confidence,,HOMBA:12789,spinothalamic tract,1.0,high_confidence
+corpus,Subiculum,llm_accept_top1,HOMBA:10302,HOMBA:10302,subiculum proper (strictly defined subiculum),1.0,high_confidence,,HOMBA:10302,subiculum proper (strictly defined subiculum),1.0,high_confidence
+corpus,Substantia nigra,llm_accept_top1,HOMBA:12251,HOMBA:12251,substantia nigra,1.0,high_confidence,,HOMBA:12251,substantia nigra,1.0,high_confidence
+corpus,Subthalamic nucleus,llm_accept_top1,HOMBA:10466,HOMBA:10466,subthalamic nucleus,1.0,high_confidence,,HOMBA:10466,subthalamic nucleus,1.0,high_confidence
+corpus,Superior cerebellar peduncle,llm_accept_top1,HOMBA:12354,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),1.0,high_confidence,,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),1.0,high_confidence
+corpus,Superior cerebellar peduncle (decussation),llm_accept_top1,HOMBA:12337,HOMBA:12337,decussation of superior cerebellar peduncle,1.0,high_confidence,,HOMBA:12337,decussation of superior cerebellar peduncle,1.0,high_confidence
+corpus,Superior colliculus,llm_accept_top1,HOMBA:12292,HOMBA:12292,superior colliculus,1.0,high_confidence,,HOMBA:12292,superior colliculus,1.0,high_confidence
+corpus,Superior occipital gyrus,llm_accept_top1,HOMBA:12154,HOMBA:12154,superior occipital gyrus,1.0,high_confidence,,HOMBA:12154,superior occipital gyrus,1.0,high_confidence
+corpus,Superior salivatory nucleus,llm_accept_top1,HOMBA:12435,HOMBA:12435,superior salivatory nucleus,1.0,high_confidence,,HOMBA:12435,superior salivatory nucleus,1.0,high_confidence
+corpus,Superior temporal gyrus,llm_accept_top1,HOMBA:12140,HOMBA:12140,superior temporal gyrus,1.0,high_confidence,,HOMBA:12140,superior temporal gyrus,1.0,high_confidence
+corpus,Supplementary motor area,llm_accept_top1,HOMBA:AA30012,HOMBA:AA30012,medial division of area 6 (supplementary motor area),1.0,high_confidence,,HOMBA:AA30012,medial division of area 6 (supplementary motor area),1.0,high_confidence
+corpus,Supramarginal gyrus,llm_accept_top1,HOMBA:12135,HOMBA:12135,supramarginal gyrus,1.0,high_confidence,,HOMBA:12135,supramarginal gyrus,1.0,high_confidence
+corpus,Temporal pole,llm_accept_top1,HOMBA:12146,HOMBA:12146,temporal pole (temporopolar cortex),1.0,high_confidence,,HOMBA:12146,temporal pole (temporopolar cortex),1.0,high_confidence
+corpus,Thalamus,llm_accept_top1,HOMBA:10390,HOMBA:10390,thalamus,1.0,high_confidence,,HOMBA:10390,thalamus,1.0,high_confidence
+corpus,Trigeminal nucleus (motor),llm_accept_top1,HOMBA:12429,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",1.0,high_confidence,,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",1.0,high_confidence
+corpus,Trigeminal nucleus (principal sensory),llm_accept_top1,HOMBA:12444,HOMBA:12444,principal sensory nucleus of trigeminal nerve,1.0,high_confidence,,HOMBA:12444,principal sensory nucleus of trigeminal nerve,1.0,high_confidence
+corpus,Trochlear nucleus,llm_accept_top1,HOMBA:12206,HOMBA:12206,trochlear nucleus,1.0,high_confidence,,HOMBA:12206,trochlear nucleus,1.0,high_confidence
+corpus,Uncinate fasciculus,llm_accept_top1,HOMBA:10594,HOMBA:10594,uncinate fasciculus,1.0,high_confidence,,HOMBA:10594,uncinate fasciculus,1.0,high_confidence
+corpus,Ventral anterior thalamic nucleus,llm_accept_top1,HOMBA:10417,HOMBA:10417,ventral anterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10417,ventral anterior nucleus of thalamus,1.0,high_confidence
+corpus,Ventral cochlear nucleus,llm_accept_top1,HOMBA:12439,HOMBA:12439,ventral cochlear nucleus,1.0,high_confidence,,HOMBA:12439,ventral cochlear nucleus,1.0,high_confidence
+corpus,Ventral lateral thalamic nucleus,llm_accept_top1,HOMBA:10420,HOMBA:10420,ventral lateral nucleus of thalamus,1.0,high_confidence,,HOMBA:10420,ventral lateral nucleus of thalamus,1.0,high_confidence
+corpus,Ventral medial thalamic nucleus,llm_accept_top1,HOMBA:10427,HOMBA:10427,ventral medial nucleus of thalamus,1.0,high_confidence,,HOMBA:10427,ventral medial nucleus of thalamus,1.0,high_confidence
+corpus,Ventral posterior thalamic nucleus,llm_accept_top1,HOMBA:10423,HOMBA:10423,ventral posterior nuclear complex of thalamus,1.0,high_confidence,,HOMBA:10423,ventral posterior nuclear complex of thalamus,1.0,high_confidence
+corpus,Ventral tegmental area,llm_accept_top1,HOMBA:12261,HOMBA:12261,ventral tegmental area,1.0,high_confidence,,HOMBA:12261,ventral tegmental area,1.0,high_confidence
+corpus,Zona incerta,llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,1.0,high_confidence,,HOMBA:10463,zona incerta,1.0,high_confidence
+corpus,Frontal orbital cortex (lateral),llm_accept_top1,HOMBA:10205,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",0.9936,high_confidence,,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",0.9936,high_confidence
+corpus,Frontal orbital cortex (medial),llm_accept_top1,HOMBA:10195,HOMBA:10195,medial orbital frontal cortex (area 14),0.9894,high_confidence,,HOMBA:10195,medial orbital frontal cortex (area 14),0.9894,high_confidence
+corpus,Trigeminal tract (mesencephalic),llm_accept_top1,HOMBA:12767,HOMBA:12767,mesencephalic trigeminal tract,0.9821,high_confidence,,HOMBA:12767,mesencephalic trigeminal tract,0.9821,high_confidence
+corpus,External globus pallidus,llm_accept_top1,HOMBA:10343,HOMBA:10343,external division of globus pallidus,0.9362,high_confidence,,HOMBA:10343,external division of globus pallidus,0.9362,high_confidence
+corpus,Lateral ventricle,llm_accept_top1,HOMBA:10598,HOMBA:10598,body of lateral ventricles,0.9767,high_confidence,,HOMBA:10598,body of lateral ventricles,0.9767,high_confidence
+corpus,Internal capsule (posterior limb),llm_accept_top1,HOMBA:10584,HOMBA:10584,caudal limb of internal capsule,0.9509,high_confidence,,HOMBA:10584,caudal limb of internal capsule,0.9509,high_confidence
+corpus,Cerebellar cortex (molecular layer),llm_accept_top1,HOMBA:AA30427,HOMBA:AA30427,molecular layer of cerebellar cortex,0.9302,high_confidence,,HOMBA:AA30427,molecular layer of cerebellar cortex,0.9302,high_confidence
+corpus,Dorsal raphe,llm_accept_top1,HOMBA:12223,HOMBA:12223,dorsal raphe nucleus,0.9479,high_confidence,,HOMBA:12223,dorsal raphe nucleus,0.9479,high_confidence
+corpus,Periaqueductal gray,llm_accept_top1,HOMBA:AA30359,HOMBA:AA30359,periaqueductal gray region,0.94,high_confidence,,HOMBA:AA30359,periaqueductal gray region,0.94,high_confidence
+species,Accumbens,llm_accept_top1,HOMBA:10339,HOMBA:10339,nucleus accumbens,1.0,high_confidence,,HOMBA:10339,nucleus accumbens,1.0,high_confidence
+species,Amygdalohippocampal area,llm_accept_top1,HOMBA:10377,HOMBA:10377,amygdalohippocampal area,1.0,high_confidence,,HOMBA:10377,amygdalohippocampal area,1.0,high_confidence
+species,Amygdalopiriform transition area,llm_accept_top1,HOMBA:10382,HOMBA:10382,amygdalocortical transition area (amygdalopiriform transition area),1.0,high_confidence,,HOMBA:10382,amygdalocortical transition area (amygdalopiriform transition area),1.0,high_confidence
+species,Amygdalostriatal transition area,llm_accept_top1,HOMBA:10381,HOMBA:10381,amygdalostriatal transition area,1.0,high_confidence,,HOMBA:10381,amygdalostriatal transition area,1.0,high_confidence
+species,Angular thalamic nucleus,llm_accept_top1,HOMBA:AA30318,HOMBA:AA30318,angular nucleus of thalamus,1.0,high_confidence,,HOMBA:AA30318,angular nucleus of thalamus,1.0,high_confidence
+species,Ansa Lenticularis,llm_accept_top1,HOMBA:10571,HOMBA:10571,ansa lenticularis,1.0,high_confidence,,HOMBA:10571,ansa lenticularis,1.0,high_confidence
+species,Anterior amygdaloid area,llm_accept_top1,HOMBA:10362,HOMBA:10362,anterior amygdaloid area,1.0,high_confidence,,HOMBA:10362,anterior amygdaloid area,1.0,high_confidence
+species,Anterior commissure,llm_accept_top1,HOMBA:10559,HOMBA:10559,anterior commissure,1.0,high_confidence,,HOMBA:10559,anterior commissure,1.0,high_confidence
+species,Anterior Hypothalamic Area,llm_accept_top1,HOMBA:266441551,HOMBA:266441551,anterior hypothalamic area,1.0,high_confidence,,HOMBA:266441551,anterior hypothalamic area,1.0,high_confidence
+species,Anterior hypothalamic nucleus,llm_accept_top1,HOMBA:10475,HOMBA:10475,anterior hypothalamic nucleus,1.0,high_confidence,,HOMBA:10475,anterior hypothalamic nucleus,1.0,high_confidence
+species,Anterior Tegmental Nucleus,llm_accept_top1,HOMBA:AA30442,HOMBA:AA30442,anterior tegmental nucleus,1.0,high_confidence,,HOMBA:AA30442,anterior tegmental nucleus,1.0,high_confidence
+species,Anterior thalamic nucleus,llm_accept_top1,HOMBA:10392,HOMBA:10392,anterior nuclear complex of thalamus,1.0,high_confidence,,HOMBA:10392,anterior nuclear complex of thalamus,1.0,high_confidence
+species,Anterodorsal thalamic nucleus,llm_accept_top1,HOMBA:10393,HOMBA:10393,anterodorsal nucleus of thalamus,1.0,high_confidence,,HOMBA:10393,anterodorsal nucleus of thalamus,1.0,high_confidence
+species,Anteromedial thalamic nucleus,llm_accept_top1,HOMBA:10394,HOMBA:10394,anteromedial nucleus of thalamus,1.0,high_confidence,,HOMBA:10394,anteromedial nucleus of thalamus,1.0,high_confidence
+species,Ascending fibers of the facial nerve,llm_accept_top1,HOMBA:12729,HOMBA:12729,ascending fibers of the facial nerve in pons,1.0,high_confidence,,HOMBA:12729,ascending fibers of the facial nerve in pons,1.0,high_confidence
+species,Basal nucleus (of Meynert),llm_accept_top1,HOMBA:10353,HOMBA:10353,basal nucleus of Meynert,1.0,high_confidence,,HOMBA:10353,basal nucleus of Meynert,1.0,high_confidence
+species,CA1 (hippocampus),llm_accept_top1,HOMBA:10297,HOMBA:10297,CA1 region of hippocampus,1.0,high_confidence,,HOMBA:10297,CA1 region of hippocampus,1.0,high_confidence
+species,Caudate Head,llm_accept_top1,HOMBA:10335,HOMBA:10335,head of caudate nucleus,1.0,high_confidence,,HOMBA:10335,head of caudate nucleus,1.0,high_confidence
+species,Caudate nucleus,llm_accept_top1,HOMBA:10334,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),1.0,high_confidence,,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),1.0,high_confidence
+species,Caudate Tail,llm_accept_top1,HOMBA:10337,HOMBA:10337,tail of caudate nucleus (caudolateral division of the CP),1.0,high_confidence,,HOMBA:10337,tail of caudate nucleus (caudolateral division of the CP),1.0,high_confidence
+species,Central lateral thalamic nucleus,llm_accept_top1,HOMBA:10444,HOMBA:10444,central lateral nucleus of thalamus,1.0,high_confidence,,HOMBA:10444,central lateral nucleus of thalamus,1.0,high_confidence
+species,Central medial thalamic nucleus,llm_accept_top1,HOMBA:10445,HOMBA:10445,central medial nucleus of thalamus,1.0,high_confidence,,HOMBA:10445,central medial nucleus of thalamus,1.0,high_confidence
+species,Cerebral peduncle,llm_accept_top1,HOMBA:12330,HOMBA:12330,cerebral peduncle (crus cerebri),1.0,high_confidence,,HOMBA:12330,cerebral peduncle (crus cerebri),1.0,high_confidence
+species,Claustrum,llm_accept_top1,HOMBA:10346,HOMBA:10346,claustrum,1.0,high_confidence,,HOMBA:10346,claustrum,1.0,high_confidence
+species,Cochlear Nucleus,llm_accept_top1,HOMBA:12437,HOMBA:12437,cochlear nuclei,1.0,high_confidence,,HOMBA:12437,cochlear nuclei,1.0,high_confidence
+species,Corticospinal Tract,llm_accept_top1,HOMBA:12047,HOMBA:12047,corticospinal tract,1.0,high_confidence,,HOMBA:12047,corticospinal tract,1.0,high_confidence
+species,Crossing of the superior cerebellar peduncle,llm_accept_top1,HOMBA:12337,HOMBA:12337,decussation of superior cerebellar peduncle,1.0,high_confidence,,HOMBA:12337,decussation of superior cerebellar peduncle,1.0,high_confidence
+species,Cuneiform Nucleus,llm_accept_top1,HOMBA:12240,HOMBA:12240,cuneiform nucleus,1.0,high_confidence,,HOMBA:12240,cuneiform nucleus,1.0,high_confidence
+species,Dentate gyrus,llm_accept_top1,HOMBA:10295,HOMBA:10295,dentate gyrus,1.0,high_confidence,,HOMBA:10295,dentate gyrus,1.0,high_confidence
+species,Dorsal endopiriform claustrum,llm_accept_top1,HOMBA:AA30264,HOMBA:AA30264,dorsal endopiriform nucleus,1.0,high_confidence,,HOMBA:AA30264,dorsal endopiriform nucleus,1.0,high_confidence
+species,Dorsal lateral geniculate nucleus,llm_accept_top1,HOMBA:10429,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),1.0,high_confidence,,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),1.0,high_confidence
+species,Dorsomedial hypothalamic nucleus,llm_accept_top1,HOMBA:10485,HOMBA:10485,dorsomedial hypothalamic nucleus,1.0,high_confidence,,HOMBA:10485,dorsomedial hypothalamic nucleus,1.0,high_confidence
+species,Dysgranular insular cortex,llm_accept_top1,HOMBA:10289,HOMBA:10289,dysgranular insular cortex (area Idg),1.0,high_confidence,,HOMBA:10289,dysgranular insular cortex (area Idg),1.0,high_confidence
+species,Endopiriform nucleus,llm_accept_top1,HOMBA:10371,HOMBA:10371,endopiriform nucleus,1.0,high_confidence,,HOMBA:10371,endopiriform nucleus,1.0,high_confidence
+species,Entopeduncular nucleus,llm_accept_top1,HOMBA:146034758,HOMBA:146034758,entopeduncular nucleus,1.0,high_confidence,,HOMBA:146034758,entopeduncular nucleus,1.0,high_confidence
+species,Entorhinal area (medial part),llm_accept_top1,HOMBA:10319,HOMBA:10319,medial (caudal) entorhinal cortex,1.0,high_confidence,,HOMBA:10319,medial (caudal) entorhinal cortex,1.0,high_confidence
+species,Extended amygdala,llm_accept_top1,HOMBA:10383,HOMBA:10383,extended amygdala,1.0,high_confidence,,HOMBA:10383,extended amygdala,1.0,high_confidence
+species,Facial Motor Nucleus,llm_accept_top1,HOMBA:12420,HOMBA:12420,facial nucleus,1.0,high_confidence,,HOMBA:12420,facial nucleus,1.0,high_confidence
+species,Fasciculus retroflexus,llm_accept_top1,HOMBA:12342,HOMBA:12342,fasciculus retroflexus (habenuno-interpeduncular tract),1.0,high_confidence,,HOMBA:12342,fasciculus retroflexus (habenuno-interpeduncular tract),1.0,high_confidence
+species,Fasciola cinereum,llm_accept_top1,HOMBA:AA30112,HOMBA:AA30112,fasciola cinereum (ectosplenial area 26),1.0,high_confidence,,HOMBA:AA30112,fasciola cinereum (ectosplenial area 26),1.0,high_confidence
+species,Fimbria,llm_accept_top1,HOMBA:10575,HOMBA:10575,fimbria,1.0,high_confidence,,HOMBA:10575,fimbria,1.0,high_confidence
+species,Flocculus,llm_accept_top1,HOMBA:AA30424,HOMBA:AA30424,lobule Xa (flocculus),1.0,high_confidence,,HOMBA:AA30424,lobule Xa (flocculus),1.0,high_confidence
+species,Fornix,llm_accept_top1,HOMBA:10576,HOMBA:10576,fornix,1.0,high_confidence,,HOMBA:10576,fornix,1.0,high_confidence
+species,Frontal pole,llm_accept_top1,HOMBA:146034888,HOMBA:146034888,frontal pole,1.0,high_confidence,,HOMBA:146034888,frontal pole,1.0,high_confidence
+species,Genu of the facial nerve,llm_accept_top1,HOMBA:12738,HOMBA:12738,genu of the facial nerve,1.0,high_confidence,,HOMBA:12738,genu of the facial nerve,1.0,high_confidence
+species,Gigantocellular Reticular Nucleus,llm_accept_top1,HOMBA:12625,HOMBA:12625,gigantocellular reticular nuclei,1.0,high_confidence,,HOMBA:12625,gigantocellular reticular nuclei,1.0,high_confidence
+species,Glomerular layer of the accessory olfactory bulb,llm_accept_top1,HOMBA:AA30176,HOMBA:AA30176,glomerular layer of accessory olfactory bulb,1.0,high_confidence,,HOMBA:AA30176,glomerular layer of accessory olfactory bulb,1.0,high_confidence
+species,Glomerular layer of the olfactory bulb,llm_accept_top1,HOMBA:AA30170,HOMBA:AA30170,glomerular layer of olfactory bulb,1.0,high_confidence,,HOMBA:AA30170,glomerular layer of olfactory bulb,1.0,high_confidence
+species,Granular insular cortex,llm_accept_top1,HOMBA:10290,HOMBA:10290,granular insular cortex (area Ig),1.0,high_confidence,,HOMBA:10290,granular insular cortex (area Ig),1.0,high_confidence
+species,Habenula,llm_accept_top1,HOMBA:10452,HOMBA:10452,habenular nuclei,1.0,high_confidence,,HOMBA:10452,habenular nuclei,1.0,high_confidence
+species,Habenular commissure,llm_accept_top1,HOMBA:10566,HOMBA:10566,habenular commissure,1.0,high_confidence,,HOMBA:10566,habenular commissure,1.0,high_confidence
+species,Head of caudate nucleus,llm_accept_top1,HOMBA:10335,HOMBA:10335,head of caudate nucleus,1.0,high_confidence,,HOMBA:10335,head of caudate nucleus,1.0,high_confidence
+species,Hippocampus,llm_accept_top1,HOMBA:AA30093,HOMBA:AA30093,hippocampus,1.0,high_confidence,,HOMBA:AA30093,hippocampus,1.0,high_confidence
+species,Inferior Cerebellar Peduncle,llm_accept_top1,HOMBA:12741,HOMBA:12741,inferior cerebellar peduncle,1.0,high_confidence,,HOMBA:12741,inferior cerebellar peduncle,1.0,high_confidence
+species,Inferior cerebellar peduncle,llm_accept_top1,HOMBA:12741,HOMBA:12741,inferior cerebellar peduncle,1.0,high_confidence,,HOMBA:12741,inferior cerebellar peduncle,1.0,high_confidence
+species,Inferior colliculus,llm_accept_top1,HOMBA:12305,HOMBA:12305,inferior colliculus,1.0,high_confidence,,HOMBA:12305,inferior colliculus,1.0,high_confidence
+species,Inferior frontal gyrus,llm_accept_top1,HOMBA:12117,HOMBA:12117,inferior frontal gyrus,1.0,high_confidence,,HOMBA:12117,inferior frontal gyrus,1.0,high_confidence
+species,Inferior Olive,llm_accept_top1,HOMBA:12600,HOMBA:12600,inferior olive,1.0,high_confidence,,HOMBA:12600,inferior olive,1.0,high_confidence
+species,Inferior olive,llm_accept_top1,HOMBA:12600,HOMBA:12600,inferior olive,1.0,high_confidence,,HOMBA:12600,inferior olive,1.0,high_confidence
+species,Inferior Pulvinar,llm_accept_top1,HOMBA:10413,HOMBA:10413,inferior division of pulvinar,1.0,high_confidence,,HOMBA:10413,inferior division of pulvinar,1.0,high_confidence
+species,Inferior temporal gyrus,llm_accept_top1,HOMBA:12142,HOMBA:12142,inferior temporal gyrus,1.0,high_confidence,,HOMBA:12142,inferior temporal gyrus,1.0,high_confidence
+species,Infundibulum,llm_accept_top1,HOMBA:10643,HOMBA:10643,infundibular stalk,1.0,high_confidence,,HOMBA:10643,infundibular stalk,1.0,high_confidence
+species,Insular cortex,llm_accept_top1,HOMBA:10288,HOMBA:10288,major insular cortex,1.0,high_confidence,,HOMBA:10288,major insular cortex,1.0,high_confidence
+species,Interanteromedial thalamic nucleus,llm_accept_top1,HOMBA:13048,HOMBA:13048,interanteromedial nucleus of thalamus,1.0,high_confidence,,HOMBA:13048,interanteromedial nucleus of thalamus,1.0,high_confidence
+species,Intermediodorsal thalamic nucleus,llm_accept_top1,HOMBA:13049,HOMBA:13049,intermediodorsal  nucleus of thalamus,1.0,high_confidence,,HOMBA:13049,intermediodorsal  nucleus of thalamus,1.0,high_confidence
+species,Internal capsule,llm_accept_top1,HOMBA:10581,HOMBA:10581,internal capsule,1.0,high_confidence,,HOMBA:10581,internal capsule,1.0,high_confidence
+species,Interpeduncular Nucleus,llm_accept_top1,HOMBA:12270,HOMBA:12270,interpeduncular nucleus,1.0,high_confidence,,HOMBA:12270,interpeduncular nucleus,1.0,high_confidence
+species,Interpeduncular nucleus,llm_accept_top1,HOMBA:12270,HOMBA:12270,interpeduncular nucleus,1.0,high_confidence,,HOMBA:12270,interpeduncular nucleus,1.0,high_confidence
+species,Lamina Terminalis,llm_accept_top1,HOMBA:12105,HOMBA:12105,lamina terminalis,1.0,high_confidence,,HOMBA:12105,lamina terminalis,1.0,high_confidence
+species,Lateral entorhinal cortex,llm_accept_top1,HOMBA:10318,HOMBA:10318,lateral (rostral) entorhinal cortex,1.0,high_confidence,,HOMBA:10318,lateral (rostral) entorhinal cortex,1.0,high_confidence
+species,Lateral habenular nucleus,llm_accept_top1,HOMBA:10453,HOMBA:10453,lateral habenular nucleus,1.0,high_confidence,,HOMBA:10453,lateral habenular nucleus,1.0,high_confidence
+species,Lateral Lemniscus,llm_accept_top1,HOMBA:12760,HOMBA:12760,lateral lemniscus,1.0,high_confidence,,HOMBA:12760,lateral lemniscus,1.0,high_confidence
+species,Lateral Parabrachial Nucleus,llm_accept_top1,HOMBA:12482,HOMBA:12482,lateral parabrachial nucleus,1.0,high_confidence,,HOMBA:12482,lateral parabrachial nucleus,1.0,high_confidence
+species,"Lateral parietal cortex, inferior",llm_accept_top1,HOMBA:10225,HOMBA:10225,inferior lateral parietal cortex,1.0,high_confidence,,HOMBA:10225,inferior lateral parietal cortex,1.0,high_confidence
+species,Lateral Pulvinar,llm_accept_top1,HOMBA:10412,HOMBA:10412,lateral division of pulvinar,0.9784,high_confidence,,HOMBA:10412,lateral division of pulvinar,0.9784,high_confidence
+species,Lateral Reticular Nucleus,llm_accept_top1,HOMBA:12634,HOMBA:12634,lateral reticular nucleus,1.0,high_confidence,,HOMBA:12634,lateral reticular nucleus,1.0,high_confidence
+species,Lateral superior olive,llm_accept_top1,HOMBA:12469,HOMBA:12469,lateral superior olivary nucleus,1.0,high_confidence,,HOMBA:12469,lateral superior olivary nucleus,1.0,high_confidence
+species,Mammillary nucleus,llm_accept_top1,HOMBA:10498,HOMBA:10498,mammillary nuclear complex,1.0,high_confidence,,HOMBA:10498,mammillary nuclear complex,1.0,high_confidence
+species,Mammillotegmental tract,llm_accept_top1,HOMBA:12065,HOMBA:12065,mammillotegmental tract,1.0,high_confidence,,HOMBA:12065,mammillotegmental tract,1.0,high_confidence
+species,Medial amygdaloid nucleus,llm_accept_top1,HOMBA:10376,HOMBA:10376,medial nuclear complex of amygdala,1.0,high_confidence,,HOMBA:10376,medial nuclear complex of amygdala,1.0,high_confidence
+species,Medial eminence,llm_accept_top1,HOMBA:12820,HOMBA:12820,medial eminence,1.0,high_confidence,,HOMBA:12820,medial eminence,1.0,high_confidence
+species,Medial entorhinal cortex,llm_accept_top1,HOMBA:10319,HOMBA:10319,medial (caudal) entorhinal cortex,1.0,high_confidence,,HOMBA:10319,medial (caudal) entorhinal cortex,1.0,high_confidence
+species,Medial geniculate nucleus,llm_accept_top1,HOMBA:10434,HOMBA:10434,medial geniculate nucleus,1.0,high_confidence,,HOMBA:10434,medial geniculate nucleus,1.0,high_confidence
+species,Medial habenular nucleus,llm_accept_top1,HOMBA:10456,HOMBA:10456,medial habenular nucleus,1.0,high_confidence,,HOMBA:10456,medial habenular nucleus,1.0,high_confidence
+species,Medial Lemniscus,llm_accept_top1,HOMBA:12763,HOMBA:12763,medial lemniscus,1.0,high_confidence,,HOMBA:12763,medial lemniscus,1.0,high_confidence
+species,Medial longitudinal fascicle,llm_accept_top1,HOMBA:12764,HOMBA:12764,medial longitudinal fasciculus,1.0,high_confidence,,HOMBA:12764,medial longitudinal fasciculus,1.0,high_confidence
+species,Medial Parabrachial Nucleus,llm_accept_top1,HOMBA:12487,HOMBA:12487,medial parabrachial nucleus,1.0,high_confidence,,HOMBA:12487,medial parabrachial nucleus,1.0,high_confidence
+species,Medial Pulvinar,llm_accept_top1,HOMBA:10411,HOMBA:10411,medial division of pulvinar,0.9757,high_confidence,,HOMBA:10411,medial division of pulvinar,0.9757,high_confidence
+species,Medial superior olive,llm_accept_top1,HOMBA:12470,HOMBA:12470,medial superior olivary nucleus,1.0,high_confidence,,HOMBA:12470,medial superior olivary nucleus,1.0,high_confidence
+species,Median eminence,llm_accept_top1,HOMBA:13338,HOMBA:13338,median eminence,1.0,high_confidence,,HOMBA:13338,median eminence,1.0,high_confidence
+species,Mediodorsal thalamic nucleus,llm_accept_top1,HOMBA:10398,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,high_confidence,,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,high_confidence
+species,Mediodorsal Thalamus,llm_accept_top1,HOMBA:10398,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,high_confidence,,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,high_confidence
+species,Midbrain reticular formation,llm_accept_top1,HOMBA:12239,HOMBA:12239,midbrain reticular formation,1.0,high_confidence,,HOMBA:12239,midbrain reticular formation,1.0,high_confidence
+species,Middle cerebellar peduncle,llm_accept_top1,HOMBA:12768,HOMBA:12768,middle cerebellar peduncle (brachium pontis),1.0,high_confidence,,HOMBA:12768,middle cerebellar peduncle (brachium pontis),1.0,high_confidence
+species,Middle frontal gyrus,llm_accept_top1,HOMBA:12116,HOMBA:12116,middle frontal gyrus,1.0,high_confidence,,HOMBA:12116,middle frontal gyrus,1.0,high_confidence
+species,Motor Trigeminal Nucleus,llm_accept_top1,HOMBA:12429,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",1.0,high_confidence,,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",1.0,high_confidence
+species,Nucleus accumbens (core),llm_accept_top1,HOMBA:10340,HOMBA:10340,core of nucleus accumbens,1.0,high_confidence,,HOMBA:10340,core of nucleus accumbens,1.0,high_confidence
+species,Nucleus accumbens (shell),llm_accept_top1,HOMBA:10341,HOMBA:10341,shell of nucleus accumbens,1.0,high_confidence,,HOMBA:10341,shell of nucleus accumbens,1.0,high_confidence
+species,"Nucleus accumbens, core",llm_accept_top1,HOMBA:10340,HOMBA:10340,core of nucleus accumbens,0.989,high_confidence,,HOMBA:10340,core of nucleus accumbens,0.989,high_confidence
+species,"Nucleus accumbens, shell",llm_accept_top1,HOMBA:10341,HOMBA:10341,shell of nucleus accumbens,0.9844,high_confidence,,HOMBA:10341,shell of nucleus accumbens,0.9844,high_confidence
+species,Nucleus of the lateral olfactory tract,llm_accept_top1,HOMBA:10309,HOMBA:10309,nucleus of lateral olfactory tract,1.0,high_confidence,,HOMBA:10309,nucleus of lateral olfactory tract,1.0,high_confidence
+species,Nucleus sagulum,llm_accept_top1,HOMBA:12313,HOMBA:12313,sagulum nucleus (nucleus sagulum),1.0,high_confidence,,HOMBA:12313,sagulum nucleus (nucleus sagulum),1.0,high_confidence
+species,Obex,llm_accept_top1,HOMBA:12812,HOMBA:12812,obex,1.0,high_confidence,,HOMBA:12812,obex,1.0,high_confidence
+species,Occulomotor Nuclei,llm_accept_top1,HOMBA:12198,HOMBA:12198,oculomotor nucleus,1.0,high_confidence,,HOMBA:12198,oculomotor nucleus,1.0,high_confidence
+species,Oculomotor complex,llm_accept_top1,HOMBA:12198,HOMBA:12198,oculomotor nucleus,1.0,high_confidence,,HOMBA:12198,oculomotor nucleus,1.0,high_confidence
+species,Olfactory tubercle,llm_accept_top1,HOMBA:10310,HOMBA:10310,olfactory tubercle,1.0,high_confidence,,HOMBA:10310,olfactory tubercle,1.0,high_confidence
+species,Olfactory Tubercule,llm_accept_top1,HOMBA:10310,HOMBA:10310,olfactory tubercle,1.0,high_confidence,,HOMBA:10310,olfactory tubercle,1.0,high_confidence
+species,Olivocerebellar Tract,llm_accept_top1,HOMBA:12747,HOMBA:12747,olivocerebellar tract,1.0,high_confidence,,HOMBA:12747,olivocerebellar tract,1.0,high_confidence
+species,Optic nerve,llm_accept_top1,HOMBA:15544,HOMBA:15544,optic nerve,1.0,high_confidence,,HOMBA:15544,optic nerve,1.0,high_confidence
+species,Optic Tract,llm_accept_top1,HOMBA:10589,HOMBA:10589,optic tract,1.0,high_confidence,,HOMBA:10589,optic tract,1.0,high_confidence
+species,Parabigeminal Nucleus,llm_accept_top1,HOMBA:12312,HOMBA:12312,parabigeminal nucleus,1.0,high_confidence,,HOMBA:12312,parabigeminal nucleus,1.0,high_confidence
+species,Paracentral thalamic nucleus,llm_accept_top1,HOMBA:10446,HOMBA:10446,paracentral nucleus of thalamus,1.0,high_confidence,,HOMBA:10446,paracentral nucleus of thalamus,1.0,high_confidence
+species,Parafascicular thalamic nucleus,llm_accept_top1,HOMBA:10450,HOMBA:10450,parafascicular nucleus of thalamus,1.0,high_confidence,,HOMBA:10450,parafascicular nucleus of thalamus,1.0,high_confidence
+species,Paraflocculus,llm_accept_top1,HOMBA:AA30421,HOMBA:AA30421,lobule IXb (paraflocculus),1.0,high_confidence,,HOMBA:AA30421,lobule IXb (paraflocculus),1.0,high_confidence
+species,Parahippocampal gyrus,llm_accept_top1,HOMBA:12162,HOMBA:12162,parahippocampal gyrus,1.0,high_confidence,,HOMBA:12162,parahippocampal gyrus,1.0,high_confidence
+species,Paramedian Lobule,llm_accept_top1,HOMBA:AA30417,HOMBA:AA30417,"lobule VIIIA (biventral lobule, part 1, paramedian lobule)",1.0,high_confidence,,HOMBA:AA30417,"lobule VIIIA (biventral lobule, part 1, paramedian lobule)",1.0,high_confidence
+species,Parasubiculum,llm_accept_top1,HOMBA:10316,HOMBA:10316,parasubiculum (parasubicular cortex),1.0,high_confidence,,HOMBA:10316,parasubiculum (parasubicular cortex),1.0,high_confidence
+species,Parataenial thalamic nucleus,llm_accept_top1,HOMBA:10404,HOMBA:10404,parataenial nucleus of thalamus,1.0,high_confidence,,HOMBA:10404,parataenial nucleus of thalamus,1.0,high_confidence
+species,Perifornical nucleus,llm_accept_top1,HOMBA:11578,HOMBA:11578,perifornical nucleus,1.0,high_confidence,,HOMBA:11578,perifornical nucleus,1.0,high_confidence
+species,Peripeduncular nucleus,llm_accept_top1,HOMBA:12285,HOMBA:12285,peripeduncular nucleus,1.0,high_confidence,,HOMBA:12285,peripeduncular nucleus,1.0,high_confidence
+species,Pineal gland,llm_accept_top1,HOMBA:10460,HOMBA:10460,pineal body,1.0,high_confidence,,HOMBA:10460,pineal body,1.0,high_confidence
+species,Piriform cortex,llm_accept_top1,HOMBA:10311,HOMBA:10311,piriform cortex,1.0,high_confidence,,HOMBA:10311,piriform cortex,1.0,high_confidence
+species,Pontine nuclei,llm_accept_top1,HOMBA:12406,HOMBA:12406,pontine nucleus,1.0,high_confidence,,HOMBA:12406,pontine nucleus,1.0,high_confidence
+species,Pontine nucleus,llm_accept_top1,HOMBA:12406,HOMBA:12406,pontine nucleus,1.0,high_confidence,,HOMBA:12406,pontine nucleus,1.0,high_confidence
+species,Posterior Commissure,llm_accept_top1,HOMBA:10567,HOMBA:10567,posterior commissure,1.0,high_confidence,,HOMBA:10567,posterior commissure,1.0,high_confidence
+species,Posterior commissure,llm_accept_top1,HOMBA:10567,HOMBA:10567,posterior commissure,1.0,high_confidence,,HOMBA:10567,posterior commissure,1.0,high_confidence
+species,Posterior hypothalamic nucleus,llm_accept_top1,HOMBA:10503,HOMBA:10503,posterior hypothalamic nucleus,1.0,high_confidence,,HOMBA:10503,posterior hypothalamic nucleus,1.0,high_confidence
+species,Posterior thalamic nucleus,llm_accept_top1,HOMBA:10440,HOMBA:10440,posterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10440,posterior nucleus of thalamus,1.0,high_confidence
+species,Postrhinal cortex,llm_accept_top1,HOMBA:10263,HOMBA:10263,posterior parahippocampal region (postrhinal cortex),1.0,high_confidence,,HOMBA:10263,posterior parahippocampal region (postrhinal cortex),1.0,high_confidence
+species,Precommissural nucleus,llm_accept_top1,HOMBA:12287,HOMBA:12287,precommissural nucleus,1.0,high_confidence,,HOMBA:12287,precommissural nucleus,1.0,high_confidence
+species,Pregeniculate nucleus,llm_accept_top1,HOMBA:13042,HOMBA:13042,pregeniculate nucleus (ventral lateral geniculate nucleus),1.0,high_confidence,,HOMBA:13042,pregeniculate nucleus (ventral lateral geniculate nucleus),1.0,high_confidence
+species,Prelunate gyrus,llm_accept_top1,HOMBA:AA30555,HOMBA:AA30555,prelunate gyrus,1.0,high_confidence,,HOMBA:AA30555,prelunate gyrus,1.0,high_confidence
+species,Prepositus Nucleus,llm_accept_top1,HOMBA:12615,HOMBA:12615,prepositus hypoglossal nucleus,1.0,high_confidence,,HOMBA:12615,prepositus hypoglossal nucleus,1.0,high_confidence
+species,Prerubral Field,llm_accept_top1,HOMBA:AA30325,HOMBA:AA30325,prerubral field (field H3),1.0,high_confidence,,HOMBA:AA30325,prerubral field (field H3),1.0,high_confidence
+species,Presubiculum,llm_accept_top1,HOMBA:10315,HOMBA:10315,presubiculum (presubicular cortex),1.0,high_confidence,,HOMBA:10315,presubiculum (presubicular cortex),1.0,high_confidence
+species,Pretectal region,llm_accept_top1,HOMBA:12181,HOMBA:12181,pretectal region,1.0,high_confidence,,HOMBA:12181,pretectal region,1.0,high_confidence
+species,Primary auditory area,llm_accept_top1,HOMBA:10236,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",1.0,high_confidence,,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",1.0,high_confidence
+species,Primary motor area,llm_accept_top1,HOMBA:10163,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",1.0,high_confidence,,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",1.0,high_confidence
+species,Primary visual area,llm_accept_top1,HOMBA:10269,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",1.0,high_confidence,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",1.0,high_confidence
+species,Principal Trigeminal Nucleus,llm_accept_top1,HOMBA:12444,HOMBA:12444,principal sensory nucleus of trigeminal nerve,1.0,high_confidence,,HOMBA:12444,principal sensory nucleus of trigeminal nerve,1.0,high_confidence
+species,Putamen,llm_accept_top1,HOMBA:10338,HOMBA:10338,putamen (lateroventral division of the CP),1.0,high_confidence,,HOMBA:10338,putamen (lateroventral division of the CP),1.0,high_confidence
+species,Pyramidal decussation,llm_accept_top1,HOMBA:12772,HOMBA:12772,pyramidal decussation,1.0,high_confidence,,HOMBA:12772,pyramidal decussation,1.0,high_confidence
+species,Pyramidal Tract,llm_accept_top1,HOMBA:12773,HOMBA:12773,pyramidal tract,1.0,high_confidence,,HOMBA:12773,pyramidal tract,1.0,high_confidence
+species,Raphe Magnus Nucleus,llm_accept_top1,HOMBA:12642,HOMBA:12642,raphe magnus nucleus,1.0,high_confidence,,HOMBA:12642,raphe magnus nucleus,1.0,high_confidence
+species,Raphe Obscurus Nucleus,llm_accept_top1,HOMBA:12643,HOMBA:12643,raphe obscurus nucleus,1.0,high_confidence,,HOMBA:12643,raphe obscurus nucleus,1.0,high_confidence
+species,Red nucleus,llm_accept_top1,HOMBA:12247,HOMBA:12247,red nucleus,1.0,high_confidence,,HOMBA:12247,red nucleus,1.0,high_confidence
+species,Reticular thalamic nucleus,llm_accept_top1,HOMBA:10464,HOMBA:10464,reticular nucleus of thalamus,1.0,high_confidence,,HOMBA:10464,reticular nucleus of thalamus,1.0,high_confidence
+species,Reticular Thalamus,llm_accept_top1,HOMBA:10464,HOMBA:10464,reticular nucleus of thalamus,1.0,high_confidence,,HOMBA:10464,reticular nucleus of thalamus,1.0,high_confidence
+species,Reticulotegmentum,llm_accept_top1,HOMBA:12497,HOMBA:12497,reticulotegmental nucleus,1.0,high_confidence,,HOMBA:12497,reticulotegmental nucleus,1.0,high_confidence
+species,Retroisthmic Nucleus,llm_accept_top1,HOMBA:12289,HOMBA:12289,retrorubral field (retroisthmic nucleus),1.0,high_confidence,,HOMBA:12289,retrorubral field (retroisthmic nucleus),1.0,high_confidence
+species,Retrorubral Field,llm_accept_top1,HOMBA:12289,HOMBA:12289,retrorubral field (retroisthmic nucleus),1.0,high_confidence,,HOMBA:12289,retrorubral field (retroisthmic nucleus),1.0,high_confidence
+species,Reuniens thalamic nucleus,llm_accept_top1,HOMBA:10403,HOMBA:10403,reuniens (medioventral) nucleus of thalamus,1.0,high_confidence,,HOMBA:10403,reuniens (medioventral) nucleus of thalamus,1.0,high_confidence
+species,Rhomboid thalamic nucleus,llm_accept_top1,HOMBA:10447,HOMBA:10447,rhomboid (central) nucleus of thalamus,1.0,high_confidence,,HOMBA:10447,rhomboid (central) nucleus of thalamus,1.0,high_confidence
+species,Secondary somatosensory area,llm_accept_top1,HOMBA:13010,HOMBA:13010,subcentral cortex (area 43; secondary somatosensory cortex),1.0,high_confidence,,HOMBA:13010,subcentral cortex (area 43; secondary somatosensory cortex),1.0,high_confidence
+species,Septal region,llm_accept_top1,HOMBA:10350,HOMBA:10350,septal region (septal nuclear complex),1.0,high_confidence,,HOMBA:10350,septal region (septal nuclear complex),1.0,high_confidence
+species,Simple Lobule,llm_accept_top1,HOMBA:AA30408,HOMBA:AA30408,lobule VI (simple lobule),1.0,high_confidence,,HOMBA:AA30408,lobule VI (simple lobule),1.0,high_confidence
+species,Solitary Tract Nucleus,llm_accept_top1,HOMBA:12557,HOMBA:12557,solitary nucleus,1.0,high_confidence,,HOMBA:12557,solitary nucleus,1.0,high_confidence
+species,Spinal cord,llm_accept_top1,HOMBA:AA30565,HOMBA:AA30565,spinal cord,1.0,high_confidence,,HOMBA:AA30565,spinal cord,1.0,high_confidence
+species,Spinal trigeminal nucleus,llm_accept_top1,HOMBA:12572,HOMBA:12572,spinal trigeminal nucleus,1.0,high_confidence,,HOMBA:12572,spinal trigeminal nucleus,1.0,high_confidence
+species,Spinal Trigeminal Nucleus Caudal,llm_accept_top1,HOMBA:12573,HOMBA:12573,"spinal trigeminal nucleus, caudal division",1.0,high_confidence,,HOMBA:12573,"spinal trigeminal nucleus, caudal division",1.0,high_confidence
+species,Spinal trigeminal tract,llm_accept_top1,HOMBA:12792,HOMBA:12792,spinal trigeminal tract,1.0,high_confidence,,HOMBA:12792,spinal trigeminal tract,1.0,high_confidence
+species,Stria terminalis,llm_accept_top1,HOMBA:10591,HOMBA:10591,stria terminalis,1.0,high_confidence,,HOMBA:10591,stria terminalis,1.0,high_confidence
+species,Striatum,llm_accept_top1,HOMBA:10333,HOMBA:10333,striatum (neostriatum),1.0,high_confidence,,HOMBA:10333,striatum (neostriatum),1.0,high_confidence
+species,Subceruleus,llm_accept_top1,HOMBA:12500,HOMBA:12500,subcoeruleus nucleus,1.0,high_confidence,,HOMBA:12500,subcoeruleus nucleus,1.0,high_confidence
+species,Subgeniculate nucleus,llm_accept_top1,HOMBA:AA30324,HOMBA:AA30324,subgeniculate nucleus,1.0,high_confidence,,HOMBA:AA30324,subgeniculate nucleus,1.0,high_confidence
+species,Subicular complex,llm_accept_top1,HOMBA:266441673,HOMBA:266441673,subicular complex,1.0,high_confidence,,HOMBA:266441673,subicular complex,1.0,high_confidence
+species,Subiculum,llm_accept_top1,HOMBA:10302,HOMBA:10302,subiculum proper (strictly defined subiculum),1.0,high_confidence,,HOMBA:10302,subiculum proper (strictly defined subiculum),1.0,high_confidence
+species,Submedius thalamic nucleus,llm_accept_top1,HOMBA:AA30278,HOMBA:AA30278,submedius thalamic nucleus,1.0,high_confidence,,HOMBA:AA30278,submedius thalamic nucleus,1.0,high_confidence
+species,Subparafascicular Nucleus,llm_accept_top1,HOMBA:13054,HOMBA:13054,subparafascicular nucleus of thalamus,1.0,high_confidence,,HOMBA:13054,subparafascicular nucleus of thalamus,1.0,high_confidence
+species,Subparafascicular nucleus,llm_accept_top1,HOMBA:13054,HOMBA:13054,subparafascicular nucleus of thalamus,1.0,high_confidence,,HOMBA:13054,subparafascicular nucleus of thalamus,1.0,high_confidence
+species,Substantia nigra,llm_accept_top1,HOMBA:12251,HOMBA:12251,substantia nigra,1.0,high_confidence,,HOMBA:12251,substantia nigra,1.0,high_confidence
+species,Substantia nigra (compact part),llm_accept_top1,HOMBA:12252,HOMBA:12252,"substantia nigra, compact division",1.0,high_confidence,,HOMBA:12252,"substantia nigra, compact division",1.0,high_confidence
+species,Substantia nigra (lateral part),llm_accept_top1,HOMBA:12257,HOMBA:12257,"substantia nigra, lateral division",1.0,high_confidence,,HOMBA:12257,"substantia nigra, lateral division",1.0,high_confidence
+species,Substantia nigra (reticular part),llm_accept_top1,HOMBA:12259,HOMBA:12259,"substantia nigra, reticular division",1.0,high_confidence,,HOMBA:12259,"substantia nigra, reticular division",1.0,high_confidence
+species,"Substantia nigra, compact part",llm_accept_top1,HOMBA:12252,HOMBA:12252,"substantia nigra, compact division",1.0,high_confidence,,HOMBA:12252,"substantia nigra, compact division",1.0,high_confidence
+species,"Substantia nigra, lateral part",llm_accept_top1,HOMBA:12257,HOMBA:12257,"substantia nigra, lateral division",1.0,high_confidence,,HOMBA:12257,"substantia nigra, lateral division",1.0,high_confidence
+species,"Substantia nigra, reticular part",llm_accept_top1,HOMBA:12259,HOMBA:12259,"substantia nigra, reticular division",1.0,high_confidence,,HOMBA:12259,"substantia nigra, reticular division",1.0,high_confidence
+species,Subthalamic nucleus,llm_accept_top1,HOMBA:10466,HOMBA:10466,subthalamic nucleus,1.0,high_confidence,,HOMBA:10466,subthalamic nucleus,1.0,high_confidence
+species,Superficial gray layer of the superior colliculus,llm_accept_top1,HOMBA:12295,HOMBA:12295,superficial gray layer of superior colliculus,1.0,high_confidence,,HOMBA:12295,superficial gray layer of superior colliculus,1.0,high_confidence
+species,Superior Cerebellar Peduncle,llm_accept_top1,HOMBA:12354,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),1.0,high_confidence,,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),1.0,high_confidence
+species,Superior Cerebellar Peduncle Decussation,llm_accept_top1,HOMBA:12337,HOMBA:12337,decussation of superior cerebellar peduncle,0.9837,high_confidence,,HOMBA:12337,decussation of superior cerebellar peduncle,0.9837,high_confidence
+species,Superior colliculus,llm_accept_top1,HOMBA:12292,HOMBA:12292,superior colliculus,1.0,high_confidence,,HOMBA:12292,superior colliculus,1.0,high_confidence
+species,Superior frontal gyrus,llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,1.0,high_confidence,,HOMBA:12115,superior frontal gyrus,1.0,high_confidence
+species,Superior paraolivary nucleus,llm_accept_top1,HOMBA:12463,HOMBA:12463,superior paraolivary nucleus,1.0,high_confidence,,HOMBA:12463,superior paraolivary nucleus,1.0,high_confidence
+species,Superior temporal gyrus,llm_accept_top1,HOMBA:12140,HOMBA:12140,superior temporal gyrus,1.0,high_confidence,,HOMBA:12140,superior temporal gyrus,1.0,high_confidence
+species,Suprageniculate nucleus,llm_accept_top1,HOMBA:13044,HOMBA:13044,suprageniculate nucleus,1.0,high_confidence,,HOMBA:13044,suprageniculate nucleus,1.0,high_confidence
+species,Supraoptic decussation,llm_accept_top1,HOMBA:13216,HOMBA:13216,supraoptic decussation,1.0,high_confidence,,HOMBA:13216,supraoptic decussation,1.0,high_confidence
+species,Supraoptic nucleus,llm_accept_top1,HOMBA:10481,HOMBA:10481,supraoptic nucleus,1.0,high_confidence,,HOMBA:10481,supraoptic nucleus,1.0,high_confidence
+species,Tail of caudate nucleus,llm_accept_top1,HOMBA:10337,HOMBA:10337,tail of caudate nucleus (caudolateral division of the CP),1.0,high_confidence,,HOMBA:10337,tail of caudate nucleus (caudolateral division of the CP),1.0,high_confidence
+species,Temporal pole,llm_accept_top1,HOMBA:12146,HOMBA:12146,temporal pole (temporopolar cortex),1.0,high_confidence,,HOMBA:12146,temporal pole (temporopolar cortex),1.0,high_confidence
+species,Third ventricle,llm_accept_top1,HOMBA:10602,HOMBA:10602,third ventricle,1.0,high_confidence,,HOMBA:10602,third ventricle,1.0,high_confidence
+species,Transverse Fibers,llm_accept_top1,HOMBA:AA30879,HOMBA:AA30879,transverse fibers,1.0,high_confidence,,HOMBA:AA30879,transverse fibers,1.0,high_confidence
+species,Trapezoid body,llm_accept_top1,HOMBA:12796,HOMBA:12796,trapezoid body,1.0,high_confidence,,HOMBA:12796,trapezoid body,1.0,high_confidence
+species,Ventral anterior thalamic nucleus,llm_accept_top1,HOMBA:10417,HOMBA:10417,ventral anterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10417,ventral anterior nucleus of thalamus,1.0,high_confidence
+species,Ventral endopiriform claustrum,llm_accept_top1,HOMBA:AA30854,HOMBA:AA30854,ventral endopiriform nucleus,1.0,high_confidence,,HOMBA:AA30854,ventral endopiriform nucleus,1.0,high_confidence
+species,Ventral hippocampal commissure,llm_accept_top1,HOMBA:12023,HOMBA:12023,ventral hippocampal commissure,1.0,high_confidence,,HOMBA:12023,ventral hippocampal commissure,1.0,high_confidence
+species,Ventral pallidum,llm_accept_top1,HOMBA:10345,HOMBA:10345,ventral pallidum,1.0,high_confidence,,HOMBA:10345,ventral pallidum,1.0,high_confidence
+species,Ventral tegmental area,llm_accept_top1,HOMBA:12261,HOMBA:12261,ventral tegmental area,1.0,high_confidence,,HOMBA:12261,ventral tegmental area,1.0,high_confidence
+species,Ventromedial hypothalamic nucleus,llm_accept_top1,HOMBA:10488,HOMBA:10488,ventromedial hypothalamic nucleus,1.0,high_confidence,,HOMBA:10488,ventromedial hypothalamic nucleus,1.0,high_confidence
+species,Xiphoid thalamic nucleus,llm_accept_top1,HOMBA:AA30277,HOMBA:AA30277,xiphoid thalamic nucleus,1.0,high_confidence,,HOMBA:AA30277,xiphoid thalamic nucleus,1.0,high_confidence
+species,Dorsal Lateral Geniculate,llm_accept_top1,HOMBA:10429,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),0.9975,high_confidence,,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),0.9975,high_confidence
+species,Ventral posterolateral thalamic nucleus,llm_accept_top1,HOMBA:10424,HOMBA:10424,ventral posterior lateral nucleus,0.9975,high_confidence,,HOMBA:10424,ventral posterior lateral nucleus,0.9975,high_confidence
+species,Ventral posteromedial thalamic nucleus,llm_accept_top1,HOMBA:10425,HOMBA:10425,ventral posterior medial nucleus,0.9975,high_confidence,,HOMBA:10425,ventral posterior medial nucleus,0.9975,high_confidence
+species,"Lateral lemniscus, unspecified",llm_accept_top1,HOMBA:12760,HOMBA:12760,lateral lemniscus,0.9972,high_confidence,,HOMBA:12760,lateral lemniscus,0.9972,high_confidence
+species,"Cingulate gyrus, posterior",llm_accept_top1,HOMBA:10285,HOMBA:10285,posterior cingulate cortex (PCC),0.996,high_confidence,,HOMBA:10285,posterior cingulate cortex (PCC),0.996,high_confidence
+species,"Frontal orbital cortex, lateral",llm_accept_top1,HOMBA:10205,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",0.9936,high_confidence,,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",0.9936,high_confidence
+species,"Frontal orbital cortex, medial",llm_accept_top1,HOMBA:10195,HOMBA:10195,medial orbital frontal cortex (area 14),0.9894,high_confidence,,HOMBA:10195,medial orbital frontal cortex (area 14),0.9894,high_confidence
+species,"Medial lemniscus, unspecified",llm_accept_top1,HOMBA:12763,HOMBA:12763,medial lemniscus,0.9861,high_confidence,,HOMBA:12763,medial lemniscus,0.9861,high_confidence
+species,Sensory Root of the Trigeminal Nerve,llm_accept_top1,HOMBA:12867,HOMBA:12867,sensory root of trigeminal nerve,0.9841,high_confidence,,HOMBA:12867,sensory root of trigeminal nerve,0.9841,high_confidence
+species,External globus pallidus,llm_accept_top1,HOMBA:10343,HOMBA:10343,external division of globus pallidus,0.9362,high_confidence,,HOMBA:10343,external division of globus pallidus,0.9362,high_confidence
+species,Lateral ventricle,llm_accept_top1,HOMBA:10598,HOMBA:10598,body of lateral ventricles,0.9767,high_confidence,,HOMBA:10598,body of lateral ventricles,0.9767,high_confidence
+species,Medial Geniculate,llm_accept_top1,HOMBA:10434,HOMBA:10434,medial geniculate nucleus,0.9767,high_confidence,,HOMBA:10434,medial geniculate nucleus,0.9767,high_confidence
+species,"Inferior colliculus, external cortex",llm_accept_top1,HOMBA:12308,HOMBA:12308,external shell (cortex) of inferior colliculus,0.9357,high_confidence,,HOMBA:12308,external shell (cortex) of inferior colliculus,0.9357,high_confidence
+species,Medial lemniscus decussation,llm_accept_top1,HOMBA:12732,HOMBA:12732,decussation of medial lemniscus,0.9329,high_confidence,,HOMBA:12732,decussation of medial lemniscus,0.9323,high_confidence
+species,"Lateral lemniscus, dorsal nucleus",llm_accept_top1,HOMBA:12455,HOMBA:12455,dorsal nucleus of lateral lemniscus,0.9337,high_confidence,,HOMBA:12455,dorsal nucleus of lateral lemniscus,0.9337,high_confidence
+species,"Lateral lemniscus, intermediate nucleus",llm_accept_top1,HOMBA:12456,HOMBA:12456,intermediate nucleus of lateral lemniscus,0.9334,high_confidence,,HOMBA:12456,intermediate nucleus of lateral lemniscus,0.9334,high_confidence
+species,"Lateral lemniscus, ventral nucleus",llm_accept_top1,HOMBA:12457,HOMBA:12457,ventral nucleus of lateral lemniscus,0.9296,high_confidence,,HOMBA:12457,ventral nucleus of lateral lemniscus,0.9296,high_confidence
+species,Brachium Superior Colliculus,llm_accept_top1,HOMBA:12328,HOMBA:12328,brachium of superior colliculus,0.9167,high_confidence,,HOMBA:12328,brachium of superior colliculus,0.9167,high_confidence
+species,Amygdalostriatal Transition,llm_accept_top1,HOMBA:10381,HOMBA:10381,amygdalostriatal transition area,0.94,high_confidence,,HOMBA:10381,amygdalostriatal transition area,0.94,high_confidence
+species,Commissure of the superior colliculus,llm_accept_top1,HOMBA:AA30487,HOMBA:AA30487,commissure of superior colliculus,0.9208,high_confidence,,HOMBA:AA30487,commissure of superior colliculus,0.9208,high_confidence
+species,Nucleus of the trapezoid body,llm_accept_top1,HOMBA:12458,HOMBA:12458,nucleus of trapezoid body,0.9206,high_confidence,,HOMBA:12458,nucleus of trapezoid body,0.9206,high_confidence
+species,Brachium of the superior colliculus,llm_accept_top1,HOMBA:12328,HOMBA:12328,brachium of superior colliculus,0.9186,high_confidence,,HOMBA:12328,brachium of superior colliculus,0.9186,high_confidence
+species,Dorsal raphe,llm_accept_top1,HOMBA:12223,HOMBA:12223,dorsal raphe nucleus,0.9479,high_confidence,,HOMBA:12223,dorsal raphe nucleus,0.9479,high_confidence
+species,Bed nucleus of the stria terminalis,llm_accept_top1,HOMBA:10384,HOMBA:10384,bed nucleus of stria terminalis,0.9222,high_confidence,,HOMBA:10384,bed nucleus of stria terminalis,0.9222,high_confidence
+species,Accumbens nucleus,llm_accept_top1,HOMBA:10339,HOMBA:10339,nucleus accumbens,0.94,high_confidence,,HOMBA:10339,nucleus accumbens,0.94,high_confidence
+species,Periaqueductal gray,llm_accept_top1,HOMBA:AA30359,HOMBA:AA30359,periaqueductal gray region,0.94,high_confidence,,HOMBA:AA30359,periaqueductal gray region,0.94,high_confidence
+species,Fimbria of the hippocampus,llm_accept_top1,HOMBA:10575,HOMBA:10575,fimbria,0.8908,needs_review,,HOMBA:10575,fimbria,0.8908,needs_review
+species,Lateral Posterior Thalamus,llm_accept_top1,HOMBA:10408,HOMBA:10408,lateral posterior nucleus of thalamus,0.8817,needs_review,,HOMBA:10408,lateral posterior nucleus of thalamus,0.8817,needs_review
+species,Ventral Anterior Thalamus,llm_accept_top1,HOMBA:10417,HOMBA:10417,ventral anterior nucleus of thalamus,0.8788,needs_review,,HOMBA:10417,ventral anterior nucleus of thalamus,0.8788,needs_review
+corpus,Area 43,llm_reject_top1,,HOMBA:AA30017,caudal division of subcentral cortex (area 43),1.0,high_confidence,,HOMBA:AA30017,caudal division of subcentral cortex (area 43),1.0,high_confidence
+corpus,Middle frontal gyrus (middle),llm_accept_top1,HOMBA:12116,HOMBA:12116,middle frontal gyrus,1.0,high_confidence,,HOMBA:12116,middle frontal gyrus,1.0,high_confidence
+corpus,Vestibular nucleus,llm_reject_top1,,HOMBA:12448,vestibular nuclei in pons,1.0,high_confidence,,HOMBA:12448,vestibular nuclei in pons,1.0,high_confidence
+corpus,Ventral posterior internal thalamic nucleus,llm_reject_top1,,HOMBA:10423,ventral posterior nuclear complex of thalamus,0.9686,high_confidence,,HOMBA:10423,ventral posterior nuclear complex of thalamus,0.9686,high_confidence
+corpus,Internal globus pallidus,llm_reject_top1,,HOMBA:10342,globus pallidus (paleostriatum),0.9001,high_confidence,,HOMBA:10342,globus pallidus (paleostriatum),0.9001,high_confidence
+corpus,Anterior nucleus (thalamus),llm_reject_top1,,HOMBA:10410,rostral division of pulvinar,0.9236,high_confidence,,HOMBA:10410,rostral division of pulvinar,0.9236,high_confidence
+species,Basal Nucleus,llm_reject_top1,,HOMBA:10332,basal ganglia (basal nuclei),1.0,high_confidence,,HOMBA:10332,basal ganglia (basal nuclei),1.0,high_confidence
+species,"Lateral posterior thalamic nucleus, lateral part",llm_accept_top1,HOMBA:10408,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence
+species,"Lateral posterior thalamic nucleus, mediocaudal part",llm_accept_top1,HOMBA:10408,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence
+species,"Lateral posterior thalamic nucleus, mediorostral part",llm_accept_top1,HOMBA:10408,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence,,HOMBA:10408,lateral posterior nucleus of thalamus,1.0,high_confidence
+species,Vestibular Nucleus,llm_reject_top1,,HOMBA:12448,vestibular nuclei in pons,1.0,high_confidence,,HOMBA:12448,vestibular nuclei in pons,1.0,high_confidence
+species,Lateral olfactory tract,llm_reject_top1,,HOMBA:10309,nucleus of lateral olfactory tract,0.9975,high_confidence,,HOMBA:10309,nucleus of lateral olfactory tract,0.9975,high_confidence
+species,Medial parietal cortex,llm_reject_top1,,HOMBA:10215,superior medial parietal cortex,0.9975,high_confidence,,HOMBA:10215,superior medial parietal cortex,0.9975,high_confidence
+species,"Ventral cochlear nucleus, cap area",llm_accept_top1,HOMBA:12439,HOMBA:12439,ventral cochlear nucleus,0.9975,high_confidence,,HOMBA:12439,ventral cochlear nucleus,0.9975,high_confidence
+species,"Inferior colliculus, dorsal cortex",llm_reject_top1,,HOMBA:12307,dorsal central nucleus of inferior colliculus,0.9427,high_confidence,,HOMBA:12307,dorsal central nucleus of inferior colliculus,0.9427,high_confidence
+species,"Ventral cochlear nucleus, anterior part",llm_accept_top1,HOMBA:12439,HOMBA:12439,ventral cochlear nucleus,0.9687,high_confidence,,HOMBA:12439,ventral cochlear nucleus,0.9687,high_confidence
+species,Lateral hypothalamic area,llm_reject_top1,,HOMBA:10494,"lateral hypothalamic area, tuberal part",0.9676,high_confidence,,HOMBA:10494,"lateral hypothalamic area, tuberal part",0.9676,high_confidence
+species,Posterior interstitial nucleus of the anterior commissure,llm_reject_top1,,HOMBA:12194,interstitial nucleus of posterior commissure (nucleus of posterior commissure),0.9438,high_confidence,,HOMBA:12194,interstitial nucleus of posterior commissure (nucleus of posterior commissure),0.9438,high_confidence
+species,Internal globus pallidus,llm_reject_top1,,HOMBA:10342,globus pallidus (paleostriatum),0.9001,high_confidence,,HOMBA:10342,globus pallidus (paleostriatum),0.9001,high_confidence
+species,Ansiform Lobule Crus1,llm_reject_top1,,HOMBA:AA30411,lobule VII (semilunar-gracile lobule),0.9367,high_confidence,,HOMBA:AA30411,lobule VII (semilunar-gracile lobule),0.9367,high_confidence
+species,Ansiform Lobule Crus2,llm_reject_top1,,HOMBA:AA30411,lobule VII (semilunar-gracile lobule),0.9367,high_confidence,,HOMBA:AA30411,lobule VII (semilunar-gracile lobule),0.9367,high_confidence
+species,Posterior intralaminar nucleus,llm_reject_top1,,HOMBA:10448,caudal intralaminar nuclei of thalamus,0.9123,high_confidence,,HOMBA:10448,caudal intralaminar nuclei of thalamus,0.9123,high_confidence
+species,"Inferior colliculus, central nucleus",llm_reject_top1,,HOMBA:12305,inferior colliculus,0.9038,high_confidence,,HOMBA:12305,inferior colliculus,0.9038,high_confidence
+species,"Lateral lemniscus, commissure",llm_accept_top1,HOMBA:12760,HOMBA:12760,lateral lemniscus,0.9295,high_confidence,,HOMBA:12760,lateral lemniscus,0.9295,high_confidence
+species,Medial geniculate complex (medial division),llm_reject_top1,,HOMBA:AA30307,medial geniculate nuclear complex,0.9233,high_confidence,,HOMBA:AA30307,medial geniculate nuclear complex,0.9233,high_confidence
+corpus,Frontal eye field,llm_accept_top1,HOMBA:AA30010,HOMBA:AA30010,frontal eye field of premotor cortex,0.617,needs_review,,HOMBA:AA30010,frontal eye field of premotor cortex,0.617,needs_review
+corpus,Fundal superior temporal area,llm_accept_top1,HOMBA:12139,HOMBA:AA30021,medial superior temporal area,0.628,needs_review,,HOMBA:AA30021,medial superior temporal area,0.628,needs_review
+corpus,Visual area V3,llm_accept_top1,HOMBA:AA30824,HOMBA:AA30824,"dorsal third visual area (V3D, V3)",0.6246,needs_review,,HOMBA:AA30824,"dorsal third visual area (V3D, V3)",0.6246,needs_review
+corpus,Olfactory cortex,llm_accept_top1,HOMBA:11371,HOMBA:11371,olfactory division of entorhinal cortex,0.6137,needs_review,,HOMBA:11371,olfactory division of entorhinal cortex,0.6137,needs_review
+corpus,Middle occipital gyrus,llm_accept_top1,HOMBA:12148,HOMBA:12148,occipital lobe,0.6439,needs_review,,HOMBA:12148,occipital lobe,0.6439,needs_review
+corpus,Medial insular area,llm_accept_top1,HOMBA:AA30006,HOMBA:AA30006,medial division of orbitofrontal insular cortex,0.41,low_confidence,,HOMBA:AA30006,medial division of orbitofrontal insular cortex,0.41,low_confidence
+corpus,Visual area V6,llm_accept_top1,HOMBA:267499151,HOMBA:267499151,"sixth visual area V6 , part A",0.6604,needs_review,,HOMBA:267499151,"sixth visual area V6 , part A",0.6604,needs_review
+corpus,Temporal occipital fusiform cortex,llm_accept_top1,HOMBA:13324,HOMBA:13324,ventrolateral temporal cortex,0.6743,needs_review,,HOMBA:13324,ventrolateral temporal cortex,0.6743,needs_review
+corpus,Parietal opercular cortex,llm_accept_top1,HOMBA:10208,HOMBA:10208,parietal cortex,0.698,needs_review,,HOMBA:10208,parietal cortex,0.698,needs_review
+corpus,Anterior pulvinar,llm_accept_top1,HOMBA:10409,HOMBA:10409,pulvinar of thalamus,0.7009,needs_review,,HOMBA:10409,pulvinar of thalamus,0.7009,needs_review
+corpus,Frontal orbital cortex (anterior),llm_accept_top1,HOMBA:10194,HOMBA:10194,orbital frontal cortex,0.7152,needs_review,,HOMBA:10194,orbital frontal cortex,0.7152,needs_review
+corpus,Frontal orbital cortex (posterior),llm_accept_top1,HOMBA:10194,HOMBA:10194,orbital frontal cortex,0.7152,needs_review,,HOMBA:10194,orbital frontal cortex,0.7152,needs_review
+corpus,Pre-supplementary motor area (inferior),llm_accept_top1,HOMBA:AA30012,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.7172,needs_review,,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.7172,needs_review
+corpus,Pre-supplementary motor area (superior),llm_accept_top1,HOMBA:AA30012,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.7172,needs_review,,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.7172,needs_review
+corpus,Ventrolateral medulla,llm_accept_top1,HOMBA:10662,HOMBA:10662,myelencephalon (medulla oblongata),0.7238,needs_review,,HOMBA:10662,myelencephalon (medulla oblongata),0.7238,needs_review
+corpus,Vagus (spinal accessory) neurons,llm_accept_top1,HOMBA:AA30587,HOMBA:AA30587,spinal accessory nucleus,0.7297,needs_review,,HOMBA:AA30587,spinal accessory nucleus,0.7297,needs_review
+corpus,Visual area V7,llm_accept_top1,HOMBA:267499179,HOMBA:267499179,seventh visual area V7,0.7346,needs_review,,HOMBA:267499179,seventh visual area V7,0.7346,needs_review
+corpus,Temporal frontal cortex (anterior),llm_accept_top1,HOMBA:10241,HOMBA:10241,rostral division of area 22,0.7593,needs_review,,HOMBA:10241,rostral division of area 22,0.7593,needs_review
+corpus,Pedunculopontine tegmentum,llm_accept_top1,HOMBA:12416,HOMBA:12416,pontine tegmentum,0.7612,needs_review,,HOMBA:12416,pontine tegmentum,0.7612,needs_review
+corpus,Forel's field H1,llm_accept_top1,HOMBA:10593,HOMBA:10593,thalamic fasciculus (field H1),0.7663,needs_review,,HOMBA:10593,thalamic fasciculus (field H1),0.7663,needs_review
+corpus,Forel's field H2,llm_accept_top1,HOMBA:10585,HOMBA:10585,lenticular fasciculus (field H2),0.7663,needs_review,,HOMBA:10585,lenticular fasciculus (field H2),0.7663,needs_review
+corpus,Paracentral lobule,llm_accept_top1,HOMBA:12126,HOMBA:12126,"paracentral lobule, rostral part",0.7897,needs_review,,HOMBA:12126,"paracentral lobule, rostral part",0.7897,needs_review
+corpus,Occipital fusiform gyrus,llm_accept_top1,HOMBA:AA30549,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,0.7917,needs_review,,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,0.7917,needs_review
+corpus,Secondary visual cortex,llm_accept_top1,HOMBA:AA30822,HOMBA:AA30823,"dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)",0.7547,needs_review,yes,HOMBA:AA30822,dorsolateral extrastriate occipital cortex,0.8347,needs_review
+corpus,Frontal medial cortex,llm_accept_top1,HOMBA:10195,HOMBA:10195,medial orbital frontal cortex (area 14),0.8374,needs_review,,HOMBA:10195,medial orbital frontal cortex (area 14),0.8374,needs_review
+corpus,Reticular perithalamic nucleus,llm_accept_top1,HOMBA:10464,HOMBA:10464,reticular nucleus of thalamus,0.8518,needs_review,,HOMBA:10464,reticular nucleus of thalamus,0.8518,needs_review
+corpus,Temporal frontal cortex (posterior),llm_accept_top1,HOMBA:AA30009,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),0.8682,needs_review,,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),0.8682,needs_review
+corpus,Superior parietal gyrus,llm_accept_top1,HOMBA:12131,HOMBA:12133,superior parietal lobule (gyrus),0.7971,needs_review,yes,HOMBA:12131,parietal lobe,0.8771,needs_review
+corpus,Angular gyrus (anterior),llm_accept_top1,HOMBA:12136,HOMBA:12136,angular gyrus,0.88,needs_review,,HOMBA:12136,angular gyrus,0.88,needs_review
+corpus,Angular gyrus (posterior),llm_accept_top1,HOMBA:12136,HOMBA:12136,angular gyrus,0.88,needs_review,,HOMBA:12136,angular gyrus,0.88,needs_review
+corpus,CA4 (dentate hilus),llm_accept_top1,HOMBA:10300,HOMBA:10300,CA4 region of hippocampus,0.88,needs_review,,HOMBA:10300,CA4 region of hippocampus,0.88,needs_review
+corpus,Cerebellar cortex (granular layer),llm_accept_top1,HOMBA:10657,HOMBA:10657,cerebellar cortex,0.88,needs_review,,HOMBA:10657,cerebellar cortex,0.88,needs_review
+corpus,Corticospinal tract (pyramids),llm_accept_top1,HOMBA:12047,HOMBA:12047,corticospinal tract,0.88,needs_review,,HOMBA:12047,corticospinal tract,0.88,needs_review
+corpus,Edinger-Westphal nucleus (preganglionic),llm_accept_top1,HOMBA:12197,HOMBA:12197,Edinger-Westphal nucleus (accessory oculomotor nucleus),0.88,needs_review,,HOMBA:12197,Edinger-Westphal nucleus (accessory oculomotor nucleus),0.88,needs_review
+corpus,Fornix (anterior columns),llm_accept_top1,HOMBA:10576,HOMBA:10576,fornix,0.88,needs_review,,HOMBA:10576,fornix,0.88,needs_review
+corpus,Frontal pole (lateral),llm_accept_top1,HOMBA:146034888,HOMBA:146034888,frontal pole,0.88,needs_review,,HOMBA:146034888,frontal pole,0.88,needs_review
+corpus,Frontal pole (medial),llm_accept_top1,HOMBA:146034888,HOMBA:146034888,frontal pole,0.88,needs_review,,HOMBA:146034888,frontal pole,0.88,needs_review
+corpus,Inferior frontal gyrus (anterior),llm_accept_top1,HOMBA:12117,HOMBA:12117,inferior frontal gyrus,0.88,needs_review,,HOMBA:12117,inferior frontal gyrus,0.88,needs_review
+corpus,Inferior frontal gyrus (orbital part),llm_accept_top1,HOMBA:12117,HOMBA:12117,inferior frontal gyrus,0.88,needs_review,,HOMBA:12117,inferior frontal gyrus,0.88,needs_review
+corpus,Inferior frontal gyrus (pars opercularis),llm_accept_top1,HOMBA:12117,HOMBA:12117,inferior frontal gyrus,0.88,needs_review,,HOMBA:12117,inferior frontal gyrus,0.88,needs_review
+corpus,Inferior frontal gyrus (pars orbitalis),llm_accept_top1,HOMBA:12117,HOMBA:12117,inferior frontal gyrus,0.88,needs_review,,HOMBA:12117,inferior frontal gyrus,0.88,needs_review
+corpus,Inferior frontal gyrus (pars triangularis),llm_accept_top1,HOMBA:12117,HOMBA:12117,inferior frontal gyrus,0.88,needs_review,,HOMBA:12117,inferior frontal gyrus,0.88,needs_review
+corpus,Inferior temporal gyrus (anterior),llm_accept_top1,HOMBA:12142,HOMBA:12142,inferior temporal gyrus,0.88,needs_review,,HOMBA:12142,inferior temporal gyrus,0.88,needs_review
+corpus,Inferior temporal gyrus (posterior),llm_accept_top1,HOMBA:12142,HOMBA:12142,inferior temporal gyrus,0.88,needs_review,,HOMBA:12142,inferior temporal gyrus,0.88,needs_review
+corpus,Inferior temporal gyrus (temporo-occipital),llm_accept_top1,HOMBA:12142,HOMBA:12142,inferior temporal gyrus,0.88,needs_review,,HOMBA:12142,inferior temporal gyrus,0.88,needs_review
+corpus,Insular cortex (anterior),llm_accept_top1,HOMBA:10288,HOMBA:10288,major insular cortex,0.88,needs_review,,HOMBA:10288,major insular cortex,0.88,needs_review
+corpus,Insular cortex (posterior),llm_accept_top1,HOMBA:10288,HOMBA:10288,major insular cortex,0.88,needs_review,,HOMBA:10288,major insular cortex,0.88,needs_review
+corpus,Lenticular nucleus (pallidum),llm_accept_top1,HOMBA:10338,HOMBA:10338,putamen (lateroventral division of the CP),0.88,needs_review,,HOMBA:10338,putamen (lateroventral division of the CP),0.88,needs_review
+corpus,Middle frontal gyrus (anterior),llm_accept_top1,HOMBA:12116,HOMBA:12116,middle frontal gyrus,0.88,needs_review,,HOMBA:12116,middle frontal gyrus,0.88,needs_review
+corpus,Middle frontal gyrus (orbital part),llm_accept_top1,HOMBA:12116,HOMBA:12116,middle frontal gyrus,0.88,needs_review,,HOMBA:12116,middle frontal gyrus,0.88,needs_review
+corpus,Middle frontal gyrus (posterior),llm_accept_top1,HOMBA:12116,HOMBA:12116,middle frontal gyrus,0.88,needs_review,,HOMBA:12116,middle frontal gyrus,0.88,needs_review
+corpus,Middle temporal gyrus (anterior),llm_accept_top1,HOMBA:12141,HOMBA:12141,middle temporal gyrus,0.88,needs_review,,HOMBA:12141,middle temporal gyrus,0.88,needs_review
+corpus,Middle temporal gyrus (posterior),llm_accept_top1,HOMBA:12141,HOMBA:12141,middle temporal gyrus,0.88,needs_review,,HOMBA:12141,middle temporal gyrus,0.88,needs_review
+corpus,Middle temporal gyrus (temporo-occipital),llm_accept_top1,HOMBA:12141,HOMBA:12141,middle temporal gyrus,0.88,needs_review,,HOMBA:12141,middle temporal gyrus,0.88,needs_review
+corpus,Postcentral gyrus (lateral inferior),llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,0.88,needs_review,,HOMBA:12132,postcentral gyrus,0.88,needs_review
+corpus,Postcentral gyrus (lateral middle),llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,0.88,needs_review,,HOMBA:12132,postcentral gyrus,0.88,needs_review
+corpus,Postcentral gyrus (lateral superior),llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,0.88,needs_review,,HOMBA:12132,postcentral gyrus,0.88,needs_review
+corpus,Postcentral gyrus (medial),llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,0.88,needs_review,,HOMBA:12132,postcentral gyrus,0.88,needs_review
+corpus,Precentral gyrus (lateral inferior),llm_accept_top1,HOMBA:12114,HOMBA:12114,precentral gyrus,0.88,needs_review,,HOMBA:12114,precentral gyrus,0.88,needs_review
+corpus,Precentral gyrus (lateral middle),llm_accept_top1,HOMBA:12114,HOMBA:12114,precentral gyrus,0.88,needs_review,,HOMBA:12114,precentral gyrus,0.88,needs_review
+corpus,Precentral gyrus (lateral superior),llm_accept_top1,HOMBA:12114,HOMBA:12114,precentral gyrus,0.88,needs_review,,HOMBA:12114,precentral gyrus,0.88,needs_review
+corpus,Precentral gyrus (medial),llm_accept_top1,HOMBA:12114,HOMBA:12114,precentral gyrus,0.88,needs_review,,HOMBA:12114,precentral gyrus,0.88,needs_review
+corpus,Spinal trigeminal nucleus (oralis),llm_accept_top1,HOMBA:12572,HOMBA:12572,spinal trigeminal nucleus,0.88,needs_review,,HOMBA:12572,spinal trigeminal nucleus,0.88,needs_review
+corpus,Superior frontal gyrus (dorsolateral),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior frontal gyrus (lateral anterior),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior frontal gyrus (lateral middle),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior frontal gyrus (lateral posterior),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior frontal gyrus (medial orbital),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior frontal gyrus (medial),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior frontal gyrus (orbital part),llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.88,needs_review,,HOMBA:12115,superior frontal gyrus,0.88,needs_review
+corpus,Superior parietal lobule (anterior),llm_accept_top1,HOMBA:12133,HOMBA:12133,superior parietal lobule (gyrus),0.88,needs_review,,HOMBA:12133,superior parietal lobule (gyrus),0.88,needs_review
+corpus,Superior parietal lobule (posterior),llm_accept_top1,HOMBA:12133,HOMBA:12133,superior parietal lobule (gyrus),0.88,needs_review,,HOMBA:12133,superior parietal lobule (gyrus),0.88,needs_review
+corpus,Superior temporal gyrus (anterior),llm_accept_top1,HOMBA:12140,HOMBA:12140,superior temporal gyrus,0.88,needs_review,,HOMBA:12140,superior temporal gyrus,0.88,needs_review
+corpus,Superior temporal gyrus (posterior),llm_accept_top1,HOMBA:12140,HOMBA:12140,superior temporal gyrus,0.88,needs_review,,HOMBA:12140,superior temporal gyrus,0.88,needs_review
+corpus,Supramarginal gyrus (anterior),llm_accept_top1,HOMBA:12135,HOMBA:12135,supramarginal gyrus,0.88,needs_review,,HOMBA:12135,supramarginal gyrus,0.88,needs_review
+corpus,Supramarginal gyrus (posterior),llm_accept_top1,HOMBA:12135,HOMBA:12135,supramarginal gyrus,0.88,needs_review,,HOMBA:12135,supramarginal gyrus,0.88,needs_review
+corpus,Thalamus (excluding pulvinar),llm_accept_top1,HOMBA:10390,HOMBA:10390,thalamus,0.88,needs_review,,HOMBA:10390,thalamus,0.88,needs_review
+corpus,Lateral intraparietal area (ventral),llm_accept_top1,HOMBA:267498979,HOMBA:267498979,lateral subdivision of area 7,0.5793,modifier_conflict,,HOMBA:267498979,lateral subdivision of area 7,0.5793,modifier_conflict
+corpus,Transverse temporal gyri (Heschl's gyri),llm_accept_top1,HOMBA:12144,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),0.825,modifier_conflict,,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),0.825,modifier_conflict
+corpus,Lateral occipital cortex (inferior),llm_accept_top1,HOMBA:AA30024,HOMBA:AA30024,"lateral temporal-occipital cortex (area 37l, area TEO)",0.8409,modifier_conflict,,HOMBA:AA30024,"lateral temporal-occipital cortex (area 37l, area TEO)",0.8409,modifier_conflict
+corpus,Lateral occipital cortex (superior),llm_accept_top1,HOMBA:AA30024,HOMBA:AA30024,"lateral temporal-occipital cortex (area 37l, area TEO)",0.8409,modifier_conflict,,HOMBA:AA30024,"lateral temporal-occipital cortex (area 37l, area TEO)",0.8409,modifier_conflict
+corpus,Cingulate gyrus (anterior posterior part),llm_accept_top1,HOMBA:10278,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.895,modifier_conflict,,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.895,modifier_conflict
+corpus,Ventral posterior external thalamic nucleus,llm_accept_top1,HOMBA:10423,HOMBA:10423,ventral posterior nuclear complex of thalamus,0.9231,modifier_conflict,,HOMBA:10423,ventral posterior nuclear complex of thalamus,0.9231,modifier_conflict
+corpus,Cingulate gyrus (anterior anterior part),llm_accept_top1,HOMBA:10278,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.9775,modifier_conflict,,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.9775,modifier_conflict
+corpus,Inferior olive (principal nucleus),llm_accept_top1,HOMBA:12600,HOMBA:12600,inferior olive,1.0,modifier_conflict,,HOMBA:12600,inferior olive,1.0,modifier_conflict
+corpus,Lateral reticular nucleus (magnocellular),llm_accept_top1,HOMBA:12634,HOMBA:12634,lateral reticular nucleus,1.0,modifier_conflict,,HOMBA:12634,lateral reticular nucleus,1.0,modifier_conflict
+corpus,Lateral reticular nucleus (parvicellular),llm_accept_top1,HOMBA:12634,HOMBA:12634,lateral reticular nucleus,1.0,modifier_conflict,,HOMBA:12634,lateral reticular nucleus,1.0,modifier_conflict
+corpus,Temporal pole (middle temporal gyrus),llm_accept_top1,HOMBA:12146,HOMBA:12146,temporal pole (temporopolar cortex),1.0,modifier_conflict,,HOMBA:12146,temporal pole (temporopolar cortex),1.0,modifier_conflict
+corpus,Temporal pole (superior temporal gyrus),llm_accept_top1,HOMBA:12146,HOMBA:12146,temporal pole (temporopolar cortex),1.0,modifier_conflict,,HOMBA:12146,temporal pole (temporopolar cortex),1.0,modifier_conflict
+corpus,Uncus,llm_accept_top1,HOMBA:12165,HOMBA:12165,uncus of (para)hippocampal gyrus,0.224,low_confidence,,HOMBA:12165,uncus of (para)hippocampal gyrus,0.224,low_confidence
+corpus,Median cingulate and paracingulate gyri,llm_accept_top1,HOMBA:146034872,HOMBA:146034872,paracingulate gyrus,0.4529,low_confidence,,HOMBA:146034872,paracingulate gyrus,0.4529,low_confidence
+corpus,V4 transitional area,llm_accept_top1,HOMBA:AA30818,HOMBA:AA30818,transitional fourth visual area (V4T),0.4783,low_confidence,,HOMBA:AA30818,transitional fourth visual area (V4T),0.4783,low_confidence
+corpus,Rolandic operculum,llm_accept_top1,HOMBA:12127,HOMBA:12127,frontal operculum,0.4835,low_confidence,,HOMBA:12127,frontal operculum,0.4835,low_confidence
+corpus,Subcallosal cortex,llm_accept_top1,HOMBA:10281,HOMBA:10281,subgenual (subcallosal) cingulate cortex (area 25),0.4919,low_confidence,,HOMBA:10281,subgenual (subcallosal) cingulate cortex (area 25),0.4919,low_confidence
+corpus,Parahippocampal area PeEc,llm_accept_top1,HOMBA:12162,HOMBA:12162,parahippocampal gyrus,0.4901,low_confidence,,HOMBA:12162,parahippocampal gyrus,0.49,low_confidence
+corpus,Frontal opercular cortex,llm_accept_top1,HOMBA:12119,HOMBA:12119,"inferior frontal gyrus, opercular part",0.4926,low_confidence,,HOMBA:12119,"inferior frontal gyrus, opercular part",0.4926,low_confidence
+corpus,Anterior cingulate and paracingulate gyri,llm_accept_top1,HOMBA:10278,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.5249,low_confidence,,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.5248,low_confidence
+corpus,Meyer's loop (geniculocalcarine tract),llm_accept_top1,HOMBA:266441617,HOMBA:266441617,Meyer's loop of optic radiation,0.538,low_confidence,,HOMBA:266441617,Meyer's loop of optic radiation,0.538,low_confidence
+corpus,Premotor eye field,llm_accept_top1,HOMBA:AA30010,HOMBA:AA30010,frontal eye field of premotor cortex,0.5438,low_confidence,,HOMBA:AA30010,frontal eye field of premotor cortex,0.5438,low_confidence
+corpus,Calcarine fissure and surrounding cortex,llm_accept_top1,HOMBA:10612,HOMBA:10612,calcarine sulcus (fissure),0.5722,low_confidence,,HOMBA:10612,calcarine sulcus (fissure),0.5722,low_confidence
+corpus,Intralaminar thalamic nuclei,llm_accept_top1,HOMBA:AA30311,HOMBA:AA30311,posterior marginal (intralaminar) nucleus of thalamus (PIL),0.5926,low_confidence,,HOMBA:AA30311,posterior marginal (intralaminar) nucleus of thalamus (PIL),0.5926,low_confidence
+species,Basolateral Ventral Amygdaloid Nucleus,llm_accept_top1,HOMBA:10368,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.5926,low_confidence,,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.5926,low_confidence
+species,Basolateral Dorsal Amygdaloid Nucleus,llm_accept_top1,HOMBA:10368,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.594,low_confidence,,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.594,low_confidence
+species,Medial cerebellar peduncle,llm_accept_top1,HOMBA:12768,HOMBA:12768,middle cerebellar peduncle (brachium pontis),0.6071,needs_review,,HOMBA:12768,middle cerebellar peduncle (brachium pontis),0.6071,needs_review
+species,"Amygdaloid area, unspecified",llm_accept_top1,HOMBA:AA30222,HOMBA:AA30222,regions of amygdaloid complex,0.5975,low_confidence,,HOMBA:AA30222,regions of amygdaloid complex,0.5975,low_confidence
+species,"Facial nerve, unspecified",llm_accept_top1,HOMBA:12862,HOMBA:12862,root of facial nerve,0.6049,needs_review,,HOMBA:12862,root of facial nerve,0.6048,needs_review
+species,Mesencephalic Trigeminal Nerve,llm_accept_top1,HOMBA:12208,HOMBA:12208,mesencephalic trigeminal nucleus,0.6128,needs_review,,HOMBA:12208,mesencephalic trigeminal nucleus,0.6128,needs_review
+species,Ventrolateral thalamic nucleus (posterodorsal part),llm_accept_top1,HOMBA:10420,HOMBA:10420,ventral lateral nucleus of thalamus,0.88,needs_review,,HOMBA:10420,ventral lateral nucleus of thalamus,0.6139,needs_review
+species,Ventrolateral thalamic nucleus (posteroventral part),llm_accept_top1,HOMBA:10420,HOMBA:10420,ventral lateral nucleus of thalamus,0.88,needs_review,,HOMBA:10420,ventral lateral nucleus of thalamus,0.6139,needs_review
+species,Justaparaventricular Lateral Hypothalamus,llm_accept_top1,HOMBA:13337,HOMBA:13337,accessory secretory cells of lateral hypothalamus,0.6102,needs_review,,HOMBA:13337,accessory secretory cells of lateral hypothalamus,0.6102,needs_review
+species,Centromedial-parafascicular Thalamus,llm_accept_top1,HOMBA:10448,HOMBA:10448,caudal intralaminar nuclei of thalamus,0.6083,needs_review,,HOMBA:10448,caudal intralaminar nuclei of thalamus,0.6083,needs_review
+species,Central Gray Nucleus,llm_accept_top1,HOMBA:146034964,HOMBA:146034964,central gray region of pons,0.6116,needs_review,,HOMBA:146034964,central gray region of pons,0.6116,needs_review
+species,"Frontal orbital cortex, posterior",llm_accept_top1,HOMBA:10194,HOMBA:10194,orbital frontal cortex,0.6246,needs_review,,HOMBA:10194,orbital frontal cortex,0.6246,needs_review
+species,Paratenial-paraventral-thalamus,llm_accept_top1,HOMBA:AA30265,HOMBA:AA30265,regions of thalamus,0.6279,needs_review,,HOMBA:AA30265,regions of thalamus,0.6279,needs_review
+species,Peduncular Lateral Hypothalamus,llm_accept_top1,HOMBA:13337,HOMBA:13337,accessory secretory cells of lateral hypothalamus,0.627,needs_review,,HOMBA:13337,accessory secretory cells of lateral hypothalamus,0.6271,needs_review
+species,Basolateral amygdaloid nucleus (dorsal),llm_accept_top1,HOMBA:10368,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6179,needs_review,,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6179,needs_review
+species,Basolateral amygdaloid nucleus (intermediate),llm_accept_top1,HOMBA:10368,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6179,needs_review,,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6179,needs_review
+species,Basolateral amygdaloid nucleus (ventral),llm_accept_top1,HOMBA:10368,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6179,needs_review,,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6179,needs_review
+species,"Striate cortex, dorsolateral, inferior",llm_accept_top1,HOMBA:10269,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.635,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.635,needs_review
+species,"Striate cortex, dorsolateral, superior",llm_accept_top1,HOMBA:10269,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.635,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.635,needs_review
+species,Anterior olfactory area,llm_accept_top1,HOMBA:10308,HOMBA:10308,anterior olfactory nuclear complex,0.6136,needs_review,,HOMBA:10308,anterior olfactory nuclear complex,0.6136,needs_review
+species,Zona Incerta and Lenticular Fascicles,llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.6377,needs_review,,HOMBA:10463,zona incerta,0.6377,needs_review
+species,Secondary motor area,llm_accept_top1,HOMBA:10168,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.6194,needs_review,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.6194,needs_review
+species,"Zona incerta, A11 dopamine cells",llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.6491,needs_review,,HOMBA:10463,zona incerta,0.6491,needs_review
+species,"Zona incerta, A13 dopamine cells",llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.6491,needs_review,,HOMBA:10463,zona incerta,0.6491,needs_review
+species,Alveus of the hippocampus,llm_accept_top1,HOMBA:AA30093,HOMBA:AA30093,hippocampus,0.6511,needs_review,,HOMBA:AA30093,hippocampus,0.6511,needs_review
+species,Paraventricular Hypothalamus,llm_accept_top1,HOMBA:10476,HOMBA:10476,paraventricular nucleus of hypothalamus,0.6362,needs_review,,HOMBA:10476,paraventricular nucleus of hypothalamus,0.6362,needs_review
+species,Corticofugal tract and corona radiata,llm_accept_top1,HOMBA:12030,HOMBA:12030,corona radiata,0.6558,needs_review,,HOMBA:12030,corona radiata,0.6558,needs_review
+species,"Zona incerta, ventral part",llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.659,needs_review,,HOMBA:10463,zona incerta,0.659,needs_review
+species,Retromammillary Hypothalamus,llm_accept_top1,HOMBA:10467,HOMBA:10467,hypothalamus,0.6505,needs_review,,HOMBA:10467,hypothalamus,0.6505,needs_review
+species,Vestibular nerve,llm_accept_top1,HOMBA:12868,HOMBA:12868,root of vestibulocochlear nerve,0.6553,needs_review,,HOMBA:12868,root of vestibulocochlear nerve,0.6552,needs_review
+species,Limitans Thalamus,llm_accept_top1,HOMBA:10390,HOMBA:10390,thalamus,0.6654,needs_review,,HOMBA:10390,thalamus,0.6654,needs_review
+species,"Zona incerta, caudal part",llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.6678,needs_review,,HOMBA:10463,zona incerta,0.6678,needs_review
+species,"Zona incerta, dorsal part",llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.6678,needs_review,,HOMBA:10463,zona incerta,0.6678,needs_review
+species,Temporal association cortex,llm_accept_top1,HOMBA:10235,HOMBA:10235,temporal cortex,0.6699,needs_review,,HOMBA:10235,temporal cortex,0.6699,needs_review
+species,Ventral striatal region (unspecified),llm_accept_top1,HOMBA:AA30195,HOMBA:AA30195,ventral striatum (STRv),0.6655,needs_review,,HOMBA:AA30195,ventral striatum (STRv),0.6655,needs_review
+species,Amygdaloid area (unspecified),llm_accept_top1,HOMBA:AA30222,HOMBA:10362,anterior amygdaloid area,0.6719,needs_review,,HOMBA:10362,anterior amygdaloid area,0.6719,needs_review
+species,Ventromedial Posterior+basal Thalamus,llm_accept_top1,HOMBA:10423,HOMBA:10423,ventral posterior nuclear complex of thalamus,0.7211,needs_review,,HOMBA:10423,ventral posterior nuclear complex of thalamus,0.6787,needs_review
+species,Cochlear nerve,llm_accept_top1,HOMBA:12868,HOMBA:12868,root of vestibulocochlear nerve,0.6835,needs_review,,HOMBA:12868,root of vestibulocochlear nerve,0.6835,needs_review
+species,Deeper layers of the superior colliculus,llm_accept_top1,HOMBA:12292,HOMBA:12292,superior colliculus,0.6843,needs_review,,HOMBA:12292,superior colliculus,0.6842,needs_review
+species,Prefornical Hypothalamus,llm_accept_top1,HOMBA:10467,HOMBA:10467,hypothalamus,0.6875,needs_review,,HOMBA:10467,hypothalamus,0.6875,needs_review
+species,Lamina terminalis and vascular organ,llm_accept_top1,HOMBA:12105,HOMBA:12105,lamina terminalis,0.6903,needs_review,,HOMBA:12105,lamina terminalis,0.6903,needs_review
+species,"Posterior thalamic nuclear group, triangular part",llm_accept_top1,HOMBA:10440,HOMBA:10440,posterior nucleus of thalamus,0.6889,needs_review,,HOMBA:10440,posterior nucleus of thalamus,0.6889,needs_review
+species,Parietal opercular cortex,llm_accept_top1,HOMBA:10208,HOMBA:10208,parietal cortex,0.698,needs_review,,HOMBA:10208,parietal cortex,0.698,needs_review
+species,Intra-amygdaloid division of the bed nucleus of the stria terminalis,llm_accept_top1,HOMBA:10384,HOMBA:10384,bed nucleus of stria terminalis,0.6893,needs_review,,HOMBA:10384,bed nucleus of stria terminalis,0.6893,needs_review
+species,Anterior Pulvinar,llm_accept_top1,HOMBA:10409,HOMBA:10409,pulvinar of thalamus,0.7009,needs_review,,HOMBA:10409,pulvinar of thalamus,0.7009,needs_review
+species,Mammillary Hypothalamus,llm_accept_top1,HOMBA:10467,HOMBA:10467,hypothalamus,0.7038,needs_review,,HOMBA:10467,hypothalamus,0.7038,needs_review
+species,Supraoptic Hypothalamus,llm_accept_top1,HOMBA:10467,HOMBA:10467,hypothalamus,0.7038,needs_review,,HOMBA:10467,hypothalamus,0.7038,needs_review
+species,Zona incerta and H fields,llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.7156,needs_review,,HOMBA:10463,zona incerta,0.7155,needs_review
+species,"Parietal association cortex, medial area",llm_accept_top1,HOMBA:10215,HOMBA:10215,superior medial parietal cortex,0.7062,needs_review,,HOMBA:10215,superior medial parietal cortex,0.7062,needs_review
+species,"Anterior commissure, anterior limb",llm_accept_top1,HOMBA:10388,HOMBA:10388,interstitial nucleus of posterior limb of anterior commissure (fundus of striatum),0.7094,needs_review,,HOMBA:10388,interstitial nucleus of posterior limb of anterior commissure (fundus of striatum),0.7094,needs_review
+species,"Parietal association cortex, lateral area",llm_accept_top1,HOMBA:10225,HOMBA:10225,inferior lateral parietal cortex,0.7079,needs_review,,HOMBA:10225,inferior lateral parietal cortex,0.7079,needs_review
+species,Anterior pituitary,llm_accept_top1,HOMBA:10505,HOMBA:AA30782,anterior lobe of pituitary body (adenohypophysis),0.6281,needs_review,yes,HOMBA:10505,pituitary body/gland (hypophysis),0.7081,needs_review
+species,Pontine Reticulum Caudal,llm_accept_top1,HOMBA:12493,HOMBA:12493,"pontine reticular nucleus, caudal division",0.7128,needs_review,,HOMBA:12493,"pontine reticular nucleus, caudal division",0.7128,needs_review
+species,Molecular cell layer of the cerebellum,llm_accept_top1,HOMBA:AA30427,HOMBA:AA30427,molecular layer of cerebellar cortex,0.724,needs_review,,HOMBA:AA30427,molecular layer of cerebellar cortex,0.724,needs_review
+species,Central amygdaloid nucleus,llm_accept_top1,HOMBA:10363,HOMBA:10363,central nucleus of amygdala,0.707,needs_review,,HOMBA:10363,central nucleus of amygdala,0.707,needs_review
+species,Pontine Reticulum Oral,llm_accept_top1,HOMBA:12494,HOMBA:12494,"pontine reticular nucleus, rostral division",0.7272,needs_review,,HOMBA:12494,"pontine reticular nucleus, rostral division",0.7272,needs_review
+species,Pre-supplementary motor area,llm_accept_top1,HOMBA:AA30012,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.7367,needs_review,,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.7367,needs_review
+species,"Premotor cortex, ventral",llm_accept_top1,HOMBA:10168,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.7421,needs_review,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.7421,needs_review
+species,"Secondary auditory area, ventral part",llm_accept_top1,HOMBA:10239,HOMBA:10239,"secondary auditory cortex (auditory belt region, area 42, area TB)",0.7459,needs_review,,HOMBA:10239,"secondary auditory cortex (auditory belt region, area 42, area TB)",0.7459,needs_review
+species,Intraamygdaloid Stria Terminalis,llm_accept_top1,HOMBA:10591,HOMBA:10591,stria terminalis,0.7466,needs_review,,HOMBA:10591,stria terminalis,0.7466,needs_review
+species,"Zona incerta, rostral part",llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.7489,needs_review,,HOMBA:10463,zona incerta,0.7489,needs_review
+species,"Anterior commissure, intrabulbar part",llm_accept_top1,HOMBA:10559,HOMBA:10559,anterior commissure,0.75,needs_review,,HOMBA:10559,anterior commissure,0.75,needs_review
+species,Basolateral Intermediate Amygdaloid Nucleus,llm_accept_top1,HOMBA:10366,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,0.6608,needs_review,yes,HOMBA:10366,basolateral nuclear group of amygdala,0.7408,needs_review
+species,"Precentral gyrus, lateral",llm_accept_top1,HOMBA:12114,HOMBA:12114,precentral gyrus,0.7517,needs_review,,HOMBA:12114,precentral gyrus,0.7517,needs_review
+species,"Striate cortex, medial",llm_accept_top1,HOMBA:10269,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.7517,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.7517,needs_review
+species,Paralaminar amygdaloid nucleus,llm_accept_top1,HOMBA:10370,HOMBA:10370,paralaminar nucleus of amygdala,0.7368,needs_review,,HOMBA:10370,paralaminar nucleus of amygdala,0.7368,needs_review
+species,"Medial geniculate body, medial division",llm_accept_top1,HOMBA:10439,HOMBA:10439,medial division of medial geniculate nucleus,0.7527,needs_review,,HOMBA:10439,medial division of medial geniculate nucleus,0.7527,needs_review
+species,"Postcentral gyrus, lateral",llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,0.7539,needs_review,,HOMBA:12132,postcentral gyrus,0.7539,needs_review
+species,"Postcentral gyrus, medial",llm_accept_top1,HOMBA:12132,HOMBA:12132,postcentral gyrus,0.7539,needs_review,,HOMBA:12132,postcentral gyrus,0.7539,needs_review
+species,"Premotor cortex, dorsal",llm_accept_top1,HOMBA:10168,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.7539,needs_review,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.7539,needs_review
+species,"Secondary auditory area, dorsal part",llm_accept_top1,HOMBA:10239,HOMBA:10239,"secondary auditory cortex (auditory belt region, area 42, area TB)",0.7539,needs_review,,HOMBA:10239,"secondary auditory cortex (auditory belt region, area 42, area TB)",0.7539,needs_review
+species,"Cingulate gyrus, anterior",llm_accept_top1,HOMBA:10278,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.758,needs_review,,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.758,needs_review
+species,Central canal,llm_accept_top1,HOMBA:12826,HOMBA:12826,central canal of medulla oblongata,0.7604,needs_review,,HOMBA:12826,central canal of medulla oblongata,0.7604,needs_review
+species,Peduncular lateral hypothalamic nucleus,llm_accept_top1,HOMBA:13070,HOMBA:13070,magnocellular nucleus of lateral hypothalamic area,0.744,needs_review,,HOMBA:13070,magnocellular nucleus of lateral hypothalamic area,0.744,needs_review
+species,Posterior pituitary,llm_accept_top1,HOMBA:AA30783,HOMBA:AA30783,posterior lobe of pituitary body (neurohypophysis),0.7522,needs_review,,HOMBA:AA30783,posterior lobe of pituitary body (neurohypophysis),0.7521,needs_review
+species,Ventral Lateral Posterodorsal Thalamus,llm_accept_top1,HOMBA:10420,HOMBA:10420,ventral lateral nucleus of thalamus,0.7558,needs_review,,HOMBA:10420,ventral lateral nucleus of thalamus,0.7558,needs_review
+species,"Agranular insular cortex, posterior area",llm_accept_top1,HOMBA:10328,HOMBA:10328,agranular insular cortex (area Iag),0.77,needs_review,,HOMBA:10328,agranular insular cortex (area Iag),0.77,needs_review
+species,Agranular insular cortex dorsal area,llm_accept_top1,HOMBA:10328,HOMBA:10328,agranular insular cortex (area Iag),0.7722,needs_review,,HOMBA:10328,agranular insular cortex (area Iag),0.7722,needs_review
+species,"Agranular insular cortex, ventral area",llm_accept_top1,HOMBA:10328,HOMBA:10328,agranular insular cortex (area Iag),0.7722,needs_review,,HOMBA:10328,agranular insular cortex (area Iag),0.7722,needs_review
+species,"Mediodorsal thalamic nucleus, lateral part",llm_accept_top1,HOMBA:10398,HOMBA:10398,mediodorsal nucleus of thalamus,0.7722,needs_review,,HOMBA:10398,mediodorsal nucleus of thalamus,0.7722,needs_review
+species,"Mediodorsal thalamic nucleus, medial part",llm_accept_top1,HOMBA:10398,HOMBA:10398,mediodorsal nucleus of thalamus,0.7722,needs_review,,HOMBA:10398,mediodorsal nucleus of thalamus,0.7722,needs_review
+species,"Superior frontal gyrus, medial",llm_accept_top1,HOMBA:12115,HOMBA:12115,superior frontal gyrus,0.7722,needs_review,,HOMBA:12115,superior frontal gyrus,0.7722,needs_review
+species,Ventral cortical amygdaloid nucleus,llm_accept_top1,HOMBA:10373,HOMBA:10373,cortical nucleus of amygdala,0.7722,needs_review,,HOMBA:10373,cortical nucleus of amygdala,0.7722,needs_review
+species,"Medial geniculate body, dorsal division",llm_accept_top1,HOMBA:10435,HOMBA:10435,dorsal (rostral) division of medial geniculate nucleus,0.772,needs_review,,HOMBA:10435,dorsal (rostral) division of medial geniculate nucleus,0.772,needs_review
+species,Ventral Lateral Posteroventral Thalamus,llm_accept_top1,HOMBA:10420,HOMBA:10420,ventral lateral nucleus of thalamus,0.7648,needs_review,,HOMBA:10420,ventral lateral nucleus of thalamus,0.7648,needs_review
+species,"Medial geniculate body, ventral division",llm_accept_top1,HOMBA:10438,HOMBA:10438,ventral (caudal) division of medial geniculate nucleus,0.7721,needs_review,,HOMBA:10438,ventral (caudal) division of medial geniculate nucleus,0.7721,needs_review
+species,Superior cerebellar peduncle and prerubral field,llm_accept_top1,HOMBA:12354,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),0.7759,needs_review,,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),0.7759,needs_review
+species,"Cerebellum, unspecified",llm_accept_top1,HOMBA:10656,HOMBA:10656,cerebellum,0.7784,needs_review,,HOMBA:10656,cerebellum,0.7784,needs_review
+species,"Anterior commissure, posterior limb",llm_accept_top1,HOMBA:10388,HOMBA:10388,interstitial nucleus of posterior limb of anterior commissure (fundus of striatum),0.7693,needs_review,,HOMBA:10388,interstitial nucleus of posterior limb of anterior commissure (fundus of striatum),0.7693,needs_review
+species,Stria medullaris,llm_accept_top1,HOMBA:10590,HOMBA:10590,stria medullaris of thalamus,0.7827,needs_review,,HOMBA:10590,stria medullaris of thalamus,0.7827,needs_review
+species,Arcuate nucleus,llm_accept_top1,HOMBA:12536,HOMBA:12536,arcuate nucleus of medulla oblongata,0.7869,needs_review,,HOMBA:12536,arcuate nucleus of medulla oblongata,0.7869,needs_review
+species,"Parietal association cortex, posterior area",llm_accept_top1,HOMBA:10214,HOMBA:10214,posterior parietal cortex,0.7726,needs_review,,HOMBA:10214,posterior parietal cortex,0.7726,needs_review
+species,Posterior Commissural Nuclei,llm_accept_top1,HOMBA:12194,HOMBA:10375,posterior (caudal) cortical nucleus of amygdala,0.7823,needs_review,,HOMBA:10375,posterior (caudal) cortical nucleus of amygdala,0.7823,needs_review
+species,Commissural stria terminalis,llm_accept_top1,HOMBA:AA30882,HOMBA:10591,stria terminalis,0.7827,needs_review,,HOMBA:10591,stria terminalis,0.7827,needs_review
+species,"Frontal orbital cortex, anterior",llm_accept_top1,HOMBA:10161,HOMBA:10194,orbital frontal cortex,0.7184,needs_review,yes,HOMBA:10161,frontal cortex,0.7983,needs_review
+species,Transverse fibers of the pons,llm_accept_top1,HOMBA:12795,HOMBA:AA30879,transverse fibers,0.7938,needs_review,,HOMBA:AA30879,transverse fibers,0.7938,needs_review
+species,Cuneate Gracile Nuclei,llm_accept_top1,HOMBA:12587,HOMBA:12592,gracile nucleus,0.7252,needs_review,yes,HOMBA:12587,sensory relay nuclei in medulla oblongata,0.8052,needs_review
+species,Preoptic area,llm_accept_top1,HOMBA:10468,HOMBA:10468,preoptic region of HTH,0.815,needs_review,,HOMBA:10468,preoptic region of HTH,0.815,needs_review
+species,Medullar Reticular Nucleus,llm_accept_top1,HOMBA:12640,HOMBA:12640,"medullary reticular nucleus, ventral division (medial reticular nucleus)",0.8162,needs_review,,HOMBA:12640,"medullary reticular nucleus, ventral division (medial reticular nucleus)",0.8162,needs_review
+species,Retrosplenial granular area,llm_accept_top1,HOMBA:10325,HOMBA:10325,"granular retrosplenial cortex (area 29, RSg)",0.8155,needs_review,,HOMBA:10325,"granular retrosplenial cortex (area 29, RSg)",0.8155,needs_review
+species,"Basal forebrain region, unspecified",llm_accept_top1,HOMBA:10349,HOMBA:10349,basal forebrain,0.7745,needs_review,,HOMBA:10349,basal forebrain,0.7838,needs_review
+species,"Medial geniculate body, marginal zone",llm_accept_top1,HOMBA:266441523,HOMBA:266441523,marginal zone of medial geniculate nucleus,0.8085,needs_review,,HOMBA:266441523,marginal zone of medial geniculate nucleus,0.8085,needs_review
+species,Medial geniculate complex (marginal zone),llm_accept_top1,HOMBA:266441523,HOMBA:266441523,marginal zone of medial geniculate nucleus,0.8091,needs_review,,HOMBA:266441523,marginal zone of medial geniculate nucleus,0.8091,needs_review
+species,"Medial geniculate body, suprageniculate nucleus",llm_accept_top1,HOMBA:10434,HOMBA:10434,medial geniculate nucleus,0.8202,needs_review,,HOMBA:10434,medial geniculate nucleus,0.8202,needs_review
+species,Posterior Interstitial Nucleus,llm_accept_top1,HOMBA:12194,HOMBA:12194,interstitial nucleus of posterior commissure (nucleus of posterior commissure),0.806,needs_review,,HOMBA:12194,interstitial nucleus of posterior commissure (nucleus of posterior commissure),0.806,needs_review
+species,"Precentral gyrus, medial/supplementary motor area",llm_accept_top1,HOMBA:AA30012,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.8278,needs_review,,HOMBA:AA30012,medial division of area 6 (supplementary motor area),0.8278,needs_review
+species,Frontal medial cortex,llm_accept_top1,HOMBA:10195,HOMBA:10195,medial orbital frontal cortex (area 14),0.8374,needs_review,,HOMBA:10195,medial orbital frontal cortex (area 14),0.8374,needs_review
+species,"Olfactory bulb, unspecified",llm_accept_top1,HOMBA:10307,HOMBA:10307,olfactory bulb,0.8413,needs_review,,HOMBA:10307,olfactory bulb,0.8413,needs_review
+species,Medial orbital area,llm_accept_top1,HOMBA:12122,HOMBA:12122,medial orbital gyrus,0.8166,needs_review,,HOMBA:12122,medial orbital gyrus,0.8166,needs_review
+species,"External medullary lamina, unspecified",llm_accept_top1,HOMBA:12038,HOMBA:12038,external medullary lamina of thalamus,0.8336,needs_review,,HOMBA:12038,external medullary lamina of thalamus,0.8336,needs_review
+species,Spinal Trigeminal Nucleus Oral,llm_accept_top1,HOMBA:12447,HOMBA:12447,"spinal nucleus of trigeminal nerve, rostral subnucleus",0.8523,needs_review,,HOMBA:12447,"spinal nucleus of trigeminal nerve, rostral subnucleus",0.8523,needs_review
+species,"Anteroventral thalamic nucleus, ventrolateral part",llm_accept_top1,HOMBA:10395,HOMBA:10395,anteroventral nucleus of thalamus,0.851,needs_review,,HOMBA:10395,anteroventral nucleus of thalamus,0.851,needs_review
+species,Copula of the Pyramis,llm_accept_top1,HOMBA:AA30418,HOMBA:AA30418,"lobule VIIIB (biventral lobule, part 2, copula pyramis)",0.7911,needs_review,,HOMBA:AA30418,"lobule VIIIB (biventral lobule, part 2, copula pyramis)",0.7911,needs_review
+species,Lateral orbital area,llm_accept_top1,HOMBA:12125,HOMBA:12125,lateral orbital gyrus,0.8291,needs_review,,HOMBA:12125,lateral orbital gyrus,0.8291,needs_review
+species,Septum and diagonal band,llm_accept_top1,HOMBA:12034,HOMBA:12034,diagonal band,0.8542,needs_review,,HOMBA:12034,diagonal band,0.8542,needs_review
+species,Cornu ammonis 1,llm_accept_top1,HOMBA:10296,HOMBA:10296,hippocampal proper (Cornu Ammonis),0.8567,needs_review,,HOMBA:10296,hippocampal proper (Cornu Ammonis),0.8567,needs_review
+species,Cornu ammonis 2,llm_accept_top1,HOMBA:10296,HOMBA:10296,hippocampal proper (Cornu Ammonis),0.8567,needs_review,,HOMBA:10296,hippocampal proper (Cornu Ammonis),0.8567,needs_review
+species,Cornu ammonis 3,llm_accept_top1,HOMBA:10296,HOMBA:10296,hippocampal proper (Cornu Ammonis),0.8567,needs_review,,HOMBA:10296,hippocampal proper (Cornu Ammonis),0.8567,needs_review
+species,Periventricular gray,llm_accept_top1,HOMBA:AA30845,HOMBA:AA30845,periventricular gray of pons,0.8567,needs_review,,HOMBA:AA30845,periventricular gray of pons,0.8567,needs_review
+species,Retro-mammillary nucleus,llm_accept_top1,HOMBA:10498,HOMBA:10498,mammillary nuclear complex,0.8567,needs_review,,HOMBA:10498,mammillary nuclear complex,0.8567,needs_review
+species,Septum Diagonal Band,llm_accept_top1,HOMBA:12034,HOMBA:12034,diagonal band,0.8567,needs_review,,HOMBA:12034,diagonal band,0.8567,needs_review
+species,Ventromedial occipital cortex,llm_accept_top1,HOMBA:10270,HOMBA:AA30826,ventromedial extrastriate occipital cortex,0.7836,needs_review,yes,HOMBA:10270,extrastriate occipital cortex,0.8636,needs_review
+species,"Inferior colliculus, commissure",llm_accept_top1,HOMBA:12333,HOMBA:12333,commissure of inferior colliculus,0.8278,needs_review,,HOMBA:12333,commissure of inferior colliculus,0.8278,needs_review
+species,"Anteroventral thalamic nucleus, dorsomedial part",llm_accept_top1,HOMBA:10395,HOMBA:10395,anteroventral nucleus of thalamus,0.87,needs_review,,HOMBA:10395,anteroventral nucleus of thalamus,0.87,needs_review
+species,"Inferior colliculus, brachium",llm_accept_top1,HOMBA:12327,HOMBA:12327,brachium of inferior colliculus,0.8366,needs_review,,HOMBA:12327,brachium of inferior colliculus,0.8366,needs_review
+species,Parvicellular and Intermediate Reticular Nuclei,llm_accept_top1,HOMBA:12618,HOMBA:12618,parvicellular reticular nucleus,0.8536,needs_review,,HOMBA:12618,parvicellular reticular nucleus,0.8536,needs_review
+species,Internal medullary lamina,llm_accept_top1,HOMBA:12062,HOMBA:12062,internal medullary lamina of globus pallidus,0.8775,needs_review,,HOMBA:12062,internal medullary lamina of globus pallidus,0.8775,needs_review
+species,"Mediodorsal thalamic nucleus, central part",llm_accept_top1,HOMBA:10398,HOMBA:10398,mediodorsal nucleus of thalamus,0.8775,needs_review,,HOMBA:10398,mediodorsal nucleus of thalamus,0.8775,needs_review
+species,Habenula (lateral part),llm_accept_top1,HOMBA:10452,HOMBA:10452,habenular nuclei,0.88,needs_review,,HOMBA:10452,habenular nuclei,0.88,needs_review
+species,Habenula (medial part),llm_accept_top1,HOMBA:10452,HOMBA:10452,habenular nuclei,0.88,needs_review,,HOMBA:10452,habenular nuclei,0.88,needs_review
+species,Paraventricular thalamic nuclei (anterior and posterior),llm_accept_top1,HOMBA:10457,HOMBA:10457,paraventricular nucleus of thalamus,0.88,needs_review,,HOMBA:10457,paraventricular nucleus of thalamus,0.88,needs_review
+species,Zona incerta (caudal part),llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.88,needs_review,,HOMBA:10463,zona incerta,0.88,needs_review
+species,Zona incerta (dorsal part),llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.88,needs_review,,HOMBA:10463,zona incerta,0.88,needs_review
+species,Zona incerta (rostral part),llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.88,needs_review,,HOMBA:10463,zona incerta,0.88,needs_review
+species,Zona incerta (ventral part),llm_accept_top1,HOMBA:10463,HOMBA:10463,zona incerta,0.88,needs_review,,HOMBA:10463,zona incerta,0.88,needs_review
+species,Lateral Dorsal Thalamus,llm_accept_top1,HOMBA:10396,HOMBA:10391,dorsal thalamus,0.9033,modifier_conflict,yes,HOMBA:10396,lateral dorsal nucleus of thalamus,0.8669,needs_review
+species,Central Medial Thalamus,llm_accept_top1,HOMBA:10445,HOMBA:10445,central medial nucleus of thalamus,0.8689,needs_review,,HOMBA:10445,central medial nucleus of thalamus,0.8689,needs_review
+species,Ventral Medial Thalamus,llm_accept_top1,HOMBA:10427,HOMBA:10427,ventral medial nucleus of thalamus,0.8689,needs_review,,HOMBA:10427,ventral medial nucleus of thalamus,0.8689,needs_review
+species,Pyramidal Tract Decussation,llm_accept_top1,HOMBA:12772,HOMBA:12772,pyramidal decussation,0.8954,needs_review,,HOMBA:12772,pyramidal decussation,0.8958,needs_review
+species,Lateral Dorsal Tegmentum,llm_accept_top1,HOMBA:AA30457,HOMBA:AA30451,dorsal cell group of medulla tegmentum,0.5593,modifier_conflict,yes,HOMBA:AA30457,lateral cell group of medulla tegmentum,0.5697,modifier_conflict
+species,Ventroposterior Medial and Lateral Thalamus,llm_accept_top1,HOMBA:10420,HOMBA:10408,lateral posterior nucleus of thalamus,0.6275,modifier_conflict,yes,HOMBA:10420,ventral lateral nucleus of thalamus,0.588,modifier_conflict
+species,Posterior thalamic nuclear group (triangular part),llm_accept_top1,HOMBA:10440,HOMBA:10440,posterior nucleus of thalamus,0.6289,modifier_conflict,,HOMBA:10440,posterior nucleus of thalamus,0.6289,modifier_conflict
+species,Ventromedial thalamic nucleus (posterior and basal),llm_accept_top1,HOMBA:10423,HOMBA:10427,ventral medial nucleus of thalamus,0.88,needs_review,yes,HOMBA:10440,posterior nucleus of thalamus,0.7021,modifier_conflict
+species,Lateral Dorsal Amygdaloid Nucleus,llm_accept_top1,HOMBA:10367,HOMBA:146034710,dorsal division of anterior amygdaloid area,0.5707,modifier_conflict,yes,HOMBA:10367,lateral nucleus of amygdala,0.7036,modifier_conflict
+species,"Dorsal cochlear nucleus, fusiform and granule layer",llm_accept_top1,HOMBA:12438,HOMBA:12438,dorsal cochlear nucleus,0.732,modifier_conflict,,HOMBA:12438,dorsal cochlear nucleus,0.732,modifier_conflict
+species,Ventral Lateral Anterior Thalamus,llm_accept_top1,HOMBA:10417,HOMBA:10417,ventral anterior nucleus of thalamus,0.7334,modifier_conflict,,HOMBA:10417,ventral anterior nucleus of thalamus,0.7334,modifier_conflict
+species,Lateral amygdaloid nucleus (dorsal),llm_accept_top1,HOMBA:10367,HOMBA:10367,lateral nucleus of amygdala,0.7323,modifier_conflict,,HOMBA:10367,lateral nucleus of amygdala,0.7323,modifier_conflict
+species,Lateral amygdaloid nucleus (ventral),llm_accept_top1,HOMBA:10367,HOMBA:10367,lateral nucleus of amygdala,0.7323,modifier_conflict,,HOMBA:10367,lateral nucleus of amygdala,0.7323,modifier_conflict
+species,"Ventral posterior nucleus of the thalamus, parvicellular part",llm_accept_top1,HOMBA:AA30312,HOMBA:AA30312,parvicellular nucleus of posterior thalamus,0.7634,modifier_conflict,,HOMBA:AA30312,parvicellular nucleus of posterior thalamus,0.7633,modifier_conflict
+species,"Ventral cochlear nucleus, granule cell layer",llm_accept_top1,HOMBA:12439,HOMBA:12439,ventral cochlear nucleus,0.7911,modifier_conflict,,HOMBA:12439,ventral cochlear nucleus,0.7911,modifier_conflict
+species,"Dorsal cochlear nucleus, molecular layer",llm_accept_top1,HOMBA:12438,HOMBA:12438,dorsal cochlear nucleus,0.8198,modifier_conflict,,HOMBA:12438,dorsal cochlear nucleus,0.8198,modifier_conflict
+species,Medial geniculate complex (dorsal division),llm_accept_top1,HOMBA:AA30307,HOMBA:AA30307,medial geniculate nuclear complex,0.8258,modifier_conflict,,HOMBA:AA30307,medial geniculate nuclear complex,0.8258,modifier_conflict
+species,Medial geniculate complex (ventral division),llm_accept_top1,HOMBA:AA30307,HOMBA:AA30307,medial geniculate nuclear complex,0.8258,modifier_conflict,,HOMBA:AA30307,medial geniculate nuclear complex,0.8258,modifier_conflict
+species,"Reticular (pre)thalamic nucleus, auditory segment",llm_accept_top1,HOMBA:10464,HOMBA:10464,reticular nucleus of thalamus,0.8453,modifier_conflict,,HOMBA:10464,reticular nucleus of thalamus,0.8453,modifier_conflict
+species,Intermediate+ventral Lateral Lemniscus Nuclei,llm_accept_top1,HOMBA:12456,HOMBA:12456,intermediate nucleus of lateral lemniscus,0.84,modifier_conflict,,HOMBA:12456,intermediate nucleus of lateral lemniscus,0.84,modifier_conflict
+species,External globus pallidus (lateral part),llm_accept_top1,HOMBA:10343,HOMBA:10343,external division of globus pallidus,0.8262,modifier_conflict,,HOMBA:10343,external division of globus pallidus,0.8262,modifier_conflict
+species,External globus pallidus (medial part),llm_accept_top1,HOMBA:10343,HOMBA:10343,external division of globus pallidus,0.8262,modifier_conflict,,HOMBA:10343,external division of globus pallidus,0.8262,modifier_conflict
+species,Dorsal Paragigantocellular Reticular Nucleus,llm_accept_top1,HOMBA:12628,HOMBA:12628,dorsal paragigantocellular nucleus,0.8936,modifier_conflict,,HOMBA:12628,dorsal paragigantocellular nucleus,0.8936,modifier_conflict
+species,"Ventral cochlear nucleus, posterior part",llm_accept_top1,HOMBA:12439,HOMBA:12439,ventral cochlear nucleus,0.8965,modifier_conflict,,HOMBA:12439,ventral cochlear nucleus,0.8965,modifier_conflict
+species,"Dorsal cochlear nucleus, deep core",llm_accept_top1,HOMBA:12438,HOMBA:12438,dorsal cochlear nucleus,0.9,modifier_conflict,,HOMBA:12438,dorsal cochlear nucleus,0.9,modifier_conflict
+species,"Globus pallidus external, lateral part",llm_accept_top1,HOMBA:10343,HOMBA:10343,external division of globus pallidus,0.9012,modifier_conflict,,HOMBA:10343,external division of globus pallidus,0.9012,modifier_conflict
+species,"Globus pallidus external, medial part",llm_accept_top1,HOMBA:10343,HOMBA:10343,external division of globus pallidus,0.9142,modifier_conflict,,HOMBA:10343,external division of globus pallidus,0.9142,modifier_conflict
+species,"Reticular (pre)thalamic nucleus, unspecified",llm_accept_top1,HOMBA:10464,HOMBA:10464,reticular nucleus of thalamus,0.9375,modifier_conflict,,HOMBA:10464,reticular nucleus of thalamus,0.9375,modifier_conflict
+species,Lateral septal nucleus (rostral division),llm_accept_top1,HOMBA:10352,HOMBA:10352,lateral septal nuclear complex,1.0,modifier_conflict,,HOMBA:10352,lateral septal nuclear complex,1.0,modifier_conflict
+species,Reticular (pre)thalamic nucleus,llm_accept_top1,HOMBA:10464,HOMBA:10464,reticular nucleus of thalamus,1.0,modifier_conflict,,HOMBA:10464,reticular nucleus of thalamus,1.0,modifier_conflict
+species,Supra Geniculate,llm_accept_top1,HOMBA:AA30307,HOMBA:AA30307,medial geniculate nuclear complex,0.4299,low_confidence,,HOMBA:AA30307,medial geniculate nuclear complex,0.4299,low_confidence
+species,Ventral Lateral X Thalamus,llm_accept_top1,HOMBA:10420,HOMBA:10420,ventral lateral nucleus of thalamus,0.4438,low_confidence,,HOMBA:10420,ventral lateral nucleus of thalamus,0.4439,low_confidence
+species,Fields of Forel,llm_accept_top1,HOMBA:10462,HOMBA:10462,nucleus of the field of Forel,0.454,low_confidence,,HOMBA:10462,nucleus of the field of Forel,0.454,low_confidence
+species,Subcallosal cortex,llm_accept_top1,HOMBA:10281,HOMBA:10281,subgenual (subcallosal) cingulate cortex (area 25),0.4919,low_confidence,,HOMBA:10281,subgenual (subcallosal) cingulate cortex (area 25),0.4919,low_confidence
+species,Ventrolateral Tegmentum,llm_accept_top1,HOMBA:12416,HOMBA:12416,pontine tegmentum,0.5082,low_confidence,,HOMBA:12416,pontine tegmentum,0.5082,low_confidence
+species,Centromedian and parafascicular thalamic complex,llm_accept_top1,HOMBA:10450,HOMBA:10450,parafascicular nucleus of thalamus,0.5069,low_confidence,,HOMBA:10450,parafascicular nucleus of thalamus,0.5068,low_confidence
+species,Visceral Motor Nuclei,llm_accept_top1,HOMBA:12196,HOMBA:12196,efferent nuclei of the cranial nerves in midbrain,0.5149,low_confidence,,HOMBA:12196,efferent nuclei of the cranial nerves in midbrain,0.5149,low_confidence
+species,Ventrolateral orbital area,llm_accept_top1,HOMBA:AA30533,HOMBA:AA30533,orbital gyri,0.5571,low_confidence,,HOMBA:AA30533,orbital gyri,0.5172,low_confidence
+species,Dorsolateral orbital area,llm_accept_top1,HOMBA:AA30533,HOMBA:AA30825,"dorsal fourth visual area (dorsolateral visual cortex, DL)",0.5366,low_confidence,,HOMBA:AA30825,"dorsal fourth visual area (dorsolateral visual cortex, DL)",0.5366,low_confidence
+species,Trapezoid Bundle Region,llm_accept_top1,HOMBA:12796,HOMBA:12796,trapezoid body,0.5289,low_confidence,,HOMBA:12796,trapezoid body,0.5288,low_confidence
+species,Superior periolivary region,llm_accept_top1,HOMBA:12462,HOMBA:12462,superior olivary complex,0.5311,low_confidence,,HOMBA:12462,superior olivary complex,0.5311,low_confidence
+species,Prelimbic area,llm_accept_top1,HOMBA:10280,HOMBA:10280,"pregenual cingulate  cortex (area 32, prelimbic cortex)",0.528,low_confidence,,HOMBA:10280,"pregenual cingulate  cortex (area 32, prelimbic cortex)",0.528,low_confidence
+species,Infralimbic area,llm_accept_top1,HOMBA:AA30037,HOMBA:AA30037,rostrodorsal division of A25 (infralimbic cortex),0.5474,low_confidence,,HOMBA:AA30037,rostrodorsal division of A25 (infralimbic cortex),0.5474,low_confidence
+species,Peri-basal region,llm_accept_top1,HOMBA:10349,HOMBA:10349,basal forebrain,0.5525,low_confidence,,HOMBA:10349,basal forebrain,0.5525,low_confidence
+species,Paraventricular Posterior Thalamus,llm_accept_top1,HOMBA:10457,HOMBA:10457,paraventricular nucleus of thalamus,0.5627,low_confidence,,HOMBA:10457,paraventricular nucleus of thalamus,0.5627,low_confidence
+species,Paraventricular Anterior Thalamus,llm_accept_top1,HOMBA:10457,HOMBA:10457,paraventricular nucleus of thalamus,0.5714,low_confidence,,HOMBA:10457,paraventricular nucleus of thalamus,0.5714,low_confidence
+species,"Secondary visual area, lateral part",llm_accept_top1,HOMBA:AA30827,HOMBA:AA30827,"ventral secondary visual cortex (ventral area 18, ventral area OB, area 18b)",0.5737,low_confidence,,HOMBA:AA30827,"ventral secondary visual cortex (ventral area 18, ventral area OB, area 18b)",0.5737,low_confidence
+species,"Secondary visual area, medial part",llm_accept_top1,HOMBA:AA30823,HOMBA:AA30823,"dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)",0.575,low_confidence,,HOMBA:AA30823,"dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)",0.575,low_confidence
+corpus,Lateral intraparietal area (dorsal),llm_reject_top1,,HOMBA:267498979,lateral subdivision of area 7,0.5793,modifier_conflict,yes,HOMBA:12227,"dorsal raphe nucleus, lateral division",0.6014,needs_review
+corpus,Prefrontal area 46,llm_out_of_scope_for_rcs,,HOMBA:10184,"rostroventral division of DFC (area 46, DFCv)",0.6292,needs_review,,HOMBA:10184,"rostroventral division of DFC (area 46, DFCv)",0.6292,needs_review
+corpus,Posterior opercular area POS2,llm_reject_top1,,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.5,low_confidence,yes,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.6392,needs_review
+corpus,Ventral intraparietal area,llm_reject_top1,,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.5,low_confidence,yes,HOMBA:12261,ventral tegmental area,0.6667,needs_review
+corpus,Central opercular cortex (posterior),llm_reject_top1,,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.5,low_confidence,yes,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),0.646,needs_review
+corpus,Central opercular cortex (anterior),llm_reject_top1,,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),0.5,low_confidence,yes,HOMBA:10318,lateral (rostral) entorhinal cortex,0.6516,needs_review
+corpus,Parietal area PF,llm_out_of_scope_for_rcs,,HOMBA:10226,"rostral division of IPC (IPCr, area 40, area PF)",0.6613,needs_review,,HOMBA:10226,"rostral division of IPC (IPCr, area 40, area PF)",0.6613,needs_review
+corpus,Somatosensory area 3a,llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6651,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6651,needs_review
+corpus,Somatosensory area 3b,llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6651,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6651,needs_review
+corpus,Visual area V3A,llm_out_of_scope_for_rcs,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review
+corpus,Visual area V3B,llm_out_of_scope_for_rcs,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review
+corpus,Visual area V4,llm_out_of_scope_for_rcs,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review
+corpus,Visual area V6A,llm_out_of_scope_for_rcs,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review
+corpus,Visual area V8,llm_out_of_scope_for_rcs,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review,,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.6651,needs_review
+corpus,Intracalcarine cortex (superior),llm_reject_top1,,HOMBA:10243,caudal division of area 22,0.5,low_confidence,yes,HOMBA:10215,superior medial parietal cortex,0.6664,needs_review
+corpus,A8 catecholaminergic cell group,llm_out_of_scope_for_rcs,,HOMBA:AA30843,A8 dopamine cell group,0.6742,needs_review,,HOMBA:AA30843,A8 dopamine cell group,0.6742,needs_review
+corpus,Somatosensory area 1,llm_out_of_scope_for_rcs,,HOMBA:AA30014,area 1 of primary somatosensory cortex,0.6339,needs_review,,HOMBA:AA30014,area 1 of primary somatosensory cortex,0.6339,needs_review
+corpus,Somatosensory area 2,llm_out_of_scope_for_rcs,,HOMBA:AA30015,area 2 of primary somatosensory cortex,0.6339,needs_review,,HOMBA:AA30015,area 2 of primary somatosensory cortex,0.6339,needs_review
+corpus,Intracalcarine cortex (inferior),llm_reject_top1,,HOMBA:12879,"caudal (posterior, inferior) medullary velum",0.5,low_confidence,yes,HOMBA:10225,inferior lateral parietal cortex,0.6815,needs_review
+corpus,Anterior ventral insular area,llm_reject_top1,,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.5,low_confidence,yes,HOMBA:AA30890,anterior (ventral) spinal artery,0.7074,needs_review
+corpus,Posterior insular area,llm_reject_top1,,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.5,low_confidence,yes,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.7393,needs_review
+corpus,Accessory trigeminal nucleus,llm_reject_top1,,HOMBA:12419,accessory facial nucleus,0.7608,needs_review,,HOMBA:12419,accessory facial nucleus,0.7608,needs_review
+corpus,Temporal horn of the lateral ventricle,llm_reject_top1,,HOMBA:10597,rostral horn of lateral ventricles,0.8288,needs_review,,HOMBA:10597,rostral horn of lateral ventricles,0.8288,needs_review
+corpus,Medial dorsal thalamic nucleus,llm_reject_top1,,HOMBA:10398,mediodorsal nucleus of thalamus,1.0,modifier_conflict,yes,HOMBA:10445,central medial nucleus of thalamus,0.7753,modifier_conflict
+corpus,Ventralis intermedius,llm_reject_top1,,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.3762,low_confidence,,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.3762,low_confidence
+corpus,Frontoinsular area,llm_reject_top1,,HOMBA:12176,insular lobe,0.4375,low_confidence,,HOMBA:12176,insular lobe,0.4375,low_confidence
+corpus,Prefrontal area 10pp,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4595,low_confidence,,HOMBA:10172,prefrontal cortex,0.4595,low_confidence
+corpus,Area 55b,llm_out_of_scope_for_rcs,,HOMBA:AA30011,area 55b of premotor cortex,0.4681,low_confidence,,HOMBA:AA30011,area 55b of premotor cortex,0.4681,low_confidence
+corpus,Paracentral area 5mv,llm_out_of_scope_for_rcs,,HOMBA:10216,"rostral division of SPC (area 5, area PE)",0.4125,low_confidence,,HOMBA:10216,"rostral division of SPC (area 5, area PE)",0.4125,low_confidence
+corpus,Paracentral area 5L,llm_out_of_scope_for_rcs,,HOMBA:12126,"paracentral lobule, rostral part",0.4649,low_confidence,,HOMBA:12126,"paracentral lobule, rostral part",0.4649,low_confidence
+corpus,Paracentral area 5m,llm_out_of_scope_for_rcs,,HOMBA:12126,"paracentral lobule, rostral part",0.4649,low_confidence,,HOMBA:12126,"paracentral lobule, rostral part",0.4649,low_confidence
+corpus,Prefrontal area 10d,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 10r,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 47l,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 47m,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 47r,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 47s,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 8Ad,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 8Av,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 8BL,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 8BM,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence,,HOMBA:10172,prefrontal cortex,0.4661,low_confidence
+corpus,Prefrontal area 8C,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4732,low_confidence,,HOMBA:10172,prefrontal cortex,0.4731,low_confidence
+corpus,Prefrontal area 9a,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4732,low_confidence,,HOMBA:10172,prefrontal cortex,0.4731,low_confidence
+corpus,Prefrontal area 9m,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4732,low_confidence,,HOMBA:10172,prefrontal cortex,0.4731,low_confidence
+corpus,Prefrontal area 9p,llm_out_of_scope_for_rcs,,HOMBA:10172,prefrontal cortex,0.4732,low_confidence,,HOMBA:10172,prefrontal cortex,0.4731,low_confidence
+corpus,Vestigial hippocampal sulcus,llm_reject_top1,,HOMBA:10560,hippocampal commissure,0.4884,low_confidence,,HOMBA:10560,hippocampal commissure,0.4884,low_confidence
+corpus,Cingulate area 24dd,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4884,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4884,low_confidence
+corpus,Cingulate area 24dv,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4884,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4884,low_confidence
+corpus,Opercular area OP2-3,llm_out_of_scope_for_rcs,,HOMBA:266441161,opercular subdivision of area 44,0.4927,low_confidence,,HOMBA:266441161,opercular subdivision of area 44,0.4927,low_confidence
+corpus,Premotor area 6mp,llm_out_of_scope_for_rcs,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5037,low_confidence,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5036,low_confidence
+corpus,Cingulate area 23c,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence
+corpus,Cingulate area 23d,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence
+corpus,Cingulate area 31a,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence
+corpus,Cingulate area a24,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence
+corpus,Cingulate area p24,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.4934,low_confidence
+corpus,Premotor area 6a,llm_out_of_scope_for_rcs,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence
+corpus,Premotor area 6d,llm_out_of_scope_for_rcs,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence
+corpus,Premotor area 6m,llm_out_of_scope_for_rcs,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence
+corpus,Premotor area 6r,llm_out_of_scope_for_rcs,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence
+corpus,Premotor area 6v,llm_out_of_scope_for_rcs,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence,,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",0.5111,low_confidence
+corpus,Centre median parafascicular complex,llm_reject_top1,,HOMBA:10428,posterior nuclear complex of thalamus,0.5019,low_confidence,,HOMBA:10428,posterior nuclear complex of thalamus,0.5019,low_confidence
+corpus,Laterodorsal tegmentum,llm_reject_top1,,HOMBA:12416,pontine tegmentum,0.5003,low_confidence,,HOMBA:12416,pontine tegmentum,0.5002,low_confidence
+corpus,Temporal area STSda,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.4981,low_confidence,,HOMBA:12139,temporal lobe,0.498,low_confidence
+corpus,Temporal area STSdp,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.4981,low_confidence,,HOMBA:12139,temporal lobe,0.498,low_confidence
+corpus,Temporal area STSva,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.4981,low_confidence,,HOMBA:12139,temporal lobe,0.498,low_confidence
+corpus,Temporal area STSvp,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.4981,low_confidence,,HOMBA:12139,temporal lobe,0.498,low_confidence
+corpus,Temporal area STGg,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5051,low_confidence,,HOMBA:12139,temporal lobe,0.5051,low_confidence
+corpus,Supracalcarine cortex,llm_reject_top1,,HOMBA:13322,dorsolateral temporal cortex,0.5135,low_confidence,,HOMBA:13322,dorsolateral temporal cortex,0.5135,low_confidence
+corpus,Temporal area TE1a,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5076,low_confidence,,HOMBA:12139,temporal lobe,0.5076,low_confidence
+corpus,Temporal area TE1m,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5076,low_confidence,,HOMBA:12139,temporal lobe,0.5076,low_confidence
+corpus,Temporal area TE1p,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5076,low_confidence,,HOMBA:12139,temporal lobe,0.5076,low_confidence
+corpus,Temporal area TE2a,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5076,low_confidence,,HOMBA:12139,temporal lobe,0.5076,low_confidence
+corpus,Forel's field H,llm_out_of_scope_for_rcs,,HOMBA:AA30325,prerubral field (field H3),0.5177,low_confidence,,HOMBA:AA30325,prerubral field (field H3),0.5177,low_confidence
+corpus,Temporal area PSL,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5127,low_confidence,,HOMBA:12139,temporal lobe,0.5127,low_confidence
+corpus,Temporal area TGd,llm_out_of_scope_for_rcs,,HOMBA:12139,temporal lobe,0.5127,low_confidence,,HOMBA:12139,temporal lobe,0.5127,low_confidence
+corpus,Opercular area OP1,llm_out_of_scope_for_rcs,,HOMBA:266441161,opercular subdivision of area 44,0.5208,low_confidence,,HOMBA:266441161,opercular subdivision of area 44,0.5208,low_confidence
+corpus,Opercular area OP4,llm_out_of_scope_for_rcs,,HOMBA:266441161,opercular subdivision of area 44,0.5278,low_confidence,,HOMBA:266441161,opercular subdivision of area 44,0.5278,low_confidence
+corpus,Area PH,llm_reject_top1,,HOMBA:10226,"rostral division of IPC (IPCr, area 40, area PF)",0.5375,low_confidence,,HOMBA:10226,"rostral division of IPC (IPCr, area 40, area PF)",0.5375,low_confidence
+corpus,Precuneal cortex,llm_reject_top1,,HOMBA:10159,cerebral cortex,0.5,low_confidence,yes,HOMBA:10172,prefrontal cortex,0.5343,low_confidence
+corpus,Prefrontal area 9-46d,llm_out_of_scope_for_rcs,,HOMBA:10181,intermediate division of DFC (area 9/46),0.545,low_confidence,,HOMBA:10181,intermediate division of DFC (area 9/46),0.545,low_confidence
+corpus,Prefrontal area 9-46v,llm_out_of_scope_for_rcs,,HOMBA:10181,intermediate division of DFC (area 9/46),0.545,low_confidence,,HOMBA:10181,intermediate division of DFC (area 9/46),0.545,low_confidence
+corpus,A1 catecholaminergic cell group,llm_out_of_scope_for_rcs,,HOMBA:AA30843,A8 dopamine cell group,0.5467,low_confidence,,HOMBA:AA30843,A8 dopamine cell group,0.5466,low_confidence
+corpus,A4 catecholaminergic cell group,llm_out_of_scope_for_rcs,,HOMBA:AA30843,A8 dopamine cell group,0.5467,low_confidence,,HOMBA:AA30843,A8 dopamine cell group,0.5466,low_confidence
+corpus,A5 catecholaminergic cell group,llm_out_of_scope_for_rcs,,HOMBA:AA30843,A8 dopamine cell group,0.5467,low_confidence,,HOMBA:AA30843,A8 dopamine cell group,0.5466,low_confidence
+corpus,Insular area FOP1,llm_out_of_scope_for_rcs,,HOMBA:12176,insular lobe,0.5475,low_confidence,,HOMBA:12176,insular lobe,0.5475,low_confidence
+corpus,Insular area FOP2,llm_out_of_scope_for_rcs,,HOMBA:12176,insular lobe,0.5475,low_confidence,,HOMBA:12176,insular lobe,0.5475,low_confidence
+corpus,Insular area FOP3,llm_out_of_scope_for_rcs,,HOMBA:12176,insular lobe,0.5475,low_confidence,,HOMBA:12176,insular lobe,0.5475,low_confidence
+corpus,Insular area FOP4,llm_out_of_scope_for_rcs,,HOMBA:12176,insular lobe,0.5475,low_confidence,,HOMBA:12176,insular lobe,0.5475,low_confidence
+corpus,Insular area FOP5,llm_out_of_scope_for_rcs,,HOMBA:12176,insular lobe,0.5475,low_confidence,,HOMBA:12176,insular lobe,0.5475,low_confidence
+corpus,Anterior intraparietal area,llm_reject_top1,,HOMBA:10362,anterior amygdaloid area,0.5068,low_confidence,yes,HOMBA:AA30484,rostral (anterior) branch of anterior commissure,0.5493,low_confidence
+corpus,Cuneal cortex,llm_reject_top1,,HOMBA:AA30018,posterior limiting parietal cortex,0.5133,low_confidence,yes,HOMBA:12308,external shell (cortex) of inferior colliculus,0.5664,low_confidence
+corpus,Temporal area TF,llm_out_of_scope_for_rcs,,HOMBA:10260,lateral division of PHC (area TF),0.5688,low_confidence,,HOMBA:10260,lateral division of PHC (area TF),0.5687,low_confidence
+corpus,Parietal area IP0,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Parietal area IP1,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Parietal area IP2,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Parietal area PFt,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Parietal area PGi,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Parietal area PGp,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Parietal area PGs,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5659,low_confidence,,HOMBA:12131,parietal lobe,0.5658,low_confidence
+corpus,Frontal area SFL,llm_out_of_scope_for_rcs,,HOMBA:12113,frontal lobe,0.5716,low_confidence,,HOMBA:12113,frontal lobe,0.5715,low_confidence
+corpus,Parietal area PFm,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5759,low_confidence,,HOMBA:12131,parietal lobe,0.5758,low_confidence
+corpus,Parietal area PFop,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.5776,low_confidence,,HOMBA:12131,parietal lobe,0.5776,low_confidence
+corpus,Parietal area PFcm,llm_out_of_scope_for_rcs,,HOMBA:12131,parietal lobe,0.579,low_confidence,,HOMBA:12131,parietal lobe,0.579,low_confidence
+species,Centrolateral and Paracentral Thalamus,llm_reject_top1,,HOMBA:10443,rostral intralaminar nuclei of thalamus,0.5872,low_confidence,,HOMBA:10443,rostral intralaminar nuclei of thalamus,0.5871,low_confidence
+species,"Ventral striatal region, unspecified",llm_reject_top1,,HOMBA:AA30195,ventral striatum (STRv),0.5681,low_confidence,yes,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.6019,needs_review
+species,Fastigial Cerebellar Nucleus,llm_reject_top1,,HOMBA:10660,cerebellar deep nuclei,0.6095,needs_review,,HOMBA:10660,cerebellar deep nuclei,0.6095,needs_review
+species,Saginum Nucleus,llm_reject_top1,,HOMBA:12313,sagulum nucleus (nucleus sagulum),1.0,high_confidence,yes,HOMBA:12313,sagulum nucleus (nucleus sagulum),0.6108,needs_review
+species,"Primary somatosensory area, forelimb representation",llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6168,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6168,needs_review
+species,"Primary somatosensory area, hindlimb representation",llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6168,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6168,needs_review
+species,Perirhinal area 36,llm_out_of_scope_for_rcs,,HOMBA:AA30025,perirhinal cortical region,0.6239,needs_review,,HOMBA:AA30025,perirhinal cortical region,0.6239,needs_review
+species,Orbital cortex (ventral),llm_reject_top1,,HOMBA:10194,orbital frontal cortex,0.6158,needs_review,yes,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.6295,needs_review
+species,Ethmoid-Limitans nucleus,llm_reject_top1,,HOMBA:AA30314,ethmoid thalamic nucleus,0.6309,needs_review,,HOMBA:AA30314,ethmoid thalamic nucleus,0.6309,needs_review
+species,"Primary somatosensory area, trunk representation",llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6373,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6373,needs_review
+species,"Supratemporal plane, posterior",llm_reject_top1,,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.5,low_confidence,yes,HOMBA:AA30485,caudal (posterior) branch of anterior commissure,0.6392,needs_review
+species,"Lateral parietal cortex, superior",llm_reject_top1,,HOMBA:10215,superior medial parietal cortex,0.6398,needs_review,,HOMBA:10215,superior medial parietal cortex,0.6398,needs_review
+species,Perirhinal area 35,llm_out_of_scope_for_rcs,,HOMBA:10320,perirhinal cortex (area 35),0.6507,needs_review,,HOMBA:10320,perirhinal cortex (area 35),0.6507,needs_review
+species,"Primary somatosensory area, face representation",llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.645,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.645,needs_review
+species,Nucleus of the stria medullaris,llm_reject_top1,,HOMBA:10590,stria medullaris of thalamus,0.6458,needs_review,,HOMBA:10590,stria medullaris of thalamus,0.6458,needs_review
+species,"Central opercular cortex, posterior",llm_reject_top1,,HOMBA:12841,"lobule III (central lobule and wing, posterior part)",0.5794,low_confidence,yes,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),0.646,needs_review
+species,"Laterodorsal thalamic nucleus, ventrolateral part",llm_reject_top1,,HOMBA:12519,laterodorsal tegmental nucleus,0.6365,needs_review,yes,HOMBA:10443,rostral intralaminar nuclei of thalamus,0.6508,needs_review
+species,Anterior Interposed Cerebellar Nucleus,llm_reject_top1,,HOMBA:12471,pontine raphe region,0.6497,needs_review,,HOMBA:12471,pontine raphe region,0.6497,needs_review
+species,Frontal association cortex,llm_out_of_scope_for_rcs,,HOMBA:10161,frontal cortex,0.6635,needs_review,,HOMBA:10161,frontal cortex,0.6635,needs_review
+species,"Laterodorsal thalamic nucleus, dorsomedial part",llm_reject_top1,,HOMBA:AA30276,ventral midline nuclei of thalamus,0.6609,needs_review,,HOMBA:AA30276,ventral midline nuclei of thalamus,0.6675,needs_review
+species,Posterior Interposed Cerebellar Nucleus,llm_reject_top1,,HOMBA:12844,posterior lobe of cerebellar cortex,0.6607,needs_review,,HOMBA:12844,posterior lobe of cerebellar cortex,0.6607,needs_review
+species,"Primary somatosensory area, dysgranular zone",llm_out_of_scope_for_rcs,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6701,needs_review,,HOMBA:10209,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.6701,needs_review
+species,Septimbrial nucleus,llm_reject_top1,,HOMBA:13032,septofimbrial nucleus,1.0,high_confidence,yes,HOMBA:13032,septofimbrial nucleus,0.6729,needs_review
+species,Ventroposterior medial and lateral thalamic nuclei,llm_reject_top1,,HOMBA:11515,medial subdivision of LaV,0.6869,needs_review,,HOMBA:11515,medial subdivision of LaV,0.665,needs_review
+species,Ventral orbital area,llm_reject_top1,,HOMBA:12187,anterior (ventral /principal) pretectal nucleus,0.5,low_confidence,yes,HOMBA:12261,ventral tegmental area,0.6981,needs_review
+species,Caudate putamen,llm_reject_top1,,HOMBA:146034746,caudate-putamen cell bridges,0.6987,needs_review,,HOMBA:146034746,caudate-putamen cell bridges,0.6987,needs_review
+species,Lateral Cerebellar Nucleus,llm_reject_top1,,HOMBA:AA30564,lateral region of cerebellar hemisphere,0.6834,needs_review,,HOMBA:AA30564,lateral region of cerebellar hemisphere,0.6835,needs_review
+species,Ventroposterior inferior thalamic nucleus,llm_reject_top1,,HOMBA:10448,caudal intralaminar nuclei of thalamus,0.663,needs_review,yes,HOMBA:10409,pulvinar of thalamus,0.7071,needs_review
+species,"Piriform cortex, layer 1",llm_out_of_scope_for_rcs,,HOMBA:10311,piriform cortex,0.7054,needs_review,,HOMBA:10311,piriform cortex,0.7054,needs_review
+species,"Piriform cortex, layer 2",llm_out_of_scope_for_rcs,,HOMBA:10311,piriform cortex,0.7054,needs_review,,HOMBA:10311,piriform cortex,0.7054,needs_review
+species,"Piriform cortex, layer 3",llm_out_of_scope_for_rcs,,HOMBA:10311,piriform cortex,0.7054,needs_review,,HOMBA:10311,piriform cortex,0.7054,needs_review
+species,Orbital cortex (ventrolateral),llm_reject_top1,,HOMBA:13324,ventrolateral temporal cortex,0.716,needs_review,,HOMBA:13324,ventrolateral temporal cortex,0.7159,needs_review
+species,Centrolateral and paracentral thalamic nuclei,llm_reject_top1,,HOMBA:10446,paracentral nucleus of thalamus,0.6399,needs_review,yes,HOMBA:10443,rostral intralaminar nuclei of thalamus,0.7199,needs_review
+species,Interanteromedial Thalamus,llm_reject_top1,,HOMBA:13048,interanteromedial nucleus of thalamus,0.6268,needs_review,yes,HOMBA:AA30276,ventral midline nuclei of thalamus,0.7068,needs_review
+species,Stria medullaris thalami,llm_reject_top1,,HOMBA:10590,stria medullaris of thalamus,1.0,high_confidence,yes,HOMBA:10590,stria medullaris of thalamus,0.7155,needs_review
+species,Basomedial amygdaloid nucleus,llm_reject_top1,,HOMBA:10369,basomedial nucleus (accessory basal nucleus) of amygdala,0.6272,needs_review,yes,HOMBA:10366,basolateral nuclear group of amygdala,0.7072,needs_review
+species,Optic tract and optic chiasm,llm_reject_top1,,HOMBA:10644,optic chiasm,0.7376,needs_review,,HOMBA:10644,optic chiasm,0.7278,needs_review
+species,Intermediodorsal Thalamus,llm_reject_top1,,HOMBA:13049,intermediodorsal  nucleus of thalamus,0.6302,needs_review,yes,HOMBA:AA30274,dorsal midline nuclei of thalamus,0.7102,needs_review
+species,Superior Olive,llm_reject_top1,,HOMBA:12470,medial superior olivary nucleus,0.7346,needs_review,,HOMBA:12470,medial superior olivary nucleus,0.7346,needs_review
+species,Pedunculopontine Nucleus,llm_reject_top1,,HOMBA:12406,pontine nucleus,0.7396,needs_review,,HOMBA:12406,pontine nucleus,0.7396,needs_review
+species,Ventrolateral thalamic nucleus,llm_reject_top1,,HOMBA:10420,ventral lateral nucleus of thalamus,1.0,high_confidence,yes,HOMBA:10443,rostral intralaminar nuclei of thalamus,0.7446,needs_review
+species,Kolliker-Fuse Nucleus,llm_reject_top1,,HOMBA:12518,Koelliker-Fuse nucleus,1.0,high_confidence,yes,HOMBA:12518,Koelliker-Fuse nucleus,0.7564,needs_review
+species,Laterodorsal thalamic nucleus,llm_reject_top1,,HOMBA:10396,lateral dorsal nucleus of thalamus,1.0,high_confidence,yes,HOMBA:10393,anterodorsal nucleus of thalamus,0.7847,needs_review
+species,Intergeniculate leaflet,llm_reject_top1,,HOMBA:AA30305,intergeniculate leaf,1.0,high_confidence,yes,HOMBA:AA30305,intergeniculate leaf,0.7733,needs_review
+species,Juxtaparaventricular nucleus,llm_reject_top1,,HOMBA:10457,paraventricular nucleus of thalamus,0.7733,needs_review,,HOMBA:10457,paraventricular nucleus of thalamus,0.7733,needs_review
+species,Precuneiform Nucleus,llm_reject_top1,,HOMBA:12240,cuneiform nucleus,0.7733,needs_review,,HOMBA:12240,cuneiform nucleus,0.7733,needs_review
+species,A11 dopamine cell group,llm_out_of_scope_for_rcs,,HOMBA:AA30843,A8 dopamine cell group,0.7763,needs_review,,HOMBA:AA30843,A8 dopamine cell group,0.7763,needs_review
+species,A13 dopamine cell group,llm_out_of_scope_for_rcs,,HOMBA:AA30843,A8 dopamine cell group,0.7763,needs_review,,HOMBA:AA30843,A8 dopamine cell group,0.7763,needs_review
+species,Mesencephalic Reticular Formation,llm_reject_top1,,HOMBA:15547,isthmic reticular formation,0.7775,needs_review,,HOMBA:15547,isthmic reticular formation,0.7775,needs_review
+species,Spinal Trigeminal Nucleus Intermediate,llm_reject_top1,,HOMBA:12572,spinal trigeminal nucleus,0.7547,needs_review,yes,HOMBA:12436,afferent nuclei of cranial nerves in pons,0.7809,needs_review
+species,Ventral periolivary nuclei,llm_reject_top1,,HOMBA:12568,"solitary nucleus, ventral division",0.7664,needs_review,,HOMBA:12568,"solitary nucleus, ventral division",0.7664,needs_review
+species,Optic tract/chiasma,llm_reject_top1,,HOMBA:10644,optic chiasm,0.7436,needs_review,yes,HOMBA:10589,optic tract,0.7884,needs_review
+species,Cerebellar Lobule 10 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7121,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7921,needs_review
+species,Cerebellar Lobule 1 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 2 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 3 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 4 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 5 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 6 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 7 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 8 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Cerebellar Lobule 9 Vermis,llm_out_of_scope_for_rcs,,HOMBA:10658,cerebellar vermis,0.7186,needs_review,yes,HOMBA:AA30563,cerebellar morphology,0.7986,needs_review
+species,Medial Raphe,llm_reject_top1,,HOMBA:12235,median raphe nucleus,0.5491,low_confidence,yes,HOMBA:12402,fastigial (medial) nucleus,0.8075,needs_review
+species,Locus-coeruleus Region,llm_reject_top1,,HOMBA:12499,nucleus coeruleus (locus coeruleus),1.0,high_confidence,yes,HOMBA:12499,nucleus coeruleus (locus coeruleus),0.8084,needs_review
+species,Dorsal Lateral Leminscus Nucleus,llm_reject_top1,,HOMBA:12455,dorsal nucleus of lateral lemniscus,0.9726,high_confidence,yes,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),0.811,needs_review
+species,4th ventricle,llm_reject_top1,,HOMBA:AA30475,olfactory recess (ventricle) and ependyma,0.815,needs_review,,HOMBA:AA30475,olfactory recess (ventricle) and ependyma,0.815,needs_review
+species,Retroreuniens thalamic nucleus,llm_reject_top1,,HOMBA:10403,reuniens (medioventral) nucleus of thalamus,0.815,needs_review,,HOMBA:10403,reuniens (medioventral) nucleus of thalamus,0.815,needs_review
+species,Abducens Motor Nucleus,llm_reject_top1,,HOMBA:12418,abducens nucleus,0.7393,needs_review,yes,HOMBA:12417,efferent nuclei of cranial nerves in pons,0.8193,needs_review
+species,Medial Emminence,llm_out_of_scope_for_rcs,,HOMBA:12402,fastigial (medial) nucleus,0.5,low_confidence,yes,HOMBA:12820,medial eminence,0.8199,needs_review
+species,Ventromedial thalamic nucleus,llm_reject_top1,,HOMBA:10427,ventral medial nucleus of thalamus,1.0,high_confidence,yes,HOMBA:10448,caudal intralaminar nuclei of thalamus,0.8387,needs_review
+species,Dorsal Medial Hypothalamic Nucleus,llm_reject_top1,,HOMBA:10489,dorsal division of VMHco,0.8166,needs_review,,HOMBA:10489,dorsal division of VMHco,0.8166,needs_review
+species,Occulomotor Nerve,llm_out_of_scope_for_rcs,,HOMBA:12376,root of occulomotor nerve,0.8567,needs_review,,HOMBA:12376,root of occulomotor nerve,0.8567,needs_review
+species,Paraventricular hypothalamic nucleus,llm_reject_top1,,HOMBA:10457,paraventricular nucleus of thalamus,0.7861,needs_review,yes,HOMBA:AA30274,dorsal midline nuclei of thalamus,0.8661,needs_review
+species,Subparafascicular parvocellular thalamic nucleus,llm_reject_top1,,HOMBA:AA30276,ventral midline nuclei of thalamus,0.9034,high_confidence,,HOMBA:AA30276,ventral midline nuclei of thalamus,0.9034,high_confidence
+species,Lateral Ventral Amygdaloid Nucleus,llm_reject_top1,,HOMBA:12093,ventral amygdaloid efferent path,0.6011,modifier_conflict,,HOMBA:12093,ventral amygdaloid efferent path,0.6011,modifier_conflict
+species,Paraventricular hypothalamic nucleus (medial parvicellular dorsal zone),llm_reject_top1,,HOMBA:10489,dorsal division of VMHco,0.629,modifier_conflict,,HOMBA:10489,dorsal division of VMHco,0.629,modifier_conflict
+species,Pretectothalamic lamina,llm_reject_top1,,HOMBA:12357,dentatothalamic tract,0.2906,low_confidence,,HOMBA:12357,dentatothalamic tract,0.2906,low_confidence
+species,Frontal association area 3,llm_out_of_scope_for_rcs,,HOMBA:10190,"frontal polar cortex (FP, area 10)",0.3712,low_confidence,,HOMBA:10190,"frontal polar cortex (FP, area 10)",0.3712,low_confidence
+species,"Primary somatosensory area, barrel field",llm_out_of_scope_for_rcs,,HOMBA:AA30880,barrel field of S1fm (rodents),0.3142,low_confidence,,HOMBA:AA30880,barrel field of S1fm (rodents),0.3142,low_confidence
+species,Spiral ganglion,llm_out_of_scope_for_rcs,,HOMBA:10332,basal ganglia (basal nuclei),0.3257,low_confidence,,HOMBA:10332,basal ganglia (basal nuclei),0.3257,low_confidence
+species,Intramedullary thalamic area,llm_reject_top1,,HOMBA:266441563,pallidohypothalamic area,0.3805,low_confidence,,HOMBA:266441563,pallidohypothalamic area,0.3805,low_confidence
+species,P1 Mesencephalic Reticulum,llm_reject_top1,,HOMBA:12767,mesencephalic trigeminal tract,0.407,low_confidence,,HOMBA:12767,mesencephalic trigeminal tract,0.407,low_confidence
+species,"External medullary lamina, auditory radiation",llm_reject_top1,,HOMBA:12037,external medullary lamina of globus pallidus,0.4457,low_confidence,,HOMBA:12037,external medullary lamina of globus pallidus,0.4457,low_confidence
+species,Vestibular apparatus,llm_out_of_scope_for_rcs,,HOMBA:12448,vestibular nuclei in pons,0.4508,low_confidence,,HOMBA:12448,vestibular nuclei in pons,0.4508,low_confidence
+species,"Hypothalamic region, unspecified",llm_reject_top1,,HOMBA:10607,hypothalamic sulcus,0.4459,low_confidence,,HOMBA:10607,hypothalamic sulcus,0.4459,low_confidence
+species,Cochlea,llm_out_of_scope_for_rcs,,HOMBA:12437,cochlear nuclei,0.4622,low_confidence,,HOMBA:12437,cochlear nuclei,0.4622,low_confidence
+species,"Central opercular cortex, anterior",llm_reject_top1,,HOMBA:AA30484,rostral (anterior) branch of anterior commissure,0.4724,low_confidence,,HOMBA:AA30484,rostral (anterior) branch of anterior commissure,0.4723,low_confidence
+species,Linear raphe,llm_reject_top1,,HOMBA:12230,linear nucleus of the midbrain,0.4638,low_confidence,,HOMBA:12230,linear nucleus of the midbrain,0.4637,low_confidence
+species,"Ventricular system, unspecified",llm_reject_top1,,HOMBA:10542,ventricular zone of neocortex,0.4832,low_confidence,,HOMBA:10542,ventricular zone of neocortex,0.4832,low_confidence
+species,Capsule of the Antherior Thalamus,llm_out_of_scope_for_rcs,,HOMBA:10390,thalamus,0.4902,low_confidence,,HOMBA:10390,thalamus,0.4902,low_confidence
+species,Retrosplenial dysgranular area,llm_reject_top1,,HOMBA:AA30028,dysgranular division of area prostriata,0.4911,low_confidence,,HOMBA:AA30028,dysgranular division of area prostriata,0.4911,low_confidence
+species,Fourth Nerve,llm_reject_top1,,HOMBA:12805,fourth ventricle,0.4962,low_confidence,,HOMBA:12805,fourth ventricle,0.4962,low_confidence
+species,Ventroposterior Inferior Thalamus,llm_reject_top1,,HOMBA:AA30289,ventroanterior-ventrolateral nuclear complex of thalamus,0.5108,low_confidence,yes,HOMBA:AA30276,ventral midline nuclei of thalamus,0.4975,low_confidence
+species,Cingulate area 1,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.5041,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.504,low_confidence
+species,Cingulate area 2,llm_out_of_scope_for_rcs,,HOMBA:10217,cingulate subdivision of area 5,0.5041,low_confidence,,HOMBA:10217,cingulate subdivision of area 5,0.504,low_confidence
+species,"Intracalcarine cortex, inferior",llm_reject_top1,,HOMBA:12305,inferior colliculus,0.5005,low_confidence,,HOMBA:12305,inferior colliculus,0.5005,low_confidence
+species,"Supratemporal plane, anterior",llm_reject_top1,,HOMBA:AA30484,rostral (anterior) branch of anterior commissure,0.5,low_confidence,,HOMBA:AA30484,rostral (anterior) branch of anterior commissure,0.5106,low_confidence
+species,"Brainstem, unspecified",llm_out_of_scope_for_rcs,,HOMBA:10648,"gray matter of midbrain (mesencephalon, upper brainstem)",0.5306,low_confidence,,HOMBA:10648,"gray matter of midbrain (mesencephalon, upper brainstem)",0.5306,low_confidence
+species,Mediolateral Fascicle,llm_reject_top1,,HOMBA:12731,cuneate fasciculus,0.537,low_confidence,,HOMBA:12731,cuneate fasciculus,0.537,low_confidence
+species,Cerebellar Lobule 3 Intermediate,llm_out_of_scope_for_rcs,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence
+species,Cerebellar Lobule 4 Intermediate,llm_out_of_scope_for_rcs,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence
+species,Cerebellar Lobule 5 Intermediate,llm_out_of_scope_for_rcs,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence
+species,Cerebellar Lobule 6 Intermediate,llm_out_of_scope_for_rcs,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence,,HOMBA:AA30563,cerebellar morphology,0.5472,low_confidence
+species,Acoustic striae,llm_reject_top1,,HOMBA:266441583,acoustic radiation,0.5469,low_confidence,,HOMBA:266441583,acoustic radiation,0.548,low_confidence
+species,"Intracalcarine cortex, superior",llm_reject_top1,,HOMBA:10214,posterior parietal cortex,0.5499,low_confidence,,HOMBA:10214,posterior parietal cortex,0.5499,low_confidence
+species,Mircrocellular Tegmentum,llm_out_of_scope_for_rcs,,HOMBA:12282,paracollicular tegmentum,0.556,low_confidence,,HOMBA:12282,paracollicular tegmentum,0.556,low_confidence
+species,Reuniens-rhomboid-xiphoid Thalamus,llm_reject_top1,,HOMBA:AA30276,ventral midline nuclei of thalamus,0.5644,low_confidence,,HOMBA:AA30276,ventral midline nuclei of thalamus,0.5644,low_confidence
+species,Vestibulochoclear Nerve,llm_out_of_scope_for_rcs,,HOMBA:12868,root of vestibulocochlear nerve,0.58,low_confidence,,HOMBA:12868,root of vestibulocochlear nerve,0.58,low_confidence
+species,Medial Dorsal Tegmentum,llm_reject_top1,,HOMBA:AA30451,dorsal cell group of medulla tegmentum,0.5542,modifier_conflict,yes,HOMBA:11522,magnocellular (dorsal) division of BM,0.592,low_confidence
+species,Anterior Thalamus,llm_reject_top1,,HOMBA:AA30289,ventroanterior-ventrolateral nuclear complex of thalamus,0.5844,low_confidence,,HOMBA:AA30289,ventroanterior-ventrolateral nuclear complex of thalamus,0.5844,low_confidence
+species,Corpus callosum and associated subcortical white matter,llm_reject_top1,,HOMBA:AA30482,white matter of brain,0.5966,low_confidence,,HOMBA:AA30482,white matter of brain,0.5965,low_confidence

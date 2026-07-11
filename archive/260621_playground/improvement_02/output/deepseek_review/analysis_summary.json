@@ -1,0 +1,43 @@
+{
+  "total": 921,
+  "changed_id": 55,
+  "unchanged_id": 866,
+  "all_labels": {
+    "no_material_change": 827,
+    "both_wrong": 52,
+    "improved_better": 29,
+    "improved_worse": 4,
+    "homba_gap_or_source_issue": 8,
+    "needs_human_review": 1
+  },
+  "changed_labels": {
+    "improved_better": 29,
+    "improved_worse": 4,
+    "both_wrong": 18,
+    "needs_human_review": 1,
+    "homba_gap_or_source_issue": 3
+  },
+  "unchanged_labels": {
+    "no_material_change": 827,
+    "both_wrong": 34,
+    "homba_gap_or_source_issue": 5
+  },
+  "changed_role_label": {
+    "llm_accept_top1": {
+      "improved_better": 7,
+      "improved_worse": 2,
+      "both_wrong": 3
+    },
+    "llm_reject_top1": {
+      "improved_better": 15,
+      "both_wrong": 15,
+      "improved_worse": 1,
+      "needs_human_review": 1
+    },
+    "llm_out_of_scope_for_rcs": {
+      "homba_gap_or_source_issue": 3,
+      "improved_better": 7,
+      "improved_worse": 1
+    }
+  }
+}

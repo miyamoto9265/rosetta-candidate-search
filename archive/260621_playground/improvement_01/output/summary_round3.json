@@ -1,0 +1,34 @@
+[
+  {
+    "dataset": "rcs_corpus.csv",
+    "unique_queries": 379,
+    "flags": {
+      "high_confidence": 175,
+      "needs_review": 100,
+      "modifier_conflict": 13,
+      "low_confidence": 91
+    },
+    "flag_pct": {
+      "high_confidence": 46.2,
+      "needs_review": 26.4,
+      "modifier_conflict": 3.4,
+      "low_confidence": 24.0
+    }
+  },
+  {
+    "dataset": "rcs_species.csv",
+    "unique_queries": 542,
+    "flags": {
+      "needs_review": 213,
+      "high_confidence": 248,
+      "low_confidence": 53,
+      "modifier_conflict": 28
+    },
+    "flag_pct": {
+      "needs_review": 39.3,
+      "high_confidence": 45.8,
+      "low_confidence": 9.8,
+      "modifier_conflict": 5.2
+    }
+  }
+]

@@ -1,0 +1,51 @@
+input_text,homba_text,notes,bidirectional
+thalamic nucleus,nucleus of thalamus,General word-order synonym: HOMBA names thalamic nuclei as 'X nucleus of thalamus' while atlases often write 'X thalamic nucleus' (e.g. ventral medial/lateral/anterior/posterior/lateral posterior). Bidirectional.
+roots of the,root of,Cranial-nerve plural/article variant: 'roots of the X nerve' = HOMBA 'root of X nerve' (facial/abducens/trigeminal/etc).
+median raphe,median raphe nucleus,Standard short name for HOMBA:12235 median raphe nucleus.
+raphe magnus,raphe magnus nucleus,Standard short name for HOMBA:12642 raphe magnus nucleus.
+raphe obscurus,raphe obscurus nucleus,Standard short name for HOMBA:12643 raphe obscurus nucleus.
+nucleus ambiguus,ambiguus nucleus,Latin word-order variant of HOMBA:12540 ambiguus nucleus (nucleus ambiguus is the conventional name).
+prepositus nucleus,prepositus hypoglossal nucleus,Short form of HOMBA:12615 prepositus hypoglossal nucleus (nucleus prepositus hypoglossi).
+heschl gyrus,transverse temporal gyrus,Heschl's gyrus = HOMBA:12144 transverse temporal gyrus (Heschl's gyrus).
+heschls gyrus,transverse temporal gyrus,Apostrophe-normalized Heschl's gyrus = transverse temporal gyrus.
+limen insulae,limen insula,Latin plural/spelling variant of HOMBA:12179 limen insula.
+subceruleus,subcoeruleus nucleus,ceruleus/coeruleus spelling variant: subceruleus = HOMBA:12500 subcoeruleus nucleus.
+infundibulum,infundibular stalk,Infundibulum (pituitary stalk) = HOMBA:10643 infundibular stalk.
+reticulotegmentum,reticulotegmental nucleus,Short form of HOMBA:12497 reticulotegmental nucleus.
+inferior pulvinar,inferior division of pulvinar,Inferior pulvinar (PuI) = HOMBA:10413 inferior division of pulvinar.
+intermediate reticular zone,intermediate reticular nucleus,zone/nucleus synonym for HOMBA:12620 intermediate reticular nucleus.
+fascicle,fasciculus,Latin/English variant: '-fascicle' = '-fasciculus' (e.g. medial longitudinal fascicle/fasciculus). Bidirectional.
+caudate head,head of caudate nucleus,Atlas short form 'Caudate Head' = HOMBA:10335 head of caudate nucleus.
+caudate body,body of caudate nucleus,Atlas short form 'Caudate Body' = HOMBA:10336 body of caudate nucleus.
+caudate tail,tail of caudate nucleus,Atlas short form 'Caudate Tail' = HOMBA:10337 tail of caudate nucleus.
+accumbens,nucleus accumbens,Short form 'Accumbens' = HOMBA:10339 nucleus accumbens.
+visual area,visual cortex,'visual area' = 'visual cortex' for primary/secondary visual regions (V1/V2). Bidirectional.
+auditory area,auditory cortex,'auditory area' = 'auditory cortex' for primary/secondary auditory regions (A1/A2). Bidirectional.
+somatosensory area,somatosensory cortex,'somatosensory area' = 'somatosensory cortex' (S1/S2). Bidirectional.
+solitary tract nucleus,solitary nucleus,Nucleus of the solitary tract / solitary tract nucleus = HOMBA:12557 solitary nucleus.
+subparafascicular nucleus,subparafascicular nucleus of thalamus,Subparafascicular nucleus = HOMBA:13054 subparafascicular nucleus of thalamus.
+reticular thalamus,reticular nucleus of thalamus,Reticular thalamus = HOMBA:10464 reticular nucleus of thalamus (thalamic reticular nucleus).
+occulomotor,oculomotor,Common misspelling: occulomotor = oculomotor (maps 'Occulomotor Nuclei' -> oculomotor nucleus HOMBA:12198).
+crossing of the superior cerebellar peduncle,decussation of superior cerebellar peduncle,'crossing' = 'decussation' for HOMBA:12337 decussation of superior cerebellar peduncle.
+endopiriform claustrum,endopiriform nucleus,Endopiriform claustrum = HOMBA endopiriform nucleus (dorsal/ventral EnD/EnV). Bidirectional.
+lateral superior olive,lateral superior olivary nucleus,Lateral superior olive (LSO) = HOMBA:12469 lateral superior olivary nucleus.
+medial superior olive,medial superior olivary nucleus,Medial superior olive (MSO) = HOMBA:12470 medial superior olivary nucleus.
+oculomotor complex,oculomotor nucleus,Oculomotor (nuclear) complex = HOMBA:12198 oculomotor nucleus.
+centre median,centromedian,British/variant spelling: 'centre median' = centromedian (CM) thalamic nucleus.
+tubercule,tubercle,Variant/older spelling: tubercule = tubercle (e.g. olfactory tubercle HOMBA:10310). Bidirectional.
+laterodorsal,lateral dorsal,One-way fused->split: queries write 'laterodorsal' but HOMBA uses split 'lateral dorsal nucleus of thalamus'. One-way to avoid rewriting non-thalamic 'lateral dorsal X' into the fused form.,no
+ventrolateral,ventral lateral,One-way fused->split: ventrolateral -> ventral lateral (ventral lateral nucleus of thalamus).,no
+ventromedial,ventral medial,One-way fused->split: ventromedial -> ventral medial (ventral medial nucleus of thalamus).,no
+ventroanterior,ventral anterior,One-way fused->split: ventroanterior -> ventral anterior (ventral anterior nucleus of thalamus).,no
+ventroposterior,ventral posterior,One-way fused->split: ventroposterior -> ventral posterior (ventral posterior nuclear complex of thalamus).,no
+centrolateral,central lateral,One-way fused->split: centrolateral -> central lateral (central lateral nucleus of thalamus).,no
+medial dorsal,mediodorsal,One-way split->fused: HOMBA uses fused 'mediodorsal nucleus of thalamus'; queries write split 'medial dorsal'. One-way to avoid rewriting unrelated 'medial dorsal X'.,no
+leminscus,lemniscus,Common misspelling: leminscus = lemniscus.,yes
+lemniscus nucleus,nucleus of lemniscus,Word-order: 'X lemniscus nucleus' = HOMBA 'nucleus of X lemniscus' (e.g. dorsal lateral lemniscus nucleus -> dorsal nucleus of lateral lemniscus).,yes
+kolliker,koelliker,Spelling variant: Kolliker = Koelliker (Koelliker-Fuse nucleus).,yes
+saginum,sagulum,Spelling variant: Saginum = sagulum (sagulum nucleus).,yes
+septimbrial,septofimbrial,Spelling variant: Septimbrial = septofimbrial nucleus.,yes
+chiasma,chiasm,Latin/English variant: chiasma = chiasm (optic chiasm).,yes
+leaflet,leaf,Variant: intergeniculate leaflet = HOMBA intergeniculate leaf.,yes
+stria medullaris thalami,stria medullaris of thalamus,Latin word-order: stria medullaris thalami = HOMBA stria medullaris of thalamus.,no
+locus coeruleus region,nucleus coeruleus,Locus coeruleus region = HOMBA nucleus coeruleus (locus coeruleus).,no

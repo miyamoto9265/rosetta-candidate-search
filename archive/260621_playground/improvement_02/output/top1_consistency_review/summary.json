@@ -1,0 +1,66 @@
+{
+  "total_records": 921,
+  "label_counts": {
+    "aligned": 475,
+    "broader_parent": 249,
+    "partial_or_narrower": 63,
+    "wrong": 118,
+    "no_consensus": 12,
+    "ambiguous": 3,
+    "source_or_ontology_issue": 1
+  },
+  "label_counts_by_source_file": {
+    "1_highconf_correct.csv": {
+      "aligned": 390,
+      "broader_parent": 2,
+      "partial_or_narrower": 6
+    },
+    "2_highconf_incorrect.csv": {
+      "aligned": 4,
+      "broader_parent": 14,
+      "wrong": 4,
+      "no_consensus": 1,
+      "partial_or_narrower": 2
+    },
+    "3_unresolved_correct.csv": {
+      "aligned": 64,
+      "broader_parent": 149,
+      "partial_or_narrower": 44,
+      "no_consensus": 6,
+      "wrong": 18,
+      "ambiguous": 3
+    },
+    "4_unresolved_incorrect.csv": {
+      "wrong": 96,
+      "aligned": 17,
+      "broader_parent": 84,
+      "no_consensus": 5,
+      "partial_or_narrower": 11,
+      "source_or_ontology_issue": 1
+    }
+  },
+  "certainty_counts": {
+    "high": 780,
+    "medium": 129,
+    "low": 12
+  },
+  "has_vote_disagreement_counts": {
+    "False": 800,
+    "True": 121
+  },
+  "vote_split_pattern_counts": {
+    "3-0": 800,
+    "2-1": 109,
+    "1-1-1": 12
+  },
+  "uncertainty_tag_counts": {
+    "stable": 799,
+    "majority_vote": 103,
+    "split_vote": 8,
+    "majority_vote+low_certainty": 6,
+    "split_vote+low_certainty": 4,
+    "stable+low_certainty": 1
+  },
+  "api_log_entries": 560,
+  "api_failures": 3
+}

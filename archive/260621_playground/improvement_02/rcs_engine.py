@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# VERSION: 0.4.0
+# VERSION: 0.3.1
 # Versioning rule:
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-ENGINE_VERSION = "0.4.0"
+ENGINE_VERSION = "0.4.0-pg02"
 
 HOMBA_ID_FIELD = "unified_ontology_id"
 HOMBA_NAME_FIELD = "unified_ontology_name"
@@ -268,6 +268,7 @@ def expand_with_alias_rules(text: str, alias_rules: list[AliasRule]) -> list[str
                 (rule.homba_text, rule.input_text),
             )
         else:
+            # One-way: only rewrite the query/input form into the HOMBA form.
             replacements = ((rule.input_text, rule.homba_text),)
         for source, target in replacements:
             if normalized == source:
@@ -301,9 +302,11 @@ def expand_alias(alias: str, alias_rules: list[AliasRule] | None = None) -> list
         if left and right:
             aliases.append(f"{right} {left}")
 
-    # One-way rules normalize queries only; applying them to HOMBA names would
-    # create misleading reverse aliases for unrelated structures.
-    homba_side_rules = [rule for rule in alias_rules if rule.bidirectional]
+    # One-way (non-bidirectional) rules are query-side normalisations only;
+    # applying them to HOMBA names would mint spurious aliases (e.g. a split
+    # 'lateral dorsal tegmental nucleus' alias for 'laterodorsal tegmental
+    # nucleus') that cause cross-structure fuzzy hits.  Use bidirectional only.
+    homba_side_rules = [r for r in alias_rules if r.bidirectional]
     expanded: list[str] = []
     for item in aliases:
         expanded.extend(expand_with_alias_rules(item, homba_side_rules))
@@ -439,18 +442,26 @@ class RosettaCandidateGenerator:
     ):
         self.homba_csv_path = Path(homba_csv_path)
         self.config = config or load_lexicon_config(token_rules_csv)
-        direction_words = {
+        # Tokens that carry little standalone identifying power.  Used ONLY by
+        # the weak-token trap guard (_score_candidate).  Deliberately limited to
+        # laterality + weak (lobe/generic) words + the *cardinal direction*
+        # modifiers.  Subdivision/cellular modifiers (reticular, magnocellular,
+        # parvicellular, molecular, layer, principal, accessory, ...) are NOT
+        # included because they are frequently the real identifying word.
+        _DIRECTION_WORDS = {
             "posterior", "ventral", "dorsal", "lateral", "medial",
             "caudal", "rostral", "oral",
         }
-        # Lobe labels still provide useful anatomical evidence and are
-        # deliberately excluded from weak-only matching.
-        lobe_words = {"frontal", "parietal", "temporal", "occipital", "opercular"}
+        # Lobe labels are weak, but a match sharing a lobe word is at least
+        # lobe-consistent (e.g. 'parietal association cortex' -> 'posterior
+        # parietal cortex').  Keep them OUT of the guard so such matches survive.
+        _LOBE_WORDS = {"frontal", "parietal", "temporal", "occipital", "opercular"}
         self._noncontent_tokens = (
-            self.config.laterality_words
-            | self.config.weak_terms
-            | (self.config.modifier_terms & direction_words)
-        ) - lobe_words
+            (self.config.laterality_words
+             | self.config.weak_terms
+             | (self.config.modifier_terms & _DIRECTION_WORDS))
+            - _LOBE_WORDS
+        )
         self._content_cache: dict[str, frozenset[str]] = {}
         self.alias_rules = load_alias_rules(alias_rules_csv)
         self.abbrev_rules = load_abbrev_rules(abbrev_rules_csv)
@@ -666,24 +677,28 @@ class RosettaCandidateGenerator:
         if exact:
             final_score = max(final_score, 0.96)
 
-        # Detect fuzzy/BM25 hits supported only by direction, laterality, or
-        # generic structure words, with no shared identifying content word.
+        # ---- 3-1 weak-token trap detection (improvement_02) -----------------
+        # A fuzzy/bm25 match whose ONLY token overlap with the candidate is a
+        # cardinal-direction / laterality / generic word (e.g. "ventral",
+        # "posterior", "cortex") and which shares no identifying content word is
+        # almost always a coincidental BM25 hit.  Flag it now and cap it AFTER
+        # the modifier boost (below) so the boost cannot revive a trap.
         weak_only_match = False
         if not exact and not hierarchy and (fuzzy or bm25):
             matched_query = str(state.get("matched_query") or "")
-            query_content = self._content_tokens(query) | self._content_tokens(matched_query)
-            if query_content:
+            q_content = self._content_tokens(query) | self._content_tokens(matched_query)
+            if q_content:
                 alias_content: set[str] = set()
-                alias_tokens: set[str] = set()
+                alias_all: set[str] = set()
                 for alias in term.aliases:
                     alias_content |= self._content_tokens(alias)
-                    alias_tokens |= set(tokenize(alias, config=self.config))
-                if not self._content_overlap(query_content, alias_content):
-                    query_tokens = set(tokenize(query, config=self.config)) | set(
-                        tokenize(matched_query, config=self.config)
-                    )
-                    overlap = query_tokens & alias_tokens
-                    weak_only_match = bool(overlap and overlap <= self._noncontent_tokens)
+                    alias_all |= set(tokenize(alias, config=self.config))
+                if not self._content_overlap(q_content, alias_content):
+                    q_all = set(tokenize(query, config=self.config)) | set(
+                        tokenize(matched_query, config=self.config))
+                    overlap = q_all & alias_all
+                    if overlap and overlap <= self._noncontent_tokens:
+                        weak_only_match = True
 
         if modifier_terms:
             if modifier_score > 0:
@@ -698,7 +713,8 @@ class RosettaCandidateGenerator:
         if not exact and (fuzzy or bm25):
             final_score *= self._specificity_penalty(query, modifier_terms, term)
 
-        # Keep weak-only matches below the low-confidence threshold.
+        # Weak-token trap cap is applied LAST so it lands in low_confidence
+        # (<0.60) regardless of the modifier boost above.
         if weak_only_match:
             final_score = min(final_score, 0.50)
 
@@ -838,6 +854,12 @@ class RosettaCandidateGenerator:
                 prelim_scores.get(child_index, float(candidate_state[child_index]["best_method_score"]))
                 for child_index in child_indexes
             ]
+            # 3-2 over-promotion guard: when a *specific* child already has a
+            # reasonable direct match (mid band), keep the promoted parent just
+            # below it so the specific sibling wins instead of being overtaken
+            # by the broad parent.  Weak children (all low) still get the full
+            # fallback boost; strong children (>=0.82) keep normal promotion so
+            # legitimate parent answers can still reach high_confidence.
             best_child = max(child_scores)
             if 0.62 <= best_child < 0.82:
                 promoted_score = max(best_child - 0.03, 0.0)
@@ -854,43 +876,44 @@ class RosettaCandidateGenerator:
             )
 
     @staticmethod
-    def _stem_match(left: str, right: str) -> bool:
-        """Match identifying words across common morphological variants."""
-        if left == right:
+    def _stem_match(a: str, b: str) -> bool:
+        """True if two content tokens are the same word up to morphology
+        (e.g. striatal/striatum, medullar/medullary, cerebellum/cerebellar)."""
+        if a == b:
             return True
-        shorter, longer = (left, right) if len(left) <= len(right) else (right, left)
+        shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
         if len(shorter) >= 5 and longer.startswith(shorter):
             return True
         if len(shorter) >= 6:
+            # shared long prefix covers inflectional endings (-al/-um/-ar/-ic).
             common = 0
-            for left_char, right_char in zip(left, right):
-                if left_char != right_char:
+            for ca, cb in zip(a, b):
+                if ca != cb:
                     break
                 common += 1
             if common >= len(shorter) - 2 and common >= 6:
                 return True
         return False
 
-    def _content_overlap(self, query_tokens: set[str], alias_tokens: set[str]) -> bool:
-        """Return whether query and alias share an identifying word."""
-        if query_tokens & alias_tokens:
+    def _content_overlap(self, q_content: set[str], alias_content: set[str]) -> bool:
+        """Whether the query and a candidate share an identifying word,
+        tolerant of morphological variants (see _stem_match)."""
+        if q_content & alias_content:
             return True
-        return any(
-            self._stem_match(query_token, alias_token)
-            for query_token in query_tokens
-            for alias_token in alias_tokens
-        )
+        for qt in q_content:
+            for at in alias_content:
+                if self._stem_match(qt, at):
+                    return True
+        return False
 
     def _content_tokens(self, text: str) -> frozenset[str]:
-        """Return tokens that identify a structure rather than its direction."""
+        """Tokens of *text* with stopwords AND non-content (laterality / weak /
+        modifier) words removed — the words that actually identify a structure."""
         cached = self._content_cache.get(text)
         if cached is not None:
             return cached
-        content = frozenset(
-            token
-            for token in tokenize(text, config=self.config)
-            if token not in self._noncontent_tokens
-        )
+        toks = tokenize(text, config=self.config)
+        content = frozenset(t for t in toks if t not in self._noncontent_tokens)
         self._content_cache[text] = content
         return content
 

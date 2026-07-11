@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RCS 辞書改善レポート — rcs_corpus / rcs_species 評価結果と playground 辞書追加の成果" />
+  <title>RCS 辞書改善レポート — improvement_01</title>
+  <link rel="stylesheet" href="report.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <h2>目次</h2>
+      <nav>
+        <a href="#summary">サマリー</a>
+        <a href="#policy">1. 方針</a>
+        <a href="#results">2. 結果</a>
+        <a href="#dictionary">3. 追加辞書</a>
+        <a href="#remaining">4. 残課題</a>
+        <a href="#reproduce">5. 再現手順</a>
+      </nav>
+      <h2 style="margin-top:1rem">関連レポート</h2>
+      <nav>
+        <a href="improvement_proposals.html">アルゴリズム/辞書改善案 →</a>
+        <a href="homba_expansion.html">HOMBA 拡張案 →</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <p class="eyebrow">ROSETTA Candidate Search · Playground</p>
+        <h1>辞書改善レポート<br />Corpus / Species</h1>
+        <p class="meta">
+          2026-06-21 · <code>improvement_01</code> · RCS v0.3.1 ·
+          対象: <code>rcs_corpus.csv</code> (379) / <code>rcs_species.csv</code> (542)
+        </p>
+      </header>
+
+      <section id="summary">
+        <h2>サマリー</h2>
+        <p>
+          production 辞書（<code>rcs/homba_*_rules.csv</code>）は無改変。
+          本ディレクトリの <code>playground_*</code> 追加のみで 3 ラウンド改善し、
+          辞書追加による改善は round3 でプラトー到達。<strong>本体 <code>rcs/</code> へは未マージ</strong>。
+        </p>
+        <div class="summary-grid">
+          <div class="stat-card">
+            <div class="label">high_confidence 合計</div>
+            <div class="value">423</div>
+            <div class="delta">+63（360 → 423）</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Corpus high</div>
+            <div class="value">46.2%</div>
+            <div class="delta">+20件（40.9% → 46.2%）</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Species high</div>
+            <div class="value">45.8%</div>
+            <div class="delta">+43件（37.8% → 45.8%）</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">追加 alias ルール</div>
+            <div class="value">34</div>
+            <div class="delta">+ token 1 / abbrev 0</div>
+          </div>
+        </div>
+        <div class="callout ok">
+          <strong>回帰なし:</strong> baseline → round3 で high_confidence から降格した入力は <strong>0 件</strong>。
+        </div>
+      </section>
+
+      <section id="policy">
+        <h2>1. 方針</h2>
+        <p>
+          過去トライのレガシー（<code>homba_alias_rules_playground.csv</code> / <code>..._merged.csv</code>）は、
+          低スコア入力を「最も似た HOMBA エントリ」に機械的に <code>input→1.000</code> で貼り付けるもので、
+          解剖学的に誤ったマッピングを多数含んでいたため <strong>削除</strong> した。
+        </p>
+        <ul>
+          <li><strong>言語的に正当な関係のみ辞書化</strong> — 綴り違い、略語、語順、真の同義語。</li>
+          <li><strong>HOMBA 実在確認</strong> — <code>verify.py</code> でターゲットを確認してから登録。</li>
+          <li><strong>一般化ルールを優先</strong> — データセット固有の転記ミス（<code>Antherior</code> 等）は本体辞書に入れない。</li>
+          <li><strong>正しい親マッチを偽の high に昇格させない</strong> — 亜区情報の喪失を隠す旧ハックは行わない。</li>
+        </ul>
+        <div class="callout warn">
+          レガシー例（削除理由）:
+          <code>Middle occipital gyrus → middle frontal gyrus</code>,
+          <code>Olfactory cortex → olfactory tract</code>,
+          <code>Somatosensory area 1 → somatosensory radiation</code>
+        </div>
+      </section>
+
+      <section id="results">
+        <h2>2. 結果（baseline → round3）</h2>
+        <p>
+          review_flag は <code>rcs/review.py</code> 準拠
+          （high ≥ 0.90 / needs 0.60–0.90 / low &lt; 0.60 / modifier_conflict）。
+        </p>
+
+        <div class="two-col">
+          <div>
+            <h3>Corpus（379 ユニーク）</h3>
+            <table>
+              <thead>
+                <tr><th>flag</th><th class="num">baseline</th><th class="num">round3</th><th class="num">差分</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge high">high_confidence</span></td>
+                  <td class="num">155 (40.9%)</td>
+                  <td class="num"><strong>175 (46.2%)</strong></td>
+                  <td class="num positive">+20</td>
+                </tr>
+                <tr>
+                  <td><span class="badge review">needs_review</span></td>
+                  <td class="num">112 (29.6%)</td>
+                  <td class="num">100 (26.4%)</td>
+                  <td class="num">−12</td>
+                </tr>
+                <tr>
+                  <td><span class="badge mod">modifier_conflict</span></td>
+                  <td class="num">14 (3.7%)</td>
+                  <td class="num">13 (3.4%)</td>
+                  <td class="num">−1</td>
+                </tr>
+                <tr>
+                  <td><span class="badge low">low_confidence</span></td>
+                  <td class="num">98 (25.9%)</td>
+                  <td class="num">91 (24.0%)</td>
+                  <td class="num">−7</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="bar-chart" aria-label="Corpus high_confidence 推移">
+              <div class="bar-row">
+                <span>baseline</span>
+                <div class="bar-track"><div class="bar-fill base" style="width:40.9%"></div></div>
+                <span class="bar-pct">40.9%</span>
+              </div>
+              <div class="bar-row">
+                <span>round3</span>
+                <div class="bar-track"><div class="bar-fill final" style="width:46.2%"></div></div>
+                <span class="bar-pct">46.2%</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Species（542 ユニーク）</h3>
+            <table>
+              <thead>
+                <tr><th>flag</th><th class="num">baseline</th><th class="num">round3</th><th class="num">差分</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge high">high_confidence</span></td>
+                  <td class="num">205 (37.8%)</td>
+                  <td class="num"><strong>248 (45.8%)</strong></td>
+                  <td class="num positive">+43</td>
+                </tr>
+                <tr>
+                  <td><span class="badge review">needs_review</span></td>
+                  <td class="num">232 (42.8%)</td>
+                  <td class="num">213 (39.3%)</td>
+                  <td class="num">−19</td>
+                </tr>
+                <tr>
+                  <td><span class="badge mod">modifier_conflict</span></td>
+                  <td class="num">31 (5.7%)</td>
+                  <td class="num">28 (5.2%)</td>
+                  <td class="num">−3</td>
+                </tr>
+                <tr>
+                  <td><span class="badge low">low_confidence</span></td>
+                  <td class="num">74 (13.7%)</td>
+                  <td class="num">53 (9.8%)</td>
+                  <td class="num">−21</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="bar-chart" aria-label="Species high_confidence 推移">
+              <div class="bar-row">
+                <span>baseline</span>
+                <div class="bar-track"><div class="bar-fill base" style="width:37.8%"></div></div>
+                <span class="bar-pct">37.8%</span>
+              </div>
+              <div class="bar-row">
+                <span>round3</span>
+                <div class="bar-track"><div class="bar-fill final" style="width:45.8%"></div></div>
+                <span class="bar-pct">45.8%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>ラウンド経過</h3>
+        <table>
+          <thead>
+            <tr><th>ラウンド</th><th class="num">追加 alias 累計</th><th class="num">corpus high</th><th class="num">species high</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>baseline</td><td class="num">0</td><td class="num">155</td><td class="num">205</td></tr>
+            <tr><td>round1</td><td class="num">15 (+token: unspecified)</td><td class="num">175</td><td class="num">229</td></tr>
+            <tr><td>round2</td><td class="num">28</td><td class="num">175</td><td class="num">243</td></tr>
+            <tr><td>round3</td><td class="num">34</td><td class="num">175</td><td class="num">248</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout info">
+          軽微なスコア低下（例: <code>Temporal area STSdp</code> 0.53→0.51）は、別名追加に伴う BM25 統計変動。
+          いずれも HOMBA 未収載（親フォールバック）の入力に限られ、意味的な誤りではない。
+        </div>
+      </section>
+
+      <section id="dictionary">
+        <h2>3. 追加した辞書（未マージ）</h2>
+        <table>
+          <thead>
+            <tr><th>ファイル</th><th class="num">件数</th><th>内容</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>playground_alias_rules.csv</code></td>
+              <td class="num">34</td>
+              <td>HOMBA 側別名の拡張（語順・同義語・綴り）</td>
+            </tr>
+            <tr>
+              <td><code>playground_token_rules.csv</code></td>
+              <td class="num">1</td>
+              <td><code>unspecified</code> を stopword 化（WHS の「亜区なし」表記ノイズ）</td>
+            </tr>
+            <tr>
+              <td><code>playground_abbrev_rules.csv</code></td>
+              <td class="num">0</td>
+              <td>追加なし（残課題の略号は HOMBA 未収載で展開不可）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>一般化ルール（長期的に価値が高い）</h3>
+        <ul class="rule-list">
+          <li><code>thalamic nucleus ↔ nucleus of thalamus</code> — 語順差を一括吸収</li>
+          <li><code>roots of the → root of</code> — 脳神経の複数形・冠詞差</li>
+          <li><code>fascicle ↔ fasciculus</code>、<code>tubercule ↔ tubercle</code> — ラテン/英・古綴り</li>
+          <li><code>caudate head/body/tail → head/body/tail of caudate nucleus</code> — アトラス短縮表記</li>
+          <li><code>visual/auditory/somatosensory area ↔ cortex</code> — 一次・二次感覚野の互換</li>
+          <li><code>occulomotor → oculomotor</code> — 頻出スペルミス</li>
+        </ul>
+
+        <h3>個別同義語（HOMBA 実在確認済み）</h3>
+        <p>
+          <code>median/magnus/obscurus raphe → … nucleus</code>,
+          <code>nucleus ambiguus → ambiguus nucleus</code>,
+          <code>prepositus nucleus → prepositus hypoglossal nucleus</code>,
+          <code>heschl(s) gyrus → transverse temporal gyrus</code>,
+          <code>limen insulae → limen insula</code>,
+          <code>subceruleus → subcoeruleus nucleus</code>,
+          <code>infundibulum → infundibular stalk</code>,
+          <code>reticulotegmentum → reticulotegmental nucleus</code>,
+          <code>inferior pulvinar → inferior division of pulvinar</code>,
+          <code>intermediate reticular zone → intermediate reticular nucleus</code>,
+          <code>solitary tract nucleus → solitary nucleus</code>,
+          <code>subparafascicular nucleus → subparafascicular nucleus of thalamus</code>,
+          <code>reticular thalamus → reticular nucleus of thalamus</code>,
+          <code>accumbens → nucleus accumbens</code>,
+          <code>endopiriform claustrum → endopiriform nucleus</code>,
+          <code>lateral/medial superior olive → … superior olivary nucleus</code>,
+          <code>oculomotor complex → oculomotor nucleus</code>,
+          <code>centre median → centromedian</code>,
+          <code>crossing of the SCP → decussation of SCP</code>
+        </p>
+      </section>
+
+      <section id="remaining">
+        <h2>4. 辞書では解決できない残課題</h2>
+        <p>
+          辞書追加による改善は <strong>round3 で頭打ち</strong>。
+          残る low / needs_review は HOMBA 本体・アルゴリズム・ソースデータ側の課題。
+        </p>
+        <div class="callout info">
+          未解決 498 件を全件目視分類した詳細分析は別レポート参照:
+          <a href="improvement_proposals.html"><strong>アルゴリズム/辞書改善案</strong></a>
+          （約 6 割は実質正解、改善余地は 75 件）／
+          <a href="homba_expansion.html"><strong>HOMBA オントロジー拡張案</strong></a>（粒度ギャップ 116 件）。
+        </div>
+
+        <div class="issue-card">
+          <h4>1. HOMBA オントロジーのギャップ（最多）</h4>
+          <p>該当標準名が HOMBA に存在しないため、正しい親へフォールバックするのが現状の最善。</p>
+          <ul>
+            <li>HCP-MMP / Glasser2016 の微細皮質野（<code>Prefrontal area 8Av</code>, <code>Parietal area PGi</code>, <code>Temporal area TE1a</code> 等）</li>
+            <li>齧歯類固有（<code>barrel field</code>, <code>hindlimb/forelimb representation</code>）</li>
+            <li>末梢器官（<code>Cochlea</code>, <code>Spiral ganglion</code> — HOMBA は中枢のみ）</li>
+            <li>個別小脳小葉（HOMBA は vermis / morphology まで）</li>
+            <li>カテコールアミン細胞群（<code>A1/A4/A5 catecholaminergic cell group</code>）</li>
+          </ul>
+        </div>
+
+        <div class="issue-card">
+          <h4>2. 正しい親マッチだが亜区が失われる</h4>
+          <p>
+            <code>Superior/Middle/Inferior … gyrus (subdivision) → … gyrus</code>（score 0.88）の大群。
+            <span class="badge review">needs_review</span> が妥当。辞書では触らない。
+          </p>
+        </div>
+
+        <div class="issue-card">
+          <h4>3. ソースデータの転記ミス</h4>
+          <p>
+            <code>Antherior</code>, <code>Mircrocellular</code>, <code>Vestibulochoclear</code>,
+            <code>Saginum</code>, <code>Septimbrial</code>, <code>Justaparaventricular</code>,
+            <code>Emminence</code>, <code>Leminscus</code> 等 → <code>rcs_species.csv</code> / 元アトラスラベルの修正。
+          </p>
+        </div>
+
+        <div class="issue-card">
+          <h4>4. 複合・列挙ラベル</h4>
+          <p>
+            <code>Corpus callosum and associated subcortical white matter</code>,
+            <code>Reuniens-rhomboid-xiphoid Thalamus</code> 等 → 接続詞分割・複数候補返却などアルゴリズム拡張。
+          </p>
+        </div>
+      </section>
+
+      <section id="reproduce">
+        <h2>5. 再現手順</h2>
+        <p>
+          本ディレクトリ（<code>improvement_01</code>）で実行。
+          <code>rcs_eval.py</code> は production 辞書に <code>playground_*</code> を連結した一時辞書で評価する。
+        </p>
+        <pre><code># 評価（production + playground 追加）
+python rcs_eval.py eval --tag &lt;tag&gt;
+
+# baseline（playground 追加を無視）
+python rcs_eval.py eval --baseline --tag baseline
+
+# 単一クエリ / HOMBA ターゲット確認
+python rcs_eval.py search "Median raphe"
+python verify.py "median raphe nucleus"
+
+# フラグ別抽出 / ラウンド間比較
+python analyze.py species_round3.csv low_confidence
+python compare.py species_baseline.csv species_round3.csv</code></pre>
+        <p>
+          詳細な評価結果 CSV / JSON は <code>output/</code> に格納。
+          マージ判断は本レポートのレビュー後に行う。
+        </p>
+      </section>
+
+      <footer>
+        ROSETTA Candidate Search · build_testdata/260621_playground/improvement_01
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

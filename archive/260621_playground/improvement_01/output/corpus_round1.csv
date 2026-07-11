@@ -1,0 +1,380 @@
+query,top_name,top_homba_id,score,methods,matched_alias,matched_query,modifier_terms,modifier_match_score,review_flag,rank2_name,rank2_score
+Mammillary body,mammillary body,HOMBA:15546,1.0,bm25+exact+fuzzy,Mammillary body,Mammillary body,,1.0,high_confidence,body of corpus callosum,0.275738
+Pineal gland,pineal body,HOMBA:10460,1.0,bm25+exact+fuzzy,Pineal gland,Pineal gland,,1.0,high_confidence,pituitary body/gland (hypophysis),0.277884
+Pulvinar nucleus,pulvinar of thalamus,HOMBA:10409,1.0,bm25+exact+fuzzy+hierarchy_parent,Pulvinar nucleus,Pulvinar nucleus,,1.0,high_confidence,dorsal group of LNC,0.685108
+Subthalamic nucleus,subthalamic nucleus,HOMBA:10466,1.0,bm25+exact+fuzzy,Subthalamic nucleus,Subthalamic nucleus,,1.0,high_confidence,subthalamic fasciculus,0.274944
+Thalamus (excluding pulvinar),thalamus,HOMBA:10390,0.88,bm25+exact+fuzzy,Thalamus,Thalamus,excluding;pulvinar;excluding pulvinar,0.0,needs_review,pulvinar of thalamus,0.797953
+Inferior colliculus,inferior colliculus,HOMBA:12305,1.0,bm25+exact+fuzzy+hierarchy_parent,Inferior colliculus,Inferior colliculus,,1.0,high_confidence,brachium of inferior colliculus,0.813844
+Red nucleus,red nucleus,HOMBA:12247,1.0,bm25+exact+fuzzy+hierarchy_parent,Red nucleus,Red nucleus,,1.0,high_confidence,"red nucleus, dorsomedial division",0.652529
+Substantia nigra,substantia nigra,HOMBA:12251,1.0,bm25+exact+fuzzy+hierarchy_parent,Substantia nigra,Substantia nigra,,1.0,high_confidence,"substantia nigra, compact division",0.660445
+Superior colliculus,superior colliculus,HOMBA:12292,1.0,bm25+exact+fuzzy+hierarchy_parent,Superior colliculus,Superior colliculus,,1.0,high_confidence,brachium of superior colliculus,0.813844
+Abducens nucleus,abducens nucleus,HOMBA:12418,1.0,bm25+exact+fuzzy,Abducens nucleus,Abducens nucleus,,1.0,high_confidence,cerebellar deep nuclei,0.259312
+Facial nucleus,facial nucleus,HOMBA:12420,1.0,bm25+exact+fuzzy+hierarchy_parent,Facial nucleus,Facial nucleus,,1.0,high_confidence,"facial nucleus, stylohyoid subnucleus",0.770833
+Trigeminal nucleus (motor),"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",HOMBA:12429,1.0,bm25+fuzzy,motor principal sensory nucleus of trigeminal nerve,principal sensory nucleus of trigeminal nerve motor,motor,1.0,high_confidence,principal sensory nucleus of trigeminal nerve,0.88
+Trigeminal nucleus (principal sensory),principal sensory nucleus of trigeminal nerve,HOMBA:12444,1.0,bm25+exact+fuzzy,Trigeminal nucleus,Trigeminal nucleus,principal;sensory;principal sensory,1.0,high_confidence,spinal trigeminal nucleus,0.977518
+Cuneate nucleus,cuneate nucleus,HOMBA:12589,1.0,bm25+exact+fuzzy+hierarchy_parent,Cuneate nucleus,Cuneate nucleus,,1.0,high_confidence,sensory relay nuclei in medulla oblongata,0.97
+Cuneate nucleus (external),external (accessory/lateral) cuneate nucleus,HOMBA:12588,1.0,bm25+fuzzy,external   cuneate nucleus,Cuneate nucleus,external,1.0,high_confidence,cuneate nucleus,0.88
+Gracile nucleus,gracile nucleus,HOMBA:12592,1.0,bm25+exact+fuzzy+hierarchy_parent,Gracile nucleus,Gracile nucleus,,1.0,high_confidence,"gracile nucleus, central division",0.755952
+Hypoglossal nucleus,hypoglossal nucleus,HOMBA:12545,1.0,bm25+exact+fuzzy+hierarchy_parent,Hypoglossal nucleus,Hypoglossal nucleus,,1.0,high_confidence,other nuclei in dorsal medulla,0.909167
+Inferior olive (principal nucleus),inferior olive,HOMBA:12600,1.0,bm25+exact+fuzzy,Inferior olive,Inferior olive,principal;nucleus;principal nucleus,0.333333,modifier_conflict,"inferior olive, principal division",1.0
+Spinal trigeminal nucleus (caudalis),"spinal trigeminal nucleus, caudal division",HOMBA:12573,1.0,bm25+fuzzy,spinal trigeminal nucleus caudalis part,Spinal trigeminal nucleus (caudalis),caudalis,1.0,high_confidence,spinal trigeminal nucleus,0.88
+Spinal trigeminal nucleus (interpolaris),"spinal trigeminal nucleus, interpolar division",HOMBA:12578,1.0,bm25+fuzzy,spinal trigeminal nucleus interpolaris part,Spinal trigeminal nucleus (interpolaris),interpolaris,1.0,high_confidence,spinal trigeminal nucleus,0.88
+Spinal trigeminal nucleus (oralis),spinal trigeminal nucleus,HOMBA:12572,0.88,bm25+exact+fuzzy,Spinal trigeminal nucleus,Spinal trigeminal nucleus,oralis,0.0,needs_review,"spinal nucleus of trigeminal nerve, rostral subnucleus",0.847702
+Vestibular nucleus,vestibular nuclei in pons,HOMBA:12448,1.0,bm25+exact+fuzzy+hierarchy_parent,Vestibular nucleus,Vestibular nucleus,,1.0,high_confidence,vestibular nuclei in medulla,0.816733
+Optic chiasm,optic chiasm,HOMBA:10644,1.0,bm25+exact+fuzzy,Optic chiasm,Optic chiasm,,1.0,high_confidence,optic nerve,0.249814
+Optic tract,optic tract,HOMBA:10589,1.0,bm25+exact+fuzzy,Optic tract,Optic tract,,1.0,high_confidence,nucleus of the optic tract  (lentiform nucleus),0.590668
+Roots of the abducens nerve,root of abducens nerve,HOMBA:12861,1.0,bm25+exact+fuzzy,Roots of the abducens nerve,Roots of the abducens nerve,,1.0,high_confidence,root of facial nerve,0.394682
+Roots of the facial nerve,root of facial nerve,HOMBA:12862,1.0,bm25+exact+fuzzy+hierarchy_parent,Roots of the facial nerve,Roots of the facial nerve,,1.0,high_confidence,motor root of facial nerve,0.8775
+Roots of the trigeminal nerve,root of trigeminal nerve,HOMBA:12865,1.0,bm25+exact+fuzzy+hierarchy_parent,Roots of the trigeminal nerve,Roots of the trigeminal nerve,,1.0,high_confidence,motor root of trigeminal nerve,0.8775
+Corticospinal tract,corticospinal tract,HOMBA:12047,1.0,bm25+exact+fuzzy,Corticospinal tract,Corticospinal tract,,1.0,high_confidence,lateral corticospinal tract,0.736733
+Medial lemniscus,medial lemniscus,HOMBA:12763,1.0,bm25+exact+fuzzy,Medial lemniscus,Medial lemniscus,medial,1.0,high_confidence,decussation of medial lemniscus,0.861263
+Medial longitudinal fasciculus,medial longitudinal fasciculus,HOMBA:12764,1.0,bm25+exact+fuzzy,Medial longitudinal fasciculus,Medial longitudinal fasciculus,medial,1.0,high_confidence,medial longitudinal fasciculus in spinal cord,0.9325
+Spinothalamic tract,spinothalamic tract,HOMBA:12789,1.0,bm25+exact+fuzzy,Spinothalamic tract,Spinothalamic tract,,1.0,high_confidence,dorsolateral spinothalamic tract in spinal cord,0.590966
+Cerebral peduncle,cerebral peduncle (crus cerebri),HOMBA:12330,1.0,bm25+exact+fuzzy,Cerebral peduncle,Cerebral peduncle,,1.0,high_confidence,telencephalon,0.308028
+Trigeminal tract (mesencephalic),mesencephalic trigeminal tract,HOMBA:12767,0.982135,bm25+fuzzy,mesencephalic trigeminal tract,Trigeminal tract (mesencephalic),mesencephalic,1.0,high_confidence,mesencephalic trigeminal nucleus,0.737209
+Inferior cerebellar peduncle,inferior cerebellar peduncle,HOMBA:12741,1.0,bm25+exact+fuzzy,Inferior cerebellar peduncle,Inferior cerebellar peduncle,,1.0,high_confidence,middle cerebellar peduncle (brachium pontis),0.676934
+Middle cerebellar peduncle,middle cerebellar peduncle (brachium pontis),HOMBA:12768,1.0,bm25+exact+fuzzy,Middle cerebellar peduncle,Middle cerebellar peduncle,,1.0,high_confidence,cerebellar morphology,0.323233
+Superior cerebellar peduncle,superior cerebellar peduncle (brachium conjunctivum),HOMBA:12354,1.0,bm25+exact+fuzzy,Superior cerebellar peduncle,Superior cerebellar peduncle,,1.0,high_confidence,decussation of superior cerebellar peduncle,0.7425
+Superior cerebellar peduncle (decussation),decussation of superior cerebellar peduncle,HOMBA:12337,1.0,bm25+fuzzy,decussation of superior cerebellar peduncle,Superior cerebellar peduncle,decussation,1.0,high_confidence,superior cerebellar peduncle (brachium conjunctivum),0.88
+Cuneate fasciculus,cuneate fasciculus,HOMBA:12731,1.0,bm25+exact+fuzzy,Cuneate fasciculus,Cuneate fasciculus,,1.0,high_confidence,cuneate fasciculus in spinal cord,0.696591
+Gracile fasciculus,gracile fasciculus,HOMBA:12739,1.0,bm25+exact+fuzzy,Gracile fasciculus,Gracile fasciculus,,1.0,high_confidence,gracile fasciculus in spinal cord,0.696591
+Pyramidal decussation,pyramidal decussation,HOMBA:12772,1.0,bm25+exact+fuzzy,Pyramidal decussation,Pyramidal decussation,decussation,1.0,high_confidence,supraoptic decussation,0.387192
+Spinal trigeminal tract,spinal trigeminal tract,HOMBA:12792,1.0,bm25+exact+fuzzy,Spinal trigeminal tract,Spinal trigeminal tract,,1.0,high_confidence,mesencephalic trigeminal tract,0.63543
+Anterior commissure,anterior commissure,HOMBA:10559,1.0,bm25+exact+fuzzy+hierarchy_parent,Anterior commissure,Anterior commissure,,1.0,high_confidence,rostral (anterior) branch of anterior commissure,0.697635
+Fornix (anterior columns),fornix,HOMBA:10576,0.88,bm25+exact+fuzzy,Fornix,Fornix,anterior;columns;anterior columns,0.0,needs_review,"cingulate gyrus, rostral (anterior) part",0.581236
+Internal capsule (posterior limb),caudal limb of internal capsule,HOMBA:10584,0.957431,bm25+fuzzy,posterior limb of internal capsule,Internal capsule (posterior limb),posterior;limb;posterior limb,1.0,high_confidence,internal capsule,0.88
+Mammillothalamic tract,mammillothalamic tract,HOMBA:10586,1.0,bm25+exact+fuzzy,Mammillothalamic tract,Mammillothalamic tract,,1.0,high_confidence,capsular part of optic radiation (geniculocalcarine tract),0.225834
+Posterior commissure,posterior commissure,HOMBA:10567,1.0,bm25+exact+fuzzy,Posterior commissure,Posterior commissure,posterior,1.0,high_confidence,interstitial nucleus of posterior commissure (nucleus of posterior commissure),0.974167
+Cerebral aqueduct,cerebral aqueduct,HOMBA:12369,1.0,bm25+exact+fuzzy,Cerebral aqueduct,Cerebral aqueduct,,1.0,high_confidence,telencephalon,0.308028
+Fourth ventricle,fourth ventricle,HOMBA:12805,1.0,bm25+exact+fuzzy+hierarchy_parent,Fourth ventricle,Fourth ventricle,,1.0,high_confidence,region of fourth ventricle,0.899038
+Obex,obex,HOMBA:12812,1.0,bm25+exact+fuzzy,Obex,Obex,,1.0,high_confidence,,
+Oculomotor nucleus,oculomotor nucleus,HOMBA:12198,1.0,bm25+exact+fuzzy+hierarchy_parent,Oculomotor nucleus,Oculomotor nucleus,,1.0,high_confidence,efferent nuclei of the cranial nerves in midbrain,0.97
+Edinger-Westphal nucleus (preganglionic),Edinger-Westphal nucleus (accessory oculomotor nucleus),HOMBA:12197,0.88,bm25+exact+fuzzy,Edinger-Westphal nucleus,Edinger-Westphal nucleus,preganglionic,0.0,needs_review,pre-Edinger-Westphal nucleus,0.7392
+Trochlear nucleus,trochlear nucleus,HOMBA:12206,1.0,bm25+exact+fuzzy,Trochlear nucleus,Trochlear nucleus,,1.0,high_confidence,efferent nuclei of the cranial nerves in midbrain,0.97
+Motor trigeminal nucleus,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",HOMBA:12429,1.0,bm25+exact+fuzzy+hierarchy_parent,Motor trigeminal nucleus,Motor trigeminal nucleus,,1.0,high_confidence,afferent nuclei of cranial nerves in pons,0.816733
+Principal sensory trigeminal nucleus,principal sensory nucleus of trigeminal nerve,HOMBA:12444,1.0,bm25+fuzzy,principal sensory nucleus of trigeminal nerve,principal sensory principal sensory nucleus of trigeminal nerve,principal,1.0,high_confidence,spinal trigeminal nucleus,0.960882
+Spinal trigeminal nucleus,spinal trigeminal nucleus,HOMBA:12572,1.0,bm25+exact+fuzzy+hierarchy_parent,Spinal trigeminal nucleus,Spinal trigeminal nucleus,,1.0,high_confidence,afferent nuclei of cranial nerves in pons,0.817465
+Accessory trigeminal nucleus,accessory facial nucleus,HOMBA:12419,0.760807,bm25+fuzzy,accessory facial nucleus,Accessory trigeminal nucleus,accessory,1.0,needs_review,accessory nerve nucleus (supraspinal nucleus),0.758156
+Accessory facial nucleus,accessory facial nucleus,HOMBA:12419,1.0,bm25+exact+fuzzy,Accessory facial nucleus,Accessory facial nucleus,accessory,1.0,high_confidence,accessory nerve nucleus (supraspinal nucleus),0.407813
+Superior salivatory nucleus,superior salivatory nucleus,HOMBA:12435,1.0,bm25+exact+fuzzy,Superior salivatory nucleus,Superior salivatory nucleus,,1.0,high_confidence,superior olivary complex,0.363695
+Inferior salivatory nucleus,inferior salivatory nucleus,HOMBA:12544,1.0,bm25+exact+fuzzy,Inferior salivatory nucleus,Inferior salivatory nucleus,,1.0,high_confidence,inferior colliculus,0.326752
+Ventral cochlear nucleus,ventral cochlear nucleus,HOMBA:12439,1.0,bm25+exact+fuzzy,Ventral cochlear nucleus,Ventral cochlear nucleus,ventral,1.0,high_confidence,"ventral cochlear nucleus, caudal division",0.995
+Dorsal cochlear nucleus,dorsal cochlear nucleus,HOMBA:12438,1.0,bm25+exact+fuzzy,Dorsal cochlear nucleus,Dorsal cochlear nucleus,dorsal,1.0,high_confidence,dorsal part of pontine nucleus,0.429663
+Pontobulbar nucleus,pontobulbar nucleus,HOMBA:12614,1.0,bm25+exact+fuzzy,Pontobulbar nucleus,Pontobulbar nucleus,,1.0,high_confidence,"pontobulbar nucleus, inferior division",0.675947
+Dorsal motor nucleus of vagus,dorsal motor nucleus of the vagus (vagal nerve nucleus),HOMBA:12550,1.0,bm25+fuzzy,dorsal motor nucleus of the vagus,Dorsal motor nucleus of vagus,dorsal,1.0,high_confidence,"dorsal motor nucleus of vagus, caudal division",0.990833
+Nucleus ambiguus,ambiguus nucleus,HOMBA:12540,1.0,bm25+exact+fuzzy+hierarchy_parent,Nucleus ambiguus,Nucleus ambiguus,,1.0,high_confidence,"ambiguus nucleus, loose division",0.798611
+Vagus (spinal accessory) neurons,spinal accessory nucleus,HOMBA:AA30587,0.729858,bm25+fuzzy,spinal accessory nucleus,Vagus (spinal accessory) neurons,spinal;accessory;spinal accessory,1.0,needs_review,roots of spinal accessory nerve,0.680474
+Nucleus of the solitary tract,solitary nucleus,HOMBA:12557,1.0,bm25+exact+fuzzy+hierarchy_parent,Nucleus of the solitary tract,Nucleus of the solitary tract,,1.0,high_confidence,"solitary nucleus, gelatinous division",0.858333
+Area postrema,area postrema,HOMBA:12807,1.0,bm25+exact+fuzzy,Area postrema,Area postrema,,1.0,high_confidence,,
+Prepositus nucleus,prepositus hypoglossal nucleus,HOMBA:12615,1.0,bm25+exact+fuzzy,Prepositus nucleus,Prepositus nucleus,,1.0,high_confidence,other nuclei in dorsal medulla,0.97
+Intermediate reticular zone,intermediate reticular nucleus,HOMBA:12620,1.0,bm25+exact+fuzzy,Intermediate reticular zone,Intermediate reticular zone,reticular,1.0,high_confidence,caudoventrolateral reticular nucleus,0.338812
+Lateral reticular nucleus (magnocellular),lateral reticular nucleus,HOMBA:12634,1.0,bm25+exact+fuzzy,Lateral reticular nucleus,Lateral reticular nucleus,magnocellular;lateral;reticular,0.666667,modifier_conflict,"lateral reticular nucleus, magnocellular division",1.0
+Lateral reticular nucleus (parvicellular),lateral reticular nucleus,HOMBA:12634,1.0,bm25+exact+fuzzy,Lateral reticular nucleus,Lateral reticular nucleus,parvicellular;lateral;reticular,0.666667,modifier_conflict,"lateral reticular nucleus, parvicellular division",1.0
+Ventrolateral medulla,myelencephalon (medulla oblongata),HOMBA:10662,0.72379,bm25+fuzzy+hierarchy_parent,medulla oblongata,ventrolateral medulla oblongata,,1.0,needs_review,tegmentum of medulla oblongata,0.603899
+Pedunculopontine tegmentum,pontine tegmentum,HOMBA:12416,0.761218,bm25+fuzzy+hierarchy_parent,pontine tegmentum,Pedunculopontine tegmentum,,1.0,needs_review,midbrain tegmentum,0.488361
+Laterodorsal tegmentum,laterodorsal subdivision of PuM,HOMBA:AA30860,0.504221,bm25+fuzzy,laterodorsal subdivision of PuM,Laterodorsal tegmentum,,1.0,low_confidence,pontine tegmentum,0.499622
+Lateral parabrachial nucleus,lateral parabrachial nucleus,HOMBA:12482,1.0,bm25+exact+fuzzy,Lateral parabrachial nucleus,Lateral parabrachial nucleus,lateral,1.0,high_confidence,"lateral parabrachial nucleus, central division",0.9975
+Medial parabrachial nucleus,medial parabrachial nucleus,HOMBA:12487,1.0,bm25+exact+fuzzy,Medial parabrachial nucleus,Medial parabrachial nucleus,medial,1.0,high_confidence,"medial parabrachial nucleus, medial division",1.0
+External lateral parabrachial nucleus,"lateral parabrachial nucleus, external division",HOMBA:12485,1.0,bm25+fuzzy,external part lateral parabrachial nucleus,External lateral parabrachial nucleus,external;lateral,1.0,high_confidence,"medial parabrachial nucleus, external division",0.817259
+Periaqueductal gray,periaqueductal gray region,HOMBA:AA30359,0.94,bm25+fuzzy,periaqueductal gray region,Periaqueductal gray,,1.0,high_confidence,periaqueductal gray substance,0.845546
+Locus coeruleus,nucleus coeruleus (locus coeruleus),HOMBA:12499,1.0,bm25+exact+fuzzy,Locus coeruleus,Locus coeruleus,,1.0,high_confidence,,
+A1 catecholaminergic cell group,A8 dopamine cell group,HOMBA:AA30843,0.545846,bm25+fuzzy,A8 dopamine cell group,A1 catecholaminergic cell group,,1.0,low_confidence,A2 noradrenaline cell group,0.504629
+A4 catecholaminergic cell group,A8 dopamine cell group,HOMBA:AA30843,0.545846,bm25+fuzzy,A8 dopamine cell group,A4 catecholaminergic cell group,,1.0,low_confidence,A2 noradrenaline cell group,0.504629
+A5 catecholaminergic cell group,A8 dopamine cell group,HOMBA:AA30843,0.545846,bm25+fuzzy,A8 dopamine cell group,A5 catecholaminergic cell group,,1.0,low_confidence,A2 noradrenaline cell group,0.504629
+A8 catecholaminergic cell group,A8 dopamine cell group,HOMBA:AA30843,0.673611,bm25+fuzzy,A8 dopamine cell group,A8 catecholaminergic cell group,,1.0,needs_review,A2 noradrenaline cell group,0.504629
+Ventral tegmental area,ventral tegmental area,HOMBA:12261,1.0,bm25+exact+fuzzy,Ventral tegmental area,Ventral tegmental area,ventral,1.0,high_confidence,ventral tegmental tract in hindbrain,0.876515
+Dorsal raphe,dorsal raphe nucleus,HOMBA:12223,0.947851,bm25+fuzzy,dorsal raphe nuclei,Dorsal raphe,dorsal,1.0,high_confidence,cap of dorsal raphe nucleus,0.778654
+Median raphe,median raphe nucleus,HOMBA:12235,1.0,bm25+exact+fuzzy,Median raphe,Median raphe,,1.0,high_confidence,pontine raphe region,0.8342
+Raphe magnus,raphe magnus nucleus,HOMBA:12642,1.0,bm25+exact+fuzzy,Raphe magnus,Raphe magnus,,1.0,high_confidence,raphe nuclei in medulla oblongata,0.8342
+Raphe obscurus,raphe obscurus nucleus,HOMBA:12643,1.0,bm25+exact+fuzzy,Raphe obscurus,Raphe obscurus,,1.0,high_confidence,raphe nuclei in medulla oblongata,0.8342
+Solitary tract,solitary tract,HOMBA:12783,1.0,bm25+exact+fuzzy,Solitary tract,Solitary tract,,1.0,high_confidence,solitary nucleus,0.615963
+Corticospinal tract (pyramids),corticospinal tract,HOMBA:12047,0.88,bm25+exact+fuzzy,Corticospinal tract,Corticospinal tract,pyramids,0.0,needs_review,lateral corticospinal tract,0.7172
+Cerebellar cortex (molecular layer),molecular layer of cerebellar cortex,HOMBA:AA30427,0.956353,bm25+fuzzy,molecular layer of cerebellar cortex,Cerebellar cortex (molecular layer),molecular;layer;molecular layer,1.0,high_confidence,cerebellar cortex,0.88
+Cerebellar cortex (Purkinje cell layer),Purkinje cell layer of cerebellar cortex,HOMBA:AA30428,1.0,bm25+fuzzy,Purkinje cell layer of cerebellar cortex,cerebellar cortex purkinje cell layer of cerebellar cortex,purkinje;cell;layer;purkinje cell layer,1.0,high_confidence,cerebellar cortex,0.88
+Cerebellar cortex (granular layer),cerebellar cortex,HOMBA:10657,0.88,bm25+exact+fuzzy,Cerebellar cortex,Cerebellar cortex,granular;layer;granular layer,0.0,needs_review,granular cell layer of cerebellar cortex,0.824052
+Cerebellar vermis,cerebellar vermis,HOMBA:10658,1.0,bm25+exact+fuzzy,Cerebellar vermis,Cerebellar vermis,,1.0,high_confidence,cerebellar morphology,0.97
+Cerebellar hemisphere,cerebellar hemisphere,HOMBA:10659,1.0,bm25+exact+fuzzy+hierarchy_parent,Cerebellar hemisphere,Cerebellar hemisphere,,1.0,high_confidence,cerebellar morphology,0.97
+Flocculus,lobule Xa (flocculus),HOMBA:AA30424,1.0,bm25+exact+fuzzy,Flocculus,Flocculus,,1.0,high_confidence,lobule X (nodulus and flocculus),0.64229
+Fastigial nucleus,fastigial (medial) nucleus,HOMBA:12402,1.0,bm25+exact+fuzzy+hierarchy_parent,Fastigial nucleus,Fastigial nucleus,,1.0,high_confidence,"fastigial nucleus, medial division",0.734583
+Globose nucleus,medial interpositus (globose) nucleus,HOMBA:12400,1.0,bm25+exact+fuzzy,Globose nucleus,Globose nucleus,,1.0,high_confidence,interpositus (intermediate) nucleus,0.97
+Emboliform nucleus,lateral interpositus (emboliform) nucleus,HOMBA:12401,1.0,bm25+exact+fuzzy,Emboliform nucleus,Emboliform nucleus,,1.0,high_confidence,interpositus (intermediate) nucleus,0.97
+Dentate nucleus,dentate (lateral) nucleus,HOMBA:12396,1.0,bm25+exact+fuzzy+hierarchy_parent,Dentate nucleus,Dentate nucleus,,1.0,high_confidence,"dentate nucleus, mediodorsal division",0.675458
+Inferior olive,inferior olive,HOMBA:12600,1.0,bm25+exact+fuzzy+hierarchy_parent,Inferior olive,Inferior olive,,1.0,high_confidence,hilus of the inferior olive,0.722962
+Precentral gyrus,precentral gyrus,HOMBA:12114,1.0,bm25+exact+fuzzy,Precentral gyrus,Precentral gyrus,,1.0,high_confidence,uncus of (para)hippocampal gyrus,0.310179
+Postcentral gyrus,postcentral gyrus,HOMBA:12132,1.0,bm25+exact+fuzzy,Postcentral gyrus,Postcentral gyrus,,1.0,high_confidence,uncus of (para)hippocampal gyrus,0.310179
+Rolandic operculum,frontal operculum,HOMBA:12127,0.48312,bm25+fuzzy,frontal operculum,Rolandic operculum,,1.0,low_confidence,parietal operculum,0.4616
+Superior frontal gyrus (dorsolateral),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,dorsolateral,0.0,needs_review,dorsolateral prefrontal gyrus,0.714654
+Middle frontal gyrus,middle frontal gyrus,HOMBA:12116,1.0,bm25+exact+fuzzy,Middle frontal gyrus,Middle frontal gyrus,,1.0,high_confidence,frontal lobe,0.97
+Inferior frontal gyrus (opercular part),"inferior frontal gyrus, opercular part",HOMBA:12119,1.0,bm25+exact+fuzzy,Inferior frontal gyrus (opercular part),Inferior frontal gyrus (opercular part),opercular,1.0,high_confidence,inferior frontal gyrus,0.88
+Inferior frontal gyrus (triangular part),"inferior frontal gyrus, triangular part",HOMBA:12118,1.0,bm25+exact+fuzzy,Inferior frontal gyrus (triangular part),Inferior frontal gyrus (triangular part),triangular,1.0,high_confidence,inferior frontal gyrus,0.88
+Superior frontal gyrus (medial),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,medial,0.0,needs_review,superior frontal sulcus,0.575512
+Supplementary motor area,medial division of area 6 (supplementary motor area),HOMBA:AA30012,1.0,bm25+exact+fuzzy,Supplementary motor area,Supplementary motor area,,1.0,high_confidence,lamina IX of spinal cord (spinal motor neurons),0.301584
+Paracentral lobule,"paracentral lobule, rostral part",HOMBA:12126,0.789651,bm25+fuzzy,"paracentral lobule, rostral part",Paracentral lobule,,1.0,needs_review,"paracentral lobule, caudal part",0.691583
+Superior frontal gyrus (orbital part),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,orbital,0.0,needs_review,orbital frontal cortex,0.643738
+Superior frontal gyrus (medial orbital),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,medial;orbital;medial orbital,0.0,needs_review,medial orbital frontal cortex (area 14),0.698094
+Middle frontal gyrus (orbital part),middle frontal gyrus,HOMBA:12116,0.88,bm25+exact+fuzzy,Middle frontal gyrus,Middle frontal gyrus,orbital,0.0,needs_review,medial orbital gyrus,0.655449
+Inferior frontal gyrus (orbital part),inferior frontal gyrus,HOMBA:12117,0.88,bm25+exact+fuzzy,Inferior frontal gyrus,Inferior frontal gyrus,orbital,0.0,needs_review,"inferior frontal gyrus, opercular part",0.689432
+Gyrus rectus,rectus gyrus,HOMBA:12121,1.0,bm25+exact+fuzzy,Gyrus rectus,Gyrus rectus,,1.0,high_confidence,uncus of (para)hippocampal gyrus,0.310179
+Olfactory cortex,olfactory division of entorhinal cortex,HOMBA:11371,0.640656,bm25+fuzzy,olfactory division of entorhinal cortex,Olfactory cortex,,1.0,needs_review,olfactory tubercle,0.277386
+Superior temporal gyrus,superior temporal gyrus,HOMBA:12140,1.0,bm25+exact+fuzzy,Superior temporal gyrus,Superior temporal gyrus,,1.0,high_confidence,temporal lobe,0.97
+Heschl gyrus,transverse temporal gyrus (Heschl's gyrus),HOMBA:12144,1.0,bm25+exact+fuzzy,Heschl gyrus,Heschl gyrus,,1.0,high_confidence,transverse temporal sulcus,0.51021
+Middle temporal gyrus,middle temporal gyrus,HOMBA:12141,1.0,bm25+exact+fuzzy,Middle temporal gyrus,Middle temporal gyrus,,1.0,high_confidence,temporal lobe,0.97
+Inferior temporal gyrus,inferior temporal gyrus,HOMBA:12142,1.0,bm25+exact+fuzzy,Inferior temporal gyrus,Inferior temporal gyrus,,1.0,high_confidence,temporal lobe,0.97
+Superior parietal gyrus,parietal lobe,HOMBA:12131,0.877148,bm25+hierarchy_parent,parietal lobe,Superior parietal gyrus,,1.0,needs_review,superior parietal lobule (gyrus),0.797148
+Inferior parietal lobule,inferior parietal lobule (gyrus),HOMBA:12134,1.0,bm25+exact+fuzzy,Inferior parietal lobule,Inferior parietal lobule,,1.0,high_confidence,parietal lobe,0.97
+Angular gyrus,angular gyrus,HOMBA:12136,1.0,bm25+exact+fuzzy,Angular gyrus,Angular gyrus,,1.0,high_confidence,inferior parietal lobule (gyrus),0.8342
+Supramarginal gyrus,supramarginal gyrus,HOMBA:12135,1.0,bm25+exact+fuzzy,Supramarginal gyrus,Supramarginal gyrus,,1.0,high_confidence,inferior parietal lobule (gyrus),0.8342
+Precuneus,precuneaus (gyrus),HOMBA:12137,1.0,bm25+exact+fuzzy,Precuneus,Precuneus,,1.0,high_confidence,,
+Superior occipital gyrus,superior occipital gyrus,HOMBA:12154,1.0,bm25+exact+fuzzy,Superior occipital gyrus,Superior occipital gyrus,,1.0,high_confidence,occipital lobe,0.97
+Middle occipital gyrus,occipital lobe,HOMBA:12148,0.643955,bm25+fuzzy+hierarchy_parent,occipital lobe,Middle occipital gyrus,,1.0,needs_review,middle ectosylvian gyrus,0.576309
+Inferior occipital gyrus,inferior occipital gyrus,HOMBA:12153,1.0,bm25+exact+fuzzy,Inferior occipital gyrus,Inferior occipital gyrus,,1.0,high_confidence,occipital lobe,0.97
+Cuneus,cuneus (gyrus),HOMBA:12150,1.0,bm25+exact+fuzzy,Cuneus,Cuneus,,1.0,high_confidence,,
+Calcarine fissure and surrounding cortex,calcarine sulcus (fissure),HOMBA:10612,0.571757,bm25+fuzzy+hierarchy_parent,calcarine fissure,Calcarine fissure and surrounding cortex,,1.0,low_confidence,rostral (common) portion of calcarine sulcus,0.435737
+Lingual gyrus,lingual gyrus,HOMBA:12151,1.0,bm25+exact+fuzzy,Lingual gyrus,Lingual gyrus,,1.0,high_confidence,uncus of (para)hippocampal gyrus,0.310179
+Fusiform gyrus,fusiform (occipitotemporal) gyrus,HOMBA:AA30549,1.0,bm25+exact+fuzzy,Fusiform gyrus,Fusiform gyrus,,1.0,high_confidence,uncus of (para)hippocampal gyrus,0.310179
+Temporal pole (superior temporal gyrus),temporal pole (temporopolar cortex),HOMBA:12146,1.0,bm25+exact+fuzzy,Temporal pole,Temporal pole,superior;temporal;gyrus;superior temporal gyrus,0.25,modifier_conflict,superior temporal gyrus,0.513135
+Temporal pole (middle temporal gyrus),temporal pole (temporopolar cortex),HOMBA:12146,1.0,bm25+exact+fuzzy,Temporal pole,Temporal pole,middle;temporal;gyrus;middle temporal gyrus,0.25,modifier_conflict,middle temporal gyrus,0.945
+Anterior cingulate and paracingulate gyri,anterior cingulate  cortex (ventromedial prefrontal cortex),HOMBA:10278,0.529993,bm25+fuzzy,anterior cingulate  cortex,Anterior cingulate and paracingulate gyri,,1.0,low_confidence,cingulate cortex,0.524594
+Median cingulate and paracingulate gyri,paracingulate gyrus,HOMBA:146034872,0.455326,bm25+fuzzy,paracingulate gyrus,Median cingulate and paracingulate gyri,,1.0,low_confidence,paracingulate sulcus,0.409835
+Posterior cingulate gyrus,posterior cingulate cortex (PCC),HOMBA:10285,1.0,bm25+exact+fuzzy,Posterior cingulate gyrus,Posterior cingulate gyrus,posterior,1.0,high_confidence,"cingulate gyrus, caudal (posterior) part",0.889801
+Hippocampus,hippocampus,HOMBA:AA30093,1.0,bm25+exact+fuzzy,Hippocampus,Hippocampus,,1.0,high_confidence,hippocampal proper (Cornu Ammonis),0.770833
+Parahippocampal gyrus,parahippocampal gyrus,HOMBA:12162,1.0,bm25+exact+fuzzy+hierarchy_parent,Parahippocampal gyrus,Parahippocampal gyrus,,1.0,high_confidence,anterior parahippocampal gyrus,0.736733
+Insula,insular lobe,HOMBA:12176,1.0,bm25+exact+fuzzy+hierarchy_parent,Insula,Insula,,1.0,high_confidence,limen insula,0.8125
+Amygdala,amygdaloid complex,HOMBA:10361,1.0,bm25+exact+fuzzy,Amygdala,Amygdala,,1.0,high_confidence,regions of amygdaloid complex,0.903017
+Caudate nucleus,caudate nucleus (mediodorsal division of the CP),HOMBA:10334,1.0,bm25+exact+fuzzy+hierarchy_parent,Caudate nucleus,Caudate nucleus,,1.0,high_confidence,body of caudate nucleus,0.843297
+Lenticular nucleus (putamen),putamen (lateroventral division of the CP),HOMBA:10338,1.0,bm25+exact+fuzzy,Lenticular nucleus,Lenticular nucleus,putamen,1.0,high_confidence,caudal putamen,0.935
+Lenticular nucleus (pallidum),putamen (lateroventral division of the CP),HOMBA:10338,0.88,bm25+exact+fuzzy,Lenticular nucleus,Lenticular nucleus,pallidum,0.0,needs_review,globus pallidus (paleostriatum),0.797949
+Thalamus,thalamus,HOMBA:10390,1.0,bm25+exact+fuzzy,Thalamus,Thalamus,,1.0,high_confidence,regions of thalamus,0.7554
+Putamen,putamen (lateroventral division of the CP),HOMBA:10338,1.0,bm25+exact+fuzzy+hierarchy_parent,Putamen,Putamen,,1.0,high_confidence,caudal putamen,0.7009
+External globus pallidus,external division of globus pallidus,HOMBA:10343,0.978625,bm25+fuzzy,external division of globus pallidus,External globus pallidus,external,1.0,high_confidence,external medullary lamina of globus pallidus,0.805708
+Internal globus pallidus,globus pallidus (paleostriatum),HOMBA:10342,0.938625,bm25+fuzzy+hierarchy_parent,globus pallidus (paleostriatum),Internal globus pallidus,,1.0,high_confidence,internal division of globus pallidus,0.858625
+Nucleus accumbens,nucleus accumbens,HOMBA:10339,1.0,bm25+exact+fuzzy+hierarchy_parent,Nucleus accumbens,Nucleus accumbens,,1.0,high_confidence,core of nucleus accumbens,0.736733
+Zona incerta,zona incerta,HOMBA:10463,1.0,bm25+exact+fuzzy,Zona incerta,Zona incerta,,1.0,high_confidence,,
+Anterior thalamic nucleus,anterior nuclear complex of thalamus,HOMBA:10392,1.0,bm25+exact+fuzzy+hierarchy_parent,anterior thalamic nuclei,anterior thalamic nuclei,,1.0,high_confidence,ventral anterior nucleus of thalamus,0.75465
+Ventral anterior thalamic nucleus,ventral anterior nucleus of thalamus,HOMBA:10417,1.0,bm25+exact+fuzzy,Ventral anterior thalamic nucleus,Ventral anterior thalamic nucleus,ventral,1.0,high_confidence,anterior nuclear complex of thalamus,0.6952
+Ventral lateral thalamic nucleus,ventral lateral nucleus of thalamus,HOMBA:10420,1.0,bm25+exact+fuzzy,Ventral lateral thalamic nucleus,Ventral lateral thalamic nucleus,ventral;lateral,1.0,high_confidence,ventral medial nucleus of thalamus,0.808138
+Ventralis intermedius,anterior (ventral /principal) pretectal nucleus,HOMBA:12187,0.37625,fuzzy,ventral,Ventralis intermedius,,1.0,low_confidence,anterior (ventral) spinal artery,0.37625
+Ventral posterior internal thalamic nucleus,ventral posterior nuclear complex of thalamus,HOMBA:10423,0.968565,bm25+fuzzy,ventral posterior thalamic nucleus,Ventral posterior internal thalamic nucleus,ventral;posterior,1.0,high_confidence,ventral posterior inferior nucleus,0.784292
+Ventral posterior external thalamic nucleus,ventral posterior nuclear complex of thalamus,HOMBA:10423,0.9231,bm25+fuzzy,ventral posterior thalamic nucleus,Ventral posterior external thalamic nucleus,ventral;posterior;external,0.666667,modifier_conflict,posterior nucleus of thalamus,0.733395
+Mediodorsal thalamic nucleus,mediodorsal nucleus of thalamus,HOMBA:10398,1.0,bm25+exact+fuzzy,Mediodorsal thalamic nucleus,Mediodorsal thalamic nucleus,,1.0,high_confidence,ventral midline nuclei of thalamus,0.369202
+Pulvinar,pulvinar of thalamus,HOMBA:10409,1.0,bm25+exact+fuzzy+hierarchy_parent,Pulvinar,Pulvinar,,1.0,high_confidence,lateroposterior-pulvinar complex,0.621774
+Centre median parafascicular complex,subicular complex,HOMBA:266441673,0.447161,bm25+fuzzy,subicular complex,Centre median parafascicular complex,,1.0,low_confidence,posterior nuclear complex of thalamus,0.353792
+Reticular perithalamic nucleus,reticular nucleus of thalamus,HOMBA:10464,0.851793,bm25+fuzzy,reticular thalamic nucleus,Reticular perithalamic nucleus,reticular,1.0,needs_review,parvicellular division of reticular nucleus (perireticular nucleus),0.703634
+Internal capsule,internal capsule,HOMBA:10581,1.0,bm25+exact+fuzzy+hierarchy_parent,Internal capsule,Internal capsule,,1.0,high_confidence,genu of internal capsule,0.854167
+Forel's field H,prerubral field (field H3),HOMBA:AA30325,0.518389,bm25+fuzzy,prerubral field (field H3),Forel's field H,,1.0,low_confidence,lenticular fasciculus (field H2),0.512309
+Forel's field H1,thalamic fasciculus (field H1),HOMBA:10593,0.767426,bm25+fuzzy,field H1,Forel's field H1,,1.0,needs_review,prerubral field (field H3),0.505618
+Forel's field H2,lenticular fasciculus (field H2),HOMBA:10585,0.767426,bm25+fuzzy,field H2,Forel's field H2,,1.0,needs_review,prerubral field (field H3),0.505618
+Ansa lenticularis,ansa lenticularis,HOMBA:10571,1.0,bm25+exact+fuzzy,Ansa lenticularis,Ansa lenticularis,,1.0,high_confidence,ansa peduncularis,0.277577
+Brachium conjunctivum,superior cerebellar peduncle (brachium conjunctivum),HOMBA:12354,1.0,bm25+exact+fuzzy,Brachium conjunctivum,Brachium conjunctivum,,1.0,high_confidence,middle cerebellar peduncle (brachium pontis),0.265149
+Fornix,fornix,HOMBA:10576,1.0,bm25+exact+fuzzy+hierarchy_parent,Fornix,Fornix,,1.0,high_confidence,body of the fornix,0.589243
+Lateral ventricle,body of lateral ventricles,HOMBA:10598,0.976667,bm25+fuzzy,body of lateral ventricle,Lateral ventricle,lateral,1.0,high_confidence,atrium of lateral ventricles,0.946389
+CA1,CA1 region of hippocampus,HOMBA:10297,1.0,bm25+exact+fuzzy+hierarchy_parent,CA1,CA1,,1.0,high_confidence,"lamination of hippocampal proper (CA1, CA2, CA3)",1.0
+CA2,CA2 region of hippocampus,HOMBA:10298,1.0,bm25+exact+fuzzy+hierarchy_parent,CA2,CA2,,1.0,high_confidence,"lamination of hippocampal proper (CA1, CA2, CA3)",1.0
+CA3,CA3 region of hippocampus,HOMBA:10299,1.0,bm25+exact+fuzzy+hierarchy_parent,CA3,CA3,,1.0,high_confidence,"lamination of hippocampal proper (CA1, CA2, CA3)",1.0
+CA4 (dentate hilus),CA4 region of hippocampus,HOMBA:10300,0.88,bm25+exact+fuzzy,CA4,CA4,dentate;hilus;dentate hilus,0.0,needs_review,dentate gyrus,0.557919
+Dentate gyrus,dentate gyrus,HOMBA:10295,1.0,bm25+exact+fuzzy+hierarchy_parent,Dentate gyrus,Dentate gyrus,,1.0,high_confidence,major division of dentate gyrus,0.898452
+Subiculum,subiculum proper (strictly defined subiculum),HOMBA:10302,1.0,bm25+exact+fuzzy+hierarchy_parent,Subiculum,Subiculum,,1.0,high_confidence,major division of subiculum,0.789559
+Vestigial hippocampal sulcus,hippocampal commissure,HOMBA:10560,0.487776,bm25+fuzzy+hierarchy_parent,hippocampal commissure,Vestigial hippocampal sulcus,,1.0,low_confidence,hippocampal fissure,0.482749
+Anterior nucleus (thalamus),rostral division of pulvinar,HOMBA:10410,0.923571,bm25+fuzzy,anterior nucleus of pulvinar,Anterior nucleus,thalamus,1.0,high_confidence,ventral anterior nucleus of thalamus,0.905634
+Lateral geniculate nucleus,lateral geniculate nucleus (dorsal lateral geniculate nucleus),HOMBA:10429,1.0,bm25+exact+fuzzy,Lateral geniculate nucleus,Lateral geniculate nucleus,lateral,1.0,high_confidence,pregeniculate nucleus (ventral lateral geniculate nucleus),0.9975
+Medial geniculate nucleus,medial geniculate nucleus,HOMBA:10434,1.0,bm25+exact+fuzzy,Medial geniculate nucleus,Medial geniculate nucleus,medial,1.0,high_confidence,dorsal (rostral) division of medial geniculate nucleus,0.9975
+Ventral posterior thalamic nucleus,ventral posterior nuclear complex of thalamus,HOMBA:10423,1.0,bm25+exact+fuzzy,Ventral posterior thalamic nucleus,Ventral posterior thalamic nucleus,ventral;posterior,1.0,high_confidence,posterior nucleus of thalamus,0.9375
+Intralaminar thalamic nuclei,posterior marginal (intralaminar) nucleus of thalamus (PIL),HOMBA:AA30311,0.592628,bm25+fuzzy,posterior marginal intralaminar thalamic nucleus pil,intralaminar thalamic nucleus,,1.0,low_confidence,ventral midline nuclei of thalamus,0.328714
+Medial dorsal thalamic nucleus,central medial nucleus of thalamus,HOMBA:10445,0.765336,bm25+fuzzy,central medial nucleus of thalamus,medial dorsal nucleus of thalamus,medial;dorsal,0.5,modifier_conflict,ventral medial nucleus of thalamus,0.765336
+Lateral posterior thalamic nucleus,lateral posterior nucleus of thalamus,HOMBA:10408,1.0,bm25+exact+fuzzy,Lateral posterior thalamic nucleus,Lateral posterior thalamic nucleus,lateral;posterior,1.0,high_confidence,posterior nucleus of thalamus,0.9375
+Posterior thalamic nucleus,posterior nucleus of thalamus,HOMBA:10440,1.0,bm25+exact+fuzzy,Posterior thalamic nucleus,Posterior thalamic nucleus,posterior,1.0,high_confidence,lateral posterior nucleus of thalamus,0.9975
+Medial pulvinar,medial division of pulvinar,HOMBA:10411,1.0,bm25+fuzzy,medial division of pulvinar of thalamus,medial pulvinar of thalamus,medial,1.0,high_confidence,pulvinar of thalamus,0.7172
+Inferior pulvinar,inferior division of pulvinar,HOMBA:10413,1.0,bm25+exact+fuzzy,Inferior pulvinar,Inferior pulvinar,,1.0,high_confidence,pulvinar of thalamus,0.8342
+Lateral pulvinar,lateral division of pulvinar,HOMBA:10412,1.0,bm25+fuzzy,lateral division of pulvinar of thalamus,lateral pulvinar of thalamus,lateral,1.0,high_confidence,pulvinar of thalamus,0.7172
+Anterior pulvinar,pulvinar of thalamus,HOMBA:10409,0.7009,bm25+fuzzy+hierarchy_parent,pulvinar of thalamus,anterior pulvinar of thalamus,,1.0,needs_review,rostral division of pulvinar,0.665213
+Ventral medial thalamic nucleus,ventral medial nucleus of thalamus,HOMBA:10427,1.0,bm25+exact+fuzzy,Ventral medial thalamic nucleus,Ventral medial thalamic nucleus,ventral;medial,1.0,high_confidence,ventral lateral nucleus of thalamus,0.808138
+Transverse temporal gyri (Heschl's gyri),transverse temporal gyrus (Heschl's gyrus),HOMBA:12144,0.825032,bm25+fuzzy,transverse temporal gyrus (Heschl's gyrus),Transverse temporal gyri (Heschl's gyri),heschls;gyri;heschls gyri,0.333333,modifier_conflict,transverse temporal sulcus,0.581204
+Planum temporale,planum temporale,HOMBA:12145,1.0,bm25+exact+fuzzy,Planum temporale,Planum temporale,,1.0,high_confidence,planum polare,0.277577
+Temporal pole,temporal pole (temporopolar cortex),HOMBA:12146,1.0,bm25+exact+fuzzy,Temporal pole,Temporal pole,,1.0,high_confidence,temporal lobe,0.97
+Limen insulae,limen insula,HOMBA:12179,1.0,bm25+exact+fuzzy,Limen insulae,Limen insulae,,1.0,high_confidence,insular lobe,0.218794
+Uncus,uncus of (para)hippocampal gyrus,HOMBA:12165,0.223459,bm25,uncus of  hippocampal gyrus,Uncus,,1.0,low_confidence,,
+Entorhinal area,entorhinal cortex,HOMBA:10317,1.0,bm25+exact+fuzzy+hierarchy_parent,Entorhinal area,Entorhinal area,,1.0,high_confidence,lateral (rostral) entorhinal cortex,0.7009
+Periamygdaloid cortex,periamygdaloid cortex,HOMBA:AA30225,1.0,bm25+exact+fuzzy+hierarchy_parent,Periamygdaloid cortex,Periamygdaloid cortex,,1.0,high_confidence,sulcal periamygdaloid cortex,0.856667
+Septal area,septal region (septal nuclear complex),HOMBA:10350,1.0,bm25+exact+fuzzy+hierarchy_parent,Septal area,Septal area,,1.0,high_confidence,rostral septal nuclear complex,0.768
+Arcuate fasciculus,arcuate fasciculus,HOMBA:10569,1.0,bm25+exact+fuzzy,Arcuate fasciculus,Arcuate fasciculus,,1.0,high_confidence,dorsal fasciculus (column) of spinal cord,0.280864
+Inferior longitudinal fasciculus,inferior longitudinal fasciculus,HOMBA:10580,1.0,bm25+exact+fuzzy,Inferior longitudinal fasciculus,Inferior longitudinal fasciculus,,1.0,high_confidence,longitudinal fasciculus,0.856667
+Uncinate fasciculus,uncinate fasciculus,HOMBA:10594,1.0,bm25+exact+fuzzy,Uncinate fasciculus,Uncinate fasciculus,,1.0,high_confidence,dorsal fasciculus (column) of spinal cord,0.280864
+Meyer's loop (geniculocalcarine tract),Meyer's loop of optic radiation,HOMBA:266441617,0.537537,bm25+fuzzy,Meyer's loop of optic radiation,Meyer's loop (geniculocalcarine tract),geniculocalcarine;tract;geniculocalcarine tract,0.0,low_confidence,capsular part of optic radiation (geniculocalcarine tract),0.451833
+Fimbria,fimbria,HOMBA:10575,1.0,bm25+exact+fuzzy,Fimbria,Fimbria,,1.0,high_confidence,hippocampus,0.205603
+Alveus,alveus,HOMBA:10570,1.0,bm25+exact+fuzzy,Alveus,Alveus,,1.0,high_confidence,,
+Temporal horn of the lateral ventricle,rostral horn of lateral ventricles,HOMBA:10597,0.831034,bm25+fuzzy,anterior horn of lateral ventricle,Temporal horn of the lateral ventricle,lateral,1.0,needs_review,caudal horn of lateral ventricles,0.829016
+Angular gyrus (anterior),angular gyrus,HOMBA:12136,0.88,bm25+exact+fuzzy,Angular gyrus,Angular gyrus,anterior,0.0,needs_review,anterior cingulate  cortex (ventromedial prefrontal cortex),0.419511
+Angular gyrus (posterior),angular gyrus,HOMBA:12136,0.88,bm25+exact+fuzzy,Angular gyrus,Angular gyrus,posterior,0.0,needs_review,posterior cingulate cortex (PCC),0.417931
+Intracalcarine cortex (inferior),inferior lateral parietal cortex,HOMBA:10225,0.681401,bm25+fuzzy,posteroventral parietal cortex inferior,Intracalcarine cortex (inferior),inferior,1.0,needs_review,inferior temporal cortex,0.646711
+Intracalcarine cortex (superior),superior medial parietal cortex,HOMBA:10215,0.667095,bm25+fuzzy,superior,Intracalcarine cortex (superior),superior,1.0,needs_review,rostral division of area 22,0.635925
+Cingulate gyrus (anterior anterior part),anterior cingulate  cortex (ventromedial prefrontal cortex),HOMBA:10278,0.9775,bm25+fuzzy,anterior cingulate  cortex,cingulate cortex,anterior;anterior anterior part,0.5,modifier_conflict,cingulate cortex,0.88
+Cingulate gyrus (anterior posterior part),anterior cingulate  cortex (ventromedial prefrontal cortex),HOMBA:10278,0.895,bm25+fuzzy,anterior cingulate  cortex,cingulate cortex,anterior;posterior;anterior posterior part,0.333333,modifier_conflict,cingulate cortex,0.88
+Cingulate gyrus (posterior),posterior cingulate cortex (PCC),HOMBA:10285,1.0,bm25+fuzzy,posterior cingulate cortex,cingulate cortex,posterior,1.0,high_confidence,"cingulate gyrus, caudal (posterior) part",0.923571
+Cuneal cortex,external shell (cortex) of inferior colliculus,HOMBA:12308,0.566442,bm25+fuzzy,cortex,Cuneal cortex,,1.0,low_confidence,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.544575
+Central opercular cortex (anterior),lateral (rostral) entorhinal cortex,HOMBA:10318,0.651464,bm25+fuzzy,lateral (anterior) entorhinal cortex,Central opercular cortex (anterior),anterior,1.0,needs_review,anterior cingulate  cortex (ventromedial prefrontal cortex),0.636568
+Central opercular cortex (posterior),frontal motor cortex (posterior frontal cortex),HOMBA:AA30009,0.646108,bm25+fuzzy,posterior frontal cortex,Central opercular cortex (posterior),posterior,1.0,needs_review,medial (caudal) entorhinal cortex,0.633002
+Superior frontal gyrus (lateral anterior),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,lateral;anterior;lateral anterior,0.0,needs_review,superior frontal sulcus,0.563779
+Superior frontal gyrus (lateral middle),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,lateral;middle;lateral middle,0.0,needs_review,middle frontal gyrus,0.690884
+Superior frontal gyrus (lateral posterior),superior frontal gyrus,HOMBA:12115,0.88,bm25+exact+fuzzy,Superior frontal gyrus,Superior frontal gyrus,lateral;posterior;lateral posterior,0.0,needs_review,superior frontal sulcus,0.563779
+Middle frontal gyrus (anterior),middle frontal gyrus,HOMBA:12116,0.88,bm25+exact+fuzzy,Middle frontal gyrus,Middle frontal gyrus,anterior,0.0,needs_review,anterior cingulate  cortex (ventromedial prefrontal cortex),0.399511
+Middle frontal gyrus (middle),middle frontal gyrus,HOMBA:12116,1.0,bm25+exact+fuzzy,Middle frontal gyrus,Middle frontal gyrus,middle,1.0,high_confidence,middle ectosylvian gyrus,0.457056
+Middle frontal gyrus (posterior),middle frontal gyrus,HOMBA:12116,0.88,bm25+exact+fuzzy,Middle frontal gyrus,Middle frontal gyrus,posterior,0.0,needs_review,frontal motor cortex (posterior frontal cortex),0.40293
+Inferior frontal gyrus (anterior),inferior frontal gyrus,HOMBA:12117,0.88,bm25+exact+fuzzy,Inferior frontal gyrus,Inferior frontal gyrus,anterior,0.0,needs_review,"inferior frontal gyrus, opercular part",0.689432
+Inferior frontal gyrus (pars opercularis),inferior frontal gyrus,HOMBA:12117,0.88,bm25+exact+fuzzy,Inferior frontal gyrus,Inferior frontal gyrus,pars;opercularis;pars opercularis,0.0,needs_review,"inferior frontal gyrus, opercular part",0.667432
+Inferior frontal gyrus (pars orbitalis),inferior frontal gyrus,HOMBA:12117,0.88,bm25+exact+fuzzy,Inferior frontal gyrus,Inferior frontal gyrus,pars;orbitalis;pars orbitalis,0.0,needs_review,"inferior frontal gyrus, opercular part",0.667432
+Inferior frontal gyrus (pars triangularis),inferior frontal gyrus,HOMBA:12117,0.88,bm25+exact+fuzzy,Inferior frontal gyrus,Inferior frontal gyrus,pars;triangularis;pars triangularis,0.0,needs_review,"inferior frontal gyrus, opercular part",0.667432
+Frontal medial cortex,medial orbital frontal cortex (area 14),HOMBA:10195,0.837395,bm25+fuzzy,medial orbital frontal cortex,Frontal medial cortex,medial,1.0,needs_review,medial (caudal) entorhinal cortex,0.395453
+Frontal opercular cortex,"inferior frontal gyrus, opercular part",HOMBA:12119,0.497768,bm25+fuzzy,"inferior frontal gyrus, opercular part",Frontal opercular cortex,,1.0,low_confidence,inferior frontal gyrus,0.49688
+Frontal orbital cortex (anterior),orbital frontal cortex,HOMBA:10194,0.715158,bm25+fuzzy,orbital frontal cortex,Frontal orbital cortex,anterior,0.0,needs_review,"lateral orbital frontal cortex (OFCl, area 12/47)",0.643089
+Frontal orbital cortex (lateral),"lateral orbital frontal cortex (OFCl, area 12/47)",HOMBA:10205,0.993571,bm25+fuzzy,lateral orbital frontal cortex,Frontal orbital cortex (lateral),lateral,1.0,high_confidence,orbital frontal cortex,0.715158
+Frontal orbital cortex (medial),medial orbital frontal cortex (area 14),HOMBA:10195,0.989407,bm25+fuzzy,medial orbital frontal cortex,Frontal orbital cortex (medial),medial,1.0,high_confidence,orbital frontal cortex,0.715158
+Frontal orbital cortex (posterior),orbital frontal cortex,HOMBA:10194,0.715158,bm25+fuzzy,orbital frontal cortex,Frontal orbital cortex,posterior,0.0,needs_review,"lateral orbital frontal cortex (OFCl, area 12/47)",0.643089
+Frontal pole (lateral),frontal pole,HOMBA:146034888,0.88,bm25+exact+fuzzy,Frontal pole,Frontal pole,lateral,0.0,needs_review,"lateral orbital frontal cortex (OFCl, area 12/47)",0.384597
+Frontal pole (medial),frontal pole,HOMBA:146034888,0.88,bm25+exact+fuzzy,Frontal pole,Frontal pole,medial,0.0,needs_review,medial orbital frontal cortex (area 14),0.386507
+Heschl's gyrus,transverse temporal gyrus (Heschl's gyrus),HOMBA:12144,1.0,bm25+exact+fuzzy,Heschl's gyrus,Heschl's gyrus,,1.0,high_confidence,transverse temporal sulcus,0.51021
+Insular cortex (anterior),major insular cortex,HOMBA:10288,0.88,bm25+exact+fuzzy,Insular cortex,Insular cortex,anterior,0.0,needs_review,granular insular cortex (area Ig),0.7172
+Insular cortex (posterior),major insular cortex,HOMBA:10288,0.88,bm25+exact+fuzzy,Insular cortex,Insular cortex,posterior,0.0,needs_review,granular insular cortex (area Ig),0.7172
+Occipital fusiform gyrus,fusiform (occipitotemporal) gyrus,HOMBA:AA30549,0.791667,bm25+fuzzy,fusiform   gyrus,Occipital fusiform gyrus,,1.0,needs_review,occipital lobe,0.597614
+Lateral occipital cortex (inferior),"lateral temporal-occipital cortex (area 37l, area TEO)",HOMBA:AA30024,0.840855,bm25+fuzzy,lateral temporal-occipital cortex,Lateral occipital cortex,inferior;lateral,0.5,modifier_conflict,inferior occipital sulcus,0.613994
+Lateral occipital cortex (superior),"lateral temporal-occipital cortex (area 37l, area TEO)",HOMBA:AA30024,0.840855,bm25+fuzzy,lateral temporal-occipital cortex,Lateral occipital cortex,superior;lateral,0.5,modifier_conflict,superior occipital gyrus,0.622502
+Occipital pole,occipital pole,HOMBA:12149,1.0,bm25+exact+fuzzy,Occipital pole,Occipital pole,,1.0,high_confidence,occipital lobe,0.97
+Paracingulate gyrus,paracingulate gyrus,HOMBA:146034872,1.0,bm25+exact+fuzzy,Paracingulate gyrus,Paracingulate gyrus,,1.0,high_confidence,uncus of (para)hippocampal gyrus,0.310179
+Precuneal cortex,prefrontal cortex,HOMBA:10172,0.534309,bm25+fuzzy,prefrontal cortex,Precuneal cortex,,1.0,low_confidence,frontal cortex,0.528305
+Parahippocampal gyrus (anterior),anterior parahippocampal gyrus,HOMBA:12163,1.0,bm25+fuzzy,anterior parahippocampal gyrus,Parahippocampal gyrus,anterior,1.0,high_confidence,parahippocampal gyrus,0.88
+Parahippocampal gyrus (posterior),posterior parahippocampal gyrus,HOMBA:12164,1.0,bm25+fuzzy,posterior parahippocampal gyrus,Parahippocampal gyrus,posterior,1.0,high_confidence,posterior parahippocampal region (postrhinal cortex),1.0
+Parietal opercular cortex,parietal cortex,HOMBA:10208,0.697858,bm25+fuzzy+hierarchy_parent,parietal cortex,Parietal opercular cortex,,1.0,needs_review,parietal lobe,0.645036
+Postcentral gyrus (lateral inferior),postcentral gyrus,HOMBA:12132,0.88,bm25+exact+fuzzy,Postcentral gyrus,Postcentral gyrus,lateral;inferior;lateral inferior,0.0,needs_review,inferior horn of lateral ventricles,0.321915
+Postcentral gyrus (lateral middle),postcentral gyrus,HOMBA:12132,0.88,bm25+exact+fuzzy,Postcentral gyrus,Postcentral gyrus,lateral;middle;lateral middle,0.0,needs_review,middle temporal gyrus,0.570176
+Postcentral gyrus (lateral superior),postcentral gyrus,HOMBA:12132,0.88,bm25+exact+fuzzy,Postcentral gyrus,Postcentral gyrus,lateral;superior;lateral superior,0.0,needs_review,lateral superior olivary nucleus,0.597903
+Postcentral gyrus (medial),postcentral gyrus,HOMBA:12132,0.88,bm25+exact+fuzzy,Postcentral gyrus,Postcentral gyrus,medial,0.0,needs_review,medial orbital gyrus,0.410804
+Planum polare,planum polare,HOMBA:12147,1.0,bm25+exact+fuzzy,Planum polare,Planum polare,,1.0,high_confidence,planum temporale,0.277577
+Pre-supplementary motor area (inferior),medial division of area 6 (supplementary motor area),HOMBA:AA30012,0.7172,bm25+fuzzy,supplementary motor area,Pre-supplementary motor area,inferior,0.0,needs_review,"caudal (posterior, inferior) medullary velum",0.576053
+Pre-supplementary motor area (superior),medial division of area 6 (supplementary motor area),HOMBA:AA30012,0.7172,bm25+fuzzy,supplementary motor area,Pre-supplementary motor area,superior,0.0,needs_review,"rostral (anterior, superior) medullary velum",0.585686
+Precentral gyrus (lateral inferior),precentral gyrus,HOMBA:12114,0.88,bm25+exact+fuzzy,Precentral gyrus,Precentral gyrus,lateral;inferior;lateral inferior,0.0,needs_review,inferior horn of lateral ventricles,0.321915
+Precentral gyrus (lateral middle),precentral gyrus,HOMBA:12114,0.88,bm25+exact+fuzzy,Precentral gyrus,Precentral gyrus,lateral;middle;lateral middle,0.0,needs_review,"lateral fissure, main (caudal) ramus",0.576167
+Precentral gyrus (lateral superior),precentral gyrus,HOMBA:12114,0.88,bm25+exact+fuzzy,Precentral gyrus,Precentral gyrus,lateral;superior;lateral superior,0.0,needs_review,lateral superior olivary nucleus,0.601307
+Precentral gyrus (medial),precentral gyrus,HOMBA:12114,0.88,bm25+exact+fuzzy,Precentral gyrus,Precentral gyrus,medial,0.0,needs_review,medial orbital gyrus,0.410804
+Subcallosal cortex,subgenual (subcallosal) cingulate cortex (area 25),HOMBA:10281,0.494986,bm25+fuzzy,subcallosal,Subcallosal cortex,,1.0,low_confidence,cingulate cortex,0.494488
+Supracalcarine cortex,dorsolateral temporal cortex,HOMBA:13322,0.513508,hierarchy_parent,dorsolateral temporal cortex,Supracalcarine cortex,,1.0,low_confidence,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",0.460206
+Supramarginal gyrus (anterior),supramarginal gyrus,HOMBA:12135,0.88,bm25+exact+fuzzy,Supramarginal gyrus,Supramarginal gyrus,anterior,0.0,needs_review,anterior cingulate  cortex (ventromedial prefrontal cortex),0.419511
+Supramarginal gyrus (posterior),supramarginal gyrus,HOMBA:12135,0.88,bm25+exact+fuzzy,Supramarginal gyrus,Supramarginal gyrus,posterior,0.0,needs_review,posterior cingulate cortex (PCC),0.417931
+Superior parietal lobule (anterior),superior parietal lobule (gyrus),HOMBA:12133,0.88,bm25+exact+fuzzy,Superior parietal lobule,Superior parietal lobule,anterior,0.0,needs_review,superior medial parietal cortex,0.498193
+Superior parietal lobule (posterior),superior parietal lobule (gyrus),HOMBA:12133,0.88,bm25+exact+fuzzy,Superior parietal lobule,Superior parietal lobule,posterior,0.0,needs_review,superior medial parietal cortex,0.498193
+Superior temporal gyrus (anterior),superior temporal gyrus,HOMBA:12140,0.88,bm25+exact+fuzzy,Superior temporal gyrus,Superior temporal gyrus,anterior,0.0,needs_review,rostral division of area 22,0.799984
+Superior temporal gyrus (posterior),superior temporal gyrus,HOMBA:12140,0.88,bm25+exact+fuzzy,Superior temporal gyrus,Superior temporal gyrus,posterior,0.0,needs_review,caudal division of area 22,0.79686
+Middle temporal gyrus (anterior),middle temporal gyrus,HOMBA:12141,0.88,bm25+exact+fuzzy,Middle temporal gyrus,Middle temporal gyrus,anterior,0.0,needs_review,"inferior temporal sulcus, rostral portion (anterior middle temporal sulcus)",0.795491
+Middle temporal gyrus (posterior),middle temporal gyrus,HOMBA:12141,0.88,bm25+exact+fuzzy,Middle temporal gyrus,Middle temporal gyrus,posterior,0.0,needs_review,"inferior temporal sulcus, caudal portion (posterior middle temporal sulcus)",0.792557
+Inferior temporal gyrus (anterior),inferior temporal gyrus,HOMBA:12142,0.88,bm25+exact+fuzzy,Inferior temporal gyrus,Inferior temporal gyrus,anterior,0.0,needs_review,superior temporal gyrus,0.604975
+Inferior temporal gyrus (posterior),inferior temporal gyrus,HOMBA:12142,0.88,bm25+exact+fuzzy,Inferior temporal gyrus,Inferior temporal gyrus,posterior,0.0,needs_review,superior temporal gyrus,0.604975
+Temporal frontal cortex (anterior),rostral division of area 22,HOMBA:10241,0.759092,bm25+fuzzy,anterior   superior temporal cortex,Temporal frontal cortex (anterior),anterior,1.0,needs_review,frontal cortex,0.676739
+Temporal frontal cortex (posterior),frontal motor cortex (posterior frontal cortex),HOMBA:AA30009,0.868214,bm25+fuzzy,posterior frontal cortex,Temporal frontal cortex (posterior),posterior,1.0,needs_review,caudal division of area 22,0.754475
+Middle temporal gyrus (temporo-occipital),middle temporal gyrus,HOMBA:12141,0.88,bm25+exact+fuzzy,Middle temporal gyrus,Middle temporal gyrus,temporo;occipital;temporo occipital,0.0,needs_review,"fifth visual area (middle temporal area, MT)",0.599285
+Inferior temporal gyrus (temporo-occipital),inferior temporal gyrus,HOMBA:12142,0.88,bm25+exact+fuzzy,Inferior temporal gyrus,Inferior temporal gyrus,temporo;occipital;temporo occipital,0.0,needs_review,inferior occipital gyrus,0.728184
+Temporal occipital fusiform cortex,ventrolateral temporal cortex,HOMBA:13324,0.674243,bm25+hierarchy_parent,ventrolateral temporal cortex,Temporal occipital fusiform cortex,,1.0,needs_review,temporal cortex,0.617033
+Primary visual cortex,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",HOMBA:10269,1.0,bm25+exact+fuzzy+hierarchy_parent,Primary visual cortex,Primary visual cortex,,1.0,high_confidence,dorsolateral extrastriate occipital cortex,0.9575
+Secondary visual cortex,dorsolateral extrastriate occipital cortex,HOMBA:AA30822,0.83465,hierarchy_parent,dorsolateral extrastriate occipital cortex,Secondary visual cortex,,1.0,needs_review,ventromedial extrastriate occipital cortex,0.83465
+Visual area V3,"dorsal third visual area (V3D, V3)",HOMBA:AA30824,0.604626,bm25+fuzzy,dorsal third visual area v3,Visual area V3,,1.0,needs_review,sixth visual area,0.264356
+Visual area V3A,sixth visual area,HOMBA:AA30020,0.54361,bm25+fuzzy+hierarchy_parent,sixth visual area,Visual area V3A,,1.0,low_confidence,"fifth visual area (middle temporal area, MT)",0.467504
+Visual area V3B,sixth visual area,HOMBA:AA30020,0.54361,bm25+fuzzy+hierarchy_parent,sixth visual area,Visual area V3B,,1.0,low_confidence,"fifth visual area (middle temporal area, MT)",0.467504
+Visual area V4,sixth visual area,HOMBA:AA30020,0.558971,bm25+fuzzy+hierarchy_parent,sixth visual area,Visual area V4,,1.0,low_confidence,transitional fourth visual area (V4T),0.55
+Visual area V6,sixth visual area,HOMBA:AA30020,0.785102,bm25+hierarchy_parent,sixth visual area,Visual area V6,,1.0,needs_review,"sixth visual area V6, part B (area V6)",0.705102
+Visual area V6A,sixth visual area,HOMBA:AA30020,0.6675,bm25+fuzzy+hierarchy_parent,sixth visual area,Visual area V6A,,1.0,needs_review,"sixth visual area V6, part B (area V6)",0.5875
+Visual area V7,seventh visual area V7,HOMBA:267499179,0.715038,bm25+fuzzy,seventh visual area V7,Visual area V7,,1.0,needs_review,sixth visual area,0.264356
+Visual area V8,sixth visual area,HOMBA:AA30020,0.558971,bm25+fuzzy+hierarchy_parent,sixth visual area,Visual area V8,,1.0,low_confidence,"fifth visual area (middle temporal area, MT)",0.480715
+Middle temporal area,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,1.0,bm25+exact+fuzzy,Middle temporal area,Middle temporal area,,1.0,high_confidence,dorsolateral temporal cortex,0.8342
+Medial superior temporal area,medial superior temporal area,HOMBA:AA30021,1.0,bm25+exact+fuzzy,Medial superior temporal area,Medial superior temporal area,medial,1.0,high_confidence,superior (dorsal) temporal sulcus,0.559835
+Fundal superior temporal area,temporal lobe,HOMBA:12139,0.623201,bm25+hierarchy_parent,temporal lobe,Fundal superior temporal area,,1.0,needs_review,medial superior temporal area,0.615103
+Area PH,subincertal nucleus (area),HOMBA:AA30351,0.529821,fuzzy,area,Area PH,,1.0,low_confidence,ventral tuberomammillary nucleus (area),0.529821
+V4 transitional area,transitional fourth visual area (V4T),HOMBA:AA30818,0.545526,bm25+fuzzy,transitional fourth visual area,V4 transitional area,,1.0,low_confidence,amygdaloid transition areas,0.391388
+Primary motor cortex,"primary motor cortex (first motor cortex, area 4, area FA)",HOMBA:10163,1.0,bm25+exact+fuzzy,Primary motor cortex,Primary motor cortex,,1.0,high_confidence,frontal motor cortex (posterior frontal cortex),0.8342
+Somatosensory area 3a,somatosensory radiation,HOMBA:AA30495,0.543863,bm25+fuzzy,somatosensory radiation,Somatosensory area 3a,,1.0,low_confidence,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.490208
+Somatosensory area 3b,somatosensory radiation,HOMBA:AA30495,0.543863,bm25+fuzzy,somatosensory radiation,Somatosensory area 3b,,1.0,low_confidence,"primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)",0.490208
+Somatosensory area 1,area 1 of primary somatosensory cortex,HOMBA:AA30014,0.597275,bm25+fuzzy,area 1 of somatosensory cortex,Somatosensory area 1,,1.0,low_confidence,subareas of primary somatosensory cortex,0.582457
+Somatosensory area 2,area 2 of primary somatosensory cortex,HOMBA:AA30015,0.597275,bm25+fuzzy,area 2 of somatosensory cortex,Somatosensory area 2,,1.0,low_confidence,subareas of primary somatosensory cortex,0.582457
+Frontal eye field,frontal eye field of premotor cortex,HOMBA:AA30010,0.616803,bm25+fuzzy,frontal eye field of premotor cortex,Frontal eye field,,1.0,needs_review,frontal lobe,0.303803
+Premotor eye field,frontal eye field of premotor cortex,HOMBA:AA30010,0.552179,bm25+fuzzy,frontal eye field of premotor cortex,Premotor eye field,,1.0,low_confidence,prerubral field (field H3),0.250567
+Area 55b,area 55b of premotor cortex,HOMBA:AA30011,0.467639,bm25+fuzzy,area 55b of premotor cortex,Area 55b,,1.0,low_confidence,,
+Premotor area 6a,"premotor cortex (area 6, area FB, secondary motor cortex)",HOMBA:10168,0.49773,bm25+fuzzy,premotor cortex,Premotor area 6a,,1.0,low_confidence,area 55b of premotor cortex,0.403538
+Premotor area 6v,"premotor cortex (area 6, area FB, secondary motor cortex)",HOMBA:10168,0.49773,bm25+fuzzy,premotor cortex,Premotor area 6v,,1.0,low_confidence,area 55b of premotor cortex,0.403538
+Premotor area 6d,"premotor cortex (area 6, area FB, secondary motor cortex)",HOMBA:10168,0.49773,bm25+fuzzy,premotor cortex,Premotor area 6d,,1.0,low_confidence,area 55b of premotor cortex,0.403538
+Premotor area 6m,"premotor cortex (area 6, area FB, secondary motor cortex)",HOMBA:10168,0.49773,bm25+fuzzy,premotor cortex,Premotor area 6m,,1.0,low_confidence,area 55b of premotor cortex,0.403538
+Premotor area 6r,"premotor cortex (area 6, area FB, secondary motor cortex)",HOMBA:10168,0.49773,bm25+fuzzy,premotor cortex,Premotor area 6r,,1.0,low_confidence,area 55b of premotor cortex,0.403538
+Premotor area 6mp,"premotor cortex (area 6, area FB, secondary motor cortex)",HOMBA:10168,0.490256,bm25+fuzzy,premotor cortex,Premotor area 6mp,,1.0,low_confidence,area 55b of premotor cortex,0.398729
+Prefrontal area 8Av,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 8Av,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 8Ad,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 8Ad,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 8BL,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 8BL,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 8BM,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 8BM,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 8C,prefrontal cortex,HOMBA:10172,0.4798,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 8C,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.456383
+Prefrontal area 9-46v,intermediate division of DFC (area 9/46),HOMBA:10181,0.544559,bm25+fuzzy,area 9,Prefrontal area 9-46v,,1.0,low_confidence,"rostrodorsal division of DFC (area 9, DFCd)",0.544559
+Prefrontal area 9-46d,intermediate division of DFC (area 9/46),HOMBA:10181,0.544559,bm25+fuzzy,area 9,Prefrontal area 9-46d,,1.0,low_confidence,"rostrodorsal division of DFC (area 9, DFCd)",0.544559
+Prefrontal area 46,"rostroventral division of DFC (area 46, DFCv)",HOMBA:10184,0.628742,bm25+fuzzy+hierarchy_parent,area 46,Prefrontal area 46,,1.0,needs_review,dorsolateral prefrontal cortex,0.609518
+Prefrontal area 47s,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 47s,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 47m,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 47m,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 47l,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 47l,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 47r,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 47r,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 9a,prefrontal cortex,HOMBA:10172,0.4798,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 9a,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.456383
+Prefrontal area 9m,prefrontal cortex,HOMBA:10172,0.4798,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 9m,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.456383
+Prefrontal area 9p,prefrontal cortex,HOMBA:10172,0.4798,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 9p,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.456383
+Prefrontal area 10d,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 10d,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 10r,prefrontal cortex,HOMBA:10172,0.472775,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 10r,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.449916
+Prefrontal area 10pp,prefrontal cortex,HOMBA:10172,0.466175,bm25+fuzzy+hierarchy_parent,prefrontal cortex,Prefrontal area 10pp,,1.0,low_confidence,anterior cingulate  cortex (ventromedial prefrontal cortex),0.443851
+Frontal area SFL,frontal lobe,HOMBA:12113,0.579139,bm25+fuzzy+hierarchy_parent,frontal lobe,Frontal area SFL,,1.0,low_confidence,frontal pole,0.499139
+Retrosplenial cortex,retrosplenial cortex,HOMBA:10324,1.0,bm25+exact+fuzzy+hierarchy_parent,Retrosplenial cortex,Retrosplenial cortex,,1.0,high_confidence,"agranular retrosplenial cortex (area 30, RSag)",0.854167
+Posterior opercular area POS2,caudal (posterior) branch of anterior commissure,HOMBA:AA30485,0.638939,bm25+fuzzy,posterior,Posterior opercular area POS2,posterior,1.0,needs_review,caudal (posterior) extramural migratory stream,0.638939
+Lateral intraparietal area (ventral),lateral subdivision of area 7,HOMBA:267498979,0.578787,bm25+fuzzy,intraparietal subdivision of area 7,Lateral intraparietal area (ventral),ventral;lateral,0.5,modifier_conflict,parvicellular (ventral) division of BL,0.572059
+Lateral intraparietal area (dorsal),"dorsal raphe nucleus, lateral division",HOMBA:12227,0.612737,bm25+fuzzy,"dorsal raphe nucleus, lateral division",Lateral intraparietal area (dorsal),dorsal;lateral,1.0,needs_review,"lateral parabrachial nucleus, dorsal division",0.608474
+Ventral intraparietal area,ventral tegmental area,HOMBA:12261,0.641675,bm25+fuzzy,ventral tegmental area,Ventral intraparietal area,ventral,1.0,needs_review,anterior (ventral /principal) pretectal nucleus,0.637066
+Anterior intraparietal area,anterior commissure,HOMBA:10559,0.628804,bm25+hierarchy_parent,anterior commissure,Anterior intraparietal area,,1.0,needs_review,"lobule II (central lobule and wing, anterior part)",0.554411
+Primary auditory cortex,"primary auditory cortex (first auditory cortex, auditory core region)",HOMBA:10236,1.0,bm25+exact+fuzzy+hierarchy_parent,Primary auditory cortex,Primary auditory cortex,,1.0,high_confidence,dorsolateral temporal cortex,0.97
+Temporal area TE1a,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.546003,bm25+fuzzy,middle temporal area,Temporal area TE1a,,1.0,low_confidence,dorsolateral temporal cortex,0.538363
+Temporal area TE1m,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.546003,bm25+fuzzy,middle temporal area,Temporal area TE1m,,1.0,low_confidence,dorsolateral temporal cortex,0.538363
+Temporal area TE1p,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.546003,bm25+fuzzy,middle temporal area,Temporal area TE1p,,1.0,low_confidence,dorsolateral temporal cortex,0.538363
+Temporal area TE2a,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.546003,bm25+fuzzy,middle temporal area,Temporal area TE2a,,1.0,low_confidence,dorsolateral temporal cortex,0.538363
+Cingulate area 23c,cingulate subdivision of area 5,HOMBA:10217,0.492621,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area 23c,,1.0,low_confidence,cingulate cortex,0.447225
+Cingulate area 23d,cingulate subdivision of area 5,HOMBA:10217,0.492621,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area 23d,,1.0,low_confidence,cingulate cortex,0.447225
+Cingulate area 31a,cingulate subdivision of area 5,HOMBA:10217,0.492621,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area 31a,,1.0,low_confidence,cingulate cortex,0.447225
+Cingulate area a24,cingulate subdivision of area 5,HOMBA:10217,0.492621,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area a24,,1.0,low_confidence,cingulate cortex,0.447225
+Cingulate area p24,cingulate subdivision of area 5,HOMBA:10217,0.492621,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area p24,,1.0,low_confidence,cingulate cortex,0.447225
+Insular area FOP1,insular lobe,HOMBA:12176,0.546763,bm25+fuzzy+hierarchy_parent,insula,Insular area FOP1,,1.0,low_confidence,major insular cortex,0.424149
+Insular area FOP2,insular lobe,HOMBA:12176,0.546763,bm25+fuzzy+hierarchy_parent,insula,Insular area FOP2,,1.0,low_confidence,major insular cortex,0.424149
+Insular area FOP3,insular lobe,HOMBA:12176,0.546763,bm25+fuzzy+hierarchy_parent,insula,Insular area FOP3,,1.0,low_confidence,major insular cortex,0.424149
+Insular area FOP4,insular lobe,HOMBA:12176,0.546763,bm25+fuzzy+hierarchy_parent,insula,Insular area FOP4,,1.0,low_confidence,major insular cortex,0.424149
+Insular area FOP5,insular lobe,HOMBA:12176,0.546763,bm25+fuzzy+hierarchy_parent,insula,Insular area FOP5,,1.0,low_confidence,major insular cortex,0.424149
+Retroinsular cortex,retroinsular cortex,HOMBA:13323,1.0,bm25+exact+fuzzy,Retroinsular cortex,Retroinsular cortex,,1.0,high_confidence,dorsolateral temporal cortex,0.279728
+Posterior insular area,caudal (posterior) branch of anterior commissure,HOMBA:AA30485,0.739318,bm25+fuzzy,posterior,Posterior insular area,posterior,1.0,needs_review,caudal (posterior) extramural migratory stream,0.739318
+Anterior ventral insular area,anterior (ventral) spinal artery,HOMBA:AA30890,0.717423,bm25+fuzzy,anterior (ventral) spinal artery,Anterior ventral insular area,ventral,1.0,needs_review,anterior (ventral /principal) pretectal nucleus,0.644894
+Medial insular area,medial division of orbitofrontal insular cortex,HOMBA:AA30006,0.648372,bm25+fuzzy,medial division of orbitofrontal insular cortex,Medial insular area,medial,1.0,needs_review,fastigial (medial) nucleus,0.374878
+Frontoinsular area,insular lobe,HOMBA:12176,0.4375,fuzzy,insula,Frontoinsular area,,1.0,low_confidence,subincertal nucleus (area),0.304583
+Parietal area IP0,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area IP0,,1.0,low_confidence,parietal operculum,0.493561
+Parietal area IP1,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area IP1,,1.0,low_confidence,parietal operculum,0.493561
+Parietal area IP2,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area IP2,,1.0,low_confidence,parietal operculum,0.493561
+Parietal area PFt,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PFt,,1.0,low_confidence,"rostral division of IPC (IPCr, area 40, area PF)",0.496324
+Parietal area PF,"rostral division of IPC (IPCr, area 40, area PF)",HOMBA:10226,0.660961,bm25+fuzzy,area PF,Parietal area PF,,1.0,needs_review,parietal lobe,0.580245
+Parietal area PFm,parietal lobe,HOMBA:12131,0.583561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PFm,,1.0,low_confidence,parietal operculum,0.503561
+Parietal area PFcm,parietal lobe,HOMBA:12131,0.586738,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PFcm,,1.0,low_confidence,parietal operculum,0.506738
+Parietal area PFop,parietal lobe,HOMBA:12131,0.585349,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PFop,,1.0,low_confidence,parietal operculum,0.505349
+Parietal area PGi,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PGi,,1.0,low_confidence,parietal operculum,0.493561
+Parietal area PGs,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PGs,,1.0,low_confidence,parietal operculum,0.493561
+Parietal area PGp,parietal lobe,HOMBA:12131,0.573561,bm25+fuzzy+hierarchy_parent,parietal lobe,Parietal area PGp,,1.0,low_confidence,parietal operculum,0.493561
+Temporal area STGg,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.541845,bm25+fuzzy,middle temporal area,Temporal area STGg,,1.0,low_confidence,dorsolateral temporal cortex,0.534787
+Temporal area PSL,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.554306,bm25+fuzzy,middle temporal area,Temporal area PSL,,1.0,low_confidence,dorsolateral temporal cortex,0.545503
+Temporal area STSdp,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.533957,bm25+fuzzy,middle temporal area,Temporal area STSdp,,1.0,low_confidence,dorsolateral temporal cortex,0.528003
+Temporal area STSda,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.533957,bm25+fuzzy,middle temporal area,Temporal area STSda,,1.0,low_confidence,dorsolateral temporal cortex,0.528003
+Temporal area STSva,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.533957,bm25+fuzzy,middle temporal area,Temporal area STSva,,1.0,low_confidence,dorsolateral temporal cortex,0.528003
+Temporal area STSvp,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.533957,bm25+fuzzy,middle temporal area,Temporal area STSvp,,1.0,low_confidence,dorsolateral temporal cortex,0.528003
+Temporal area TF,lateral division of PHC (area TF),HOMBA:10260,0.568426,bm25+fuzzy,area TF,Temporal area TF,,1.0,low_confidence,"fifth visual area (middle temporal area, MT)",0.56756
+Temporal area TGd,"fifth visual area (middle temporal area, MT)",HOMBA:267499039,0.554306,bm25+fuzzy,middle temporal area,Temporal area TGd,,1.0,low_confidence,dorsolateral temporal cortex,0.545503
+Entorhinal cortex,entorhinal cortex,HOMBA:10317,1.0,bm25+exact+fuzzy+hierarchy_parent,Entorhinal cortex,Entorhinal cortex,,1.0,high_confidence,lamination of entorhinal cortex,0.765457
+Presubiculum,presubiculum (presubicular cortex),HOMBA:10315,1.0,bm25+exact+fuzzy+hierarchy_parent,Presubiculum,Presubiculum,,1.0,high_confidence,caudal (dorsal) presubiculum (postsubiculum),0.676118
+Parahippocampal area PeEc,parahippocampal gyrus,HOMBA:12162,0.49671,bm25+fuzzy+hierarchy_parent,parahippocampal gyrus,Parahippocampal area PeEc,,1.0,low_confidence,cingulate-parahippocampal isthmus,0.48172
+Hippocampal formation,hippocampal formation,HOMBA:12170,1.0,bm25+exact+fuzzy,Hippocampal formation,Hippocampal formation,,1.0,high_confidence,hippocampal commissure,0.277343
+Paracentral area 5L,"paracentral lobule, rostral part",HOMBA:12126,0.472529,bm25+fuzzy,"paracentral lobule, rostral part",Paracentral area 5L,,1.0,low_confidence,"rostral division of SPC (area 5, area PE)",0.424342
+Paracentral area 5mv,"paracentral lobule, rostral part",HOMBA:12126,0.467607,bm25+fuzzy,"paracentral lobule, rostral part",Paracentral area 5mv,,1.0,low_confidence,paracentral nucleus of thalamus,0.413452
+Paracentral area 5m,"paracentral lobule, rostral part",HOMBA:12126,0.472529,bm25+fuzzy,"paracentral lobule, rostral part",Paracentral area 5m,,1.0,low_confidence,"rostral division of SPC (area 5, area PE)",0.424342
+Cingulate area 24dd,cingulate subdivision of area 5,HOMBA:10217,0.487647,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area 24dd,,1.0,low_confidence,cingulate cortex,0.440322
+Cingulate area 24dv,cingulate subdivision of area 5,HOMBA:10217,0.487647,bm25+fuzzy,cingulate subdivision of area 5,Cingulate area 24dv,,1.0,low_confidence,cingulate cortex,0.440322
+Area 43,caudal division of subcentral cortex (area 43),HOMBA:AA30017,1.0,bm25+exact+fuzzy,Area 43,Area 43,,1.0,high_confidence,rostral division of subcentral cortex (area 43),1.0
+Opercular area OP1,opercular subdivision of area 44,HOMBA:266441161,0.52031,bm25+fuzzy,opercular subdivision of area 44,Opercular area OP1,,1.0,low_confidence,subincertal nucleus (area),0.304583
+Opercular area OP2-3,opercular subdivision of area 44,HOMBA:266441161,0.488571,bm25+fuzzy,opercular subdivision of area 44,Opercular area OP2-3,,1.0,low_confidence,subincertal nucleus (area),0.29025
+Opercular area OP4,opercular subdivision of area 44,HOMBA:266441161,0.52731,bm25+fuzzy,opercular subdivision of area 44,Opercular area OP4,,1.0,low_confidence,subincertal nucleus (area),0.304583
+Area 52,parainsular cortex (area 52),HOMBA:10267,1.0,bm25+exact+fuzzy,Area 52,Area 52,,1.0,high_confidence,,

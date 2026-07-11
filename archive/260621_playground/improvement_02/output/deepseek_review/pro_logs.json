@@ -1,0 +1,115 @@
+[
+  {
+    "model": "deepseek-v4-pro",
+    "record_ids": [
+      468,
+      469,
+      532,
+      534,
+      573
+    ],
+    "ok": true,
+    "error": "",
+    "usage": {
+      "prompt_tokens": 735,
+      "completion_tokens": 1063,
+      "total_tokens": 1798,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 765
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 735
+    }
+  },
+  {
+    "model": "deepseek-v4-pro",
+    "record_ids": [
+      424,
+      449,
+      465,
+      466,
+      467
+    ],
+    "ok": true,
+    "error": "",
+    "usage": {
+      "prompt_tokens": 737,
+      "completion_tokens": 1452,
+      "total_tokens": 2189,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1046
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 737
+    }
+  },
+  {
+    "model": "deepseek-v4-pro",
+    "record_ids": [
+      586,
+      597,
+      616,
+      620,
+      649
+    ],
+    "ok": true,
+    "error": "",
+    "usage": {
+      "prompt_tokens": 744,
+      "completion_tokens": 1916,
+      "total_tokens": 2660,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1537
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 744
+    }
+  },
+  {
+    "model": "deepseek-v4-pro",
+    "record_ids": [
+      659,
+      663,
+      664,
+      667,
+      861
+    ],
+    "ok": false,
+    "error": "No JSON object found in model output."
+  },
+  {
+    "model": "deepseek-v4-pro",
+    "record_ids": [
+      659,
+      663,
+      664,
+      667,
+      861
+    ],
+    "ok": true,
+    "error": "",
+    "retry": true,
+    "usage": {
+      "prompt_tokens": 751,
+      "completion_tokens": 1973,
+      "total_tokens": 2724,
+      "prompt_tokens_details": {
+        "cached_tokens": 640
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1571
+      },
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 111
+    }
+  }
+]
