@@ -10,16 +10,16 @@
 
 ### round4_large_scale（213クエリ、最終評価）
 
-| 区分 | 件数 | 割合 |
+| スコア帯 | 件数 | 割合 |
 |---|---|---|
-| high_confidence（スコア ≥ 0.90） | **206** | **96.7%** |
-| needs_review（0.60 ≤ スコア < 0.90） | 6 | 2.8% |
-| low_confidence（スコア < 0.60） | 1 | 0.5% |
+| スコア ≥ 0.90 | **206** | **96.7%** |
+| 0.60 ≤ スコア < 0.90 | 6 | 2.8% |
+| スコア < 0.60 | 1 | 0.5% |
 | no_result | 0 | 0.0% |
 
 ### 既存テストセット（回帰チェック）
 
-| テストセット | high_conf | needs_review | low_conf | 備考 |
+| テストセット | スコア ≥ 0.90 | 0.60〜0.90 | < 0.60 | 備考 |
 |---|---|---|---|---|
 | `level1.csv`（50件） | 50/50 = **100%** | 0 | 0 | 回帰なし |
 | `round1_comprehensive.csv`（56件） | 52/56 = **92.9%** | 3 | 1 | 回帰なし |
@@ -28,7 +28,7 @@
 
 ### 精度推移
 
-| ラウンド | 主な変更 | level1 high_conf | round1 high_conf |
+| ラウンド | 主な変更 | level1 スコア≥0.90率 | round1 スコア≥0.90率 |
 |---|---|---|---|
 | v0.1.0（初期） | 初期状態 | ~60% | ~60% |
 | v0.2.0 | alias 辞書整備（38件）+ exact match penalty 修正 | ~90% | ~85% |
@@ -63,7 +63,6 @@ rcs/                              ← RCS エンジン（開発の正本）
   HOMBA_v1_fixed.csv
   rcs_test_list.py
   rcs_test_interactive.py
-  review.py                       ← review_flag（Lambda / CLI 共通）
 
 scripts/
   package_lambda.ps1 / .sh
@@ -171,7 +170,6 @@ python cursor_compare_results.py \
 | 開発版（`rcs/`） | 本番への反映 |
 |---|---|
 | `rcs/rosetta_candidate_generator.py` | zip 同梱（手動コピー不要） |
-| `rcs/review.py` | zip 同梱 |
 | `rcs/homba_alias_rules.csv` | S3 `homba_alias_rules.csv` |
 | `rcs/homba_abbrev_rules.csv` | S3 `homba_abbrev_rules.csv` |
 | `web/backend/lambda_function.py` | zip に含める（HTTP/S3 アダプター） |

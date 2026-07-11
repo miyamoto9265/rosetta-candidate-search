@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report 03: changed top-1 independent review</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #fff;
+      --text: #172033;
+      --muted: #667085;
+      --line: #d9e0ec;
+      --ok: #0b7a4b;
+      --parent: #2f6fed;
+      --warn: #b7791f;
+      --bad: #b42318;
+      --bad2: #7a271a;
+      --issue: #7a3fb4;
+      --unknown: #475467;
+      --neutral: #344054;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 30px 36px 20px; background: #101828; color: #fff; }
+    header h1 { margin: 0 0 8px; font-size: 26px; }
+    header p { margin: 0; max-width: 1080px; line-height: 1.65; color: #d0d5dd; }
+    main { padding: 24px 36px 40px; }
+    section { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin: 0 0 20px; box-shadow: 0 1px 2px rgba(16,24,40,.04); }
+    h2 { margin: 0 0 14px; font-size: 20px; }
+    h3 { margin: 22px 0 10px; font-size: 16px; }
+    p { line-height: 1.65; }
+    code { background: #eef2f6; border-radius: 5px; padding: 1px 5px; }
+    .note { color: var(--muted); }
+    .context-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .context-box { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: #fbfcfe; }
+    .context-box h3 { margin-top: 0; }
+    .context-box ul { margin: 8px 0 0; padding-left: 20px; line-height: 1.7; }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+    .card { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: #fbfcfe; }
+    .card-title { color: var(--muted); font-size: 13px; }
+    .card-value { font-size: 25px; font-weight: 700; margin-top: 4px; }
+    .card-sub { color: var(--muted); font-size: 12px; min-height: 18px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
+    th { background: #f2f4f7; font-size: 13px; position: sticky; top: 0; z-index: 1; }
+    .compact th, .compact td { font-size: 13px; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .muted { color: var(--muted); font-size: 12px; }
+    .small { font-size: 12px; }
+    .reason { font-size: 12px; line-height: 1.45; max-width: 520px; }
+    .pill { display: inline-block; padding: 3px 8px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .pill.ok { background: var(--ok); }
+    .pill.parent { background: var(--parent); }
+    .pill.warn { background: var(--warn); }
+    .pill.bad { background: var(--bad); }
+    .pill.bad2 { background: var(--bad2); }
+    .pill.issue { background: var(--issue); }
+    .pill.unknown { background: var(--unknown); }
+    .pill.neutral { background: var(--neutral); }
+    .bar { height: 10px; background: #eef2f6; border-radius: 999px; overflow: hidden; min-width: 140px; }
+    .bar span { display: block; height: 100%; background: #6172f3; }
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+    select, input { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: #fff; }
+    input { min-width: 340px; }
+    .table-wrap { max-height: 760px; overflow: auto; border: 1px solid var(--line); border-radius: 10px; }
+    .sep { height: 5px; }
+    .arrow { margin: 0 5px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Report 03: changed top-1 independent review</h1>
+    <p>
+      top-1 が変化した55件だけを対象に、baseline candidate と improved candidate のどちらが
+      元の query により整合するかを DeepSeek で再判定した独立レポートです。
+      過去の改善判定ラベルは使っていません。
+    </p>
+  </header>
+  <main>
+    <section>
+      <h2>このレポートの位置づけ</h2>
+      <div class="context-grid">
+        <div class="context-box">
+          <h3>目的</h3>
+          <p class="note">
+            Report 03 は、前回の変化リスト <code>changed_top1_with_deepseek.csv</code> に含まれる
+            55件だけを再評価します。このCSVは対象レコードの抽出にだけ使い、
+            過去の <code>deepseek_label</code> は判定にも集計にも使っていません。
+            評価対象は <code>query</code>、baseline top-1、improved top-1 の3点です。
+          </p>
+          <ul>
+            <li>見るもの: top-1 変更が意味のある改善か、悪化か、実質変化なしか</li>
+            <li>見ないもの: これまでの <code>changed_top1_with_deepseek.csv</code> の判定</li>
+            <li>参考のみ: 直前の絶対整合性レビューにおける baseline 側ラベル</li>
+          </ul>
+        </div>
+        <div class="context-box">
+          <h3>判定方法</h3>
+          <ul>
+            <li>Pass 1: DeepSeek flash / strict prompt</li>
+            <li>Pass 2: DeepSeek flash / specificity-aware prompt</li>
+            <li>Pass 3: DeepSeek pro / conservative adjudication prompt</li>
+            <li>最終判定: 3回の多数決、票割れは要目視寄りに扱う</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>概要</h2>
+      <div class="cards">
+        
+    <div class="card">
+      <div class="card-title">対象件数</div>
+      <div class="card-value">55</div>
+      <div class="card-sub">changed top-1 only</div>
+    </div>
+    
+        
+    <div class="card">
+      <div class="card-title">3パス完了</div>
+      <div class="card-value">55/55</div>
+      <div class="card-sub">flash x2 + pro x1</div>
+    </div>
+    
+        
+    <div class="card">
+      <div class="card-title">改善</div>
+      <div class="card-value">32</div>
+      <div class="card-sub">58.2%</div>
+    </div>
+    
+        
+    <div class="card">
+      <div class="card-title">要確認/悪化系</div>
+      <div class="card-value">22</div>
+      <div class="card-sub">worse + both wrong + uncertain</div>
+    </div>
+    
+      </div>
+      <p class="note">
+        <code>final_reason</code> は3回分の理由を <code>|</code> で連結しています。
+        個別理由はCSVの <code>pass1_reason</code>、<code>pass2_reason</code>、<code>pass3_reason</code> に残しています。
+      </p>
+    </section>
+
+    <section>
+      <h2>改善判定の分布</h2>
+      <table class="compact">
+        <thead><tr><th>ラベル</th><th>件数</th><th>割合</th><th>分布</th></tr></thead>
+        <tbody>
+            <tr>
+              <td><span class="pill ok">改善</span></td>
+              <td class="num">32</td>
+              <td class="num">58.2%</td>
+              <td><div class="bar"><span style="width:58.18%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="num">17</td>
+              <td class="num">30.9%</td>
+              <td><div class="bar"><span style="width:30.91%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill bad">悪化</span></td>
+              <td class="num">5</td>
+              <td class="num">9.1%</td>
+              <td><div class="bar"><span style="width:9.09%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill neutral">実質変化なし</span></td>
+              <td class="num">1</td>
+              <td class="num">1.8%</td>
+              <td><div class="bar"><span style="width:1.82%"></span></div></td>
+            </tr>
+            </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>baseline / improved の絶対整合性</h2>
+      <div class="context-grid">
+        <div>
+          <h3>baseline</h3>
+          <table class="compact">
+            <thead><tr><th>ラベル</th><th>件数</th><th>割合</th><th>分布</th></tr></thead>
+            <tbody>
+            <tr>
+              <td><span class="pill bad">不整合</span></td>
+              <td class="num">33</td>
+              <td class="num">60.0%</td>
+              <td><div class="bar"><span style="width:60.00%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill parent">上位概念</span></td>
+              <td class="num">19</td>
+              <td class="num">34.5%</td>
+              <td><div class="bar"><span style="width:34.55%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill ok">整合</span></td>
+              <td class="num">2</td>
+              <td class="num">3.6%</td>
+              <td><div class="bar"><span style="width:3.64%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill warn">部分/狭すぎ</span></td>
+              <td class="num">1</td>
+              <td class="num">1.8%</td>
+              <td><div class="bar"><span style="width:1.82%"></span></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>improved</h3>
+          <table class="compact">
+            <thead><tr><th>ラベル</th><th>件数</th><th>割合</th><th>分布</th></tr></thead>
+            <tbody>
+            <tr>
+              <td><span class="pill bad">不整合</span></td>
+              <td class="num">19</td>
+              <td class="num">34.5%</td>
+              <td><div class="bar"><span style="width:34.55%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill ok">整合</span></td>
+              <td class="num">17</td>
+              <td class="num">30.9%</td>
+              <td><div class="bar"><span style="width:30.91%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill parent">上位概念</span></td>
+              <td class="num">14</td>
+              <td class="num">25.5%</td>
+              <td><div class="bar"><span style="width:25.45%"></span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td><span class="pill warn">部分/狭すぎ</span></td>
+              <td class="num">5</td>
+              <td class="num">9.1%</td>
+              <td><div class="bar"><span style="width:9.09%"></span></div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h3>整合性ラベルの遷移</h3>
+      
+    <table class="compact">
+      <thead><tr><th>baseline</th><th>improved</th><th>件数</th></tr></thead>
+      <tbody>
+            <tr>
+              <td><span class="pill bad">不整合</span></td>
+              <td><span class="pill bad">不整合</span></td>
+              <td class="num">17</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill bad">不整合</span></td>
+              <td><span class="pill ok">整合</span></td>
+              <td class="num">11</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill parent">上位概念</span></td>
+              <td><span class="pill parent">上位概念</span></td>
+              <td class="num">8</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill parent">上位概念</span></td>
+              <td><span class="pill ok">整合</span></td>
+              <td class="num">6</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill bad">不整合</span></td>
+              <td><span class="pill parent">上位概念</span></td>
+              <td class="num">5</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill parent">上位概念</span></td>
+              <td><span class="pill warn">部分/狭すぎ</span></td>
+              <td class="num">4</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill ok">整合</span></td>
+              <td><span class="pill parent">上位概念</span></td>
+              <td class="num">1</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill parent">上位概念</span></td>
+              <td><span class="pill bad">不整合</span></td>
+              <td class="num">1</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill warn">部分/狭すぎ</span></td>
+              <td><span class="pill warn">部分/狭すぎ</span></td>
+              <td class="num">1</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill ok">整合</span></td>
+              <td><span class="pill bad">不整合</span></td>
+              <td class="num">1</td>
+            </tr>
+            </tbody>
+    </table>
+    
+    </section>
+
+    <section>
+      <h2>確実性</h2>
+      <div class="cards">
+        
+    <div class="card">
+      <div class="card-title">high</div>
+      <div class="card-value">50</div>
+      <div class="card-sub">final certainty</div>
+    </div>
+    
+        
+    <div class="card">
+      <div class="card-title">medium</div>
+      <div class="card-value">5</div>
+      <div class="card-sub">final certainty</div>
+    </div>
+    
+        
+    <div class="card">
+      <div class="card-title">low</div>
+      <div class="card-value"></div>
+      <div class="card-sub">final certainty</div>
+    </div>
+    
+        
+    <div class="card">
+      <div class="card-title">API failures</div>
+      <div class="card-value">2</div>
+      <div class="card-sub">retry log included</div>
+    </div>
+    
+      </div>
+      <table class="compact">
+        <thead><tr><th>不確実性タグ</th><th>件数</th></tr></thead>
+        <tbody><tr><td>stable</td><td class="num">50</td></tr><tr><td>majority_vote</td><td class="num">4</td></tr><tr><td>majority_vote+low_certainty</td><td class="num">1</td></tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>55件詳細</h2>
+      <div class="filters">
+        <select id="labelFilter">
+          <option value="">all improvement labels</option>
+          <option value="improved_better">改善</option><option value="improved_worse">悪化</option><option value="no_material_change">実質変化なし</option><option value="both_wrong">両方不整合</option><option value="needs_human_review">要目視確認</option><option value="homba_gap_or_source_issue">ソース/HOMBA要確認</option>
+        </select>
+        <select id="certaintyFilter">
+          <option value="">all certainty</option>
+          <option value="high">high</option>
+          <option value="medium">medium</option>
+          <option value="low">low</option>
+        </select>
+        <input id="searchBox" placeholder="query / candidate / reason search">
+      </div>
+      <div class="table-wrap">
+        <table id="detailTable">
+          <thead>
+            <tr>
+              <th>dataset</th>
+              <th>query</th>
+              <th>candidates</th>
+              <th>consistency</th>
+              <th>improvement</th>
+              <th>certainty</th>
+              <th>reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-label="improved_worse" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Centrolateral and paracentral thalamic nuclei</td>
+              <td>
+                <div><b>baseline:</b> rostral intralaminar nuclei of thalamus</div>
+                <div class="muted">HOMBA:10443 / score 0.7199 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> paracentral nucleus of thalamus</div>
+                <div class="muted">HOMBA:10446 / score 0.6399</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill warn">部分/狭すぎ</span>
+              </td>
+              <td><span class="pill bad">悪化</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline (rostral intralaminar) correctly contains both centrolateral and paracentral; improved only includes paracentral, missing centrolateral. | Baseline broader_parent (rostral intralaminar includes both nuclei); improved partial (only paracentral). Moving from broader to partial is worse. | Baseline rostral intralaminar correctly encompasses both; improved only provides paracentral, missing centrolateral.</td>
+            </tr>
+            
+
+            <tr data-label="improved_worse" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Cuneate Gracile Nuclei</td>
+              <td>
+                <div><b>baseline:</b> sensory relay nuclei in medulla oblongata</div>
+                <div class="muted">HOMBA:12587 / score 0.8052 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> gracile nucleus</div>
+                <div class="muted">HOMBA:12592 / score 0.7252</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill warn">部分/狭すぎ</span>
+              </td>
+              <td><span class="pill bad">悪化</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Query expects both cuneate and gracile nuclei. Baseline broader_parent includes both; improved only gracile nucleus, missing cuneate. | Query is Cuneate+Gracile nuclei. Baseline is broader parent class. Improved only covers gracile, missing cuneate, so partial. | Baseline covers both cuneate and gracile nuclei as a broader class; improved only names gracile nucleus, missing cuneate.</td>
+            </tr>
+            
+
+            <tr data-label="improved_worse" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Lateral Dorsal Amygdaloid Nucleus</td>
+              <td>
+                <div><b>baseline:</b> lateral nucleus of amygdala</div>
+                <div class="muted">HOMBA:10367 / score 0.7036 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> dorsal division of anterior amygdaloid area</div>
+                <div class="muted">HOMBA:146034710 / score 0.5707</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad">悪化</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;lateral nucleus of amygdala&#x27; is broader parent; improved &#x27;dorsal division of anterior amygdaloid area&#x27; is wrong structure. | Baseline &#x27;lateral nucleus&#x27; is parent of lateral dorsal; improved &#x27;dorsal division of anterior amygdaloid area&#x27; is a different region. | Query lateral dorsal amygdaloid nucleus; baseline lateral nucleus is anatomically broader parent; improved dorsal division of anterior amygdaloid area is unrelated structure.</td>
+            </tr>
+            
+
+            <tr data-label="improved_worse" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Lateral Dorsal Thalamus</td>
+              <td>
+                <div><b>baseline:</b> lateral dorsal nucleus of thalamus</div>
+                <div class="muted">HOMBA:10396 / score 0.8669 / abs aligned</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> dorsal thalamus</div>
+                <div class="muted">HOMBA:10391 / score 0.9033</div>
+              </td>
+              <td>
+                <span class="pill ok">整合</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill bad">悪化</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;lateral dorsal nucleus of thalamus&#x27; aligns with query; improved &#x27;dorsal thalamus&#x27; is broader, loses lateral specificity. | Query Lateral Dorsal Thalamus. Baseline specific &#x27;lateral dorsal nucleus&#x27; (aligned). Improved &#x27;dorsal thalamus&#x27; is broader. | Baseline exactly names lateral dorsal nucleus; improved dorsal thalamus is a too-broad parent.</td>
+            </tr>
+            
+
+            <tr data-label="improved_worse" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Medial Emminence</td>
+              <td>
+                <div><b>baseline:</b> medial eminence</div>
+                <div class="muted">HOMBA:12820 / score 0.8199 / abs aligned</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> fastigial (medial) nucleus</div>
+                <div class="muted">HOMBA:12402 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill ok">整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad">悪化</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;medial eminence&#x27; directly matches query. Improved &#x27;fastigial (medial) nucleus&#x27; is a different cerebellar structure. | Baseline &#x27;medial eminence&#x27; exactly matches query (typographical variant). Improved &#x27;fastigial nucleus&#x27; is cerebellar and anatomically wrong. | Baseline directly matches &#x27;medial eminence&#x27;; improved is cerebellar fastigial nucleus, unrelated.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Anterior intraparietal area</td>
+              <td>
+                <div><b>baseline:</b> rostral (anterior) branch of anterior commissure</div>
+                <div class="muted">HOMBA:AA30484 / score 0.5493 / abs </div>
+                <div class="sep"></div>
+                <div><b>improved:</b> anterior amygdaloid area</div>
+                <div class="muted">HOMBA:10362 / score 0.5068</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Both candidates are anatomically incorrect for anterior intraparietal area. | Both candidates are anatomically wrong: baseline is commissure, improved is amygdala, neither matches parietal intraparietal area. | Anterior intraparietal area is parietal cortex; baseline is commissure branch, improved is amygdala area. Both mismatched.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Anterior ventral insular area</td>
+              <td>
+                <div><b>baseline:</b> anterior (ventral) spinal artery</div>
+                <div class="muted">HOMBA:AA30890 / score 0.7074 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> anterior (ventral /principal) pretectal nucleus</div>
+                <div class="muted">HOMBA:12187 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is spinal artery, improved is pretectal nucleus. Query is insular area. Both are completely off-structure. | Anterior ventral insular area; baseline (spinal artery) and improved (pretectal nucleus) are not insular. Both wrong. | Anterior ventral insula not matched; spinal artery and pretectal nucleus are different structures.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Central opercular cortex (anterior)</td>
+              <td>
+                <div><b>baseline:</b> lateral (rostral) entorhinal cortex</div>
+                <div class="muted">HOMBA:10318 / score 0.6516 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> anterior cingulate  cortex (ventromedial prefrontal cortex)</div>
+                <div class="muted">HOMBA:10278 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is entorhinal cortex (temporal), improved is cingulate cortex (medial frontal). Neither matches opercular cortex (lateral frontal). Both are anatomically off. | Both candidates are anatomically distinct from central opercular cortex (anterior). Baseline: entorhinal cortex; improved: anterior cingulate. Neither matches. | Query is opercular cortex; both candidates (entorhinal and anterior cingulate) are anatomically unrelated.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Central opercular cortex (posterior)</td>
+              <td>
+                <div><b>baseline:</b> frontal motor cortex (posterior frontal cortex)</div>
+                <div class="muted">HOMBA:AA30009 / score 0.646 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> caudal (posterior) branch of anterior commissure</div>
+                <div class="muted">HOMBA:AA30485 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Both candidates: baseline frontal motor cortex and improved caudal branch of anterior commissure are not opercular cortex; both wrong. | Baseline frontal motor cortex and improved anterior commissure branch are both unrelated to central opercular cortex. | Baseline is frontal motor cortex, improved is a commissure; neither corresponds to the parietal operculum (central opercular cortex).</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Cuneal cortex</td>
+              <td>
+                <div><b>baseline:</b> external shell (cortex) of inferior colliculus</div>
+                <div class="muted">HOMBA:12308 / score 0.5664 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> posterior limiting parietal cortex</div>
+                <div class="muted">HOMBA:AA30018 / score 0.5133</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Neither candidate matches cuneal cortex; both are off-lobe. | Cuneal cortex is occipital; baseline is midbrain, improved is parietal cortex. Both incorrect. | Cuneal cortex is occipital; baseline is inferior colliculus cortex, improved is parietal cortex. Both wrong structures.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Intracalcarine cortex (inferior)</td>
+              <td>
+                <div><b>baseline:</b> inferior lateral parietal cortex</div>
+                <div class="muted">HOMBA:10225 / score 0.6815 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> caudal (posterior, inferior) medullary velum</div>
+                <div class="muted">HOMBA:12879 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is parietal cortex, improved is medullary velum (cerebellar). Intracalcarine cortex is occipital. Both are anatomically wrong. | Intracalcarine cortex (inferior) is occipital; baseline (inferior lateral parietal) and improved (medullary velum) are unrelated. | Inferior lateral parietal and medullary velum are not intracalcarine/inferior calcarine cortex.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Intracalcarine cortex (superior)</td>
+              <td>
+                <div><b>baseline:</b> superior medial parietal cortex</div>
+                <div class="muted">HOMBA:10215 / score 0.6664 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> caudal division of area 22</div>
+                <div class="muted">HOMBA:10243 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is parietal cortex, improved is area 22 (temporal). Intracalcarine cortex is occipital. Both are wrong. | Intracalcarine cortex (superior) is occipital; baseline (superior medial parietal) and improved (caudal area 22) are in parietal/temporal lobes. | Intracalcarine cortex is calcarine; superior medial parietal and caudal area 22 are not the structure.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Ventral intraparietal area</td>
+              <td>
+                <div><b>baseline:</b> ventral tegmental area</div>
+                <div class="muted">HOMBA:12261 / score 0.6667 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> anterior (ventral /principal) pretectal nucleus</div>
+                <div class="muted">HOMBA:12187 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Both candidates: baseline ventral tegmental area and improved pretectal nucleus are not intraparietal area; both wrong. | Both candidates are non-cortical: VTA (midbrain) and pretectal nucleus, not ventral intraparietal area. | Both candidates are midbrain/subcortical structures, whereas the query is a cortical area in the intraparietal sulcus (parietal lobe).</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Central opercular cortex, posterior</td>
+              <td>
+                <div><b>baseline:</b> frontal motor cortex (posterior frontal cortex)</div>
+                <div class="muted">HOMBA:AA30009 / score 0.646 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> lobule III (central lobule and wing, posterior part)</div>
+                <div class="muted">HOMBA:12841 / score 0.5794</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Both candidates are anatomically unrelated to posterior opercular cortex; baseline is frontal motor area, improved is cerebellar lobule. | Both candidates incorrect: baseline is frontal motor cortex not opercular; improved is cerebellar lobule, not cortex. | Both candidates are not in the opercular cortex; baseline is frontal motor, improved is cerebellar lobule III.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="medium">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Lateral Dorsal Tegmentum</td>
+              <td>
+                <div><b>baseline:</b> lateral cell group of medulla tegmentum</div>
+                <div class="muted">HOMBA:AA30457 / score 0.5697 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> dorsal cell group of medulla tegmentum</div>
+                <div class="muted">HOMBA:AA30451 / score 0.5593</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">medium<br>2/3<br>majority_vote</td>
+              <td class="reason">Both candidates are medulla tegmentum cell groups; query &#x27;Lateral Dorsal Tegmentum&#x27; likely pons/midbrain, not medulla. | Query &#x27;Lateral Dorsal Tegmentum&#x27;. Baseline only &#x27;lateral&#x27;, improved only &#x27;dorsal&#x27; cell group. Both partial; neither fully correct. | Query likely means lateral dorsal tegmental nucleus (pontine); both candidates are medullary tegmentum structures, incorrect.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Laterodorsal thalamic nucleus, ventrolateral part</td>
+              <td>
+                <div><b>baseline:</b> rostral intralaminar nuclei of thalamus</div>
+                <div class="muted">HOMBA:10443 / score 0.6508 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> laterodorsal tegmental nucleus</div>
+                <div class="muted">HOMBA:12519 / score 0.6365</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Query is thalamic laterodorsal nucleus; baseline is rostral intralaminar, improved is tegmental nucleus; neither matches. | Both wrong: baseline is rostral intralaminar nuclei, not laterodorsal thalamic; improved is tegmental nucleus, not thalamus. | LD thalamic nucleus vs intralaminar nuclei and tegmental nucleus; both anatomically wrong.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="medium">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Medial Dorsal Tegmentum</td>
+              <td>
+                <div><b>baseline:</b> magnocellular (dorsal) division of BM</div>
+                <div class="muted">HOMBA:11522 / score 0.592 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> dorsal cell group of medulla tegmentum</div>
+                <div class="muted">HOMBA:AA30451 / score 0.5542</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">medium<br>2/3<br>majority_vote</td>
+              <td class="reason">Baseline magnocellular BM is unrelated. Improved dorsal medulla tegmentum is not medial dorsal midbrain tegmentum. Both wrong. | Baseline is magnocellular division of BM (basal forebrain). Improved is dorsal cell group of medulla tegmentum, still not medial dorsal tegmentum but at least in tegmentum. | Baseline is forebrain (BM); improved is medullary tegmentum, not typical dorsal tegmental nuclei; neither matches query region.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Paraventricular hypothalamic nucleus</td>
+              <td>
+                <div><b>baseline:</b> dorsal midline nuclei of thalamus</div>
+                <div class="muted">HOMBA:AA30274 / score 0.8661 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> paraventricular nucleus of thalamus</div>
+                <div class="muted">HOMBA:10457 / score 0.7861</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Query specifies hypothalamic nucleus; baseline is thalamic midline, improved is thalamic paraventricular. Both wrong region. | Baseline is dorsal midline thalamus (wrong). Improved is paraventricular nucleus of thalamus, not hypothalamic. Both are incorrect for hypothalamic query. | Query is hypothalamic; both candidates are thalamic (wrong region).</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Ventral orbital area</td>
+              <td>
+                <div><b>baseline:</b> ventral tegmental area</div>
+                <div class="muted">HOMBA:12261 / score 0.6981 / abs </div>
+                <div class="sep"></div>
+                <div><b>improved:</b> anterior (ventral /principal) pretectal nucleus</div>
+                <div class="muted">HOMBA:12187 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Ventral orbital area is cortical; baseline is VTA, improved is pretectal nucleus; both off-structure. | Both wrong: baseline VTA is midbrain; improved pretectal nucleus is also not orbital cortex. | Ventral orbital area (cortex) vs ventral tegmental area and pretectal nucleus; both off-structure.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Ventroposterior Inferior Thalamus</td>
+              <td>
+                <div><b>baseline:</b> ventral midline nuclei of thalamus</div>
+                <div class="muted">HOMBA:AA30276 / score 0.4975 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> ventroanterior-ventrolateral nuclear complex of thalamus</div>
+                <div class="muted">HOMBA:AA30289 / score 0.5108</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Neither ventral midline nor ventroanterior-ventrolateral complex match ventroposterior inferior thalamus. | Neither baseline (ventral midline nuclei) nor improved (ventroanterior-ventrolateral complex) matches ventroposterior inferior thalamus. Both wrong. | Query is ventral posterior inferior nucleus; both candidates refer to other thalamic groups.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Ventroposterior Medial and Lateral Thalamus</td>
+              <td>
+                <div><b>baseline:</b> ventral lateral nucleus of thalamus</div>
+                <div class="muted">HOMBA:10420 / score 0.588 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> lateral posterior nucleus of thalamus</div>
+                <div class="muted">HOMBA:10408 / score 0.6275</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Query targets ventroposterior medial/lateral thalamus; baseline ventral lateral and improved lateral posterior are anatomically incorrect. | Query ventroposterior medial/lateral. Baseline &#x27;ventral lateral&#x27; and improved &#x27;lateral posterior&#x27; are different structures. | Query refers to ventroposterior complex; baseline is ventral lateral, improved is lateral posterior, both wrong.</td>
+            </tr>
+            
+
+            <tr data-label="both_wrong" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Ventroposterior inferior thalamic nucleus</td>
+              <td>
+                <div><b>baseline:</b> pulvinar of thalamus</div>
+                <div class="muted">HOMBA:10409 / score 0.7071 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> caudal intralaminar nuclei of thalamus</div>
+                <div class="muted">HOMBA:10448 / score 0.663</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill bad">不整合</span>
+              </td>
+              <td><span class="pill bad2">両方不整合</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Ventroposterior inferior thalamic nucleus; baseline is pulvinar, improved is caudal intralaminar; both different thalamic nuclei. | Both wrong: baseline pulvinar and improved caudal intralaminar are different from ventroposterior inferior thalamic nucleus. | VPI thalamic nucleus vs pulvinar and caudal intralaminar nuclei; both different thalamic groups.</td>
+            </tr>
+            
+
+            <tr data-label="no_material_change" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Optic tract/chiasma</td>
+              <td>
+                <div><b>baseline:</b> optic tract</div>
+                <div class="muted">HOMBA:10589 / score 0.7884 / abs partial_or_narrower</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> optic chiasm</div>
+                <div class="muted">HOMBA:10644 / score 0.7436</div>
+              </td>
+              <td>
+                <span class="pill warn">部分/狭すぎ</span>
+                <span class="arrow">→</span>
+                <span class="pill warn">部分/狭すぎ</span>
+              </td>
+              <td><span class="pill neutral">実質変化なし</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Query &#x27;optic tract/chiasma&#x27; includes both. Baseline &#x27;optic tract&#x27; and improved &#x27;optic chiasm&#x27; each cover only one part, so both are partial. | Query &#x27;Optic tract/chiasma&#x27; includes both; baseline covers tract, improved covers chiasm; both are partial, neither fully covers compound query. | Both candidates match only one component of the compound query (tract vs. chiasm), no clear preference.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="medium">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Lateral intraparietal area (dorsal)</td>
+              <td>
+                <div><b>baseline:</b> dorsal raphe nucleus, lateral division</div>
+                <div class="muted">HOMBA:12227 / score 0.6014 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> lateral subdivision of area 7</div>
+                <div class="muted">HOMBA:267498979 / score 0.5793</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">medium<br>2/3<br>majority_vote</td>
+              <td class="reason">Baseline &#x27;dorsal raphe nucleus&#x27; is wrong (brainstem); improved &#x27;lateral subdivision of area 7&#x27; correctly matches lateral intraparietal area. | Baseline raphe nucleus is wrong; improved &#x27;lateral subdivision of area 7&#x27; is broader but correct cortical region for LIP. | Query is lateral intraparietal area (dorsal) in parietal cortex; baseline dorsal raphe nucleus (brainstem) is wrong; improved lateral subdivision of area 7 is not LIP.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Medial dorsal thalamic nucleus</td>
+              <td>
+                <div><b>baseline:</b> central medial nucleus of thalamus</div>
+                <div class="muted">HOMBA:10445 / score 0.7753 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> mediodorsal nucleus of thalamus</div>
+                <div class="muted">HOMBA:10398 / score 1.0</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;central medial nucleus&#x27; is a different thalamic nucleus. Improved &#x27;mediodorsal nucleus&#x27; is a direct synonym for medial dorsal thalamic nucleus. Clear improvement. | Baseline central medial nucleus is a different thalamic nucleus; improved mediodorsal nucleus is the exact match for medial dorsal thalamic nucleus. | Baseline central medial is distinct thalamic nucleus; improved mediodorsal is exact match to Medial dorsal thalamic nucleus.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">corpus<br>llm_reject_top1</td>
+              <td>Precuneal cortex</td>
+              <td>
+                <div><b>baseline:</b> prefrontal cortex</div>
+                <div class="muted">HOMBA:10172 / score 0.5343 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebral cortex</div>
+                <div class="muted">HOMBA:10159 / score 0.5</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline prefrontal cortex is wrong; improved cerebral cortex is a broader parent including precuneal. | Baseline prefrontal cortex is wrong (frontal lobe). Improved cerebral cortex is a valid broad parent, moving from wrong to acceptable. | Precuneal cortex is parietal; baseline prefrontal is wrong. Improved &#x27;cerebral cortex&#x27; is correct parent structure (broader).</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="medium">
+              <td class="small">corpus<br>llm_accept_top1</td>
+              <td>Secondary visual cortex</td>
+              <td>
+                <div><b>baseline:</b> dorsolateral extrastriate occipital cortex</div>
+                <div class="muted">HOMBA:AA30822 / score 0.8347 / abs ambiguous</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)</div>
+                <div class="muted">HOMBA:AA30823 / score 0.7547</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill warn">部分/狭すぎ</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">medium<br>2/3<br>majority_vote</td>
+              <td class="reason">Improved directly names secondary visual cortex; baseline is broader extrastriate cortex. | Baseline &#x27;dorsolateral extrastriate occipital cortex&#x27; is broader (includes secondary visual cortex). Improved &#x27;dorsal secondary visual cortex&#x27; is a specific part, thus partial/narrower. Improved is more specific and closer to the query than the broad parent, an improvement. | Baseline is ambiguous (dorsolateral extrastriate occipital cortex could be broader or partial). Improved is dorsal secondary visual cortex, partial/narrower than the query. Both miss the full secondary visual cortex.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">corpus<br>llm_accept_top1</td>
+              <td>Superior parietal gyrus</td>
+              <td>
+                <div><b>baseline:</b> parietal lobe</div>
+                <div class="muted">HOMBA:12131 / score 0.8771 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> superior parietal lobule (gyrus)</div>
+                <div class="muted">HOMBA:12133 / score 0.7971</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Improved is exact match for superior parietal gyrus; baseline is broader parietal lobe. | Baseline &#x27;parietal lobe&#x27; is a broader parent. Improved &#x27;superior parietal lobule (gyrus)&#x27; exactly matches the query &#x27;Superior parietal gyrus&#x27;. Clear improvement. | Improved candidate (superior parietal lobule/gyrus) directly matches the query, while baseline (parietal lobe) is too broad.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Abducens Motor Nucleus</td>
+              <td>
+                <div><b>baseline:</b> efferent nuclei of cranial nerves in pons</div>
+                <div class="muted">HOMBA:12417 / score 0.8193 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> abducens nucleus</div>
+                <div class="muted">HOMBA:12418 / score 0.7393</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline broader grouping of cranial nerve nuclei; improved abducens nucleus directly matches query. | Baseline &#x27;efferent nuclei of cranial nerves in pons&#x27; is broader; improved &#x27;abducens nucleus&#x27; is the exact anatomical structure. | Baseline &#x27;efferent nuclei...&#x27; is a broader category; improved &#x27;abducens nucleus&#x27; is the exact queried structure.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Anterior pituitary</td>
+              <td>
+                <div><b>baseline:</b> pituitary body/gland (hypophysis)</div>
+                <div class="muted">HOMBA:10505 / score 0.7081 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> anterior lobe of pituitary body (adenohypophysis)</div>
+                <div class="muted">HOMBA:AA30782 / score 0.6281</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Improved directly matches anterior pituitary; baseline is whole pituitary gland. | Baseline &#x27;pituitary body/gland&#x27; is a broader parent. Improved &#x27;anterior lobe of pituitary body (adenohypophysis)&#x27; exactly matches &#x27;Anterior pituitary&#x27;. Clear improvement. | Improved (anterior lobe/adenohypophysis) is the exact match; baseline (pituitary gland) is the whole organ.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="medium">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Basolateral Intermediate Amygdaloid Nucleus</td>
+              <td>
+                <div><b>baseline:</b> basolateral nuclear group of amygdala</div>
+                <div class="muted">HOMBA:10366 / score 0.7408 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> basolateral nucleus (basal nucleus) of amygdala</div>
+                <div class="muted">HOMBA:10368 / score 0.6608</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill warn">部分/狭すぎ</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">medium<br>3/3<br>majority_vote+low_certainty</td>
+              <td class="reason">Improved is specific basolateral nucleus but lacks &#x27;intermediate&#x27;; baseline broader group. | Baseline is the parent nuclear group; improved is the specific basolateral nucleus, better matching query&#x27;s &#x27;intermediate&#x27; amygdala nucleus. | Query expects a subnucleus; baseline is nuclear group, improved is basolateral nucleus, which is closer but still broader than the intermediate subnucleus.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Basomedial amygdaloid nucleus</td>
+              <td>
+                <div><b>baseline:</b> basolateral nuclear group of amygdala</div>
+                <div class="muted">HOMBA:10366 / score 0.7072 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> basomedial nucleus (accessory basal nucleus) of amygdala</div>
+                <div class="muted">HOMBA:10369 / score 0.6272</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;basolateral nuclear group&#x27; is broader; improved &#x27;basomedial nucleus&#x27; matches query exactly. | Baseline basolateral group is broader parent; improved basomedial nucleus directly matches query. | Improved is the basomedial nucleus; baseline is basolateral group, which is wrong.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 1 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;cerebellar morphology&#x27; is wrong for cerebellar lobule 1 vermis. Improved &#x27;cerebellar vermis&#x27; is parent, much closer. | Query &#x27;Cerebellar Lobule 1 Vermis&#x27; specific; baseline &#x27;cerebellar morphology&#x27; is wrong, improved &#x27;cerebellar vermis&#x27; is correct parent. | Baseline is generic morphology; improved is the vermis, the correct parent of lobule 1.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 10 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7921 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7121</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;cerebellar morphology&#x27; is too broad/wrong for cerebellar lobule 10 vermis. Improved &#x27;cerebellar vermis&#x27; is the parent, clearly better. | Query &#x27;Cerebellar Lobule 10 Vermis&#x27; specific; baseline &#x27;cerebellar morphology&#x27; is too general, improved &#x27;cerebellar vermis&#x27; is correct parent. | Baseline is generic morphology; improved is the vermis, which is the correct parent structure of lobule 10.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 2 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;cerebellar morphology&#x27; is wrong for cerebellar lobule 2 vermis. Improved &#x27;cerebellar vermis&#x27; is parent, clearly better. | Query &#x27;Cerebellar Lobule 2 Vermis&#x27; specific; baseline &#x27;cerebellar morphology&#x27; is wrong, improved &#x27;cerebellar vermis&#x27; is correct parent. | Baseline is generic morphology; improved is the vermis, the correct parent of lobule 2.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 3 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;cerebellar morphology&#x27; is a very broad term; improved &#x27;cerebellar vermis&#x27; is more specific to the vermis region, directly matching part of query, but still broader than specific lobule vermis. | Baseline &#x27;cerebellar morphology&#x27; is very broad; improved &#x27;cerebellar vermis&#x27; is the correct parent region for the lobule query, though still broader than the specific lobule. | Improved term &#x27;cerebellar vermis&#x27; is a more specific parent than baseline &#x27;cerebellar morphology&#x27;, but still broader than the queried lobule.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 4 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Same pattern as record 40. Improved candidate is more specific to vermis, a closer match to query than broad &#x27;cerebellar morphology&#x27;. | Same as record 40; improved vermis term is a closer anatomical match than morphology. | Improved term &#x27;cerebellar vermis&#x27; is a more specific parent than baseline &#x27;cerebellar morphology&#x27;, but still broader than the queried lobule.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 5 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Same pattern as record 40. Improved candidate is more specific to vermis, a closer match to query than broad &#x27;cerebellar morphology&#x27;. | Same pattern; improved candidate correctly targets the vermis region. | Improved term &#x27;cerebellar vermis&#x27; is a more specific parent than baseline &#x27;cerebellar morphology&#x27;, but still broader than the queried lobule.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 6 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Same pattern as record 40. Improved candidate is more specific to vermis, a closer match to query than broad &#x27;cerebellar morphology&#x27;. | Improved term is more specific to the anatomical site compared to the generic morphology term. | Improved term &#x27;cerebellar vermis&#x27; is a more specific parent than baseline &#x27;cerebellar morphology&#x27;, but still broader than the queried lobule.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 7 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Same pattern as record 40. Improved candidate is more specific to vermis, a closer match to query than broad &#x27;cerebellar morphology&#x27;. | Improved candidate &#x27;cerebellar vermis&#x27; is a meaningful step toward the correct structure. | Improved term &#x27;cerebellar vermis&#x27; is a more specific parent than baseline &#x27;cerebellar morphology&#x27;, but still broader than the queried lobule.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 8 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;cerebellar morphology&#x27; is a broad concept; improved &#x27;cerebellar vermis&#x27; is closer but still broader than query &#x27;Cerebellar Lobule 8 Vermis&#x27;. | Baseline &#x27;cerebellar morphology&#x27; is not an anatomical part; improved &#x27;cerebellar vermis&#x27; is the correct broader parent of lobule 8 vermis. | Baseline &#x27;cerebellar morphology&#x27; is too broad; improved &#x27;cerebellar vermis&#x27; is a more specific parent of Lobule 8 Vermis, closer to the query.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_out_of_scope_for_rcs</td>
+              <td>Cerebellar Lobule 9 Vermis</td>
+              <td>
+                <div><b>baseline:</b> cerebellar morphology</div>
+                <div class="muted">HOMBA:AA30563 / score 0.7986 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> cerebellar vermis</div>
+                <div class="muted">HOMBA:10658 / score 0.7186</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is broad morphology; improved cerebellar vermis is more specific but still broader than lobule 9 vermis. | Baseline &#x27;cerebellar morphology&#x27; is wrong; improved &#x27;cerebellar vermis&#x27; is the broader parent of lobule 9 vermis. | Similar to record 45: improved vermis is a more precise broader parent than general cerebellar morphology.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Dorsal Lateral Leminscus Nucleus</td>
+              <td>
+                <div><b>baseline:</b> lateral geniculate nucleus (dorsal lateral geniculate nucleus)</div>
+                <div class="muted">HOMBA:10429 / score 0.811 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> dorsal nucleus of lateral lemniscus</div>
+                <div class="muted">HOMBA:12455 / score 0.9726</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline lateral geniculate is wrong; improved dorsal nucleus of lateral lemniscus exactly matches query. | Baseline &#x27;lateral geniculate nucleus&#x27; is wrong; improved &#x27;dorsal nucleus of lateral lemniscus&#x27; exactly matches the query. | Baseline lateral geniculate is visual thalamic, unrelated; improved dorsal nucleus of lateral lemniscus matches the query exactly.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Frontal orbital cortex, anterior</td>
+              <td>
+                <div><b>baseline:</b> frontal cortex</div>
+                <div class="muted">HOMBA:10161 / score 0.7983 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> orbital frontal cortex</div>
+                <div class="muted">HOMBA:10194 / score 0.7184</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Improved orbital frontal cortex is closer than frontal cortex, but missing &#x27;anterior&#x27;. | Baseline &#x27;frontal cortex&#x27; is too broad; improved &#x27;orbital frontal cortex&#x27; is a more specific region, but still lacks &#x27;anterior&#x27; granularity. | Improved (orbital frontal cortex) is a more specific parent region than the baseline&#x27;s frontal cortex, though both miss the &#x27;anterior&#x27; qualifier.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Interanteromedial Thalamus</td>
+              <td>
+                <div><b>baseline:</b> ventral midline nuclei of thalamus</div>
+                <div class="muted">HOMBA:AA30276 / score 0.7068 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> interanteromedial nucleus of thalamus</div>
+                <div class="muted">HOMBA:13048 / score 0.6268</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;ventral midline nuclei&#x27; is a broader group; improved &#x27;interanteromedial nucleus&#x27; is exact match to query. | Baseline ventral midline nuclei is not the correct structure; improved interanteromedial nucleus exactly matches query. | Improved matches query exactly; baseline is a different structure (ventral midline).</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Intermediodorsal Thalamus</td>
+              <td>
+                <div><b>baseline:</b> dorsal midline nuclei of thalamus</div>
+                <div class="muted">HOMBA:AA30274 / score 0.7102 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> intermediodorsal  nucleus of thalamus</div>
+                <div class="muted">HOMBA:13049 / score 0.6302</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;dorsal midline nuclei&#x27; is broader; improved &#x27;intermediodorsal nucleus&#x27; is exact match. | Baseline dorsal midline nuclei is broader parent; improved intermediodorsal nucleus exactly matches query. | Improved is the specific nucleus; baseline is a broader parent group.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Laterodorsal thalamic nucleus</td>
+              <td>
+                <div><b>baseline:</b> anterodorsal nucleus of thalamus</div>
+                <div class="muted">HOMBA:10393 / score 0.7847 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> lateral dorsal nucleus of thalamus</div>
+                <div class="muted">HOMBA:10396 / score 1.0</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;anterodorsal nucleus&#x27; is wrong; improved &#x27;lateral dorsal nucleus&#x27; matches query. | Baseline anterodorsal nucleus is wrong; improved lateral dorsal nucleus exactly matches query. | Improved is lateral dorsal nucleus (laterodorsal); baseline is anterodorsal, different nucleus.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Medial Raphe</td>
+              <td>
+                <div><b>baseline:</b> fastigial (medial) nucleus</div>
+                <div class="muted">HOMBA:12402 / score 0.8075 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> median raphe nucleus</div>
+                <div class="muted">HOMBA:12235 / score 0.5491</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline fastigial nucleus is anatomically wrong; improved median raphe nucleus matches query &#x27;Medial Raphe&#x27;. | Baseline &#x27;fastigial (medial) nucleus&#x27; is incorrect; improved &#x27;median raphe nucleus&#x27; is a direct match for query &#x27;Medial Raphe&#x27;. | Baseline fastigial nucleus is cerebellar, wrong; improved median raphe nucleus matches Medial Raphe query.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Orbital cortex (ventral)</td>
+              <td>
+                <div><b>baseline:</b> anterior (ventral /principal) pretectal nucleus</div>
+                <div class="muted">HOMBA:12187 / score 0.6295 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> orbital frontal cortex</div>
+                <div class="muted">HOMBA:10194 / score 0.6158</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is wrong; improved orbital frontal cortex is synonymous with orbital cortex. | Baseline pretectal nucleus is wrong. Improved orbital frontal cortex is correct for orbital cortex ventral. | Orbital cortex (ventral) is orbitofrontal; baseline pretectal wrong, improved &#x27;orbital frontal cortex&#x27; direct match.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Spinal Trigeminal Nucleus Intermediate</td>
+              <td>
+                <div><b>baseline:</b> afferent nuclei of cranial nerves in pons</div>
+                <div class="muted">HOMBA:12436 / score 0.7809 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> spinal trigeminal nucleus</div>
+                <div class="muted">HOMBA:12572 / score 0.7547</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill parent">上位概念</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;afferent nuclei of cranial nerves in pons&#x27; is wrong for spinal trigeminal nucleus intermediate. Improved &#x27;spinal trigeminal nucleus&#x27; is the broader parent, much closer. | Query specifies &#x27;Spinal Trigeminal Nucleus Intermediate&#x27;; baseline is a pons nuclei grouping (wrong), improved is the correct parent nucleus. | Baseline is a different grouping of nuclei; improved is the correct parent nucleus of the queried intermediate part.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Ventral striatal region, unspecified</td>
+              <td>
+                <div><b>baseline:</b> anterior (ventral /principal) pretectal nucleus</div>
+                <div class="muted">HOMBA:12187 / score 0.6019 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> ventral striatum (STRv)</div>
+                <div class="muted">HOMBA:AA30195 / score 0.5681</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline is wrong (pretectal nucleus); improved ventral striatum directly matches query. | Baseline pretectal nucleus is wrong. Improved ventral striatum directly matches query. | Ventral striatal region matched by improved &#x27;ventral striatum&#x27;; baseline pretectal nucleus is wrong.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Ventrolateral thalamic nucleus</td>
+              <td>
+                <div><b>baseline:</b> rostral intralaminar nuclei of thalamus</div>
+                <div class="muted">HOMBA:10443 / score 0.7446 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> ventral lateral nucleus of thalamus</div>
+                <div class="muted">HOMBA:10420 / score 1.0</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;rostral intralaminar nuclei&#x27; is wrong; improved &#x27;ventral lateral nucleus&#x27; matches query. | Baseline rostral intralaminar nuclei is wrong; improved ventral lateral nucleus exactly matches query. | Improved is ventral lateral nucleus (synonym); baseline is rostral intralaminar, unrelated.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Ventromedial occipital cortex</td>
+              <td>
+                <div><b>baseline:</b> extrastriate occipital cortex</div>
+                <div class="muted">HOMBA:10270 / score 0.8636 / abs broader_parent</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> ventromedial extrastriate occipital cortex</div>
+                <div class="muted">HOMBA:AA30826 / score 0.7836</div>
+              </td>
+              <td>
+                <span class="pill parent">上位概念</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Improved &#x27;ventromedial extrastriate occipital cortex&#x27; matches query exactly; baseline is broader extrastriate. | Query ventromedial occipital cortex. Baseline broader extrastriate occipital cortex. Improved exactly matches query. | Baseline extrastriate is a broader parent; improved adds ventromedial specificity, directly matching the query.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_reject_top1</td>
+              <td>Ventromedial thalamic nucleus</td>
+              <td>
+                <div><b>baseline:</b> caudal intralaminar nuclei of thalamus</div>
+                <div class="muted">HOMBA:10448 / score 0.8387 / abs wrong</div>
+                <div class="sep"></div>
+                <div><b>improved:</b> ventral medial nucleus of thalamus</div>
+                <div class="muted">HOMBA:10427 / score 1.0</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;caudal intralaminar nuclei&#x27; is wrong. Improved &#x27;ventral medial nucleus of thalamus&#x27; is a synonym for ventromedial thalamic nucleus. | Baseline is caudal intralaminar nuclei (wrong). Improved &#x27;ventral medial nucleus of thalamus&#x27; is a standard synonym for ventromedial thalamic nucleus. | Improved &#x27;ventral medial nucleus&#x27; is synonymous with query; baseline is intralaminar nuclei.</td>
+            </tr>
+            
+
+            <tr data-label="improved_better" data-certainty="high">
+              <td class="small">species<br>llm_accept_top1</td>
+              <td>Ventromedial thalamic nucleus (posterior and basal)</td>
+              <td>
+                <div><b>baseline:</b> posterior nucleus of thalamus</div>
+                <div class="muted">HOMBA:10440 / score 0.7021 / abs </div>
+                <div class="sep"></div>
+                <div><b>improved:</b> ventral medial nucleus of thalamus</div>
+                <div class="muted">HOMBA:10427 / score 0.88</div>
+              </td>
+              <td>
+                <span class="pill bad">不整合</span>
+                <span class="arrow">→</span>
+                <span class="pill ok">整合</span>
+              </td>
+              <td><span class="pill ok">改善</span></td>
+              <td class="small">high<br>3/3<br>stable</td>
+              <td class="reason">Baseline &#x27;posterior nucleus of thalamus&#x27; is different nucleus; improved &#x27;ventral medial nucleus of thalamus&#x27; is direct synonym for ventromedial nucleus. | Baseline &#x27;posterior nucleus&#x27; is incorrect; improved &#x27;ventral medial nucleus&#x27; is exact match for ventromedial thalamic nucleus. | Query is ventromedial thalamic nucleus; baseline posterior nucleus is a different thalamic nucleus; improved ventral medial nucleus is exact match.</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script>
+    const labelFilter = document.getElementById('labelFilter');
+    const certaintyFilter = document.getElementById('certaintyFilter');
+    const searchBox = document.getElementById('searchBox');
+    const rows = Array.from(document.querySelectorAll('#detailTable tbody tr'));
+    function applyFilters() {
+      const label = labelFilter.value;
+      const certainty = certaintyFilter.value;
+      const q = searchBox.value.toLowerCase();
+      rows.forEach(row => {
+        const labelOk = !label || row.dataset.label === label;
+        const certaintyOk = !certainty || row.dataset.certainty === certainty;
+        const textOk = !q || row.innerText.toLowerCase().includes(q);
+        row.style.display = labelOk && certaintyOk && textOk ? '' : 'none';
+      });
+    }
+    [labelFilter, certaintyFilter, searchBox].forEach(el => el.addEventListener('input', applyFilters));
+  </script>
+</body>
+</html>
