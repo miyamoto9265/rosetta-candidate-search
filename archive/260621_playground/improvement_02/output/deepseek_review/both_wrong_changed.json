@@ -1,0 +1,182 @@
+[
+  {
+    "dataset": "species",
+    "query": "Lateral Dorsal Tegmentum",
+    "role": "llm_accept_top1",
+    "base": "lateral cell group of medulla tegmentum",
+    "improved": "dorsal cell group of medulla tegmentum",
+    "label": "both_wrong",
+    "conf": "0.8",
+    "reason": "Query 'Lateral Dorsal Tegmentum' requires both lateral and dorsal specification. Baseline captures only lateral, improved only dorsal; neither represents the combined region."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventroposterior Medial and Lateral Thalamus",
+    "role": "llm_accept_top1",
+    "base": "ventral lateral nucleus of thalamus",
+    "improved": "lateral posterior nucleus of thalamus",
+    "label": "both_wrong",
+    "conf": "0.9",
+    "reason": "Query 'Ventroposterior Medial and Lateral Thalamus' points to VPM and VPL nuclei. Neither baseline (ventral lateral nucleus) nor improved (lateral posterior nucleus) matches these."
+  },
+  {
+    "dataset": "species",
+    "query": "Lateral Dorsal Amygdaloid Nucleus",
+    "role": "llm_accept_top1",
+    "base": "lateral nucleus of amygdala",
+    "improved": "dorsal division of anterior amygdaloid area",
+    "label": "both_wrong",
+    "conf": "0.7",
+    "reason": "Query 'Lateral Dorsal Amygdaloid Nucleus' suggests a specific nucleus with lateral and dorsal features. Baseline ('lateral nucleus') and improved ('dorsal division of anterior amygdaloid area') each miss the other modifier and do not match the combined concept."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Ventral intraparietal area",
+    "role": "llm_reject_top1",
+    "base": "ventral tegmental area",
+    "improved": "anterior (ventral /principal) pretectal nucleus",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Neither the baseline 'ventral tegmental area' nor the improved 'anterior pretectal nucleus' correspond to the 'ventral intraparietal area' which is a parietal lobe structure."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Central opercular cortex (posterior)",
+    "role": "llm_reject_top1",
+    "base": "frontal motor cortex (posterior frontal cortex)",
+    "improved": "caudal (posterior) branch of anterior commissure",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Both candidates are not cortical opercular regions: baseline is frontal motor cortex, improved is a commissural fiber tract."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Central opercular cortex (anterior)",
+    "role": "llm_reject_top1",
+    "base": "lateral (rostral) entorhinal cortex",
+    "improved": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Neither candidate maps to the central opercular cortex: baseline is entorhinal cortex, improved is anterior cingulate cortex."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Intracalcarine cortex (superior)",
+    "role": "llm_reject_top1",
+    "base": "superior medial parietal cortex",
+    "improved": "caudal division of area 22",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Neither candidate matches the query: baseline is parietal, improved is temporal; query refers to occipital intracalcarine cortex."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Intracalcarine cortex (inferior)",
+    "role": "llm_reject_top1",
+    "base": "inferior lateral parietal cortex",
+    "improved": "caudal (posterior, inferior) medullary velum",
+    "label": "both_wrong",
+    "conf": "0.95",
+    "reason": "Query 'Intracalcarine cortex (inferior)' refers to occipital lobe cortex. Baseline 'inferior lateral parietal cortex' is parietal, and improved 'caudal (posterior, inferior) medullary velum' is cerebellar/brainstem. Neither matches the query."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Anterior ventral insular area",
+    "role": "llm_reject_top1",
+    "base": "anterior (ventral) spinal artery",
+    "improved": "anterior (ventral /principal) pretectal nucleus",
+    "label": "both_wrong",
+    "conf": "0.95",
+    "reason": "Query 'Anterior ventral insular area' refers to insular cortex. Baseline 'anterior (ventral) spinal artery' is spinal cord, and improved 'anterior (ventral /principal) pretectal nucleus' is midbrain. Neither matches the query."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Precuneal cortex",
+    "role": "llm_reject_top1",
+    "base": "prefrontal cortex",
+    "improved": "cerebral cortex",
+    "label": "both_wrong",
+    "conf": "0.9",
+    "reason": "Query 'Precuneal cortex' is a specific parietal lobe region. Baseline 'prefrontal cortex' is frontal lobe, improved 'cerebral cortex' is entire cortex. Neither is a reasonable match."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Anterior intraparietal area",
+    "role": "llm_reject_top1",
+    "base": "rostral (anterior) branch of anterior commissure",
+    "improved": "anterior amygdaloid area",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Baseline is a commissural fiber tract, improved is an amygdaloid area; neither matches the query 'Anterior intraparietal area' which is a parietal cortical area."
+  },
+  {
+    "dataset": "corpus",
+    "query": "Cuneal cortex",
+    "role": "llm_reject_top1",
+    "base": "external shell (cortex) of inferior colliculus",
+    "improved": "posterior limiting parietal cortex",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Baseline is inferior colliculus cortex (midbrain), improved is posterior limiting parietal cortex; neither corresponds to cuneal cortex (occipital lobe)."
+  },
+  {
+    "dataset": "species",
+    "query": "Central opercular cortex, posterior",
+    "role": "llm_reject_top1",
+    "base": "frontal motor cortex (posterior frontal cortex)",
+    "improved": "lobule III (central lobule and wing, posterior part)",
+    "label": "both_wrong",
+    "conf": "0.8",
+    "reason": "Neither 'frontal motor cortex' nor 'lobule III (cerebellar)' match the query 'Central opercular cortex, posterior'; the query refers to a cortical region, not motor cortex or cerebellum."
+  },
+  {
+    "dataset": "species",
+    "query": "Laterodorsal thalamic nucleus, ventrolateral part",
+    "role": "llm_reject_top1",
+    "base": "rostral intralaminar nuclei of thalamus",
+    "improved": "laterodorsal tegmental nucleus",
+    "label": "both_wrong",
+    "conf": "0.8",
+    "reason": "Neither 'rostral intralaminar nuclei' (thalamic but wrong nucleus) nor 'laterodorsal tegmental nucleus' (brainstem) match the thalamic query 'Laterodorsal thalamic nucleus, ventrolateral part'."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventral orbital area",
+    "role": "llm_reject_top1",
+    "base": "ventral tegmental area",
+    "improved": "anterior (ventral /principal) pretectal nucleus",
+    "label": "both_wrong",
+    "conf": "0.95",
+    "reason": "Query 'Ventral orbital area' is a cortical region, but baseline 'ventral tegmental area' and improved 'anterior pretectal nucleus' are both midbrain structures. Neither matches the query."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventroposterior inferior thalamic nucleus",
+    "role": "llm_reject_top1",
+    "base": "pulvinar of thalamus",
+    "improved": "caudal intralaminar nuclei of thalamus",
+    "label": "both_wrong",
+    "conf": "0.85",
+    "reason": "Neither baseline (pulvinar of thalamus) nor improved (caudal intralaminar nuclei of thalamus) accurately represent the query 'Ventroposterior inferior thalamic nucleus', which is a distinct ventral posterior nucleus."
+  },
+  {
+    "dataset": "species",
+    "query": "Paraventricular hypothalamic nucleus",
+    "role": "llm_reject_top1",
+    "base": "dorsal midline nuclei of thalamus",
+    "improved": "paraventricular nucleus of thalamus",
+    "label": "both_wrong",
+    "conf": "0.95",
+    "reason": "Query specifies hypothalamic nucleus, but both candidates are thalamic structures (dorsal midline nuclei of thalamus and paraventricular nucleus of thalamus). Neither matches."
+  },
+  {
+    "dataset": "species",
+    "query": "Ventroposterior Inferior Thalamus",
+    "role": "llm_reject_top1",
+    "base": "ventral midline nuclei of thalamus",
+    "improved": "ventroanterior-ventrolateral nuclear complex of thalamus",
+    "label": "both_wrong",
+    "conf": "1.0",
+    "reason": "Neither candidate ('ventral midline nuclei of thalamus', 'ventroanterior-ventrolateral nuclear complex of thalamus') matches the query 'Ventroposterior Inferior Thalamus'. Both are incorrect."
+  }
+]

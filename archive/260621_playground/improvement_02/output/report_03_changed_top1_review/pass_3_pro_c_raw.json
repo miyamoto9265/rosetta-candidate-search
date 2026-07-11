@@ -1,0 +1,754 @@
+{
+  "outputs": {
+    "15": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Query is opercular cortex; both candidates (entorhinal and anterior cingulate) are anatomically unrelated."
+    },
+    "16": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Intracalcarine cortex is calcarine; superior medial parietal and caudal area 22 are not the structure."
+    },
+    "17": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Inferior lateral parietal and medullary velum are not intracalcarine/inferior calcarine cortex."
+    },
+    "18": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Anterior ventral insula not matched; spinal artery and pretectal nucleus are different structures."
+    },
+    "19": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline central medial is distinct thalamic nucleus; improved mediodorsal is exact match to Medial dorsal thalamic nucleus."
+    },
+    "0": {
+      "baseline_consistency_label": "ambiguous",
+      "improved_consistency_label": "partial_or_narrower",
+      "improvement_label": "no_material_change",
+      "certainty": "medium",
+      "confidence": 0.7,
+      "reason": "Baseline is ambiguous (dorsolateral extrastriate occipital cortex could be broader or partial). Improved is dorsal secondary visual cortex, partial/narrower than the query. Both miss the full secondary visual cortex."
+    },
+    "1": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Improved candidate (superior parietal lobule/gyrus) directly matches the query, while baseline (parietal lobe) is too broad."
+    },
+    "2": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.99,
+      "reason": "Improved (anterior lobe/adenohypophysis) is the exact match; baseline (pituitary gland) is the whole organ."
+    },
+    "3": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.8,
+      "reason": "Query expects a subnucleus; baseline is nuclear group, improved is basolateral nucleus, which is closer but still broader than the intermediate subnucleus."
+    },
+    "4": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Improved (orbital frontal cortex) is a more specific parent region than the baseline's frontal cortex, though both miss the 'anterior' qualifier."
+    },
+    "5": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "partial_or_narrower",
+      "improvement_label": "improved_worse",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline covers both cuneate and gracile nuclei as a broader class; improved only names gracile nucleus, missing cuneate."
+    },
+    "6": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline extrastriate is a broader parent; improved adds ventromedial specificity, directly matching the query."
+    },
+    "7": {
+      "baseline_consistency_label": "aligned",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_worse",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline exactly names lateral dorsal nucleus; improved dorsal thalamus is a too-broad parent."
+    },
+    "8": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Query likely means lateral dorsal tegmental nucleus (pontine); both candidates are medullary tegmentum structures, incorrect."
+    },
+    "9": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Query refers to ventroposterior complex; baseline is ventral lateral, improved is lateral posterior, both wrong."
+    },
+    "20": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Precuneal cortex is parietal; baseline prefrontal is wrong. Improved 'cerebral cortex' is correct parent structure (broader)."
+    },
+    "21": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Anterior intraparietal area is parietal cortex; baseline is commissure branch, improved is amygdala area. Both mismatched."
+    },
+    "22": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Cuneal cortex is occipital; baseline is inferior colliculus cortex, improved is parietal cortex. Both wrong structures."
+    },
+    "23": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Ventral striatal region matched by improved 'ventral striatum'; baseline pretectal nucleus is wrong."
+    },
+    "24": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Orbital cortex (ventral) is orbitofrontal; baseline pretectal wrong, improved 'orbital frontal cortex' direct match."
+    },
+    "30": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.98,
+      "reason": "Improved matches query exactly; baseline is a different structure (ventral midline)."
+    },
+    "31": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.98,
+      "reason": "Improved is the basomedial nucleus; baseline is basolateral group, which is wrong."
+    },
+    "32": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.98,
+      "reason": "Improved is the specific nucleus; baseline is a broader parent group."
+    },
+    "33": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.98,
+      "reason": "Improved is ventral lateral nucleus (synonym); baseline is rostral intralaminar, unrelated."
+    },
+    "34": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.98,
+      "reason": "Improved is lateral dorsal nucleus (laterodorsal); baseline is anterodorsal, different nucleus."
+    },
+    "35": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "medium",
+      "confidence": 0.9,
+      "reason": "Baseline is a different grouping of nuclei; improved is the correct parent nucleus of the queried intermediate part."
+    },
+    "36": {
+      "baseline_consistency_label": "partial_or_narrower",
+      "improved_consistency_label": "partial_or_narrower",
+      "improvement_label": "no_material_change",
+      "certainty": "high",
+      "confidence": 0.85,
+      "reason": "Both candidates match only one component of the compound query (tract vs. chiasm), no clear preference."
+    },
+    "37": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "medium",
+      "confidence": 0.9,
+      "reason": "Baseline is generic morphology; improved is the vermis, which is the correct parent structure of lobule 10."
+    },
+    "38": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "medium",
+      "confidence": 0.9,
+      "reason": "Baseline is generic morphology; improved is the vermis, the correct parent of lobule 1."
+    },
+    "39": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "medium",
+      "confidence": 0.9,
+      "reason": "Baseline is generic morphology; improved is the vermis, the correct parent of lobule 2."
+    },
+    "40": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Improved term 'cerebellar vermis' is a more specific parent than baseline 'cerebellar morphology', but still broader than the queried lobule."
+    },
+    "41": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Improved term 'cerebellar vermis' is a more specific parent than baseline 'cerebellar morphology', but still broader than the queried lobule."
+    },
+    "42": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Improved term 'cerebellar vermis' is a more specific parent than baseline 'cerebellar morphology', but still broader than the queried lobule."
+    },
+    "43": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Improved term 'cerebellar vermis' is a more specific parent than baseline 'cerebellar morphology', but still broader than the queried lobule."
+    },
+    "44": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Improved term 'cerebellar vermis' is a more specific parent than baseline 'cerebellar morphology', but still broader than the queried lobule."
+    },
+    "45": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline 'cerebellar morphology' is too broad; improved 'cerebellar vermis' is a more specific parent of Lobule 8 Vermis, closer to the query."
+    },
+    "46": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "broader_parent",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Similar to record 45: improved vermis is a more precise broader parent than general cerebellar morphology."
+    },
+    "47": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline fastigial nucleus is cerebellar, wrong; improved median raphe nucleus matches Medial Raphe query."
+    },
+    "48": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline lateral geniculate is visual thalamic, unrelated; improved dorsal nucleus of lateral lemniscus matches the query exactly."
+    },
+    "49": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline 'efferent nuclei...' is a broader category; improved 'abducens nucleus' is the exact queried structure."
+    },
+    "25": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Both candidates are not in the opercular cortex; baseline is frontal motor, improved is cerebellar lobule III."
+    },
+    "26": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "LD thalamic nucleus vs intralaminar nuclei and tegmental nucleus; both anatomically wrong."
+    },
+    "27": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Ventral orbital area (cortex) vs ventral tegmental area and pretectal nucleus; both off-structure."
+    },
+    "28": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "VPI thalamic nucleus vs pulvinar and caudal intralaminar nuclei; both different thalamic groups."
+    },
+    "29": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "partial_or_narrower",
+      "improvement_label": "improved_worse",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline rostral intralaminar correctly encompasses both; improved only provides paracentral, missing centrolateral."
+    },
+    "50": {
+      "baseline_consistency_label": "aligned",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "improved_worse",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline directly matches 'medial eminence'; improved is cerebellar fastigial nucleus, unrelated."
+    },
+    "51": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Improved 'ventral medial nucleus' is synonymous with query; baseline is intralaminar nuclei."
+    },
+    "52": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Query is hypothalamic; both candidates are thalamic (wrong region)."
+    },
+    "53": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Query is ventral posterior inferior nucleus; both candidates refer to other thalamic groups."
+    },
+    "54": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "medium",
+      "confidence": 0.8,
+      "reason": "Baseline is forebrain (BM); improved is medullary tegmentum, not typical dorsal tegmental nuclei; neither matches query region."
+    },
+    "13": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Both candidates are midbrain/subcortical structures, whereas the query is a cortical area in the intraparietal sulcus (parietal lobe)."
+    },
+    "14": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Baseline is frontal motor cortex, improved is a commissure; neither corresponds to the parietal operculum (central opercular cortex)."
+    },
+    "10": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "aligned",
+      "improvement_label": "improved_better",
+      "certainty": "high",
+      "confidence": 0.95,
+      "reason": "Query is ventromedial thalamic nucleus; baseline posterior nucleus is a different thalamic nucleus; improved ventral medial nucleus is exact match."
+    },
+    "11": {
+      "baseline_consistency_label": "broader_parent",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "improved_worse",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Query lateral dorsal amygdaloid nucleus; baseline lateral nucleus is anatomically broader parent; improved dorsal division of anterior amygdaloid area is unrelated structure."
+    },
+    "12": {
+      "baseline_consistency_label": "wrong",
+      "improved_consistency_label": "wrong",
+      "improvement_label": "both_wrong",
+      "certainty": "high",
+      "confidence": 0.9,
+      "reason": "Query is lateral intraparietal area (dorsal) in parietal cortex; baseline dorsal raphe nucleus (brainstem) is wrong; improved lateral subdivision of area 7 is not LIP."
+    }
+  },
+  "logs": [
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1324,
+        "completion_tokens": 1569,
+        "total_tokens": 2893,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1096
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1324
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1327,
+        "completion_tokens": 2362,
+        "total_tokens": 3689,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1819
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1327
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1327,
+        "completion_tokens": 2503,
+        "total_tokens": 3830,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2014
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1327
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1301,
+        "completion_tokens": 1820,
+        "total_tokens": 3121,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1326
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1301
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1322,
+        "completion_tokens": 1775,
+        "total_tokens": 3097,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1320
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 938
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1316,
+        "completion_tokens": 1527,
+        "total_tokens": 2843,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1041
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 932
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1341,
+        "completion_tokens": 1329,
+        "total_tokens": 2670,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 779
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 957
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1324,
+        "completion_tokens": 1908,
+        "total_tokens": 3232,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1399
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 940
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1326,
+        "completion_tokens": 1772,
+        "total_tokens": 3098,
+        "prompt_tokens_details": {
+          "cached_tokens": 1280
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1297
+        },
+        "prompt_cache_hit_tokens": 1280,
+        "prompt_cache_miss_tokens": 46
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 1325,
+        "completion_tokens": 2471,
+        "total_tokens": 3796,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2013
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 941
+      }
+    },
+    {
+      "pass": "pass_3_pro_c",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "ok": false,
+      "error": "No JSON object found"
+    },
+    {
+      "pass": "pass_3_pro_c_retry1",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        13,
+        14
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 824,
+        "completion_tokens": 882,
+        "total_tokens": 1706,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 674
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 440
+      }
+    },
+    {
+      "pass": "pass_3_pro_c_retry1",
+      "model": "deepseek-v4-pro",
+      "record_ids": [
+        10,
+        11,
+        12
+      ],
+      "ok": true,
+      "usage": {
+        "prompt_tokens": 996,
+        "completion_tokens": 2092,
+        "total_tokens": 3088,
+        "prompt_tokens_details": {
+          "cached_tokens": 896
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 1771
+        },
+        "prompt_cache_hit_tokens": 896,
+        "prompt_cache_miss_tokens": 100
+      }
+    }
+  ]
+}

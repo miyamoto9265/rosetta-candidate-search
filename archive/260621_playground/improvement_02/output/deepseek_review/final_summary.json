@@ -1,0 +1,34 @@
+{
+  "total_records": 921,
+  "used_pro": 20,
+  "final_label_counts": {
+    "no_material_change": 827,
+    "both_wrong": 52,
+    "improved_better": 29,
+    "improved_worse": 4,
+    "homba_gap_or_source_issue": 8,
+    "needs_human_review": 1
+  },
+  "final_label_counts_by_role": {
+    "llm_accept_top1": {
+      "no_material_change": 675,
+      "both_wrong": 5,
+      "improved_better": 7,
+      "improved_worse": 2
+    },
+    "llm_reject_top1": {
+      "no_material_change": 59,
+      "improved_better": 15,
+      "both_wrong": 35,
+      "improved_worse": 1,
+      "needs_human_review": 1
+    },
+    "llm_out_of_scope_for_rcs": {
+      "no_material_change": 93,
+      "both_wrong": 12,
+      "homba_gap_or_source_issue": 8,
+      "improved_better": 7,
+      "improved_worse": 1
+    }
+  }
+}

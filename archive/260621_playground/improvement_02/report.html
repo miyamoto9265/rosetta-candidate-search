@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RCS improvement_02 — 改善結果レポート</title>
+<style>
+:root{--accent:#2563eb;--accent-dark:#1e3a8a;--muted:#64748b;--ok:#16a34a;
+--warn:#d97706;--danger:#dc2626;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,
+"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP",sans-serif;color:#0f172a;
+background:var(--bg);line-height:1.65}
+.page{display:flex;max-width:1180px;margin:0 auto;gap:1.5rem;padding:1.5rem}
+.sidebar{position:sticky;top:1rem;align-self:flex-start;width:210px;flex:none;
+font-size:.9rem}.sidebar h2{font-size:.8rem;text-transform:uppercase;color:var(--muted);
+letter-spacing:.04em}.sidebar nav{display:flex;flex-direction:column;gap:.3rem}
+.sidebar a{color:#334155;text-decoration:none;padding:.2rem .4rem;border-radius:6px}
+.sidebar a:hover{background:#eef2f7}
+.main{flex:1;min-width:0}
+.hero{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;
+border-radius:16px;padding:1.8rem 2rem;margin-bottom:1.5rem}
+.hero h1{margin:.2rem 0 .6rem;font-size:1.7rem;line-height:1.25}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;opacity:.85;margin:0}
+.hero .meta{font-size:.9rem;opacity:.95}
+section{background:var(--card);border:1px solid var(--border);border-radius:14px;
+padding:1.4rem 1.6rem;margin-bottom:1.3rem}
+h2{margin-top:0;font-size:1.3rem;border-bottom:2px solid var(--border);padding-bottom:.4rem}
+h3{font-size:1.05rem;margin:1.2rem 0 .4rem}
+table{width:100%;border-collapse:collapse;margin:.6rem 0;font-size:.86rem;table-layout:fixed}
+th,td{text-align:left;padding:.4rem .5rem;border-bottom:1px solid var(--border);
+overflow-wrap:anywhere;vertical-align:top}
+th{background:#f1f5f9;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em;color:#475569}
+td.num,th.num{text-align:right;white-space:nowrap}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin:1rem 0}
+.stat-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:.9rem 1rem}
+.stat-card .label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.stat-card .value{font-size:1.7rem;font-weight:700}
+.stat-card .delta{font-size:.8rem;color:var(--muted)}
+.badge{display:inline-block;padding:.05rem .45rem;border-radius:999px;font-size:.72rem;font-weight:600}
+.badge.ok{background:#dcfce7;color:#166534}.badge.warn{background:#fef3c7;color:#92400e}
+.badge.mod{background:#ede9fe;color:#5b21b6}.badge.muted{background:#e2e8f0;color:#475569}
+.ds{font-size:.66rem;color:var(--muted);background:#eef2f7;padding:.04rem .3rem;border-radius:4px}
+.callout{border-radius:10px;padding:.8rem 1rem;margin:.8rem 0;font-size:.9rem}
+.callout.ok{background:#f0fdf4;border:1px solid #bbf7d0}
+.callout.info{background:#eff6ff;border:1px solid #bfdbfe}
+.callout.warn{background:#fffbeb;border:1px solid #fde68a}
+code{background:#f1f5f9;padding:.05rem .3rem;border-radius:4px;font-size:.85em}
+footer{color:var(--muted);font-size:.8rem;padding:1rem 0 2rem;text-align:center}
+ul{margin:.4rem 0;padding-left:1.2rem}li{margin:.25rem 0}
+</style></head><body>
+<div class="page">
+<aside class="sidebar">
+  <h2>目次</h2>
+  <nav>
+    <a href="#summary">サマリー</a>
+    <a href="#method">1. 評価方法</a>
+    <a href="#algo">2. 変更内容</a>
+    <a href="#dict">3. 追加辞書</a>
+    <a href="#results">4. 結果と例</a>
+    <a href="#regress">5. 注意点</a>
+    <a href="#merge">6. マージ方針</a>
+  </nav>
+</aside>
+<main class="main">
+<header class="hero">
+  <p class="eyebrow">ROSETTA Candidate Search · Playground · improvement_02</p>
+  <h1>RCS 改善結果レポート<br/>アルゴリズム変更 + playground 辞書</h1>
+  <p class="meta">
+    <code>improvement_01</code> で整理した改善案を <code>improvement_02</code> で実装した。
+    目視確認済みの4 CSVを評価基準にし、改善前(round3相当)と改善後を比較した。
+  </p>
+</header>
+
+<section id="summary">
+  <h2>サマリー</h2>
+  <p>
+    今回の変更は、主に「明らかな誤候補を落とす」「視床核などの表記ゆれを正しい候補へ寄せる」
+    「親候補が具体候補を押しのけるケースを減らす」ためのもの。最も重要な確認点は、
+    <strong>LLMレビューで accept していた high_confidence の top-1 を1件も落としていない</strong>こと。
+  </p>
+  <div class="summary-grid">
+    <div class="stat-card"><div class="label">LLM accept ID を維持</div>
+      <div class="value">671/689</div>
+      <div class="delta">改善前 682</div></div>
+    <div class="stat-card"><div class="label">high 降格</div>
+      <div class="value" style="color:var(--ok)">0</div>
+      <div class="delta">LLM accept high は 402→402</div></div>
+    <div class="stat-card"><div class="label">明確に正解化</div>
+      <div class="value" style="color:var(--ok)">14/17</div>
+      <div class="delta">確認対象17件中。改善前は 6/17</div></div>
+    <div class="stat-card"><div class="label">既知の誤りに介入</div>
+      <div class="value">35</div>
+      <div class="delta">111件中。改善前は 6 件</div></div>
+    <div class="stat-card"><div class="label">high_confidence 総数</div>
+      <div class="value">431</div>
+      <div class="delta">前 421 (+10)</div></div>
+  </div>
+  <div class="callout ok">
+    <strong>結論:</strong> 視床核の表記ゆれや外側毛帯核のスペルミスは high_confidence で正解化できた。
+    方向語だけに引っ張られる誤候補は low_confidence に落ち、親候補が強すぎるケースも一部改善した。
+    一方で、全ての誤りが解消したわけではないため、本体へ入れる前に残件は確認対象として扱う。
+  </div>
+  <div class="callout info">
+    <strong>「既知の誤りに介入 35」は悪化ではない。</strong>
+    これは「もともと top-1 が誤りだった111件」の中で、改善後に top-1 が変わった件数。
+    つまり、誤った候補をそのまま放置せず、別候補へ動かせた件数を表す。
+    35件すべてが正解になったという意味ではないが、悪化指標ではない。
+  </div>
+  <h3>review_flag 分布の変化</h3>
+  <table><thead><tr><th>review_flag</th><th class='num'>改善前</th><th class='num'>改善後</th><th class='num'>Δ</th></tr></thead><tbody><tr><td>high_confidence</td><td class='num'>421</td><td class='num'>431</td><td class='num' style='color:var(--ok,#16a34a)'>+10</td></tr><tr><td>needs_review</td><td class='num'>310</td><td class='num'>285</td><td class='num' style='color:var(--muted)'>-25</td></tr><tr><td>modifier_conflict</td><td class='num'>41</td><td class='num'>43</td><td class='num' style='color:var(--muted)'>+2</td></tr><tr><td>low_confidence</td><td class='num'>149</td><td class='num'>162</td><td class='num' style='color:var(--muted)'>+13</td></tr></tbody></table>
+  <p style="font-size:.85rem;color:var(--muted)">
+    high_confidence は全体で10件増えた。needs_review が減り、low_confidence が増えたのは、
+    自信を持てない誤候補を review 帯から低信頼へ落としたため。</p>
+</section>
+
+<section id="method">
+  <h2>1. 評価方法</h2>
+  <p>評価には <code>improvement_01</code> で目視確認した4つのCSVを使った。</p>
+  <ul>
+    <li><code>1_highconf_correct</code> + <code>3_unresolved_correct</code> +
+        <code>2_highconf_incorrect</code> の <code>correct_parent</code> を
+        「このレビュー時点では top-1 を accept」として扱った。合計689件。
+        これは確立済みの正解IDではない。</li>
+    <li><code>2</code> の wrong/questionable + <code>4</code> の B_algo/C_dict =
+        <strong>既知の誤り 111件</strong>。ここでは top-1 が変わること自体は悪化ではなく、
+        改善が介入できたことを示す。</li>
+    <li><code>4</code> の D_homba_gap / E_source_typo は、HOMBA側の粒度不足または入力データの誤記なので、
+        RCSの改善対象から外した。</li>
+  </ul>
+  <p>
+    改善前は round3 相当のエンジンと辞書、改善後は <code>improvement_02/rcs_engine.py</code>
+    と playground 辞書で比較した。比較対象は全921クエリ。
+  </p>
+</section>
+
+<section id="algo">
+  <h2>2. 変更内容</h2>
+  <h3>2-1. 方向語だけで当たった候補を下げる</h3>
+  <p>
+    <code>ventral</code>、<code>posterior</code>、<code>cortex</code> など、単独では場所を特定しにくい語だけで
+    fuzzy/bm25 が当たるケースを抑制した。識別語を共有しない候補はスコアを0.50以下にして、
+    review対象ではなく low_confidence に落とす。
+  </p>
+  <p>
+    ただし、単純に落とすと正しい候補も巻き込むため、語形差
+    (<code>striatal</code> と <code>striatum</code> など)は同じ語として扱い、
+    parietal/temporal のような lobe 語は保護した。
+  </p>
+  <h3>2-2. 親候補が強すぎるケースを抑える</h3>
+  <p>
+    複数の子候補が見つかると共通の親を上げる仕組みがあるが、これが具体的な正解候補を追い抜くことがあった。
+    そこで、具体候補が十分に見えている場合は、親候補のスコアをその具体候補より少し低く抑えた。
+  </p>
+  <h3>2-3. 辞書ルールに一方向指定を追加</h3>
+  <p>
+    <code>ventrolateral → ventral lateral</code> のような正規化は有効だが、双方向にすると
+    別領域の名前まで変換されることがある。そこで alias 辞書に <code>bidirectional</code> 列を追加し、
+    必要なルールは「クエリ側だけを変換する」形にした。
+  </p>
+</section>
+
+<section id="dict">
+  <h2>3. 追加した辞書</h2>
+  <ul>
+    <li><strong>視床核の表記ゆれ:</strong>
+      <code>ventrolateral→ventral lateral</code>, <code>ventromedial→ventral medial</code>,
+      <code>laterodorsal→lateral dorsal</code>, <code>medial dorsal→mediodorsal</code>,
+      <code>ventroanterior</code>, <code>ventroposterior</code>, <code>centrolateral</code>。</li>
+    <li><strong>スペル・語順の補正:</strong> <code>leminscus→lemniscus</code>,
+      <code>kolliker→koelliker</code>, <code>saginum→sagulum</code>,
+      <code>septimbrial→septofimbrial</code>, <code>chiasma→chiasm</code>,
+      <code>leaflet→leaf</code>, <code>stria medullaris thalami→…of thalamus</code>,
+      <code>X lemniscus nucleus→nucleus of X lemniscus</code>。</li>
+  </ul>
+  <div class="callout warn">
+    明らかな入力ミス(<code>Antherior</code> など)は辞書に入れていない。辞書に誤記を取り込むと、
+    本番運用で不要な誤マッチを増やすため、データ側で直す方針のまま。
+  </div>
+</section>
+
+<section id="results">
+  <h2>4. 結果と例</h2>
+  <h3>4-1. high_confidence で正解化した例</h3><p>視床核の表記ゆれと外側毛帯核のスペルミスは、正しい候補を高信頼で返せるようになった。</p><table><thead><tr><th>クエリ (入力)</th><th>改善前 top-1</th><th class='num'>前</th><th>改善後 top-1</th><th class='num'>後</th></tr></thead><tbody><tr><td>Ventrolateral thalamic nucleus <span class='ds'>spe</span></td><td class='mono'>rostral intralaminar nuclei of thalamus</td><td class='num'>0.7446</td><td class='mono'><strong>ventral lateral nucleus of thalamus</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Ventromedial thalamic nucleus <span class='ds'>spe</span></td><td class='mono'>caudal intralaminar nuclei of thalamus</td><td class='num'>0.8387</td><td class='mono'><strong>ventral medial nucleus of thalamus</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Laterodorsal thalamic nucleus <span class='ds'>spe</span></td><td class='mono'>anterodorsal nucleus of thalamus</td><td class='num'>0.7847</td><td class='mono'><strong>lateral dorsal nucleus of thalamus</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Medial dorsal thalamic nucleus <span class='ds'>cor</span></td><td class='mono'>central medial nucleus of thalamus</td><td class='num'>0.7753</td><td class='mono'><strong>mediodorsal nucleus of thalamus</strong></td><td class='num'>1.0<br><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Dorsal Lateral Leminscus Nucleus <span class='ds'>spe</span></td><td class='mono'>lateral geniculate nucleus (dorsal lateral geniculate nucleus)</td><td class='num'>0.811</td><td class='mono'><strong>dorsal nucleus of lateral lemniscus</strong></td><td class='num'>0.9726<br><span class='badge ok'>high_confidence</span></td></tr></tbody></table>
+  <h3>4-2. 辞書追加で改善した例</h3><p>綴り、語順、ラテン語表記のゆれを辞書で吸収した。</p><table><thead><tr><th>クエリ (入力)</th><th>改善前 top-1</th><th class='num'>前</th><th>改善後 top-1</th><th class='num'>後</th></tr></thead><tbody><tr><td>Saginum Nucleus <span class='ds'>spe</span></td><td class='mono'>sagulum nucleus (nucleus sagulum)</td><td class='num'>0.6108</td><td class='mono'><strong>sagulum nucleus (nucleus sagulum)</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Septimbrial nucleus <span class='ds'>spe</span></td><td class='mono'>septofimbrial nucleus</td><td class='num'>0.6729</td><td class='mono'><strong>septofimbrial nucleus</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Kolliker-Fuse Nucleus <span class='ds'>spe</span></td><td class='mono'>Koelliker-Fuse nucleus</td><td class='num'>0.7564</td><td class='mono'><strong>Koelliker-Fuse nucleus</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Intergeniculate leaflet <span class='ds'>spe</span></td><td class='mono'>intergeniculate leaf</td><td class='num'>0.7733</td><td class='mono'><strong>intergeniculate leaf</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Stria medullaris thalami <span class='ds'>spe</span></td><td class='mono'>stria medullaris of thalamus</td><td class='num'>0.7155</td><td class='mono'><strong>stria medullaris of thalamus</strong></td><td class='num'>1.0<br><span class='badge ok'>high_confidence</span></td></tr><tr><td>Optic tract/chiasma <span class='ds'>spe</span></td><td class='mono'>optic tract</td><td class='num'>0.7884</td><td class='mono'><strong>optic chiasm</strong></td><td class='num'>0.7436<br><span class='badge warn'>needs_review</span></td></tr></tbody></table>
+  <h3>4-3. 誤候補を low_confidence に落とした例</h3><p>方向語だけで拾っていた候補は、正解にできなくても、自信のある候補として扱わないようにした。</p><table><thead><tr><th>クエリ (入力)</th><th>改善前 top-1</th><th class='num'>前</th><th>改善後 top-1</th><th class='num'>後</th></tr></thead><tbody><tr><td>Anterior ventral insular area <span class='ds'>cor</span></td><td class='mono'>anterior (ventral) spinal artery</td><td class='num'>0.7074</td><td class='mono'><strong>anterior (ventral /principal) pretectal nucleus</strong></td><td class='num'>0.5<br><span class='badge muted'>low_confidence</span></td></tr><tr><td>Ventral orbital area <span class='ds'>spe</span></td><td class='mono'>ventral tegmental area</td><td class='num'>0.6981</td><td class='mono'><strong>anterior (ventral /principal) pretectal nucleus</strong></td><td class='num'>0.5<br><span class='badge muted'>low_confidence</span></td></tr><tr><td>Ventral intraparietal area <span class='ds'>cor</span></td><td class='mono'>ventral tegmental area</td><td class='num'>0.6667</td><td class='mono'><strong>anterior (ventral /principal) pretectal nucleus</strong></td><td class='num'>0.5<br><span class='badge muted'>low_confidence</span></td></tr><tr><td>Medial Raphe <span class='ds'>spe</span></td><td class='mono'>fastigial (medial) nucleus</td><td class='num'>0.8075</td><td class='mono'><strong>median raphe nucleus</strong></td><td class='num'>0.5491<br><span class='badge muted'>low_confidence</span></td></tr><tr><td>Ventral striatal region, unspecified <span class='ds'>spe</span></td><td class='mono'>anterior (ventral /principal) pretectal nucleus</td><td class='num'>0.6019</td><td class='mono'><strong>ventral striatum (STRv)</strong></td><td class='num'>0.5681<br><span class='badge muted'>low_confidence</span></td></tr><tr><td>Central opercular cortex (anterior) <span class='ds'>cor</span></td><td class='mono'>lateral (rostral) entorhinal cortex</td><td class='num'>0.6516</td><td class='mono'><strong>anterior cingulate  cortex (ventromedial prefrontal cortex)</strong></td><td class='num'>0.5<br><span class='badge muted'>low_confidence</span></td></tr></tbody></table>
+  <h3>4-4. 親候補より具体候補を優先できた例</h3><p>共通親が top-1 を取っていたケースで、より具体的な候補を上に出せるようになった。</p><table><thead><tr><th>クエリ (入力)</th><th>改善前 top-1</th><th class='num'>前</th><th>改善後 top-1</th><th class='num'>後</th></tr></thead><tbody><tr><td>Abducens Motor Nucleus <span class='ds'>spe</span></td><td class='mono'>efferent nuclei of cranial nerves in pons</td><td class='num'>0.8193</td><td class='mono'><strong>abducens nucleus</strong></td><td class='num'>0.7393<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Spinal Trigeminal Nucleus Intermediate <span class='ds'>spe</span></td><td class='mono'>afferent nuclei of cranial nerves in pons</td><td class='num'>0.7809</td><td class='mono'><strong>spinal trigeminal nucleus</strong></td><td class='num'>0.7547<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Interanteromedial Thalamus <span class='ds'>spe</span></td><td class='mono'>ventral midline nuclei of thalamus</td><td class='num'>0.7068</td><td class='mono'><strong>interanteromedial nucleus of thalamus</strong></td><td class='num'>0.6268<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Intermediodorsal Thalamus <span class='ds'>spe</span></td><td class='mono'>dorsal midline nuclei of thalamus</td><td class='num'>0.7102</td><td class='mono'><strong>intermediodorsal  nucleus of thalamus</strong></td><td class='num'>0.6302<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Paraventricular hypothalamic nucleus <span class='ds'>spe</span></td><td class='mono'>dorsal midline nuclei of thalamus</td><td class='num'>0.8661</td><td class='mono'><strong>paraventricular nucleus of thalamus</strong></td><td class='num'>0.7861<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Basomedial amygdaloid nucleus <span class='ds'>spe</span></td><td class='mono'>basolateral nuclear group of amygdala</td><td class='num'>0.7072</td><td class='mono'><strong>basomedial nucleus (accessory basal nucleus) of amygdala</strong></td><td class='num'>0.6272<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Centrolateral and paracentral thalamic nuclei <span class='ds'>spe</span></td><td class='mono'>rostral intralaminar nuclei of thalamus</td><td class='num'>0.7199</td><td class='mono'><strong>paracentral nucleus of thalamus</strong></td><td class='num'>0.6399<br><span class='badge warn'>needs_review</span></td></tr></tbody></table>
+</section>
+
+<section id="regress">
+  <h2>5. 注意点</h2>
+  <p>
+    LLMが前回 accept した top-1 ID の維持は 682/689 から 671/689 に下がっている。
+    この数字だけ見ると悪くなったように見えるが、内訳を見ると、粗い親候補からより細かい候補に
+    変わったものが多い。ここで使っているCSVは確立済みの正解データではなく、レビュー時点の判断なので、
+    IDだけで評価すると「前回 accept したIDとは不一致」になる。
+  </p>
+  <h3>5-1. 粗い親から具体候補に変わった例</h3><p>これは機械的には前回acceptしたIDと不一致だが、解剖学的には改善と見なせるものが多い。</p><table><thead><tr><th>クエリ (入力)</th><th>改善前 top-1</th><th class='num'>前</th><th>改善後 top-1</th><th class='num'>後</th></tr></thead><tbody><tr><td>Superior parietal gyrus <span class='ds'>cor</span></td><td class='mono'>parietal lobe</td><td class='num'>0.8771</td><td class='mono'><strong>superior parietal lobule (gyrus)</strong></td><td class='num'>0.7971<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Anterior pituitary <span class='ds'>spe</span></td><td class='mono'>pituitary body/gland (hypophysis)</td><td class='num'>0.7081</td><td class='mono'><strong>anterior lobe of pituitary body (adenohypophysis)</strong></td><td class='num'>0.6281<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Frontal orbital cortex, anterior <span class='ds'>spe</span></td><td class='mono'>frontal cortex</td><td class='num'>0.7983</td><td class='mono'><strong>orbital frontal cortex</strong></td><td class='num'>0.7184<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Ventromedial occipital cortex <span class='ds'>spe</span></td><td class='mono'>extrastriate occipital cortex</td><td class='num'>0.8636</td><td class='mono'><strong>ventromedial extrastriate occipital cortex</strong></td><td class='num'>0.7836<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Ventromedial thalamic nucleus (posterior and basal) <span class='ds'>spe</span></td><td class='mono'>posterior nucleus of thalamus</td><td class='num'>0.7021</td><td class='mono'><strong>ventral medial nucleus of thalamus</strong></td><td class='num'>0.88<br><span class='badge warn'>needs_review</span></td></tr></tbody></table>
+  <h3>5-2. 本当に注意が必要な例</h3><p>一部では改善前より扱いが悪くなった可能性がある。いずれも high_confidence ではないため、運用上はレビュー対象に残る。</p><table><thead><tr><th>クエリ (入力)</th><th>改善前 top-1</th><th class='num'>前</th><th>改善後 top-1</th><th class='num'>後</th></tr></thead><tbody><tr><td>Cuneate Gracile Nuclei <span class='ds'>spe</span></td><td class='mono'>sensory relay nuclei in medulla oblongata</td><td class='num'>0.8052</td><td class='mono'><strong>gracile nucleus</strong></td><td class='num'>0.7252<br><span class='badge warn'>needs_review</span></td></tr><tr><td>Lateral Dorsal Thalamus <span class='ds'>spe</span></td><td class='mono'>lateral dorsal nucleus of thalamus</td><td class='num'>0.8669</td><td class='mono'><strong>dorsal thalamus</strong></td><td class='num'>0.9033<br><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Lateral Dorsal Amygdaloid Nucleus <span class='ds'>spe</span></td><td class='mono'>lateral nucleus of amygdala</td><td class='num'>0.7036</td><td class='mono'><strong>dorsal division of anterior amygdaloid area</strong></td><td class='num'>0.5707<br><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Ventroposterior Medial and Lateral Thalamus <span class='ds'>spe</span></td><td class='mono'>ventral lateral nucleus of thalamus</td><td class='num'>0.588</td><td class='mono'><strong>lateral posterior nucleus of thalamus</strong></td><td class='num'>0.6275<br><span class='badge mod'>modifier_conflict</span></td></tr></tbody></table>
+  <div class="callout info">
+    注意すべき例はあるが、いずれも <code>needs_review</code> / <code>low_confidence</code> /
+    <code>modifier_conflict</code> に残っている。今回の変更で、LLMが accept していた high_confidence を落としたケースはない。
+  </div>
+</section>
+
+<section id="merge">
+  <h2>6. マージ方針</h2>
+  <ul>
+    <li><strong>本体に入れてよい候補:</strong> 方向語だけの誤マッチを落とす処理、親候補の過剰昇格を抑える処理、
+      alias辞書の <code>bidirectional</code> 列対応。</li>
+    <li><strong>辞書として入れてよい候補:</strong> 視床核の表記ゆれ、外側毛帯核、Koelliker/Kolliker、
+      sagulum/Saginum などの一般的な表記ゆれ。</li>
+    <li><strong>まだ入れない方がよいもの:</strong> 明らかな入力ミス、HOMBAに粒度がない概念、複合クエリを無理に1候補へ潰すルール。</li>
+  </ul>
+  <p style="font-size:.85rem;color:var(--muted)">再現コマンド: <code>python eval.py compare</code>
+    / <code>python eval.py export</code>。
+    成果物: <code>output/metrics.json</code>, <code>output/diff_baseline_vs_improved.csv</code>,
+    <code>output/improved_full_results.csv</code>。</p>
+</section>
+
+<footer>ROSETTA Candidate Search · 260621_playground/improvement_02 ·
+  measured over rcs_corpus + rcs_species (921 unique queries)</footer>
+</main></div></body></html>

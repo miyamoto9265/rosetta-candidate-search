@@ -1,0 +1,42 @@
+[
+  {
+    "dataset": "species",
+    "query": "Cuneate Gracile Nuclei",
+    "role": "llm_accept_top1",
+    "base": "sensory relay nuclei in medulla oblongata",
+    "improved": "gracile nucleus",
+    "label": "improved_worse",
+    "conf": "0.85",
+    "reason": "Query refers to both cuneate and gracile nuclei. Baseline 'sensory relay nuclei in medulla oblongata' broadly encompasses both. Improved 'gracile nucleus' matches only one, leaving cuneate unrepresented, thus less correct."
+  },
+  {
+    "dataset": "species",
+    "query": "Lateral Dorsal Thalamus",
+    "role": "llm_accept_top1",
+    "base": "lateral dorsal nucleus of thalamus",
+    "improved": "dorsal thalamus",
+    "label": "improved_worse",
+    "conf": "0.9",
+    "reason": "Query likely refers to the lateral dorsal nucleus of thalamus (a specific nucleus). Improved candidate 'dorsal thalamus' is a broader superstructure, making it less specific and thus worse."
+  },
+  {
+    "dataset": "species",
+    "query": "Centrolateral and paracentral thalamic nuclei",
+    "role": "llm_reject_top1",
+    "base": "rostral intralaminar nuclei of thalamus",
+    "improved": "paracentral nucleus of thalamus",
+    "label": "improved_worse",
+    "conf": "0.8",
+    "reason": "Query asks for 'centrolateral and paracentral thalamic nuclei' together. Baseline 'rostral intralaminar nuclei of thalamus' is a correct group term for these two nuclei. Improved 'paracentral nucleus of thalamus' is only one component, making it less correct than the baseline."
+  },
+  {
+    "dataset": "species",
+    "query": "Medial Emminence",
+    "role": "llm_out_of_scope_for_rcs",
+    "base": "medial eminence",
+    "improved": "fastigial (medial) nucleus",
+    "label": "improved_worse",
+    "conf": "0.9",
+    "reason": "Baseline 'medial eminence' correctly matches query, but improved 'fastigial (medial) nucleus' is a different structure (cerebellar nucleus)."
+  }
+]

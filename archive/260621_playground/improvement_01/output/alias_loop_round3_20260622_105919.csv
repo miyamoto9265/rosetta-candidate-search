@@ -1,0 +1,877 @@
+structure_name,dataset,rcs_score,rcs_review_flag,rcs_candidate_homba_id,rcs_candidate_name,rcs_methods
+Mammillary body,corpus,1.0000,high_confidence,HOMBA:15546,mammillary body,bm25+exact+fuzzy
+Pineal gland,corpus,1.0000,high_confidence,HOMBA:10460,pineal body,bm25+exact+fuzzy
+Pulvinar nucleus,corpus,1.0000,high_confidence,HOMBA:10409,pulvinar of thalamus,bm25+exact+fuzzy+hierarchy_parent
+Subthalamic nucleus,corpus,1.0000,high_confidence,HOMBA:10466,subthalamic nucleus,bm25+exact+fuzzy
+Thalamus (excluding pulvinar),corpus,0.8967,modifier_conflict,HOMBA:10409,pulvinar of thalamus,bm25+fuzzy
+Inferior colliculus,corpus,1.0000,high_confidence,HOMBA:12305,inferior colliculus,bm25+exact+fuzzy+hierarchy_parent
+Red nucleus,corpus,1.0000,high_confidence,HOMBA:12247,red nucleus,bm25+exact+fuzzy+hierarchy_parent
+Substantia nigra,corpus,1.0000,high_confidence,HOMBA:12251,substantia nigra,bm25+exact+fuzzy+hierarchy_parent
+Superior colliculus,corpus,1.0000,high_confidence,HOMBA:12292,superior colliculus,bm25+exact+fuzzy+hierarchy_parent
+Abducens nucleus,corpus,1.0000,high_confidence,HOMBA:12418,abducens nucleus,bm25+exact+fuzzy
+Facial nucleus,corpus,1.0000,high_confidence,HOMBA:12420,facial nucleus,bm25+exact+fuzzy+hierarchy_parent
+Trigeminal nucleus (motor),corpus,1.0000,high_confidence,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",bm25+fuzzy
+Trigeminal nucleus (principal sensory),corpus,1.0000,high_confidence,HOMBA:12444,principal sensory nucleus of trigeminal nerve,bm25+exact+fuzzy
+Cuneate nucleus,corpus,1.0000,high_confidence,HOMBA:12589,cuneate nucleus,bm25+exact+fuzzy+hierarchy_parent
+Cuneate nucleus (external),corpus,1.0000,high_confidence,HOMBA:12588,external (accessory/lateral) cuneate nucleus,bm25+fuzzy
+Gracile nucleus,corpus,1.0000,high_confidence,HOMBA:12592,gracile nucleus,bm25+exact+fuzzy+hierarchy_parent
+Hypoglossal nucleus,corpus,1.0000,high_confidence,HOMBA:12545,hypoglossal nucleus,bm25+exact+fuzzy+hierarchy_parent
+Inferior olive (principal nucleus),corpus,1.0000,modifier_conflict,HOMBA:12600,inferior olive,bm25+exact+fuzzy
+Spinal trigeminal nucleus (caudalis),corpus,1.0000,high_confidence,HOMBA:12573,"spinal trigeminal nucleus, caudal division",bm25+fuzzy
+Spinal trigeminal nucleus (interpolaris),corpus,1.0000,high_confidence,HOMBA:12578,"spinal trigeminal nucleus, interpolar division",bm25+fuzzy
+Spinal trigeminal nucleus (oralis),corpus,0.8800,needs_review,HOMBA:12572,spinal trigeminal nucleus,bm25+exact+fuzzy
+Vestibular nucleus,corpus,1.0000,high_confidence,HOMBA:12448,vestibular nuclei in pons,bm25+exact+fuzzy+hierarchy_parent
+Optic chiasm,corpus,1.0000,high_confidence,HOMBA:10644,optic chiasm,bm25+exact+fuzzy
+Optic tract,corpus,1.0000,high_confidence,HOMBA:10589,optic tract,bm25+exact+fuzzy
+Roots of the abducens nerve,corpus,0.7032,needs_review,HOMBA:12861,root of abducens nerve,bm25+fuzzy
+Roots of the facial nerve,corpus,0.6887,needs_review,HOMBA:12862,root of facial nerve,bm25+fuzzy+hierarchy_parent
+Roots of the trigeminal nerve,corpus,0.7140,needs_review,HOMBA:12865,root of trigeminal nerve,bm25+fuzzy+hierarchy_parent
+Corticospinal tract,corpus,1.0000,high_confidence,HOMBA:12047,corticospinal tract,bm25+exact+fuzzy
+Medial lemniscus,corpus,1.0000,high_confidence,HOMBA:12763,medial lemniscus,bm25+exact+fuzzy
+Medial longitudinal fasciculus,corpus,1.0000,high_confidence,HOMBA:12764,medial longitudinal fasciculus,bm25+exact+fuzzy
+Spinothalamic tract,corpus,1.0000,high_confidence,HOMBA:12789,spinothalamic tract,bm25+exact+fuzzy
+Cerebral peduncle,corpus,1.0000,high_confidence,HOMBA:12330,cerebral peduncle (crus cerebri),bm25+exact+fuzzy
+Trigeminal tract (mesencephalic),corpus,0.9821,high_confidence,HOMBA:12767,mesencephalic trigeminal tract,bm25+fuzzy
+Inferior cerebellar peduncle,corpus,1.0000,high_confidence,HOMBA:12741,inferior cerebellar peduncle,bm25+exact+fuzzy
+Middle cerebellar peduncle,corpus,1.0000,high_confidence,HOMBA:12768,middle cerebellar peduncle (brachium pontis),bm25+exact+fuzzy
+Superior cerebellar peduncle,corpus,1.0000,high_confidence,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),bm25+exact+fuzzy
+Superior cerebellar peduncle (decussation),corpus,1.0000,high_confidence,HOMBA:12337,decussation of superior cerebellar peduncle,bm25+fuzzy
+Cuneate fasciculus,corpus,1.0000,high_confidence,HOMBA:12731,cuneate fasciculus,bm25+exact+fuzzy
+Gracile fasciculus,corpus,1.0000,high_confidence,HOMBA:12739,gracile fasciculus,bm25+exact+fuzzy
+Pyramidal decussation,corpus,1.0000,high_confidence,HOMBA:12772,pyramidal decussation,bm25+exact+fuzzy
+Spinal trigeminal tract,corpus,1.0000,high_confidence,HOMBA:12792,spinal trigeminal tract,bm25+exact+fuzzy
+Anterior commissure,corpus,1.0000,high_confidence,HOMBA:10559,anterior commissure,bm25+exact+fuzzy+hierarchy_parent
+Fornix (anterior columns),corpus,1.0000,high_confidence,HOMBA:10576,fornix,bm25+exact+fuzzy
+Internal capsule (posterior limb),corpus,0.9550,high_confidence,HOMBA:10584,caudal limb of internal capsule,bm25+fuzzy
+Mammillothalamic tract,corpus,1.0000,high_confidence,HOMBA:10586,mammillothalamic tract,bm25+exact+fuzzy
+Posterior commissure,corpus,1.0000,high_confidence,HOMBA:10567,posterior commissure,bm25+exact+fuzzy
+Cerebral aqueduct,corpus,1.0000,high_confidence,HOMBA:12369,cerebral aqueduct,bm25+exact+fuzzy
+Fourth ventricle,corpus,1.0000,high_confidence,HOMBA:12805,fourth ventricle,bm25+exact+fuzzy+hierarchy_parent
+Obex,corpus,1.0000,high_confidence,HOMBA:12812,obex,bm25+exact+fuzzy
+Oculomotor nucleus,corpus,1.0000,high_confidence,HOMBA:12198,oculomotor nucleus,bm25+exact+fuzzy+hierarchy_parent
+Edinger-Westphal nucleus (preganglionic),corpus,1.0000,high_confidence,HOMBA:12288,pre-Edinger-Westphal nucleus,bm25+exact+fuzzy
+Trochlear nucleus,corpus,1.0000,high_confidence,HOMBA:12206,trochlear nucleus,bm25+exact+fuzzy
+Motor trigeminal nucleus,corpus,1.0000,high_confidence,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",bm25+exact+fuzzy+hierarchy_parent
+Principal sensory trigeminal nucleus,corpus,1.0000,high_confidence,HOMBA:12444,principal sensory nucleus of trigeminal nerve,bm25+fuzzy
+Spinal trigeminal nucleus,corpus,1.0000,high_confidence,HOMBA:12572,spinal trigeminal nucleus,bm25+exact+fuzzy+hierarchy_parent
+Accessory trigeminal nucleus,corpus,1.0000,high_confidence,HOMBA:12419,accessory facial nucleus,bm25+exact+fuzzy
+Accessory facial nucleus,corpus,1.0000,high_confidence,HOMBA:12419,accessory facial nucleus,bm25+exact+fuzzy
+Superior salivatory nucleus,corpus,1.0000,high_confidence,HOMBA:12435,superior salivatory nucleus,bm25+exact+fuzzy
+Inferior salivatory nucleus,corpus,1.0000,high_confidence,HOMBA:12544,inferior salivatory nucleus,bm25+exact+fuzzy
+Ventral cochlear nucleus,corpus,1.0000,high_confidence,HOMBA:12439,ventral cochlear nucleus,bm25+exact+fuzzy
+Dorsal cochlear nucleus,corpus,1.0000,high_confidence,HOMBA:12438,dorsal cochlear nucleus,bm25+exact+fuzzy
+Pontobulbar nucleus,corpus,1.0000,high_confidence,HOMBA:12614,pontobulbar nucleus,bm25+exact+fuzzy
+Dorsal motor nucleus of vagus,corpus,1.0000,high_confidence,HOMBA:12550,dorsal motor nucleus of the vagus (vagal nerve nucleus),bm25+fuzzy
+Nucleus ambiguus,corpus,0.8381,needs_review,HOMBA:12540,ambiguus nucleus,bm25+fuzzy+hierarchy_parent
+Vagus (spinal accessory) neurons,corpus,1.0000,high_confidence,HOMBA:AA30587,spinal accessory nucleus,bm25+exact+fuzzy
+Nucleus of the solitary tract,corpus,1.0000,high_confidence,HOMBA:12557,solitary nucleus,bm25+exact+fuzzy+hierarchy_parent
+Area postrema,corpus,1.0000,high_confidence,HOMBA:12807,area postrema,bm25+exact+fuzzy
+Prepositus nucleus,corpus,0.7839,needs_review,HOMBA:AA30453,other nuclei in dorsal medulla,hierarchy_parent
+Intermediate reticular zone,corpus,0.8185,needs_review,HOMBA:12620,intermediate reticular nucleus,bm25+fuzzy
+Lateral reticular nucleus (magnocellular),corpus,1.0000,modifier_conflict,HOMBA:12634,lateral reticular nucleus,bm25+exact+fuzzy
+Lateral reticular nucleus (parvicellular),corpus,1.0000,modifier_conflict,HOMBA:12634,lateral reticular nucleus,bm25+exact+fuzzy
+Ventrolateral medulla,corpus,1.0000,high_confidence,HOMBA:12873,anterolateral medullary sulcus,bm25+exact+fuzzy
+Pedunculopontine tegmentum,corpus,0.7612,needs_review,HOMBA:12416,pontine tegmentum,bm25+fuzzy+hierarchy_parent
+Laterodorsal tegmentum,corpus,1.0000,high_confidence,HOMBA:12519,laterodorsal tegmental nucleus,bm25+exact+fuzzy+hierarchy_parent
+Lateral parabrachial nucleus,corpus,1.0000,high_confidence,HOMBA:12482,lateral parabrachial nucleus,bm25+exact+fuzzy
+Medial parabrachial nucleus,corpus,1.0000,high_confidence,HOMBA:12487,medial parabrachial nucleus,bm25+exact+fuzzy
+External lateral parabrachial nucleus,corpus,1.0000,high_confidence,HOMBA:12485,"lateral parabrachial nucleus, external division",bm25+fuzzy
+Periaqueductal gray,corpus,0.9400,high_confidence,HOMBA:AA30359,periaqueductal gray region,bm25+fuzzy
+Locus coeruleus,corpus,1.0000,high_confidence,HOMBA:12499,nucleus coeruleus (locus coeruleus),bm25+exact+fuzzy
+A1 catecholaminergic cell group,corpus,0.8061,needs_review,HOMBA:AA30843,A8 dopamine cell group,bm25+fuzzy
+A4 catecholaminergic cell group,corpus,0.8061,needs_review,HOMBA:AA30843,A8 dopamine cell group,bm25+fuzzy
+A5 catecholaminergic cell group,corpus,1.0000,high_confidence,HOMBA:AA30843,A8 dopamine cell group,bm25+exact+fuzzy
+A8 catecholaminergic cell group,corpus,0.8061,needs_review,HOMBA:AA30843,A8 dopamine cell group,bm25+fuzzy
+Ventral tegmental area,corpus,1.0000,high_confidence,HOMBA:12261,ventral tegmental area,bm25+exact+fuzzy
+Dorsal raphe,corpus,0.9479,high_confidence,HOMBA:12223,dorsal raphe nucleus,bm25+fuzzy
+Median raphe,corpus,0.7120,needs_review,HOMBA:12235,median raphe nucleus,bm25+fuzzy
+Raphe magnus,corpus,0.7120,needs_review,HOMBA:12642,raphe magnus nucleus,bm25+fuzzy
+Raphe obscurus,corpus,0.7346,needs_review,HOMBA:12643,raphe obscurus nucleus,bm25+fuzzy
+Solitary tract,corpus,1.0000,high_confidence,HOMBA:12783,solitary tract,bm25+exact+fuzzy
+Corticospinal tract (pyramids),corpus,1.0000,high_confidence,HOMBA:12047,corticospinal tract,bm25+exact+fuzzy
+Cerebellar cortex (molecular layer),corpus,1.0000,high_confidence,HOMBA:10657,cerebellar cortex,bm25+exact+fuzzy
+Cerebellar cortex (Purkinje cell layer),corpus,1.0000,high_confidence,HOMBA:10657,cerebellar cortex,bm25+exact+fuzzy
+Cerebellar cortex (granular layer),corpus,1.0000,high_confidence,HOMBA:10657,cerebellar cortex,bm25+exact+fuzzy
+Cerebellar vermis,corpus,1.0000,high_confidence,HOMBA:10658,cerebellar vermis,bm25+exact+fuzzy
+Cerebellar hemisphere,corpus,1.0000,high_confidence,HOMBA:10659,cerebellar hemisphere,bm25+exact+fuzzy+hierarchy_parent
+Flocculus,corpus,1.0000,high_confidence,HOMBA:AA30424,lobule Xa (flocculus),bm25+exact+fuzzy
+Fastigial nucleus,corpus,1.0000,high_confidence,HOMBA:12402,fastigial (medial) nucleus,bm25+exact+fuzzy+hierarchy_parent
+Globose nucleus,corpus,1.0000,high_confidence,HOMBA:12400,medial interpositus (globose) nucleus,bm25+exact+fuzzy
+Emboliform nucleus,corpus,1.0000,high_confidence,HOMBA:12401,lateral interpositus (emboliform) nucleus,bm25+exact+fuzzy
+Dentate nucleus,corpus,1.0000,high_confidence,HOMBA:12396,dentate (lateral) nucleus,bm25+exact+fuzzy+hierarchy_parent
+Inferior olive,corpus,1.0000,high_confidence,HOMBA:12600,inferior olive,bm25+exact+fuzzy+hierarchy_parent
+Precentral gyrus,corpus,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+exact+fuzzy
+Postcentral gyrus,corpus,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+exact+fuzzy
+Rolandic operculum,corpus,0.4865,low_confidence,HOMBA:12127,frontal operculum,bm25+fuzzy
+Superior frontal gyrus (dorsolateral),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Middle frontal gyrus,corpus,1.0000,high_confidence,HOMBA:12116,middle frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (opercular part),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (triangular part),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Superior frontal gyrus (medial),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Supplementary motor area,corpus,1.0000,high_confidence,HOMBA:AA30012,medial division of area 6 (supplementary motor area),bm25+exact+fuzzy
+Paracentral lobule,corpus,1.0000,high_confidence,HOMBA:12138,"paracentral lobule, caudal part",bm25+exact+fuzzy
+Superior frontal gyrus (orbital part),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Superior frontal gyrus (medial orbital),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Middle frontal gyrus (orbital part),corpus,1.0000,high_confidence,HOMBA:12116,middle frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (orbital part),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Gyrus rectus,corpus,1.0000,high_confidence,HOMBA:12121,rectus gyrus,bm25+exact+fuzzy
+Olfactory cortex,corpus,1.0000,high_confidence,HOMBA:12073,olfactory tract,bm25+exact+fuzzy
+Superior temporal gyrus,corpus,1.0000,high_confidence,HOMBA:12140,superior temporal gyrus,bm25+exact+fuzzy
+Heschl gyrus,corpus,0.6250,needs_review,HOMBA:12150,cuneus (gyrus),bm25+fuzzy
+Middle temporal gyrus,corpus,1.0000,high_confidence,HOMBA:12141,middle temporal gyrus,bm25+exact+fuzzy
+Inferior temporal gyrus,corpus,1.0000,high_confidence,HOMBA:12142,inferior temporal gyrus,bm25+exact+fuzzy
+Superior parietal gyrus,corpus,1.0000,high_confidence,HOMBA:12133,superior parietal lobule (gyrus),bm25+exact+fuzzy
+Inferior parietal lobule,corpus,1.0000,high_confidence,HOMBA:12134,inferior parietal lobule (gyrus),bm25+exact+fuzzy
+Angular gyrus,corpus,1.0000,high_confidence,HOMBA:12136,angular gyrus,bm25+exact+fuzzy
+Supramarginal gyrus,corpus,1.0000,high_confidence,HOMBA:12135,supramarginal gyrus,bm25+exact+fuzzy
+Precuneus,corpus,1.0000,high_confidence,HOMBA:12137,precuneaus (gyrus),bm25+exact+fuzzy
+Superior occipital gyrus,corpus,1.0000,high_confidence,HOMBA:12154,superior occipital gyrus,bm25+exact+fuzzy
+Middle occipital gyrus,corpus,1.0000,high_confidence,HOMBA:12116,middle frontal gyrus,bm25+exact+fuzzy
+Inferior occipital gyrus,corpus,1.0000,high_confidence,HOMBA:12153,inferior occipital gyrus,bm25+exact+fuzzy
+Cuneus,corpus,1.0000,high_confidence,HOMBA:12150,cuneus (gyrus),bm25+exact+fuzzy
+Calcarine fissure and surrounding cortex,corpus,0.5752,low_confidence,HOMBA:10612,calcarine sulcus (fissure),bm25+fuzzy+hierarchy_parent
+Lingual gyrus,corpus,1.0000,high_confidence,HOMBA:12151,lingual gyrus,bm25+exact+fuzzy
+Fusiform gyrus,corpus,1.0000,high_confidence,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,bm25+exact+fuzzy
+Temporal pole (superior temporal gyrus),corpus,1.0000,high_confidence,HOMBA:12140,superior temporal gyrus,bm25+exact+fuzzy
+Temporal pole (middle temporal gyrus),corpus,1.0000,high_confidence,HOMBA:12141,middle temporal gyrus,bm25+exact+fuzzy
+Anterior cingulate and paracingulate gyri,corpus,0.4532,low_confidence,HOMBA:146034872,paracingulate gyrus,bm25+fuzzy
+Median cingulate and paracingulate gyri,corpus,0.4587,low_confidence,HOMBA:146034872,paracingulate gyrus,bm25+fuzzy
+Posterior cingulate gyrus,corpus,1.0000,high_confidence,HOMBA:10285,posterior cingulate cortex (PCC),bm25+exact+fuzzy
+Hippocampus,corpus,1.0000,high_confidence,HOMBA:AA30093,hippocampus,bm25+exact+fuzzy
+Parahippocampal gyrus,corpus,1.0000,high_confidence,HOMBA:12162,parahippocampal gyrus,bm25+exact+fuzzy+hierarchy_parent
+Insula,corpus,1.0000,high_confidence,HOMBA:12176,insular lobe,bm25+exact+fuzzy+hierarchy_parent
+Amygdala,corpus,1.0000,high_confidence,HOMBA:10361,amygdaloid complex,bm25+exact+fuzzy
+Caudate nucleus,corpus,1.0000,high_confidence,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),bm25+exact+fuzzy+hierarchy_parent
+Lenticular nucleus (putamen),corpus,1.0000,high_confidence,HOMBA:10338,putamen (lateroventral division of the CP),bm25+exact+fuzzy
+Lenticular nucleus (pallidum),corpus,1.0000,high_confidence,HOMBA:10464,reticular nucleus of thalamus,bm25+exact+fuzzy
+Thalamus,corpus,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Putamen,corpus,1.0000,high_confidence,HOMBA:10338,putamen (lateroventral division of the CP),bm25+exact+fuzzy+hierarchy_parent
+External globus pallidus,corpus,1.0000,high_confidence,HOMBA:10343,external division of globus pallidus,bm25+fuzzy
+Internal globus pallidus,corpus,0.9386,high_confidence,HOMBA:10342,globus pallidus (paleostriatum),bm25+fuzzy+hierarchy_parent
+Nucleus accumbens,corpus,1.0000,high_confidence,HOMBA:10339,nucleus accumbens,bm25+exact+fuzzy+hierarchy_parent
+Zona incerta,corpus,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+Anterior thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:10392,anterior nuclear complex of thalamus,bm25+exact+fuzzy
+Ventral anterior thalamic nucleus,corpus,0.9100,high_confidence,HOMBA:10392,anterior nuclear complex of thalamus,bm25+fuzzy
+Ventral lateral thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+exact+fuzzy
+Ventralis intermedius,corpus,1.0000,high_confidence,HOMBA:10420,ventral lateral nucleus of thalamus,bm25+exact+fuzzy
+Ventral posterior internal thalamic nucleus,corpus,0.9798,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+fuzzy
+Ventral posterior external thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+exact+fuzzy
+Mediodorsal thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:AA30278,submedius thalamic nucleus,bm25+exact+fuzzy
+Pulvinar,corpus,1.0000,high_confidence,HOMBA:10409,pulvinar of thalamus,bm25+exact+fuzzy+hierarchy_parent
+Centre median parafascicular complex,corpus,1.0000,high_confidence,HOMBA:10449,centromedian nucleus of thalamus,bm25+exact+fuzzy+hierarchy_parent
+Reticular perithalamic nucleus,corpus,1.0000,high_confidence,HOMBA:AA30314,ethmoid thalamic nucleus,bm25+exact+fuzzy
+Internal capsule,corpus,1.0000,high_confidence,HOMBA:10581,internal capsule,bm25+exact+fuzzy+hierarchy_parent
+Forel's field H,corpus,1.0000,high_confidence,HOMBA:AA30325,prerubral field (field H3),bm25+exact+fuzzy
+Forel's field H1,corpus,0.8150,needs_review,HOMBA:AA30325,prerubral field (field H3),bm25+fuzzy
+Forel's field H2,corpus,0.8150,needs_review,HOMBA:AA30325,prerubral field (field H3),bm25+fuzzy
+Ansa lenticularis,corpus,1.0000,high_confidence,HOMBA:10571,ansa lenticularis,bm25+exact+fuzzy
+Brachium conjunctivum,corpus,1.0000,high_confidence,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),bm25+exact+fuzzy
+Fornix,corpus,1.0000,high_confidence,HOMBA:10576,fornix,bm25+exact+fuzzy+hierarchy_parent
+Lateral ventricle,corpus,0.9767,high_confidence,HOMBA:10598,body of lateral ventricles,bm25+fuzzy
+CA1,corpus,1.0000,high_confidence,HOMBA:10297,CA1 region of hippocampus,bm25+exact+fuzzy+hierarchy_parent
+CA2,corpus,1.0000,high_confidence,HOMBA:10298,CA2 region of hippocampus,bm25+exact+fuzzy+hierarchy_parent
+CA3,corpus,1.0000,high_confidence,HOMBA:10299,CA3 region of hippocampus,bm25+exact+fuzzy+hierarchy_parent
+CA4 (dentate hilus),corpus,1.0000,high_confidence,HOMBA:10295,dentate gyrus,bm25+exact+fuzzy
+Dentate gyrus,corpus,1.0000,high_confidence,HOMBA:10295,dentate gyrus,bm25+exact+fuzzy+hierarchy_parent
+Subiculum,corpus,1.0000,high_confidence,HOMBA:10302,subiculum proper (strictly defined subiculum),bm25+exact+fuzzy+hierarchy_parent
+Vestigial hippocampal sulcus,corpus,1.0000,high_confidence,HOMBA:13029,septohippocampal nucleus,bm25+exact+fuzzy
+Anterior nucleus (thalamus),corpus,0.9843,high_confidence,HOMBA:10417,ventral anterior nucleus of thalamus,bm25+fuzzy
+Lateral geniculate nucleus,corpus,1.0000,high_confidence,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),bm25+exact+fuzzy
+Medial geniculate nucleus,corpus,1.0000,high_confidence,HOMBA:10434,medial geniculate nucleus,bm25+exact+fuzzy
+Ventral posterior thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+exact+fuzzy
+Intralaminar thalamic nuclei,corpus,1.0000,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+exact+fuzzy
+Medial dorsal thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:AA30278,submedius thalamic nucleus,bm25+exact+fuzzy
+Lateral posterior thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:10408,lateral posterior nucleus of thalamus,bm25+fuzzy
+Posterior thalamic nucleus,corpus,1.0000,high_confidence,HOMBA:10503,posterior hypothalamic nucleus,bm25+exact+fuzzy
+Medial pulvinar,corpus,1.0000,high_confidence,HOMBA:10411,medial division of pulvinar,bm25+fuzzy
+Inferior pulvinar,corpus,1.0000,high_confidence,HOMBA:10413,inferior division of pulvinar,bm25+exact+fuzzy
+Lateral pulvinar,corpus,1.0000,high_confidence,HOMBA:10412,lateral division of pulvinar,bm25+fuzzy
+Anterior pulvinar,corpus,1.0000,high_confidence,HOMBA:10412,lateral division of pulvinar,bm25+exact+fuzzy
+Ventral medial thalamic nucleus,corpus,0.8342,needs_review,HOMBA:10490,ventral division of VMHco,bm25+fuzzy
+Transverse temporal gyri (Heschl's gyri),corpus,0.8250,modifier_conflict,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),bm25+fuzzy
+Planum temporale,corpus,1.0000,high_confidence,HOMBA:12145,planum temporale,bm25+exact+fuzzy
+Temporal pole,corpus,1.0000,high_confidence,HOMBA:12146,temporal pole (temporopolar cortex),bm25+exact+fuzzy
+Limen insulae,corpus,0.7733,needs_review,HOMBA:12179,limen insula,bm25+fuzzy
+Uncus,corpus,1.0000,high_confidence,HOMBA:12165,uncus of (para)hippocampal gyrus,bm25+exact+fuzzy+hierarchy_parent
+Entorhinal area,corpus,1.0000,high_confidence,HOMBA:10317,entorhinal cortex,bm25+exact+fuzzy+hierarchy_parent
+Periamygdaloid cortex,corpus,1.0000,high_confidence,HOMBA:AA30225,periamygdaloid cortex,bm25+exact+fuzzy+hierarchy_parent
+Septal area,corpus,1.0000,high_confidence,HOMBA:10350,septal region (septal nuclear complex),bm25+exact+fuzzy+hierarchy_parent
+Arcuate fasciculus,corpus,1.0000,high_confidence,HOMBA:10569,arcuate fasciculus,bm25+exact+fuzzy
+Inferior longitudinal fasciculus,corpus,1.0000,high_confidence,HOMBA:10580,inferior longitudinal fasciculus,bm25+exact+fuzzy
+Uncinate fasciculus,corpus,1.0000,high_confidence,HOMBA:10594,uncinate fasciculus,bm25+exact+fuzzy
+Meyer's loop (geniculocalcarine tract),corpus,1.0000,high_confidence,HOMBA:12054,capsular part of optic radiation (geniculocalcarine tract),bm25+exact+fuzzy
+Fimbria,corpus,1.0000,high_confidence,HOMBA:10575,fimbria,bm25+exact+fuzzy
+Alveus,corpus,1.0000,high_confidence,HOMBA:10570,alveus,bm25+exact+fuzzy
+Temporal horn of the lateral ventricle,corpus,0.8349,needs_review,HOMBA:10597,rostral horn of lateral ventricles,bm25+fuzzy
+Angular gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12136,angular gyrus,bm25+exact+fuzzy
+Angular gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12136,angular gyrus,bm25+exact+fuzzy
+Intracalcarine cortex (inferior),corpus,1.0000,high_confidence,HOMBA:10426,ventral posterior inferior nucleus,bm25+exact+fuzzy
+Intracalcarine cortex (superior),corpus,1.0000,high_confidence,HOMBA:10306,paleocortex (semicortex),bm25+exact+fuzzy
+Cingulate gyrus (anterior anterior part),corpus,1.0000,high_confidence,HOMBA:12157,"cingulate gyrus, rostral (anterior) part",bm25+exact+fuzzy
+Cingulate gyrus (anterior posterior part),corpus,1.0000,high_confidence,HOMBA:12158,"cingulate gyrus, caudal (posterior) part",bm25+exact+fuzzy
+Cingulate gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:10285,posterior cingulate cortex (PCC),bm25+fuzzy
+Cuneal cortex,corpus,1.0000,high_confidence,HOMBA:10159,cerebral cortex,bm25+exact+fuzzy
+Central opercular cortex (anterior),corpus,1.0000,high_confidence,HOMBA:10190,"frontal polar cortex (FP, area 10)",bm25+exact+fuzzy
+Central opercular cortex (posterior),corpus,1.0000,high_confidence,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),bm25+exact+fuzzy
+Superior frontal gyrus (lateral anterior),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Superior frontal gyrus (lateral middle),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Superior frontal gyrus (lateral posterior),corpus,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Middle frontal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12116,middle frontal gyrus,bm25+exact+fuzzy
+Middle frontal gyrus (middle),corpus,1.0000,high_confidence,HOMBA:12116,middle frontal gyrus,bm25+exact+fuzzy
+Middle frontal gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12116,middle frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (pars opercularis),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (pars orbitalis),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Inferior frontal gyrus (pars triangularis),corpus,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy
+Frontal medial cortex,corpus,1.0000,high_confidence,HOMBA:10161,frontal cortex,bm25+exact+fuzzy
+Frontal opercular cortex,corpus,1.0000,high_confidence,HOMBA:10161,frontal cortex,bm25+exact+fuzzy+hierarchy_parent
+Frontal orbital cortex (anterior),corpus,1.0000,high_confidence,HOMBA:10198,"intermediate orbital frontal cortex (OFCi, area 11/13)",bm25+fuzzy
+Frontal orbital cortex (lateral),corpus,0.9936,high_confidence,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",bm25+fuzzy
+Frontal orbital cortex (medial),corpus,1.0000,high_confidence,HOMBA:10194,orbital frontal cortex,bm25+fuzzy
+Frontal orbital cortex (posterior),corpus,1.0000,high_confidence,HOMBA:10194,orbital frontal cortex,bm25+fuzzy
+Frontal pole (lateral),corpus,1.0000,high_confidence,HOMBA:146034888,frontal pole,bm25+exact+fuzzy
+Frontal pole (medial),corpus,1.0000,high_confidence,HOMBA:146034888,frontal pole,bm25+exact+fuzzy
+Heschl's gyrus,corpus,1.0000,high_confidence,HOMBA:12144,transverse temporal gyrus (Heschl's gyrus),bm25+exact+fuzzy
+Insular cortex (anterior),corpus,1.0000,high_confidence,HOMBA:10288,major insular cortex,bm25+exact+fuzzy
+Insular cortex (posterior),corpus,1.0000,high_confidence,HOMBA:10288,major insular cortex,bm25+exact+fuzzy
+Occipital fusiform gyrus,corpus,1.0000,high_confidence,HOMBA:12153,inferior occipital gyrus,bm25+exact+fuzzy
+Lateral occipital cortex (inferior),corpus,0.9346,modifier_conflict,HOMBA:AA30024,"lateral temporal-occipital cortex (area 37l, area TEO)",bm25+fuzzy
+Lateral occipital cortex (superior),corpus,0.9346,modifier_conflict,HOMBA:AA30024,"lateral temporal-occipital cortex (area 37l, area TEO)",bm25+fuzzy
+Occipital pole,corpus,1.0000,high_confidence,HOMBA:12149,occipital pole,bm25+exact+fuzzy
+Paracingulate gyrus,corpus,1.0000,high_confidence,HOMBA:146034872,paracingulate gyrus,bm25+exact+fuzzy
+Precuneal cortex,corpus,1.0000,high_confidence,HOMBA:10172,prefrontal cortex,bm25+exact+fuzzy+hierarchy_parent
+Parahippocampal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12163,anterior parahippocampal gyrus,bm25+fuzzy
+Parahippocampal gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12164,posterior parahippocampal gyrus,bm25+fuzzy
+Parietal opercular cortex,corpus,1.0000,high_confidence,HOMBA:10208,parietal cortex,bm25+exact+fuzzy+hierarchy_parent
+Postcentral gyrus (lateral inferior),corpus,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+exact+fuzzy
+Postcentral gyrus (lateral middle),corpus,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+exact+fuzzy
+Postcentral gyrus (lateral superior),corpus,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+exact+fuzzy
+Postcentral gyrus (medial),corpus,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+exact+fuzzy
+Planum polare,corpus,1.0000,high_confidence,HOMBA:12147,planum polare,bm25+exact+fuzzy
+Pre-supplementary motor area (inferior),corpus,0.7172,needs_review,HOMBA:AA30012,medial division of area 6 (supplementary motor area),bm25+fuzzy
+Pre-supplementary motor area (superior),corpus,0.7172,needs_review,HOMBA:AA30012,medial division of area 6 (supplementary motor area),bm25+fuzzy
+Precentral gyrus (lateral inferior),corpus,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+exact+fuzzy
+Precentral gyrus (lateral middle),corpus,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+exact+fuzzy
+Precentral gyrus (lateral superior),corpus,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+exact+fuzzy
+Precentral gyrus (medial),corpus,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+exact+fuzzy
+Subcallosal cortex,corpus,1.0000,high_confidence,HOMBA:10281,subgenual (subcallosal) cingulate cortex (area 25),bm25+exact+fuzzy
+Supracalcarine cortex,corpus,1.0000,high_confidence,HOMBA:10208,parietal cortex,bm25+exact+fuzzy+hierarchy_parent
+Supramarginal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12135,supramarginal gyrus,bm25+exact+fuzzy
+Supramarginal gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12135,supramarginal gyrus,bm25+exact+fuzzy
+Superior parietal lobule (anterior),corpus,1.0000,high_confidence,HOMBA:12133,superior parietal lobule (gyrus),bm25+exact+fuzzy
+Superior parietal lobule (posterior),corpus,1.0000,high_confidence,HOMBA:12133,superior parietal lobule (gyrus),bm25+exact+fuzzy
+Superior temporal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12140,superior temporal gyrus,bm25+exact+fuzzy
+Superior temporal gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12140,superior temporal gyrus,bm25+exact+fuzzy
+Middle temporal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12141,middle temporal gyrus,bm25+exact+fuzzy
+Middle temporal gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12141,middle temporal gyrus,bm25+exact+fuzzy
+Inferior temporal gyrus (anterior),corpus,1.0000,high_confidence,HOMBA:12142,inferior temporal gyrus,bm25+exact+fuzzy
+Inferior temporal gyrus (posterior),corpus,1.0000,high_confidence,HOMBA:12142,inferior temporal gyrus,bm25+exact+fuzzy
+Temporal frontal cortex (anterior),corpus,1.0000,high_confidence,HOMBA:10161,frontal cortex,bm25+exact+fuzzy
+Temporal frontal cortex (posterior),corpus,1.0000,high_confidence,HOMBA:10161,frontal cortex,bm25+exact+fuzzy
+Middle temporal gyrus (temporo-occipital),corpus,1.0000,high_confidence,HOMBA:12141,middle temporal gyrus,bm25+exact+fuzzy
+Inferior temporal gyrus (temporo-occipital),corpus,1.0000,high_confidence,HOMBA:12142,inferior temporal gyrus,bm25+exact+fuzzy
+Temporal occipital fusiform cortex,corpus,1.0000,high_confidence,HOMBA:10268,occipital cortex,bm25+exact+fuzzy+hierarchy_parent
+Primary visual cortex,corpus,1.0000,high_confidence,HOMBA:10269,"primary visual cortex (first visual cortex, striate cortex, area 17, area OC)",bm25+exact+fuzzy+hierarchy_parent
+Secondary visual cortex,corpus,1.0000,high_confidence,HOMBA:AA30823,"dorsal secondary visual cortex (dorsal area 18, dorsal area OB, area 18a)",bm25+exact+fuzzy
+Visual area V3,corpus,1.0000,high_confidence,HOMBA:AA30824,"dorsal third visual area (V3D, V3)",bm25+exact+fuzzy
+Visual area V3A,corpus,1.0000,high_confidence,HOMBA:267499179,seventh visual area V7,bm25+exact+fuzzy
+Visual area V3B,corpus,1.0000,high_confidence,HOMBA:267499179,seventh visual area V7,bm25+exact+fuzzy
+Visual area V4,corpus,1.0000,high_confidence,HOMBA:AA30818,transitional fourth visual area (V4T),bm25+exact+fuzzy
+Visual area V6,corpus,1.0000,high_confidence,HOMBA:267499151,"sixth visual area V6 , part A",bm25+exact+fuzzy
+Visual area V6A,corpus,0.7809,needs_review,HOMBA:AA30020,sixth visual area,bm25+fuzzy+hierarchy_parent
+Visual area V7,corpus,0.7150,needs_review,HOMBA:267499179,seventh visual area V7,bm25+fuzzy
+Visual area V8,corpus,1.0000,high_confidence,HOMBA:267499179,seventh visual area V7,bm25+exact+fuzzy
+Middle temporal area,corpus,1.0000,high_confidence,HOMBA:267499039,"fifth visual area (middle temporal area, MT)",bm25+exact+fuzzy
+Medial superior temporal area,corpus,1.0000,high_confidence,HOMBA:AA30021,medial superior temporal area,bm25+exact+fuzzy
+Fundal superior temporal area,corpus,1.0000,high_confidence,HOMBA:AA30021,medial superior temporal area,bm25+exact+fuzzy
+Area PH,corpus,1.0000,high_confidence,HOMBA:12807,area postrema,bm25+exact+fuzzy
+V4 transitional area,corpus,1.0000,high_confidence,HOMBA:10379,amygdaloid transition areas,bm25+exact+fuzzy+hierarchy_parent
+Primary motor cortex,corpus,1.0000,high_confidence,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",bm25+exact+fuzzy
+Somatosensory area 3a,corpus,0.6834,needs_review,HOMBA:AA30495,somatosensory radiation,bm25+fuzzy
+Somatosensory area 3b,corpus,0.6834,needs_review,HOMBA:AA30495,somatosensory radiation,bm25+fuzzy
+Somatosensory area 1,corpus,1.0000,high_confidence,HOMBA:AA30495,somatosensory radiation,bm25+exact+fuzzy
+Somatosensory area 2,corpus,1.0000,high_confidence,HOMBA:AA30495,somatosensory radiation,bm25+exact+fuzzy
+Frontal eye field,corpus,0.6183,needs_review,HOMBA:AA30010,frontal eye field of premotor cortex,bm25+fuzzy
+Premotor eye field,corpus,0.5542,low_confidence,HOMBA:AA30010,frontal eye field of premotor cortex,bm25+fuzzy
+Area 55b,corpus,1.0000,high_confidence,HOMBA:AA30011,area 55b of premotor cortex,bm25+exact+fuzzy
+Premotor area 6a,corpus,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Premotor area 6v,corpus,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Premotor area 6d,corpus,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Premotor area 6m,corpus,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Premotor area 6r,corpus,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Premotor area 6mp,corpus,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Prefrontal area 8Av,corpus,1.0000,high_confidence,HOMBA:10176,lateroventral subdivision of area 8,bm25+exact+fuzzy
+Prefrontal area 8Ad,corpus,1.0000,high_confidence,HOMBA:10175,laterodorsal subdivision of area 8,bm25+exact+fuzzy
+Prefrontal area 8BL,corpus,1.0000,high_confidence,HOMBA:10175,laterodorsal subdivision of area 8,bm25+exact+fuzzy
+Prefrontal area 8BM,corpus,1.0000,high_confidence,HOMBA:10177,medial subdivision of area 8,bm25+exact+fuzzy
+Prefrontal area 8C,corpus,1.0000,high_confidence,HOMBA:10174,"caudal division of DFC (area 8, DFCc)",bm25+exact+fuzzy+hierarchy_parent
+Prefrontal area 9-46v,corpus,1.0000,high_confidence,HOMBA:10183,ventral subdivision of A9/46,bm25+exact+fuzzy
+Prefrontal area 9-46d,corpus,1.0000,high_confidence,HOMBA:10182,dorsal subdivision of A9/46,bm25+exact+fuzzy
+Prefrontal area 46,corpus,1.0000,high_confidence,HOMBA:10184,"rostroventral division of DFC (area 46, DFCv)",bm25+exact+fuzzy+hierarchy_parent
+Prefrontal area 47s,corpus,1.0000,high_confidence,HOMBA:AA30002,rostral subdivision of area 12/47,bm25+exact+fuzzy
+Prefrontal area 47m,corpus,1.0000,high_confidence,HOMBA:10206,medial part of area 12/47,bm25+exact+fuzzy
+Prefrontal area 47l,corpus,1.0000,high_confidence,HOMBA:10207,lateral part of area 12/47,bm25+exact+fuzzy
+Prefrontal area 47r,corpus,1.0000,high_confidence,HOMBA:AA30002,rostral subdivision of area 12/47,bm25+exact+fuzzy
+Prefrontal area 9a,corpus,1.0000,high_confidence,HOMBA:10179,lateral subdivision of area 9,bm25+exact+fuzzy
+Prefrontal area 9m,corpus,1.0000,high_confidence,HOMBA:10180,medial subdivision of area 9,bm25+exact+fuzzy
+Prefrontal area 9p,corpus,1.0000,high_confidence,HOMBA:10180,medial subdivision of area 9,bm25+exact+fuzzy
+Prefrontal area 10d,corpus,1.0000,high_confidence,HOMBA:10191,medial subdivision of area 10,bm25+exact+fuzzy
+Prefrontal area 10r,corpus,1.0000,high_confidence,HOMBA:10192,lateral subdivision of area 10,bm25+exact+fuzzy
+Prefrontal area 10pp,corpus,1.0000,high_confidence,HOMBA:10190,"frontal polar cortex (FP, area 10)",bm25+exact+fuzzy+hierarchy_parent
+Frontal area SFL,corpus,0.5393,low_confidence,HOMBA:12113,frontal lobe,bm25+fuzzy+hierarchy_parent
+Retrosplenial cortex,corpus,1.0000,high_confidence,HOMBA:10324,retrosplenial cortex,bm25+exact+fuzzy+hierarchy_parent
+Posterior opercular area POS2,corpus,1.0000,high_confidence,HOMBA:266441161,opercular subdivision of area 44,bm25+exact+fuzzy
+Lateral intraparietal area (ventral),corpus,1.0000,high_confidence,HOMBA:10207,lateral part of area 12/47,bm25+exact+fuzzy
+Lateral intraparietal area (dorsal),corpus,1.0000,high_confidence,HOMBA:10207,lateral part of area 12/47,bm25+exact+fuzzy
+Ventral intraparietal area,corpus,1.0000,high_confidence,HOMBA:12261,ventral tegmental area,bm25+exact+fuzzy
+Anterior intraparietal area,corpus,1.0000,high_confidence,HOMBA:AA30890,anterior (ventral) spinal artery,bm25+exact+fuzzy
+Primary auditory cortex,corpus,1.0000,high_confidence,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",bm25+exact+fuzzy+hierarchy_parent
+Temporal area TE1a,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Temporal area TE1m,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Temporal area TE1p,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Temporal area TE2a,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area 23c,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area 23d,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area 31a,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area a24,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area p24,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Insular area FOP1,corpus,0.5014,low_confidence,HOMBA:12176,insular lobe,bm25+fuzzy+hierarchy_parent
+Insular area FOP2,corpus,0.5014,low_confidence,HOMBA:12176,insular lobe,bm25+fuzzy+hierarchy_parent
+Insular area FOP3,corpus,0.5014,low_confidence,HOMBA:12176,insular lobe,bm25+fuzzy+hierarchy_parent
+Insular area FOP4,corpus,0.5014,low_confidence,HOMBA:12176,insular lobe,bm25+fuzzy+hierarchy_parent
+Insular area FOP5,corpus,0.5014,low_confidence,HOMBA:12176,insular lobe,bm25+fuzzy+hierarchy_parent
+Retroinsular cortex,corpus,1.0000,high_confidence,HOMBA:13323,retroinsular cortex,bm25+exact+fuzzy
+Posterior insular area,corpus,1.0000,high_confidence,HOMBA:10567,posterior commissure,bm25+exact+fuzzy
+Anterior ventral insular area,corpus,0.7174,needs_review,HOMBA:AA30890,anterior (ventral) spinal artery,bm25+fuzzy
+Medial insular area,corpus,1.0000,high_confidence,HOMBA:10288,major insular cortex,bm25+exact+fuzzy
+Frontoinsular area,corpus,1.0000,high_confidence,HOMBA:10288,major insular cortex,bm25+exact+fuzzy+hierarchy_parent
+Parietal area IP0,corpus,0.5691,low_confidence,HOMBA:12131,parietal lobe,bm25+fuzzy+hierarchy_parent
+Parietal area IP1,corpus,0.5691,low_confidence,HOMBA:12131,parietal lobe,bm25+fuzzy+hierarchy_parent
+Parietal area IP2,corpus,0.5691,low_confidence,HOMBA:12131,parietal lobe,bm25+fuzzy+hierarchy_parent
+Parietal area PFt,corpus,0.6651,needs_review,HOMBA:10208,parietal cortex,bm25+fuzzy
+Parietal area PF,corpus,1.0000,high_confidence,HOMBA:10208,parietal cortex,bm25+exact+fuzzy+hierarchy_parent
+Parietal area PFm,corpus,0.6651,needs_review,HOMBA:10208,parietal cortex,bm25+fuzzy
+Parietal area PFcm,corpus,0.6651,needs_review,HOMBA:10208,parietal cortex,bm25+fuzzy
+Parietal area PFop,corpus,0.6651,needs_review,HOMBA:10208,parietal cortex,bm25+fuzzy
+Parietal area PGi,corpus,0.5753,low_confidence,HOMBA:10208,parietal cortex,bm25+fuzzy
+Parietal area PGs,corpus,0.5753,low_confidence,HOMBA:10208,parietal cortex,bm25+fuzzy
+Parietal area PGp,corpus,0.5753,low_confidence,HOMBA:10208,parietal cortex,bm25+fuzzy
+Temporal area STGg,corpus,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+Temporal area PSL,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Temporal area STSdp,corpus,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+Temporal area STSda,corpus,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+Temporal area STSva,corpus,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+Temporal area STSvp,corpus,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+Temporal area TF,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Temporal area TGd,corpus,1.0000,high_confidence,HOMBA:10235,temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Entorhinal cortex,corpus,1.0000,high_confidence,HOMBA:10317,entorhinal cortex,bm25+exact+fuzzy+hierarchy_parent
+Presubiculum,corpus,1.0000,high_confidence,HOMBA:10315,presubiculum (presubicular cortex),bm25+exact+fuzzy+hierarchy_parent
+Parahippocampal area PeEc,corpus,0.5002,low_confidence,HOMBA:12162,parahippocampal gyrus,bm25+fuzzy+hierarchy_parent
+Hippocampal formation,corpus,1.0000,high_confidence,HOMBA:12170,hippocampal formation,bm25+exact+fuzzy
+Paracentral area 5L,corpus,1.0000,high_confidence,HOMBA:10218,lateral subdivision of area 5,bm25+exact+fuzzy
+Paracentral area 5mv,corpus,1.0000,high_confidence,HOMBA:10219,medial subdivision of area 5,bm25+exact+fuzzy
+Paracentral area 5m,corpus,1.0000,high_confidence,HOMBA:10219,medial subdivision of area 5,bm25+exact+fuzzy
+Cingulate area 24dd,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area 24dv,corpus,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Area 43,corpus,1.0000,high_confidence,HOMBA:AA30017,caudal division of subcentral cortex (area 43),bm25+exact+fuzzy
+Opercular area OP1,corpus,0.5470,low_confidence,HOMBA:AA30159,molecular layer of DG,bm25+fuzzy
+Opercular area OP2-3,corpus,1.0000,high_confidence,HOMBA:AA30159,molecular layer of DG,bm25+exact+fuzzy
+Opercular area OP4,corpus,0.5470,low_confidence,HOMBA:AA30159,molecular layer of DG,bm25+fuzzy
+Area 52,corpus,1.0000,high_confidence,HOMBA:10267,parainsular cortex (area 52),bm25+exact+fuzzy
+Abducens Motor Nucleus,species,1.0000,high_confidence,HOMBA:12418,abducens nucleus,bm25+exact+fuzzy
+Accumbens,species,0.6316,needs_review,HOMBA:10339,nucleus accumbens,bm25+fuzzy+hierarchy_parent
+Accumbens nucleus,species,0.8487,needs_review,HOMBA:10339,nucleus accumbens,bm25+fuzzy+hierarchy_parent
+Amygdalohippocampal area,species,1.0000,high_confidence,HOMBA:10377,amygdalohippocampal area,bm25+exact+fuzzy+hierarchy_parent
+Amygdalopiriform transition area,species,1.0000,high_confidence,HOMBA:10382,amygdalocortical transition area (amygdalopiriform transition area),bm25+exact+fuzzy
+Amygdalostriatal Transition,species,0.9512,high_confidence,HOMBA:10381,amygdalostriatal transition area,bm25+fuzzy
+Amygdalostriatal transition area,species,1.0000,high_confidence,HOMBA:10381,amygdalostriatal transition area,bm25+exact+fuzzy
+Ansa Lenticularis,species,1.0000,high_confidence,HOMBA:10571,ansa lenticularis,bm25+exact+fuzzy
+Ansiform Lobule Crus1,species,0.9367,high_confidence,HOMBA:AA30411,lobule VII (semilunar-gracile lobule),bm25+hierarchy_parent
+Ansiform Lobule Crus2,species,0.9367,high_confidence,HOMBA:AA30411,lobule VII (semilunar-gracile lobule),bm25+hierarchy_parent
+Anterior amygdaloid area,species,1.0000,high_confidence,HOMBA:10362,anterior amygdaloid area,bm25+exact+fuzzy+hierarchy_parent
+Anterior Hypothalamic Area,species,1.0000,high_confidence,HOMBA:266441551,anterior hypothalamic area,bm25+exact+fuzzy
+Anterior hypothalamic nucleus,species,1.0000,high_confidence,HOMBA:10475,anterior hypothalamic nucleus,bm25+exact+fuzzy
+Anterior Interposed Cerebellar Nucleus,species,1.0000,high_confidence,HOMBA:12838,anterior lobe of cerebellar cortex,bm25+exact+fuzzy+hierarchy_parent
+Anterior pituitary,species,1.0000,high_confidence,HOMBA:10559,anterior commissure,bm25+exact+fuzzy+hierarchy_parent
+Anterior Pulvinar,species,1.0000,high_confidence,HOMBA:10412,lateral division of pulvinar,bm25+exact+fuzzy
+Anterior Tegmental Nucleus,species,1.0000,high_confidence,HOMBA:AA30442,anterior tegmental nucleus,bm25+exact+fuzzy
+Anterior Thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Arcuate nucleus,species,0.7869,needs_review,HOMBA:12536,arcuate nucleus of medulla oblongata,bm25+fuzzy
+Basal Nucleus,species,1.0000,high_confidence,HOMBA:10332,basal ganglia (basal nuclei),bm25+exact+fuzzy+hierarchy_parent
+Basal nucleus (of Meynert),species,1.0000,high_confidence,HOMBA:10353,basal nucleus of Meynert,bm25+exact+fuzzy
+Basolateral amygdaloid nucleus (dorsal),species,1.0000,high_confidence,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,bm25+exact+fuzzy
+Basolateral amygdaloid nucleus (intermediate),species,1.0000,high_confidence,HOMBA:13040,basal ventral medial nucleus,bm25+fuzzy
+Basolateral amygdaloid nucleus (ventral),species,1.0000,high_confidence,HOMBA:13040,basal ventral medial nucleus,bm25+fuzzy
+Basolateral Dorsal Amygdaloid Nucleus,species,1.0000,high_confidence,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,bm25+fuzzy
+Basolateral Intermediate Amygdaloid Nucleus,species,1.0000,high_confidence,HOMBA:13040,basal ventral medial nucleus,bm25+exact+fuzzy
+Basolateral Ventral Amygdaloid Nucleus,species,1.0000,high_confidence,HOMBA:13040,basal ventral medial nucleus,bm25+exact+fuzzy
+Basomedial amygdaloid nucleus,species,1.0000,high_confidence,HOMBA:15557,dorsomedial tegmental nucleus,bm25+exact+fuzzy
+Bed nucleus of the stria terminalis,species,0.9846,high_confidence,HOMBA:10384,bed nucleus of stria terminalis,bm25+fuzzy
+Brachium Superior Colliculus,species,0.9542,high_confidence,HOMBA:12328,brachium of superior colliculus,bm25+fuzzy
+Capsule of the Antherior Thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Caudate Head,species,0.6902,needs_review,HOMBA:10335,head of caudate nucleus,bm25+fuzzy
+Caudate Tail,species,1.0000,high_confidence,HOMBA:11538,caudal putamen,bm25+exact+fuzzy
+Central amygdaloid nucleus,species,1.0000,high_confidence,HOMBA:11530,rostral medial nucleus,bm25+exact+fuzzy+hierarchy_parent
+Central Gray Nucleus,species,1.0000,high_confidence,HOMBA:12201,central oculomotor nucleus,bm25+exact+fuzzy
+Central Medial Thalamus,species,1.0000,high_confidence,HOMBA:10445,central medial nucleus of thalamus,bm25+exact+fuzzy
+"Central opercular cortex, anterior",species,1.0000,high_confidence,HOMBA:10190,"frontal polar cortex (FP, area 10)",bm25+exact+fuzzy+hierarchy_parent
+"Central opercular cortex, posterior",species,1.0000,high_confidence,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),bm25+exact+fuzzy
+Centrolateral and paracentral thalamic nuclei,species,1.0000,high_confidence,HOMBA:12534,ventrolateral tegmental nucleus,bm25+exact+fuzzy
+Centrolateral and Paracentral Thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Centromedial-parafascicular Thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Centromedian and parafascicular thalamic complex,species,1.0000,high_confidence,HOMBA:15534,retroparafascicular area of thalamus,bm25+exact+fuzzy
+Cerebellar Lobule 1 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 10 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 2 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 3 Intermediate,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 3 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 4 Intermediate,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 4 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 5 Intermediate,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 5 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 6 Intermediate,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 6 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 7 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 8 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+Cerebellar Lobule 9 Vermis,species,1.0000,high_confidence,HOMBA:12837,cerebellar lobules,bm25+exact+fuzzy
+"Cingulate gyrus, anterior",species,1.0000,high_confidence,HOMBA:12157,"cingulate gyrus, rostral (anterior) part",bm25+exact+fuzzy
+"Cingulate gyrus, posterior",species,0.9960,high_confidence,HOMBA:10285,posterior cingulate cortex (PCC),bm25+fuzzy
+Claustrum,species,1.0000,high_confidence,HOMBA:10346,claustrum,bm25+exact+fuzzy+hierarchy_parent
+Cochlear Nucleus,species,1.0000,high_confidence,HOMBA:12437,cochlear nuclei,bm25+exact+fuzzy+hierarchy_parent
+Copula of the Pyramis,species,1.0000,high_confidence,HOMBA:10577,column of the fornix,bm25+exact+fuzzy+hierarchy_parent
+Corticospinal Tract,species,1.0000,high_confidence,HOMBA:12047,corticospinal tract,bm25+exact+fuzzy
+Crossing of the superior cerebellar peduncle,species,1.0000,high_confidence,HOMBA:12337,decussation of superior cerebellar peduncle,bm25+exact+fuzzy
+Cuneate Gracile Nuclei,species,1.0000,high_confidence,HOMBA:10331,cerebral nuclei,bm25+exact+fuzzy
+Cuneiform Nucleus,species,1.0000,high_confidence,HOMBA:12240,cuneiform nucleus,bm25+exact+fuzzy+hierarchy_parent
+Dorsal endopiriform claustrum,species,1.0000,high_confidence,HOMBA:AA30264,dorsal endopiriform nucleus,bm25+exact+fuzzy
+Dorsal Lateral Geniculate,species,0.9975,high_confidence,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),bm25+fuzzy
+Dorsal lateral geniculate nucleus,species,1.0000,high_confidence,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),bm25+exact+fuzzy
+Dorsal Lateral Leminscus Nucleus,species,0.8110,needs_review,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),bm25+fuzzy
+Dorsal Medial Hypothalamic Nucleus,species,0.8423,needs_review,HOMBA:10489,dorsal division of VMHco,bm25+fuzzy
+Dorsal Paragigantocellular Reticular Nucleus,species,1.0000,high_confidence,HOMBA:12628,dorsal paragigantocellular nucleus,bm25+exact+fuzzy
+Dorsomedial hypothalamic nucleus,species,1.0000,high_confidence,HOMBA:10485,dorsomedial hypothalamic nucleus,bm25+exact+fuzzy+hierarchy_parent
+Endopiriform nucleus,species,1.0000,high_confidence,HOMBA:10371,endopiriform nucleus,bm25+exact+fuzzy+hierarchy_parent
+Extended amygdala,species,1.0000,high_confidence,HOMBA:10383,extended amygdala,bm25+exact+fuzzy+hierarchy_parent
+Facial Motor Nucleus,species,1.0000,high_confidence,HOMBA:12420,facial nucleus,bm25+exact+fuzzy+hierarchy_parent
+Fasciculus retroflexus,species,1.0000,high_confidence,HOMBA:12342,fasciculus retroflexus (habenuno-interpeduncular tract),bm25+exact+fuzzy
+Fastigial Cerebellar Nucleus,species,1.0000,high_confidence,HOMBA:12402,fastigial (medial) nucleus,bm25+exact+fuzzy+hierarchy_parent
+Fourth Nerve,species,1.0000,high_confidence,HOMBA:15544,optic nerve,bm25+exact+fuzzy
+"Frontal orbital cortex, anterior",species,1.0000,high_confidence,HOMBA:10194,orbital frontal cortex,bm25+exact+fuzzy+hierarchy_parent
+"Frontal orbital cortex, lateral",species,0.9936,high_confidence,HOMBA:10205,"lateral orbital frontal cortex (OFCl, area 12/47)",bm25+fuzzy
+"Frontal orbital cortex, medial",species,0.9894,high_confidence,HOMBA:10195,medial orbital frontal cortex (area 14),bm25+fuzzy
+"Frontal orbital cortex, posterior",species,0.9371,high_confidence,HOMBA:10194,orbital frontal cortex,bm25+fuzzy
+Frontal pole,species,1.0000,high_confidence,HOMBA:146034888,frontal pole,bm25+exact+fuzzy
+Gigantocellular Reticular Nucleus,species,1.0000,high_confidence,HOMBA:12625,gigantocellular reticular nuclei,bm25+exact+fuzzy
+Habenula,species,1.0000,high_confidence,HOMBA:10452,habenular nuclei,bm25+exact+fuzzy+hierarchy_parent
+Head of caudate nucleus,species,1.0000,high_confidence,HOMBA:10335,head of caudate nucleus,bm25+exact+fuzzy
+Inferior Cerebellar Peduncle,species,1.0000,high_confidence,HOMBA:12741,inferior cerebellar peduncle,bm25+exact+fuzzy
+Inferior frontal gyrus,species,1.0000,high_confidence,HOMBA:12117,inferior frontal gyrus,bm25+exact+fuzzy+hierarchy_parent
+Inferior Olive,species,1.0000,high_confidence,HOMBA:12600,inferior olive,bm25+exact+fuzzy+hierarchy_parent
+Inferior Pulvinar,species,1.0000,high_confidence,HOMBA:10413,inferior division of pulvinar,bm25+exact+fuzzy
+Insular cortex,species,1.0000,high_confidence,HOMBA:10288,major insular cortex,bm25+exact+fuzzy+hierarchy_parent
+Interanteromedial Thalamus,species,1.0000,high_confidence,HOMBA:13048,interanteromedial nucleus of thalamus,bm25+exact+fuzzy
+Intermediate+ventral Lateral Lemniscus Nuclei,species,0.8681,needs_review,HOMBA:12457,ventral nucleus of lateral lemniscus,bm25+fuzzy
+Intermediodorsal thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30327,intermediate (dorsal) habenular nucleus,bm25+exact+fuzzy
+Intermediodorsal Thalamus,species,1.0000,high_confidence,HOMBA:10391,dorsal thalamus,bm25+exact+fuzzy+hierarchy_parent
+Interpeduncular Nucleus,species,1.0000,high_confidence,HOMBA:12270,interpeduncular nucleus,bm25+exact+fuzzy+hierarchy_parent
+Intra-amygdaloid division of the bed nucleus of the stria terminalis,species,1.0000,high_confidence,HOMBA:10591,stria terminalis,bm25+exact+fuzzy
+Intraamygdaloid Stria Terminalis,species,0.7438,needs_review,HOMBA:10591,stria terminalis,bm25+fuzzy
+"Intracalcarine cortex, inferior",species,1.0000,high_confidence,HOMBA:10426,ventral posterior inferior nucleus,bm25+exact+fuzzy
+"Intracalcarine cortex, superior",species,1.0000,high_confidence,HOMBA:10306,paleocortex (semicortex),bm25+exact+fuzzy
+Justaparaventricular Lateral Hypothalamus,species,1.0000,high_confidence,HOMBA:10467,hypothalamus,bm25+exact+fuzzy
+Juxtaparaventricular nucleus,species,1.0000,high_confidence,HOMBA:12586,paravestibular nucleus,bm25+exact+fuzzy
+Kolliker-Fuse Nucleus,species,0.7564,needs_review,HOMBA:12518,Koelliker-Fuse nucleus,bm25+fuzzy
+Lamina Terminalis,species,1.0000,high_confidence,HOMBA:12105,lamina terminalis,bm25+exact+fuzzy
+Lamina terminalis and vascular organ,species,0.3300,low_confidence,HOMBA:12105,lamina terminalis,bm25
+Lateral amygdaloid nucleus (dorsal),species,1.0000,high_confidence,HOMBA:10396,lateral dorsal nucleus of thalamus,bm25+exact+fuzzy
+Lateral amygdaloid nucleus (ventral),species,1.0000,high_confidence,HOMBA:13040,basal ventral medial nucleus,bm25+fuzzy
+Lateral Cerebellar Nucleus,species,1.0000,high_confidence,HOMBA:10453,lateral habenular nucleus,bm25+exact+fuzzy
+Lateral Dorsal Amygdaloid Nucleus,species,1.0000,high_confidence,HOMBA:10396,lateral dorsal nucleus of thalamus,bm25+fuzzy
+Lateral Dorsal Tegmentum,species,0.7508,modifier_conflict,HOMBA:12122,medial orbital gyrus,bm25+fuzzy
+Lateral Dorsal Thalamus,species,1.0000,high_confidence,HOMBA:10391,dorsal thalamus,bm25+exact+fuzzy
+Lateral hypothalamic area,species,0.9676,high_confidence,HOMBA:10494,"lateral hypothalamic area, tuberal part",bm25+fuzzy
+Lateral Lemniscus,species,1.0000,high_confidence,HOMBA:12760,lateral lemniscus,bm25+exact+fuzzy
+Lateral Parabrachial Nucleus,species,1.0000,high_confidence,HOMBA:12482,lateral parabrachial nucleus,bm25+exact+fuzzy
+"Lateral parietal cortex, inferior",species,1.0000,high_confidence,HOMBA:10225,inferior lateral parietal cortex,bm25+fuzzy
+"Lateral parietal cortex, superior",species,0.8709,needs_review,HOMBA:10225,inferior lateral parietal cortex,bm25+fuzzy
+Lateral Posterior Thalamus,species,0.9706,high_confidence,HOMBA:10408,lateral posterior nucleus of thalamus,bm25+fuzzy
+Lateral Pulvinar,species,1.0000,high_confidence,HOMBA:10412,lateral division of pulvinar,bm25+fuzzy
+Lateral Reticular Nucleus,species,1.0000,high_confidence,HOMBA:12634,lateral reticular nucleus,bm25+exact+fuzzy
+Lateral Ventral Amygdaloid Nucleus,species,1.0000,high_confidence,HOMBA:13040,basal ventral medial nucleus,bm25+exact+fuzzy
+Laterodorsal thalamic nucleus,species,1.0000,high_confidence,HOMBA:12519,laterodorsal tegmental nucleus,bm25+exact+fuzzy+hierarchy_parent
+Limitans Thalamus,species,0.7009,needs_review,HOMBA:10390,thalamus,bm25+fuzzy
+Linear raphe,species,1.0000,high_confidence,HOMBA:10581,internal capsule,bm25+exact+fuzzy+hierarchy_parent
+Locus-coeruleus Region,species,0.8084,needs_review,HOMBA:12499,nucleus coeruleus (locus coeruleus),bm25+fuzzy
+Mammillary Hypothalamus,species,0.7009,needs_review,HOMBA:10467,hypothalamus,bm25+fuzzy+hierarchy_parent
+Mammillary nucleus,species,1.0000,high_confidence,HOMBA:10498,mammillary nuclear complex,bm25+exact+fuzzy+hierarchy_parent
+Medial amygdaloid nucleus,species,1.0000,high_confidence,HOMBA:10376,medial nuclear complex of amygdala,bm25+exact+fuzzy
+Medial cerebellar peduncle,species,1.0000,high_confidence,HOMBA:12741,inferior cerebellar peduncle,bm25+exact+fuzzy
+Medial Dorsal Tegmentum,species,1.0000,high_confidence,HOMBA:12122,medial orbital gyrus,bm25+exact+fuzzy
+Medial eminence,species,1.0000,high_confidence,HOMBA:12820,medial eminence,bm25+exact+fuzzy
+Medial Emminence,species,0.8199,needs_review,HOMBA:12820,medial eminence,bm25+fuzzy
+Medial Geniculate,species,0.9767,high_confidence,HOMBA:10434,medial geniculate nucleus,bm25+fuzzy
+Medial Lemniscus,species,1.0000,high_confidence,HOMBA:12763,medial lemniscus,bm25+exact+fuzzy
+Medial longitudinal fascicle,species,1.0000,high_confidence,HOMBA:12764,medial longitudinal fasciculus,bm25+exact+fuzzy
+Medial Parabrachial Nucleus,species,1.0000,high_confidence,HOMBA:12487,medial parabrachial nucleus,bm25+exact+fuzzy
+Medial parietal cortex,species,0.9975,high_confidence,HOMBA:10215,superior medial parietal cortex,bm25+fuzzy
+Medial Pulvinar,species,1.0000,high_confidence,HOMBA:10411,medial division of pulvinar,bm25+fuzzy
+Medial Raphe,species,1.0000,high_confidence,HOMBA:12235,median raphe nucleus,bm25+exact+fuzzy
+Mediodorsal Thalamus,species,1.0000,high_confidence,HOMBA:10398,mediodorsal nucleus of thalamus,bm25+exact+fuzzy
+Mediolateral Fascicle,species,0.5030,low_confidence,HOMBA:AA30790,mediolateral sulcus,bm25+fuzzy
+Medullar Reticular Nucleus,species,1.0000,high_confidence,HOMBA:12634,lateral reticular nucleus,bm25+exact+fuzzy
+Mesencephalic Reticular Formation,species,0.7810,needs_review,HOMBA:15547,isthmic reticular formation,bm25+fuzzy
+Mesencephalic Trigeminal Nerve,species,1.0000,high_confidence,HOMBA:12208,mesencephalic trigeminal nucleus,bm25+exact+fuzzy
+Midbrain reticular formation,species,1.0000,high_confidence,HOMBA:12239,midbrain reticular formation,bm25+exact+fuzzy
+Mircrocellular Tegmentum,species,0.5569,low_confidence,HOMBA:12282,paracollicular tegmentum,bm25+fuzzy
+Motor Trigeminal Nucleus,species,1.0000,high_confidence,HOMBA:12429,"motor nucleus of trigeminal nerve (motor trigeminal nucleus, Mo5)",bm25+exact+fuzzy+hierarchy_parent
+Occulomotor Nerve,species,1.0000,high_confidence,HOMBA:12376,root of occulomotor nerve,bm25+exact+fuzzy
+Occulomotor Nuclei,species,1.0000,high_confidence,HOMBA:12198,oculomotor nucleus,bm25+exact+fuzzy+hierarchy_parent
+Oculomotor complex,species,1.0000,high_confidence,HOMBA:12198,oculomotor nucleus,bm25+exact+fuzzy+hierarchy_parent
+Olfactory tubercle,species,1.0000,high_confidence,HOMBA:10310,olfactory tubercle,bm25+exact+fuzzy+hierarchy_parent
+Olfactory Tubercule,species,0.6850,needs_review,HOMBA:10310,olfactory tubercle,bm25+fuzzy+hierarchy_parent
+Olivocerebellar Tract,species,1.0000,high_confidence,HOMBA:12747,olivocerebellar tract,bm25+exact+fuzzy
+Optic Tract,species,1.0000,high_confidence,HOMBA:10589,optic tract,bm25+exact+fuzzy
+Optic tract/chiasma,species,0.7884,needs_review,HOMBA:10589,optic tract,bm25+fuzzy
+P1 Mesencephalic Reticulum,species,1.0000,high_confidence,HOMBA:12787,spinomesencephalic tract,bm25+exact+fuzzy
+Parabigeminal Nucleus,species,1.0000,high_confidence,HOMBA:12312,parabigeminal nucleus,bm25+exact+fuzzy
+Paraflocculus,species,1.0000,high_confidence,HOMBA:AA30421,lobule IXb (paraflocculus),bm25+exact+fuzzy
+Paralaminar amygdaloid nucleus,species,1.0000,high_confidence,HOMBA:12571,parasolitary nucleus,bm25+exact+fuzzy
+Paramedian Lobule,species,1.0000,high_confidence,HOMBA:AA30417,"lobule VIIIA (biventral lobule, part 1, paramedian lobule)",bm25+exact+fuzzy
+Paratenial-paraventral-thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Paraventricular Anterior Thalamus,species,1.0000,high_confidence,HOMBA:10457,paraventricular nucleus of thalamus,bm25+exact+fuzzy+hierarchy_parent
+Paraventricular hypothalamic nucleus,species,1.0000,high_confidence,HOMBA:10475,anterior hypothalamic nucleus,bm25+exact+fuzzy
+Paraventricular Hypothalamus,species,0.7016,needs_review,HOMBA:10476,paraventricular nucleus of hypothalamus,bm25+fuzzy+hierarchy_parent
+Paraventricular Posterior Thalamus,species,1.0000,high_confidence,HOMBA:13046,periventricular area of posterior thalamus,bm25+exact+fuzzy
+Parvicellular and Intermediate Reticular Nuclei,species,1.0000,high_confidence,HOMBA:12620,intermediate reticular nucleus,bm25+exact+fuzzy
+Peduncular lateral hypothalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+exact+fuzzy
+Peduncular Lateral Hypothalamus,species,1.0000,high_confidence,HOMBA:10467,hypothalamus,bm25+exact+fuzzy
+Pedunculopontine Nucleus,species,0.7396,needs_review,HOMBA:12406,pontine nucleus,fuzzy+hierarchy_parent
+Peri-basal region,species,1.0000,high_confidence,HOMBA:AA30365,prerubral regions,bm25+exact+fuzzy
+Perifornical nucleus,species,1.0000,high_confidence,HOMBA:11578,perifornical nucleus,bm25+exact+fuzzy
+Piriform cortex,species,1.0000,high_confidence,HOMBA:10311,piriform cortex,bm25+exact+fuzzy
+Pontine nucleus,species,1.0000,high_confidence,HOMBA:12406,pontine nucleus,bm25+exact+fuzzy+hierarchy_parent
+Pontine Reticulum Caudal,species,0.7256,needs_review,HOMBA:12493,"pontine reticular nucleus, caudal division",bm25+fuzzy
+Pontine Reticulum Oral,species,1.0000,high_confidence,HOMBA:12480,Pontine reticular formation,bm25+exact+fuzzy
+"Postcentral gyrus, lateral",species,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+fuzzy
+"Postcentral gyrus, medial",species,1.0000,high_confidence,HOMBA:12132,postcentral gyrus,bm25+exact+fuzzy
+Posterior Commissural Nuclei,species,1.0000,high_confidence,HOMBA:10567,posterior commissure,bm25+exact+fuzzy
+Posterior Commissure,species,1.0000,high_confidence,HOMBA:10567,posterior commissure,bm25+exact+fuzzy
+Posterior hypothalamic nucleus,species,1.0000,high_confidence,HOMBA:10503,posterior hypothalamic nucleus,bm25+exact+fuzzy
+Posterior Interposed Cerebellar Nucleus,species,1.0000,high_confidence,HOMBA:12844,posterior lobe of cerebellar cortex,bm25+exact+fuzzy
+Posterior Interstitial Nucleus,species,1.0000,high_confidence,HOMBA:AA30313,posterior limitans nucleus,bm25+exact+fuzzy
+Posterior interstitial nucleus of the anterior commissure,species,0.9998,high_confidence,HOMBA:10388,interstitial nucleus of posterior limb of anterior commissure (fundus of striatum),bm25+fuzzy
+Posterior pituitary,species,1.0000,high_confidence,HOMBA:10214,posterior parietal cortex,bm25+exact+fuzzy
+Pre-supplementary motor area,species,0.7367,needs_review,HOMBA:AA30012,medial division of area 6 (supplementary motor area),bm25+fuzzy
+"Precentral gyrus, lateral",species,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+fuzzy
+"Precentral gyrus, medial/supplementary motor area",species,1.0000,high_confidence,HOMBA:12114,precentral gyrus,bm25+exact+fuzzy
+Precommissural nucleus,species,1.0000,high_confidence,HOMBA:12287,precommissural nucleus,bm25+exact+fuzzy
+Precuneiform Nucleus,species,0.7733,needs_review,HOMBA:12240,cuneiform nucleus,fuzzy+hierarchy_parent
+Prefornical Hypothalamus,species,0.7009,needs_review,HOMBA:10467,hypothalamus,bm25+fuzzy+hierarchy_parent
+Prelunate gyrus,species,1.0000,high_confidence,HOMBA:AA30555,prelunate gyrus,bm25+exact+fuzzy
+"Premotor cortex, dorsal",species,1.0000,high_confidence,HOMBA:10172,prefrontal cortex,bm25+exact+fuzzy
+"Premotor cortex, ventral",species,1.0000,high_confidence,HOMBA:AA30479,region of fourth ventricle,bm25+exact+fuzzy
+Preoptic area,species,0.8150,needs_review,HOMBA:10468,preoptic region of HTH,bm25+fuzzy+hierarchy_parent
+Prepositus Nucleus,species,0.7839,needs_review,HOMBA:AA30453,other nuclei in dorsal medulla,hierarchy_parent
+Prerubral Field,species,1.0000,high_confidence,HOMBA:AA30325,prerubral field (field H3),bm25+exact+fuzzy
+Principal Trigeminal Nucleus,species,1.0000,high_confidence,HOMBA:12444,principal sensory nucleus of trigeminal nerve,bm25+exact+fuzzy
+Pyramidal Tract,species,1.0000,high_confidence,HOMBA:12773,pyramidal tract,bm25+exact+fuzzy+hierarchy_parent
+Pyramidal Tract Decussation,species,1.0000,high_confidence,HOMBA:12772,pyramidal decussation,bm25+exact+fuzzy
+Raphe Magnus Nucleus,species,1.0000,high_confidence,HOMBA:12642,raphe magnus nucleus,bm25+exact+fuzzy
+Raphe Obscurus Nucleus,species,1.0000,high_confidence,HOMBA:12643,raphe obscurus nucleus,bm25+exact+fuzzy
+Reticular thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30314,ethmoid thalamic nucleus,bm25+exact+fuzzy
+Reticular Thalamus,species,0.9365,high_confidence,HOMBA:10464,reticular nucleus of thalamus,bm25+fuzzy
+Reticulotegmentum,species,1.0000,high_confidence,HOMBA:12497,reticulotegmental nucleus,bm25+exact+fuzzy+hierarchy_parent
+Retro-mammillary nucleus,species,1.0000,high_confidence,HOMBA:10496,tuberomammillary nucleus,bm25+exact+fuzzy
+Retroisthmic Nucleus,species,1.0000,high_confidence,HOMBA:12289,retrorubral field (retroisthmic nucleus),bm25+exact+fuzzy
+Retromammillary Hypothalamus,species,0.7009,needs_review,HOMBA:10467,hypothalamus,bm25+fuzzy+hierarchy_parent
+Retrorubral Field,species,1.0000,high_confidence,HOMBA:12289,retrorubral field (retroisthmic nucleus),bm25+exact+fuzzy
+Reuniens-rhomboid-xiphoid Thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Saginum Nucleus,species,1.0000,high_confidence,HOMBA:12662,supragenual nucleus,bm25+exact+fuzzy
+Sensory Root of the Trigeminal Nerve,species,0.9700,high_confidence,HOMBA:12865,root of trigeminal nerve,bm25+fuzzy+hierarchy_parent
+Septimbrial nucleus,species,0.6729,needs_review,HOMBA:13032,septofimbrial nucleus,fuzzy
+Septum and diagonal band,species,1.0000,high_confidence,HOMBA:12034,diagonal band,bm25+exact+fuzzy
+Septum Diagonal Band,species,1.0000,high_confidence,HOMBA:12034,diagonal band,bm25+exact+fuzzy
+Simple Lobule,species,1.0000,high_confidence,HOMBA:AA30408,lobule VI (simple lobule),bm25+exact+fuzzy+hierarchy_parent
+Solitary Tract Nucleus,species,1.0000,high_confidence,HOMBA:12783,solitary tract,bm25+exact+fuzzy
+Spinal Trigeminal Nucleus Caudal,species,1.0000,high_confidence,HOMBA:12573,"spinal trigeminal nucleus, caudal division",bm25+fuzzy
+Spinal Trigeminal Nucleus Intermediate,species,1.0000,high_confidence,HOMBA:12572,spinal trigeminal nucleus,bm25+exact+fuzzy+hierarchy_parent
+Spinal Trigeminal Nucleus Oral,species,0.8527,needs_review,HOMBA:12447,"spinal nucleus of trigeminal nerve, rostral subnucleus",bm25+fuzzy
+Stria medullaris,species,0.6732,needs_review,HOMBA:10590,stria medullaris of thalamus,bm25+fuzzy
+"Striate cortex, dorsolateral, inferior",species,1.0000,high_confidence,HOMBA:10597,rostral horn of lateral ventricles,bm25+exact+fuzzy
+"Striate cortex, dorsolateral, superior",species,1.0000,high_confidence,HOMBA:AA30209,striatal-cortical (cortical-striatal) boundary,bm25+exact+fuzzy
+"Striate cortex, medial",species,1.0000,high_confidence,HOMBA:AA30033,juxtastriate cortex,bm25+exact+fuzzy
+Subceruleus,species,1.0000,high_confidence,HOMBA:12500,subcoeruleus nucleus,bm25+exact+fuzzy+hierarchy_parent
+Subicular complex,species,1.0000,high_confidence,HOMBA:266441673,subicular complex,bm25+exact+fuzzy
+Subparafascicular Nucleus,species,1.0000,high_confidence,HOMBA:13054,subparafascicular nucleus of thalamus,bm25+exact+fuzzy
+Subparafascicular parvocellular thalamic nucleus,species,1.0000,high_confidence,HOMBA:13071,nanocellular hypothalamic nucleus,bm25+exact+fuzzy
+Superior Cerebellar Peduncle,species,1.0000,high_confidence,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),bm25+exact+fuzzy
+Superior Cerebellar Peduncle Decussation,species,1.0000,high_confidence,HOMBA:12337,decussation of superior cerebellar peduncle,bm25+fuzzy
+Superior frontal gyrus,species,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+"Superior frontal gyrus, medial",species,1.0000,high_confidence,HOMBA:12115,superior frontal gyrus,bm25+exact+fuzzy
+Superior Olive,species,1.0000,high_confidence,HOMBA:12600,inferior olive,bm25+exact+fuzzy+hierarchy_parent
+Supra Geniculate,species,1.0000,high_confidence,HOMBA:13044,suprageniculate nucleus,bm25+exact+fuzzy
+Supraoptic Hypothalamus,species,0.7009,needs_review,HOMBA:10467,hypothalamus,bm25+fuzzy+hierarchy_parent
+Supraoptic nucleus,species,1.0000,high_confidence,HOMBA:10481,supraoptic nucleus,bm25+exact+fuzzy+hierarchy_parent
+"Supratemporal plane, anterior",species,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+"Supratemporal plane, posterior",species,1.0000,high_confidence,HOMBA:146034762,temporal claustrum,bm25+exact+fuzzy
+Tail of caudate nucleus,species,1.0000,high_confidence,HOMBA:10337,tail of caudate nucleus (caudolateral division of the CP),bm25+exact+fuzzy
+Third ventricle,species,1.0000,high_confidence,HOMBA:10602,third ventricle,bm25+exact+fuzzy+hierarchy_parent
+Transverse Fibers,species,1.0000,high_confidence,HOMBA:AA30879,transverse fibers,bm25+exact+fuzzy
+Trapezoid Bundle Region,species,0.5411,low_confidence,HOMBA:12796,trapezoid body,bm25+fuzzy
+Ventral Anterior Thalamus,species,1.0000,high_confidence,HOMBA:10461,ventral thalamus,bm25+exact+fuzzy
+Ventral cortical amygdaloid nucleus,species,1.0000,high_confidence,HOMBA:AA30227,ventral division of rostral medial nucleus,bm25+exact+fuzzy
+Ventral endopiriform claustrum,species,1.0000,high_confidence,HOMBA:AA30854,ventral endopiriform nucleus,bm25+exact+fuzzy
+Ventral Lateral Anterior Thalamus,species,0.9578,high_confidence,HOMBA:10461,ventral thalamus,bm25+fuzzy
+Ventral Lateral Posterodorsal Thalamus,species,1.0000,high_confidence,HOMBA:10391,dorsal thalamus,bm25+exact+fuzzy
+Ventral Lateral Posteroventral Thalamus,species,0.9325,high_confidence,HOMBA:10461,ventral thalamus,bm25+fuzzy
+Ventral Lateral X Thalamus,species,0.9107,high_confidence,HOMBA:10420,ventral lateral nucleus of thalamus,bm25+fuzzy
+Ventral Medial Thalamus,species,1.0000,high_confidence,HOMBA:10427,ventral medial nucleus of thalamus,bm25+exact+fuzzy
+Ventral pallidum,species,1.0000,high_confidence,HOMBA:10345,ventral pallidum,bm25+exact+fuzzy
+Ventrolateral Tegmentum,species,1.0000,high_confidence,HOMBA:12534,ventrolateral tegmental nucleus,bm25+exact+fuzzy
+Ventrolateral thalamic nucleus (posterodorsal part),species,1.0000,high_confidence,HOMBA:12446,ventrolateral nucleus of Pr5,bm25+exact+fuzzy
+Ventrolateral thalamic nucleus (posteroventral part),species,1.0000,high_confidence,HOMBA:12446,ventrolateral nucleus of Pr5,bm25+exact+fuzzy
+Ventromedial hypothalamic nucleus,species,1.0000,high_confidence,HOMBA:10488,ventromedial hypothalamic nucleus,bm25+exact+fuzzy+hierarchy_parent
+Ventromedial occipital cortex,species,1.0000,high_confidence,HOMBA:10268,occipital cortex,bm25+exact+fuzzy+hierarchy_parent
+Ventromedial Posterior+basal Thalamus,species,0.4343,low_confidence,HOMBA:13046,periventricular area of posterior thalamus,bm25
+Ventromedial thalamic nucleus (posterior and basal),species,0.6977,modifier_conflict,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+fuzzy
+Ventroposterior inferior thalamic nucleus,species,1.0000,high_confidence,HOMBA:10426,ventral posterior inferior nucleus,bm25+exact+fuzzy
+Ventroposterior Inferior Thalamus,species,1.0000,high_confidence,HOMBA:10390,thalamus,bm25+exact+fuzzy
+Ventroposterior medial and lateral thalamic nuclei,species,0.6986,needs_review,HOMBA:AA30278,submedius thalamic nucleus,bm25+fuzzy
+Ventroposterior Medial and Lateral Thalamus,species,0.8264,needs_review,HOMBA:10390,thalamus,bm25+fuzzy
+Vestibular Nucleus,species,1.0000,high_confidence,HOMBA:12448,vestibular nuclei in pons,bm25+exact+fuzzy+hierarchy_parent
+Vestibulochoclear Nerve,species,0.5850,low_confidence,HOMBA:12868,root of vestibulocochlear nerve,bm25+fuzzy+hierarchy_parent
+Visceral Motor Nuclei,species,1.0000,high_confidence,HOMBA:12201,central oculomotor nucleus,bm25+exact+fuzzy
+Zona incerta and H fields,species,0.6931,needs_review,HOMBA:10463,zona incerta,bm25+fuzzy
+Zona Incerta and Lenticular Fascicles,species,0.6217,needs_review,HOMBA:10463,zona incerta,bm25+fuzzy
+4th ventricle,species,1.0000,high_confidence,HOMBA:10602,third ventricle,bm25+exact+fuzzy+hierarchy_parent
+A11 dopamine cell group,species,0.7789,needs_review,HOMBA:AA30843,A8 dopamine cell group,bm25+fuzzy
+A13 dopamine cell group,species,0.7789,needs_review,HOMBA:AA30843,A8 dopamine cell group,bm25+fuzzy
+Acoustic striae,species,1.0000,high_confidence,HOMBA:12733,dorsal acoustic stria,bm25+exact+fuzzy
+Agranular insular cortex dorsal area,species,0.7722,needs_review,HOMBA:10328,agranular insular cortex (area Iag),bm25+fuzzy
+"Agranular insular cortex, posterior area",species,0.9565,high_confidence,HOMBA:10288,major insular cortex,bm25+fuzzy
+"Agranular insular cortex, ventral area",species,0.7722,needs_review,HOMBA:10328,agranular insular cortex (area Iag),bm25+fuzzy
+Alveus of the hippocampus,species,0.6541,needs_review,HOMBA:AA30093,hippocampus,bm25+fuzzy
+Amygdaloid area (unspecified),species,1.0000,high_confidence,HOMBA:10379,amygdaloid transition areas,bm25+exact+fuzzy
+"Amygdaloid area, unspecified",species,1.0000,high_confidence,HOMBA:10379,amygdaloid transition areas,bm25+exact+fuzzy+hierarchy_parent
+Angular thalamic nucleus,species,1.0000,high_confidence,HOMBA:13071,nanocellular hypothalamic nucleus,bm25+exact+fuzzy
+"Anterior commissure, anterior limb",species,1.0000,high_confidence,HOMBA:10559,anterior commissure,bm25+exact+fuzzy
+"Anterior commissure, intrabulbar part",species,0.7346,needs_review,HOMBA:10559,anterior commissure,bm25+fuzzy+hierarchy_parent
+"Anterior commissure, posterior limb",species,1.0000,high_confidence,HOMBA:10559,anterior commissure,bm25+exact+fuzzy
+Anterior olfactory area,species,1.0000,high_confidence,HOMBA:146034694,lateral olfactory area,bm25+exact+fuzzy+hierarchy_parent
+Anterodorsal thalamic nucleus,species,1.0000,high_confidence,HOMBA:10475,anterior hypothalamic nucleus,bm25+exact+fuzzy
+Anteromedial thalamic nucleus,species,1.0000,high_confidence,HOMBA:10488,ventromedial hypothalamic nucleus,bm25+exact+fuzzy+hierarchy_parent
+"Anteroventral thalamic nucleus, dorsomedial part",species,1.0000,high_confidence,HOMBA:10395,anteroventral nucleus of thalamus,bm25+exact+fuzzy
+"Anteroventral thalamic nucleus, ventrolateral part",species,1.0000,high_confidence,HOMBA:10484,"periventricular nucleus, tuberal part",bm25+exact+fuzzy
+Ascending fibers of the facial nerve,species,1.0000,high_confidence,HOMBA:12729,ascending fibers of the facial nerve in pons,bm25+exact+fuzzy
+"Basal forebrain region, unspecified",species,0.7538,needs_review,HOMBA:10349,basal forebrain,bm25+fuzzy+hierarchy_parent
+Brachium of the superior colliculus,species,0.9486,high_confidence,HOMBA:12328,brachium of superior colliculus,bm25+fuzzy
+"Brainstem, unspecified",species,1.0000,high_confidence,HOMBA:10155,brain,bm25+exact+fuzzy+hierarchy_parent
+CA1 (hippocampus),species,1.0000,high_confidence,HOMBA:10297,CA1 region of hippocampus,bm25+exact+fuzzy
+Caudate putamen,species,1.0000,high_confidence,HOMBA:11538,caudal putamen,bm25+exact+fuzzy
+Central canal,species,0.7604,needs_review,HOMBA:12826,central canal of medulla oblongata,bm25+fuzzy
+Central lateral thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30339,ventral anterior hypothalamic nucleus,bm25+exact+fuzzy
+Central medial thalamic nucleus,species,0.8152,needs_review,HOMBA:10445,central medial nucleus of thalamus,bm25+fuzzy
+"Cerebellum, unspecified",species,0.7009,needs_review,HOMBA:10656,cerebellum,bm25+fuzzy
+Cingulate area 1,species,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cingulate area 2,species,1.0000,high_confidence,HOMBA:10277,cingulate cortex,bm25+exact+fuzzy+hierarchy_parent
+Cochlea,species,0.4622,low_confidence,HOMBA:12437,cochlear nuclei,fuzzy
+Cochlear nerve,species,0.6866,needs_review,HOMBA:12868,root of vestibulocochlear nerve,bm25+fuzzy+hierarchy_parent
+Commissural stria terminalis,species,0.7567,needs_review,HOMBA:AA30882,commissural branch of stria terminalis,bm25+fuzzy
+Commissure of the superior colliculus,species,0.9508,high_confidence,HOMBA:AA30487,commissure of superior colliculus,bm25+fuzzy
+Cornu ammonis 1,species,1.0000,high_confidence,HOMBA:10296,hippocampal proper (Cornu Ammonis),bm25+exact+fuzzy
+Cornu ammonis 2,species,1.0000,high_confidence,HOMBA:10296,hippocampal proper (Cornu Ammonis),bm25+exact+fuzzy
+Cornu ammonis 3,species,1.0000,high_confidence,HOMBA:10296,hippocampal proper (Cornu Ammonis),bm25+exact+fuzzy
+Corpus callosum and associated subcortical white matter,species,1.0000,high_confidence,HOMBA:10561,corpus callosum,bm25+exact+fuzzy+hierarchy_parent
+Corticofugal tract and corona radiata,species,0.6585,needs_review,HOMBA:12030,corona radiata,bm25+fuzzy+hierarchy_parent
+Deeper layers of the superior colliculus,species,1.0000,high_confidence,HOMBA:12302,deep gray layer of superior colliculus,bm25+exact+fuzzy
+"Dorsal cochlear nucleus, deep core",species,0.9000,modifier_conflict,HOMBA:12438,dorsal cochlear nucleus,bm25+fuzzy
+"Dorsal cochlear nucleus, fusiform and granule layer",species,1.0000,high_confidence,HOMBA:12438,dorsal cochlear nucleus,bm25+exact+fuzzy
+"Dorsal cochlear nucleus, molecular layer",species,0.9200,modifier_conflict,HOMBA:12438,dorsal cochlear nucleus,bm25+fuzzy
+Dorsolateral orbital area,species,1.0000,high_confidence,HOMBA:13322,dorsolateral temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Dysgranular insular cortex,species,1.0000,high_confidence,HOMBA:10289,dysgranular insular cortex (area Idg),bm25+exact+fuzzy+hierarchy_parent
+Entopeduncular nucleus,species,1.0000,high_confidence,HOMBA:146034758,entopeduncular nucleus,bm25+exact+fuzzy
+Entorhinal area (medial part),species,1.0000,high_confidence,HOMBA:10319,medial (caudal) entorhinal cortex,bm25+fuzzy
+Ethmoid-Limitans nucleus,species,0.5489,low_confidence,HOMBA:AA30313,posterior limitans nucleus,bm25+fuzzy
+External globus pallidus (lateral part),species,1.0000,high_confidence,HOMBA:10343,external division of globus pallidus,bm25+exact+fuzzy
+External globus pallidus (medial part),species,1.0000,high_confidence,HOMBA:10343,external division of globus pallidus,bm25+exact+fuzzy
+"External medullary lamina, auditory radiation",species,1.0000,high_confidence,HOMBA:12038,external medullary lamina of thalamus,bm25+exact+fuzzy
+"External medullary lamina, unspecified",species,0.8158,needs_review,HOMBA:12038,external medullary lamina of thalamus,bm25+fuzzy
+"Facial nerve, unspecified",species,0.5981,low_confidence,HOMBA:12862,root of facial nerve,bm25+fuzzy+hierarchy_parent
+Fasciola cinereum,species,1.0000,high_confidence,HOMBA:AA30112,fasciola cinereum (ectosplenial area 26),bm25+exact+fuzzy
+Fields of Forel,species,0.4506,low_confidence,HOMBA:10462,nucleus of the field of Forel,bm25+fuzzy
+Fimbria of the hippocampus,species,0.9283,high_confidence,HOMBA:10575,fimbria,bm25+fuzzy
+Frontal association area 3,species,1.0000,high_confidence,HOMBA:10233,rostral subdivision of area 39,bm25+exact+fuzzy
+Frontal association cortex,species,1.0000,high_confidence,HOMBA:10161,frontal cortex,bm25+exact+fuzzy+hierarchy_parent
+Genu of the facial nerve,species,1.0000,high_confidence,HOMBA:12738,genu of the facial nerve,bm25+exact+fuzzy
+"Globus pallidus external, lateral part",species,1.0000,high_confidence,HOMBA:10343,external division of globus pallidus,bm25+fuzzy
+"Globus pallidus external, medial part",species,1.0000,high_confidence,HOMBA:10343,external division of globus pallidus,bm25+fuzzy
+Glomerular layer of the accessory olfactory bulb,species,1.0000,high_confidence,HOMBA:AA30176,glomerular layer of accessory olfactory bulb,bm25+fuzzy
+Glomerular layer of the olfactory bulb,species,1.0000,high_confidence,HOMBA:AA30170,glomerular layer of olfactory bulb,bm25+fuzzy
+Granular insular cortex,species,1.0000,high_confidence,HOMBA:10290,granular insular cortex (area Ig),bm25+exact+fuzzy
+Habenula (lateral part),species,1.0000,high_confidence,HOMBA:10452,habenular nuclei,bm25+exact+fuzzy
+Habenula (medial part),species,1.0000,high_confidence,HOMBA:10452,habenular nuclei,bm25+exact+fuzzy
+Habenular commissure,species,1.0000,high_confidence,HOMBA:10566,habenular commissure,bm25+exact+fuzzy
+"Hypothalamic region, unspecified",species,1.0000,high_confidence,HOMBA:12740,hypothalamospinal fibers,bm25+exact+fuzzy
+"Inferior colliculus, brachium",species,1.0000,high_confidence,HOMBA:12305,inferior colliculus,bm25+exact+fuzzy+hierarchy_parent
+"Inferior colliculus, central nucleus",species,0.9629,high_confidence,HOMBA:12305,inferior colliculus,bm25+fuzzy+hierarchy_parent
+"Inferior colliculus, commissure",species,1.0000,high_confidence,HOMBA:12305,inferior colliculus,bm25+exact+fuzzy+hierarchy_parent
+"Inferior colliculus, dorsal cortex",species,1.0000,high_confidence,HOMBA:12307,dorsal central nucleus of inferior colliculus,bm25+fuzzy
+"Inferior colliculus, external cortex",species,1.0000,high_confidence,HOMBA:12308,external shell (cortex) of inferior colliculus,bm25+fuzzy
+Infralimbic area,species,1.0000,high_confidence,HOMBA:12168,intralimbic gyrus,bm25+exact+fuzzy
+Infundibulum,species,0.3960,low_confidence,HOMBA:10643,infundibular stalk,fuzzy
+Interanteromedial thalamic nucleus,species,1.0000,high_confidence,HOMBA:10488,ventromedial hypothalamic nucleus,bm25+exact+fuzzy+hierarchy_parent
+Intergeniculate leaflet,species,0.7733,needs_review,HOMBA:AA30305,intergeniculate leaf,bm25+fuzzy
+Internal medullary lamina,species,1.0000,high_confidence,HOMBA:12062,internal medullary lamina of globus pallidus,bm25+exact+fuzzy
+Interpeduncular nucleus,species,1.0000,high_confidence,HOMBA:12270,interpeduncular nucleus,bm25+exact+fuzzy+hierarchy_parent
+Intramedullary thalamic area,species,1.0000,high_confidence,HOMBA:266441551,anterior hypothalamic area,bm25+exact+fuzzy
+Lateral entorhinal cortex,species,1.0000,high_confidence,HOMBA:10318,lateral (rostral) entorhinal cortex,bm25+exact+fuzzy
+Lateral habenular nucleus,species,1.0000,high_confidence,HOMBA:10453,lateral habenular nucleus,bm25+exact+fuzzy
+"Lateral lemniscus, commissure",species,0.9295,high_confidence,HOMBA:12760,lateral lemniscus,bm25+fuzzy
+"Lateral lemniscus, dorsal nucleus",species,0.9637,high_confidence,HOMBA:12455,dorsal nucleus of lateral lemniscus,bm25+fuzzy
+"Lateral lemniscus, intermediate nucleus",species,0.9634,high_confidence,HOMBA:12456,intermediate nucleus of lateral lemniscus,bm25+fuzzy
+"Lateral lemniscus, unspecified",species,0.9138,high_confidence,HOMBA:12760,lateral lemniscus,bm25+fuzzy
+"Lateral lemniscus, ventral nucleus",species,0.9596,high_confidence,HOMBA:12457,ventral nucleus of lateral lemniscus,bm25+fuzzy
+Lateral olfactory tract,species,0.9975,high_confidence,HOMBA:10309,nucleus of lateral olfactory tract,bm25+fuzzy
+Lateral orbital area,species,1.0000,high_confidence,HOMBA:12125,lateral orbital gyrus,bm25+exact+fuzzy
+"Lateral posterior thalamic nucleus, lateral part",species,1.0000,high_confidence,HOMBA:10503,posterior hypothalamic nucleus,bm25+fuzzy
+"Lateral posterior thalamic nucleus, mediocaudal part",species,1.0000,high_confidence,HOMBA:10408,lateral posterior nucleus of thalamus,bm25+exact+fuzzy
+"Lateral posterior thalamic nucleus, mediorostral part",species,1.0000,high_confidence,HOMBA:10408,lateral posterior nucleus of thalamus,bm25+exact+fuzzy
+Lateral septal nucleus (rostral division),species,1.0000,modifier_conflict,HOMBA:10352,lateral septal nuclear complex,bm25+exact+fuzzy
+Lateral superior olive,species,0.7587,needs_review,HOMBA:12469,lateral superior olivary nucleus,bm25+fuzzy
+"Laterodorsal thalamic nucleus, dorsomedial part",species,1.0000,high_confidence,HOMBA:10494,"lateral hypothalamic area, tuberal part",bm25+exact+fuzzy+hierarchy_parent
+"Laterodorsal thalamic nucleus, ventrolateral part",species,1.0000,high_confidence,HOMBA:12229,"dorsal raphe nucleus, ventrolateral division",bm25+exact+fuzzy
+Mammillotegmental tract,species,1.0000,high_confidence,HOMBA:12065,mammillotegmental tract,bm25+exact+fuzzy
+Medial entorhinal cortex,species,1.0000,high_confidence,HOMBA:10319,medial (caudal) entorhinal cortex,bm25+exact+fuzzy
+"Medial geniculate body, dorsal division",species,1.0000,high_confidence,HOMBA:12227,"dorsal raphe nucleus, lateral division",bm25+exact+fuzzy
+"Medial geniculate body, marginal zone",species,0.8835,needs_review,HOMBA:AA30307,medial geniculate nuclear complex,bm25+fuzzy
+"Medial geniculate body, medial division",species,0.9599,high_confidence,HOMBA:12227,"dorsal raphe nucleus, lateral division",bm25+fuzzy
+"Medial geniculate body, suprageniculate nucleus",species,1.0000,high_confidence,HOMBA:13044,suprageniculate nucleus,bm25+exact+fuzzy
+"Medial geniculate body, ventral division",species,1.0000,high_confidence,HOMBA:12397,"dentate nucleus, lateroventral division",bm25+exact+fuzzy
+Medial geniculate complex (dorsal division),species,1.0000,high_confidence,HOMBA:AA30307,medial geniculate nuclear complex,bm25+exact+fuzzy
+Medial geniculate complex (marginal zone),species,1.0000,high_confidence,HOMBA:AA30307,medial geniculate nuclear complex,bm25+exact+fuzzy
+Medial geniculate complex (medial division),species,0.9758,high_confidence,HOMBA:AA30307,medial geniculate nuclear complex,bm25+fuzzy
+Medial geniculate complex (ventral division),species,1.0000,high_confidence,HOMBA:AA30307,medial geniculate nuclear complex,bm25+exact+fuzzy
+Medial habenular nucleus,species,1.0000,high_confidence,HOMBA:10456,medial habenular nucleus,bm25+exact+fuzzy
+Medial lemniscus decussation,species,0.9655,high_confidence,HOMBA:12732,decussation of medial lemniscus,bm25+fuzzy
+"Medial lemniscus, unspecified",species,0.9027,high_confidence,HOMBA:12763,medial lemniscus,bm25+fuzzy
+Medial orbital area,species,0.8416,needs_review,HOMBA:12122,medial orbital gyrus,bm25+fuzzy
+Medial superior olive,species,1.0000,high_confidence,HOMBA:12605,"inferior olive, medial division",bm25+fuzzy
+Median eminence,species,1.0000,high_confidence,HOMBA:13338,median eminence,bm25+exact+fuzzy+hierarchy_parent
+"Mediodorsal thalamic nucleus, central part",species,1.0000,high_confidence,HOMBA:10398,mediodorsal nucleus of thalamus,bm25+exact+fuzzy
+"Mediodorsal thalamic nucleus, lateral part",species,1.0000,high_confidence,HOMBA:AA30278,submedius thalamic nucleus,bm25+exact+fuzzy
+"Mediodorsal thalamic nucleus, medial part",species,1.0000,high_confidence,HOMBA:AA30278,submedius thalamic nucleus,bm25+exact+fuzzy
+Molecular cell layer of the cerebellum,species,1.0000,high_confidence,HOMBA:10656,cerebellum,bm25+exact+fuzzy
+Nucleus accumbens (core),species,1.0000,high_confidence,HOMBA:10340,core of nucleus accumbens,bm25+fuzzy
+Nucleus accumbens (shell),species,1.0000,high_confidence,HOMBA:10341,shell of nucleus accumbens,bm25+fuzzy
+"Nucleus accumbens, core",species,1.0000,high_confidence,HOMBA:10340,core of nucleus accumbens,bm25+fuzzy
+"Nucleus accumbens, shell",species,0.9993,high_confidence,HOMBA:10341,shell of nucleus accumbens,bm25+fuzzy
+Nucleus of the lateral olfactory tract,species,1.0000,high_confidence,HOMBA:10309,nucleus of lateral olfactory tract,bm25+fuzzy
+Nucleus of the stria medullaris,species,1.0000,high_confidence,HOMBA:266441717,linear nucleus of the medulla,bm25+exact+fuzzy
+Nucleus of the trapezoid body,species,0.9506,high_confidence,HOMBA:12458,nucleus of trapezoid body,bm25+fuzzy+hierarchy_parent
+Nucleus sagulum,species,1.0000,high_confidence,HOMBA:12313,sagulum nucleus (nucleus sagulum),bm25+exact+fuzzy
+"Olfactory bulb, unspecified",species,0.7622,needs_review,HOMBA:10307,olfactory bulb,bm25+fuzzy
+Optic nerve,species,1.0000,high_confidence,HOMBA:15544,optic nerve,bm25+exact+fuzzy
+Optic tract and optic chiasm,species,0.7301,needs_review,HOMBA:10644,optic chiasm,bm25+fuzzy
+Orbital cortex (ventral),species,1.0000,high_confidence,HOMBA:10208,parietal cortex,bm25+exact+fuzzy
+Orbital cortex (ventrolateral),species,1.0000,high_confidence,HOMBA:12427,"facial nucleus, ventrolateral subnucleus",bm25+exact+fuzzy
+Paracentral thalamic nucleus,species,1.0000,high_confidence,HOMBA:13058,parasubthalamic nucleus,bm25+exact+fuzzy
+Parafascicular thalamic nucleus,species,1.0000,high_confidence,HOMBA:13058,parasubthalamic nucleus,bm25+exact+fuzzy
+Parasubiculum,species,1.0000,high_confidence,HOMBA:10316,parasubiculum (parasubicular cortex),bm25+exact+fuzzy+hierarchy_parent
+Parataenial thalamic nucleus,species,1.0000,high_confidence,HOMBA:13058,parasubthalamic nucleus,bm25+exact+fuzzy
+Paraventricular hypothalamic nucleus (medial parvicellular dorsal zone),species,1.0000,modifier_conflict,HOMBA:10475,anterior hypothalamic nucleus,bm25+exact+fuzzy
+Paraventricular thalamic nuclei (anterior and posterior),species,1.0000,high_confidence,HOMBA:10484,"periventricular nucleus, tuberal part",bm25+exact+fuzzy
+"Parietal association cortex, lateral area",species,1.0000,high_confidence,HOMBA:AA30489,larger associate white matter bundles,bm25+exact+fuzzy
+"Parietal association cortex, medial area",species,0.8569,needs_review,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),bm25+fuzzy
+"Parietal association cortex, posterior area",species,1.0000,high_confidence,HOMBA:AA30009,frontal motor cortex (posterior frontal cortex),bm25+exact+fuzzy
+Peripeduncular nucleus,species,1.0000,high_confidence,HOMBA:12285,peripeduncular nucleus,bm25+exact+fuzzy
+Perirhinal area 35,species,0.6698,needs_review,HOMBA:10320,perirhinal cortex (area 35),bm25+fuzzy+hierarchy_parent
+Perirhinal area 36,species,1.0000,high_confidence,HOMBA:10320,perirhinal cortex (area 35),bm25+exact+fuzzy+hierarchy_parent
+Periventricular gray,species,1.0000,high_confidence,HOMBA:AA30845,periventricular gray of pons,bm25+exact+fuzzy
+"Piriform cortex, layer 1",species,0.7054,needs_review,HOMBA:10311,piriform cortex,bm25+fuzzy
+"Piriform cortex, layer 2",species,0.7054,needs_review,HOMBA:10311,piriform cortex,bm25+fuzzy
+"Piriform cortex, layer 3",species,0.7054,needs_review,HOMBA:10311,piriform cortex,bm25+fuzzy
+Pontine nuclei,species,1.0000,high_confidence,HOMBA:12406,pontine nucleus,bm25+exact+fuzzy+hierarchy_parent
+Posterior intralaminar nucleus,species,0.9348,high_confidence,HOMBA:10448,caudal intralaminar nuclei of thalamus,bm25+fuzzy
+Posterior thalamic nuclear group (triangular part),species,1.0000,high_confidence,HOMBA:12118,"inferior frontal gyrus, triangular part",bm25+exact+fuzzy
+"Posterior thalamic nuclear group, triangular part",species,1.0000,high_confidence,HOMBA:12118,"inferior frontal gyrus, triangular part",bm25+exact+fuzzy
+Postrhinal cortex,species,1.0000,high_confidence,HOMBA:10263,posterior parahippocampal region (postrhinal cortex),bm25+exact+fuzzy
+Pregeniculate nucleus,species,1.0000,high_confidence,HOMBA:13042,pregeniculate nucleus (ventral lateral geniculate nucleus),bm25+exact+fuzzy+hierarchy_parent
+Prelimbic area,species,1.0000,high_confidence,HOMBA:12241,precuneiform area,bm25+exact+fuzzy
+Pretectal region,species,1.0000,high_confidence,HOMBA:12181,pretectal region,bm25+exact+fuzzy
+Pretectothalamic lamina,species,1.0000,high_confidence,HOMBA:12357,dentatothalamic tract,bm25+exact+fuzzy
+Primary auditory area,species,1.0000,high_confidence,HOMBA:146034694,lateral olfactory area,bm25+exact+fuzzy+hierarchy_parent
+Primary motor area,species,1.0000,high_confidence,HOMBA:10163,"primary motor cortex (first motor cortex, area 4, area FA)",bm25+exact+fuzzy
+"Primary somatosensory area, barrel field",species,1.0000,high_confidence,HOMBA:AA30880,barrel field of S1fm (rodents),bm25+exact+fuzzy
+"Primary somatosensory area, dysgranular zone",species,1.0000,high_confidence,HOMBA:AA30014,area 1 of primary somatosensory cortex,bm25+exact+fuzzy
+"Primary somatosensory area, face representation",species,1.0000,high_confidence,HOMBA:AA30495,somatosensory radiation,bm25+exact+fuzzy
+"Primary somatosensory area, forelimb representation",species,1.0000,high_confidence,HOMBA:AA30495,somatosensory radiation,bm25+exact+fuzzy
+"Primary somatosensory area, hindlimb representation",species,1.0000,high_confidence,HOMBA:AA30495,somatosensory radiation,bm25+exact+fuzzy
+"Primary somatosensory area, trunk representation",species,1.0000,high_confidence,HOMBA:AA30495,somatosensory radiation,bm25+exact+fuzzy
+Primary visual area,species,1.0000,high_confidence,HOMBA:AA30020,sixth visual area,bm25+exact+fuzzy+hierarchy_parent
+Reticular (pre)thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30314,ethmoid thalamic nucleus,bm25+exact+fuzzy
+"Reticular (pre)thalamic nucleus, auditory segment",species,0.9529,high_confidence,HOMBA:AA30314,ethmoid thalamic nucleus,bm25+fuzzy
+"Reticular (pre)thalamic nucleus, unspecified",species,1.0000,high_confidence,HOMBA:AA30314,ethmoid thalamic nucleus,bm25+fuzzy
+Retroreuniens thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30315,retroethmoid thalamic nucleus,bm25+exact+fuzzy
+Retrosplenial dysgranular area,species,1.0000,high_confidence,HOMBA:15513,rostral dysgranular insular cortex,bm25+exact+fuzzy
+Retrosplenial granular area,species,0.8182,needs_review,HOMBA:10325,"granular retrosplenial cortex (area 29, RSg)",bm25+fuzzy
+Reuniens thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30278,submedius thalamic nucleus,bm25+exact+fuzzy
+Rhomboid thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30314,ethmoid thalamic nucleus,bm25+exact+fuzzy
+"Secondary auditory area, dorsal part",species,1.0000,high_confidence,HOMBA:10239,"secondary auditory cortex (auditory belt region, area 42, area TB)",bm25+exact+fuzzy
+"Secondary auditory area, ventral part",species,1.0000,high_confidence,HOMBA:10239,"secondary auditory cortex (auditory belt region, area 42, area TB)",bm25+exact+fuzzy
+Secondary motor area,species,0.6409,needs_review,HOMBA:10168,"premotor cortex (area 6, area FB, secondary motor cortex)",bm25+fuzzy
+Secondary somatosensory area,species,1.0000,high_confidence,HOMBA:AA30811,subareas of primary somatosensory cortex,bm25+exact+fuzzy+hierarchy_parent
+"Secondary visual area, lateral part",species,1.0000,high_confidence,HOMBA:AA30817,"second dorsal third visual area, part A",bm25+exact+fuzzy
+"Secondary visual area, medial part",species,1.0000,high_confidence,HOMBA:AA30817,"second dorsal third visual area, part A",bm25+exact+fuzzy
+Septal region,species,1.0000,high_confidence,HOMBA:10350,septal region (septal nuclear complex),bm25+exact+fuzzy+hierarchy_parent
+Spinal cord,species,1.0000,high_confidence,HOMBA:AA30565,spinal cord,bm25+exact+fuzzy+hierarchy_parent
+Spiral ganglion,species,0.3257,low_confidence,HOMBA:10332,basal ganglia (basal nuclei),fuzzy
+Stria medullaris thalami,species,0.6193,needs_review,HOMBA:10590,stria medullaris of thalamus,bm25+fuzzy
+Stria terminalis,species,1.0000,high_confidence,HOMBA:10591,stria terminalis,bm25+exact+fuzzy
+Striatum,species,1.0000,high_confidence,HOMBA:10333,striatum (neostriatum),bm25+exact+fuzzy+hierarchy_parent
+Subgeniculate nucleus,species,1.0000,high_confidence,HOMBA:AA30324,subgeniculate nucleus,bm25+exact+fuzzy
+Submedius thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30278,submedius thalamic nucleus,bm25+exact+fuzzy
+Subparafascicular nucleus,species,1.0000,high_confidence,HOMBA:13054,subparafascicular nucleus of thalamus,bm25+exact+fuzzy
+Substantia nigra (compact part),species,1.0000,high_confidence,HOMBA:12252,"substantia nigra, compact division",bm25+exact+fuzzy
+Substantia nigra (lateral part),species,1.0000,high_confidence,HOMBA:12257,"substantia nigra, lateral division",bm25+exact+fuzzy
+Substantia nigra (reticular part),species,1.0000,high_confidence,HOMBA:12259,"substantia nigra, reticular division",bm25+exact+fuzzy
+"Substantia nigra, compact part",species,1.0000,high_confidence,HOMBA:12252,"substantia nigra, compact division",bm25+exact+fuzzy
+"Substantia nigra, lateral part",species,1.0000,high_confidence,HOMBA:12257,"substantia nigra, lateral division",bm25+exact+fuzzy
+"Substantia nigra, reticular part",species,1.0000,high_confidence,HOMBA:12259,"substantia nigra, reticular division",bm25+exact+fuzzy
+Superficial gray layer of the superior colliculus,species,1.0000,high_confidence,HOMBA:12295,superficial gray layer of superior colliculus,bm25+fuzzy
+Superior cerebellar peduncle and prerubral field,species,0.7750,needs_review,HOMBA:12354,superior cerebellar peduncle (brachium conjunctivum),bm25+fuzzy
+Superior paraolivary nucleus,species,1.0000,high_confidence,HOMBA:12463,superior paraolivary nucleus,bm25+exact+fuzzy
+Superior periolivary region,species,0.5407,low_confidence,HOMBA:12462,superior olivary complex,bm25+fuzzy+hierarchy_parent
+Suprageniculate nucleus,species,1.0000,high_confidence,HOMBA:13044,suprageniculate nucleus,bm25+exact+fuzzy
+Supraoptic decussation,species,1.0000,high_confidence,HOMBA:13216,supraoptic decussation,bm25+exact+fuzzy
+Temporal association cortex,species,0.6581,needs_review,HOMBA:10235,temporal cortex,bm25+fuzzy+hierarchy_parent
+Transverse fibers of the pons,species,1.0000,high_confidence,HOMBA:10661,pons,bm25+exact+fuzzy
+Trapezoid body,species,1.0000,high_confidence,HOMBA:12796,trapezoid body,bm25+exact+fuzzy
+"Ventral cochlear nucleus, anterior part",species,0.9975,high_confidence,HOMBA:12439,ventral cochlear nucleus,bm25+fuzzy
+"Ventral cochlear nucleus, cap area",species,0.9975,high_confidence,HOMBA:12439,ventral cochlear nucleus,bm25+fuzzy
+"Ventral cochlear nucleus, granule cell layer",species,1.0000,high_confidence,HOMBA:12439,ventral cochlear nucleus,bm25+exact+fuzzy
+"Ventral cochlear nucleus, posterior part",species,1.0000,high_confidence,HOMBA:12439,ventral cochlear nucleus,bm25+exact+fuzzy
+Ventral hippocampal commissure,species,1.0000,high_confidence,HOMBA:12023,ventral hippocampal commissure,bm25+exact+fuzzy
+Ventral orbital area,species,1.0000,high_confidence,HOMBA:12261,ventral tegmental area,bm25+exact+fuzzy
+Ventral periolivary nuclei,species,1.0000,high_confidence,HOMBA:12465,lateral periolivary nucleus,bm25+exact+fuzzy
+"Ventral posterior nucleus of the thalamus, parvicellular part",species,0.9319,high_confidence,HOMBA:AA30312,parvicellular nucleus of posterior thalamus,bm25+fuzzy
+Ventral posterolateral thalamic nucleus,species,0.9248,high_confidence,HOMBA:10424,ventral posterior lateral nucleus,bm25+fuzzy
+Ventral posteromedial thalamic nucleus,species,0.9241,high_confidence,HOMBA:10425,ventral posterior medial nucleus,bm25+fuzzy
+Ventral striatal region (unspecified),species,1.0000,high_confidence,HOMBA:146034964,central gray region of pons,bm25+exact+fuzzy
+"Ventral striatal region, unspecified",species,1.0000,high_confidence,HOMBA:146034964,central gray region of pons,bm25+exact+fuzzy
+"Ventricular system, unspecified",species,1.0000,high_confidence,HOMBA:10585,lenticular fasciculus (field H2),bm25+exact+fuzzy
+Ventrolateral orbital area,species,1.0000,high_confidence,HOMBA:13324,ventrolateral temporal cortex,bm25+exact+fuzzy+hierarchy_parent
+Ventrolateral thalamic nucleus,species,1.0000,high_confidence,HOMBA:10488,ventromedial hypothalamic nucleus,bm25+exact+fuzzy+hierarchy_parent
+Ventromedial thalamic nucleus,species,0.7400,needs_review,HOMBA:10488,ventromedial hypothalamic nucleus,bm25+fuzzy+hierarchy_parent
+Vestibular apparatus,species,1.0000,high_confidence,HOMBA:12790,spinovestibular tract,bm25+exact+fuzzy
+Vestibular nerve,species,1.0000,high_confidence,HOMBA:12584,nucleus of origin of vestibular efferents of vestibular nerve,bm25+exact+fuzzy
+Xiphoid thalamic nucleus,species,1.0000,high_confidence,HOMBA:AA30277,xiphoid thalamic nucleus,bm25+exact+fuzzy
+Zona incerta (caudal part),species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+Zona incerta (dorsal part),species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+Zona incerta (rostral part),species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+Zona incerta (ventral part),species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+"Zona incerta, A11 dopamine cells",species,0.2820,low_confidence,HOMBA:10463,zona incerta,bm25
+"Zona incerta, A13 dopamine cells",species,0.2820,low_confidence,HOMBA:10463,zona incerta,bm25
+"Zona incerta, caudal part",species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+"Zona incerta, dorsal part",species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+"Zona incerta, rostral part",species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy
+"Zona incerta, ventral part",species,1.0000,high_confidence,HOMBA:10463,zona incerta,bm25+exact+fuzzy

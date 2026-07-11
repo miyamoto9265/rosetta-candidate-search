@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HOMBA オントロジー拡張案（粒度ギャップ）" />
+  <title>HOMBA オントロジー拡張案</title>
+  <link rel="stylesheet" href="report.css" />
+  <style>
+    .ds { font-size:.7rem; color:var(--muted); background:#eef2f7; padding:.05rem .3rem;
+           border-radius:4px; vertical-align:middle; }
+    .toplinks { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem; }
+    .toplinks a { background:rgba(255,255,255,.16); color:#fff; text-decoration:none;
+                   padding:.35rem .7rem; border-radius:8px; font-size:.85rem; }
+    .toplinks a.active { background:#fff; color:var(--accent-dark); font-weight:700; }
+    table { table-layout:fixed; } td, th { overflow-wrap:anywhere; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <h2>目次</h2>
+      <nav>
+        <a href="#summary">サマリー</a>
+        <a href="#fam0">HCP-MMP / Glasser 2016 微細皮質野 (81)</a>
+        <a href="#fam1">カテコールアミン細胞群 (A1–A13) (6)</a>
+        <a href="#fam2">個別小脳小葉 (vermis / intermediate) (14)</a>
+        <a href="#fam3">皮質層 (cortical layer) (3)</a>
+        <a href="#fam4">齧歯類固有の領域 (7)</a>
+        <a href="#fam5">末梢・感覚器官 (3)</a>
+        <a href="#famX">その他 (2)</a>
+        <a href="#policy">拡張の考え方</a>
+      </nav>
+      <h2 style="margin-top:1rem">関連</h2>
+      <nav>
+        <a href="improvement_proposals.html">← アルゴリズム/辞書改善案</a>
+        <a href="index.html">辞書改善ループ報告</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="hero">
+        <p class="eyebrow">ROSETTA Candidate Search · Playground · Ontology</p>
+        <h1>HOMBA オントロジー拡張案<br />粒度ギャップ 116 件</h1>
+        <p class="meta">
+          <code>unresolved_round3.csv</code>（498 件）のうち、HOMBA に該当粒度が<strong>存在しない</strong>入力。
+          辞書・アルゴリズムでは解決不可で、現状は正しい親へのフォールバックが最善。
+        </p>
+        <div class="toplinks">
+          <a href="improvement_proposals.html">① アルゴリズム / 辞書改善案</a>
+          <a class="active" href="homba_expansion.html">② HOMBA オントロジー拡張案</a>
+        </div>
+      </header>
+      <section id="summary">
+        <h2>サマリー</h2>
+        <p>
+          未解決 498 件のうち <strong>116 件（23.3%）</strong>は、
+          入力の標準名が HOMBA に存在しないことが原因。これらは RCS の不具合ではなく
+          <strong>オントロジー側のカバレッジ課題</strong>であり、別管理とする。
+        </p>
+        <div class="summary-grid">
+          <div class="stat-card"><div class="label">HCP-MMP / Glasser 2016 微細皮質野</div>
+            <div class="value">81</div></div><div class="stat-card"><div class="label">カテコールアミン細胞群 (A1–A13)</div>
+            <div class="value">6</div></div><div class="stat-card"><div class="label">個別小脳小葉 (vermis / intermediate)</div>
+            <div class="value">14</div></div><div class="stat-card"><div class="label">皮質層 (cortical layer)</div>
+            <div class="value">3</div></div><div class="stat-card"><div class="label">齧歯類固有の領域</div>
+            <div class="value">7</div></div><div class="stat-card"><div class="label">末梢・感覚器官</div>
+            <div class="value">3</div></div>
+          <div class="stat-card"><div class="label">その他</div><div class="value">2</div></div>
+        </div>
+        <div class="callout warn">
+          <strong>注意:</strong> HOMBA はヒト中心の中枢神経オントロジー。齧歯類固有領域・末梢器官の追加は
+          スコープ判断が必要で、無条件追加は推奨しない。代替として「外部語彙 → HOMBA 親」への
+          公式マッピング表を別途持つ選択肢もある。
+        </div>
+      </section>
+      <section id="fam0">
+        <h2>HCP-MMP / Glasser 2016 微細皮質野（81 件）</h2>
+        <p>ヒト皮質を 180 野に分割する HCP-MMP。HOMBA は葉・回・一部の細分まで。<code>area 55b</code>, <code>Visual area V3/V6/V7</code>, <code>Somatosensory area 1/2</code> は実在し正答するが、<code>Prefrontal area 8Av</code>, <code>Parietal area PGi</code>, <code>Temporal area TE1a</code>, <code>Visual area V3A/V4/V8</code> 等の多くは親止まり。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>Area 55b</strong></td><td class='ds'>cor</td><td>area 55b of premotor cortex</td></tr><tr><td><strong>Cingulate area 1</strong></td><td class='ds'>spe</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area 2</strong></td><td class='ds'>spe</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area 23c</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area 23d</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area 24dd</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area 24dv</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area 31a</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area a24</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Cingulate area p24</strong></td><td class='ds'>cor</td><td>cingulate subdivision of area 5</td></tr><tr><td><strong>Frontal area SFL</strong></td><td class='ds'>cor</td><td>frontal lobe</td></tr><tr><td><strong>Frontal association area 3</strong></td><td class='ds'>spe</td><td>frontal lobe</td></tr><tr><td><strong>Insular area FOP1</strong></td><td class='ds'>cor</td><td>insular lobe</td></tr><tr><td><strong>Insular area FOP2</strong></td><td class='ds'>cor</td><td>insular lobe</td></tr><tr><td><strong>Insular area FOP3</strong></td><td class='ds'>cor</td><td>insular lobe</td></tr><tr><td><strong>Insular area FOP4</strong></td><td class='ds'>cor</td><td>insular lobe</td></tr><tr><td><strong>Insular area FOP5</strong></td><td class='ds'>cor</td><td>insular lobe</td></tr><tr><td><strong>Opercular area OP1</strong></td><td class='ds'>cor</td><td>opercular subdivision of area 44</td></tr><tr><td><strong>Opercular area OP2-3</strong></td><td class='ds'>cor</td><td>opercular subdivision of area 44</td></tr><tr><td><strong>Opercular area OP4</strong></td><td class='ds'>cor</td><td>opercular subdivision of area 44</td></tr><tr><td><strong>Paracentral area 5L</strong></td><td class='ds'>cor</td><td>paracentral lobule, rostral part</td></tr><tr><td><strong>Paracentral area 5m</strong></td><td class='ds'>cor</td><td>paracentral lobule, rostral part</td></tr><tr><td><strong>Paracentral area 5mv</strong></td><td class='ds'>cor</td><td>paracentral lobule, rostral part</td></tr><tr><td><strong>Parietal area IP0</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area IP1</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area IP2</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PF</strong></td><td class='ds'>cor</td><td>rostral division of IPC (IPCr, area 40, area PF)</td></tr><tr><td><strong>Parietal area PFcm</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PFm</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PFop</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PFt</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PGi</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PGp</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Parietal area PGs</strong></td><td class='ds'>cor</td><td>parietal lobe</td></tr><tr><td><strong>Perirhinal area 35</strong></td><td class='ds'>spe</td><td>perirhinal cortex (area 35)</td></tr><tr><td><strong>Perirhinal area 36</strong></td><td class='ds'>spe</td><td>perirhinal cortical region</td></tr><tr><td><strong>Prefrontal area 10d</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 10pp</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 10r</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 46</strong></td><td class='ds'>cor</td><td>rostroventral division of DFC (area 46, DFCv)</td></tr><tr><td><strong>Prefrontal area 47l</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 47m</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 47r</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 47s</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 8Ad</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 8Av</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 8BL</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 8BM</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 8C</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 9-46d</strong></td><td class='ds'>cor</td><td>intermediate division of DFC (area 9/46)</td></tr><tr><td><strong>Prefrontal area 9-46v</strong></td><td class='ds'>cor</td><td>intermediate division of DFC (area 9/46)</td></tr><tr><td><strong>Prefrontal area 9a</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 9m</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Prefrontal area 9p</strong></td><td class='ds'>cor</td><td>prefrontal cortex</td></tr><tr><td><strong>Premotor area 6a</strong></td><td class='ds'>cor</td><td>premotor cortex (area 6, area FB, secondary motor cortex)</td></tr><tr><td><strong>Premotor area 6d</strong></td><td class='ds'>cor</td><td>premotor cortex (area 6, area FB, secondary motor cortex)</td></tr><tr><td><strong>Premotor area 6m</strong></td><td class='ds'>cor</td><td>premotor cortex (area 6, area FB, secondary motor cortex)</td></tr><tr><td><strong>Premotor area 6mp</strong></td><td class='ds'>cor</td><td>premotor cortex (area 6, area FB, secondary motor cortex)</td></tr><tr><td><strong>Premotor area 6r</strong></td><td class='ds'>cor</td><td>premotor cortex (area 6, area FB, secondary motor cortex)</td></tr><tr><td><strong>Premotor area 6v</strong></td><td class='ds'>cor</td><td>premotor cortex (area 6, area FB, secondary motor cortex)</td></tr><tr><td><strong>Somatosensory area 1</strong></td><td class='ds'>cor</td><td>area 1 of primary somatosensory cortex</td></tr><tr><td><strong>Somatosensory area 2</strong></td><td class='ds'>cor</td><td>area 2 of primary somatosensory cortex</td></tr><tr><td><strong>Somatosensory area 3a</strong></td><td class='ds'>cor</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr><tr><td><strong>Somatosensory area 3b</strong></td><td class='ds'>cor</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr><tr><td><strong>Temporal area PSL</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area STGg</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area STSda</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area STSdp</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area STSva</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area STSvp</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area TE1a</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area TE1m</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area TE1p</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area TE2a</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Temporal area TF</strong></td><td class='ds'>cor</td><td>lateral division of PHC (area TF)</td></tr><tr><td><strong>Temporal area TGd</strong></td><td class='ds'>cor</td><td>temporal lobe</td></tr><tr><td><strong>Visual area V3A</strong></td><td class='ds'>cor</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr><tr><td><strong>Visual area V3B</strong></td><td class='ds'>cor</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr><tr><td><strong>Visual area V4</strong></td><td class='ds'>cor</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr><tr><td><strong>Visual area V6A</strong></td><td class='ds'>cor</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr><tr><td><strong>Visual area V8</strong></td><td class='ds'>cor</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr></tbody></table>
+      </section>
+      <section id="fam1">
+        <h2>カテコールアミン細胞群 (A1–A13)（6 件）</h2>
+        <p>HOMBA には <code>A8 dopamine cell group</code> 等の一部のみ。<code>A1/A4/A5 catecholaminergic</code>, <code>A11/A13 dopamine</code> は未収載で A8 に誤着。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>A1 catecholaminergic cell group</strong></td><td class='ds'>cor</td><td>A8 dopamine cell group</td></tr><tr><td><strong>A11 dopamine cell group</strong></td><td class='ds'>spe</td><td>A8 dopamine cell group</td></tr><tr><td><strong>A13 dopamine cell group</strong></td><td class='ds'>spe</td><td>A8 dopamine cell group</td></tr><tr><td><strong>A4 catecholaminergic cell group</strong></td><td class='ds'>cor</td><td>A8 dopamine cell group</td></tr><tr><td><strong>A5 catecholaminergic cell group</strong></td><td class='ds'>cor</td><td>A8 dopamine cell group</td></tr><tr><td><strong>A8 catecholaminergic cell group</strong></td><td class='ds'>cor</td><td>A8 dopamine cell group</td></tr></tbody></table>
+      </section>
+      <section id="fam2">
+        <h2>個別小脳小葉 (vermis / intermediate)（14 件）</h2>
+        <p>HOMBA は <code>cerebellar vermis</code> / <code>cerebellar morphology</code> 粒度。<code>Lobule 1–10 Vermis/Intermediate</code> の個別小葉が無い。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>Cerebellar Lobule 1 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 10 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 2 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 3 Intermediate</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 3 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 4 Intermediate</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 4 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 5 Intermediate</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 5 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 6 Intermediate</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 6 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 7 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 8 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr><tr><td><strong>Cerebellar Lobule 9 Vermis</strong></td><td class='ds'>spe</td><td>cerebellar morphology</td></tr></tbody></table>
+      </section>
+      <section id="fam3">
+        <h2>皮質層 (cortical layer)（3 件）</h2>
+        <p><code>Piriform cortex, layer 1/2/3</code>。HOMBA は層構造を一部領域でしか持たない。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>Piriform cortex, layer 1</strong></td><td class='ds'>spe</td><td>piriform cortex</td></tr><tr><td><strong>Piriform cortex, layer 2</strong></td><td class='ds'>spe</td><td>piriform cortex</td></tr><tr><td><strong>Piriform cortex, layer 3</strong></td><td class='ds'>spe</td><td>piriform cortex</td></tr></tbody></table>
+      </section>
+      <section id="fam4">
+        <h2>齧歯類固有の領域（7 件）</h2>
+        <p><code>barrel field</code>, <code>fore/hindlimb/trunk/face representation</code>, <code>frontal association</code>。ヒト中心の HOMBA とスコープ不一致。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>Frontal association cortex</strong></td><td class='ds'>spe</td><td>frontal cortex</td></tr><tr><td><strong>Primary somatosensory area, barrel field</strong></td><td class='ds'>spe</td><td>barrel field of S1fm (rodents)</td></tr><tr><td><strong>Primary somatosensory area, dysgranular zone</strong></td><td class='ds'>spe</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr><tr><td><strong>Primary somatosensory area, face representation</strong></td><td class='ds'>spe</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr><tr><td><strong>Primary somatosensory area, forelimb representation</strong></td><td class='ds'>spe</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr><tr><td><strong>Primary somatosensory area, hindlimb representation</strong></td><td class='ds'>spe</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr><tr><td><strong>Primary somatosensory area, trunk representation</strong></td><td class='ds'>spe</td><td>primary somatosensory cortex (first somatosensory cortex, areas 3,1,2)</td></tr></tbody></table>
+      </section>
+      <section id="fam5">
+        <h2>末梢・感覚器官（3 件）</h2>
+        <p><code>Cochlea</code>, <code>Spiral ganglion</code>, <code>Vestibular apparatus</code>。HOMBA は中枢神経系が対象。中枢の核（cochlear nuclei 等）に誤着。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>Cochlea</strong></td><td class='ds'>spe</td><td>cochlear nuclei</td></tr><tr><td><strong>Spiral ganglion</strong></td><td class='ds'>spe</td><td>basal ganglia (basal nuclei)</td></tr><tr><td><strong>Vestibular apparatus</strong></td><td class='ds'>spe</td><td>vestibular nuclei in pons</td></tr></tbody></table>
+      </section>
+      <section id="famX">
+        <h2>その他の粒度ギャップ（2 件）</h2>
+        <table><thead><tr><th>クエリ (入力)</th><th class='ds'>set</th><th>RCS top-1 (親フォールバック)</th></tr></thead><tbody><tr><td><strong>Brainstem, unspecified</strong></td><td class='ds'>spe</td><td>gray matter of midbrain (mesencephalon, upper brainstem)</td></tr><tr><td><strong>Forel&#x27;s field H</strong></td><td class='ds'>cor</td><td>prerubral field (field H3)</td></tr></tbody></table>
+      </section>
+      <section id="policy">
+        <h2>拡張の考え方（提案）</h2>
+        <ol>
+          <li><strong>スコープ判断を先に。</strong> ヒト皮質の微細野（HCP-MMP）は HOMBA 本来の対象に近く、
+              追加価値が高い。末梢・齧歯類固有はスコープ外の可能性が高く、マッピング表で吸収する方が安全。</li>
+          <li><strong>親子関係を保って追加。</strong> 例: HCP-MMP 野は対応する葉/回の子として登録し、
+              acronym（V3A, PGi, 8Av…）を alias に持たせる。</li>
+          <li><strong>層・細胞群は系統的に。</strong> cortical layer / catecholamine cell group は
+              個別 1 件ずつでなく、命名規約を決めて一括設計する。</li>
+          <li><strong>追加後は RCS で再評価。</strong> 追加エントリにより親フォールバックが直接マッチへ昇格し、
+              <code>needs_review/low</code> が <code>high</code> 化することを <code>rcs_eval.py</code> で確認。</li>
+        </ol>
+        <div class="callout info">
+          本レポートの対象は「正しい親に落ちているだけで意味的破綻はしていない」群。
+          意味的に誤っている（弱トークン誤着等）の修正は
+          <a href="improvement_proposals.html">アルゴリズム/辞書改善案</a>側で扱う。
+        </div>
+      </section>
+      <footer>
+        ROSETTA Candidate Search · build_testdata/260621_playground/improvement_01 ·
+        生成元: <code>gen_reports.py</code>（<code>unresolved_classified.csv</code> 由来）
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

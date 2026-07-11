@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RCS 未解決レコードのアルゴリズム/辞書改善案" />
+  <title>RCS 改善案 — アルゴリズム / 辞書</title>
+  <link rel="stylesheet" href="report.css" />
+  <style>
+    .ds { font-size:.7rem; color:var(--muted); background:#eef2f7; padding:.05rem .3rem;
+           border-radius:4px; vertical-align:middle; }
+    .toplinks { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem; }
+    .toplinks a { background:rgba(255,255,255,.16); color:#fff; text-decoration:none;
+                   padding:.35rem .7rem; border-radius:8px; font-size:.85rem; }
+    .toplinks a.active { background:#fff; color:var(--accent-dark); font-weight:700; }
+    table { table-layout:fixed; } td, th { overflow-wrap:anywhere; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <aside class="sidebar">
+      <h2>目次</h2>
+      <nav>
+        <a href="#summary">サマリー</a>
+        <a href="#method">1. 分類方法</a>
+        <a href="#effective">2. 実質正解（除外）</a>
+        <a href="#algo">3. アルゴリズム改善案</a>
+        <a href="#dict">4. 辞書改善案</a>
+        <a href="#priority">5. 優先度・次アクション</a>
+      </nav>
+      <h2 style="margin-top:1rem">関連</h2>
+      <nav>
+        <a href="homba_expansion.html">HOMBA 拡張案 →</a>
+        <a href="index.html">辞書改善ループ報告</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="hero">
+        <p class="eyebrow">ROSETTA Candidate Search · Playground · Analysis</p>
+        <h1>未解決レコード分析<br />アルゴリズム改善案 / 辞書改善案</h1>
+        <p class="meta">
+          対象: <code>unresolved_round3.csv</code>（498 件 = corpus 204 + species 294）·
+          round3 で <code>high_confidence</code> に届かなかった全入力を目視確認。
+        </p>
+        <div class="toplinks">
+          <a class="active" href="improvement_proposals.html">① アルゴリズム / 辞書改善案</a>
+          <a href="homba_expansion.html">② HOMBA オントロジー拡張案</a>
+        </div>
+      </header>
+      <section id="summary">
+        <h2>サマリー</h2>
+        <p>
+          未解決 498 件を目視で 5 区分に分類。<strong>約 6 割（302 件）は実質的に正解</strong>
+          （rank1 が正しいエントリまたは妥当な親）で、低スコアは <code>review_flag</code> の閾値由来の
+          見かけ上のもの。RCS 側で実際に手を入れる価値があるのは
+          <strong>アルゴリズム 59 件 + 辞書 16 件 = 75 件（全体の 15%）</strong>。
+          残り 116 件は HOMBA に粒度が無く、<a href="homba_expansion.html">別レポート</a>で扱う。
+        </p>
+        <div class="summary-grid">
+          <div class="stat-card"><div class="label">実質正解（除外）</div>
+            <div class="value">302</div><div class="delta">60.6%</div></div>
+          <div class="stat-card"><div class="label">アルゴリズム改善</div>
+            <div class="value" style="color:var(--danger)">59</div><div class="delta" style="color:var(--danger)">要ロジック修正</div></div>
+          <div class="stat-card"><div class="label">辞書追加で解決</div>
+            <div class="value" style="color:var(--warning)">16</div><div class="delta" style="color:var(--warning)">同義語・綴り・語順</div></div>
+          <div class="stat-card"><div class="label">HOMBA 拡張（別報告）</div>
+            <div class="value" style="color:var(--muted)">116</div><div class="delta" style="color:var(--muted)">23.3%</div></div>
+          <div class="stat-card"><div class="label">ソース転記ミス</div>
+            <div class="value" style="color:var(--muted)">5</div><div class="delta" style="color:var(--muted)">データ側修正</div></div>
+        </div>
+        <div class="callout info">
+          <strong>読み方:</strong> <code>review_flag</code> はスコア閾値（high≥0.90 / needs 0.60–0.90 / low&lt;0.60 /
+          modifier_conflict）であり、正誤判定ではない。本分析は gold ラベルが無いため、
+          各 top-1 の解剖学的妥当性を目視で判断した。区分ごとの全件は <code>output/cat_*.csv</code> に出力済み。
+        </div>
+      </section>
+      <section id="method">
+        <h2>1. 分類方法</h2>
+        <ul>
+          <li><strong>A 実質正解</strong> — top-1 が正しいエントリ、または HOMBA に亜区が無いための妥当な親フォールバック。問題リストから除外。</li>
+          <li><strong>B アルゴリズム改善</strong> — HOMBA により良い候補が実在するのに、スコア/マッチ規則の都合で誤った top-1 を返す。</li>
+          <li><strong>C 辞書追加</strong> — 正解エントリが実在し、綴り・語順・同義語ギャップのみが原因（<code>verify.py</code> で実在確認済み）。</li>
+          <li><strong>D HOMBA 粒度ギャップ</strong> — 該当概念が HOMBA に無い → 拡張レポートへ。</li>
+          <li><strong>E ソース転記ミス</strong> — 入力文字列自体がデータセット側の誤記。</li>
+        </ul>
+        <div class="callout warn">
+          分類は <code>classify.py</code>（ルール + 目視オーバーライド集合）で再現可能。判断が割れうる
+          「妥当な親」境界例は A に寄せ、確実に改善余地があるものだけ B/C に計上した（保守的）。
+        </div>
+      </section>
+      <section id="effective">
+        <h2>2. 実質正解（302 件 / 除外推奨）</h2>
+        <p>内訳: exact 完全一致で亜区のみ欠落 63 ／ modifier を外して正しい親 33 ／ 同義語・親マッチ 175 ／ 低スコアだが rank1 正解 31。</p>
+        <div class="callout ok">
+          これらは <strong>誤りではない</strong>。<code>needs_review</code>/<code>modifier_conflict</code> のまま運用レビューに回すのが妥当で、
+          辞書やロジックで無理に <code>high</code> に上げる必要はない（旧ハックの轍を踏まない）。
+        </div>
+        <h3>例（スコア上位の実質正解）</h3>
+        <table><thead><tr><th>クエリ (入力)</th><th>RCS top-1（実質正解）</th><th class='num'>score</th><th>flag</th></tr></thead><tbody><tr><td>Inferior olive (principal nucleus) <span class='ds'>cor</span></td><td>inferior olive</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Lateral reticular nucleus (magnocellular) <span class='ds'>cor</span></td><td>lateral reticular nucleus</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Lateral reticular nucleus (parvicellular) <span class='ds'>cor</span></td><td>lateral reticular nucleus</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Temporal pole (middle temporal gyrus) <span class='ds'>cor</span></td><td>temporal pole (temporopolar cortex)</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Temporal pole (superior temporal gyrus) <span class='ds'>cor</span></td><td>temporal pole (temporopolar cortex)</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Lateral septal nucleus (rostral division) <span class='ds'>spe</span></td><td>lateral septal nuclear complex</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Reticular (pre)thalamic nucleus <span class='ds'>spe</span></td><td>reticular nucleus of thalamus</td><td class='num'>1.00</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Cingulate gyrus (anterior anterior part) <span class='ds'>cor</span></td><td>anterior cingulate  cortex (ventromedial prefrontal cortex)</td><td class='num'>0.98</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Reticular (pre)thalamic nucleus, unspecified <span class='ds'>spe</span></td><td>reticular nucleus of thalamus</td><td class='num'>0.94</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Ventral posterior external thalamic nucleus <span class='ds'>cor</span></td><td>ventral posterior nuclear complex of thalamus</td><td class='num'>0.92</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Globus pallidus external, medial part <span class='ds'>spe</span></td><td>external division of globus pallidus</td><td class='num'>0.91</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Globus pallidus external, lateral part <span class='ds'>spe</span></td><td>external division of globus pallidus</td><td class='num'>0.90</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Dorsal cochlear nucleus, deep core <span class='ds'>spe</span></td><td>dorsal cochlear nucleus</td><td class='num'>0.90</td><td><span class='badge mod'>modifier_conflict</span></td></tr><tr><td>Ventral cochlear nucleus, posterior part <span class='ds'>spe</span></td><td>ventral cochlear nucleus</td><td class='num'>0.90</td><td><span class='badge mod'>modifier_conflict</span></td></tr></tbody></table>
+      </section>
+      <section id="algo">
+        <h2>3. アルゴリズム改善案（59 件）</h2>
+
+        <div class="issue-card">
+          <h4>3-1. 弱トークン単独マッチの fuzzy トラップ（12 件）</h4>
+          <p>
+            <code>ventral</code> / <code>posterior</code> / <code>medial</code> など laterality・weak 語が
+            <em>唯一のマッチ根拠</em>になり、無関係なエントリ（例: <code>anterior (ventral) spinal artery</code>）へ高スコアで誤着弾。
+          </p>
+          <table><thead><tr><th>クエリ (入力)</th><th>RCS 現在の top-1（誤）</th><th>マッチ根拠</th><th class='num'>score</th><th>rank2（しばしば正解寄り）</th></tr></thead><tbody><tr><td><strong>Ventralis intermedius</strong> <span class='ds'>cor</span></td><td>anterior (ventral /principal) pretectal nucleus</td><td class='mono'>ventral</td><td class='num'>0.38</td><td>anterior (ventral) spinal artery</td></tr><tr><td><strong>Frontoinsular area</strong> <span class='ds'>cor</span></td><td>insular lobe</td><td class='mono'>insula</td><td class='num'>0.44</td><td>subincertal nucleus (area)</td></tr><tr><td><strong>Area PH</strong> <span class='ds'>cor</span></td><td>subincertal nucleus (area)</td><td class='mono'>area</td><td class='num'>0.53</td><td>ventral tuberomammillary nucleus (area)</td></tr><tr><td><strong>Posterior opercular area POS2</strong> <span class='ds'>cor</span></td><td>caudal (posterior) branch of anterior commissure</td><td class='mono'>posterior <span class='mono' style='color:#7c3aed'>[mod: posterior]</span></td><td class='num'>0.64</td><td>caudal (posterior) extramural migratory stream</td></tr><tr><td><strong>Ventral intraparietal area</strong> <span class='ds'>cor</span></td><td>ventral tegmental area</td><td class='mono'>ventral tegmental area <span class='mono' style='color:#7c3aed'>[mod: ventral]</span></td><td class='num'>0.64</td><td>anterior (ventral /principal) pretectal nucleus</td></tr><tr><td><strong>Anterior ventral insular area</strong> <span class='ds'>cor</span></td><td>anterior (ventral) spinal artery</td><td class='mono'>anterior (ventral) spinal artery <span class='mono' style='color:#7c3aed'>[mod: ventral]</span></td><td class='num'>0.72</td><td>anterior (ventral /principal) pretectal nucleus</td></tr><tr><td><strong>Posterior insular area</strong> <span class='ds'>cor</span></td><td>caudal (posterior) branch of anterior commissure</td><td class='mono'>posterior <span class='mono' style='color:#7c3aed'>[mod: posterior]</span></td><td class='num'>0.74</td><td>caudal (posterior) extramural migratory stream</td></tr><tr><td><strong>Supratemporal plane, anterior</strong> <span class='ds'>spe</span></td><td>rostral (anterior) branch of anterior commissure</td><td class='mono'>anterior</td><td class='num'>0.51</td><td>rostral (anterior) division of BM</td></tr><tr><td><strong>Ventral striatal region, unspecified</strong> <span class='ds'>spe</span></td><td>anterior (ventral /principal) pretectal nucleus</td><td class='mono'>ventral <span class='mono' style='color:#7c3aed'>[mod: ventral]</span></td><td class='num'>0.60</td><td>anterior (ventral) spinal artery</td></tr><tr><td><strong>Orbital cortex (ventral)</strong> <span class='ds'>spe</span></td><td>anterior (ventral /principal) pretectal nucleus</td><td class='mono'>ventral <span class='mono' style='color:#7c3aed'>[mod: ventral]</span></td><td class='num'>0.63</td><td>anterior (ventral) spinal artery</td></tr><tr><td><strong>Ventral orbital area</strong> <span class='ds'>spe</span></td><td>anterior (ventral /principal) pretectal nucleus</td><td class='mono'>ventral <span class='mono' style='color:#7c3aed'>[mod: ventral]</span></td><td class='num'>0.69</td><td>anterior (ventral) spinal artery</td></tr><tr><td><strong>Medial Raphe</strong> <span class='ds'>spe</span></td><td>fastigial (medial) nucleus</td><td class='mono'>medial <span class='mono' style='color:#7c3aed'>[mod: medial]</span></td><td class='num'>0.81</td><td>medial (magnocellular) division of MD</td></tr></tbody></table>
+          <p><strong>提案:</strong>
+            matched_alias/matched_query が laterality・weak・modifier 語<em>のみ</em>で構成される場合は
+            その候補のスコアを強く減点（または候補から除外）。実装は <code>homba_token_rules.csv</code> の
+            <code>laterality</code>/<code>weak</code> 種別を「単独では content token として無効」とするガードを
+            スコアリングに追加。
+          </p>
+        </div>
+
+        <div class="issue-card">
+          <h4>3-2. hierarchy_parent の過剰昇格（16 件）</h4>
+          <p>
+            親昇格ボーナス（+0.08）が、<strong>直接マッチした正しい sibling</strong> を僅差で逆転してしまう。
+            下表は rank2 に正解相当が来ているのに親が top-1 を取った例。
+          </p>
+          <table><thead><tr><th>クエリ (入力)</th><th>top-1（過剰昇格された親）</th><th class='num'>score</th><th>rank2（正しい sibling）</th><th class='num'>rank2</th></tr></thead><tbody><tr><td><strong>Ventroposterior Inferior Thalamus</strong> <span class='ds'>spe</span></td><td>ventral midline nuclei of thalamus</td><td class='num'>0.50</td><td>ventroanterior-ventrolateral nuclear complex of thalamus</td><td class='num'>0.49</td></tr><tr><td><strong>Reuniens-rhomboid-xiphoid Thalamus</strong> <span class='ds'>spe</span></td><td>ventral midline nuclei of thalamus</td><td class='num'>0.57</td><td>rhomboid (central) nucleus of thalamus</td><td class='num'>0.49</td></tr><tr><td><strong>Anterior Thalamus</strong> <span class='ds'>spe</span></td><td>ventroanterior-ventrolateral nuclear complex of thalamus</td><td class='num'>0.59</td><td>anterior nuclear complex of thalamus</td><td class='num'>0.58</td></tr><tr><td><strong>Centrolateral and Paracentral Thalamus</strong> <span class='ds'>spe</span></td><td>rostral intralaminar nuclei of thalamus</td><td class='num'>0.60</td><td>ventroanterior-ventrolateral nuclear complex of thalamus</td><td class='num'>0.55</td></tr><tr><td><strong>Laterodorsal thalamic nucleus, ventrolateral part</strong> <span class='ds'>spe</span></td><td>rostral intralaminar nuclei of thalamus</td><td class='num'>0.65</td><td>ventral midline nuclei of thalamus</td><td class='num'>0.64</td></tr><tr><td><strong>Anterior Interposed Cerebellar Nucleus</strong> <span class='ds'>spe</span></td><td>pontine raphe region</td><td class='num'>0.65</td><td>interpositus (intermediate) nucleus</td><td class='num'>0.62</td></tr><tr><td><strong>Ventroposterior inferior thalamic nucleus</strong> <span class='ds'>spe</span></td><td>pulvinar of thalamus</td><td class='num'>0.70</td><td>caudal intralaminar nuclei of thalamus</td><td class='num'>0.65</td></tr><tr><td><strong>Centrolateral and paracentral thalamic nuclei</strong> <span class='ds'>spe</span></td><td>rostral intralaminar nuclei of thalamus</td><td class='num'>0.72</td><td>paracentral nucleus of thalamus</td><td class='num'>0.64</td></tr><tr><td><strong>Interanteromedial Thalamus</strong> <span class='ds'>spe</span></td><td>ventral midline nuclei of thalamus</td><td class='num'>0.72</td><td>interanteromedial nucleus of thalamus</td><td class='num'>0.64</td></tr><tr><td><strong>Intermediodorsal Thalamus</strong> <span class='ds'>spe</span></td><td>dorsal midline nuclei of thalamus</td><td class='num'>0.73</td><td>intermediodorsal  nucleus of thalamus</td><td class='num'>0.65</td></tr><tr><td><strong>Ventrolateral thalamic nucleus</strong> <span class='ds'>spe</span></td><td>rostral intralaminar nuclei of thalamus</td><td class='num'>0.74</td><td>dorsal midline nuclei of thalamus</td><td class='num'>0.72</td></tr><tr><td><strong>Spinal Trigeminal Nucleus Intermediate</strong> <span class='ds'>spe</span></td><td>afferent nuclei of cranial nerves in pons</td><td class='num'>0.78</td><td>spinal trigeminal nucleus</td><td class='num'>0.75</td></tr><tr><td><strong>Abducens Motor Nucleus</strong> <span class='ds'>spe</span></td><td>efferent nuclei of cranial nerves in pons</td><td class='num'>0.82</td><td>abducens nucleus</td><td class='num'>0.74</td></tr><tr><td><strong>Ventromedial thalamic nucleus</strong> <span class='ds'>spe</span></td><td>caudal intralaminar nuclei of thalamus</td><td class='num'>0.82</td><td>rostral intralaminar nuclei of thalamus</td><td class='num'>0.75</td></tr><tr><td><strong>Paraventricular hypothalamic nucleus</strong> <span class='ds'>spe</span></td><td>dorsal midline nuclei of thalamus</td><td class='num'>0.87</td><td>paraventricular nucleus of thalamus</td><td class='num'>0.79</td></tr><tr><td><strong>Subparafascicular parvocellular thalamic nucleus</strong> <span class='ds'>spe</span></td><td>ventral midline nuclei of thalamus</td><td class='num'>0.90</td><td>subparafascicular nucleus of thalamus</td><td class='num'>0.82</td></tr></tbody></table>
+          <p><strong>提案:</strong>
+            ① 親昇格スコアは「同点候補内の最良 sibling の直接マッチスコアを超えない」上限を設ける。
+            ② <code>ventrolateral / ventromedial / mediodorsal / laterodorsal</code> など融合形の語は
+            分離形（<code>ventral lateral</code> 等）へ正規化（→ 辞書側 4-1 と連動）し、sibling 直接マッチを成立させる。
+          </p>
+        </div>
+
+        <div class="issue-card">
+          <h4>3-3. その他の誤 top-1（31 件）</h4>
+          <p>より良い候補が HOMBA に実在するが、現行スコアで取りこぼしているもの。個別性が高く、3-1/3-2 の修正＋スコア下限で大半が改善見込み。</p>
+          <table><thead><tr><th>クエリ (入力)</th><th>RCS 現在の top-1（誤）</th><th>マッチ根拠</th><th class='num'>score</th><th>rank2（しばしば正解寄り）</th></tr></thead><tbody><tr><td><strong>Vestigial hippocampal sulcus</strong> <span class='ds'>cor</span></td><td>hippocampal commissure</td><td class='mono'>hippocampal commissure</td><td class='num'>0.49</td><td>hippocampal fissure</td></tr><tr><td><strong>Centre median parafascicular complex</strong> <span class='ds'>cor</span></td><td>posterior nuclear complex of thalamus</td><td class='mono'>posterior nuclear complex of thalamus</td><td class='num'>0.50</td><td>subicular complex</td></tr><tr><td><strong>Laterodorsal tegmentum</strong> <span class='ds'>cor</span></td><td>laterodorsal subdivision of PuM</td><td class='mono'>laterodorsal subdivision of PuM</td><td class='num'>0.50</td><td>pontine tegmentum</td></tr><tr><td><strong>Supracalcarine cortex</strong> <span class='ds'>cor</span></td><td>dorsolateral temporal cortex</td><td class='mono'>dorsolateral temporal cortex</td><td class='num'>0.51</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr><tr><td><strong>Precuneal cortex</strong> <span class='ds'>cor</span></td><td>prefrontal cortex</td><td class='mono'>prefrontal cortex</td><td class='num'>0.53</td><td>frontal cortex</td></tr><tr><td><strong>Anterior intraparietal area</strong> <span class='ds'>cor</span></td><td>lobule II (central lobule and wing, anterior part)</td><td class='mono'>anterior part</td><td class='num'>0.55</td><td>lobule IV (culmen and quadrangular lobule, anterior part)</td></tr><tr><td><strong>Cuneal cortex</strong> <span class='ds'>cor</span></td><td>external shell (cortex) of inferior colliculus</td><td class='mono'>cortex</td><td class='num'>0.57</td><td>primary visual cortex (first visual cortex, striate cortex, area 17, area OC)</td></tr><tr><td><strong>Lateral intraparietal area (dorsal)</strong> <span class='ds'>cor</span></td><td>dorsal raphe nucleus, lateral division</td><td class='mono'>dorsal raphe nucleus, lateral division <span class='mono' style='color:#7c3aed'>[mod: dorsal;lateral]</span></td><td class='num'>0.61</td><td>lateral parabrachial nucleus, dorsal division</td></tr><tr><td><strong>Central opercular cortex (anterior)</strong> <span class='ds'>cor</span></td><td>lateral (rostral) entorhinal cortex</td><td class='mono'>lateral (anterior) entorhinal cortex <span class='mono' style='color:#7c3aed'>[mod: anterior]</span></td><td class='num'>0.65</td><td>anterior cingulate  cortex (ventromedial prefrontal cortex)</td></tr><tr><td><strong>Accessory trigeminal nucleus</strong> <span class='ds'>cor</span></td><td>accessory facial nucleus</td><td class='mono'>accessory facial nucleus <span class='mono' style='color:#7c3aed'>[mod: accessory]</span></td><td class='num'>0.76</td><td>accessory nerve nucleus (supraspinal nucleus)</td></tr><tr><td><strong>Pretectothalamic lamina</strong> <span class='ds'>spe</span></td><td>dentatothalamic tract</td><td class='mono'>dentatothalamic tract</td><td class='num'>0.29</td><td>lamina III and IV of lumbar spinal cord</td></tr><tr><td><strong>Intramedullary thalamic area</strong> <span class='ds'>spe</span></td><td>interanteromedial nucleus of thalamus</td><td class='mono'>interanteromedial thalamic nucleus</td><td class='num'>0.38</td><td>centromedian nucleus of thalamus</td></tr><tr><td><strong>P1 Mesencephalic Reticulum</strong> <span class='ds'>spe</span></td><td>mesencephalic trigeminal tract</td><td class='mono'>mesencephalic trigeminal tract</td><td class='num'>0.41</td><td>mesencephalic trigeminal nucleus</td></tr><tr><td><strong>External medullary lamina, auditory radiation</strong> <span class='ds'>spe</span></td><td>external medullary lamina of globus pallidus</td><td class='mono'>external medullary lamina of pallidum <span class='mono' style='color:#7c3aed'>[mod: external]</span></td><td class='num'>0.45</td><td>external medullary lamina of thalamus</td></tr><tr><td><strong>Hypothalamic region, unspecified</strong> <span class='ds'>spe</span></td><td>hypothalamic sulcus</td><td class='mono'>hypothalamic sulcus</td><td class='num'>0.45</td><td>ventricular-subventricular zone of hypothalamus</td></tr><tr><td><strong>Central opercular cortex, anterior</strong> <span class='ds'>spe</span></td><td>anterior lobe of cerebellar cortex</td><td class='mono'>anterior lobe of cerebellar cortex</td><td class='num'>0.47</td><td>rostral (anterior) branch of anterior commissure</td></tr><tr><td><strong>Linear raphe</strong> <span class='ds'>spe</span></td><td>linear nucleus of the midbrain</td><td class='mono'>linear nucleus of the midbrain</td><td class='num'>0.48</td><td>caudal linear nucleus of the raphe</td></tr><tr><td><strong>Ventricular system, unspecified</strong> <span class='ds'>spe</span></td><td>ventricular zone of neocortex</td><td class='mono'>ventricular zone</td><td class='num'>0.48</td><td>central nervous system (neural tube)</td></tr><tr><td><strong>Fourth Nerve</strong> <span class='ds'>spe</span></td><td>fourth ventricle</td><td class='mono'>fourth ventricle</td><td class='num'>0.50</td><td>optic nerve</td></tr><tr><td><strong>Intracalcarine cortex, inferior</strong> <span class='ds'>spe</span></td><td>inferior colliculus</td><td class='mono'>inferior colliculus</td><td class='num'>0.51</td><td>inferior lateral parietal cortex</td></tr><tr><td><strong>Acoustic striae</strong> <span class='ds'>spe</span></td><td>acoustic radiation</td><td class='mono'>acoustic radiation</td><td class='num'>0.55</td><td>intermediate acoustic stria</td></tr><tr><td><strong>Intracalcarine cortex, superior</strong> <span class='ds'>spe</span></td><td>posterior parietal cortex</td><td class='mono'>posterior parietal cortex</td><td class='num'>0.55</td><td>superolateral temporal cortex (area 22)</td></tr><tr><td><strong>Medial Dorsal Tegmentum</strong> <span class='ds'>spe</span></td><td>magnocellular (dorsal) division of BM</td><td class='mono'>dorsal <span class='mono' style='color:#7c3aed'>[mod: medial;dorsal]</span></td><td class='num'>0.59</td><td>dorsal cell group of medulla tegmentum</td></tr><tr><td><strong>Corpus callosum and associated subcortical white matter</strong> <span class='ds'>spe</span></td><td>white matter of brain</td><td class='mono'>white matter of brain</td><td class='num'>0.60</td><td>corpus callosum</td></tr><tr><td><strong>Fastigial Cerebellar Nucleus</strong> <span class='ds'>spe</span></td><td>cerebellar deep nuclei</td><td class='mono'>cerebellar deep nuclei</td><td class='num'>0.61</td><td>fastigial (medial) nucleus</td></tr><tr><td><strong>Posterior Interposed Cerebellar Nucleus</strong> <span class='ds'>spe</span></td><td>posterior lobe of cerebellar cortex</td><td class='mono'>posterior lobe of cerebellar cortex <span class='mono' style='color:#7c3aed'>[mod: posterior]</span></td><td class='num'>0.67</td><td>posterior lobe, vermis part</td></tr><tr><td><strong>Caudate putamen</strong> <span class='ds'>spe</span></td><td>caudate-putamen cell bridges</td><td class='mono'>caudate lenticular nucleus cell bridges</td><td class='num'>0.70</td><td>putamen (lateroventral division of the CP)</td></tr><tr><td><strong>Lateral Cerebellar Nucleus</strong> <span class='ds'>spe</span></td><td>lateral region of cerebellar hemisphere</td><td class='mono'>lateral region of cerebellar hemisphere <span class='mono' style='color:#7c3aed'>[mod: lateral]</span></td><td class='num'>0.70</td><td>lateral nucleus of amygdala</td></tr><tr><td><strong>Superior Olive</strong> <span class='ds'>spe</span></td><td>medial superior olivary nucleus</td><td class='mono'>medial superior olive</td><td class='num'>0.73</td><td>lateral superior olivary nucleus</td></tr><tr><td><strong>Pedunculopontine Nucleus</strong> <span class='ds'>spe</span></td><td>pontine nucleus</td><td class='mono'>pontine nucleus</td><td class='num'>0.74</td><td>peduncular part of pontine nucleus</td></tr><tr><td><strong>Juxtaparaventricular nucleus</strong> <span class='ds'>spe</span></td><td>paraventricular nucleus of thalamus</td><td class='mono'>paraventricular nucleus</td><td class='num'>0.77</td><td>subventricular nucleus</td></tr></tbody></table>
+        </div>
+
+        <div class="issue-card">
+          <h4>3-4. 完全一致なのにスコアが沈む（スコア下限の検討）</h4>
+          <p>
+            <code>Uncus → uncus of (para)hippocampal gyrus</code> は alias 完全一致なのに
+            <code>bm25</code> 単独で <strong>0.22</strong>。長い HOMBA 名に対し短いクエリの BM25 正規化が過剰に効くため。
+            <strong>提案:</strong> alias/exact 完全包含が成立した候補にはスコア下限（例 0.70）を保証し、
+            BM25 はランキング内の微調整に留める。
+          </p>
+        </div>
+      </section>
+      <section id="dict">
+        <h2>4. 辞書改善案（16 件）</h2>
+        <p>いずれも正解エントリが HOMBA に実在。<code>playground_alias_rules.csv</code> への追記候補。</p>
+        <table><thead><tr><th>クエリ (入力)</th><th>RCS 現在の top-1</th><th>辞書追加の方針（HOMBA 実在確認済み）</th></tr></thead><tbody><tr><td><strong>Dorsal Lateral Leminscus Nucleus</strong> <span class='ds'>spe</span></td><td>lateral geniculate nucleus (dorsal lateral geniculate nucleus)</td><td>Leminscus -&gt; lemniscus; dorsal nucleus of lateral lemniscus</td></tr><tr><td><strong>Ethmoid-Limitans nucleus</strong> <span class='ds'>spe</span></td><td>ethmoid thalamic nucleus</td><td>ethmoid thalamic nucleus synonym</td></tr><tr><td><strong>Intergeniculate leaflet</strong> <span class='ds'>spe</span></td><td>intergeniculate leaf</td><td>leaflet -&gt; leaf</td></tr><tr><td><strong>Kolliker-Fuse Nucleus</strong> <span class='ds'>spe</span></td><td>Koelliker-Fuse nucleus</td><td>Kolliker -&gt; Koelliker spelling</td></tr><tr><td><strong>Laterodorsal thalamic nucleus</strong> <span class='ds'>spe</span></td><td>anterodorsal nucleus of thalamus</td><td>laterodorsal -&gt; lateral dorsal nucleus of thalamus</td></tr><tr><td><strong>Locus-coeruleus Region</strong> <span class='ds'>spe</span></td><td>nucleus coeruleus (locus coeruleus)</td><td>locus coeruleus region -&gt; nucleus coeruleus</td></tr><tr><td><strong>Medial dorsal thalamic nucleus</strong> <span class='ds'>cor</span></td><td>central medial nucleus of thalamus</td><td>medial dorsal -&gt; mediodorsal (fused) nucleus of thalamus</td></tr><tr><td><strong>Mediolateral Fascicle</strong> <span class='ds'>spe</span></td><td>cuneate fasciculus</td><td>ambiguous source label (cuneate fascicle?)</td></tr><tr><td><strong>Nucleus of the stria medullaris</strong> <span class='ds'>spe</span></td><td>stria medullaris of thalamus</td><td>stria medullaris (of thalamus)</td></tr><tr><td><strong>Optic tract and optic chiasm</strong> <span class='ds'>spe</span></td><td>optic chiasm</td><td>compound enumeration</td></tr><tr><td><strong>Optic tract/chiasma</strong> <span class='ds'>spe</span></td><td>optic tract</td><td>compound; chiasma -&gt; chiasm</td></tr><tr><td><strong>Precuneiform Nucleus</strong> <span class='ds'>spe</span></td><td>cuneiform nucleus</td><td>precuneiform area/nucleus</td></tr><tr><td><strong>Retroreuniens thalamic nucleus</strong> <span class='ds'>spe</span></td><td>reuniens (medioventral) nucleus of thalamus</td><td>reuniens word-order; reuniens nucleus of thalamus</td></tr><tr><td><strong>Saginum Nucleus</strong> <span class='ds'>spe</span></td><td>sagulum nucleus (nucleus sagulum)</td><td>sagulum spelling</td></tr><tr><td><strong>Septimbrial nucleus</strong> <span class='ds'>spe</span></td><td>septofimbrial nucleus</td><td>septofimbrial spelling</td></tr><tr><td><strong>Stria medullaris thalami</strong> <span class='ds'>spe</span></td><td>stria medullaris of thalamus</td><td>latin word-order -&gt; stria medullaris of thalamus</td></tr></tbody></table>
+        <h3>4-1. 一般化価値の高いルール（最優先）</h3>
+        <div class="callout info">
+          <strong>融合形 ↔ 分離形（視床核で頻出）:</strong>
+          <code>mediodorsal ↔ medial dorsal</code>, <code>laterodorsal ↔ lateral dorsal</code>,
+          <code>ventrolateral ↔ ventral lateral</code>, <code>ventromedial ↔ ventral medial</code>。
+          HOMBA は視床核を分離形で命名しており、1 ルールで複数入力を救済できる（3-2 とも連動）。
+        </div>
+        <h3>4-2. スペル・語順の個別同義語</h3>
+        <p class="mono">
+          Kolliker → Koelliker ／ sagulum (Saginum) ／ septofimbrial (Septimbrial) ／
+          lemniscus (Leminscus) ／ chiasma → chiasm ／ intergeniculate leaflet → leaf ／
+          stria medullaris thalami → stria medullaris of thalamus ／ locus coeruleus region → nucleus coeruleus
+        </p>
+        <div class="callout warn">
+          <strong>E. ソース転記ミス（5 件・辞書化しない）:</strong>
+          <code>Antherior</code> / <code>Mircrocellular</code> / <code>Vestibulochoclear</code> /
+          <code>Emminence</code> / <code>Occulomotor</code> はデータセット側で修正すべき。
+          本体辞書に誤記を取り込むと汚染源になるため除外。
+        </div>
+      </section>
+      <section id="priority">
+        <h2>5. 優先度・次アクション</h2>
+        <table>
+          <thead><tr><th>優先</th><th>施策</th><th class="num">影響</th><th>種別</th></tr></thead>
+          <tbody>
+            <tr><td><strong>高</strong></td><td>弱トークン単独マッチのガード（3-1）</td><td class="num">~12+</td><td>アルゴリズム</td></tr>
+            <tr><td><strong>高</strong></td><td>親昇格の上限化（3-2）＋融合形正規化（4-1）</td><td class="num">~16+</td><td>アルゴ＋辞書</td></tr>
+            <tr><td>中</td><td>完全一致のスコア下限保証（3-4）</td><td class="num">複数</td><td>アルゴリズム</td></tr>
+            <tr><td>中</td><td>個別同義語・スペル辞書追加（4-2）</td><td class="num">~16</td><td>辞書</td></tr>
+            <tr><td>低</td><td>ソース転記ミスの起票（E）</td><td class="num">5</td><td>データ</td></tr>
+          </tbody>
+        </table>
+        <div class="callout ok">
+          辞書（C/4-1）は本 playground で検証後にマージ判断。アルゴリズム（B）は <code>rcs/</code> 本体の
+          スコアリング変更を伴うため、回帰テスト（baseline 比較で high からの降格 0 を維持）を通してから適用。
+        </div>
+      </section>
+      <footer>
+        ROSETTA Candidate Search · build_testdata/260621_playground/improvement_01 ·
+        生成元: <code>gen_reports.py</code>（<code>unresolved_classified.csv</code> 由来）
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

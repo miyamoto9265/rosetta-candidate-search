@@ -1,0 +1,33 @@
+{
+  "total_records": 55,
+  "valid_3pass_records": 55,
+  "improvement_label_counts": {
+    "improved_better": 32,
+    "improved_worse": 5,
+    "both_wrong": 17,
+    "no_material_change": 1
+  },
+  "baseline_consistency_counts": {
+    "broader_parent": 19,
+    "aligned": 2,
+    "wrong": 33,
+    "partial_or_narrower": 1
+  },
+  "improved_consistency_counts": {
+    "partial_or_narrower": 5,
+    "aligned": 17,
+    "broader_parent": 14,
+    "wrong": 19
+  },
+  "certainty_counts": {
+    "medium": 5,
+    "high": 50
+  },
+  "uncertainty_tag_counts": {
+    "majority_vote": 4,
+    "stable": 50,
+    "majority_vote+low_certainty": 1
+  },
+  "api_log_entries": 37,
+  "api_failures": 2
+}

@@ -55,3 +55,4 @@ nucleus,weak,0.4,Generic structure word
 tract,weak,0.4,Generic structure word
 gyrus,weak,0.4,Generic structure word
 sulcus,weak,0.4,Generic structure word
+unspecified,stopword,0,Waxholm Space / atlas convention meaning 'whole structure, no subdivision' - pure noise for matching (e.g. 'facial nerve, unspecified').

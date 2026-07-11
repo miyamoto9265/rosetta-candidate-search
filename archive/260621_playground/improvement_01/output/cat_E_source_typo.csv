@@ -1,0 +1,6 @@
+dataset,query,review_flag,score,top_homba_id,top_name,methods,matched_query,matched_alias,modifier_terms,modifier_match_score,rank2_name,rank2_score,_category,_mechanism
+species,Capsule of the Antherior Thalamus,low_confidence,0.49017,HOMBA:10390,thalamus,bm25+fuzzy,Capsule of the Antherior Thalamus,thalamus,,1.0,ventral midline nuclei of thalamus,0.463581,E_source_typo,transcription typo in dataset
+species,Mircrocellular Tegmentum,low_confidence,0.556024,HOMBA:12282,paracollicular tegmentum,bm25+fuzzy,Mircrocellular Tegmentum,paracollicular tegmentum,,1.0,midbrain tegmentum,0.505887,E_source_typo,transcription typo in dataset
+species,Vestibulochoclear Nerve,low_confidence,0.585,HOMBA:12868,root of vestibulocochlear nerve,bm25+fuzzy+hierarchy_parent,Vestibulochoclear Nerve,root of vestibulocochlear nerve,,1.0,cochlear root of vestibulocochlear nerve,0.505,E_source_typo,transcription typo in dataset
+species,Medial Emminence,needs_review,0.819921,HOMBA:12820,medial eminence,bm25+fuzzy,Medial Emminence,medial eminence,medial,1.0,fastigial (medial) nucleus,0.71375,E_source_typo,transcription typo in dataset
+species,Occulomotor Nerve,needs_review,0.856667,HOMBA:12376,root of occulomotor nerve,bm25+fuzzy,Occulomotor Nerve,root of occulomotor nerve,,1.0,root of facial nerve,0.282022,E_source_typo,transcription typo in dataset

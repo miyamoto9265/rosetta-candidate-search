@@ -1,0 +1,76 @@
+[
+  {
+    "model": "deepseek-v4-flash",
+    "record_ids": [
+      850,
+      852,
+      874,
+      879
+    ],
+    "ok": true,
+    "error": "",
+    "usage": {
+      "prompt_tokens": 671,
+      "completion_tokens": 612,
+      "total_tokens": 1283,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 383
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 671
+    }
+  },
+  {
+    "model": "deepseek-v4-flash",
+    "record_ids": [
+      0,
+      1,
+      57,
+      227,
+      620
+    ],
+    "ok": true,
+    "error": "",
+    "usage": {
+      "prompt_tokens": 705,
+      "completion_tokens": 711,
+      "total_tokens": 1416,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 457
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 705
+    }
+  },
+  {
+    "model": "deepseek-v4-flash",
+    "record_ids": [
+      659,
+      664,
+      667,
+      708,
+      730
+    ],
+    "ok": true,
+    "error": "",
+    "usage": {
+      "prompt_tokens": 776,
+      "completion_tokens": 1075,
+      "total_tokens": 1851,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 771
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 776
+    }
+  }
+]
