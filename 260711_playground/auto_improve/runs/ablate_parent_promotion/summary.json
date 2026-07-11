@@ -1,0 +1,366 @@
+{
+  "engine": "0.6.0",
+  "core": {
+    "with": {
+      "n": 230,
+      "exact": 230,
+      "exact_rate": 1.0,
+      "in_top3": 230,
+      "in_top3_rate": 1.0
+    },
+    "without": {
+      "n": 230,
+      "exact": 230,
+      "exact_rate": 1.0,
+      "in_top3": 230,
+      "in_top3_rate": 1.0
+    },
+    "pair_compare": {
+      "changed_top1": 0,
+      "same_top1": 230,
+      "promotion_helps": 0,
+      "promotion_hurts": 0,
+      "details": []
+    },
+    "with_misses": [],
+    "without_misses": []
+  },
+  "corpus_no_direction": {
+    "with": {
+      "n": 331,
+      "label_counts": {
+        "aligned": 192,
+        "broader_parent": 93,
+        "wrong": 21,
+        "partial_or_narrower": 21,
+        "no_consensus": 4
+      }
+    },
+    "without": {
+      "n": 331,
+      "label_counts": {
+        "aligned": 194,
+        "broader_parent": 86,
+        "wrong": 23,
+        "partial_or_narrower": 22,
+        "no_consensus": 5,
+        "ambiguous": 1
+      }
+    },
+    "pair_compare": {
+      "changed_top1": 20,
+      "promotion_better_label": 8,
+      "promotion_worse_label": 7,
+      "details": [
+        {
+          "dataset": "corpus_no_direction",
+          "query": "A1 catecholaminergic cell group",
+          "without": "no_consensus (retro-olivary cell group)",
+          "with": "wrong (inner granular cell zone of cerebellum)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Middle occipital gyrus",
+          "without": "wrong (middle ectosylvian gyrus)",
+          "with": "broader_parent (occipital lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Internal globus pallidus",
+          "without": "aligned (internal division of globus pallidus)",
+          "with": "broader_parent (globus pallidus (paleostriatum))",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Intracalcarine cortex",
+          "without": "broader_parent (cerebral cortex)",
+          "with": "wrong (dorsolateral temporal cortex)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Cuneal cortex",
+          "without": "ambiguous (area x of visual cortex)",
+          "with": "wrong (prefrontal cortex)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Frontal orbital cortex",
+          "without": "aligned (orbital frontal cortex)",
+          "with": "broader_parent (frontal cortex)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Supracalcarine cortex",
+          "without": "broader_parent (cerebral cortex)",
+          "with": "wrong (dorsolateral temporal cortex)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Temporal occipital fusiform cortex",
+          "without": "partial_or_narrower (occipital cortex)",
+          "with": "broader_parent (temporal cortex)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Fundal superior temporal area",
+          "without": "wrong (medial superior temporal area)",
+          "with": "broader_parent (temporal lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Anterior intraparietal area",
+          "without": "broader_parent (intraparietal sulcus)",
+          "with": "wrong (anterior amygdaloid area)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Temporal area STGg",
+          "without": "wrong (temporal claustrum)",
+          "with": "broader_parent (temporal lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Temporal area STSdp",
+          "without": "wrong (temporal claustrum)",
+          "with": "broader_parent (temporal lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Temporal area STSda",
+          "without": "wrong (temporal claustrum)",
+          "with": "broader_parent (temporal lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Temporal area STSva",
+          "without": "wrong (temporal claustrum)",
+          "with": "broader_parent (temporal lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "corpus_no_direction",
+          "query": "Temporal area STSvp",
+          "without": "wrong (temporal claustrum)",
+          "with": "broader_parent (temporal lobe)",
+          "tag": "promotion_better_label"
+        }
+      ]
+    }
+  },
+  "species": {
+    "with": {
+      "n": 542,
+      "label_counts": {
+        "aligned": 304,
+        "broader_parent": 134,
+        "wrong": 41,
+        "ambiguous": 3,
+        "no_consensus": 8,
+        "partial_or_narrower": 51,
+        "source_or_ontology_issue": 1
+      }
+    },
+    "without": {
+      "n": 542,
+      "label_counts": {
+        "aligned": 309,
+        "broader_parent": 127,
+        "ambiguous": 2,
+        "no_consensus": 8,
+        "wrong": 39,
+        "partial_or_narrower": 56,
+        "source_or_ontology_issue": 1
+      }
+    },
+    "pair_compare": {
+      "changed_top1": 34,
+      "promotion_better_label": 10,
+      "promotion_worse_label": 14,
+      "details": [
+        {
+          "dataset": "species",
+          "query": "Anterior Thalamus",
+          "without": "aligned (anterior nuclear complex of thalamus)",
+          "with": "wrong (ventroanterior-ventrolateral nuclear complex of thalamus)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Centrolateral and Paracentral Thalamus",
+          "without": "partial_or_narrower (paracentral nucleus of thalamus)",
+          "with": "broader_parent (rostral intralaminar nuclei of thalamus)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Centromedial-parafascicular Thalamus",
+          "without": "partial_or_narrower (parafascicular nucleus of thalamus)",
+          "with": "broader_parent (caudal intralaminar nuclei of thalamus)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Cerebellar Lobule 3 Intermediate",
+          "without": "broader_parent (cerebellar lobules)",
+          "with": "wrong (cerebellar morphology)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Internal globus pallidus",
+          "without": "aligned (internal division of globus pallidus)",
+          "with": "broader_parent (globus pallidus (paleostriatum))",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Linear raphe",
+          "without": "partial_or_narrower (caudal linear nucleus of the raphe)",
+          "with": "no_consensus (linear nucleus of the midbrain)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Peri-basal region",
+          "without": "no_consensus (regions of basal forebrain)",
+          "with": "ambiguous (basal forebrain)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Retromammillary Hypothalamus",
+          "without": "aligned (retromammillary area)",
+          "with": "broader_parent (hypothalamus)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Reuniens-rhomboid-xiphoid Thalamus",
+          "without": "partial_or_narrower (rhomboid (central) nucleus of thalamus)",
+          "with": "broader_parent (ventral midline nuclei of thalamus)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Ventroposterior inferior thalamic nucleus",
+          "without": "broader_parent (ventral posterior nuclear complex of thalamus)",
+          "with": "wrong (dorsal midline nuclei of thalamus)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Ventroposterior Inferior Thalamus",
+          "without": "broader_parent (ventral posterior nuclear complex of thalamus)",
+          "with": "wrong (lateroposterior-pulvinar complex)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Visceral Motor Nuclei",
+          "without": "wrong (facial nucleus)",
+          "with": "partial_or_narrower (efferent nuclei of the cranial nerves in midbrain)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Amygdaloid area (unspecified)",
+          "without": "partial_or_narrower (anterior amygdaloid area)",
+          "with": "aligned (regions of amygdaloid complex)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Amygdaloid area, unspecified",
+          "without": "partial_or_narrower (amygdaloid transition areas)",
+          "with": "aligned (regions of amygdaloid complex)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Cochlear nerve",
+          "without": "aligned (cochlear root of vestibulocochlear nerve)",
+          "with": "broader_parent (root of vestibulocochlear nerve)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Corpus callosum and associated subcortical white matter",
+          "without": "partial_or_narrower (corpus callosum)",
+          "with": "broader_parent (white matter of brain)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Dorsolateral orbital area",
+          "without": "wrong (dorsal fourth visual area (dorsolateral visual cortex, DL))",
+          "with": "broader_parent (orbital gyri)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Frontal association area 3",
+          "without": "wrong (rhombomere 3)",
+          "with": "broader_parent (frontal lobe)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Inferior colliculus, central nucleus",
+          "without": "aligned (central nucleus of inferior colliculus)",
+          "with": "broader_parent (inferior colliculus)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Laterodorsal thalamic nucleus, dorsomedial part",
+          "without": "broader_parent (lateral dorsal nucleus of thalamus)",
+          "with": "wrong (ventral midline nuclei of thalamus)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Laterodorsal thalamic nucleus, ventrolateral part",
+          "without": "broader_parent (lateral dorsal nucleus of thalamus)",
+          "with": "wrong (ventroanterior-ventrolateral nuclear complex of thalamus)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Perirhinal area 36",
+          "without": "aligned (ectorhinal cortex (area 36))",
+          "with": "broader_parent (perirhinal cortical region)",
+          "tag": "promotion_worse_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Ventrolateral orbital area",
+          "without": "wrong (ventrolateral division of AV)",
+          "with": "broader_parent (orbital gyri)",
+          "tag": "promotion_better_label"
+        },
+        {
+          "dataset": "species",
+          "query": "Vestibular nerve",
+          "without": "aligned (vestibular root of vestibulocochlear nerve)",
+          "with": "partial_or_narrower (root of vestibulocochlear nerve)",
+          "tag": "promotion_worse_label"
+        }
+      ]
+    }
+  },
+  "verdict": "rcs_core: parent promotion changes exact matches by +0 (helps 0 / hurts 0 among changed top-1). corpus_no_direction: WITH aligned+broader=285 wrong=21; WITHOUT aligned+broader=280 wrong=23 (Δgood=+5, Δwrong=-2). species: WITH aligned+broader=438 wrong=41; WITHOUT aligned+broader=436 wrong=39 (Δgood=+2, Δwrong=+2). Overall: mixed — inspect per-dataset Δ; promotion may help some sets and hurt others.",
+  "elapsed_sec": 899.3
+}

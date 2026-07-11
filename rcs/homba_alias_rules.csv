@@ -124,3 +124,33 @@ chiasma,chiasm,Latin/English variant: chiasma = chiasm (optic chiasm).,yes
 leaflet,leaf,Variant: intergeniculate leaflet = HOMBA intergeniculate leaf.,yes
 stria medullaris thalami,stria medullaris of thalamus,Latin word-order: stria medullaris thalami = HOMBA stria medullaris of thalamus.,no
 locus coeruleus region,nucleus coeruleus,Locus coeruleus region = HOMBA nucleus coeruleus (locus coeruleus).,no
+4th ventricle,fourth ventricle,Numeric ordinal: 4th ventricle = HOMBA fourth ventricle (HOMBA:12805).,no
+fourth nerve,root of trochlear nerve,Fourth nerve (CN IV) = HOMBA root of trochlear nerve (HOMBA:12377).,no
+trochlear nerve,root of trochlear nerve,Trochlear nerve maps to HOMBA root of trochlear nerve.,no
+temporal horn,inferior horn of lateral ventricles,Temporal horn of lateral ventricle = HOMBA inferior horn (HOMBA:10600).,no
+inferior horn of the lateral ventricle,inferior horn of lateral ventricles,Article/plural variant of HOMBA inferior horn.,no
+pedunculopontine nucleus,pedunculo pontine tegmental nucleus,PPN / pedunculopontine nucleus = HOMBA pedunculo(pontine) tegmental nucleus (HOMBA:12243).,no
+pedunculopontine tegmental nucleus,pedunculo pontine tegmental nucleus,Alternate PPN wording to HOMBA pedunculo(pontine) tegmental nucleus.,no
+supra geniculate,suprageniculate nucleus,Split form Supra Geniculate = HOMBA:13044 suprageniculate nucleus.,no
+suprageniculate,suprageniculate nucleus,Short form maps to HOMBA:13044 suprageniculate nucleus.,no
+laterodorsal tegmentum,laterodorsal tegmental nucleus,Laterodorsal tegmentum = HOMBA:12519 laterodorsal tegmental nucleus.,no
+lateral dorsal tegmentum,laterodorsal tegmental nucleus,Split laterodorsal tegmentum = HOMBA laterodorsal tegmental nucleus.,no
+centre median parafascicular complex,centromedian nucleus of thalamus,CM-Pf complex short of exact HOMBA pair; map to centromedian nucleus (HOMBA:10449) as primary anchor.,no
+centromedian parafascicular complex,centromedian nucleus of thalamus,CM-Pf complex → centromedian nucleus of thalamus.,no
+paraventricular hypothalamic nucleus,paraventricular nucleus of hypothalamus,Word-order: PVN hypothalamic = HOMBA:10476 paraventricular nucleus of hypothalamus.,no
+hypothalamic paraventricular nucleus,paraventricular nucleus of hypothalamus,Alternate word order for HOMBA:10476.,no
+lateral cerebellar nucleus,dentate lateral nucleus,Lateral cerebellar nucleus (dentate) = HOMBA:12396 dentate (lateral) nucleus.,no
+anterior interposed cerebellar nucleus,interpositus intermediate nucleus,Anterior interposed = HOMBA:12399 interpositus (intermediate) nucleus.,no
+posterior interposed cerebellar nucleus,interpositus intermediate nucleus,Posterior interposed maps to HOMBA interpositus nucleus complex.,no
+interposed cerebellar nucleus,interpositus nucleus,Interposed cerebellar nucleus = HOMBA interpositus nucleus.,no
+acoustic striae,intermediate acoustic stria,Acoustic striae (plural) ≈ HOMBA intermediate acoustic stria (HOMBA:12755).,no
+ventralis intermedius,ventral lateral nucleus of thalamus,VIM (ventralis intermedius) conventionally maps near VL; HOMBA lacks a dedicated VIM row.,no
+anterior nucleus of thalamus,anterior nuclear complex of thalamus,Anterior nucleus (thalamus) = HOMBA:10392 anterior nuclear complex of thalamus.,no
+anterior nucleus thalamus,anterior nuclear complex of thalamus,Parenthetical-unwrapped form of anterior nucleus (thalamus).,no
+anterior thalamic nucleus,anterior nuclear complex of thalamus,Singular form of anterior thalamic nuclei.,no
+visual area v3a,second dorsal third visual area part a,V3A = HOMBA:AA30817 second dorsal third visual area part A.,no
+v3a,second dorsal third visual area part a,V3A abbreviation → HOMBA V3A entry.,no
+mesencephalic trigeminal nerve,mesencephalic trigeminal tract,Mesencephalic trigeminal nerve (axons) ≈ HOMBA mesencephalic trigeminal tract.,no
+dorsal medial hypothalamic nucleus,dorsomedial hypothalamic nucleus,Dorsal medial = dorsomedial hypothalamic nucleus (HOMBA:10485).,no
+dorsomedial hypothalamus,dorsomedial hypothalamic nucleus,Short form for DMH.,no
+lateral olfactory tract,olfactory tract,Lateral olfactory tract maps to HOMBA:12073 olfactory tract (prefer tract over nucleus of LOT).,no

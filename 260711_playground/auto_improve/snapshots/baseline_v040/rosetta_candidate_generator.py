@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# VERSION: 0.6.0
+# VERSION: 0.4.0
 # Versioning rule:
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
@@ -25,77 +25,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-ENGINE_VERSION = "0.6.0"
-
-# Pure positional / directional words.  On their own these do not identify a
-# structure: two unrelated regions can both be "posterior" or "ventral".  They
-# are therefore excluded from standalone modifier evidence (see
-# extract_modifier_terms) so a candidate cannot win purely by sharing a
-# direction word with the query.
-POSITIONAL_WORDS = {
-    "anterior", "posterior", "superior", "inferior",
-    "ventral", "dorsal", "medial", "lateral",
-    "rostral", "caudal", "oral",
-    "dorsomedial", "ventromedial", "dorsolateral", "ventrolateral",
-    "anteroposterior", "central",
-}
-
-# Regex for area / cell-group identifier tokens such as "23c", "24dd", "a8",
-# "v3a", "op1", "5".  These carry a specific numeric identity: two structures
-# with different identifiers (e.g. cingulate "area 23c" vs "area 5", or the
-# "A1" vs "A8" cell groups) are different even when the surrounding words match.
-_AREA_ID_RE = re.compile(r"^([a-z]{0,3})(\d+)([a-z]{0,3})$")
-
-
-def _parse_area_id(token: str) -> tuple[str, int] | None:
-    """Return (alpha_prefix, numeric_core) for an area-id token, else None."""
-    m = _AREA_ID_RE.match(token)
-    if not m:
-        return None
-    return m.group(1), int(m.group(2))
-
-
-def _area_ids_compatible(query_ids: set[str], cand_ids: set[str]) -> bool:
-    """Whether any query area-id is compatible with any candidate area-id.
-
-    Two ids are compatible when they share the same alphabetic prefix *and*
-    numeric core.  A subdivision suffix is ignored so ``6a`` matches area ``6``
-    and ``3a`` matches area ``3`` (subdivisions of the same area), while ``23c``
-    stays distinct from ``5`` and cell group ``a1`` stays distinct from ``a8``.
-    """
-    q_parsed = [p for p in (_parse_area_id(t) for t in query_ids) if p]
-    c_parsed = [p for p in (_parse_area_id(t) for t in cand_ids) if p]
-    if not q_parsed or not c_parsed:
-        return True  # nothing comparable -> do not penalise
-    return any(q == c for q in q_parsed for c in c_parsed)
-
-
-# Mutually exclusive anatomical structure classes.  A query that clearly names
-# one class should not rank a candidate whose only strong cue is a different
-# class (tract↔nucleus, nerve↔ventricle, organ↔nucleus, …).
-_STRUCTURE_CLASS_TOKENS: dict[str, frozenset[str]] = {
-    "gray": frozenset({
-        "nucleus", "nuclei", "ganglion", "ganglia",
-    }),
-    "white": frozenset({
-        "tract", "fasciculus", "fascicle", "radiation", "stria", "striae",
-        "commissure", "bundle", "capsule", "lemniscus", "path", "pathway",
-        "fiber", "fibers", "fibre", "fibres",
-    }),
-    "nerve": frozenset({"nerve", "nerves"}),
-    "ventricle": frozenset({"ventricle", "ventricles"}),
-    "sulcus": frozenset({"sulcus", "sulci", "fissure", "fissures"}),
-    "organ": frozenset({"cochlea", "apparatus"}),
-}
-
-# Distinguishing morphological prefixes.  When the query carries one of these
-# fused to a stem (``precuneiform``, ``retroreuniens``, ``juxtaparaventricular``)
-# and the candidate matches only the bare stem, they name different structures.
-_DISTINGUISHING_PREFIXES = (
-    "juxta", "retro", "supra", "infra", "peri", "para", "hypo", "hyper",
-    "inter", "intra", "extra", "endo", "ecto", "meta", "proto",
-    "pre", "sub",
-)
+ENGINE_VERSION = "0.4.0"
 
 HOMBA_ID_FIELD = "unified_ontology_id"
 HOMBA_NAME_FIELD = "unified_ontology_name"
@@ -394,10 +324,6 @@ def query_variants(
     abbrev_rules = abbrev_rules or []
     variants = [query, strip_laterality(query, config), strip_parenthetical(query)]
 
-    # Keep parenthetical content as ordinary tokens so "Anterior nucleus
-    # (thalamus)" also searches as "Anterior nucleus thalamus".
-    variants.append(re.sub(r"[()]", " ", query))
-
     # "thalamus (excluding pulvinar)" should still search for "thalamus".
     variants.append(re.sub(r"\b(excluding|except|without)\b.*$", " ", strip_parenthetical(query), flags=re.I))
 
@@ -477,98 +403,6 @@ def token_jaccard(left: Iterable[str], right: Iterable[str]) -> float:
     return len(left_set & right_set) / len(left_set | right_set)
 
 
-def _boundary_contains(haystack: str, needle: str) -> bool:
-    """Return True if *needle* occurs in *haystack* on word boundaries.
-
-    A plain substring test lets a distinguishing prefix leak through: the query
-    ``precuneiform nucleus`` "contains" ``cuneiform nucleus`` mid-token, and the
-    old containment bonus then scored them as near-identical even though they are
-    different nuclei.  Requiring the match to start and end on a token boundary
-    (string edge or space) keeps legitimate containment (``insular cortex`` in
-    ``major insular cortex``) while rejecting prefix-collision matches
-    (``reuniens ...`` inside ``retroreuniens ...``).
-    """
-    start = 0
-    n = len(needle)
-    while True:
-        idx = haystack.find(needle, start)
-        if idx < 0:
-            return False
-        before_ok = idx == 0 or haystack[idx - 1] == " "
-        after = idx + n
-        after_ok = after == len(haystack) or haystack[after] == " "
-        if before_ok and after_ok:
-            return True
-        start = idx + 1
-
-
-def _head_structure_class(tokens: Iterable[str]) -> str | None:
-    """Return the structure-class label of the syntactic head.
-
-    Prefers the ``CLASS of …`` pattern (``nucleus of lateral olfactory tract``
-    → gray).  Otherwise uses the *last* class token so
-    ``lateral lemniscus, dorsal nucleus`` resolves to nucleus, not lemniscus.
-    """
-    token_list = list(tokens)
-    token_to_class = {
-        token: label
-        for label, members in _STRUCTURE_CLASS_TOKENS.items()
-        for token in members
-    }
-    for index, token in enumerate(token_list):
-        label = token_to_class.get(token)
-        if label is not None and index + 1 < len(token_list) and token_list[index + 1] == "of":
-            return label
-    head: str | None = None
-    for token in token_list:
-        label = token_to_class.get(token)
-        if label is not None:
-            head = label
-    return head
-
-
-def _structure_class_conflict(query_tokens: Iterable[str], cand_tokens: Iterable[str]) -> bool:
-    """True when query and candidate assert incompatible structure-class heads."""
-    q_head = _head_structure_class(query_tokens)
-    c_head = _head_structure_class(cand_tokens)
-    if q_head is None or c_head is None:
-        return False
-    return q_head != c_head
-
-
-def _strip_distinguishing_prefix(token: str) -> str | None:
-    """If *token* begins with a distinguishing prefix, return the bare stem."""
-    for prefix in _DISTINGUISHING_PREFIXES:
-        if token.startswith(prefix) and len(token) - len(prefix) >= 5:
-            # Avoid stripping when the remainder is itself only a short prefix
-            # fragment (e.g. "preoptic" → "optic" is intentional and useful).
-            return token[len(prefix):]
-    return None
-
-
-def _distinguishing_affix_mismatch(query_tokens: set[str], cand_tokens: set[str]) -> bool:
-    """True when the query's prefixed form is absent from the candidate.
-
-    ``precuneiform`` vs ``cuneiform``, ``retroreuniens`` vs ``reuniens``, and
-    ``juxtaparaventricular`` vs ``paraventricular`` are different nuclei; a
-    fuzzy match on the shared stem alone must not win.
-    """
-    for qtok in query_tokens:
-        stem = _strip_distinguishing_prefix(qtok)
-        if stem is None:
-            continue
-        if qtok in cand_tokens:
-            continue  # candidate also carries the prefixed form
-        # Candidate has the bare stem (exact token or longer token that is the
-        # stem / starts with the stem as a word-like unit).
-        if stem in cand_tokens or any(
-            ctok == stem or (len(ctok) >= 5 and ctok.startswith(stem) and qtok not in ctok)
-            for ctok in cand_tokens
-        ):
-            return True
-    return False
-
-
 def string_similarity(query: str, alias: str) -> float:
     q_norm = normalize_text(query)
     a_norm = normalize_text(alias)
@@ -583,9 +417,9 @@ def string_similarity(query: str, alias: str) -> float:
     tokens = token_jaccard(tokenize(q_norm), tokenize(a_norm))
 
     containment = 0.0
-    if len(q_norm) >= 4 and _boundary_contains(a_norm, q_norm):
+    if len(q_norm) >= 4 and q_norm in a_norm:
         containment = min(0.92, len(q_norm) / max(len(a_norm), 1) + 0.25)
-    if len(a_norm) >= 4 and _boundary_contains(q_norm, a_norm):
+    if len(a_norm) >= 4 and a_norm in q_norm:
         containment = max(containment, min(0.92, len(a_norm) / max(len(q_norm), 1) + 0.25))
 
     return max(containment, 0.35 * sequence + 0.25 * bigram + 0.2 * trigram + 0.2 * tokens)
@@ -618,7 +452,6 @@ class RosettaCandidateGenerator:
             | (self.config.modifier_terms & direction_words)
         ) - lobe_words
         self._content_cache: dict[str, frozenset[str]] = {}
-        self._area_id_cache: dict[int, frozenset[str]] = {}
         self.alias_rules = load_alias_rules(alias_rules_csv)
         self.abbrev_rules = load_abbrev_rules(abbrev_rules_csv)
         self.terms: list[HOMBATerm] = []
@@ -654,7 +487,6 @@ class RosettaCandidateGenerator:
                 for alias in raw_aliases:
                     expanded_aliases.extend(expand_alias(alias, self.alias_rules))
 
-                expanded_aliases = self._drop_generic_only_aliases(expanded_aliases)
                 aliases = tuple(unique_preserve_order(expanded_aliases))
                 name = (row.get(HOMBA_NAME_FIELD) or "").strip()
                 if not name:
@@ -675,30 +507,6 @@ class RosettaCandidateGenerator:
                 )
                 self.term_index_by_id[term.homba_id] = len(self.terms)
                 self.terms.append(term)
-
-    def _drop_generic_only_aliases(self, aliases: list[str]) -> list[str]:
-        """Remove derived aliases that carry no identifying content.
-
-        Parenthetical expansion turns ``subincertal nucleus (area)`` into the
-        bare alias ``area``; ``(dorsal)`` becomes ``dorsal``.  Such tokens are
-        stopwords / weak / laterality / modifier words, so an alias made up only
-        of them matches any query that happens to share that generic word
-        ("Frontoinsular *area*", "Opercular *area* OP2-3") and drags unrelated
-        structures to the top.  We keep the first alias unconditionally so a
-        term is never left without a searchable name.
-        """
-        generic = (
-            self.config.stopwords
-            | self.config.weak_terms
-            | self.config.laterality_words
-            | self.config.modifier_terms
-        )
-        kept: list[str] = []
-        for index, alias in enumerate(aliases):
-            tokens = tokenize(alias, keep_stopwords=True, config=self.config)
-            if index == 0 or any(token not in generic for token in tokens):
-                kept.append(alias)
-        return kept
 
     @staticmethod
     def _infer_depth(row: dict[str, str], hierarchy_fields: list[str]) -> int:
@@ -776,17 +584,6 @@ class RosettaCandidateGenerator:
 
         for term_index, score, alias, matched_query in self._bm25_candidates(variants, per_method_k):
             self._add_candidate(candidate_state, term_index, "bm25", score, alias, matched_query)
-
-        # Determine which positional words in the query actually *resolve* to a
-        # specific structure in the candidate pool.  A positional word is only
-        # meaningful for ranking when some candidate that shares the query's core
-        # content word also carries that direction: e.g. "lateral" resolves for
-        # "substantia nigra (lateral part)" because "substantia nigra, lateral
-        # division" exists, so the bare parent should be demoted in its favour.
-        # "posterior" does NOT resolve for "posterior insular area" (no insular
-        # child names "posterior"), so it must not penalise the parent fallback.
-        self._resolvable_positional = self._compute_resolvable_positional(
-            query, modifier_terms, candidate_state)
 
         # Pass 1: score every non-hierarchy candidate so that _promote_common_parents
         # can use penalised final scores (not raw method scores) when deciding how
@@ -888,17 +685,9 @@ class RosettaCandidateGenerator:
                     overlap = query_tokens & alias_tokens
                     weak_only_match = bool(overlap and overlap <= self._noncontent_tokens)
 
-        # Rank using only *effective* modifiers: genuine subdivision words
-        # (core, shell, magnocellular, limb, ...) plus positional words that
-        # resolve to a real candidate (see _compute_resolvable_positional).  A
-        # non-resolvable direction word ("posterior insular area") neither
-        # rewards nor penalises, so the correct parent can surface instead of an
-        # unrelated same-direction structure.
-        effective = self._effective_modifiers(modifier_terms)
-        if effective:
-            eff_score = modifier_match_score(effective, term.aliases)
-            if eff_score > 0:
-                final_score = min(final_score + 0.12 * eff_score, 1.0)
+        if modifier_terms:
+            if modifier_score > 0:
+                final_score = min(final_score + 0.12 * modifier_score, 1.0)
             else:
                 final_score = min(final_score * 0.88, 0.88)
         # Apply specificity penalty only to fuzzy/bm25 matches that lack an
@@ -909,65 +698,9 @@ class RosettaCandidateGenerator:
         if not exact and (fuzzy or bm25):
             final_score *= self._specificity_penalty(query, modifier_terms, term)
 
-        # Area / cell-group identifier mismatch: if both the query and the
-        # candidate carry numeric area identifiers (e.g. cingulate "area 23c"
-        # vs "area 5", or the "A1" vs "A8" cell groups) and none are compatible
-        # (same alpha prefix + numeric core, ignoring subdivision suffix), they
-        # name different parcels.  Penalise so a bare word overlap cannot
-        # promote the wrong numbered area above its generic parent.  Subdivisions
-        # such as "6a"/"3a" remain compatible with their parent area "6"/"3".
-        # A matching identifier gets a small boost so "V3A" can outrank a
-        # generic visual-cortex parent that lacks the code.
-        if not exact:
-            matched_query = str(state.get("matched_query") or "")
-            query_ids = set(self._area_ids_from_text(query)) | set(
-                self._area_ids_from_text(matched_query))
-            cand_ids = set(self._term_area_ids(term_index, term))
-            if query_ids and cand_ids:
-                if _area_ids_compatible(query_ids, cand_ids):
-                    # Boost only for *coded* ids (v3a, a8, op1, …).  Bare
-                    # digits ("2", "3") are too common (layers 2-3, area 3) and
-                    # must not inflate unrelated layer/subdivision hits.
-                    q_coded = [
-                        p for t in query_ids
-                        if (p := _parse_area_id(t)) and p[0]
-                    ]
-                    c_coded = [
-                        p for t in cand_ids
-                        if (p := _parse_area_id(t)) and p[0]
-                    ]
-                    if q_coded and c_coded and any(q == c for q in q_coded for c in c_coded):
-                        final_score = min(final_score + 0.08, 1.0)
-                else:
-                    final_score *= 0.40
-
-        # Structure-class mismatch (tract↔nucleus, nerve↔ventricle, organ↔
-        # nucleus, sulcus↔commissure, …): compare the *head* class of the query
-        # with the head class of the candidate's primary name.  Demote so a
-        # same-class sibling (e.g. ``olfactory tract`` for a tract query) can
-        # surface above ``nucleus of … tract``.
-        if not exact:
-            q_toks = tokenize(query, keep_stopwords=True, config=self.config)
-            matched_query = str(state.get("matched_query") or "")
-            if matched_query:
-                # Prefer the matched variant's token order when available.
-                q_toks = tokenize(matched_query, keep_stopwords=True, config=self.config)
-            c_toks = tokenize(term.name, keep_stopwords=True, config=self.config)
-            if _structure_class_conflict(q_toks, c_toks):
-                final_score *= 0.50
-            q_content = self._content_tokens(query) | self._content_tokens(matched_query)
-            c_content: set[str] = set()
-            for alias in term.aliases:
-                c_content |= self._content_tokens(alias)
-            if _distinguishing_affix_mismatch(q_content, c_content):
-                final_score *= 0.62
-
-        # Keep weak-only matches (no shared identifying content word — only a
-        # direction/laterality/generic token overlaps) well below any candidate
-        # that shares a real content word, so a structurally-related parent can
-        # surface instead of an unrelated same-direction structure.
+        # Keep weak-only matches below the low-confidence threshold.
         if weak_only_match:
-            final_score = min(final_score, 0.38)
+            final_score = min(final_score, 0.50)
 
         return final_score, modifier_score
 
@@ -1074,17 +807,8 @@ class RosettaCandidateGenerator:
         than raw method scores so the parent cannot outscore a directly matched
         child purely due to an inflated raw score.
         """
-        # An *effective* modifier (a subdivision word, or a direction that
-        # resolves to a specific child) names a particular child and blocks
-        # parent promotion.  A non-resolvable positional word ("posterior
-        # insular area") does not: the direction points at no specific child, so
-        # promoting the common parent is safe (and usually correct).
-        if self._effective_modifiers(modifier_terms):
+        if modifier_terms:
             return
-
-        # Query carries only non-resolvable positional words: offer the parent
-        # as a *fallback* that never outranks a well-matching child.
-        positional_only = bool(modifier_terms)
 
         query_tokens = set(tokenize(query, config=self.config))
         parent_to_children: dict[str, list[int]] = defaultdict(list)
@@ -1115,15 +839,7 @@ class RosettaCandidateGenerator:
                 for child_index in child_indexes
             ]
             best_child = max(child_scores)
-            if positional_only:
-                # The query names a direction but no subdivision word.  Offer the
-                # parent only as a *fallback* that never outranks a child which
-                # actually matches (so "substantia nigra (lateral part)" keeps
-                # its "lateral division" child, while "posterior insular area"
-                # can still fall back to "insular lobe" when every child is a
-                # weak match).
-                promoted_score = max(best_child - 0.03, 0.0)
-            elif 0.62 <= best_child < 0.82:
+            if 0.62 <= best_child < 0.82:
                 promoted_score = max(best_child - 0.03, 0.0)
             else:
                 promoted_score = min(best_child + 0.08, 0.97)
@@ -1165,69 +881,6 @@ class RosettaCandidateGenerator:
             for alias_token in alias_tokens
         )
 
-    def _compute_resolvable_positional(
-        self,
-        query: str,
-        modifier_terms: list[str],
-        candidate_state: dict[int, dict[str, object]],
-    ) -> frozenset[str]:
-        positional_query = {
-            tok
-            for term in modifier_terms
-            for tok in normalize_text(term).split()
-            if tok in POSITIONAL_WORDS
-        }
-        if not positional_query:
-            return frozenset()
-
-        query_content = self._content_tokens(query)
-        resolvable: set[str] = set()
-        for term_index in candidate_state:
-            term = self.terms[term_index]
-            alias_content: set[str] = set()
-            alias_tokens: set[str] = set()
-            for alias in term.aliases:
-                alias_content |= self._content_tokens(alias)
-                alias_tokens |= set(tokenize(alias, config=self.config))
-            # Only candidates that share an identifying content word with the
-            # query count: a same-direction but unrelated structure must not make
-            # the direction "resolvable".
-            if not self._content_overlap(query_content, alias_content):
-                continue
-            resolvable |= positional_query & alias_tokens
-        return frozenset(resolvable)
-
-    def _effective_modifiers(self, modifier_terms: list[str]) -> list[str]:
-        """Modifiers that should drive ranking: substantive subdivision words
-        plus positional words that resolve to a specific candidate."""
-        resolvable = getattr(self, "_resolvable_positional", frozenset())
-        effective: list[str] = []
-        for term in modifier_terms:
-            toks = normalize_text(term).split()
-            if any(t not in POSITIONAL_WORDS for t in toks):
-                effective.append(term)          # contains a real subdivision word
-            elif all(t in resolvable for t in toks) and toks:
-                effective.append(term)          # purely positional but resolvable
-        return effective
-
-    @staticmethod
-    def _area_ids_from_text(text: str) -> frozenset[str]:
-        """Extract area / cell-group identifier tokens (e.g. 23c, a8, v3a, 5)."""
-        return frozenset(
-            tok for tok in normalize_text(text).split() if _AREA_ID_RE.match(tok)
-        )
-
-    def _term_area_ids(self, term_index: int, term: HOMBATerm) -> frozenset[str]:
-        cached = self._area_id_cache.get(term_index)
-        if cached is not None:
-            return cached
-        ids: set[str] = set()
-        for alias in term.aliases:
-            ids |= self._area_ids_from_text(alias)
-        result = frozenset(ids)
-        self._area_id_cache[term_index] = result
-        return result
-
     def _content_tokens(self, text: str) -> frozenset[str]:
         """Return tokens that identify a structure rather than its direction."""
         cached = self._content_cache.get(text)
@@ -1242,7 +895,7 @@ class RosettaCandidateGenerator:
         return content
 
     def _specificity_penalty(self, query: str, modifier_terms: list[str], term: HOMBATerm) -> float:
-        if self._effective_modifiers(modifier_terms) or not term.parent_id:
+        if modifier_terms or not term.parent_id:
             return 1.0
 
         query_specificity = specificity_terms(query, self.config)
