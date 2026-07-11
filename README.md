@@ -2,6 +2,23 @@
 
 脳領域・解剖学的構造名から HOMBA オントロジーの候補をスコア付きで返す検索システム（RCS）。
 
+**エンジン**: v0.8.0（2026-07-11）
+
+## ライブ環境
+
+| 項目 | URL |
+|---|---|
+| 検索 UI | https://rcs.mymt.site/ |
+| CloudFront（代替） | https://d5keesfj4srwa.cloudfront.net/ |
+| API | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
+| Reports（最新） | https://rcs.mymt.site/reports/2026-07-11.html |
+
+```bash
+curl -sS -X POST "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"Pulvinar nucleus","top_k":5}'
+```
+
 ## ドキュメント
 
 | ドキュメント | 内容 |
@@ -22,7 +39,42 @@ build_testdata/   コーパス構築・評価データ
 docs/             仕様書
 ```
 
-## ライブ環境
+### コアデータ（`rcs/`）
 
-- **検索 UI**: https://rcs.mymt.site/ （CloudFront: https://d5keesfj4srwa.cloudfront.net/）
-- **API**: `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates`
+| ファイル | 役割 |
+|---|---|
+| `rosetta_candidate_generator.py` | 候補生成エンジン |
+| `HOMBA_v1_fixed.csv` | HOMBA 本体 |
+| `homba_token_rules.csv` | stopword / laterality / modifier 等 |
+| `homba_alias_rules.csv` | HOMBA 側別名 |
+| `homba_abbrev_rules.csv` | クエリ側略語展開 |
+
+## v0.8.0 の要点
+
+- 階層の共通親昇格（`_promote_common_parents`）と 2-pass スコアリングを廃止
+- 領域アンカー罰則・構造クラス整合・辞書拡充で親ヒット過多を抑制
+- 公開レポート: nodir auto-improve、親昇格アブレーション、v1 validation
+
+## ローカル実行
+
+```bash
+# 対話
+python rcs/rcs_test_interactive.py
+
+# リスト評価
+python rcs/rcs_test_list.py
+```
+
+## デプロイ（要約）
+
+詳細は [AWS 運用ガイド](docs/aws_operations_guide.md)。
+
+```powershell
+# Lambda
+.\scripts\package_lambda.ps1
+aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1
+
+# フロント
+aws s3 sync web/frontend/ s3://rcs-api-web/ --exclude ".DS_Store"
+aws cloudfront create-invalidation --distribution-id E103PFXH9IO864 --paths "/*"
+```
