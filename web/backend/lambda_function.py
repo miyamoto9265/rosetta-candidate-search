@@ -34,7 +34,6 @@ from rcs.generator_cache import (  # noqa: E402
     default_csv_paths,
     load_generator_cache,
 )
-from rcs.review import add_review_flags  # noqa: E402
 from rcs.rosetta_candidate_generator import RosettaCandidateGenerator  # noqa: E402
 
 logger = logging.getLogger(__name__)
@@ -149,7 +148,6 @@ def lambda_handler(event, context):
             return response(400, {"error": "query is required"})
 
         candidates = get_generator().generate(query, top_k=top_k, dhba_filter=dhba_filter)
-        add_review_flags(candidates)
 
         return response(
             200,

@@ -24,7 +24,6 @@ REPO_ROOT = RCS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from rcs.review import review_flag_for
 from rcs.rosetta_candidate_generator import RosettaCandidateGenerator
 
 DEFAULT_HOMBA_CSV = RCS_DIR / "HOMBA_v1_fixed.csv"
@@ -45,7 +44,6 @@ RCS_RESULT_FIELDS = [
     "rcs_methods",
     "rcs_matched_query",
     "rcs_matched_alias",
-    "rcs_review_flag",
     "rcs_modifier_terms",
     "rcs_modifier_match_score",
     "rcs_hierarchy_reason",
@@ -111,7 +109,6 @@ def rcs_fields_from_candidate(
         "rcs_methods": candidate.get("methods", ""),
         "rcs_matched_query": candidate.get("matched_query", ""),
         "rcs_matched_alias": candidate.get("matched_alias", ""),
-        "rcs_review_flag": review_flag_for(candidate),
         "rcs_modifier_terms": candidate.get("modifier_terms", ""),
         "rcs_modifier_match_score": candidate.get("modifier_match_score", ""),
         "rcs_hierarchy_reason": candidate.get("hierarchy_reason", ""),

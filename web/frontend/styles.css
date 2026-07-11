@@ -221,31 +221,6 @@ td {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-.flag {
-  display: inline-block;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 8px;
-  white-space: nowrap;
-}
-
-.flag.high_confidence {
-  background: var(--ok-bg);
-  color: var(--ok-text);
-}
-
-.flag.needs_review,
-.flag.modifier_conflict {
-  background: var(--warning-bg);
-  color: var(--warning-text);
-}
-
-.flag.low_confidence {
-  background: var(--low-bg);
-  color: var(--low-text);
-}
-
 @media (max-width: 640px) {
   .page {
     width: min(100% - 20px, 1100px);

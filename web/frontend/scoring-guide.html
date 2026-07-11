@@ -357,7 +357,6 @@
         <li><a href="#hierarchy">階層親昇格（hierarchy_parent）</a></li>
         <li><a href="#twopass">2-pass スコアリング</a></li>
         <li><a href="#ranking">ソートと出力</a></li>
-        <li><a href="#review">レビューフラグ</a></li>
         <li><a href="#params">パラメータ一覧</a></li>
         <li><a href="#example">計算例</a></li>
       </ol>
@@ -855,42 +854,9 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
       </table>
     </section>
 
-    <!-- 13. Review -->
-    <section id="review">
-      <h2>14. レビューフラグ（<code>rcs/review.py</code>）</h2>
-      <p>
-        <code>generate()</code> の出力自体には含まれませんが、テスト・API 層では
-        <code>add_review_flags()</code> により以下のフラグが付与されます。
-      </p>
-
-      <table>
-        <thead>
-          <tr><th>フラグ</th><th>条件</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>modifier_conflict</code></td>
-            <td>修飾語あり かつ <code>modifier_match_score &lt; 1.0</code></td>
-          </tr>
-          <tr>
-            <td><code>high_confidence</code></td>
-            <td><code>score ≥ 0.90</code>（上記より優先度低）</td>
-          </tr>
-          <tr>
-            <td><code>low_confidence</code></td>
-            <td><code>score &lt; 0.60</code></td>
-          </tr>
-          <tr>
-            <td><code>needs_review</code></td>
-            <td>上記以外（0.60 ≤ score &lt; 0.90）</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
     <!-- 14. Params -->
     <section id="params">
-      <h2>15. パラメータ一覧（クイックリファレンス）</h2>
+      <h2>14. パラメータ一覧（クイックリファレンス）</h2>
       <table class="param-table">
         <thead>
           <tr><th>パラメータ</th><th>値</th><th>用途</th></tr>
@@ -916,15 +882,13 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
           <tr><td>per_method_k</td><td>40（デフォルト）</td><td>各手法の候補数上限</td></tr>
           <tr><td>top_k</td><td>10（デフォルト）</td><td>返却候補数</td></tr>
           <tr><td>スコア丸め</td><td>round(..., 6)</td><td>出力精度</td></tr>
-          <tr><td>high_confidence</td><td>≥ 0.90</td><td>レビューフラグ</td></tr>
-          <tr><td>low_confidence</td><td>&lt; 0.60</td><td>レビューフラグ</td></tr>
         </tbody>
       </table>
     </section>
 
     <!-- 15. Example -->
     <section id="example">
-      <h2>16. 計算例（概念的ウォークスルー）</h2>
+      <h2>15. 計算例（概念的ウォークスルー）</h2>
 
       <div class="example-box">
         <h4>例 A: 完全一致 — クエリ <code>Subthalamic nucleus</code></h4>
@@ -946,7 +910,7 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
           <li>base = max(0.5×0.82 + 0.3×0.55 + 0.2×0.67, 0.75×0.82 + 0.25×0.67)
             = max(0.693, 0.782) = <strong>0.782</strong></li>
           <li>修飾語なし、過細語も余分にない → penalty ×1.0</li>
-          <li><strong>最終スコア ≈ 0.782</strong>、review_flag = <code>needs_review</code></li>
+          <li><strong>最終スコア ≈ 0.782</strong>、methods = <code>bm25+fuzzy</code></li>
         </ol>
       </div>
 

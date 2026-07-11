@@ -60,22 +60,12 @@ Content-Type: application/json
 | `graph_order` | string | 階層グラフ上の順序番号 |
 | `depth` | integer | 階層の深さ |
 | `score` | float | マッチスコア（0〜1） |
-| `review_flag` | string | 信頼度フラグ（下表） |
 | `methods` | string | 使用した検索手法（`+` 区切り） |
 | `matched_alias` | string | 一致した HOMBA 側の別名 |
 | `matched_query` | string | 実際に照合に使われたクエリバリアント |
 | `modifier_terms` | string | 抽出された修飾語（`;` 区切り） |
 | `modifier_match_score` | float | 修飾語の一致率（0〜1） |
 | `hierarchy_reason` | string | 階層昇格の理由（該当する場合のみ） |
-
-### review_flag
-
-| 値 | 意味 |
-|---|---|
-| `high_confidence` | スコア ≥ 0.90。高信頼。自動採用の検討可 |
-| `needs_review` | スコア 0.60〜0.89。候補として近いが要確認 |
-| `low_confidence` | スコア < 0.60。人手確認が必要 |
-| `modifier_conflict` | 修飾語が候補と合っていない可能性あり |
 
 ### methods の種類
 
@@ -104,7 +94,6 @@ Content-Type: application/json
       "graph_order": "728",
       "depth": 725,
       "score": 1.0,
-      "review_flag": "high_confidence",
       "methods": "exact",
       "matched_alias": "pulvinar of thalamus",
       "matched_query": "pulvinar nucleus",
@@ -142,7 +131,7 @@ API_URL = "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidate
 resp = requests.post(API_URL, json={"query": "Pulvinar nucleus", "top_k": 5})
 resp.raise_for_status()
 for c in resp.json()["candidates"]:
-    print(c["score"], c["homba_id"], c["name"], c["review_flag"])
+    print(c["score"], c["homba_id"], c["name"])
 ```
 
 ---

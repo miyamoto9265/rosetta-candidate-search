@@ -24,7 +24,7 @@ function escapeHtml(value) {
 }
 
 function renderEmpty(message) {
-  resultsBody.innerHTML = `<tr><td colspan="9" class="empty">${escapeHtml(message)}</td></tr>`;
+  resultsBody.innerHTML = `<tr><td colspan="8" class="empty">${escapeHtml(message)}</td></tr>`;
   summary.textContent = "";
 }
 
@@ -38,7 +38,6 @@ function renderResults(data) {
   summary.textContent = `${escapeHtml(data.query)} / ${candidates.length}件`;
   resultsBody.innerHTML = candidates
     .map((candidate, index) => {
-      const flag = candidate.review_flag || "";
       const evidence = [
         candidate.methods,
         candidate.matched_alias ? `alias: ${candidate.matched_alias}` : "",
@@ -56,7 +55,6 @@ function renderResults(data) {
           <td>${escapeHtml(candidate.dhba_name)}</td>
           <td>${escapeHtml(candidate.dhba_acronym)}</td>
           <td class="mono">${Number(candidate.score ?? 0).toFixed(6)}</td>
-          <td><span class="flag ${escapeHtml(flag)}">${escapeHtml(flag)}</span></td>
           <td>${escapeHtml(evidence)}</td>
         </tr>
       `;
