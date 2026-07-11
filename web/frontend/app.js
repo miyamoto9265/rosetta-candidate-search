@@ -41,7 +41,6 @@ function renderResults(data) {
       const evidence = [
         candidate.methods,
         candidate.matched_alias ? `alias: ${candidate.matched_alias}` : "",
-        candidate.hierarchy_reason ? `hierarchy: ${candidate.hierarchy_reason}` : "",
       ]
         .filter(Boolean)
         .join(" / ");

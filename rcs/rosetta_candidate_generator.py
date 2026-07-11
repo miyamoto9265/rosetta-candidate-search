@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# VERSION: 0.7.0
+# VERSION: 0.8.0
 # Versioning rule:
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-ENGINE_VERSION = "0.7.0"
+ENGINE_VERSION = "0.8.0"
 
 # Pure positional / directional words.  On their own these do not identify a
 # structure: two unrelated regions can both be "posterior" or "ventral".  They
@@ -75,7 +75,7 @@ def _area_ids_compatible(query_ids: set[str], cand_ids: set[str]) -> bool:
 # class (tract↔nucleus, nerve↔ventricle, organ↔nucleus, …).
 _STRUCTURE_CLASS_TOKENS: dict[str, frozenset[str]] = {
     "gray": frozenset({
-        "nucleus", "nuclei", "ganglion", "ganglia",
+        "nucleus", "nuclei", "ganglion", "ganglia", "claustrum",
     }),
     "white": frozenset({
         "tract", "fasciculus", "fascicle", "radiation", "stria", "striae",
@@ -86,9 +86,20 @@ _STRUCTURE_CLASS_TOKENS: dict[str, frozenset[str]] = {
     "ventricle": frozenset({"ventricle", "ventricles"}),
     "sulcus": frozenset({"sulcus", "sulci", "fissure", "fissures"}),
     "organ": frozenset({"cochlea", "apparatus"}),
-    "cortex": frozenset({"cortex", "cortical", "gyrus", "gyri"}),
+    # Cortical parcels often appear as bare "area …" (STS, orbital area, …).
+    "cortex": frozenset({
+        "cortex", "cortical", "gyrus", "gyri", "area", "areas",
+    }),
     "lobule": frozenset({"lobule", "lobules"}),
 }
+
+# Region / lobe anchors that the candidate must cover when the query names them.
+# Stops "dorsolateral orbital" from ranking a dorsolateral *visual* area, etc.
+_REGION_ANCHORS = frozenset({
+    "orbital", "occipital", "frontal", "temporal", "parietal",
+    "insular", "cingulate", "hippocampal", "amygdaloid",
+    "thalamic", "hypothalamic", "cerebellar",
+})
 
 # Distinguishing morphological prefixes.  When the query carries one of these
 # fused to a stem (``precuneiform``, ``retroreuniens``, ``juxtaparaventricular``)
@@ -790,16 +801,6 @@ class RosettaCandidateGenerator:
         self._resolvable_positional = self._compute_resolvable_positional(
             query, modifier_terms, candidate_state)
 
-        # Pass 1: score every non-hierarchy candidate so that _promote_common_parents
-        # can use penalised final scores (not raw method scores) when deciding how
-        # much to boost a common parent.
-        prelim_scores: dict[int, float] = {}
-        for term_index, state in candidate_state.items():
-            prelim_scores[term_index], _ = self._score_candidate(query, modifier_terms, term_index, state)
-
-        self._promote_common_parents(query, modifier_terms, candidate_state, prelim_scores)
-
-        # Pass 2: build the final ranked list (now includes any hierarchy_parent entries).
         ranked = []
         for term_index, state in candidate_state.items():
             term = self.terms[term_index]
@@ -846,8 +847,6 @@ class RosettaCandidateGenerator:
         Specificity penalty rules
         -------------------------
         * Exact match → never penalised (the query directly named the alias).
-        * Pure hierarchy_parent (no direct fuzzy/bm25 evidence) → never penalised
-          (the promoted score already reflects the penalised child scores).
         * Fuzzy / BM25 match without exact → penalty applied as before.
         """
         term = self.terms[term_index]
@@ -855,7 +854,6 @@ class RosettaCandidateGenerator:
         exact = method_scores.get("exact", 0.0)
         fuzzy = method_scores.get("fuzzy", 0.0)
         bm25 = method_scores.get("bm25", 0.0)
-        hierarchy = method_scores.get("hierarchy_parent", 0.0)
         token_score = max(
             token_jaccard(tokenize(query, config=self.config), tokenize(alias, config=self.config))
             for alias in term.aliases
@@ -863,7 +861,6 @@ class RosettaCandidateGenerator:
         modifier_score = modifier_match_score(modifier_terms, term.aliases)
 
         final_score = max(
-            hierarchy,
             exact,
             0.5 * fuzzy + 0.3 * bm25 + 0.2 * token_score,
             0.75 * fuzzy + 0.25 * token_score,
@@ -874,7 +871,7 @@ class RosettaCandidateGenerator:
         # Detect fuzzy/BM25 hits supported only by direction, laterality, or
         # generic structure words, with no shared identifying content word.
         weak_only_match = False
-        if not exact and not hierarchy and (fuzzy or bm25):
+        if not exact and (fuzzy or bm25):
             matched_query = str(state.get("matched_query") or "")
             query_content = self._content_tokens(query) | self._content_tokens(matched_query)
             if query_content:
@@ -904,10 +901,7 @@ class RosettaCandidateGenerator:
             else:
                 final_score = min(final_score * 0.88, 0.88)
         # Apply specificity penalty only to fuzzy/bm25 matches that lack an
-        # exact match.  Exact matches and pure hierarchy_parent entries are
-        # exempt: the former because the query named the alias directly; the
-        # latter because its promoted score already incorporates the children's
-        # penalised scores.
+        # exact match.
         if not exact and (fuzzy or bm25):
             final_score *= self._specificity_penalty(query, modifier_terms, term)
 
@@ -943,16 +937,11 @@ class RosettaCandidateGenerator:
                 else:
                     final_score *= 0.40
 
-        # Structure-class mismatch (tract↔nucleus, nerve↔ventricle, organ↔
-        # nucleus, sulcus↔commissure, …): compare the *head* class of the query
-        # with the head class of the candidate's primary name.  Demote so a
-        # same-class sibling (e.g. ``olfactory tract`` for a tract query) can
-        # surface above ``nucleus of … tract``.
+        # Structure-class mismatch (tract↔nucleus, cortex↔claustrum, …).
         if not exact:
             q_toks = tokenize(query, keep_stopwords=True, config=self.config)
             matched_query = str(state.get("matched_query") or "")
             if matched_query:
-                # Prefer the matched variant's token order when available.
                 q_toks = tokenize(matched_query, keep_stopwords=True, config=self.config)
             c_toks = tokenize(term.name, keep_stopwords=True, config=self.config)
             if _structure_class_conflict(q_toks, c_toks):
@@ -963,6 +952,23 @@ class RosettaCandidateGenerator:
                 c_content |= self._content_tokens(alias)
             if _distinguishing_affix_mismatch(q_content, c_content):
                 final_score *= 0.62
+
+        # Region-anchor mismatch: query names a lobe/region (orbital, occipital,
+        # temporal, …) that no candidate alias covers → demote.  Replaces the
+        # safety net that hierarchy parent promotion used to provide for these
+        # weak near-misses.
+        if not exact:
+            matched_query = str(state.get("matched_query") or "")
+            q_toks = set(tokenize(query, config=self.config)) | set(
+                tokenize(matched_query, config=self.config))
+            missing_anchors = self._missing_region_anchors(q_toks, term)
+            if missing_anchors:
+                final_score *= 0.48
+
+        # Plural group queries ("… nuclei") should not prefer a single named
+        # nucleus when the candidate name is singular and adds no group cue.
+        if not exact and self._plural_nuclei_mismatch(query, term):
+            final_score *= 0.72
 
         # Keep weak-only matches (no shared identifying content word — only a
         # direction/laterality/generic token overlaps) well below any candidate
@@ -1063,81 +1069,33 @@ class RosettaCandidateGenerator:
             entry_indexes.update(self.token_to_entries.get(token, set()))
         return entry_indexes
 
-    def _promote_common_parents(
-        self,
-        query: str,
-        modifier_terms: list[str],
-        candidate_state: dict[int, dict[str, object]],
-        prelim_scores: dict[int, float],
-    ) -> None:
-        """Promote a shared parent when 2+ sibling candidates exist.
+    def _missing_region_anchors(self, query_tokens: set[str], term: HOMBATerm) -> set[str]:
+        """Return region anchors present in the query but absent from *term* aliases."""
+        q_anchors = query_tokens & _REGION_ANCHORS
+        if not q_anchors:
+            return set()
+        covered: set[str] = set()
+        for alias in term.aliases:
+            covered |= set(tokenize(alias, config=self.config)) & _REGION_ANCHORS
+            # Soft stem: "temporopolar" covers "temporal", "orbitofrontal" covers "orbital"
+            alias_norm = normalize_text(alias)
+            for anchor in q_anchors:
+                if anchor in alias_norm:
+                    covered.add(anchor)
+        return q_anchors - covered
 
-        Uses *prelim_scores* (pass-1 final scores, already penalised) rather
-        than raw method scores so the parent cannot outscore a directly matched
-        child purely due to an inflated raw score.
-        """
-        # An *effective* modifier (a subdivision word, or a direction that
-        # resolves to a specific child) names a particular child and blocks
-        # parent promotion.  A non-resolvable positional word ("posterior
-        # insular area") does not: the direction points at no specific child, so
-        # promoting the common parent is safe (and usually correct).
-        if self._effective_modifiers(modifier_terms):
-            return
-
-        # Query carries only non-resolvable positional words: offer the parent
-        # as a *fallback* that never outranks a well-matching child.
-        positional_only = bool(modifier_terms)
-
-        query_tokens = set(tokenize(query, config=self.config))
-        parent_to_children: dict[str, list[int]] = defaultdict(list)
-        for term_index in candidate_state:
-            parent_id = self.terms[term_index].parent_id
-            if parent_id:
-                parent_to_children[parent_id].append(term_index)
-
-        for parent_id, child_indexes in parent_to_children.items():
-            if len(child_indexes) < 2:
-                continue
-            parent_index = self.term_index_by_id.get(parent_id)
-            if parent_index is None:
-                continue
-
-            parent = self.terms[parent_index]
-            parent_token_score = max(
-                token_jaccard(query_tokens, tokenize(alias, config=self.config))
-                for alias in parent.aliases
-            )
-            if parent_token_score <= 0:
-                continue
-
-            # Use pass-1 final scores (penalised) so the parent's ceiling
-            # reflects the actual quality of its children's matches.
-            child_scores = [
-                prelim_scores.get(child_index, float(candidate_state[child_index]["best_method_score"]))
-                for child_index in child_indexes
-            ]
-            best_child = max(child_scores)
-            if positional_only:
-                # The query names a direction but no subdivision word.  Offer the
-                # parent only as a *fallback* that never outranks a child which
-                # actually matches (so "substantia nigra (lateral part)" keeps
-                # its "lateral division" child, while "posterior insular area"
-                # can still fall back to "insular lobe" when every child is a
-                # weak match).
-                promoted_score = max(best_child - 0.03, 0.0)
-            elif 0.62 <= best_child < 0.82:
-                promoted_score = max(best_child - 0.03, 0.0)
-            else:
-                promoted_score = min(best_child + 0.08, 0.97)
-            self._add_candidate(
-                candidate_state,
-                parent_index,
-                method="hierarchy_parent",
-                score=promoted_score,
-                alias=parent.name,
-                matched_query=query,
-                hierarchy_reason=f"common_parent_of_{len(child_indexes)}_candidates",
-            )
+    @staticmethod
+    def _plural_nuclei_mismatch(query: str, term: HOMBATerm) -> bool:
+        """True when the query asks for plural nuclei but the term is a singular nucleus."""
+        qn = normalize_text(query)
+        if "nuclei" not in qn.split():
+            return False
+        # Group / complex names are acceptable even if singular phrasing appears.
+        name = normalize_text(term.name)
+        if any(w in name for w in ("nuclei", "complex", "group", "region", "areas")):
+            return False
+        name_toks = name.split()
+        return "nucleus" in name_toks and "nuclei" not in name_toks
 
     @staticmethod
     def _stem_match(left: str, right: str) -> bool:

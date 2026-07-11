@@ -1,7 +1,7 @@
 # ROSETTA Candidate Search — API 仕様
 
-**バージョン**: v0.3.1  
-**最終更新**: 2026-06-25
+**バージョン**: v0.8.0  
+**最終更新**: 2026-07-11
 
 ---
 
@@ -65,7 +65,7 @@ Content-Type: application/json
 | `matched_query` | string | 実際に照合に使われたクエリバリアント |
 | `modifier_terms` | string | 抽出された修飾語（`;` 区切り） |
 | `modifier_match_score` | float | 修飾語の一致率（0〜1） |
-| `hierarchy_reason` | string | 階層昇格の理由（該当する場合のみ） |
+| `hierarchy_reason` | string | **互換フィールド**。v0.8.0 以降は常に空文字（階層親昇格は廃止） |
 
 ### methods の種類
 
@@ -74,7 +74,10 @@ Content-Type: application/json
 | `exact` | 正規化後の文字列が完全一致 |
 | `fuzzy` | 文字列類似度でマッチ |
 | `bm25` | BM25 スコアでマッチ |
-| `hierarchy_parent` | 複数の子候補の共通親として昇格 |
+
+> **変更 (v0.8.0):** `hierarchy_parent`（共通親へのスコア昇格）はアルゴリズムから削除されました。
+> レスポンスの `methods` に `hierarchy_parent` は現れません。`hierarchy_reason` は後方互換のため残していますが常に空です。
+> 親へのフォールバックは、領域アンカー必須・構造クラス衝突・辞書ルールなどスコア側の罰則／別名で実現します。
 
 ### レスポンス例
 
