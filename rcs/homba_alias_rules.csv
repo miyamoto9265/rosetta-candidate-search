@@ -210,3 +210,16 @@ lateral occipital cortex superior,superior occipital gyrus,Superior LOC → supe
 ventral periolivary nuclei,periolivary nuclei,Ventral periolivary → periolivary nuclei parent (HOMBA:12464).,no
 cerebellar lobule 3 intermediate,lobule iii,Cerebellar Lobule 3 Intermediate → lobule III.,no
 temporal frontal cortex,frontal motor cortex,Likely typo/odd wording; map toward posterior frontal motor cortex.,no
+fundal superior temporal area,temporoparietal area containing area FST,FST / fundal superior temporal → HOMBA:AA30022.,no
+fundal superior temporal,temporoparietal area containing area FST,FST short form → HOMBA:AA30022.,no
+middle occipital gyrus,occipital lobe,Middle occipital gyrus absent in HOMBA; absorb to occipital lobe.,no
+dorsolateral orbital area,orbital gyri,Dorsolateral orbital area → orbital gyri (avoid DL visual cortex).,no
+ventrolateral orbital area,orbital gyri,Ventrolateral orbital area → orbital gyri (avoid thalamic VL).,no
+frontal association area 3,frontal lobe,Frontal association area 3 has no exact HOMBA parcel; absorb to frontal lobe.,no
+visceral motor nuclei,efferent nuclei of cranial nerves in pons,Visceral motor nuclei group → pontine efferent nuclei (HOMBA:12417).,no
+visceral motor nucleus,efferent nuclei of cranial nerves in pons,Singular form → same pontine efferent group.,no
+temporal area stgg,superior temporal gyrus,STGg macaque parcel → superior temporal gyrus.,no
+temporal area stsda,superior temporal sulcus,STSda → superior temporal sulcus parent.,no
+temporal area stsdp,superior temporal sulcus,STSdp → superior temporal sulcus parent.,no
+temporal area stsva,superior temporal sulcus,STSva → superior temporal sulcus parent.,no
+temporal area stsvp,superior temporal sulcus,STSvp → superior temporal sulcus parent.,no

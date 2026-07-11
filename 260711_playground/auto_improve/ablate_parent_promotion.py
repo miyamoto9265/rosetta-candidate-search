@@ -1,21 +1,14 @@
-#!/usr/bin/env python3
-"""Ablate parent promotion (_promote_common_parents) without touching RCS source.
+"""Historical ablation helper: Round8 removed parent promotion from core RCS.
 
-Compares WITH vs WITHOUT hierarchy parent promotion on:
-  - build_testdata/rcs_core.csv              (ground-truth IDs → exact metrics)
-  - build_testdata/rcs_corpus_no_direction.csv (DeepSeek 3-pass)
-  - build_testdata/rcs_species.csv            (DeepSeek 3-pass)
-
-The original ``rosetta_candidate_generator.py`` is never modified: the no-promotion
-condition is implemented by monkey-patching ``_promote_common_parents`` to a no-op
-on a live generator instance.
-
-Usage
------
-    python ablate_parent_promotion.py --workers 24
-    python ablate_parent_promotion.py --no-llm   # RCS + core metrics only
+Previously compared WITH vs WITHOUT ``_promote_common_parents``. The treatment
+path remains useful as a no-op sanity check, but WITH/WITHOUT are now identical
+on current main.
 """
 from __future__ import annotations
+
+# NOTE: As of ENGINE_VERSION 0.8.0, _promote_common_parents no longer exists.
+# This file is retained for archival re-runs against older checkpoints
+# (tag: round7-checkpoint).
 
 import argparse
 import csv
@@ -381,6 +374,15 @@ def main() -> int:
     t0 = time.time()
 
     print(f"[ablate] engine v{ENGINE_VERSION}", flush=True)
+    if not hasattr(RosettaCandidateGenerator, "_promote_common_parents"):
+        print(
+            "[ablate] _promote_common_parents already removed from core "
+            f"(v{ENGINE_VERSION}). Use git tag round7-checkpoint to re-run "
+            "the historical WITH/WITHOUT comparison.",
+            flush=True,
+        )
+        return 0
+
     print("[ablate] loading generator...", flush=True)
     gen = RosettaCandidateGenerator(eh.HOMBA_CSV)
 

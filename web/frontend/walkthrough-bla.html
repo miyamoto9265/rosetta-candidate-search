@@ -612,7 +612,7 @@
       <span>クエリ: Left basolateral amygdala (BLA)</span>
       <span>バリアント: 15 件</span>
       <span>候補: 53 → top 5</span>
-      <span>エンジン: v0.3.1</span>
+      <span>エンジン: v0.8.0</span>
     </div>
 
 <section id="walkthrough">
@@ -621,7 +621,7 @@
         ここでは <strong>「Left basolateral amygdala (BLA)」</strong> を題材に、
         laterality 除去 · 括弧内略語 · <code>homba_alias_rules.csv</code> · <code>homba_abbrev_rules.csv</code>
         が絡み合い <strong>15 個</strong>のクエリバリアントが生成される例を、実測値付きで追います。
-        （<code>rcs/HOMBA_v1_fixed.csv</code> + v0.3.1）
+        （<code>rcs/HOMBA_v1_fixed.csv</code> + v0.8.0）
       </p>
 
       <div class="query-input">
@@ -649,21 +649,16 @@ flowchart TD
 
   MERGE["53 候補に統合"]
 
-  subgraph PASS["2-pass スコアリング"]
-    S1["第1パス → prelim_scores"]
-    HIER{"親昇格\n修飾語 bla あり?"}
-    SKIP["スキップ"]
-    S2["第2パス → 最終スコア"]
+  subgraph PASS["スコアリング（1-pass）"]
+    S1["_score_candidate()\n修飾語 bla → ×0.88"]
   end
 
   OUT["1位 · 0.733\n basolateral nuclear group of amygdala\n modifier bla 不一致 → ×0.88"]
 
-  IN --> NORM --> VAR --> MOD --> EX & FU & BM --> MERGE --> S1 --> HIER
-  HIER -->|Yes| SKIP --> S2 --> OUT
+  IN --> NORM --> VAR --> MOD --> EX & FU & BM --> MERGE --> S1 --> OUT
 
   style IN fill:#2563eb,color:#fff
   style OUT fill:#ecfdf5,stroke:#059669
-  style SKIP fill:#f1f5f9,stroke:#94a3b8
         </pre>
       </div>
 
@@ -1040,7 +1035,7 @@ flowchart TD
       </div>
 
       <h3>2-4. ステップ別パイプライン</h3>
-      <div class="merge-bar">53 候補に統合 → 第1パス → 修飾語 bla ありのため親昇格スキップ → 第2パス → top_k=5</div>
+      <div class="merge-bar">53 候補に統合 → _score_candidate（1-pass）→ top_k=5 ※親昇格/2-pass は v0.8.0 で廃止</div>
 
       <h3>2-5. 1 位候補のスコア内訳</h3>
       <div class="score-breakdown">
@@ -1116,7 +1111,7 @@ flowchart TD
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.3.1 · <a href="about.html#contact">Contact / security</a>
+          · Engine v0.8.0 · <a href="about.html#contact">Contact / security</a>
         </p>
       </div>
     </footer>

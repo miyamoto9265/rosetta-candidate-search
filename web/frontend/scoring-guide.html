@@ -329,14 +329,14 @@
       <p>
         脳領域名のテキスト入力から HOMBA 候補を返す RCS の「スコア」がどのように算出されるかを、
         前処理から最終ランキングまで順を追って説明します。
-        実装は <code>rcs/rosetta_candidate_generator.py</code>（v0.3.1）に基づきます。
+        実装は <code>rcs/rosetta_candidate_generator.py</code>（v0.8.0）に基づきます。
       </p>
     </header>
 
 
     <div class="meta-bar">
-      <span>バージョン: v0.3.1</span>
-      <span>最終更新: 2026-06-25</span>
+      <span>バージョン: v0.8.0</span>
+      <span>最終更新: 2026-07-11</span>
       <span>参照: docs/rcs_algorithm.md</span>
       <span>スコア範囲: 0.0 〜 1.0</span>
     </div>
@@ -354,8 +354,8 @@
         <li><a href="#compose">最終スコアの合成</a></li>
         <li><a href="#modifier">修飾語（modifier）調整</a></li>
         <li><a href="#specificity">Specificity Penalty（過細減点）</a></li>
-        <li><a href="#hierarchy">階層親昇格（hierarchy_parent）</a></li>
-        <li><a href="#twopass">2-pass スコアリング</a></li>
+        <li><a href="#guards">弱誤マッチ抑制（親昇格の代替）</a></li>
+        <li><a href="#pipeline">処理パイプライン</a></li>
         <li><a href="#ranking">ソートと出力</a></li>
         <li><a href="#params">パラメータ一覧</a></li>
         <li><a href="#example">計算例</a></li>
@@ -392,29 +392,23 @@
         <div class="flow-step">
           <div class="flow-num">3</div>
           <div class="flow-body">
-            <strong>第 1 パス</strong>
-            全候補に <code>_score_candidate()</code> を適用 → 暫定スコア <code>prelim_scores</code>
+            <strong>スコアリング（1-pass）</strong>
+            各候補に <code>_score_candidate()</code> を適用（修飾語・減点・領域アンカー込み）
           </div>
         </div>
         <div class="flow-step">
           <div class="flow-num">4</div>
           <div class="flow-body">
-            <strong>階層親昇格</strong>
-            兄弟候補が 2 件以上なら親エントリを追加（<code>hierarchy_parent</code>）
-          </div>
-        </div>
-        <div class="flow-step">
-          <div class="flow-num">5</div>
-          <div class="flow-body">
-            <strong>第 2 パス</strong>
-            昇格後の全候補を再度スコア化 → 最終ランキング
+            <strong>ランキング</strong>
+            score 降順でソート → <code>top_k</code> 件を返却
           </div>
         </div>
       </div>
 
       <div class="callout">
         <strong>重要:</strong> 最終スコアは各手法スコアの単純加算ではありません。
-        複数の合成式の <strong>最大値</strong> を取り、修飾語調整・過細減点を適用したうえで確定します。
+        複数の合成式の <strong>最大値</strong> を取り、修飾語調整・過細減点・領域アンカー等を適用したうえで確定します。
+        <strong>v0.8.0</strong> で階層親昇格（<code>hierarchy_parent</code>）と 2-pass スコアリングは廃止しました。
       </div>
     </section>
 
@@ -528,17 +522,13 @@
             <td>正規化 BM25 &gt; 0</td>
             <td>0 〜 1（正規化後）</td>
           </tr>
-          <tr>
-            <td>階層親昇格</td>
-            <td><code>hierarchy_parent</code></td>
-            <td>兄弟候補から親を推論</td>
-            <td>子候補 2 件以上</td>
-            <td>後述（最大 0.97）</td>
-          </tr>
         </tbody>
       </table>
 
       <p><code>generate()</code> のデフォルト引数: <code>top_k=10</code>（返却件数）、<code>per_method_k=40</code>（各手法の上位候補数上限）。</p>
+      <p class="lead" style="font-size:0.92rem;color:var(--muted)">
+        ※ v0.8.0 以前にあった <code>hierarchy_parent</code>（共通親昇格）は廃止されました。
+      </p>
     </section>
 
     <!-- 4. Index -->
@@ -691,14 +681,13 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
 
       <h3>Step A — ベーススコア（base）</h3>
       <pre class="formula">base = max(
-  hierarchy_parent_score,   // 未設定なら 0
   exact_score,              // 未設定なら 0
   0.5 × fuzzy + 0.3 × bm25 + 0.2 × token_score,
   0.75 × fuzzy + 0.25 × token_score
 )</pre>
 
       <ul>
-        <li>4 項のうち <strong>最大値</strong> を採用（未ヒットの手法は 0 として扱う）</li>
+        <li>3 項のうち <strong>最大値</strong> を採用（未ヒットの手法は 0 として扱う）</li>
         <li><code>exact</code> が存在する場合: <code>base = max(base, 0.96)</code> — 完全一致候補の下限を引き上げ</li>
       </ul>
 
@@ -777,55 +766,59 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
         <strong>減点対象外:</strong>
         <ul style="margin-bottom:0">
           <li><code>exact</code> マッチで見つかった候補（クエリが別名を直接指している）</li>
-          <li><code>hierarchy_parent</code> のみで昇格した候補（昇格スコアが既に子の penalized score を反映）</li>
         </ul>
       </div>
     </section>
 
-    <!-- 10. Hierarchy -->
-    <section id="hierarchy">
-      <h2>11. 階層親昇格（<code>hierarchy_parent</code>）</h2>
+    <!-- 11. Guards (replaces hierarchy + two-pass) -->
+    <section id="guards">
+      <h2>11. 弱誤マッチ抑制（親昇格の代替 · v0.8.0）</h2>
       <p>
-        複数の子領域（兄弟）が同時に候補になったとき、共通の親エントリを追加します。
-        例: thalamus の複数サブリージョンが候補 → <code>pulvinar of thalamus</code> の親を昇格。
+        かつての階層親昇格（兄弟候補から親を押し上げる）は、細語ヒットを阻害するケースがあったため
+        <strong>廃止</strong>しました。親への安全な吸収は、次のスコア減点と辞書で実現します。
       </p>
-
-      <h3>昇格条件</h3>
-      <ul>
-        <li>クエリに修飾語が<strong>ない</strong></li>
-        <li>同一 <code>parent_id</code> を持つ子候補が <strong>2 件以上</strong></li>
-        <li>親エントリの別名とクエリトークンに token Jaccard 一致がある（&gt; 0）</li>
-      </ul>
-
-      <h3>昇格スコア</h3>
-      <pre class="formula">hierarchy_parent_score = min(max(子候補の prelim_scores) + 0.08, 0.97)</pre>
-
-      <p>
-        <code>prelim_scores</code> は第 1 パスで算出した<strong>過細減点込み</strong>の暫定スコアです。
-        生の fuzzy スコア（例: 0.89）だけで親を昇格させると、ペナルティ後 0.77 の子を
-        0.97 の親が上回る「過昇格」が起きるため、暫定スコアを参照します。
-      </p>
+      <table>
+        <thead>
+          <tr><th>ルール</th><th>条件</th><th>効果</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>構造クラス衝突</td>
+            <td>クエリと候補のヘッドクラス不一致（例: cortex/area ↔ claustrum）</td>
+            <td>× 0.50</td>
+          </tr>
+          <tr>
+            <td>領域アンカー欠落</td>
+            <td>クエリの orbital / occipital / temporal 等を候補がカバーしない</td>
+            <td>× 0.48</td>
+          </tr>
+          <tr>
+            <td>複数形 nuclei</td>
+            <td>クエリが <code>nuclei</code> なのに候補が単一 <code>nucleus</code></td>
+            <td>× 0.72</td>
+          </tr>
+          <tr>
+            <td>辞書</td>
+            <td><code>homba_alias_rules.csv</code> / abbrev で親・近傍語へ誘導</td>
+            <td>exact/fuzzy ヒット</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- 11. Two-pass -->
-    <section id="twopass">
-      <h2>12. 2-pass スコアリング（v0.3 以降）</h2>
-      <p>親昇格スコアと子の final score の間に循環依存があるため、2 段階で処理します。</p>
-
+    <!-- 12. Pipeline -->
+    <section id="pipeline">
+      <h2>12. 処理パイプライン（1-pass）</h2>
       <pre class="formula">1. exact / fuzzy / bm25 で候補収集（手法別最大スコアを保持）
-2. 第1パス: 全候補に _score_candidate() → prelim_scores（specificity_penalty 込み）
-3. prelim_scores で _promote_common_parents() → hierarchy_parent 候補を追加
-4. 第2パス: 昇格後の全候補を再度 _score_candidate() で最終スコア化
-5. ソート → top_k 件を返却</pre>
+2. 全候補に _score_candidate() → 最終スコア（修飾語・penalty・アンカー込み）
+3. ソート → top_k 件を返却</pre>
 
       <div class="callout">
-        第 2 パスが必要な理由: 第 1 パス時点では存在しなかった <code>hierarchy_parent</code> 候補にも、
-        合成式・修飾語調整・penalty ルールを適用して最終順位を確定するため。
-        2-pass の計算コストは fuzzy 比較に比べ小さい。
+        v0.3〜v0.7 の 2-pass（予備スコア → 親昇格 → 再スコア）は、親昇格削除に伴い不要になったため廃止しました。
       </div>
     </section>
 
-    <!-- 12. Ranking -->
+    <!-- 13. Ranking -->
     <section id="ranking">
       <h2>13. ソートと出力</h2>
 
@@ -848,7 +841,7 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
           <tr><td><code>matched_alias</code></td><td>一致した HOMBA 側別名</td></tr>
           <tr><td><code>modifier_terms</code></td><td>抽出修飾語（<code>;</code> 区切り）</td></tr>
           <tr><td><code>modifier_match_score</code></td><td>修飾語一致率（0〜1）</td></tr>
-          <tr><td><code>hierarchy_reason</code></td><td>階層昇格理由（該当時のみ。例: <code>common_parent_of_3_candidates</code>）</td></tr>
+          <tr><td><code>hierarchy_reason</code></td><td>互換フィールド（v0.8.0 以降は常に空）</td></tr>
           <tr><td><code>best_method_score</code></td><td>単一手法の最高生スコア（内部デバッグ用に出力）</td></tr>
         </tbody>
       </table>
@@ -877,8 +870,10 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
           <tr><td>修飾語加点係数</td><td>0.12</td><td>× modifier_match_score</td></tr>
           <tr><td>修飾語不一致倍率</td><td>0.88</td><td>一致率 0 のとき（上限 0.88）</td></tr>
           <tr><td>specificity_penalty</td><td>0.86</td><td>過細語が余分にあるときの乗算</td></tr>
-          <tr><td>親昇格ボーナス</td><td>+ 0.08</td><td>max(子 prelim_scores) に加算</td></tr>
-          <tr><td>親昇格上限</td><td>0.97</td><td>hierarchy_parent_score のキャップ</td></tr>
+          <tr><td>構造クラス衝突</td><td>× 0.50</td><td>ヘッドクラス不一致</td></tr>
+          <tr><td>領域アンカー欠落</td><td>× 0.48</td><td>orbital/occipital 等を候補が欠く</td></tr>
+          <tr><td>複数形 nuclei 不一致</td><td>× 0.72</td><td>単一 nucleus への誤吸収抑制</td></tr>
+          <tr><td>weak-only 上限</td><td>0.38</td><td>識別語なしの弱一致キャップ</td></tr>
           <tr><td>per_method_k</td><td>40（デフォルト）</td><td>各手法の候補数上限</td></tr>
           <tr><td>top_k</td><td>10（デフォルト）</td><td>返却候補数</td></tr>
           <tr><td>スコア丸め</td><td>round(..., 6)</td><td>出力精度</td></tr>
@@ -950,7 +945,7 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.3.1 · <a href="about.html#contact">Contact / security</a>
+          · Engine v0.8.0 · <a href="about.html#contact">Contact / security</a>
         </p>
       </div>
     </footer>

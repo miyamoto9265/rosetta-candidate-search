@@ -1,7 +1,7 @@
 # ROSETTA Candidate Search — アルゴリズム仕様
 
-**バージョン**: v0.3.1  
-**最終更新**: 2026-06-21
+**バージョン**: v0.8.0  
+**最終更新**: 2026-07-11
 
 ---
 
@@ -134,15 +134,19 @@ INTERSECTION により、`nucleus` のような高頻度トークン単体では
 | bm25 | 全トークン | **UNION** | なし |
 | exact | — | `alias_map` 直接参照 | — |
 
-### 3-5. 2-pass スコアリング（v0.3 以降）
+### 3-5. スコアリング（1-pass）
 
-階層親昇格（`hierarchy_parent`）のスコアは、子候補の **penalty 適用後 final score** に依存する。1-pass では raw method score（例: fuzzy 0.89）で親を昇格させると、子が `specificity_penalty` 後 0.77 になっても親が 0.97 で上回る、という過昇格が起きる。この循環依存（親スコア ← 子 final score ← 親が候補に未追加）を解くため、スコアリングを 2 段階に分ける。
+候補収集（exact / fuzzy / bm25）の後、各候補に対して `_score_candidate()` を **1 回**適用し、最終スコアとする。
 
-1. **第1パス（予備スコア算出）**: 昇格前の候補すべてに `_score_candidate()` を適用し、specificity_penalty 込みの暫定スコア（`prelim_scores`）を得る。
-2. **階層親昇格**: `prelim_scores` を参照し、共通親を持つ子候補が複数ある場合に親エントリを追加する（例: `pulvinar of thalamus` の複数サブリージョンが候補 → 親を昇格）。昇格スコア = `min(max(子 prelim_scores) + 0.08, 0.97)`。
-3. **第2パス（最終スコア算出）**: 昇格後の全候補（`hierarchy_parent` 含む）を再度 `_score_candidate()` でスコア化し、ランキングに用いる。
+v0.3〜v0.7 では、階層親昇格（`hierarchy_parent`）のために予備スコア → 親追加 → 再スコアの **2-pass** を行っていた。
+v0.8.0 で親昇格を廃止したため、2-pass も不要になり削除した。
 
-Pass 2 が必要なのは、Pass 1 時点では存在しなかった `hierarchy_parent` 候補にも、合成式・modifier 調整・penalty ルールを適用して最終順位を確定するためである。2-pass の計算コストは fuzzy 比較に比べ小さい。
+親への「安全な吸収」は次のスコア側機構で代替する（詳細は 3-8）:
+
+- **領域アンカー必須**（orbital / occipital / temporal 等）: クエリが命名した領域語を候補がカバーしない場合は減点
+- **構造クラス衝突**（cortex↔claustrum、tract↔nucleus 等）
+- **複数形 nuclei 減点**: クエリが複数核を指すのに単一 nucleus だけを返す場合
+- **辞書**（`homba_alias_rules.csv` / `homba_abbrev_rules.csv`）による親・近傍語への誘導
 
 詳細な計算式は 3-8 を参照。
 
@@ -150,9 +154,7 @@ Pass 2 が必要なのは、Pass 1 時点では存在しなかった `hierarchy_
 
 クエリに存在しない細分類語（`inferior`、`lateral`、`core`、`shell`、`molecular` 等）が候補側の別名に含まれる場合、そのスコアを減点する。
 
-ただし以下の場合はペナルティを適用しない:
-- exact match で発見された候補
-- fuzzy / bm25 マッチがなく、`hierarchy_parent` のみで昇格した候補（昇格スコアは既に子の penalized score を反映）
+ただし **exact match** で発見された候補にはペナルティを適用しない。
 
 ### 3-7. modifier_terms によるスコア調整
 
@@ -171,7 +173,6 @@ Pass 2 が必要なのは、Pass 1 時点では存在しなかった `hierarchy_
 | `exact` | 正規化後のクエリバリアントと HOMBA 別名が完全一致 → **1.0** | 常に候補 |
 | `fuzzy` | クエリバリアントと各別名の `string_similarity()` の最大値 | スコア ≥ **0.45** |
 | `bm25` | トークン共起に基づく BM25 スコアを正規化した値 | 正規化スコア > 0 |
-| `hierarchy_parent` | 共通親昇格時に付与（後述） | 子候補 2 件以上 |
 
 同一エントリ・同一手法で複数ヒットした場合、その手法のスコアは **最大値** を採用する（`_add_candidate()`）。
 
@@ -211,7 +212,6 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)
 
 ```
 base = max(
-  hierarchy_parent_score,
   exact_score,
   0.5 × fuzzy + 0.3 × bm25 + 0.2 × token_score,
   0.75 × fuzzy + 0.25 × token_score
@@ -219,7 +219,7 @@ base = max(
 ```
 
 - `exact` が存在する場合: `base = max(base, 0.96)`（完全一致候補の下限を引き上げ）
-- 上記 4 項のうち **最大値** を採る（手法スコアが未設定の項は 0 として扱う）
+- 上記 3 項のうち **最大値** を採る（手法スコアが未設定の項は 0 として扱う）
 
 #### 3-8-3. modifier_terms による加減点
 
@@ -242,35 +242,31 @@ base = max(
 
 候補別名に含まれる specificity 語（`homba_token_rules.csv` の `modifier` / `weak` 種別）のうち、クエリに存在しない語が 1 つでもあれば **× 0.86**。該当なしなら **× 1.0**（減点なし）。
 
-`exact` マッチおよび `hierarchy_parent` のみで昇格した候補（fuzzy/bm25 なし）は減点対象外。
+`exact` マッチの候補は減点対象外。
 
-#### 3-8-5. 階層親昇格スコア
+#### 3-8-5. 追加の減点（親昇格の代替）
 
-第 1 パスで算出したペナルティ込みの暫定スコア（`prelim_scores`）を用いる。条件:
+exact 以外の候補に対し、必要に応じて次を乗算する。
 
-- クエリに修飾語が **ない**
-- 同一 `parent_id` を持つ子候補が **2 件以上**
-- 親エントリの別名とクエリトークンに Jaccard 一致がある
+| ルール | 条件 | 倍率 |
+|---|---|---|
+| 構造クラス衝突 | クエリと候補のヘッド構造クラスが不一致（cortex↔gray/claustrum、tract↔nucleus 等） | × 0.50 |
+| 接頭辞不一致 | クエリに pre-/retro-/juxta- 等があり候補が裸語幹のみ | × 0.62 |
+| 領域アンカー欠落 | クエリの orbital / occipital / temporal 等を候補別名がカバーしない | × 0.48 |
+| 複数形 nuclei 不一致 | クエリが `nuclei` なのに候補名が単一 `nucleus`（group/complex 等を除く） | × 0.72 |
+| weak-only キャップ | 識別語の共有がなく方向・汎用語だけが重なる | 上限 0.38 |
 
-昇格スコア:
-
-```
-hierarchy_parent_score = min(max(子候補の prelim_scores) + 0.08, 0.97)
-```
-
-子候補の暫定スコアを参照するため、親が未ペナルティの生スコアだけで子を上回ることはない。
-
-#### 3-8-6. 2-pass 処理の流れ
+#### 3-8-6. 処理の流れ
 
 ```
 1. exact / fuzzy / bm25 で候補収集（手法別最大スコアを保持）
    - fuzzy: token インデックス INTERSECTION で別名を絞り込み → string_similarity
    - bm25: token インデックス UNION で別名を絞り込み → BM25
-2. 第1パス: 全候補に _score_candidate() を適用（specificity_penalty 込み）→ prelim_scores
-3. prelim_scores を使って _promote_common_parents() で親昇格
-4. 第2パス: 昇格後の全候補を再度 _score_candidate() で最終スコア化
-5. score 降順 → name 昇順 → homba_id 昇順 でソート
+2. 全候補に _score_candidate() を適用（修飾語・penalty・アンカー等込み）
+3. score 降順 → name 昇順 → homba_id 昇順 でソート
 ```
+
+> **廃止 (v0.8.0):** `_promote_common_parents` / `hierarchy_parent` / 2-pass スコアリング。
 
 ---
 
@@ -289,12 +285,12 @@ hierarchy_parent_score = min(max(子候補の prelim_scores) + 0.08, 0.97)
 | `graph_order` | string | 階層グラフ上の順序番号 |
 | `depth` | integer | 階層の深さ |
 | `score` | float | マッチスコア（0〜1） |
-| `methods` | string | 使用した検索手法（`+` 区切り）。値: `exact` / `fuzzy` / `bm25` / `hierarchy_parent` |
+| `methods` | string | 使用した検索手法（`+` 区切り）。値: `exact` / `fuzzy` / `bm25` |
 | `matched_query` | string | 実際に照合に使われたクエリバリアント |
 | `matched_alias` | string | 一致した HOMBA 側の別名 |
 | `modifier_terms` | string | 抽出された修飾語（`;` 区切り） |
 | `modifier_match_score` | float | 修飾語の一致率（0〜1） |
-| `hierarchy_reason` | string | 階層昇格の理由（該当する場合のみ） |
+| `hierarchy_reason` | string | 互換フィールド。v0.8.0 以降は常に空 |
 
 ---
 

@@ -275,7 +275,7 @@ CHANGES = [
     ("方向修飾の条件付き有効化 (_effective_modifiers)",
      "方向語は候補プールで解決可能な場合のみスコアに反映。"),
     ("親昇格ガード (_promote_common_parents)",
-     "実効修飾が無いクエリは共通親へ安全にフォールバック。"),
+     "※ Round8 で削除。領域アンカー／構造クラス／辞書に置換。"),
     ("弱一致キャップ (weak_only_match ≤0.38)",
      "一般語のみの一致の上限を引き下げ。"),
     ("汎用語のみエイリアスの除去 (_drop_generic_only_aliases)",
@@ -293,6 +293,10 @@ CHANGES = [
     ("【Round6】括弧内容の保持バリアント",
      "「Anterior nucleus (thalamus)」→「anterior nucleus thalamus」も検索し、"
      "anterior nuclear complex へ誘導。"),
+    ("【Round8】親昇格の削除 + 弱誤マッチ抑制",
+     "_promote_common_parents を撤去。代わりに領域アンカー必須（orbital/occipital 等）、"
+     "area↔claustrum の構造クラス、複数形 nuclei 減点、FST/STS/orbital 等の辞書で、"
+     "昇格オフ時に増えた wrong を回収しつつ細語ヒット（GPi/OFC 等）を維持。"),
 ]
 
 
