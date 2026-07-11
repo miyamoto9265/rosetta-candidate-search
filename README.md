@@ -49,6 +49,13 @@ docs/             仕様書
 | `homba_alias_rules.csv` | HOMBA 側別名 |
 | `homba_abbrev_rules.csv` | クエリ側略語展開 |
 
+## HOMBA ontology（帰属・利用条件）
+
+本リポジトリに含まれる HOMBA（Harmonized Ontology of Mammalian Brain Anatomy）関連データは Allen Institute の著作物です。利用・再配布は [Allen Institute Terms of Use](https://alleninstitute.org/legal/terms-of-use) に従い、**研究・その他非商用目的**に限ります。商用での再配布・組み込みには Allen Institute の書面による許可が必要です（`terms@alleninstitute.org`）。公開利用時は [Citation Policy](https://alleninstitute.org/legal/citation-policy) に従って出典を明示してください。
+
+- 出典: [CCF-MAP — HOMBA ontology](https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html)
+- 本リポジトリの `rcs/HOMBA_v1_fixed.csv` は公式 CSV に対しタイポ修正等を加えた派生物です
+
 ## v0.8.0 の要点
 
 - 階層の共通親昇格（`_promote_common_parents`）と 2-pass スコアリングを廃止
