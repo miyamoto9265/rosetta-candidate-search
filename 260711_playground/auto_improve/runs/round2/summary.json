@@ -1,0 +1,76 @@
+{
+  "total_records": 921,
+  "datasets": {
+    "corpus": {
+      "records": 379,
+      "label_counts": {
+        "aligned": 194,
+        "broader_parent": 127,
+        "wrong": 33,
+        "partial_or_narrower": 19,
+        "no_consensus": 6
+      },
+      "certainty_counts": {
+        "high": 337,
+        "medium": 36,
+        "low": 6
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 341,
+        "2-1": 32,
+        "1-1-1": 6
+      }
+    },
+    "species": {
+      "records": 542,
+      "label_counts": {
+        "aligned": 294,
+        "broader_parent": 130,
+        "wrong": 59,
+        "ambiguous": 3,
+        "no_consensus": 7,
+        "partial_or_narrower": 48,
+        "source_or_ontology_issue": 1
+      },
+      "certainty_counts": {
+        "high": 451,
+        "medium": 84,
+        "low": 7
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 470,
+        "2-1": 65,
+        "1-1-1": 7
+      }
+    }
+  },
+  "overall": {
+    "label_counts": {
+      "aligned": 488,
+      "broader_parent": 257,
+      "wrong": 92,
+      "partial_or_narrower": 67,
+      "no_consensus": 13,
+      "ambiguous": 3,
+      "source_or_ontology_issue": 1
+    },
+    "certainty_counts": {
+      "high": 788,
+      "medium": 120,
+      "low": 13
+    },
+    "vote_split_pattern_counts": {
+      "3-0": 811,
+      "2-1": 97,
+      "1-1-1": 13
+    },
+    "uncertainty_tag_counts": {
+      "stable": 810,
+      "majority_vote": 91,
+      "split_vote": 9,
+      "majority_vote+low_certainty": 6,
+      "stable+low_certainty": 1,
+      "split_vote+low_certainty": 4
+    }
+  }
+}
