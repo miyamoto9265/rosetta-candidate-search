@@ -154,3 +154,59 @@ mesencephalic trigeminal nerve,mesencephalic trigeminal tract,Mesencephalic trig
 dorsal medial hypothalamic nucleus,dorsomedial hypothalamic nucleus,Dorsal medial = dorsomedial hypothalamic nucleus (HOMBA:10485).,no
 dorsomedial hypothalamus,dorsomedial hypothalamic nucleus,Short form for DMH.,no
 lateral olfactory tract,olfactory tract,Lateral olfactory tract maps to HOMBA:12073 olfactory tract (prefer tract over nucleus of LOT).,no
+cuneal cortex,cuneus,Cuneal cortex = HOMBA:12150 cuneus (gyrus).,no
+cuneal,cuneus,Short form cuneal → cuneus.,no
+precuneal cortex,precuneaus,Precuneal cortex = HOMBA:12137 precuneaus (gyrus) (HOMBA spelling).,no
+precuneal,precuneaus,Short form precuneal → precuneaus.,no
+supracalcarine cortex,primary visual cortex,Supracalcarine cortex ≈ superior bank of calcarine / V1.,no
+intracalcarine cortex,primary visual cortex,Intracalcarine cortex = banks of calcarine ≈ V1.,no
+intracalcarine cortex inferior,primary visual cortex,Inferior intracalcarine → V1.,no
+intracalcarine cortex superior,primary visual cortex,Superior intracalcarine → V1.,no
+retro mammillary nucleus,retromammillary area,Retro-mammillary nucleus = HOMBA:13073 retromammillary area.,no
+laterodorsal thalamic nucleus ventrolateral part,lateral dorsal nucleus of thalamus,LD ventrolateral part → lateral dorsal nucleus (no LD subdivision in HOMBA).,no
+laterodorsal thalamic nucleus dorsomedial part,lateral dorsal nucleus of thalamus,LD dorsomedial part → lateral dorsal nucleus.,no
+retrosplenial dysgranular area,retrosplenial cortex,Rdg → retrosplenial cortex parent (no Rdg row in HOMBA).,no
+dysgranular retrosplenial area,retrosplenial cortex,Word-order Rdg → retrosplenial cortex.,no
+inferior colliculus dorsal cortex,inferior colliculus,Dorsal cortex of IC → inferior colliculus parent (shell/central ambiguous).,no
+dorsal cortex of inferior colliculus,inferior colliculus,Word-order → IC parent.,no
+central opercular cortex,major insular cortex,Central opercular cortex nearest to insular/opercular cortex (HOMBA major insular).,no
+central opercular cortex anterior,major insular cortex,Anterior central opercular → major insular cortex.,no
+central opercular cortex posterior,major insular cortex,Posterior central opercular → major insular cortex.,no
+secondary visual area lateral part,dorsal secondary visual cortex,Atlas lateral secondary visual — prefer dorsal area 18a over ventral 18b.,no
+secondary visual area medial part,dorsal secondary visual cortex,Rodent medial secondary visual ≈ dorsal area 18a.,no
+retromammillary nucleus,retromammillary area,Fused form → retromammillary area.,no
+mircrocellular tegmentum,microcellular tegmental nucleus,Misspelling Mircrocellular → HOMBA:12281 microcellular tegmental nucleus.,no
+microcellular tegmentum,microcellular tegmental nucleus,Short form → microcellular tegmental nucleus.,no
+ventroposterior inferior thalamic nucleus,ventral posterior inferior nucleus,VPI = HOMBA:10426 ventral posterior inferior nucleus.,no
+ventroposterior inferior thalamus,ventral posterior inferior nucleus,VPI region → ventral posterior inferior nucleus.,no
+ventral posterior inferior thalamus,ventral posterior inferior nucleus,Split VPI wording.,no
+ventroposterior medial and lateral thalamic nuclei,ventral posterior nuclear complex of thalamus,VPM+VPL → HOMBA ventral posterior nuclear complex.,no
+ventroposterior medial and lateral thalamus,ventral posterior nuclear complex of thalamus,VPM+VPL region → VP complex.,no
+ventral posterior medial and lateral thalamus,ventral posterior nuclear complex of thalamus,Split form → VP complex.,no
+central gray nucleus,periaqueductal gray substance,Central gray nucleus conventionally = PAG (HOMBA:12209).,no
+central gray,periaqueductal gray substance,Central gray short form → PAG.,no
+mesencephalic reticular formation,midbrain reticular formation,Mesencephalic RF = HOMBA:12239 midbrain reticular formation.,no
+lenticular nucleus pallidum,globus pallidus,Lenticular nucleus (pallidum) specifies GP not putamen.,no
+anterior thalamus,anterior nuclear complex of thalamus,Anterior Thalamus → anterior nuclear complex (HOMBA:10392).,no
+posterior insular area,long insular gyri,Posterior insula ≈ long insular gyri (HOMBA:12177).,no
+anterior ventral insular area,agranular insular cortex,Anterior ventral insula ≈ agranular insular cortex (HOMBA:10328).,no
+anterior intraparietal area,intraparietal sulcus,AIP maps to intraparietal sulcus (HOMBA:10620) as nearest anchor.,no
+anterior commissure anterior limb,rostral anterior branch of anterior commissure,AC anterior limb = HOMBA:AA30484 rostral branch.,no
+anterior commissure posterior limb,caudal posterior branch of anterior commissure,AC posterior limb = HOMBA:AA30485 caudal branch.,no
+posterior interstitial nucleus of the anterior commissure,interstitial nucleus of posterior limb of anterior commissure,IPAC wording → HOMBA:10388.,no
+orbital cortex ventrolateral,orbital frontal cortex,Orbital cortex (ventrolateral) → orbital frontal cortex (avoid temporal VL).,no
+ventrolateral orbital cortex,orbital frontal cortex,Word order variant → OFC.,no
+supratemporal plane,planum temporale,Supratemporal plane ≈ planum temporale (HOMBA:12145).,no
+supratemporal plane anterior,planum polare,Anterior STP ≈ planum polare (HOMBA:12147).,no
+supratemporal plane posterior,planum temporale,Posterior STP ≈ planum temporale.,no
+ventricular system,lateral ventricles,Ventricular system unspecified → lateral ventricles as primary cavity set.,no
+ventricular system unspecified,lateral ventricles,Explicit unspecified form.,no
+medial dorsal tegmentum,dorsal tegmental nucleus,Medial dorsal tegmentum → dorsal tegmental nucleus.,no
+laterodorsal thalamic nucleus,lateral dorsal nucleus of thalamus,Laterodorsal thalamic nucleus = HOMBA lateral dorsal nucleus.,no
+lateral parietal cortex superior,superior parietal lobule,Lateral superior parietal ≈ superior parietal lobule.,no
+lateral occipital cortex,inferior occipital gyrus,Lateral occipital cortex nearest cortical gyrus anchor (prefer over TEO).,no
+lateral occipital cortex inferior,inferior occipital gyrus,Inferior LOC → inferior occipital gyrus.,no
+lateral occipital cortex superior,superior occipital gyrus,Superior LOC → superior occipital gyrus.,no
+ventral periolivary nuclei,periolivary nuclei,Ventral periolivary → periolivary nuclei parent (HOMBA:12464).,no
+cerebellar lobule 3 intermediate,lobule iii,Cerebellar Lobule 3 Intermediate → lobule III.,no
+temporal frontal cortex,frontal motor cortex,Likely typo/odd wording; map toward posterior frontal motor cortex.,no

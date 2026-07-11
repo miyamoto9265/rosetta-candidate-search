@@ -27,6 +27,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 RUNS = HERE / "runs"
 
+try:
+    from generate_wrong_report import ONTOLOGY_GAP_QUERIES
+except ImportError:
+    ONTOLOGY_GAP_QUERIES = {}
+
 LABEL_ORDER = [
     "aligned",
     "broader_parent",
@@ -218,6 +223,48 @@ def wrong_section(final_rows: dict) -> str:
     return "".join(parts)
 
 
+def is_ontology_gap(query: str) -> bool:
+    if query in ONTOLOGY_GAP_QUERIES:
+        return True
+    return any(
+        query.startswith(k + " ") or query.startswith(k + "(") or query.startswith(k + ",")
+        for k in ONTOLOGY_GAP_QUERIES
+    )
+
+
+def fixable_wrong_section(final_rows: dict) -> str:
+    """List all residual wrongs that are *not* ontology gaps."""
+    wrongs = sorted(
+        ((k, v) for k, v in final_rows.items() if v["final_label"] == "wrong"),
+        key=lambda item: (item[0][0], item[0][1]),
+    )
+    gaps = [(k, v) for k, v in wrongs if is_ontology_gap(k[1])]
+    fixable = [(k, v) for k, v in wrongs if not is_ontology_gap(k[1])]
+    rows = []
+    for (dataset, query), row in fixable:
+        reason = (row.get("pass3_reason") or row.get("pass1_reason") or "")[:180]
+        note = ""
+        # optional hint from gap map's sibling file is not needed; keep score/methods
+        rows.append(
+            f"<tr><td class='ds'>{esc(dataset)}</td>"
+            f"<td class='q'>{esc(query)}</td>"
+            f"<td><div class='name'>{esc(row['top_name'])}</div>"
+            f"<div class='reason'>{esc(reason)}</div></td>"
+            f"<td class='meta'>{esc(row.get('score', ''))}<br>{esc(row.get('methods', ''))}</td></tr>"
+        )
+    return (
+        f"<p class='muted'>残存 wrong {len(wrongs)} 件のうち、オントロジー欠損 "
+        f"<b>{len(gaps)}</b> 件を除いた <b>{len(fixable)}</b> 件を列挙。"
+        "スコアリング・辞書・構造クラス等でまだ改善余地があるケース。</p>"
+        "<table class='cases'><thead><tr>"
+        "<th>set</th><th>query</th><th>top1 / 判定理由</th><th>score / methods</th>"
+        "</tr></thead><tbody>"
+        + ("".join(rows) if rows else
+           "<tr><td colspan='4' class='muted'>該当なし</td></tr>")
+        + "</tbody></table>"
+    )
+
+
 CHANGES = [
     ("語境界を尊重した包含スコア (_boundary_contains)",
      "部分文字列の包含ボーナスを語境界でのみ許可。「precuneiform / retroreuniens」等の"
@@ -272,6 +319,7 @@ def render(baseline_tag: str, final_tag: str) -> str:
 
     improved_rows = "".join(case_row(d, q, b, f) for d, q, b, f in improved)
     regressed_rows = "".join(case_row(d, q, b, f) for d, q, b, f in regressed)
+    fixable_wrong_html = fixable_wrong_section(frows)
 
     def ds_block(name: str) -> str:
         bd = bsum["datasets"][name]["label_counts"]
@@ -332,12 +380,13 @@ details.fam > summary {{ cursor:pointer; font-weight:600; padding:8px 2px; }}
 ul.changes {{ list-style:none; padding:0; }}
 ul.changes li {{ background:#fff; border:1px solid var(--line); border-left:4px solid #2f6f9f;
   border-radius:8px; padding:12px 14px; margin:8px 0; }}
+.meta {{ color:var(--muted); font-size:12px; width:120px; }}
 .note {{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-size:14px; }}
 </style></head>
 <body><div class="wrap">
 <h1>RCS アルゴリズム 自律改善レポート</h1>
-<p class="sub">テストデータ: rcs_corpus.csv + rcs_species.csv（計 {ftot} クエリ）・
-評価: DeepSeek 3-pass 整合性判定・エンジン v0.6.0・生成: {now}</p>
+<p class="sub">テストデータ: rcs_corpus_no_direction.csv + rcs_species.csv（計 {ftot} クエリ）・
+評価: DeepSeek 3-pass 整合性判定・生成: {now}</p>
 
 <div class="cards">
   <div class="card"><div class="k">wrong（誤り）</div>
@@ -399,16 +448,19 @@ HOMBA 側の別名整備。</li>
 </ul>
 </div>
 
+<h2>8. 残存 wrong（オントロジー欠損以外）</h2>
+{fixable_wrong_html}
+
 </div></body></html>"""
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--baseline", default="baseline")
-    ap.add_argument("--final", default="round6")
+    ap.add_argument("--baseline", default="baseline_nodir")
+    ap.add_argument("--final", default="round7_nodir")
     ap.add_argument(
         "--out",
-        default=str(HERE.parent / "top1_consistency_review" / "auto_improve_report.html"))
+        default=str(HERE.parent / "top1_consistency_review" / "auto_improve_report_nodir.html"))
     args = ap.parse_args()
 
     out = Path(args.out)

@@ -15,6 +15,7 @@
 
 ```
 rcs/              コアアルゴリズム（正本。Lambda もここを import）
+homex/            HOMBA 細分拡張（HOMEX）。本体 CSV は変更しない
 web/              フロントエンド + Lambda HTTP アダプター
 scripts/          デプロイ・運用スクリプト（package_lambda, build_generator_cache 等）
 build_testdata/   コーパス構築・評価データ

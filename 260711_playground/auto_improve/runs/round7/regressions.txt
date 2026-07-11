@@ -1,0 +1,4 @@
+wrong regressions excl targeted43: 3
+[corpus] Temporal frontal cortex (anterior): partial_or_narrower -> wrong (frontal motor cortex (posterior frontal cortex))
+[species] Paraventricular Anterior Thalamus: broader_parent -> wrong (anterior nuclear complex of thalamus)
+[species] Ventral Lateral Anterior Thalamus: no_consensus -> wrong (ventral posterior nuclear complex of thalamus)

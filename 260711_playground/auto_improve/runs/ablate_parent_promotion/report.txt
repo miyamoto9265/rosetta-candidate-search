@@ -1,0 +1,144 @@
+Parent-promotion ablation  (engine v0.6.0)
+============================================================
+
+## rcs_core.csv (ground-truth ID match)
+  WITH    exact=230/230 (100.0%)  top3=100.0%
+  WITHOUT exact=230/230 (100.0%)  top3=100.0%
+  Δ exact (WITH - WITHOUT) = +0
+  top1 changed=0  promotion_helps=0  promotion_hurts=0
+
+## corpus_no_direction (DeepSeek 3-pass)
+  WITH    n=331  aligned=192  broader=93  partial=21  wrong=21  other=4
+          aligned+broader=285 (86.1%)  wrong_rate=6.3%
+  WITHOUT n=331  aligned=194  broader=86  partial=22  wrong=23  other=6
+          aligned+broader=280 (84.6%)  wrong_rate=6.9%
+  top1 changed=20  promotion_better_label=8  promotion_worse_label=7
+  label-changing cases (up to 40):
+    [promotion_worse_label] [corpus_no_direction] A1 catecholaminergic cell group
+      WITHOUT no_consensus (retro-olivary cell group)
+      WITH    wrong (inner granular cell zone of cerebellum)
+    [promotion_better_label] [corpus_no_direction] Middle occipital gyrus
+      WITHOUT wrong (middle ectosylvian gyrus)
+      WITH    broader_parent (occipital lobe)
+    [promotion_worse_label] [corpus_no_direction] Internal globus pallidus
+      WITHOUT aligned (internal division of globus pallidus)
+      WITH    broader_parent (globus pallidus (paleostriatum))
+    [promotion_worse_label] [corpus_no_direction] Intracalcarine cortex
+      WITHOUT broader_parent (cerebral cortex)
+      WITH    wrong (dorsolateral temporal cortex)
+    [promotion_worse_label] [corpus_no_direction] Cuneal cortex
+      WITHOUT ambiguous (area x of visual cortex)
+      WITH    wrong (prefrontal cortex)
+    [promotion_worse_label] [corpus_no_direction] Frontal orbital cortex
+      WITHOUT aligned (orbital frontal cortex)
+      WITH    broader_parent (frontal cortex)
+    [promotion_worse_label] [corpus_no_direction] Supracalcarine cortex
+      WITHOUT broader_parent (cerebral cortex)
+      WITH    wrong (dorsolateral temporal cortex)
+    [promotion_better_label] [corpus_no_direction] Temporal occipital fusiform cortex
+      WITHOUT partial_or_narrower (occipital cortex)
+      WITH    broader_parent (temporal cortex)
+    [promotion_better_label] [corpus_no_direction] Fundal superior temporal area
+      WITHOUT wrong (medial superior temporal area)
+      WITH    broader_parent (temporal lobe)
+    [promotion_worse_label] [corpus_no_direction] Anterior intraparietal area
+      WITHOUT broader_parent (intraparietal sulcus)
+      WITH    wrong (anterior amygdaloid area)
+    [promotion_better_label] [corpus_no_direction] Temporal area STGg
+      WITHOUT wrong (temporal claustrum)
+      WITH    broader_parent (temporal lobe)
+    [promotion_better_label] [corpus_no_direction] Temporal area STSdp
+      WITHOUT wrong (temporal claustrum)
+      WITH    broader_parent (temporal lobe)
+    [promotion_better_label] [corpus_no_direction] Temporal area STSda
+      WITHOUT wrong (temporal claustrum)
+      WITH    broader_parent (temporal lobe)
+    [promotion_better_label] [corpus_no_direction] Temporal area STSva
+      WITHOUT wrong (temporal claustrum)
+      WITH    broader_parent (temporal lobe)
+    [promotion_better_label] [corpus_no_direction] Temporal area STSvp
+      WITHOUT wrong (temporal claustrum)
+      WITH    broader_parent (temporal lobe)
+
+## species (DeepSeek 3-pass)
+  WITH    n=542  aligned=304  broader=134  partial=51  wrong=41  other=12
+          aligned+broader=438 (80.8%)  wrong_rate=7.6%
+  WITHOUT n=542  aligned=309  broader=127  partial=56  wrong=39  other=11
+          aligned+broader=436 (80.4%)  wrong_rate=7.2%
+  top1 changed=34  promotion_better_label=10  promotion_worse_label=14
+  label-changing cases (up to 40):
+    [promotion_worse_label] [species] Anterior Thalamus
+      WITHOUT aligned (anterior nuclear complex of thalamus)
+      WITH    wrong (ventroanterior-ventrolateral nuclear complex of thalamus)
+    [promotion_better_label] [species] Centrolateral and Paracentral Thalamus
+      WITHOUT partial_or_narrower (paracentral nucleus of thalamus)
+      WITH    broader_parent (rostral intralaminar nuclei of thalamus)
+    [promotion_better_label] [species] Centromedial-parafascicular Thalamus
+      WITHOUT partial_or_narrower (parafascicular nucleus of thalamus)
+      WITH    broader_parent (caudal intralaminar nuclei of thalamus)
+    [promotion_worse_label] [species] Cerebellar Lobule 3 Intermediate
+      WITHOUT broader_parent (cerebellar lobules)
+      WITH    wrong (cerebellar morphology)
+    [promotion_worse_label] [species] Internal globus pallidus
+      WITHOUT aligned (internal division of globus pallidus)
+      WITH    broader_parent (globus pallidus (paleostriatum))
+    [promotion_worse_label] [species] Linear raphe
+      WITHOUT partial_or_narrower (caudal linear nucleus of the raphe)
+      WITH    no_consensus (linear nucleus of the midbrain)
+    [promotion_worse_label] [species] Peri-basal region
+      WITHOUT no_consensus (regions of basal forebrain)
+      WITH    ambiguous (basal forebrain)
+    [promotion_worse_label] [species] Retromammillary Hypothalamus
+      WITHOUT aligned (retromammillary area)
+      WITH    broader_parent (hypothalamus)
+    [promotion_better_label] [species] Reuniens-rhomboid-xiphoid Thalamus
+      WITHOUT partial_or_narrower (rhomboid (central) nucleus of thalamus)
+      WITH    broader_parent (ventral midline nuclei of thalamus)
+    [promotion_worse_label] [species] Ventroposterior inferior thalamic nucleus
+      WITHOUT broader_parent (ventral posterior nuclear complex of thalamus)
+      WITH    wrong (dorsal midline nuclei of thalamus)
+    [promotion_worse_label] [species] Ventroposterior Inferior Thalamus
+      WITHOUT broader_parent (ventral posterior nuclear complex of thalamus)
+      WITH    wrong (lateroposterior-pulvinar complex)
+    [promotion_better_label] [species] Visceral Motor Nuclei
+      WITHOUT wrong (facial nucleus)
+      WITH    partial_or_narrower (efferent nuclei of the cranial nerves in midbrain)
+    [promotion_better_label] [species] Amygdaloid area (unspecified)
+      WITHOUT partial_or_narrower (anterior amygdaloid area)
+      WITH    aligned (regions of amygdaloid complex)
+    [promotion_better_label] [species] Amygdaloid area, unspecified
+      WITHOUT partial_or_narrower (amygdaloid transition areas)
+      WITH    aligned (regions of amygdaloid complex)
+    [promotion_worse_label] [species] Cochlear nerve
+      WITHOUT aligned (cochlear root of vestibulocochlear nerve)
+      WITH    broader_parent (root of vestibulocochlear nerve)
+    [promotion_better_label] [species] Corpus callosum and associated subcortical white matter
+      WITHOUT partial_or_narrower (corpus callosum)
+      WITH    broader_parent (white matter of brain)
+    [promotion_better_label] [species] Dorsolateral orbital area
+      WITHOUT wrong (dorsal fourth visual area (dorsolateral visual cortex, DL))
+      WITH    broader_parent (orbital gyri)
+    [promotion_better_label] [species] Frontal association area 3
+      WITHOUT wrong (rhombomere 3)
+      WITH    broader_parent (frontal lobe)
+    [promotion_worse_label] [species] Inferior colliculus, central nucleus
+      WITHOUT aligned (central nucleus of inferior colliculus)
+      WITH    broader_parent (inferior colliculus)
+    [promotion_worse_label] [species] Laterodorsal thalamic nucleus, dorsomedial part
+      WITHOUT broader_parent (lateral dorsal nucleus of thalamus)
+      WITH    wrong (ventral midline nuclei of thalamus)
+    [promotion_worse_label] [species] Laterodorsal thalamic nucleus, ventrolateral part
+      WITHOUT broader_parent (lateral dorsal nucleus of thalamus)
+      WITH    wrong (ventroanterior-ventrolateral nuclear complex of thalamus)
+    [promotion_worse_label] [species] Perirhinal area 36
+      WITHOUT aligned (ectorhinal cortex (area 36))
+      WITH    broader_parent (perirhinal cortical region)
+    [promotion_better_label] [species] Ventrolateral orbital area
+      WITHOUT wrong (ventrolateral division of AV)
+      WITH    broader_parent (orbital gyri)
+    [promotion_worse_label] [species] Vestibular nerve
+      WITHOUT aligned (vestibular root of vestibulocochlear nerve)
+      WITH    partial_or_narrower (root of vestibulocochlear nerve)
+
+## Verdict
+rcs_core: parent promotion changes exact matches by +0 (helps 0 / hurts 0 among changed top-1). corpus_no_direction: WITH aligned+broader=285 wrong=21; WITHOUT aligned+broader=280 wrong=23 (Δgood=+5, Δwrong=-2). species: WITH aligned+broader=438 wrong=41; WITHOUT aligned+broader=436 wrong=39 (Δgood=+2, Δwrong=+2). Overall: mixed — inspect per-dataset Δ; promotion may help some sets and hurt others.
