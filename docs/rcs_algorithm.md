@@ -231,8 +231,6 @@ base = max(
 | 修飾語あり & 一致率 > 0 | `base + 0.12 × modifier_match_score`（上限 1.0） |
 | 修飾語あり & 一致率 = 0 | `base × 0.88`（上限 0.88） |
 
-テスト実行時は、修飾語があり `modifier_match_score < 1.0` の候補に `modifier_conflict` レビューフラグが付与される（`generate()` 出力自体には含まれない）。
-
 #### 3-8-4. specificity_penalty（過細候補の減点）
 
 修飾語調整後、以下を **すべて** 満たす候補にのみ乗算する。

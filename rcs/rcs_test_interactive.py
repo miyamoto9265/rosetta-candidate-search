@@ -16,7 +16,6 @@ REPO_ROOT = RCS_DIR.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from rcs.review import review_flag_for
 from rcs.rosetta_candidate_generator import (
     DEFAULT_ALIAS_RULES_CSV,
     DEFAULT_TOKEN_RULES_CSV,

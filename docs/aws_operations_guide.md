@@ -172,7 +172,6 @@ rcs/
   rosetta_candidate_generator.py
   generator_cache.py
   generator_cache.pkl      ← 事前構築索引
-  review.py
   HOMBA_v1_fixed.csv
   homba_*_rules.csv
 ```
