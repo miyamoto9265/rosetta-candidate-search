@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>2026-06-25 RCS review reports — ROSETTA Candidate Search</title>
-    <meta name="description" content="2026-06-25 に作成した RCS top-1 整合性レビューと top-1 変化55件の再評価レポートへのリンク。" />
+    <title>2026-07-11 RCS review reports — ROSETTA Candidate Search</title>
+    <meta name="description" content="2026-07-11 の RCS 改善検証レポート: nodir コヒーレンス評価、親昇格アブレーション、v1 validation。" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://rcs.mymt.site/reports/2026-06-25.html" />
+    <link rel="canonical" href="https://rcs.mymt.site/reports/2026-07-11.html" />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../site-nav.css" />
     <link rel="stylesheet" href="../site-trust.css" />
@@ -55,6 +55,11 @@
         color: var(--muted);
         line-height: 1.7;
       }
+
+      .archive-link {
+        margin-top: 24px;
+        color: var(--muted);
+      }
     </style>
   </head>
   <body>
@@ -65,7 +70,7 @@
           <a href="../index.html">候補検索</a>
           <a href="../scoring-guide.html">スコアリング解説</a>
           <a href="../walkthrough-bla.html">Walkthrough (BLA)</a>
-          <a href="./2026-07-11.html">Reports</a>
+          <a href="./2026-07-11.html" aria-current="page">Reports</a>
           <a href="../about.html">このサイトについて</a>
         </nav>
       </div>
@@ -73,46 +78,58 @@
 
     <main class="page">
       <section class="hero">
-        <p class="eyebrow">Reports / 2026-06-25</p>
-        <h1>2026-06-25 RCS review reports</h1>
+        <p class="eyebrow">Reports / 2026-07-11</p>
+        <h1>2026-07-11 RCS review reports</h1>
         <p class="lead">
-          ROSETTA Candidate Search の改善検証中に作成した、top-1 候補のLLMレビュー結果です。
-          どちらも確立済みの正解データではなく、レビュー補助のための分析レポートです。
+          エンジン v0.8.0 周辺の改善検証で作成した top-1 整合性レビューです。
+          確立済みの正解データではなく、レビュー補助のための分析レポートです。
         </p>
       </section>
 
       <section class="report-card">
         <h2>このページについて</h2>
         <p>
-          今日作成した2つのHTMLレポートへアクセスするための索引ページです。
-          レポート本体は静的HTMLとして同じフロントエンド配下に配置しています。
+          方向なしコーパス（nodir）での baseline→round8 改善、親昇格アブレーション、
+          および v1 validation の3レポートへの索引です。
         </p>
         <ul class="meta-list">
-          <li>作成日: 2026-06-25</li>
-          <li>対象: RCS top-1 candidate review</li>
-          <li>判定: DeepSeek flash 2回 + DeepSeek pro 1回の3パスレビュー</li>
+          <li>作成日: 2026-07-11</li>
+          <li>対象: RCS top-1 candidate review（direction なしコーパス含む）</li>
+          <li>判定: DeepSeek 3パスレビュー（キャッシュ再利用＋差分判定）</li>
         </ul>
       </section>
 
       <section class="report-grid" aria-label="レポート一覧">
         <article class="report-card">
-          <h2>Top-1 Absolute Consistency Review</h2>
+          <h2>Auto-improve (nodir)</h2>
           <p>
-            入力CSVに記録された各 <code>query</code> と既存 top-1 candidate が、
-            そもそも整合しているかを全921件で判定したレポートです。
+            baseline_nodir から round8_nodir までの改善結果。
+            wrong / aligned+broader / improve・regress の集計とケース一覧です。
           </p>
-          <a class="report-link" href="./2026-06-25/top1_consistency_report.html">レポートを開く</a>
+          <a class="report-link" href="./2026-07-11/auto_improve_report_nodir.html">レポートを開く</a>
         </article>
 
         <article class="report-card">
-          <h2>Report 03: Changed Top-1 Review</h2>
+          <h2>Parent-promotion ablation</h2>
           <p>
-            top-1 が変化した55件だけを対象に、baseline candidate と improved candidate の
-            どちらが元の <code>query</code> により整合するかを再判定したレポートです。
+            共通親昇格（hierarchy parent promotion）をオフにしたアブレーション結果。
+            round7 との差分（改善・悪化）をまとめています。
           </p>
-          <a class="report-link" href="./2026-06-25/report_03.html">レポートを開く</a>
+          <a class="report-link" href="./2026-07-11/ablate_parent_promotion_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>v1 Validation Report</h2>
+          <p>
+            初期検証セットに対する top-1 整合性レビューの詳細レポートです。
+          </p>
+          <a class="report-link" href="./2026-07-11/validation_report.html">レポートを開く</a>
         </article>
       </section>
+
+      <p class="archive-link">
+        過去レポート: <a href="./2026-06-25.html">2026-06-25</a>
+      </p>
     </main>
 
     <footer class="site-footer" role="contentinfo">
@@ -129,7 +146,7 @@
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.3.1 · <a href="../about.html#contact">Contact / security</a>
+          · Engine v0.8.0 · <a href="../about.html#contact">Contact / security</a>
         </p>
       </div>
     </footer>
