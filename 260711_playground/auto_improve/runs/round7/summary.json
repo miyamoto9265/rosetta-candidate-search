@@ -1,0 +1,22 @@
+{
+  "engine": "0.7.0",
+  "n": 921,
+  "label_counts": {
+    "aligned": 523,
+    "broader_parent": 274,
+    "wrong": 33,
+    "partial_or_narrower": 75,
+    "no_consensus": 12,
+    "ambiguous": 3,
+    "source_or_ontology_issue": 1
+  },
+  "round6_label_counts": {
+    "aligned": 504,
+    "broader_parent": 260,
+    "wrong": 66,
+    "partial_or_narrower": 74,
+    "no_consensus": 13,
+    "ambiguous": 3,
+    "source_or_ontology_issue": 1
+  }
+}

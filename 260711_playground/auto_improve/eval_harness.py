@@ -50,7 +50,7 @@ from rcs.rosetta_candidate_generator import RosettaCandidateGenerator  # noqa: E
 
 RCS_DIR = REPO_ROOT / "rcs"
 HOMBA_CSV = RCS_DIR / "HOMBA_v1_fixed.csv"
-CORPUS_CSV = REPO_ROOT / "build_testdata" / "rcs_corpus.csv"
+CORPUS_CSV = REPO_ROOT / "build_testdata" / "rcs_corpus_no_direction.csv"
 SPECIES_CSV = REPO_ROOT / "build_testdata" / "rcs_species.csv"
 
 CACHE_DIR = HERE / "cache"

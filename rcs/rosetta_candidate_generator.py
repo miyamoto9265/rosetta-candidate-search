@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# VERSION: 0.6.0
+# VERSION: 0.7.0
 # Versioning rule:
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-ENGINE_VERSION = "0.6.0"
+ENGINE_VERSION = "0.7.0"
 
 # Pure positional / directional words.  On their own these do not identify a
 # structure: two unrelated regions can both be "posterior" or "ventral".  They
@@ -86,6 +86,8 @@ _STRUCTURE_CLASS_TOKENS: dict[str, frozenset[str]] = {
     "ventricle": frozenset({"ventricle", "ventricles"}),
     "sulcus": frozenset({"sulcus", "sulci", "fissure", "fissures"}),
     "organ": frozenset({"cochlea", "apparatus"}),
+    "cortex": frozenset({"cortex", "cortical", "gyrus", "gyri"}),
+    "lobule": frozenset({"lobule", "lobules"}),
 }
 
 # Distinguishing morphological prefixes.  When the query carries one of these
