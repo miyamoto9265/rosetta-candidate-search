@@ -3,9 +3,9 @@
 
 Classification
 --------------
-* no_finer_ontology — HOMBA has no child/near-child that better matches the query
+* no_finer_ontology  EHOMBA has no child/near-child that better matches the query
   (parent hit is the best available absorption).
-* finer_exists — a more specific HOMBA term exists (usually a descendant of the
+* finer_exists  Ea more specific HOMBA term exists (usually a descendant of the
   returned parent, or a high-similarity more-specific sibling) but RCS ranked
   the parent first.
 
@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO))
 
 from rcs.rosetta_candidate_generator import (  # noqa: E402
@@ -43,7 +43,7 @@ CHILD_SIM_THRESH = 0.68
 NEAR_SIM_THRESH = 0.85
 MARGIN = 0.03
 
-# Query tokens that mean "exclude this part" — matching that part is NOT finer.
+# Query tokens that mean "exclude this part"  Ematching that part is NOT finer.
 EXCLUDE_MARKERS = ("excluding", "except", "without", "minus")
 
 
@@ -242,10 +242,10 @@ def classify_case(row: dict, gen: RosettaCandidateGenerator, children: dict) -> 
         return {
             "bucket": "no_finer_ontology",
             "reason": (
-                f"親配下にクエリをより良く説明する子が無い"
-                f"（parent_sim={parent_sim:.2f}"
-                + (f", 親が未カバー: {', '.join(sorted(parent_uncovered))}" if parent_uncovered else "")
-                + "）"
+                f"親配下にクエリをより良く説明する子が無ぁE
+                f"�E�Earent_sim={parent_sim:.2f}"
+                + (f", 親が未カバ�E: {', '.join(sorted(parent_uncovered))}" if parent_uncovered else "")
+                + "�E�E
             ),
             "candidate": "",
             "candidate_id": "",
@@ -253,13 +253,13 @@ def classify_case(row: dict, gen: RosettaCandidateGenerator, children: dict) -> 
             "child_sim": 0.0,
         }
 
-    where = "親の子孫" if best["under_parent"] else "階層外の高類似語"
+    where = "親の子孫" if best["under_parent"] else "階層外�E高類似誁E
     return {
         "bucket": "finer_exists",
         "reason": (
-            f"より細かい候補あり（{where}）: {best['name']} "
+            f"より細かい候補あり！Ewhere}�E�E {best['name']} "
             f"(sim={best['sim']:.2f} vs parent {parent_sim:.2f}"
-            + ("; 追加カバーあり" if best["covers_extra"] else "")
+            + ("; 追加カバ�Eあり" if best["covers_extra"] else "")
             + ")"
         ),
         "candidate": best["name"],
@@ -303,8 +303,8 @@ def render(cases: list[dict]) -> str:
         head = (
             "<table class='cases'><thead><tr>"
             "<th>set</th><th>query</th><th>top1 (parent)</th>"
-            + ("<th>より細かい候補</th>" if show_cand else "<th>親スコア</th>")
-            + "<th>分類理由</th><th>DeepSeek理由</th>"
+            + ("<th>より細かい候裁E/th>" if show_cand else "<th>親スコア</th>")
+            + "<th>刁E��理由</th><th>DeepSeek琁E��</th>"
             "</tr></thead><tbody>"
         )
         return head + "".join(body) + "</tbody></table>"
@@ -312,7 +312,7 @@ def render(cases: list[dict]) -> str:
     return f"""<!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>broader_parent 分析（細語の有無）</title>
+<title>broader_parent 刁E���E�細語�E有無�E�E/title>
 <style>
 :root {{ --fg:#1c1c1e; --muted:#6b6b70; --line:#e3e3e8; --bg:#fbfbfd; --ok:#1a7f37; --warn:#8a4b08; }}
 * {{ box-sizing:border-box; }}
@@ -349,43 +349,41 @@ details {{ background:#fff; border:1px solid var(--line); border-radius:8px; mar
 details > summary {{ cursor:pointer; font-weight:600; padding:8px 2px; }}
 ul.compact {{ margin:6px 0 0 18px; padding:0; font-size:13.5px; }}
 </style></head><body><div class="wrap">
-<h1>broader_parent 分析レポート</h1>
-<p class="sub">ソース: round7_nodir（rcs_corpus_no_direction + rcs_species）·
-broader_parent {len(cases)} 件 · 生成: {now}</p>
+<h1>broader_parent 刁E��レポ�EチE/h1>
+<p class="sub">ソース: round7_nodir�E�Ecs_corpus_no_direction + rcs_species�E�·
+broader_parent {len(cases)} 件 · 生�E: {now}</p>
 
 <div class="cards">
-  <div class="card"><div class="k">broader_parent 合計</div><div class="v">{len(cases)}</div>
+  <div class="card"><div class="k">broader_parent 合訁E/div><div class="v">{len(cases)}</div>
     <div class="s">{ds_count(cases)}</div></div>
-  <div class="card ok"><div class="k">細語が存在しない（親ヒット妥当）</div><div class="v">{len(no_finer)}</div>
+  <div class="card ok"><div class="k">細語が存在しなぁE��親ヒット妥当！E/div><div class="v">{len(no_finer)}</div>
     <div class="s">{ds_count(no_finer)} · {100*len(no_finer)/len(cases):.0f}%</div></div>
-  <div class="card warn"><div class="k">細語があるのに親にヒット</div><div class="v">{len(finer)}</div>
+  <div class="card warn"><div class="k">細語があるのに親にヒッチE/div><div class="v">{len(finer)}</div>
     <div class="s">{ds_count(finer)} · {100*len(finer)/len(cases):.0f}%</div></div>
 </div>
 
 <div class="note">
-<strong>分類方針</strong>
+<strong>刁E��方釁E/strong>
 <ul class="compact">
-<li><strong>細語が存在しない</strong> — 返した親の子孫（または十分に深い高類似語）に、
-クエリの区別語を親より良く説明する HOMBA 語が見つからない。親への吸収はオントロジー上妥当。</li>
-<li><strong>細語があるのに親にヒット</strong> — 親の子孫、または構造クラス一致の深い高類似語として
-より具体的な候補があるのに、RCS が親を top1 にした。スコアリング／辞書／親昇格の改善余地。</li>
-<li>判定は類似度・トークンカバー・構造クラス衝突・excluding 句の除外を組み合わせたヒューリスティック。
-境界例は DeepSeek 理由欄と照合すること。</li>
+<li><strong>細語が存在しなぁE/strong>  E返した親の子孫�E�また�E十�Eに深ぁE��類似語）に、Eクエリの区別語を親より良く説明すめEHOMBA 語が見つからなぁE��親への吸収�Eオントロジー上妥当、E/li>
+<li><strong>細語があるのに親にヒッチE/strong>  E親の子孫、また�E構造クラス一致の深ぁE��類似語として
+より具体的な候補があるのに、RCS が親めEtop1 にした。スコアリング�E�辞書�E�親昁E��の改喁E��地、E/li>
+<li>判定�E類似度・ト�Eクンカバ�E・構造クラス衝突�Eexcluding 句の除外を絁E��合わせたヒューリスチE��チE��、E墁E��例�E DeepSeek 琁E��欁E��照合すること、E/li>
 </ul>
 </div>
 
-<h2><span class="badge ok">細語が存在しない</span> {len(no_finer)} 件
-<span style="font-weight:400;color:var(--muted);font-size:13px">（{ds_count(no_finer)}）</span></h2>
+<h2><span class="badge ok">細語が存在しなぁE/span> {len(no_finer)} 件
+<span style="font-weight:400;color:var(--muted);font-size:13px">�E�Eds_count(no_finer)}�E�E/span></h2>
 <section class="ok">
-<details><summary>一覧を表示（{len(no_finer)}）</summary>
+<details><summary>一覧を表示�E�Elen(no_finer)}�E�E/summary>
 {table(no_finer, show_cand=False)}
 </details>
 </section>
 
-<h2><span class="badge warn">細語があるのに親にヒット</span> {len(finer)} 件
-<span style="font-weight:400;color:var(--muted);font-size:13px">（{ds_count(finer)}）</span></h2>
+<h2><span class="badge warn">細語があるのに親にヒッチE/span> {len(finer)} 件
+<span style="font-weight:400;color:var(--muted);font-size:13px">�E�Eds_count(finer)}�E�E/span></h2>
 <section class="warn">
-<details open><summary>一覧を表示（{len(finer)}）— 改善優先</summary>
+<details open><summary>一覧を表示�E�Elen(finer)}�E� E改喁E��允E/summary>
 {table(finer, show_cand=True)}
 </details>
 </section>

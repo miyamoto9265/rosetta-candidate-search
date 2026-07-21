@@ -31,7 +31,7 @@ from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 
@@ -118,7 +118,7 @@ def build_baseline_nodir(nodir_queries: set[str]) -> list[dict[str, Any]]:
 
 
 def alias_cache_from_nodir(cache: dict[str, Any]) -> int:
-    """Copy corpus_no_direction|| keys → corpus|| so shared judgements hit."""
+    """Copy corpus_no_direction|| keys ↁEcorpus|| so shared judgements hit."""
     added = 0
     for key, val in list(cache.items()):
         if not key.startswith("corpus_no_direction||"):
@@ -288,7 +288,7 @@ def main() -> int:
     # HTML report (reuse generator; point at our tags)
     # Patch generate_html_report defaults by calling render directly after
     # ensuring runs/baseline_nodir and runs/round6_nodir exist (done).
-    # generate_html_report.render reads RUNS / tag — same RUNS path.
+    # generate_html_report.render reads RUNS / tag  Esame RUNS path.
     html = render_report("baseline_nodir", "round6_nodir")
     # Fix subtitle to mention no_direction corpus
     html = html.replace(
@@ -296,8 +296,8 @@ def main() -> int:
         "rcs_corpus_no_direction.csv + rcs_species.csv",
     )
     html = html.replace(
-        "最終 (round6_nodir)",
-        "最終 (round6 / no_direction corpus)",
+        "最絁E(round6_nodir)",
+        "最絁E(round6 / no_direction corpus)",
     )
     REPORT_OUT.write_text(html, encoding="utf-8")
     print(f"wrote {REPORT_OUT}", flush=True)

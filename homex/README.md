@@ -35,4 +35,5 @@ HOMBA の細分不足を補う拡張レイヤー。HOMBA 本体は変更せず�
 ## 関連
 
 - HOMBA 正本: [`../rcs/HOMBA_v1_fixed.csv`](../rcs/HOMBA_v1_fixed.csv)
-- top-1 整合性レビュー: [`../260711_playground/top1_consistency_review/`](../260711_playground/top1_consistency_review/)
+- top-1 整合性レビュー（公開）: [`../web/frontend/reports/2026-07-11.html`](../web/frontend/reports/2026-07-11.html)
+- 実験アーカイブ: [`../archive/260711_playground/`](../archive/260711_playground/)

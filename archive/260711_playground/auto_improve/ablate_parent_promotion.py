@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 
@@ -305,7 +305,7 @@ def write_txt_report(path: Path, payload: dict[str, Any]) -> None:
         f"top3={core['without']['in_top3_rate']:.1%}"
     )
     delta_exact = core["with"]["exact"] - core["without"]["exact"]
-    lines.append(f"  Δ exact (WITH - WITHOUT) = {delta_exact:+d}")
+    lines.append(f"  ΁Eexact (WITH - WITHOUT) = {delta_exact:+d}")
     cp = core["pair_compare"]
     lines.append(
         f"  top1 changed={cp['changed_top1']}  "
@@ -395,7 +395,7 @@ def main() -> int:
         print(f"  {name}: {len(with_by_ds[name])} queries", flush=True)
 
     # --- WITHOUT promotion (monkey-patch; original source untouched) ---
-    print("[ablate] monkey-patching _promote_common_parents → no-op...", flush=True)
+    print("[ablate] monkey-patching _promote_common_parents ↁEno-op...", flush=True)
     original = RosettaCandidateGenerator._promote_common_parents
     RosettaCandidateGenerator._promote_common_parents = noop_promote  # type: ignore[method-assign]
     try:
@@ -426,7 +426,7 @@ def main() -> int:
     print(
         f"[core] WITH exact={core_with['exact_rate']:.1%}  "
         f"WITHOUT exact={core_without['exact_rate']:.1%}  "
-        f"Δ={core_with['exact'] - core_without['exact']:+d}",
+        f"΁E{core_with['exact'] - core_without['exact']:+d}",
         flush=True,
     )
 
@@ -490,7 +490,7 @@ def main() -> int:
         )
     else:
         verdict_parts.append(
-            "Overall: mixed — inspect per-dataset Δ; promotion may help some sets and hurt others."
+            "Overall: mixed  Einspect per-dataset ΁E promotion may help some sets and hurt others."
         )
     payload["verdict"] = " ".join(verdict_parts)
     payload["elapsed_sec"] = round(time.time() - t0, 1)

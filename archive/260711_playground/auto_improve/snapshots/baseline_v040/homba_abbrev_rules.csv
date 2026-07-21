@@ -1,0 +1,38 @@
+abbrev,expansion,notes
+lc,locus coeruleus,Locus coeruleus (HOMBA uses nucleus coeruleus — LC is universal neuro abbreviation)
+nts,solitary nucleus,Nucleus tractus solitarii / nucleus of the solitary tract
+pag,periaqueductal gray,Periaqueductal gray region
+sn,substantia nigra,Substantia nigra (2-char: full-query match only in practice)
+snc,substantia nigra compact division,SNc = substantia nigra pars compacta
+snr,substantia nigra reticular division,SNr = substantia nigra pars reticulata
+gp,globus pallidus,Globus pallidus (2-char: full-query match)
+gpe,lateral segment of globus pallidus,GPe = external/lateral segment
+gpi,medial segment of globus pallidus,GPi = internal/medial segment
+nac,nucleus accumbens,NAc / NAcc
+nacc,nucleus accumbens,NAcc alternate spelling
+ofc,orbital frontal cortex,Orbitofrontal cortex
+pfc,prefrontal cortex,Prefrontal cortex
+dlpfc,dorsolateral prefrontal cortex,dlPFC
+mpfc,medial prefrontal cortex,mPFC
+vmfc,ventromedial frontal cortex,vmFC
+vlpfc,ventrolateral prefrontal cortex,vlPFC / Brocas area region
+hpc,hippocampus,HPC
+amy,amygdala,AMY
+bla,basolateral nuclear group of amygdala,BLA = basolateral amygdala
+cea,central nucleus of amygdala,CeA = central amygdala
+pvn,paraventricular nucleus of hypothalamus,PVN = hypothalamic paraventricular nucleus (more common usage than thalamic PVN)
+pvnh,paraventricular nucleus of hypothalamus,PVNh alternate form
+scn,suprachiasmatic nucleus,SCN = suprachiasmatic nucleus
+arc,arcuate nucleus,ARC = arcuate nucleus of hypothalamus (disambiguation: 3-char safe)
+drn,dorsal raphe nucleus,DRN = dorsal raphe nucleus
+mnr,median raphe nucleus,MnR = median raphe nucleus
+dg,dentate gyrus,DG = dentate gyrus (2-char: full-query)
+ca1,cornu ammonis 1,CA1 hippocampal subfield
+ca2,cornu ammonis 2,CA2 hippocampal subfield
+ca3,cornu ammonis 3,CA3 hippocampal subfield
+sc,superior colliculus,SC = superior colliculus
+ic,inferior colliculus,IC = inferior colliculus
+mfb,medial forebrain bundle,MFB = medial forebrain bundle
+nst,solitary nucleus,NST alternate abbreviation for nucleus tractus solitarii
+vta,ventral tegmental area,VTA (also recognized via HOMBA acronym — belt-and-suspenders)
+sth,subthalamic nucleus,STH = HOMBA internal acronym for subthalamic nucleus

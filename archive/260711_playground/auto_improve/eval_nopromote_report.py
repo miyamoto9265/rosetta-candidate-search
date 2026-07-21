@@ -35,7 +35,7 @@ from types import MethodType
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 
@@ -52,13 +52,13 @@ OUT_HTML = (
 )
 
 ABLATION_CHANGES = [
-    ("親昇格の無効化 (_promote_common_parents → no-op)",
-     "Round7 アルゴリズムはそのままに、共通親へのスコア昇格だけを停止。"
-     "ソースは変更せずインスタンス上で monkey-patch。"),
-    ("判定の差分のみ再検証",
-     "baseline（round7_nodir）と top1 が同一のレコードは DeepSeek を呼ばず、"
-     "既存の 3-pass 判定をそのまま継承。top1 が変わったペアだけ新規判定"
-     "（キャッシュキー dataset||query||top_id を再利用）。"),
+    ("親昁E��の無効匁E(_promote_common_parents ↁEno-op)",
+     "Round7 アルゴリズムはそ�Eままに、�E通親へのスコア昁E��だけを停止、E
+     "ソースは変更せずインスタンス上で monkey-patch、E),
+    ("判定�E差刁E�Eみ再検証",
+     "baseline�E�Eound7_nodir�E�と top1 が同一のレコード�E DeepSeek を呼ばず、E
+     "既存�E 3-pass 判定をそ�Eまま継承。top1 が変わった�Eアだけ新規判宁E
+     "�E�キャチE��ュキー dataset||query||top_id を�E利用�E�、E),
 ]
 
 def build_ablation_findings(
@@ -73,16 +73,10 @@ def build_ablation_findings(
     good_b = bov.get("aligned", 0) + bov.get("broader_parent", 0)
     good_f = fov.get("aligned", 0) + fov.get("broader_parent", 0)
     return f"""
-<p><b>実験:</b> Round7 終了時点（round7_nodir）を baseline とし、親昇格だけをオフ。
-baseline の再検証は行わず、top1 不変 {n_unchanged} 件は判定を継承、
-変化 {n_changed} 件だけ DeepSeek（キャッシュ含む）。</p>
-<p><b>結果:</b> wrong {bov.get('wrong', 0)} → {fov.get('wrong', 0)}（{wrong_d:+d}）、
-aligned+broader {good_b} → {good_f}（{good_f - good_b:+d}）、
-ラベル改善 {n_improved} / 回帰 {n_regressed}。
-親昇格オフは細語ヒット（GPi、OFC、IC central 等）で一部改善するが、
-STS/orbital 等で親フォールバックが外れ wrong が増え、ネットでは悪化。</p>
-<p><b>次アクション:</b> 全面オフは非推奨。細語が実在するケースだけ昇格を抑える
-条件付き設計（修飾あり・子候補が高スコア等）を検討。</p>
+<p><b>実騁E</b> Round7 終亁E��点�E�Eound7_nodir�E�を baseline とし、親昁E��だけをオフ、Ebaseline の再検証は行わず、top1 不夁E{n_unchanged} 件は判定を継承、E変化 {n_changed} 件だぁEDeepSeek�E�キャチE��ュ含む�E�、E/p>
+<p><b>結果:</b> wrong {bov.get('wrong', 0)} ↁE{fov.get('wrong', 0)}�E�Ewrong_d:+d}�E�、Ealigned+broader {good_b} ↁE{good_f}�E�Egood_f - good_b:+d}�E�、Eラベル改喁E{n_improved} / 回帰 {n_regressed}、E親昁E��オフ�E細語ヒチE���E�EPi、OFC、IC central 等）で一部改喁E��るが、ESTS/orbital 等で親フォールバックが外れ wrong が増え、ネチE��では悪化、E/p>
+<p><b>次アクション:</b> 全面オフ�E非推奨。細語が実在するケースだけ�E格を抑える
+条件付き設計（修飾あり・子候補が高スコア等）を検討、E/p>
 """
 
 
@@ -204,13 +198,13 @@ def render_ablation_report(baseline_tag: str, final_tag: str) -> str:
     n_unchanged = int(abl.get("top1_unchanged", 0))
 
     html = html.replace(
-        "RCS アルゴリズム 自律改善レポート",
-        "RCS 親昇格アブレーションレポート",
+        "RCS アルゴリズム 自律改喁E��ポ�EチE,
+        "RCS 親昁E��アブレーションレポ�EチE,
         1,
     )
     html = html.replace(
-        f"(baseline → {final_tag})",
-        f"({baseline_tag} → {final_tag})",
+        f"(baseline ↁE{final_tag})",
+        f"({baseline_tag} ↁE{final_tag})",
         1,
     )
 
@@ -219,8 +213,8 @@ def render_ablation_report(baseline_tag: str, final_tag: str) -> str:
         for t, d in ABLATION_CHANGES
     )
     html = re.sub(
-        r"<h2>5\. 実施したアルゴリズム改善</h2>\s*<ul class=\"changes\">.*?</ul>",
-        "<h2>5. 本実験の条件</h2>\n<ul class=\"changes\">"
+        r"<h2>5\. 実施したアルゴリズム改喁E/h2>\s*<ul class=\"changes\">.*?</ul>",
+        "<h2>5. 本実験�E条件</h2>\n<ul class=\"changes\">"
         + changes_html
         + "</ul>",
         html,
@@ -231,8 +225,8 @@ def render_ablation_report(baseline_tag: str, final_tag: str) -> str:
         bov, fov, len(improved), len(regressed), n_changed, n_unchanged,
     )
     html = re.sub(
-        r"<h2>7\. 所見・次アクション候補</h2>\s*<div class=\"note\">.*?</div>",
-        "<h2>7. 所見・次アクション候補</h2>\n<div class=\"note\">"
+        r"<h2>7\. 所見�E次アクション候裁E/h2>\s*<div class=\"note\">.*?</div>",
+        "<h2>7. 所見�E次アクション候裁E/h2>\n<div class=\"note\">"
         + findings
         + "</div>",
         html,
@@ -240,14 +234,14 @@ def render_ablation_report(baseline_tag: str, final_tag: str) -> str:
         flags=re.S,
     )
     html = html.replace(
-        "多くは broader_parent ↔ partial の入れ替わりや、番号付き領域の近傍誤マッチ。\n"
-        "ネットでは大幅に改善。",
-        "親昇格オフにより top1 が変わったケースのラベル上下を列挙。"
-        "top1 不変のレコードは判定を再利用している。",
+        "多くは broader_parent ↁEpartial の入れ替わりめE��番号付き領域の近傍誤マッチ、En"
+        "ネットでは大幁E��改喁E��E,
+        "親昁E��オフにより top1 が変わったケースのラベル上下を列挙、E
+        "top1 不変�Eレコード�E判定を再利用してぁE��、E,
     )
     html = html.replace(
-        f"最終 ({final_tag})",
-        f"親昇格オフ ({final_tag})",
+        f"最絁E({final_tag})",
+        f"親昁E��オチE({final_tag})",
     )
     html = html.replace(
         'style="font-size:12px;margin-top:10px">baseline</div>',
@@ -268,8 +262,8 @@ def render_ablation_report(baseline_tag: str, final_tag: str) -> str:
         return "up" if better else "down"
 
     html = re.sub(
-        r'(<div class="card"><div class="k">wrong（誤り）</div>\s*'
-        r'<div class="v">\d+ → \d+</div>\s*)'
+        r'(<div class="card"><div class="k">wrong�E�誤り！E/div>\s*'
+        r'<div class="v">\d+ ↁE\d+</div>\s*)'
         r'<div class="d [^"]*">([^<]*)</div>',
         rf'\1<div class="d {delta_cls(wrong_d, higher_is_better=False)}">\2</div>',
         html,
@@ -277,15 +271,15 @@ def render_ablation_report(baseline_tag: str, final_tag: str) -> str:
     )
     html = re.sub(
         r'(<div class="card"><div class="k">aligned</div>\s*'
-        r'<div class="v">\d+ → \d+</div>\s*)'
+        r'<div class="v">\d+ ↁE\d+</div>\s*)'
         r'<div class="d [^"]*">([^<]*)</div>',
         rf'\1<div class="d {delta_cls(aligned_d, higher_is_better=True)}">\2</div>',
         html,
         count=1,
     )
     html = re.sub(
-        r'(<div class="card"><div class="k">aligned \+ broader_parent（許容可）</div>\s*'
-        r'<div class="v">\d+ → \d+</div>\s*)'
+        r'(<div class="card"><div class="k">aligned \+ broader_parent�E�許容可�E�E/div>\s*'
+        r'<div class="v">\d+ ↁE\d+</div>\s*)'
         r'<div class="d [^"]*">([^<]*)</div>',
         rf'\1<div class="d {delta_cls(good_d, higher_is_better=True)}">\2</div>',
         html,

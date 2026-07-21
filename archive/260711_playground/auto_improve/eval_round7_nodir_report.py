@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""baseline_nodir → round7_nodir report (rcs_corpus_no_direction + species).
+"""baseline_nodir ↁEround7_nodir report (rcs_corpus_no_direction + species).
 
 * Reuses ``runs/baseline_nodir`` (no baseline re-eval).
 * Round7: RCS on no_direction corpus + species; DeepSeek only for uncached
@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Any
 
 HERE = Path(__file__).resolve().parent
-REPO = HERE.parent.parent
+REPO = HERE.parents[2]
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 
@@ -259,7 +259,7 @@ def main() -> int:
         "rcs_corpus.csv + rcs_species.csv",
         "rcs_corpus_no_direction.csv + rcs_species.csv",
     )
-    html = html.replace("最終 (round7_nodir)", "最終 (round7 / no_direction corpus)")
+    html = html.replace("最絁E(round7_nodir)", "最絁E(round7 / no_direction corpus)")
     html = html.replace("エンジン v0.6.0", f"エンジン v{ENGINE_VERSION}")
     # generate_html_report may hardcode v0.6.0 in subtitle via engine from summary
     REPORT_OUT.write_text(html, encoding="utf-8")

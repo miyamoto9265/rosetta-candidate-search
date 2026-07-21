@@ -1,0 +1,126 @@
+input_text,homba_text,notes,bidirectional
+amygdala,amygdaloid complex,General input term corresponding to HOMBA's amygdaloid complex
+nuclei,nucleus,
+nucleus,nuclei,
+habenula,habenular nuclei,Habenula as general term maps to HOMBA habenular nuclei (HOMBA:10452)
+insula,insular lobe,Insula as general term maps to HOMBA insular lobe (HOMBA:12176)
+cingulate gyrus,cingulate cortex,Cingulate gyrus maps to HOMBA cingulate cortex (HOMBA:10277)
+vestibular nucleus,vestibular nuclei in pons,Vestibular nucleus maps to HOMBA vestibular nuclei in pons (HOMBA:12448)
+inferior olivary nucleus,inferior olive,Inferior olivary nucleus maps to HOMBA inferior olive (HOMBA:12600)
+inferior olive nucleus,inferior olive,Variant naming for inferior olive
+pituitary gland,pituitary body,Pituitary gland maps to HOMBA pituitary body/gland
+pulvinar nucleus,pulvinar of thalamus,Pulvinar nucleus maps to HOMBA pulvinar of thalamus (HOMBA:10409)
+dentate nucleus,dentate lateral nucleus,Dentate nucleus maps to HOMBA dentate (lateral) nucleus (HOMBA:12396)
+fastigial nucleus,fastigial medial nucleus,Fastigial nucleus maps to HOMBA fastigial (medial) nucleus (HOMBA:12402)
+globose nucleus,medial interpositus globose nucleus,Globose nucleus maps to HOMBA medial interpositus (globose) nucleus (HOMBA:12400)
+emboliform nucleus,lateral interpositus emboliform nucleus,Emboliform nucleus maps to HOMBA lateral interpositus (emboliform) nucleus (HOMBA:12401)
+central amygdala,central nucleus of amygdala,Central amygdala maps to HOMBA central nucleus of amygdala (HOMBA:10363)
+basolateral amygdala,basolateral nuclear group of amygdala,Basolateral amygdala maps to basolateral nuclear group (HOMBA:10366)
+pars compacta,compact division,SN pars compacta terminology to HOMBA compact division
+pars reticulata,reticular division,SN pars reticulata terminology to HOMBA reticular division
+stn,subthalamic nucleus,STN abbreviation for subthalamic nucleus
+broca area,brocas area,Broca area (without apostrophe-s) to brocas area variant in HOMBA
+broca s area,brocas area,Broca's area normalized variant
+wernicke area,planum temporale,Wernicke area broadly maps to planum temporale / posterior STG region
+fimbria of hippocampus,fimbria,Fimbria of hippocampus maps to fimbria (HOMBA:10575)
+caudalis,caudal,Latin -alis suffix variant: caudalis maps to caudal subdivision term
+oralis,oral,Latin -alis suffix variant: oralis maps to oral subdivision term
+interpolaris,interpolar,Latin -aris suffix variant: interpolaris maps to interpolar subdivision term
+nucleus of the solitary tract,solitary nucleus,NTS full name maps to HOMBA solitary nucleus (HOMBA:12557)
+entorhinal area,entorhinal cortex,Synonym: entorhinal area maps to entorhinal cortex
+nucleus basalis of meynert,basal nucleus of meynert,Meynert nucleus alternate word order
+septal nucleus,septal region,Septal nucleus variant maps to HOMBA septal region
+lateral septum,lateral septal nucleus,Lateral septum maps to lateral septal nucleus
+medial septum,medial septal nucleus,Medial septum maps to medial septal nucleus
+periaqueductal grey,periaqueductal gray,British-to-American spelling for PAG
+grey matter,gray matter,British-to-American spelling
+primary motor area,primary motor cortex,Synonym: motor area to motor cortex
+orbitofrontal cortex,orbital frontal cortex,OFC alternate HOMBA terminology
+insular cortex,major insular cortex,Insular cortex maps to HOMBA major insular cortex (HOMBA:10288)
+raphe nuclei,raphe nuclei in midbrain,General raphe nuclei query mapped to midbrain raphe entry (HOMBA:12222)
+locus ceruleus,locus coeruleus,Alternative/British spelling of locus coeruleus
+pulvinar,pulvinar of thalamus,Pulvinar without 'nucleus' maps to HOMBA pulvinar of thalamus
+pallidum,globus pallidus,Latin synonym: pallidum = globus pallidus
+pineal gland,pineal body,Pineal gland common name maps to HOMBA pineal body (HOMBA:10460)
+medulla,medulla oblongata,Abbreviated form maps to full name (HOMBA uses myelencephalon alias)
+mammillary bodies,mammillary body,Plural form maps to singular HOMBA entry
+cingulum,cingulum bundle,Cingulum maps to HOMBA cingulum bundle (HOMBA:10572)
+diagonal band of broca,diagonal band,Eponym form maps to HOMBA diagonal band (HOMBA:12034)
+preoptic area,preoptic region,Preoptic area maps to HOMBA preoptic region of HTH
+interposed nucleus,interpositus nucleus,Interposed nucleus maps to HOMBA interpositus (intermediate) nucleus
+mediodorsal thalamus,mediodorsal nucleus of thalamus,Mediodorsal thalamus maps to HOMBA mediodorsal nucleus of thalamus (HOMBA:10398)
+parahippocampal cortex,parahippocampal gyrus,Parahippocampal cortex maps to HOMBA parahippocampal gyrus (HOMBA:12162)
+hippocampus proper,hippocampal proper,Hippocampus proper maps to HOMBA hippocampal proper (Cornu Ammonis) (HOMBA:10296)
+globus pallidus externa,external division of globus pallidus,Latin form maps to HOMBA external division (GPe)
+globus pallidus interna,internal division of globus pallidus,Latin form maps to HOMBA internal division (GPi)
+ventral posterolateral nucleus,ventral posterior lateral nucleus,VPL maps to HOMBA ventral posterior lateral nucleus (HOMBA:10424)
+ventral posteromedial nucleus,ventral posterior medial nucleus,VPM maps to HOMBA ventral posterior medial nucleus (HOMBA:10425)
+anterior thalamic nuclei,anterior nuclear complex of thalamus,Maps to HOMBA anterior nuclear complex of thalamus (HOMBA:10392)
+septal area,septal region,Septal area maps to HOMBA septal region (septal nuclear complex)
+facial motor nucleus,facial nucleus,Facial motor nucleus maps to HOMBA facial nucleus
+motor cortex,frontal motor cortex,Generic motor cortex maps to HOMBA frontal motor cortex parent entry
+auditory cortex,primary auditory cortex,Generic auditory cortex maps to HOMBA primary auditory cortex
+visual cortex,primary visual cortex,Generic visual cortex maps to HOMBA primary visual cortex
+brocas area,brocas area in dominant hemisphere,Broca area maps to HOMBA Broca parenthetical entry
+wernikes area,planum temporale,Wernicke's area (apostrophe normalized) maps to planum temporale
+wernickes area,planum temporale,Wernicke's area (with 'c' in Wernicke) apostrophe-normalized form
+vermis,cerebellar vermis,Cerebellar vermis common short form
+somatosensory cortex,primary somatosensory cortex,Generic somatosensory cortex maps to S1
+trigeminal nucleus,principal sensory nucleus of trigeminal nerve,Generic trigeminal nucleus maps to principal sensory trigeminal
+principal trigeminal nucleus,principal sensory nucleus of trigeminal nerve,Maps to HOMBA principal sensory nucleus of trigeminal nerve
+medial amygdaloid nucleus,medial nuclear complex of amygdala,Maps to HOMBA medial nuclear complex of amygdala
+purkinje cell layer,purkinje cell layer of cerebellar cortex,Purkinje layer maps to full HOMBA name
+ventrolateral thalamus,ventral lateral nucleus of thalamus,Ventrolateral thalamus maps to HOMBA ventral lateral nucleus (HOMBA:10420)
+lenticular nucleus,putamen,Lenticular nucleus (putamen+GP) approximated by putamen - HOMBA gap
+cerebral hemisphere,telencephalon,Cerebral hemisphere anatomically equivalent to telencephalon
+brodmann area 4,primary motor cortex,Brodmann area 4 = primary motor cortex (M1)
+thalamic nucleus,nucleus of thalamus,General word-order synonym: HOMBA names thalamic nuclei as 'X nucleus of thalamus' while atlases often write 'X thalamic nucleus' (e.g. ventral medial/lateral/anterior/posterior/lateral posterior). Bidirectional.
+roots of the,root of,Cranial-nerve plural/article variant: 'roots of the X nerve' = HOMBA 'root of X nerve' (facial/abducens/trigeminal/etc).
+median raphe,median raphe nucleus,Standard short name for HOMBA:12235 median raphe nucleus.
+raphe magnus,raphe magnus nucleus,Standard short name for HOMBA:12642 raphe magnus nucleus.
+raphe obscurus,raphe obscurus nucleus,Standard short name for HOMBA:12643 raphe obscurus nucleus.
+nucleus ambiguus,ambiguus nucleus,Latin word-order variant of HOMBA:12540 ambiguus nucleus (nucleus ambiguus is the conventional name).
+prepositus nucleus,prepositus hypoglossal nucleus,Short form of HOMBA:12615 prepositus hypoglossal nucleus (nucleus prepositus hypoglossi).
+heschl gyrus,transverse temporal gyrus,Heschl's gyrus = HOMBA:12144 transverse temporal gyrus (Heschl's gyrus).
+heschls gyrus,transverse temporal gyrus,Apostrophe-normalized Heschl's gyrus = transverse temporal gyrus.
+limen insulae,limen insula,Latin plural/spelling variant of HOMBA:12179 limen insula.
+subceruleus,subcoeruleus nucleus,ceruleus/coeruleus spelling variant: subceruleus = HOMBA:12500 subcoeruleus nucleus.
+infundibulum,infundibular stalk,Infundibulum (pituitary stalk) = HOMBA:10643 infundibular stalk.
+reticulotegmentum,reticulotegmental nucleus,Short form of HOMBA:12497 reticulotegmental nucleus.
+inferior pulvinar,inferior division of pulvinar,Inferior pulvinar (PuI) = HOMBA:10413 inferior division of pulvinar.
+intermediate reticular zone,intermediate reticular nucleus,zone/nucleus synonym for HOMBA:12620 intermediate reticular nucleus.
+fascicle,fasciculus,Latin/English variant: '-fascicle' = '-fasciculus' (e.g. medial longitudinal fascicle/fasciculus). Bidirectional.
+caudate head,head of caudate nucleus,Atlas short form 'Caudate Head' = HOMBA:10335 head of caudate nucleus.
+caudate body,body of caudate nucleus,Atlas short form 'Caudate Body' = HOMBA:10336 body of caudate nucleus.
+caudate tail,tail of caudate nucleus,Atlas short form 'Caudate Tail' = HOMBA:10337 tail of caudate nucleus.
+accumbens,nucleus accumbens,Short form 'Accumbens' = HOMBA:10339 nucleus accumbens.
+visual area,visual cortex,'visual area' = 'visual cortex' for primary/secondary visual regions (V1/V2). Bidirectional.
+auditory area,auditory cortex,'auditory area' = 'auditory cortex' for primary/secondary auditory regions (A1/A2). Bidirectional.
+somatosensory area,somatosensory cortex,'somatosensory area' = 'somatosensory cortex' (S1/S2). Bidirectional.
+solitary tract nucleus,solitary nucleus,Nucleus of the solitary tract / solitary tract nucleus = HOMBA:12557 solitary nucleus.
+subparafascicular nucleus,subparafascicular nucleus of thalamus,Subparafascicular nucleus = HOMBA:13054 subparafascicular nucleus of thalamus.
+reticular thalamus,reticular nucleus of thalamus,Reticular thalamus = HOMBA:10464 reticular nucleus of thalamus (thalamic reticular nucleus).
+occulomotor,oculomotor,Common misspelling: occulomotor = oculomotor (maps 'Occulomotor Nuclei' -> oculomotor nucleus HOMBA:12198).
+crossing of the superior cerebellar peduncle,decussation of superior cerebellar peduncle,'crossing' = 'decussation' for HOMBA:12337 decussation of superior cerebellar peduncle.
+endopiriform claustrum,endopiriform nucleus,Endopiriform claustrum = HOMBA endopiriform nucleus (dorsal/ventral EnD/EnV). Bidirectional.
+lateral superior olive,lateral superior olivary nucleus,Lateral superior olive (LSO) = HOMBA:12469 lateral superior olivary nucleus.
+medial superior olive,medial superior olivary nucleus,Medial superior olive (MSO) = HOMBA:12470 medial superior olivary nucleus.
+oculomotor complex,oculomotor nucleus,Oculomotor (nuclear) complex = HOMBA:12198 oculomotor nucleus.
+centre median,centromedian,British/variant spelling: 'centre median' = centromedian (CM) thalamic nucleus.
+tubercule,tubercle,Variant/older spelling: tubercule = tubercle (e.g. olfactory tubercle HOMBA:10310). Bidirectional.
+laterodorsal,lateral dorsal,One-way fused->split: queries write 'laterodorsal' but HOMBA uses split 'lateral dorsal nucleus of thalamus'. One-way to avoid rewriting non-thalamic 'lateral dorsal X' into the fused form.,no
+ventrolateral,ventral lateral,One-way fused->split: ventrolateral -> ventral lateral (ventral lateral nucleus of thalamus).,no
+ventromedial,ventral medial,One-way fused->split: ventromedial -> ventral medial (ventral medial nucleus of thalamus).,no
+ventroanterior,ventral anterior,One-way fused->split: ventroanterior -> ventral anterior (ventral anterior nucleus of thalamus).,no
+ventroposterior,ventral posterior,One-way fused->split: ventroposterior -> ventral posterior (ventral posterior nuclear complex of thalamus).,no
+centrolateral,central lateral,One-way fused->split: centrolateral -> central lateral (central lateral nucleus of thalamus).,no
+medial dorsal,mediodorsal,One-way split->fused: HOMBA uses fused 'mediodorsal nucleus of thalamus'; queries write split 'medial dorsal'. One-way to avoid rewriting unrelated 'medial dorsal X'.,no
+leminscus,lemniscus,Common misspelling: leminscus = lemniscus.,yes
+lemniscus nucleus,nucleus of lemniscus,Word-order: 'X lemniscus nucleus' = HOMBA 'nucleus of X lemniscus' (e.g. dorsal lateral lemniscus nucleus -> dorsal nucleus of lateral lemniscus).,yes
+kolliker,koelliker,Spelling variant: Kolliker = Koelliker (Koelliker-Fuse nucleus).,yes
+saginum,sagulum,Spelling variant: Saginum = sagulum (sagulum nucleus).,yes
+septimbrial,septofimbrial,Spelling variant: Septimbrial = septofimbrial nucleus.,yes
+chiasma,chiasm,Latin/English variant: chiasma = chiasm (optic chiasm).,yes
+leaflet,leaf,Variant: intergeniculate leaflet = HOMBA intergeniculate leaf.,yes
+stria medullaris thalami,stria medullaris of thalamus,Latin word-order: stria medullaris thalami = HOMBA stria medullaris of thalamus.,no
+locus coeruleus region,nucleus coeruleus,Locus coeruleus region = HOMBA nucleus coeruleus (locus coeruleus).,no

@@ -461,7 +461,7 @@ HOMBA 側の別名整備。</li>
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--baseline", default="baseline_nodir")
-    ap.add_argument("--final", default="round7_nodir")
+    ap.add_argument("--final", default="round8_nodir")
     ap.add_argument(
         "--out",
         default=str(HERE.parent / "top1_consistency_review" / "auto_improve_report_nodir.html"))
