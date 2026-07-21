@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 from rcs.rosetta_candidate_generator import RosettaCandidateGenerator
 
 g = RosettaCandidateGenerator(Path("rcs/HOMBA_v1_fixed.csv"))

@@ -1,0 +1,83 @@
+{
+  "total_records": 873,
+  "datasets": {
+    "corpus": {
+      "records": 331,
+      "label_counts": {
+        "aligned": 204,
+        "broader_parent": 85,
+        "wrong": 13,
+        "partial_or_narrower": 22,
+        "no_consensus": 6,
+        "source_or_ontology_issue": 1
+      },
+      "certainty_counts": {
+        "high": 286,
+        "medium": 39,
+        "low": 6
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 290,
+        "2-1": 35,
+        "1-1-1": 6
+      }
+    },
+    "species": {
+      "records": 542,
+      "label_counts": {
+        "aligned": 316,
+        "broader_parent": 134,
+        "ambiguous": 2,
+        "no_consensus": 8,
+        "wrong": 24,
+        "partial_or_narrower": 57,
+        "source_or_ontology_issue": 1
+      },
+      "certainty_counts": {
+        "high": 464,
+        "medium": 70,
+        "low": 8
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 478,
+        "2-1": 56,
+        "1-1-1": 8
+      }
+    }
+  },
+  "overall": {
+    "label_counts": {
+      "aligned": 520,
+      "broader_parent": 219,
+      "wrong": 37,
+      "partial_or_narrower": 79,
+      "no_consensus": 14,
+      "source_or_ontology_issue": 2,
+      "ambiguous": 2
+    },
+    "certainty_counts": {
+      "high": 750,
+      "medium": 109,
+      "low": 14
+    },
+    "vote_split_pattern_counts": {
+      "3-0": 768,
+      "2-1": 91,
+      "1-1-1": 14
+    },
+    "uncertainty_tag_counts": {
+      "stable": 768,
+      "majority_vote": 87,
+      "split_vote": 11,
+      "majority_vote+low_certainty": 4,
+      "split_vote+low_certainty": 3
+    }
+  },
+  "engine_version": "0.8.0",
+  "diff_vs": {
+    "previous": "round7_nodir",
+    "top1_unchanged": 827,
+    "top1_changed": 46,
+    "deepseek_judged_changed_only": true
+  }
+}
