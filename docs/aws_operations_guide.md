@@ -106,6 +106,9 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 |---|---|---|
 | `HOMBA_BUCKET` | `rcs-api-data` | S3 フォールバック用 |
 | `ALLOWED_ORIGIN` | `*` | 本番では `https://rcs.mymt.site` 推奨 |
+| `DEEPSEEK_API_KEY` | （秘匿） | AI 統合用。未設定なら AI は自動 soft-fail（RCS のみ返却） |
+| `AI_MODEL` | `deepseek-v4-flash` | preprocess / postprocess に使う LLM |
+| `AI_HTTP_TIMEOUT_SEC` | `8` | LLM 呼出しごとのタイムアウト（API GW 30s 制約内） |
 
 未設定時のデフォルトキー名: `HOMBA_v1_fixed.csv`, `homba_token_rules.csv`, `homba_alias_rules.csv`, `homba_abbrev_rules.csv`
 

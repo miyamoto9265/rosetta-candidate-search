@@ -1,0 +1,53 @@
+{
+ "n": 3458,
+ "off_label_counts": {
+  "aligned": 1454,
+  "partial_or_narrower": 256,
+  "broader_parent": 969,
+  "wrong": 563,
+  "source_or_ontology_issue": 199,
+  "ambiguous": 6,
+  "no_consensus": 11
+ },
+ "ai_label_counts": {
+  "aligned": 1543,
+  "partial_or_narrower": 241,
+  "broader_parent": 1059,
+  "wrong": 383,
+  "source_or_ontology_issue": 193,
+  "ambiguous": 8,
+  "no_consensus": 31
+ },
+ "off_useful": 2423,
+ "ai_useful": 2602,
+ "off_aligned": 1454,
+ "ai_aligned": 1543,
+ "off_nomatch": 187,
+ "ai_nomatch": 434,
+ "changed": 653,
+ "improved": 344,
+ "regressed": 118,
+ "same_label_changed": 191,
+ "relation_consistency": {
+  "n": 653,
+  "consistent": 225,
+  "rate": 0.3446,
+  "by_relation": {
+   "'=": {
+    "n": 564,
+    "consistent": 152,
+    "rate": 0.2695
+   },
+   "<": {
+    "n": 86,
+    "consistent": 73,
+    "rate": 0.8488
+   },
+   ">": {
+    "n": 3,
+    "consistent": 0,
+    "rate": 0.0
+   }
+  }
+ }
+}

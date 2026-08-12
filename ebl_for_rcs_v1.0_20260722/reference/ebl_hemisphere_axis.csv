@@ -1,0 +1,5378 @@
+lit_name,lit_hemisphere,k_papers,k_coords,p_coord_L,hemi_agreement
+middle frontal gyrus,U,346,832,0.482,
+precuneus,U,342,652,0.546,
+inferior frontal gyrus,U,342,768,0.5534,
+thalamus,U,318,564,0.5213,
+insular lobe,U,300,600,0.5133,
+middle temporal gyrus,U,288,624,0.5962,
+precentral gyrus,U,282,569,0.5677,
+superior frontal gyrus,U,276,516,0.531,
+superior temporal gyrus,U,249,554,0.5144,
+inferior parietal lobule,U,203,448,0.5848,
+middle frontal gyrus,R,197,326,0.0153,0.9847
+putamen,U,192,334,0.5329,
+middle frontal gyrus,L,190,338,0.9734,0.9734
+supplementary motor area,U,189,325,0.5231,
+inferior frontal gyrus,L,177,311,0.9614,0.9614
+insular lobe,R,177,261,0.0383,0.9617
+postcentral gyrus,U,175,352,0.5881,
+inferior frontal gyrus,R,174,281,0.0249,0.9751
+fusiform gyrus,U,171,349,0.5014,
+cuneus,U,164,284,0.5035,
+lingual gyrus,U,158,278,0.5216,
+middle occipital gyrus,U,156,311,0.6141,
+anterior cingulate cortex,U,156,247,0.498,
+insular lobe,L,154,233,0.9614,0.9614
+middle temporal gyrus,R,153,277,0.0289,0.9711
+precuneus,R,152,215,0.0047,0.9953
+middle temporal gyrus,L,152,279,0.9749,0.9749
+thalamus,L,149,218,0.9862,0.9862
+thalamus,R,142,202,0.005,0.995
+hippocampus,U,142,231,0.5671,
+supramarginal gyrus,U,140,255,0.5294,
+caudate,U,139,241,0.473,
+superior parietal lobule,U,139,243,0.5802,
+medial frontal gyrus,U,139,281,0.5374,
+precentral gyrus,L,137,216,0.9722,0.9722
+inferior temporal gyrus,U,137,224,0.5491,
+angular gyrus,U,136,224,0.4911,
+superior frontal gyrus,L,132,216,0.9676,0.9676
+precuneus,L,132,208,0.9712,0.9712
+superior temporal gyrus,R,127,202,0.0396,0.9604
+amygdala,U,127,202,0.5545,
+superior frontal gyrus,R,127,186,0.0323,0.9677
+parahippocampal gyrus,U,125,176,0.517,
+superior temporal gyrus,L,124,190,0.9684,0.9684
+putamen,L,115,153,0.9804,0.9804
+posterior cingulate cortex,U,114,149,0.6846,
+precentral gyrus,R,111,158,0.038,0.962
+putamen,R,100,132,0.0152,0.9848
+inferior parietal lobule,L,99,168,0.9821,0.9821
+cingulate gyrus,U,98,168,0.5119,
+fusiform gyrus,L,93,160,0.9938,0.9938
+lingual gyrus,L,93,130,0.9846,0.9846
+middle occipital gyrus,L,92,133,0.985,0.985
+inferior occipital gyrus,U,91,169,0.5562,
+cerebellum,U,90,140,0.5357,
+inferior parietal lobule,R,89,146,0.0,1.0
+anterior cingulate,U,88,137,0.5547,
+dorsolateral prefrontal cortex,U,87,162,0.4568,
+fusiform gyrus,R,87,123,0.0163,0.9837
+superior parietal lobule,L,80,136,0.8897,0.8897
+middle occipital gyrus,R,79,116,0.0,1.0
+inferior temporal gyrus,L,77,91,0.978,0.978
+inferior temporal gyrus,R,75,99,0.0101,0.9899
+cuneus,R,74,99,0.0101,0.9899
+postcentral gyrus,R,74,100,0.01,0.99
+supramarginal gyrus,L,73,91,0.978,0.978
+lingual gyrus,R,73,99,0.0101,0.9899
+hippocampus,R,73,95,0.0105,0.9895
+posterior cingulate,U,73,100,0.51,
+medial prefrontal cortex,U,72,130,0.4692,
+supplementary motor area,L,72,110,0.9545,0.9545
+postcentral gyrus,L,72,115,0.9217,0.9217
+anterior insula,U,72,132,0.5379,
+caudate,R,70,84,0.0357,0.9643
+hippocampus,L,70,100,1.0,1.0
+temporal pole,U,70,110,0.5455,
+superior parietal lobule,R,66,92,0.0761,0.9239
+medial frontal gyrus,L,65,96,0.8958,0.8958
+cuneus,L,65,97,0.9897,0.9897
+supplementary motor area,R,64,86,0.0349,0.9651
+angular gyrus,L,63,92,0.9674,0.9674
+supramarginal gyrus,R,62,82,0.0854,0.9146
+amygdala,L,62,79,0.962,0.962
+angular gyrus,R,59,79,0.0,1.0
+caudate,L,58,76,0.9342,0.9342
+parahippocampal gyrus,R,58,66,0.0758,0.9242
+amygdala,R,57,70,0.0143,0.9857
+parahippocampal gyrus,L,55,65,0.9538,0.9538
+medial frontal gyrus,R,55,65,0.0308,0.9692
+intraparietal sulcus,U,54,104,0.5577,
+frontal pole,U,53,100,0.41,
+inferior occipital gyrus,L,51,71,1.0,1.0
+inferior occipital gyrus,R,46,65,0.0154,0.9846
+superior occipital gyrus,U,46,68,0.4559,
+globus pallidus,U,45,62,0.5645,
+paracentral lobule,U,45,62,0.5806,
+dorsolateral prefrontal cortex,R,44,79,0.0506,0.9494
+caudate nucleus,U,43,78,0.4872,
+posterior cingulate gyrus,U,42,66,0.6364,
+cingulate gyrus,L,42,61,0.9344,0.9344
+superior temporal sulcus,U,40,66,0.4697,
+vmpfc,U,40,76,0.5789,
+lateral occipital cortex,U,39,76,0.5789,
+dorsolateral prefrontal cortex,L,38,61,0.9836,0.9836
+anterior cingulate cortex,L,38,65,0.9538,0.9538
+orbitofrontal cortex,U,38,45,0.5333,
+anterior cingulate gyrus,U,38,62,0.4516,
+cerebellum,R,37,48,0.0208,0.9792
+temporal pole,R,36,54,0.0926,0.9074
+cerebellum,L,35,47,1.0,1.0
+orbital frontal cortex,U,35,66,0.4242,
+posterior insula,U,34,51,0.451,
+rolandic operculum,U,34,69,0.4203,
+posterior cingulate cortex,L,34,47,0.9362,0.9362
+fusiform,L,33,42,1.0,1.0
+midcingulate cortex,U,32,56,0.4286,
+anterior insula,L,32,39,0.9744,0.9744
+superior parietal lobe,U,32,43,0.5116,
+middle cingulate cortex,U,32,56,0.5179,
+temporal pole,L,32,46,1.0,1.0
+dmpfc,U,31,50,0.42,
+anterior insula,R,31,36,0.0,1.0
+pre sma,U,31,46,0.5217,
+inferior parietal lobe,U,31,51,0.5882,
+cingulate gyrus,R,31,42,0.0,1.0
+precentral,U,30,58,0.5,
+anterior cingulate cortex,R,29,44,0.0227,0.9773
+ventral striatum,U,28,47,0.4468,
+fusiform,R,28,38,0.0,1.0
+superior frontal,U,28,46,0.5217,
+intraparietal sulcus,L,28,39,1.0,1.0
+caudate nucleus,R,27,32,0.0312,0.9688
+ventrolateral prefrontal cortex,U,27,55,0.6,
+inferior parietal cortex,U,27,51,0.6667,
+anterior cingulate,L,27,39,0.9744,0.9744
+fusiform,U,26,48,0.5,
+precentral,L,25,41,1.0,1.0
+anterior cingulate,R,25,34,0.0294,0.9706
+occipital pole,U,24,34,0.5882,
+occipital lobe,U,24,40,0.6,
+calcarine,U,24,38,0.6842,
+transverse temporal gyrus,U,23,35,0.5714,
+paracentral lobule,L,23,31,0.9677,0.9677
+anterior cingulate gyrus,L,23,23,1.0,1.0
+posterior cingulate cortex,R,23,33,0.0303,0.9697
+precentral,R,23,33,0.0303,0.9697
+paracingulate gyrus,U,22,35,0.4,
+calcarine gyrus,U,22,33,0.4545,
+visual cortex,U,22,43,0.3256,
+occipital,U,22,66,0.5606,
+middle cingulate gyrus,U,22,33,0.4545,
+striatum,U,21,37,0.5405,
+frontal,U,21,80,0.5125,
+middle frontal,U,21,41,0.3902,
+insular cortex,U,21,38,0.3947,
+inferior temporal,U,21,32,0.4062,
+superior occipital gyrus,L,21,27,1.0,1.0
+claustrum,U,21,24,0.7083,
+postcentral,U,21,37,0.5676,
+frontal pole,R,21,35,0.0,1.0
+rolandic operculum,R,21,26,0.0385,0.9615
+ventromedial prefrontal cortex,U,20,33,0.6667,
+intraparietal sulcus,R,20,30,0.0,1.0
+inferior parietal gyrus,U,20,34,0.7059,
+inferior parietal,U,20,51,0.7255,
+caudate nucleus,L,20,22,0.9545,0.9545
+premotor cortex,U,20,34,0.5588,
+inferior frontal,U,19,46,0.4348,
+superior parietal,L,19,25,0.96,0.96
+superior temporal sulcus,R,19,25,0.0,1.0
+inferior parietal,L,19,29,1.0,1.0
+tpj,U,19,39,0.6923,
+parietal,U,18,70,0.6286,
+calcarine sulcus,U,18,23,0.6087,
+posterior cingulate,L,18,22,0.9545,0.9545
+superior parietal,R,18,22,0.0,1.0
+occipital cortex,U,18,37,0.5676,
+temporal,U,18,73,0.5205,
+middle cingulate cortex,L,17,23,0.9565,0.9565
+postcentral,R,17,22,0.0,1.0
+globus pallidus,L,17,20,1.0,1.0
+superior temporal,U,17,27,0.2963,
+frontal operculum,U,16,19,0.3684,
+mog,U,16,34,0.5588,
+postcentral,L,16,22,0.9091,0.9091
+occipital cortex,L,16,21,1.0,1.0
+paracentral lobule,R,16,18,0.0556,0.9444
+middle temporal,U,16,29,0.3448,
+medial superior frontal gyrus,U,16,27,0.5926,
+supramarginal,R,16,17,0.0,1.0
+lentiform nucleus,U,16,20,0.65,
+medial prefrontal cortex,R,16,22,0.0,1.0
+parietal operculum,U,15,25,0.56,
+lateral occipital cortex,L,15,27,1.0,1.0
+post central gyrus,U,15,21,0.5238,
+superior parietal gyrus,U,15,19,0.4211,
+superior occipital gyrus,R,15,17,0.1176,0.8824
+superior temporal sulcus,L,15,22,1.0,1.0
+superior parietal,U,15,28,0.6429,
+angular,U,15,18,0.3889,
+midbrain,U,15,16,0.625,
+lingual,R,15,18,0.0556,0.9444
+dorsal anterior cingulate cortex,U,15,19,0.4211,
+lateral occipital cortex,R,15,29,0.0345,0.9655
+superior medial gyrus,L,14,18,0.7778,0.7778
+anterior cingulate gyrus,R,14,15,0.0667,0.9333
+insular cortex,R,14,21,0.0,1.0
+superior medial gyrus,U,14,23,0.6087,
+medial prefrontal cortex,L,14,23,0.913,0.913
+inferior parietal cortex,L,14,25,1.0,1.0
+parahippocampal,U,14,22,0.4545,
+temporal lobe,U,14,37,0.4865,
+lingual,U,14,31,0.7097,
+calcarine,R,14,20,0.0,1.0
+calcarine gyrus,L,14,17,0.9412,0.9412
+calcarine gyrus,R,14,19,0.0,1.0
+cingulate,U,14,22,0.6818,
+dorsomedial prefrontal cortex,U,14,21,0.381,
+angular,L,14,15,1.0,1.0
+posterior cingulate,R,14,23,0.1304,0.8696
+supramarginal,U,14,23,0.4348,
+lentiform nucleus,L,13,17,0.7059,0.7059
+dorsal anterior cingulate,U,13,16,0.5,
+premotor cortex,R,13,16,0.0625,0.9375
+pulvinar,U,13,21,0.4286,
+nucleus accumbens,U,13,18,0.5556,
+rolandic operculum,L,13,19,0.9474,0.9474
+frontal pole,L,13,19,1.0,1.0
+superior parietal cortex,U,13,18,0.6667,
+posterior insula,L,13,15,0.9333,0.9333
+post central gyrus,L,12,15,0.9333,0.9333
+dacc,U,12,19,0.5263,
+posterior insula,R,12,14,0.0,1.0
+frontal orbital cortex,U,12,17,0.5294,
+superior frontal sulcus,U,12,14,0.5,
+superior parietal lobe,R,12,18,0.0,1.0
+nucleus accumbens,R,12,13,0.0,1.0
+uncus,U,12,16,0.625,
+occipital cortex,R,12,21,0.0,1.0
+insula ba 13,L,12,16,1.0,1.0
+parahippocampal,R,12,14,0.0,1.0
+parietal lobe,U,12,17,0.4118,
+globus pallidus,R,12,12,0.0833,0.9167
+occipital gyrus,U,12,16,0.375,
+inferior parietal cortex,R,12,21,0.0,1.0
+pre supplementary motor area,U,12,13,0.3846,
+lingual,L,12,15,1.0,1.0
+occipital pole,L,12,18,0.8333,0.8333
+pre sma,L,12,25,0.88,0.88
+frontal eye field,U,12,18,0.5556,
+calcarine,L,11,20,1.0,1.0
+premotor cortex,L,11,20,1.0,1.0
+ventrolateral prefrontal cortex,R,11,17,0.0588,0.9412
+inferior parietal lobule ba 40,U,11,19,0.3684,
+precentral gyrus ba 6,U,11,13,0.8462,
+inferior parietal gyrus,L,11,12,1.0,1.0
+occipital fusiform gyrus,U,11,15,0.4,
+temporoparietal junction,U,11,23,0.6087,
+declive,U,11,16,0.75,
+insula lobe,R,11,15,0.0,1.0
+frontal sup,R,11,13,0.0,1.0
+angular,R,11,11,0.0,1.0
+medial frontal,U,11,18,0.6111,
+insula ba 13,R,11,15,0.0,1.0
+brainstem,U,11,12,0.4167,
+retrosplenial cortex,U,11,17,0.4706,
+inferior frontal,R,10,12,0.0,1.0
+vmpfc,L,10,13,1.0,1.0
+insula lobe,L,10,13,1.0,1.0
+superior parietal lobe,L,10,21,1.0,1.0
+posterior sts,U,10,21,0.6667,
+insula lobe,U,10,27,0.5926,
+culmen,U,10,12,0.5,
+superior parietal cortex,R,10,13,0.0,1.0
+temporal mid,L,10,23,1.0,1.0
+orbital frontal cortex,L,10,16,1.0,1.0
+post central gyrus,R,10,11,0.0,1.0
+middle frontal gyrus ba 6,L,10,12,1.0,1.0
+middle frontal gyrus ba 6,R,10,12,0.0833,0.9167
+orbitofrontal cortex,L,10,14,1.0,1.0
+occipital pole,R,10,11,0.1818,0.8182
+precuneus ba 7,L,10,10,1.0,1.0
+claustrum,L,10,10,1.0,1.0
+claustrum,R,10,11,0.0,1.0
+transverse temporal gyrus,R,10,11,0.0,1.0
+inferior frontal sulcus,U,10,13,0.4615,
+frontopolar cortex,U,10,14,0.6429,
+superior medial frontal gyrus,R,10,11,0.0909,0.9091
+superior temporal pole,U,10,16,0.4375,
+primary motor cortex,U,10,22,0.5455,
+transverse temporal gyrus,L,10,14,0.9286,0.9286
+mid cingulate cortex,U,10,13,0.3077,
+parietal cortex,U,10,12,0.5,
+superior frontal,L,10,12,1.0,1.0
+precentral gyrus ba 6,L,10,11,0.9091,0.9091
+middle temporal gyrus ba 21,U,10,26,0.5769,
+precg,U,10,19,0.5789,
+inferior frontal gyrus ba 47,R,9,10,0.0,1.0
+superior medial frontal gyrus,U,9,18,0.7222,
+middle temporal,R,9,12,0.0,1.0
+posterior parietal cortex,R,9,20,0.3,0.7
+inferior temporal,R,9,10,0.0,1.0
+pmd,U,9,15,0.6,
+insular cortex,L,9,14,0.9286,0.9286
+superior temporal pole,L,9,11,1.0,1.0
+lentiform nucleus,R,9,14,0.3571,0.6429
+caudate head,U,9,13,0.3077,
+precuneus cortex,U,9,15,0.3333,
+parahippocampus,L,9,11,1.0,1.0
+parahippocampus,R,9,13,0.0,1.0
+inferior frontal,L,9,11,1.0,1.0
+inferior parietal,R,9,13,0.0,1.0
+precuneus ba 7,U,9,17,0.4118,
+orbital frontal cortex,R,9,11,0.0,1.0
+mid insula,U,9,20,0.55,
+dmpfc,L,9,12,1.0,1.0
+middle frontal,R,9,10,0.0,1.0
+middle cingulate gyrus,L,9,10,0.8,0.8
+temporoparietal junction,L,9,17,1.0,1.0
+middle cingulate cortex,R,9,14,0.0714,0.9286
+nucleus accumbens,L,9,12,1.0,1.0
+ventral striatum,R,9,19,0.0526,0.9474
+temporoparietal junction,R,9,11,0.0,1.0
+frontal mid,R,8,10,0.0,1.0
+somatosensory cortex,L,8,8,1.0,1.0
+middle frontal,L,8,10,1.0,1.0
+ventromedial pfc,U,8,9,0.7778,
+inferior temporal cortex,L,8,10,1.0,1.0
+basal ganglia,U,8,12,0.6667,
+dorsolateral pfc,U,8,13,0.5385,
+ventral striatum,L,8,14,1.0,1.0
+superior parietal gyrus,R,8,10,0.0,1.0
+primary motor cortex,L,8,11,1.0,1.0
+middle temporal gyrus 21,U,8,8,0.625,
+middle temporal,L,8,10,1.0,1.0
+medial orbitofrontal cortex,U,8,10,0.7,
+calcarine sulcus,R,8,11,0.0,1.0
+mid temporal gyrus,U,8,16,0.8125,
+superior frontal gyrus ba 6,L,8,13,1.0,1.0
+parietal inf,L,8,10,1.0,1.0
+posterior cingulate gyrus,L,8,9,1.0,1.0
+intracalcarine cortex,U,8,9,0.6667,
+middle cingulate gyrus,R,8,8,0.125,0.875
+insula ba 13,U,8,11,0.7273,
+superior medial gyrus,R,8,11,0.0,1.0
+middle frontal gyrus ba 9,R,8,8,0.125,0.875
+frontal lobe,U,8,31,0.4839,
+posterior parietal cortex,U,8,19,0.4737,
+temporal inf,R,8,15,0.0,1.0
+caudate body,U,8,10,0.6,
+supplementary motor cortex,U,8,10,0.3,
+supramarginal,L,8,8,1.0,1.0
+prefrontal cortex,U,8,18,0.3333,
+inferior parietal lobule ba 40,R,8,15,0.0,1.0
+tpj,L,8,12,1.0,1.0
+sub gyral,U,8,14,0.5714,
+inferior parietal lobe,L,8,10,1.0,1.0
+superior temporal pole,R,7,11,0.0,1.0
+supp motor area,L,7,16,1.0,1.0
+posterior sts,L,7,10,1.0,1.0
+posterior parietal cortex,L,7,18,0.7222,0.7222
+posterior cingulate gyrus,R,7,8,0.125,0.875
+middle cingulum,U,7,13,0.6154,
+superior parietal lobule 7,L,7,10,1.0,1.0
+rectus,R,7,7,0.0,1.0
+rectus,U,7,10,0.6,
+somatosensory cortex,U,7,14,0.6429,
+dorsal striatum,U,7,10,0.4,
+ba 9,U,7,22,0.6364,
+psts,U,7,12,0.6667,
+inferior temporal cortex,R,7,9,0.2222,0.7778
+dorsal premotor cortex,U,7,15,0.6667,
+pmc,U,7,14,0.5714,
+frontal inf tri,L,7,18,1.0,1.0
+middle frontal gyrus ba 9,U,7,13,0.5385,
+frontal inf orb,R,7,8,0.0,1.0
+superior temporal gyrus ba 22,R,7,9,0.0,1.0
+inf parietal,L,7,10,1.0,1.0
+superior occipital,U,7,8,0.75,
+frontal mid,L,7,10,1.0,1.0
+inferior parietal lobule ba 40,L,7,11,1.0,1.0
+caudate body,L,7,8,1.0,1.0
+supplementary motor area,B,7,8,0.625,
+mid cingulate,U,7,8,0.875,
+frontal inf orb,L,7,9,1.0,1.0
+medial pfc,U,7,17,0.3529,
+auditory cortex,R,7,10,0.1,0.9
+lateral ofc,U,7,8,0.75,
+precentral g,L,7,8,1.0,1.0
+parietal operculum,R,7,8,0.0,1.0
+dmpfc,R,7,10,0.0,1.0
+planum temporale,U,7,13,0.6154,
+superior frontal,R,7,10,0.0,1.0
+superior frontal cortex,U,7,14,0.5714,
+posterior superior temporal sulcus,U,7,19,0.2632,
+mid temporal gyrus,R,7,9,0.1111,0.8889
+planum temporale,L,7,7,1.0,1.0
+middle occipital,U,7,11,0.3636,
+inferior parietal lobe,R,7,10,0.0,1.0
+parietal cortex,R,7,8,0.0,1.0
+dorsal acc,U,7,10,0.7,
+lateral occipital,R,7,7,0.0,1.0
+parahippocampus,U,7,9,0.2222,
+temporal mid,R,7,14,0.0,1.0
+calcarine sulcus,L,7,10,1.0,1.0
+precuneus ba 7,R,7,7,0.0,1.0
+ventrolateral prefrontal cortex,L,7,8,1.0,1.0
+inferior frontal gyrus ba 45,R,7,9,0.0,1.0
+inferior frontal gyrus ba 44,U,7,10,0.6,
+middle temporal pole,R,7,8,0.0,1.0
+vmpfc,R,7,7,0.0,1.0
+mog,L,7,9,1.0,1.0
+uncus,R,6,7,0.0,1.0
+visual cortex,R,6,7,0.0,1.0
+mog,R,6,6,0.0,1.0
+motor cortex,U,6,7,0.8571,
+lpmc,U,6,18,0.8333,
+inferior frontal cortex,U,6,10,0.6,
+occipital,R,6,8,0.0,1.0
+middle occipital gyrus ba 19,U,6,8,0.5,
+fef,R,6,7,0.0,1.0
+middle orbital gyrus,U,6,6,0.5,
+occipital lobe,L,6,10,1.0,1.0
+sii,U,6,15,0.3333,
+racc,U,6,20,0.65,
+ba 7,U,6,16,0.5625,
+rectus,L,6,6,0.8333,0.8333
+tpj,R,6,12,0.0,1.0
+superior frontal g,U,6,11,0.7273,
+anterior superior temporal gyrus,L,6,6,1.0,1.0
+anterior sts,U,6,12,0.4167,
+superior medial frontal gyrus,L,6,10,1.0,1.0
+frontal sup medial,R,6,6,0.0,1.0
+pre sma,R,6,12,0.0833,0.9167
+middle cingulate,U,6,12,0.6667,
+superior frontal gyrus ba 9,U,6,8,0.375,
+posterior middle temporal gyrus,L,6,8,1.0,1.0
+precentral cortex,U,6,8,0.875,
+culmen,R,6,7,0.2857,0.7143
+pmtg,U,6,10,0.7,
+frontal orbital cortex,L,6,7,1.0,1.0
+cingulum ant,R,6,7,0.0,1.0
+middle frontal g,U,6,28,0.75,
+cingulum mid,L,6,10,0.9,0.9
+inferior temporal cortex,U,6,7,0.4286,
+planum polare,U,6,9,0.5556,
+lingual g,U,6,8,0.625,
+caudate body,R,6,10,0.0,1.0
+middle frontal gyrus ba 8,U,6,7,0.2857,
+pars triangularis,U,6,19,1.0,
+middle frontal gyrus ba 46,U,6,11,0.5455,
+lingual gyrus ba 18,U,6,9,0.5556,
+caudate head,R,6,9,0.0,1.0
+lmtg,U,6,23,1.0,
+supplemental motor area,U,6,16,0.75,
+superior temporal,R,6,9,0.0,1.0
+parietal sup,L,6,8,1.0,1.0
+middle insula,U,6,9,0.4444,
+parietal cortex,L,6,8,1.0,1.0
+parietal inf,U,6,7,0.8571,
+superior temporal cortex,U,6,9,0.2222,
+inf parietal lobule,U,6,13,0.6923,
+supp motor area,U,6,11,0.5455,
+parahippocampal g,U,6,8,0.75,
+apfc,U,6,10,0.5,
+pre central gyrus,R,6,8,0.0,1.0
+middle temporal gyrus 21,R,6,9,0.0,1.0
+lateral orbitofrontal cortex,U,6,10,0.4,
+precuneus,B,6,8,0.25,
+precentral gyrus ba 6,R,6,10,0.1,0.9
+precuneus 7,U,6,11,0.4545,
+central opercular cortex,R,6,6,0.0,1.0
+superior frontal gyrus ba 6,R,6,6,0.0,1.0
+inferior frontal gyrus ba 45,U,6,8,0.5,
+temporo parietal junction,U,6,8,0.625,
+medial frontal gyrus ba 10,L,5,6,1.0,1.0
+rectal gyrus,R,5,6,0.0,1.0
+red nucleus,U,5,5,0.6,
+rectal gyrus,L,5,5,1.0,1.0
+orbitofrontal cortex,R,5,5,0.2,0.8
+head of caudate,U,5,6,0.3333,
+occipital lobe,R,5,6,0.0,1.0
+occipital mid,L,5,10,1.0,1.0
+middle orbital gyrus,R,5,5,0.0,1.0
+ffa,U,5,6,0.1667,
+fef,U,5,11,0.4545,
+occipital fusiform gyrus,R,5,9,0.1111,0.8889
+angular g,R,5,6,0.1667,0.8333
+temporal inf,L,5,9,1.0,1.0
+occipital,L,5,7,1.0,1.0
+inferior,U,5,32,0.4688,
+temporal mid,U,5,6,0.6667,
+inferior frontal g,U,5,15,0.8667,
+rostral middle frontal,U,5,9,0.6667,
+rtpj,U,5,5,0.0,
+medial frontal cortex,U,5,7,0.2857,
+mofc,U,5,10,0.6,
+motor cortex,R,5,8,0.125,0.875
+motor cortex,L,5,9,0.8889,0.8889
+aips,U,5,10,0.6,
+anterior cingulate cortex,B,5,7,0.2857,
+inferior parietal gyrus,R,5,6,0.0,1.0
+parietal,L,5,10,1.0,1.0
+supra marginal gyrus,U,5,5,0.6,
+temporal cortex,U,5,10,0.8,
+supramarginal gyrus 40,U,5,7,0.7143,
+supramarginal gyrus ba 40,U,5,6,0.1667,
+supramarginal gyrus ba 40,R,5,5,0.0,1.0
+middle occipital gyrus ba 18,L,5,8,1.0,1.0
+middle occipital gyrus ba 19,R,5,6,0.0,1.0
+orbitofrontal,U,5,12,0.5,
+primary motor cortex,R,5,5,0.2,0.8
+pars opercularis,R,5,8,0.0,1.0
+parieto occipital sulcus,U,5,7,0.7143,
+anterior cingulum,U,5,8,0.625,
+declive,L,5,7,0.8571,0.8571
+ba 6,U,5,31,0.5806,
+lingual gyrus ba 18,L,5,6,1.0,1.0
+medial frontal gyrus ba 6,R,5,5,0.2,0.8
+medial frontal gyrus ba 6,U,5,9,0.5556,
+superior temporal gyrus ba 39,L,5,5,1.0,1.0
+calcarine cortex,R,5,9,0.0,1.0
+frontal eye field,R,5,8,0.0,1.0
+inferior temporal,L,5,10,1.0,1.0
+superior temporal,L,5,7,1.0,1.0
+inferior parietal lobule 40,U,5,14,0.4286,
+frontal cortex,R,5,5,0.0,1.0
+frontal gyrus,U,5,17,0.7059,
+middle frontal cortex,R,5,6,0.1667,0.8333
+middle frontal cortex,U,5,8,0.25,
+dacc,R,5,9,0.3333,0.6667
+middle frontal gyrus 6,R,5,7,0.0,1.0
+lateral prefrontal cortex,U,5,6,0.3333,
+caudate head,L,5,6,1.0,1.0
+culmen,L,5,6,1.0,1.0
+pons,U,5,8,0.75,
+ins,U,5,11,0.3636,
+frontal inf tri,R,5,6,0.0,1.0
+pcg,U,5,7,0.2857,
+pmv,U,5,10,0.6,
+pmd,L,5,11,1.0,1.0
+insula 13,U,5,7,0.5714,
+ins,L,5,7,1.0,1.0
+ins,R,5,9,0.0,1.0
+pcu,U,5,7,0.4286,
+pars orbitalis,U,5,7,0.8571,
+middle frontal gyrus ba 10,R,5,6,0.0,1.0
+middle occipital cortex,U,5,11,0.6364,
+superior and middle frontal gyrus,U,5,5,0.4,
+superior parietal gyrus,L,5,7,0.8571,0.8571
+superior parietal lobule ba 7,L,5,5,1.0,1.0
+frontal sup medial,L,5,6,0.5,0.5
+pre central gyrus,L,5,7,0.8571,0.8571
+middle,U,5,45,0.5333,
+superior frontal gyrus ba 9,R,5,9,0.0,1.0
+middle cingulum,R,5,6,0.1667,0.8333
+superior parietal cortex,L,5,13,0.9231,0.9231
+cingulum,U,5,6,0.6667,
+posterior cingulum,U,5,5,0.8,
+cingulum ant,L,5,8,1.0,1.0
+medial superior frontal gyrus,R,5,6,0.0,1.0
+medial superior frontal gyrus,L,5,7,0.8571,0.8571
+precuneus 7,L,5,6,1.0,1.0
+precuneus 7,R,5,6,0.0,1.0
+superior frontal gyrus 9,U,5,6,0.6667,
+superior frontal gyrus,B,5,6,0.3333,
+superior frontal gyrus 6,R,5,6,0.0,1.0
+fusiform gyrus 37,U,5,7,0.8571,
+ba 10,U,5,17,0.2941,
+mid frontal gyrus,U,5,15,0.7333,
+sup frontal gyrus,U,5,12,0.5833,
+auditory cortex,L,5,9,0.8889,0.8889
+sup temporal,L,5,7,1.0,1.0
+mid orbital gyrus,U,5,8,0.5,
+precentral sulcus,U,5,5,0.6,
+superior frontal sulcus,L,5,5,1.0,1.0
+inf frontal gyrus,U,5,8,0.5,
+superior frontal gyrus ba 8,R,5,6,0.0,1.0
+superior frontal gyrus ba 6,U,5,8,0.75,
+precentral g,R,5,5,0.0,1.0
+middle temporal gyrus 21,L,5,9,1.0,1.0
+middle temporal gyrus ba 21,L,5,5,1.0,1.0
+thalamus,B,5,7,0.4286,
+cerebellum 6,U,5,7,0.8571,
+anterior cingulate,B,5,5,0.6,
+inferior frontal gyrus ba 9,U,5,5,0.6,
+inferior frontal gyrus ba 47,L,5,8,1.0,1.0
+ventral premotor cortex,L,5,8,1.0,1.0
+inferior frontal operculum,R,5,9,0.0,1.0
+inferior frontal gyrus 45,U,5,6,0.3333,
+inferior frontal gyrus ba 45,L,5,6,1.0,1.0
+inferior frontal gyrus 47,U,5,5,0.6,
+amygdaloid complex,R,4,10,0.0,1.0
+amygdaloid complex,L,4,10,1.0,1.0
+temporal sup,L,4,7,1.0,1.0
+visual cortex,L,4,9,0.8889,0.8889
+mtg 21,U,4,11,0.6364,
+msfg,U,4,6,0.5,
+dorsomedial pfc,U,4,5,0.6,
+anterior,U,4,10,0.5,
+anterior cingulate ba 32,R,4,4,0.0,1.0
+inferior lateral occipital cortex,U,4,6,0.5,
+inferior frontal gyrus pars triangularis,U,4,6,0.3333,
+sma ba 6,U,4,12,0.5,
+parahippocampal,L,4,5,1.0,1.0
+paracentral,U,4,5,0.6,
+paracentral,L,4,5,0.6,0.6
+parietal,R,4,4,0.25,0.75
+mid occipital,L,4,7,1.0,1.0
+mid occipital,R,4,4,0.0,1.0
+sup frontal gyrus,R,4,6,0.0,1.0
+sup frontal,L,4,9,1.0,1.0
+superior,U,4,33,0.5455,
+mid occipital gyrus,R,4,6,0.0,1.0
+ventrolateral pfc,U,4,5,0.4,
+ains,U,4,6,0.1667,
+middle temporal g,U,4,14,0.7857,
+occipital fusiform gyrus,L,4,7,1.0,1.0
+medial,U,4,9,0.7778,
+ventral premotor cortex,U,4,7,0.7143,
+middle sts,U,4,6,0.6667,
+orbital gyrus,R,4,4,0.0,1.0
+middle occipital g,U,4,13,0.7692,
+parahippocampa gyrus,L,4,4,1.0,1.0
+paracingulate gyrus,L,4,6,1.0,1.0
+rectal gyrus,U,4,6,0.5,
+rectus gyrus,U,4,7,0.7143,
+middle occipital,R,4,4,0.0,1.0
+frontal eye field,L,4,4,1.0,1.0
+parahippocampa gyrus,R,4,6,0.0,1.0
+pulvinar,R,4,4,0.0,1.0
+mfc,U,4,5,0.8,
+fusiform g,U,4,13,0.6154,
+superior frontal gyrus ba 8,L,4,4,1.0,1.0
+ifj,L,4,6,1.0,1.0
+precuneous cortex,U,4,5,0.6,
+median cingulate gyrus,L,4,6,1.0,1.0
+lateral orbital gyrus,U,4,5,0.6,
+precentral gyrus 4,L,4,6,1.0,1.0
+precentral gyrus 4,U,4,4,0.75,
+precentral gyrus 6,L,4,7,1.0,1.0
+precentral gyrus 6,R,4,6,0.0,1.0
+lateral globus pallidus,U,4,5,0.4,
+lateral ofc,R,4,6,0.0,1.0
+sma ba 6,L,4,4,1.0,1.0
+medial frontal gyrus,B,4,4,0.5,
+medial frontal gyrus ba 6,L,4,5,1.0,1.0
+sensorimotor cortex,U,4,11,0.5455,
+sma proper,U,4,8,0.875,
+dorsal acc,R,4,4,0.0,1.0
+superior temporal gyrus ba 39,R,4,5,0.0,1.0
+superior temporal gyrus ba 22,U,4,5,0.6,
+inf parietal lobule,R,4,5,0.0,1.0
+parietal operculum,L,4,5,1.0,1.0
+frontal,R,4,6,0.0,1.0
+frontal cortex,L,4,4,0.75,0.75
+middle frontal sulcus,U,4,4,0.75,
+inferior parietal lobule 40,L,4,8,0.875,0.875
+ba 44,U,4,6,0.1667,
+ba 40,U,4,9,0.5556,
+superior temporal gyrus ba 42,U,4,4,0.25,
+supp motor area,R,4,4,0.0,1.0
+medial ofc,U,4,11,0.7273,
+medial occipital cortex,U,4,7,0.4286,
+supplementary motor area ba 6,U,4,4,0.5,
+calcarine cortex,L,4,4,1.0,1.0
+calcarine cortex,U,4,5,1.0,
+lingual gyrus 18,U,4,8,0.5,
+lmfg,U,4,6,1.0,
+intra parietal sulcus,U,4,6,0.6667,
+posterior middle temporal gyrus,U,4,5,0.8,
+fusiform gyrus 37,R,4,8,0.0,1.0
+mid frontal,L,4,9,1.0,1.0
+central sulcus,L,4,6,1.0,1.0
+anterior sts,L,4,6,1.0,1.0
+medial temporal gyrus,U,4,4,0.25,
+superior temporal gyrus 22,U,4,4,0.75,
+medial orbitofrontal cortex,R,4,4,0.0,1.0
+primary sensory cortex,U,4,14,0.7143,
+pocg,U,4,7,0.2857,
+cuneus 18,L,4,9,1.0,1.0
+anterior cingulate gyrus,B,4,6,0.5,
+cuneus ba 18,U,4,4,0.5,
+middle frontal gyrus ba 10,L,4,4,1.0,1.0
+middle frontal gyrus 8,U,4,5,0.4,
+cuneus,B,4,4,0.5,
+middle frontal gyrus ba 46,R,4,5,0.0,1.0
+middle frontal gyrus ba 9,L,4,5,0.8,0.8
+cuneus 19,R,4,5,0.0,1.0
+middle frontal gyrus 9,R,4,4,0.0,1.0
+middle frontal gyrus ba 8,L,4,4,1.0,1.0
+middle frontal gyrus ba 8,R,4,6,0.0,1.0
+limbic,U,4,16,0.625,
+frontal lobe,R,4,4,0.0,1.0
+pars opercularis,U,4,7,0.8571,
+pars triangularis,R,4,5,0.0,1.0
+subthalamic nucleus,U,4,4,0.75,
+lateral parietal cortex,U,4,11,0.2727,
+lifg,U,4,23,1.0,
+subcallosal cortex,U,4,4,0.5,
+cingulate gyrus ba 32,L,4,4,1.0,1.0
+superior parietal lobule 7,U,4,6,0.6667,
+superior frontal gyrus 6,U,4,6,0.8333,
+anterior pfc,U,4,6,0.5,
+anterior prefrontal cortex,U,4,6,0.5,
+precentral cortex,R,4,5,0.0,1.0
+anterior superior temporal gyrus,U,4,5,0.8,
+superior frontal cortex,L,4,6,1.0,1.0
+superior frontal cortex,R,4,5,0.0,1.0
+cingulate,L,4,4,1.0,1.0
+posterior superior temporal gyrus,U,4,4,0.75,
+pre central gyrus,U,4,8,0.75,
+subcortical,U,4,10,0.3,
+posterior,U,4,8,0.375,
+prefrontal cortex,R,4,6,0.0,1.0
+medial prefrontal gyrus,U,4,4,0.5,
+frontal operculum,R,4,5,0.0,1.0
+middle frontal g,L,4,9,1.0,1.0
+lateral parietal,U,4,6,0.5,
+frontal operculum cortex,L,4,4,1.0,1.0
+frontal mid orb,L,4,5,1.0,1.0
+superior frontal gyrus ba 8,U,4,9,0.3333,
+superior frontal gyrus ba 9,L,4,4,1.0,1.0
+superior frontal gyrus ba 10,R,4,6,0.0,1.0
+cuneal cortex,U,4,5,0.6,
+anterior hippocampus,L,4,6,1.0,1.0
+inferior temporal g,U,4,6,0.5,
+posterior cingulate cortex,B,4,4,0.75,
+internal capsule,U,4,4,0.5,
+intra parietal sulcus,L,4,4,1.0,1.0
+anterior insular cortex,U,4,20,0.55,
+anterior intraparietal sulcus,L,4,5,0.8,0.8
+midcingulate gyrus,U,4,7,0.4286,
+frontal sup,L,4,8,1.0,1.0
+middle temporal gyrus ba 39,L,4,4,1.0,1.0
+inferior frontal cortex,L,4,6,1.0,1.0
+fef,L,4,7,1.0,1.0
+brain stem,U,4,4,0.5,
+dorsomedial prefrontal cortex,L,4,4,1.0,1.0
+uncus,L,4,4,1.0,1.0
+temporal gyrus,U,4,8,0.625,
+temporal lobe,L,4,4,1.0,1.0
+lofc,U,4,6,0.3333,
+inferior frontal gyrus ba 9,L,4,4,1.0,1.0
+gyrus rectus,U,4,5,0.6,
+inferior frontal gyrus ba 44,L,4,6,1.0,1.0
+angular gyrus 39,U,4,7,0.7143,
+angular gyrus ba 39,L,4,4,1.0,1.0
+inferior frontal junction,L,4,5,0.8,0.8
+inferior occipital,U,4,17,0.6471,
+temporo parietal junction,L,3,11,1.0,1.0
+inferior frontal gyrus 47,L,3,3,1.0,1.0
+inferior frontal gyrus 47,R,3,5,0.0,1.0
+inferior frontal gyrus 9,L,3,3,1.0,1.0
+inferior occipital,L,3,3,1.0,1.0
+inferior occipital,R,3,4,0.0,1.0
+inferior occipital cortex,R,3,3,0.0,1.0
+inferior occipital cortex,U,3,4,0.5,
+inferior frontal gyrus ba 44,R,3,6,0.0,1.0
+ventral anterior cingulate cortex,U,3,5,0.4,
+vacc,U,3,6,0.8333,
+inferior frontal junction,U,3,5,0.2,
+inferior frontal gyrus ba 47,U,3,4,0.5,
+inferior frontal gyrus pars opercularis,U,3,5,0.6,
+gyrus,U,3,7,0.5714,
+medial dorsal nucleus,U,3,3,0.6667,
+medial frontal,L,3,3,1.0,1.0
+medial frontal gyrus 10,L,3,3,1.0,1.0
+heschl,L,3,3,1.0,1.0
+rmfg,U,3,5,0.0,
+rmtg,U,3,12,0.0,
+vermis,U,3,4,0.25,
+log,U,3,7,0.4286,
+loc,U,3,6,0.3333,
+sup parietal lobule,R,3,5,0.0,1.0
+ba 13,U,3,9,0.8889,
+paracentral gyrus,U,3,4,0.5,
+anterior cingulate 32,U,3,3,1.0,
+supramarginal gyrus ba 40,L,3,3,1.0,1.0
+parahippocampal gyrus ba 36,U,3,6,0.6667,
+parahippocampal gyrus 36,U,3,3,1.0,
+parahippocampal gyrus 28,U,3,4,0.75,
+occipito temporal junction,U,3,5,0.8,
+occipital mid,R,3,3,0.0,1.0
+occipital mid,U,3,5,0.6,
+mid frontal,R,3,4,0.0,1.0
+mid frontal gyrus,R,3,4,0.0,1.0
+mid cingulate cortex,R,3,4,0.25,0.75
+mid occipital gyrus,U,3,13,0.6154,
+mid insula,L,3,3,1.0,1.0
+inferior operculum,U,3,10,0.3,
+inferior orbital,U,3,8,0.375,
+inferior occipital gyrus ba 18,R,3,3,0.0,1.0
+ventral premotor cortex,R,3,5,0.0,1.0
+ventral thalamus,U,3,3,0.6667,
+middle temporal cortex,U,3,3,0.6667,
+ffg,R,3,3,0.0,1.0
+occipital inf,R,3,4,0.0,1.0
+ffg,U,3,5,0.2,
+middle temporal cortex,R,3,3,0.0,1.0
+orbital frontal gyrus,L,3,3,1.0,1.0
+orbitofrontal gyrus,L,3,5,1.0,1.0
+orbitofrontal gyrus,R,3,3,0.0,1.0
+orbitofrontal,L,3,4,1.0,1.0
+medfg,U,3,7,0.5714,
+gyrus rectus,R,3,3,0.0,1.0
+caudal anterior cingulate cortex,U,3,5,0.4,
+inferior temporal gyrus ba 20,U,3,3,0.3333,
+inferior temporal gyrus ba 37,U,3,4,0.75,
+insula 13,L,3,3,0.6667,0.6667
+inferior triangular,U,3,9,0.3333,
+inf parietal,R,3,4,0.0,1.0
+sup frontal,U,3,5,0.6,
+calcarine gyrus ba 17,R,3,3,0.0,1.0
+frontal operculum,L,3,3,1.0,1.0
+postcentral g,U,3,3,0.3333,
+postcentral gyrus ba 2,R,3,6,0.0,1.0
+postcentral gyrus ba 3,L,3,3,1.0,1.0
+postcentral gyrus ba 3,U,3,5,0.6,
+postcentral gyrus 3,R,3,3,0.0,1.0
+cingulum mid,R,3,3,0.0,1.0
+cingulum mid,U,3,6,0.5,
+post central,L,3,3,1.0,1.0
+dacc,L,3,4,0.25,0.25
+post insula,U,3,3,0.3333,
+postcentral sulcus,U,3,4,0.75,
+middle frontal g,R,3,3,0.0,1.0
+middle frontal gyrus,B,3,3,0.6667,
+middle frontal gyrus 10,U,3,7,0.2857,
+frontal orbital cortex,R,3,6,0.0,1.0
+superior frontal lobe,U,3,8,0.5,
+inferior temporal sulcus,U,3,7,0.7143,
+inferior temporal lobe,L,3,3,0.6667,0.6667
+inferior temporal gyrus ba 20,L,3,5,1.0,1.0
+inferior temporal gyrus ba 20,R,3,4,0.0,1.0
+middle frontal gyrus 6,L,3,4,1.0,1.0
+middle frontal gyrus 6,U,3,6,0.6667,
+frontal operculum cortex,U,3,3,0.6667,
+precuneus ba 31,R,3,3,0.0,1.0
+striatum,R,3,4,0.25,0.75
+stga,U,3,5,0.4,
+stg 22,U,3,6,0.5,
+subcallosal gyrus,U,3,4,0.25,
+sub lobar,U,3,16,0.5,
+subthalamic nucleus,R,3,3,0.0,1.0
+lateral pfc,U,3,11,0.5455,
+cingulate sulcus,U,3,3,0.3333,
+postcentral g,R,3,4,0.25,0.75
+superior parietal lobule 7,R,3,6,0.0,1.0
+anterior intraparietal sulcus,R,3,3,0.3333,0.6667
+anterior intraparietal sulcus,U,3,4,0.75,
+superior parietal lobule ba 7,R,3,4,0.0,1.0
+precuneus ba 19,L,3,3,1.0,1.0
+precuneus ba 31,L,3,3,1.0,1.0
+precental gyrus,R,3,5,0.0,1.0
+anterior superior temporal sulcus,L,3,3,1.0,1.0
+superior frontal g,R,3,4,0.0,1.0
+superior frontal gyrus 6,L,3,5,1.0,1.0
+apfc,R,3,4,0.0,1.0
+superior occipital cortex,U,3,4,0.75,
+anterior temporal lobe,U,3,3,0.3333,
+anterior stg,U,3,3,1.0,
+calcarine fissure,R,3,3,0.0,1.0
+calcarine fissure,U,3,8,0.5,
+cingulate g,U,3,8,0.625,
+superior frontal gyrus 8,R,3,3,0.0,1.0
+superior frontal gyrus ba 10,L,3,3,1.0,1.0
+prc,U,3,3,0.3333,
+pre supplementary motor area,R,3,4,0.0,1.0
+precentral cortex,L,3,3,1.0,1.0
+superior temporal g,U,3,10,0.7,
+superior temporal gyrus 22,R,3,6,0.0,1.0
+anterior fusiform,U,3,3,0.6667,
+medial occipital gyrus,U,3,3,1.0,
+medial globus pallidus,U,3,3,1.0,
+prg,U,3,4,0.25,
+precuneus 19,L,3,3,1.0,1.0
+central sulcus,U,3,5,0.6,
+inf occipital gyrus,R,3,3,0.0,1.0
+crus i,R,3,4,0.0,1.0
+post parietal,U,3,5,1.0,
+planum polare,L,3,3,1.0,1.0
+pmd,R,3,7,0.0,1.0
+calcarine fissure,L,3,3,1.0,1.0
+ba 19,U,3,6,0.8333,
+auditory cortex,U,3,19,0.3684,
+pcg,L,3,3,1.0,1.0
+middle frontal gyrus 9,L,3,4,1.0,1.0
+middle frontal gyrus ba 6,U,3,5,0.8,
+middle frontal gyrus 9,U,3,11,0.3636,
+cuneus 18,R,3,3,0.0,1.0
+cuneus 19,L,3,3,1.0,1.0
+cuneus 19,U,3,3,1.0,
+pog,U,3,4,0.25,
+limbic lobe,R,3,3,0.3333,0.6667
+lateral temporal cortex,U,3,5,0.6,
+hypothalamus,L,3,4,0.5,0.5
+hypothalamus,U,3,5,0.4,
+frontal inf tri,U,3,3,1.0,
+pcun,U,3,5,0.2,
+pcu,L,3,3,0.6667,0.6667
+pcu,R,3,3,0.0,1.0
+lingual gyrus,B,3,3,0.3333,
+lingual gyrus 18,L,3,4,1.0,1.0
+lingual gyrus ba 17,R,3,3,0.0,1.0
+medial frontal gyrus ba 8,L,3,3,1.0,1.0
+declive,R,3,3,0.0,1.0
+supplementary motor area ba 6,L,3,4,1.0,1.0
+anterior cingulum,R,3,5,0.6,0.4
+anterior cingulate gyrus ba 24,R,3,3,0.0,1.0
+insular,L,3,6,1.0,1.0
+intracalcarine cortex,L,3,3,1.0,1.0
+intracalcarine cortex,R,3,4,0.0,1.0
+precental gyrus,U,3,4,0.5,
+posterior insular cortex,U,3,5,0.4,
+posterior mtg,L,3,7,1.0,1.0
+posterior stg,R,3,4,0.0,1.0
+presupplementary motor area,U,3,3,0.3333,
+mid occipital gyrus,L,3,5,1.0,1.0
+frontopolar cortex,L,3,5,0.8,0.8
+posterior supramarginal gyrus,U,3,6,1.0,
+cingulate gyrus,B,3,4,1.0,
+midcingulate cortex,L,3,3,1.0,1.0
+superior occipital gyrus ba 19,U,3,5,0.2,
+insula ba 47,R,3,3,0.0,1.0
+insula ba 48,R,3,4,0.0,1.0
+anterior sts,R,3,5,0.0,1.0
+anterior thalamus,U,3,6,0.1667,
+medial temporal,U,3,3,0.3333,
+fusiform gyrus 19,R,3,3,0.0,1.0
+medial temporal pole,U,3,4,0.5,
+mid temporal,L,3,6,1.0,1.0
+mid temporal,R,3,4,0.0,1.0
+mid temporal,U,3,4,1.0,
+sef,L,3,4,1.0,1.0
+sma 6,U,3,5,0.8,
+sma ba 6,R,3,3,0.0,1.0
+red nucleus,L,3,3,1.0,1.0
+medial frontal gyrus ba 9,L,3,4,1.0,1.0
+ba 32,U,3,5,0.4,
+superior and middle temporal gyrus,L,3,3,1.0,1.0
+cerebellum anterior lobe,R,3,4,0.0,1.0
+anterior fusiform gyrus,U,3,3,0.6667,
+superior temporal gyrus ba 41,U,3,3,0.6667,
+superior temporal gyrus ba 22,L,3,3,1.0,1.0
+superior temporal gyrusa,U,3,5,0.8,
+phc,U,3,6,0.8333,
+pgacc,U,3,6,0.1667,
+ba 24,U,3,4,1.0,
+sensorimotor cortex,L,3,3,1.0,1.0
+inf temporal gyrus,U,3,5,0.6,
+inf parietal lobule,L,3,3,1.0,1.0
+perirhinal cortex,U,3,3,1.0,
+planum temporale,R,3,3,0.0,1.0
+dlpfc ba 9,U,3,6,0.5,
+parietal lobule,U,3,5,0.6,
+parietal lobe,L,3,3,1.0,1.0
+parieto occipital sulcus,L,3,3,1.0,1.0
+ba 42,U,3,6,0.6667,
+superior temporal lobe,U,3,12,0.5,
+frontal med orb,L,3,3,1.0,1.0
+frontal,L,3,9,1.0,1.0
+fornix,U,3,3,0.6667,
+parietal sup,R,3,5,0.0,1.0
+middle insula,L,3,3,0.6667,0.6667
+middle occipital,L,3,3,1.0,1.0
+frontal cortex,U,3,3,0.6667,
+middle occipital gyrus 19,L,3,3,1.0,1.0
+middle occipital gyrus 19,R,3,3,0.0,1.0
+middle occipital gyrus 19,U,3,4,0.75,
+dorsal mpfc,U,3,3,1.0,
+paracingulate gyrus,R,3,3,0.0,1.0
+middle occipital gyrus ba 18,R,3,6,0.0,1.0
+middle occipital gyrus ba 19,L,3,5,1.0,1.0
+precuneous,U,3,3,0.3333,
+ba 37,U,3,3,0.6667,
+ba 22,U,3,7,0.5714,
+ba 23,U,3,3,0.6667,
+dorsal medial prefrontal cortex,U,3,3,0.6667,
+pulvinar,L,3,3,1.0,1.0
+psts,L,3,3,1.0,1.0
+retrosplenial cortex,R,3,3,0.0,1.0
+central operculum,U,3,4,0.5,
+fusiform gyrus ba 37,U,3,3,0.6667,
+fusiform gyrus ba 37,R,3,3,0.0,1.0
+mid cingulate gyrus,R,3,3,0.0,1.0
+precentral gyrus ba 44,U,3,3,0.3333,
+precentral gyrus 6,U,3,4,1.0,
+precentral gyrus ba 4,L,3,3,1.0,1.0
+precu,U,3,3,0.3333,
+lateral occipital gyrus,U,3,9,0.5556,
+lateral occipital,L,3,4,1.0,1.0
+lateral ofc,L,3,5,1.0,1.0
+sup occipital gyrus,L,3,8,1.0,1.0
+sup frontal gyrus,L,3,3,1.0,1.0
+precentral gyrus ba 4,U,3,3,0.3333,
+precentral gyrus 4,R,3,4,0.0,1.0
+lateral occipital,U,3,3,0.3333,
+inferior frontal gyrus opercularis,U,3,3,0.0,
+ventral tegmental area,U,3,6,0.0,
+inferior frontal sulcus,R,3,3,0.0,1.0
+vpm,U,3,4,1.0,
+amygdalaa,U,3,3,0.6667,
+temporal sup,R,3,6,0.0,1.0
+anterior cerebellum,U,3,5,0.6,
+lpfc,U,3,4,0.75,
+temporo parietal junction,R,3,10,0.0,1.0
+inferior frontal gyrus 46,L,3,4,1.0,1.0
+tha,L,3,4,1.0,1.0
+tha,R,3,3,0.3333,0.6667
+angular g,U,3,5,0.4,
+dpmc,U,3,11,0.2727,
+eba,U,3,3,0.3333,
+dorsomedial prefrontal cortex,R,3,6,0.0,1.0
+inferior frontal operculum,L,3,5,1.0,1.0
+white matter,U,3,4,0.5,
+inferior frontal gyrus pars triangularis,L,3,6,1.0,1.0
+nucleus caudatus,U,3,6,0.6667,
+dorsomedial frontal gyrus,U,3,3,0.3333,
+middle temporal gyrus ba 21,R,3,3,0.0,1.0
+middle temporal gyrus 22,U,3,3,0.6667,
+midfrontal gyrus,R,3,5,0.0,1.0
+dorsal anterior cingulate cortex,L,3,4,1.0,1.0
+dorsal anterior cingulate cortex,R,3,3,0.0,1.0
+sii,L,3,5,1.0,1.0
+temporal pole mid,R,3,3,0.0,1.0
+temporal occipital fusiform cortex,L,3,5,1.0,1.0
+ant insula,R,3,3,0.0,1.0
+angular g,L,3,3,1.0,1.0
+aic,L,3,3,1.0,1.0
+anterior middle cingulate cortex,U,3,6,0.6667,
+midbrain,L,3,4,0.75,0.75
+middle cingulate,R,3,6,0.0,1.0
+frontal sup orb,L,3,5,1.0,1.0
+posterior hippocampus,R,3,3,0.0,1.0
+posterior hippocampus,U,3,4,0.75,
+intra parietal sulcus,R,3,5,0.0,1.0
+intraparietal cortex,R,3,3,0.0,1.0
+precentral g,U,3,8,0.75,
+cerebellum 8,U,3,8,0.875,
+cereb,U,3,3,0.3333,
+cerebellar declive,U,3,3,1.0,
+dorsomedial thalamus,U,3,5,0.2,
+middle temporal gyrus 39,R,3,3,0.0,1.0
+middle temporal gyrus ba 39,R,3,6,0.0,1.0
+middle temporal gyrus ba 39,U,3,3,0.6667,
+secondary somatosensory cortex,R,3,3,0.0,1.0
+secondary somatosensory cortex,U,3,3,0.6667,
+basal ganglia,L,3,11,1.0,1.0
+basal ganglia,R,3,8,0.0,1.0
+inferior orbitofrontal cortex,U,3,3,0.6667,
+middle temporal pole,U,3,6,0.8333,
+extra nuclear,L,3,3,1.0,1.0
+extra nuclear,U,3,6,0.5,
+ventral medial prefrontal cortex,U,3,8,0.125,
+inferior frontal g,L,3,7,1.0,1.0
+inferior frontal g,R,3,6,0.0,1.0
+temporal lobe,R,3,3,0.0,1.0
+ofa,U,3,5,0.4,
+orbital gyrus,U,3,5,0.4,
+dorsal premotor cortex,R,3,3,0.0,1.0
+rsc,U,3,3,1.0,
+vfc,U,2,6,0.6667,
+vmpfc,B,2,2,0.5,
+amyg,L,2,2,1.0,1.0
+amcc,U,2,2,0.0,
+inferior occipital gyrus 18,U,2,4,0.5,
+inferior occipital gyrus 19,R,2,2,0.0,1.0
+inferior occipital gyrus ba 17,L,2,2,1.0,1.0
+inferior occipital g,U,2,5,0.6,
+trans temporal gyrus,U,2,3,1.0,
+toc,U,2,3,0.6667,
+thalamus pulvinar,U,2,3,0.6667,
+thal,R,2,2,0.5,0.5
+inferior frontal cortex,R,2,2,0.0,1.0
+inferior orbitofrontal cortex,R,2,2,0.0,1.0
+inferior orbital frontal gyrus,L,2,2,1.0,1.0
+inferior ofc,U,2,7,0.1429,
+inferior occipital gyrus ba 18,L,2,2,1.0,1.0
+inferior occipital gyrus ba 19,L,2,3,1.0,1.0
+inferior occipital gyrus ba 19,R,2,2,0.0,1.0
+inferior occipital gyrus ba 19,U,2,3,0.3333,
+temporal parietal junction,U,2,4,0.5,
+temporal inf,U,2,5,0.2,
+temporal inferior,U,2,2,1.0,
+temporal fusiform gyrus,U,2,2,0.5,
+temporal gyrus,L,2,3,1.0,1.0
+temporal,L,2,3,1.0,1.0
+temporal,R,2,2,0.0,1.0
+inferior parietal cortex ba 40,U,2,2,0.5,
+ant thalamus,R,2,2,0.0,1.0
+ant insula,L,2,2,1.0,1.0
+ant insula,U,2,3,0.6667,
+ant cingulate gyrus,U,2,2,0.5,
+temporal pole ba 38,L,2,4,1.0,1.0
+temporal pole ba 38,R,2,2,0.0,1.0
+temporal pole 38,L,2,5,1.0,1.0
+temporal parietal junction,R,2,2,0.0,1.0
+middle occipital lobe,U,2,6,0.5,
+middle occipital gyrus 18,U,2,2,1.0,
+dorsal midbrain,U,2,2,0.0,
+dorsal medial frontal cortex,U,2,2,0.5,
+paracentral lobule ba 5,U,2,3,0.6667,
+paracentral lobule and sulcus,U,2,3,0.6667,
+paracentral lobule ba 5,L,2,2,1.0,1.0
+pacc,U,2,2,0.5,
+ffa,L,2,2,0.5,0.5
+ffa,R,2,2,0.5,0.5
+middle sts,R,2,2,0.0,1.0
+middle orbital frontal,U,2,3,1.0,
+middle orbital frontal gyrus,R,2,2,0.0,1.0
+middle orbital gyrus,L,2,2,1.0,1.0
+middle orbital gyrus ba 10,R,2,2,0.0,1.0
+middle orbital,U,2,9,0.0,
+ofg,R,2,3,0.0,1.0
+occipitotemporal area ba 37,U,2,3,0.6667,
+occipitotemporal cortex,L,2,3,1.0,1.0
+occipital inf,U,2,2,1.0,
+occipital lingual gyrus,R,2,3,0.0,1.0
+middle temporal cortex,L,2,2,1.0,1.0
+fmc,U,2,2,1.0,
+ffg,L,2,3,1.0,1.0
+occ,U,2,2,0.0,
+f3o,U,2,5,0.6,
+dorsolateral pfc ba 46,L,2,2,1.0,1.0
+dorsal premotor,R,2,3,0.0,1.0
+dorsal premotor cortex,L,2,3,1.0,1.0
+orbital frontal,U,2,2,1.0,
+operculum,L,2,2,1.0,1.0
+olfactory cortex,U,2,2,1.0,
+dorsal acc,L,2,2,1.0,1.0
+dmpfc ba 8,U,2,2,0.0,
+dlpfcb,U,2,4,0.75,
+dmfc,U,2,2,0.5,
+parietal inf,R,2,3,0.3333,0.6667
+parietal lobe,R,2,2,0.0,1.0
+dorsal lateral prefrontal cortex,U,2,2,0.0,
+plpfc,U,2,2,1.0,
+frontal inf oper,R,2,2,0.0,1.0
+frontal inf oper,U,2,3,0.6667,
+middle frontalgyrus,U,2,3,0.6667,
+middle frontopolar gyrus,R,2,3,0.3333,0.6667
+parieto occipital junction,L,2,2,1.0,1.0
+parietal operculum cortex,R,2,2,0.0,1.0
+parietal sup,U,2,2,0.5,
+dorsal acc,B,2,2,0.0,
+parahippocampal gyrus 30,U,2,2,0.0,
+parahippocampal gyrus 36,L,2,2,1.0,1.0
+parahippocampal g,R,2,2,0.0,1.0
+parahippocampa gyrus,U,2,2,0.5,
+dorsal prefrontal cortex,U,2,2,1.0,
+dorsal posterior cingulate cortex,U,2,2,0.5,
+dorsal medial prefrontal cortex,R,2,2,0.0,1.0
+frontal inf oper,L,2,4,1.0,1.0
+other,U,2,4,0.5,
+pacc,R,2,2,0.0,1.0
+orbitofrontal gyrus,U,2,2,0.5,
+orbital sulcus,U,2,2,0.5,
+orbital frontal gyrus,R,2,2,0.5,0.5
+dorsal anterior insula,R,2,2,0.0,1.0
+parahippocampal gyrus ba 36,R,2,2,0.0,1.0
+parahippocampal gyrus 28,R,2,2,0.0,1.0
+cuneus ba 17 18,R,2,3,0.0,1.0
+cuneus ba 18,L,2,7,1.0,1.0
+pocg,R,2,3,0.0,1.0
+pmfg,U,2,2,0.5,
+pmv 6,U,2,6,1.0,
+pmd 6,U,2,7,1.0,
+pmd ba 6,U,2,3,0.3333,
+pma,U,2,5,0.6,
+middle frontal gyrus ba 10,U,2,4,0.0,
+middle frontal gyrus ba 11,U,2,2,0.0,
+middle frontal gyrus 8,R,2,2,0.0,1.0
+cuneus ba 19,R,2,3,0.0,1.0
+cuneus ba 19,U,2,2,1.0,
+cuneus ba 7,L,2,2,1.0,1.0
+cuneus ba 17,L,2,2,1.0,1.0
+cuneus ba 17,U,2,3,0.3333,
+pcc 31,U,2,2,0.5,
+parieto occipital fissure,L,2,2,1.0,1.0
+frontal med orb,R,2,2,0.0,1.0
+frontal medial cortex,L,2,2,1.0,1.0
+frontal lobe,L,2,2,1.0,1.0
+frontal inferior operculum,U,2,4,0.0,
+middle frontal gyrusa,R,2,3,0.0,1.0
+middle frontal gyrus ba 9 46,L,2,2,1.0,1.0
+pips,L,2,4,1.0,1.0
+piriform cortex,U,2,2,0.5,
+dfc,U,2,4,0.25,
+difg,U,2,4,0.75,
+phc,L,2,4,1.0,1.0
+pfm,U,2,2,0.5,
+perigenual anterior cingulate cortex,U,2,2,0.5,
+pcg,R,2,2,0.0,1.0
+cma,U,2,3,0.6667,
+cingulum post,L,2,3,1.0,1.0
+posterior cerebellum,U,2,6,0.1667,
+postcentral gyrus ba 1,R,2,2,0.0,1.0
+postcentral gyrus ba 3,R,2,2,0.0,1.0
+postcentral gyrus 3,U,2,2,1.0,
+postcentral gyrus 40,U,2,2,0.0,
+postcentral g,L,2,3,0.6667,0.6667
+middle frontal gyrus 46,U,2,3,0.3333,
+middle frontal gyrus 11,L,2,2,1.0,1.0
+frontal operculum cortex,R,2,2,0.0,1.0
+frontal medial cortex,R,2,2,0.0,1.0
+frontal mid,U,2,2,0.5,
+middle frontal cortex,L,2,8,1.0,1.0
+corticospinal tract,U,2,2,0.5,
+crus i,L,2,2,1.0,1.0
+post hippocampus,L,2,3,1.0,1.0
+post cingulate,L,2,2,1.0,1.0
+post cingulate,U,2,7,0.7143,
+post central,R,2,2,0.0,1.0
+post central,U,2,2,0.5,
+pole middle,U,2,5,0.2,
+pole superior,U,2,8,0.75,
+middle frontal gyrus 46,L,2,2,1.0,1.0
+pmc,L,2,2,1.0,1.0
+pmc,R,2,2,0.0,1.0
+postcentral cortex,R,2,3,0.0,1.0
+postcentral cortex,U,2,3,0.3333,
+cuneus 17,R,2,2,0.0,1.0
+cun,U,2,6,0.3333,
+cst,U,2,3,1.0,
+post mtg,L,2,2,1.0,1.0
+posterior sts,R,2,4,0.0,1.0
+posterior stg,L,2,2,1.0,1.0
+posterior stg,U,2,2,1.0,
+posterior parietal lobe,U,2,3,1.0,
+posterior parietal,L,2,10,1.0,1.0
+posterior parietal,R,2,3,0.0,1.0
+posterior orbital gyrus,U,2,2,0.5,
+posterior mtg,U,2,2,0.5,
+middle cingulate gyrus 24,U,2,3,0.6667,
+middle cingulum,L,2,2,1.0,1.0
+middle cingulate,L,2,2,1.0,1.0
+middle and superior frontal gyrus,R,2,3,0.0,1.0
+middle and superior frontal gyrus,U,2,3,0.3333,
+cing,U,2,2,0.0,
+posterior superior parietal lobule,R,2,2,0.0,1.0
+posterior superior temporal gyrus,L,2,2,1.0,1.0
+cingulate gyrus ba 31,R,2,2,0.0,1.0
+posterior inferior temporal gyrus,U,2,4,0.25,
+posterior fusiform gyrus,L,2,2,1.0,1.0
+posterior cingulate cortex 31,U,2,3,0.6667,
+posterior cingulate ba 30,U,2,2,0.5,
+cortex,U,2,5,0.6,
+frontal sup orb,R,2,2,0.0,1.0
+frontal sup,U,2,2,1.0,
+posterior insula ba 13,U,2,3,0.6667,
+cingulum,R,2,2,0.5,0.5
+cingulate gyrus ba 32,R,2,2,0.0,1.0
+cingulate motor area,R,2,2,0.0,1.0
+cingulate motor area,U,2,2,0.5,
+cingulate gyrus ba 23,L,2,2,0.5,0.5
+cingulate gyrus ba 23,U,2,2,0.5,
+cingulate gyrus ba 24,U,2,2,0.5,
+mid frontal gyr,U,2,5,0.0,
+mid frontal gyrus,L,2,2,1.0,1.0
+mid front,U,2,5,0.8,
+precentral gyrus ba 4,R,2,3,0.0,1.0
+cerebellum crus 1,U,2,6,0.5,
+cerebellum crus 2,U,2,6,0.8333,
+cerebellum crus i,U,2,4,0.75,
+cerebellum 3,U,2,2,0.5,
+posterior superior temporal sulcus,L,2,2,1.0,1.0
+midcingulate,U,2,2,1.0,
+frontopolar cortex,R,2,2,0.5,0.5
+frontal superior medial gyrus,R,2,3,0.0,1.0
+mid temporal gyrus,L,2,4,1.0,1.0
+mid temp,L,2,6,1.0,1.0
+mid temp,R,2,2,0.0,1.0
+mid occipital,U,2,2,1.0,
+cerebellum lobule viib,U,2,2,0.5,
+cerebellum posterior lobe,R,2,2,0.5,0.5
+cerebellum lobule vi,U,2,2,0.5,
+pre supplemental motor area,U,2,2,0.5,
+pre supplementary motor area,L,2,2,1.0,1.0
+pre sma,B,2,3,0.3333,
+ppa,U,2,2,1.0,
+posterior thalamus,U,2,3,0.6667,
+posterior middle frontal gyrus,R,2,2,0.0,1.0
+posterior middle temporal gyrus,R,2,6,0.0,1.0
+posterior medial frontal gyrus,R,2,2,0.0,1.0
+posterior medial frontal gyrus,U,2,2,0.0,
+posterior intraparietal sulcus ba 7,L,2,3,1.0,1.0
+posterior intraparietal sulcus ba 7,R,2,3,0.3333,0.6667
+posterior limb,L,2,2,1.0,1.0
+precental gyrus,L,2,2,1.0,1.0
+central operculum,L,2,2,1.0,1.0
+central operculum,R,2,2,0.0,1.0
+caudate tail,U,2,2,0.5,
+precg,R,2,2,0.0,1.0
+precu,L,2,4,1.0,1.0
+precu,R,2,2,0.0,1.0
+precentralgyrus,L,2,2,1.0,1.0
+precentralgyrus,U,2,4,0.5,
+mfg 10,U,2,2,0.0,
+mfg 46,U,2,2,1.0,
+mfg 9,U,2,3,0.3333,
+mfg ba 6,R,2,3,0.0,1.0
+mediodorsal thalamus,U,2,2,0.5,
+median cingulate,U,2,4,1.0,
+fusiform gyrus ba 19,L,2,2,1.0,1.0
+fusiform gyrus ba 19,R,2,3,0.0,1.0
+mid cingulum,R,2,2,0.0,1.0
+mid brain,U,2,2,0.5,
+mid cingulate cortex,L,2,3,1.0,1.0
+fusiform gy,U,2,2,0.5,
+fusiform gyr,U,2,2,0.0,
+fusiform gyrus 19,L,2,3,1.0,1.0
+fusiform cortex,L,2,2,1.0,1.0
+fusiform cortex,U,2,2,1.0,
+cerebellum 4 5,U,2,6,0.5,
+cerebellar tonsil,U,2,3,0.3333,
+precentral gryus,U,2,2,1.0,
+precentral gy,U,2,5,1.0,
+precentral gyr,U,2,3,0.6667,
+precentral gyrus,B,2,2,0.5,
+mid cingulate gyrus,L,2,2,1.0,1.0
+mid cingulate gyrus,U,2,3,0.0,
+prefrontal cortex,L,2,2,1.0,1.0
+precuneusb,U,2,4,0.5,
+prefrontal,L,2,6,1.0,1.0
+precuneus cortex,R,2,2,0.0,1.0
+precuneus and,B,2,3,0.0,
+precuneus ba 31,U,2,2,0.5,
+precuneus 31,U,2,2,1.0,
+calcarine fissure and surrounding cortex,L,2,3,0.6667,0.6667
+medial orbitofrontal gyrus,R,2,2,0.5,0.5
+medial parietal cortex,U,2,4,0.25,
+caudate,B,2,3,0.6667,
+premotor,R,2,2,0.0,1.0
+premotor area,U,2,3,0.6667,
+pregenual acc,U,2,6,0.5,
+pregenual anterior cingulate cortex,L,2,3,1.0,1.0
+pregenual anterior cingulate cortex,R,2,2,0.0,1.0
+medial superior frontal cortex,U,2,2,0.5,
+medial sfg,U,2,2,1.0,
+medial superior frontal,U,2,2,0.5,
+medial superior frontal cortex,L,2,4,1.0,1.0
+medial prefrontal cortex ba 9,R,2,2,0.0,1.0
+medial prefrontal lobe,U,2,2,0.0,
+medial prefrontal,U,2,3,0.3333,
+medial prefrontal,L,2,2,1.0,1.0
+precentral gyrus ba 9,R,2,2,0.0,1.0
+fusiform gyrus 19,U,2,3,1.0,
+fusiform gyrus 20,U,2,4,0.75,
+fusiform gyrus 37,L,2,7,1.0,1.0
+medial temporal pole,R,2,4,0.0,1.0
+medial thalamus,U,2,5,0.6,
+medial temporal cortex,U,2,2,0.0,
+medial temporal lobe,U,2,2,0.0,
+rectal gyrus ba 11,L,2,3,1.0,1.0
+rdlpfc,U,2,3,0.0,
+racc,R,2,2,0.0,1.0
+putaman,U,2,6,0.5,
+put,R,2,2,0.0,1.0
+psts,R,2,4,0.0,1.0
+pstg,U,2,2,0.5,
+sef,U,2,3,0.3333,
+medial frontal gyrus 8,U,2,2,0.0,
+medial frontal gyrus ba 11,U,2,2,1.0,
+medial frontal gyrus 6,L,2,3,1.0,1.0
+medial frontal gyrus 6,U,2,2,0.5,
+ripl,U,2,2,0.0,
+retrosplenial cortex ba 31,R,2,3,0.0,1.0
+rectus gyrus,R,2,2,0.5,0.5
+retrolenticular limb,L,2,2,1.0,1.0
+medial orbito frontal cortex,L,2,2,1.0,1.0
+medial occipital,U,2,2,0.5,
+medial globus pallidus,R,2,3,0.0,1.0
+medial frontal orbital lobe ba 11,R,2,2,0.0,1.0
+medial frontal gyrus ba 9,R,2,2,0.0,1.0
+medial frontal gyrus ba 9,U,2,2,0.5,
+medial frontal lobe,U,2,2,0.5,
+medial frontal gyrus ba 8,U,2,2,0.0,
+calcarine fissure and surrounding cortex,R,2,2,0.0,1.0
+calarine gyrus,U,2,2,0.5,
+primary motor area,U,2,2,1.0,
+medial orbitofrontal cortex,L,2,3,1.0,1.0
+medial orbitofrontal gyrus,L,2,2,1.0,1.0
+medial orbital frontal gyrus,R,2,3,0.0,1.0
+medial orbital frontal gyrus,U,2,6,0.6667,
+medial orbital gyrus,U,2,4,0.5,
+ltpj,U,2,3,1.0,
+lphg,U,2,2,1.0,
+hipp,U,2,3,0.6667,
+hippocampal formation,U,2,2,1.0,
+hippocampal gyrus,R,2,2,0.0,1.0
+hippocampal gyrus,U,2,7,0.4286,
+heschl,U,2,2,1.0,
+hip2,U,2,3,0.3333,
+medial frontal g,U,2,10,0.9,
+heschl,R,2,4,0.0,1.0
+gyrus rectus,L,2,2,1.0,1.0
+medial dorsal nucleus,R,2,2,0.0,1.0
+medial frontal,R,2,2,0.0,1.0
+medial cingulate,U,2,3,0.3333,
+mdfg,U,2,2,0.5,
+mammillary body,U,2,2,0.0,
+rostral middle frontal gyrus,L,2,2,1.0,1.0
+rostral anterior cingulate cortex,R,2,2,0.0,1.0
+rostral anterior cingulate cortex,U,2,2,1.0,
+rostral acc,U,2,2,1.0,
+rolandic oper,R,2,3,0.0,1.0
+rloc,U,2,2,0.0,
+rofa,U,2,2,0.0,
+medial frontal gyrus 10,R,2,2,0.0,1.0
+secondary somatosensory cortex,L,2,2,1.0,1.0
+ba 8,U,2,8,0.5,
+ba 9,R,2,2,0.0,1.0
+rsma,U,2,3,0.3333,
+rstg,U,2,2,0.0,
+rpsts,U,2,4,0.0,
+rpcc,U,2,2,0.0,
+rostral middle frontal,R,2,3,0.0,1.0
+smc,R,2,2,0.0,1.0
+sii,R,2,3,0.0,1.0
+sfc,L,2,2,1.0,1.0
+sensory cortex,U,2,2,0.5,
+secondary visual cortex,U,2,6,0.6667,
+sef,R,2,3,0.0,1.0
+ba 30,U,2,5,0.2,
+ba 21,U,2,2,0.5,
+ba 7,L,2,2,0.5,0.5
+ba 45,U,2,2,1.0,
+ba 46,L,2,5,0.8,0.8
+ba 43,U,2,2,1.0,
+ba 39,U,2,2,1.0,
+ba 4,R,2,2,0.0,1.0
+ba 4,U,2,5,0.2,
+somatosensory cortex,R,2,3,0.0,1.0
+lingual gyrus ba 19,R,2,2,0.0,1.0
+lingual gyrus 18,R,2,6,0.0,1.0
+lingual gyrus 19,U,2,3,1.0,
+lingual gyrus ba 17,L,2,3,1.0,1.0
+ifg ba 9,R,2,2,0.0,1.0
+ifg 45,U,2,4,0.75,
+ba 47,U,2,4,0.5,
+ba 5,U,2,6,0.1667,
+hip3,U,2,2,0.5,
+lobule vi,R,2,3,0.0,1.0
+loc,L,2,4,1.0,1.0
+loc,R,2,3,0.0,1.0
+lips,U,2,2,1.0,
+lloc,U,2,2,1.0,
+linual gyrus,U,2,5,0.8,
+lipl,U,2,2,1.0,
+lateral prefrontal cortex,R,2,2,0.5,0.5
+lateral orbitofrontal gyrus,U,2,4,0.75,
+lateral parietal,L,2,2,1.0,1.0
+lateral parietal,R,2,2,0.0,1.0
+superior and middle temporal gyrus,U,2,6,1.0,
+superior and medial frontal gyrus,R,2,2,0.0,1.0
+superior and middle frontal gyrus,R,2,2,0.0,1.0
+ba 10,L,2,3,1.0,1.0
+ifg ba 44,U,2,3,0.6667,
+ifg ba 45,U,2,2,0.0,
+hypothalamus,R,2,2,0.0,1.0
+lingual g,L,2,3,1.0,1.0
+lingual g,R,2,2,0.0,1.0
+lingual gy,U,2,4,0.5,
+lgn,U,2,6,0.5,
+lateral prefrontal cortex,L,2,2,0.5,0.5
+striatum,L,2,3,1.0,1.0
+stg ba 22,R,2,3,0.0,1.0
+straight gyrus,U,2,2,0.5,
+stg 38,U,2,10,0.9,
+ba 46,U,2,2,0.0,
+ifg 46,U,2,5,0.4,
+ifg 47,U,2,4,0.5,
+ifg 9,U,2,4,0.5,
+subthalamic nucleus,L,2,2,1.0,1.0
+subparietal sulcus,U,2,2,1.0,
+subgenual cingulate,U,2,2,1.0,
+subgenual cingulate cortex,U,2,2,0.5,
+subcallosal gyrus,R,2,2,0.0,1.0
+subcentral gyrus and sulcus,U,2,3,0.6667,
+sub gyral,R,2,2,0.0,1.0
+striate cortex,R,2,2,0.0,1.0
+lag,U,2,2,1.0,
+isthmus cingulate,U,2,2,0.0,
+inf frontal gyrus,L,2,3,1.0,1.0
+inf frontal,L,2,3,1.0,1.0
+inf frontal,R,2,3,0.0,1.0
+area 6,U,2,3,0.6667,
+antr insula,U,2,5,0.2,
+apfc,L,2,2,1.0,1.0
+ifg pars orbitalis,U,2,4,0.5,
+ifg pars triangularis,U,2,7,0.2857,
+ifg pars triangularis ba 45,U,2,2,0.0,
+ifg opercularis,U,2,2,1.0,
+lateral globus pallidus,R,2,3,0.0,1.0
+lateral frontal cortex,U,2,2,0.5,
+itg 20,U,2,10,0.9,
+juxtapositional lobule cortex,U,2,3,1.0,
+sup occipital,R,2,2,0.0,1.0
+sup parietal,L,2,2,1.0,1.0
+sup medial frontal,U,2,2,0.0,
+sup frontal,R,2,12,0.0,1.0
+lateral occipitalcortex,U,2,2,0.0,
+lateral occipito temporal sulcus,U,2,2,1.0,
+ifg triang,R,2,2,0.0,1.0
+ifg1,U,2,2,0.5,
+asmg,U,2,2,0.5,
+associative visual cortex,R,2,2,0.0,1.0
+sup temporal gyrus,R,2,4,0.0,1.0
+sup temporal gyrus,U,2,10,0.6,
+sup temporal,R,2,4,0.0,1.0
+sup parietal,U,2,2,0.0,
+sup parietal lobule,L,2,3,1.0,1.0
+sup parietal lobule,U,2,3,1.0,
+insula ba 48,L,2,3,1.0,1.0
+insula cortex,L,2,2,1.0,1.0
+insula cortex,R,2,2,0.0,1.0
+superior orbital gyrus,L,2,2,1.0,1.0
+superior orbital gyrus,U,2,2,1.0,
+superior occipital lobe,U,2,8,0.625,
+superior ofc,U,2,2,0.0,
+superior orbital,U,2,5,0.2,
+superior frontal lobe,L,2,2,1.0,1.0
+superior frontal gyrus medial,U,2,10,0.6,
+ipl 40,U,2,4,0.75,
+intraparietal sulcus ba 40,L,2,2,1.0,1.0
+intraparietal sulcus ba 7,R,2,4,0.0,1.0
+intraparietal sulcus,B,2,5,0.4,
+insular,U,2,2,0.0,
+insula ba 47,U,2,2,0.5,
+superior medial,U,2,9,0.7778,
+superior medial frontal,U,2,6,0.6667,
+superior medial frontal cortex,U,2,3,0.3333,
+superior lateral occipital cortex,R,2,2,0.0,1.0
+superior lateral occipital cortex,U,2,3,0.6667,
+superior longitudinal fasciculus,L,2,3,0.6667,0.6667
+superior lateral occipital cortex,L,2,2,1.0,1.0
+superior frontal gyrusa,U,2,2,1.0,
+anterior vlpfc,U,2,2,0.5,
+superior frontal gyrus 8,U,2,4,0.25,
+superior frontal gyrus 10,U,2,6,0.1667,
+superior frontal g,L,2,4,1.0,1.0
+anterior temporal pole,L,2,3,1.0,1.0
+anterior supramarginal gyrus,L,2,2,1.0,1.0
+anterior superior temporal gyrus,R,2,2,0.0,1.0
+anterior superior temporal sulcus,U,2,2,0.5,
+inf frontal orb gyrus,U,2,2,1.0,
+inferior temporal sulcus,L,2,3,1.0,1.0
+inferior temporalgyrus,R,2,3,0.0,1.0
+inferior temporal gyrus 20,U,2,2,0.5,
+anterior insula ba 48,U,2,2,1.0,
+anterior insular cortex,L,2,4,1.0,1.0
+anterior hippocampus,R,2,3,0.0,1.0
+anterior fusiform gyrus,L,2,2,1.0,1.0
+superior parietal sulcus,U,2,3,0.3333,
+superior pfc,U,2,2,0.5,
+superior parietal lobule ba 40,R,2,2,0.0,1.0
+superior parietal lobe ba 7,U,2,2,0.5,
+superior parietal ba 7,L,2,5,0.8,0.8
+inf occipital gyrus,U,2,3,1.0,
+inf occipital gyrus,L,2,2,1.0,1.0
+inf frontal op gyrus,U,2,2,1.0,
+superior occipital,R,2,2,0.0,1.0
+superior occipital cortex,R,2,2,0.0,1.0
+anterior middle frontal gyrus,L,2,2,0.5,0.5
+anterior middle temporal gyrus,U,2,2,1.0,
+anterior medial prefrontal cortex,U,2,2,1.0,
+anterior mid cingulate cortex,U,2,2,0.5,
+anterior insular cortex,R,2,3,0.0,1.0
+anterior ips,U,2,3,0.6667,
+anterior stg,R,2,2,0.0,1.0
+anterior pfc,R,2,2,0.0,1.0
+anterior ofc,R,2,2,0.0,1.0
+anterior parahippocampal gyrus,U,2,2,0.5,
+anterior mtg,U,2,3,1.0,
+anterior occipital sulcus,R,2,2,0.0,1.0
+superior occipital gyrus 19,L,2,2,1.0,1.0
+superior occipital gyrus ba 19,R,2,2,0.0,1.0
+supramarginal g,U,2,7,0.8571,
+supramarginal cortex,L,2,2,1.0,1.0
+supramarginal cortex,R,2,2,0.0,1.0
+supramarginal cortex,U,2,3,0.3333,
+supramarginal g,R,2,2,0.5,0.5
+supra marginal gyrus,R,2,2,0.0,1.0
+supr frontal gyr,U,2,2,0.0,
+supplementary motor cortex,L,2,2,1.0,1.0
+inf temporal gyrus,L,2,5,1.0,1.0
+inferior precentral sulcus,U,2,2,0.0,
+inferior parietal lobule 40,R,2,2,0.0,1.0
+inferior parietal lobe ba 40,U,2,6,0.6667,
+temporal cortex,R,2,2,0.0,1.0
+anterior cingulate cortex ba 24,L,2,2,0.5,0.5
+anterior cingulate cortex ba 32,U,2,2,0.5,
+anterior cingulate ba 32,L,2,2,1.0,1.0
+supplementary motor area ba 6,R,2,2,0.0,1.0
+superior temporalgyrus,L,2,2,1.0,1.0
+superior temporalgyrus,R,2,3,0.0,1.0
+superior temporal gyurs,U,2,3,0.6667,
+inferior,L,2,3,1.0,1.0
+inf temporal,L,2,2,1.0,1.0
+inf temporal,R,2,2,0.0,1.0
+inf temporal,U,2,4,0.75,
+superior temporal gyrus 38,L,2,3,1.0,1.0
+superior temporal gyrus 38,R,2,3,0.0,1.0
+superior temporal gyrus 22,L,2,4,1.0,1.0
+superior temporal g,R,2,5,0.0,1.0
+superior temporal g,L,2,5,1.0,1.0
+anterior cingulated cortex,L,2,2,1.0,1.0
+anterior cingulate gyrus ba 24,L,2,3,1.0,1.0
+anterior cingulate gyrus ba 32,L,2,2,1.0,1.0
+inferior frontal gyrus,B,2,3,0.0,
+inferior frontal gyrus 44,L,2,2,1.0,1.0
+inferior middle frontal gyrus,R,2,2,0.0,1.0
+inferior fronto occipital fasciculus,L,2,3,0.6667,0.6667
+inferior frontal sulcus,L,2,3,1.0,1.0
+vpmc,U,2,5,0.2,
+ains,L,2,4,1.0,1.0
+amfg,U,2,2,0.5,
+angular gyrus ba 39,R,2,2,0.0,1.0
+angular gyrus ba 39,U,2,2,0.0,
+inferior frontal gyrus ba 44 45,R,2,2,0.0,1.0
+inferior frontal gyrus 46,U,2,2,0.0,
+inferior frontal gyrus 9,R,2,2,0.0,1.0
+inferior frontal gyrus 44,R,2,2,0.0,1.0
+inferior frontal gyrus 45,L,2,2,1.0,1.0
+inferior frontal gyrus 45,R,2,3,0.0,1.0
+ventral mpfc,U,2,2,1.0,
+ventral lateral nucleus,U,2,2,0.5,
+ventral medial pfc,U,2,2,0.5,
+vent apfc,U,2,3,0.6667,
+ventral acc,U,2,3,1.0,
+ventral anterior cingulate,U,2,3,0.3333,
+ventral anterior cingulate cortex 24,L,2,2,1.0,1.0
+transverse temporal sulcus,U,2,3,0.6667,
+temporal sup,U,2,2,1.0,
+temporal pole sup,L,2,2,1.0,1.0
+temporal pole sup,R,2,2,0.0,1.0
+ang gyr,U,2,11,0.6364,
+amygdaloid complex,U,2,2,0.5,
+ventral posterior cingulate cortex,U,2,2,1.0,
+ventral medial prefrontal cortex,L,2,5,1.0,1.0
+ventral medial prefrontal cortex,R,2,3,0.0,1.0
+middle temporalgyrus,L,2,2,1.0,1.0
+midfg,U,2,3,0.3333,
+midfrontal gyrus,L,2,4,1.0,1.0
+middle temporal pole,L,2,2,1.0,1.0
+middle temporal gyrusa,U,2,2,0.5,
+middle temporal gyrus 37,R,2,2,0.0,1.0
+middle temporal gyrus 22,L,2,2,1.0,1.0
+dorsomedial frontal cortex,L,2,2,1.0,1.0
+inferior frontal gyrus pars triangularis,R,2,3,0.0,1.0
+acg,R,2,2,0.0,1.0
+acc 24,U,2,3,1.0,
+acc ba 32,R,2,2,0.0,1.0
+vlpfc ba 44,U,2,2,0.5,
+extrastriate cortex,U,2,2,0.5,
+entorhinal cortex,U,2,4,0.0,
+mifg,U,2,2,1.0,
+inferior frontal gyrus pars orbitalis,R,2,4,0.0,1.0
+inferior frontal gyrus pars orbitalis,U,2,2,0.5,
+inferior frontal gyrus ba 9,R,2,2,0.0,1.0
+inferior frontal gyrus ba 46,U,2,2,0.0,
+inferior frontal lobe,U,2,3,0.3333,
+inferior frontal operculum,U,2,2,0.0,
+inferior frontal gyrus triangularis,U,2,2,0.5,
+inferior frontal gyrusa,U,2,2,1.0,
+ains,R,2,4,0.0,1.0
+aipl,U,2,3,0.3333,
+vermis vi,U,2,2,0.0,
+ventromedial prefrontal cortex,R,2,2,0.0,1.0
+ventro lateral prefrontal cortex,R,2,2,0.0,1.0
+ventral putamen,L,2,2,1.0,1.0
+inferior frontal triangularis,U,2,3,0.6667,
+inferior frontal gyrus pars opercularis,R,2,3,0.0,1.0
+a cerebellum anterior lobe,R,1,1,0.0,1.0
+vermis viib,U,1,1,1.0,
+vermis viii,U,1,1,0.0,
+vfc,L,1,2,1.0,1.0
+vfc,R,1,1,0.0,1.0
+vfca,L,1,1,1.0,1.0
+vfca,R,1,1,0.0,1.0
+vifg1,L,1,1,1.0,1.0
+vifg2,L,1,1,1.0,1.0
+vii,U,1,5,0.2,
+viiib,U,1,2,0.5,
+vip,U,1,3,0.3333,
+vipl,U,1,1,1.0,
+vips,R,1,1,0.0,1.0
+vips,U,1,2,0.0,
+vipst,L,1,1,1.0,1.0
+vis,U,1,2,0.5,
+visual,L,1,2,1.0,1.0
+visual,R,1,1,0.0,1.0
+visual area,U,1,1,1.0,
+visual area v5,R,1,1,0.0,1.0
+visual areasdamh,U,1,2,1.0,
+visual areasundamh,U,1,2,0.0,
+ait,R,1,1,0.0,1.0
+aloc,L,1,3,1.0,1.0
+alpfc,U,1,1,1.0,
+also included cuneus,U,1,1,1.0,
+also included middle occipital gyrus,L,1,1,1.0,1.0
+also included middle occipital lobe,R,1,1,0.0,1.0
+also included ventromedial prefrontal cortex,U,1,1,1.0,
+amcc,L,1,2,1.0,1.0
+vermis vii,U,1,1,0.0,
+ains d,U,1,1,1.0,
+ains v,U,1,1,1.0,
+aip,L,1,1,1.0,1.0
+aip,R,1,1,0.0,1.0
+aip 40,U,1,1,1.0,
+aips,L,1,1,1.0,1.0
+aips,R,1,1,0.0,1.0
+ventromedial prefrontal cortex ba 10,U,1,3,0.0,
+ventromedial thalamus,U,1,1,0.0,
+ventrotemporal cortex andcerebellum,U,1,2,0.5,
+vermis,L,1,1,1.0,1.0
+vermis,R,1,1,0.0,1.0
+vermis 4 5,U,1,1,0.0,
+vermis 8,U,1,1,0.0,
+vermis 9,U,1,2,0.5,
+ventrolateral thalamus,L,1,1,1.0,1.0
+ventrolateral thalamus,U,1,3,0.6667,
+ventromdial pfc,U,1,2,1.0,
+ventromedial frontal gyrus,L,1,1,1.0,1.0
+ventromedial pfc ba 10,R,1,1,0.0,1.0
+ventromedial prefrontal,U,1,1,1.0,
+ventromedial prefrontal cortex,L,1,1,1.0,1.0
+ventromedial prefrontal cortex ba 10,B,1,1,0.0,
+inferior frontal gyrus ba 45 a,R,1,1,0.0,1.0
+inferior frontal gyrus ba 46,L,1,3,1.0,1.0
+inferior frontal gyrus ba 48,L,1,1,1.0,1.0
+inferior frontal gyrus ba 6,R,1,1,1.0,0.0
+inferior frontal gyrus ba 9 46,B,1,1,1.0,
+inferior frontal gyrus extending in acc and others,L,1,1,1.0,1.0
+inferior frontal gyrus in triangular and opercular part,U,1,1,1.0,
+inferior frontal gyrus opercular part,L,1,1,1.0,1.0
+inferior frontal junction,R,1,1,0.0,1.0
+inferior frontal junction area ba 6 8 44,L,1,4,1.0,1.0
+inferior frontal junction area ba 6 8 44,R,1,1,0.0,1.0
+inferior frontal lobe,L,1,1,1.0,1.0
+inferior frontal opercularis,U,1,1,0.0,
+inferior frontal operculum ba 47,U,1,1,0.0,
+inferior frontal gyrus ba 45 46,R,1,1,0.0,1.0
+inferior frontal gyrus ba 45 47,U,1,1,1.0,
+inferior frontal gyrus triangulas,U,1,1,0.0,
+inferior frontal gyrus3,U,1,1,0.0,
+inferior frontal gyrusb,U,1,2,0.0,
+inferior frontal gyrusc,U,1,1,1.0,
+inferior frontal gyrusd,U,1,1,1.0,
+inferior frontal gyrusg,U,1,1,1.0,
+inferior frontal gyurs,U,1,2,0.5,
+inferior frontal gyus,L,1,1,1.0,1.0
+inferior frontal gyrus pars triangularis and anterior insula,U,1,1,1.0,
+inferior frontal gyrus pars triangularis ba 45,L,1,1,1.0,1.0
+inferior frontal gyrus pars triangularis ba 45 10,U,1,1,0.0,
+inferior frontal gyrus precentral,R,1,1,0.0,1.0
+inferior frontal gyrus ptr,U,1,1,1.0,
+inferior frontal gyrus triangular,R,1,1,0.0,1.0
+inferior frontal gyrus triangular part,L,1,1,1.0,1.0
+inferior frontal gyrus triangular part,R,1,1,0.0,1.0
+inferior longitudinal fascicle,U,1,1,1.0,
+inferior longitudinal fasciculus,L,1,2,1.0,1.0
+inferior longitudinal fasciculus,R,1,1,0.0,1.0
+inferior longitudinal fasciculus,U,1,2,1.0,
+inferior middle frontal gyrus,L,1,1,1.0,1.0
+inferior middle occipital gyrus,U,1,1,0.0,
+inferior middle temporal ba 20 21,L,1,1,1.0,1.0
+inferior occcipital gyrus,U,1,1,1.0,
+inferior frontal tri ba 45 2,U,1,1,0.0,
+inferior frontal triangular,R,1,1,0.0,1.0
+inferior frontal triangular,U,1,1,0.0,
+inferior frontalgyrus,R,1,1,0.0,1.0
+inferior gryrus,U,1,1,0.0,
+inferior insula,U,1,1,1.0,
+inferior lingual gyrus,U,1,1,1.0,
+inferior lobe,R,1,1,0.0,1.0
+inferior frontal orbital gyrus,U,1,2,0.0,
+inferior frontal pars opercularis,L,1,1,1.0,1.0
+inferior frontal pars opercularis ba 48,U,1,1,0.0,
+inferior frontal pars orbitalis,R,1,1,0.0,1.0
+inferior frontal pars triangularis,L,1,2,1.0,1.0
+inferior frontal pars triangularis,R,1,1,0.0,1.0
+inferior frontal pars triangularis ba 47,U,1,1,0.0,
+inferior frontal region,U,1,1,0.0,
+inferior frontal gyrus p opercularis,R,1,1,0.0,1.0
+inferior frontal gyrus p triangularis,R,1,1,0.0,1.0
+inferior frontal gyrus par opercularis,L,1,1,1.0,1.0
+inferior frontal gyrus pars opercularis,L,1,1,1.0,1.0
+inferior frontal gyrus pars opercularis ba 44 precentral gyrus,L,1,1,1.0,1.0
+inferior frontal gyrus pars orbitalis,L,1,1,1.0,1.0
+inferior frontal gyrus pars orbitalis ba 47,L,1,1,1.0,1.0
+inferior frontal orbital gyrus,L,1,1,1.0,1.0
+inferior occipital gyrusa,U,1,1,1.0,
+inferior occipital gyurs,U,1,1,1.0,
+inferior occipital lobe,R,1,2,0.0,1.0
+inferior occipital lobe,U,1,6,0.6667,
+inferior occipital lobea,R,1,2,0.0,1.0
+inferior occipitalgyrus,U,1,1,0.0,
+inferior orbital frontal,L,1,1,1.0,1.0
+inferior orbital frontal,R,1,1,0.0,1.0
+inferior occipital gyrus 1,U,1,1,0.0,
+inferior occipital gyrus 17,L,1,1,1.0,1.0
+inferior occipital gyrus 17,U,1,1,1.0,
+inferior occipital gyrus 19,U,1,1,1.0,
+inferior occipital gyrus and,L,1,1,1.0,1.0
+inferior occipital gyrus and fusiform gyrus,U,1,1,1.0,
+inferior occipital gyrus ba 17,R,1,1,0.0,1.0
+inferior occipital gyrus wm,R,1,1,0.0,1.0
+inferior frontal gyrus and,L,1,1,1.0,1.0
+inferior frontal gyrus ba 44 45,L,1,1,1.0,1.0
+inferior frontal gyrus ba 44 50,U,1,1,0.0,
+inferior occipital and fusiform gyrus,U,1,1,1.0,
+inferior occipital cortex,L,1,2,1.0,1.0
+inferior occipital cortex ba 19,U,1,1,1.0,
+inferior occipital g,L,1,2,1.0,1.0
+inferior occipital g ba 17,U,1,1,1.0,
+inferior frontal gyrus 11,L,1,1,1.0,1.0
+inferior frontal gyrus 11,R,1,1,0.0,1.0
+inferior frontal gyrus 13,R,1,1,0.0,1.0
+inferior frontal gyrus 44 46,R,1,1,0.0,1.0
+inferior frontal gyrus 44 6,R,1,1,0.0,1.0
+inferior frontal gyrus 45 47,L,1,1,1.0,1.0
+inferior frontal gyrus 46,R,1,1,0.0,1.0
+inferior frontal gyrus 9,U,1,1,0.0,
+inferior and middle frontal gyrus 46 9 10 45,R,1,1,0.0,1.0
+inferior and middle occipital cortex,U,1,1,1.0,
+inferior and middle temporal gyrus,R,1,1,0.0,1.0
+inferior and middle temporal gyrus,U,1,1,0.0,
+inferior and superior,L,1,1,1.0,1.0
+inferior and superior,R,1,1,0.0,1.0
+inferior and superior parietal lobule 40 5 7,L,1,1,1.0,1.0
+inferior central sulcus,R,1,1,0.0,1.0
+inferior parietal ba 40,L,1,3,0.6667,0.6667
+inferior,R,1,1,0.0,1.0
+inferior and middle frontal gyrus,L,1,1,1.0,1.0
+inferior and middle frontal gyrus,R,1,1,0.0,1.0
+inferior and middle frontal gyrus,U,1,2,0.5,
+inferior and middle frontal gyrus 44 6,L,1,1,1.0,1.0
+inferior and middle frontal gyrus 44 6 9,L,1,1,1.0,1.0
+inferior and middle frontal gyrus 45 46,R,1,1,0.0,1.0
+inferior orbitofrontal gyrus,L,1,1,1.0,1.0
+inferior orbitofrontal gyrus,U,1,2,0.5,
+inferior orbitofrontal gyrus ba 2,U,1,1,1.0,
+inferior orbitofrontal gyrus ba 47,U,1,2,0.0,
+inferior orbitofrontal lobe,U,1,1,1.0,
+inferior pariental gyrus,L,1,1,1.0,1.0
+inferior parietal 33,U,1,1,1.0,
+inferior parietal angular gyrus,U,1,3,1.0,
+inferior orbital frontal,U,1,3,0.3333,
+inferior orbital frontal cortex,U,1,1,1.0,
+inferior orbital frontal gyrus,R,1,2,0.0,1.0
+inferior orbital frontal gyrus ba 38,R,1,1,0.0,1.0
+inferior orbital gyrus,L,1,1,1.0,1.0
+inferior orbital gyrus,R,1,2,0.0,1.0
+inferior orbito frontal gyrus,U,1,1,1.0,
+inferior orbitofrontal,U,1,1,0.0,
+inferior parietal lobule ba 39,U,1,1,0.0,
+inferior parietal lobule ba 40 2,L,1,1,1.0,1.0
+inferior parietal lobule ba 7,L,1,1,1.0,1.0
+inferior parietal lobule ba 7,R,1,1,0.0,1.0
+inferior parietal lobule1,L,1,1,1.0,1.0
+inferior parietal lobule1,U,1,2,0.0,
+inferior parietal lobulea,L,1,1,1.0,1.0
+inferior parietal lobulea,R,1,1,0.0,1.0
+inferior parietal lobe 40,U,1,4,1.0,
+inferior parietal lobe angular gyrus,U,1,1,1.0,
+inferior parietal lobule 1,U,1,1,1.0,
+inferior parietal lobule 2,U,1,2,0.5,
+inferior parietal lobule 7,R,1,1,0.0,1.0
+inferior parietal lobule 7,U,1,2,0.0,
+inferior parietal lobule and subgyral,R,1,1,0.0,1.0
+inferior parietal lobule ba 39,L,1,1,1.0,1.0
+inferior parietal c,L,1,2,1.0,1.0
+inferior parietal cortex 40,U,1,3,1.0,
+inferior parietal g,U,1,1,1.0,
+inferior parietal gyrus ba 1,U,1,1,1.0,
+inferior parietal gyrus ba 2,U,1,1,1.0,
+inferior parietal gyrus ba 40,U,1,2,0.5,
+inferior parietal gyrusa,U,1,3,0.6667,
+inferior parietal lob,U,1,3,1.0,
+inferior cluster,U,1,1,0.0,
+inferior extrastriate cortex,U,1,1,1.0,
+inferior frontal and,R,1,1,0.0,1.0
+inferior frontal ba 44,R,1,1,0.0,1.0
+inferior frontal cortex ba 44 45,L,1,1,1.0,1.0
+inferior frontal g ba 44,U,1,1,1.0,
+inferior frontal gyru,R,1,1,0.0,1.0
+inferior parietal ba 40,U,1,1,1.0,
+inf precuneus,L,1,1,1.0,1.0
+inf pt,R,1,1,0.0,1.0
+inf temp,L,1,1,1.0,1.0
+inf temp,R,1,2,0.0,1.0
+inf temp,U,1,1,1.0,
+inf temp gy,U,1,1,0.0,
+inf temp gyp,U,1,1,0.0,
+inf temporal g,L,1,1,1.0,1.0
+inf parietal lob,R,1,1,0.0,1.0
+inf parietal lobe,U,1,1,1.0,
+inf parietal lobule ba 40,L,1,6,1.0,1.0
+inf parietal lobule ba 40,R,1,5,0.0,1.0
+inf parietal lobuleq,U,1,1,1.0,
+inf pcs,L,1,1,1.0,1.0
+inf pcs,R,1,1,0.0,1.0
+inf precentral g,U,1,1,0.0,
+inferior precentral gyrus,R,1,1,0.0,1.0
+inferior precentral sulcus,L,1,1,1.0,1.0
+inferior precuneus,B,1,1,0.0,
+inferior rostral gyrus,U,1,1,1.0,
+inferior segment of the circular sulcus of the insula,U,1,2,1.0,
+inferior superior parietal ba 7 39 40,L,1,1,1.0,1.0
+inferior temoral gyrus,R,1,1,0.0,1.0
+inf parietal gyrus,R,1,2,0.0,1.0
+inferior parietal lobuls,L,1,1,1.0,1.0
+inferior parietal supramarginal gyrus,U,1,2,1.0,
+inferior parietallobule,L,1,1,1.0,1.0
+inferior pars opercularis,R,1,1,0.0,1.0
+inferior part of the precentral sulcus,U,1,2,1.0,
+inferior pfc,U,1,1,1.0,
+inferior pre frontal,L,1,1,1.0,1.0
+inferior pre frontal,R,1,1,0.0,1.0
+inferior temporal pole ba 20 38,L,1,3,1.0,1.0
+inferior temporal region,U,1,1,1.0,
+inferior temporal sulcus,R,1,2,0.0,1.0
+inferior temporal sulcus ba 20 21 37,L,1,3,1.0,1.0
+inferior temporalgyrus,L,1,1,1.0,1.0
+inferior tempotal gyrus,L,1,1,1.0,1.0
+inferior tempotal gyrus,R,1,1,0.0,1.0
+inferior tri frontal,L,1,1,1.0,1.0
+inferior temporal gyrus ba 37,L,1,1,1.0,1.0
+inferior temporal gyrus ba 37,R,1,1,0.0,1.0
+inferior temporal lobe,R,1,1,0.0,1.0
+inferior temporal lobe,U,1,2,0.5,
+inferior temporal lobe 20,L,1,1,1.0,1.0
+inferior temporal lobea,R,1,1,0.0,1.0
+inferior temporal lobule,R,1,1,0.0,1.0
+inferior temporal neocortex,L,1,1,1.0,1.0
+inferior temporal ba 20,R,1,2,0.0,1.0
+inferior temporal g,L,1,1,1.0,1.0
+inferior temporal gyrus,B,1,1,1.0,
+inferior temporal gyrus 21,R,1,1,0.0,1.0
+inferior temporal gyrus 37,L,1,2,1.0,1.0
+inferior temporal gyrus and lateral occipital cortex,L,1,2,1.0,1.0
+inferior temporal gyrus ba 20 21,L,1,1,1.0,1.0
+inferior temporal gyrus ba 21,R,1,1,0.0,1.0
+inf temporal lobule,U,1,1,1.0,
+inf temporal sulc,U,1,1,1.0,
+inf tp resected area,L,1,1,1.0,1.0
+inf tp resected area,R,1,2,0.0,1.0
+infer frontal gyrus,U,1,1,1.0,
+inferioir frontal gyrus,L,1,1,1.0,1.0
+inferior temporal area,L,1,1,1.0,1.0
+inferior temporal ba 20,L,1,2,1.0,1.0
+inf loc,U,1,1,0.0,
+inf occ,U,1,3,0.6667,
+inf occipit,L,1,1,1.0,1.0
+inf occipital,U,1,1,1.0,
+inf occipital g,R,1,1,0.0,1.0
+inf occipital gyrus ba 18,R,1,2,0.0,1.0
+inf occipital gyrus ba 18,U,1,1,1.0,
+inf occipital lobe,L,1,1,1.0,1.0
+inf frontal oper,L,1,1,1.0,1.0
+inf frontal oper,R,1,1,0.0,1.0
+inf frontal orb,L,1,3,1.0,1.0
+inf frontal tri,L,1,2,1.0,1.0
+inf frontal tri,R,1,1,0.0,1.0
+inf frontal tri gyrus,U,1,1,1.0,
+inf insula,U,1,1,1.0,
+inf lateral occipital cortex,U,1,1,1.0,
+infr parietal lobule,U,1,1,0.0,
+inrerior frontal gyrus,U,1,1,0.0,
+ins 13,U,1,3,0.6667,
+ins ba 13,L,1,3,1.0,1.0
+ins ba 13,R,1,1,0.0,1.0
+insp,L,1,1,1.0,1.0
+insp,R,1,1,0.0,1.0
+insual,R,1,1,0.0,1.0
+inferior ventral premotor cortex,R,1,1,0.0,1.0
+inferiro occipital gyrus,L,1,1,1.0,1.0
+infero lateral occipital cortex,L,1,1,1.0,1.0
+infero lateral occipital cortex,R,1,2,0.0,1.0
+inferolateral occipital,R,1,1,0.0,1.0
+inferomedial temporal gyrus,U,1,1,1.0,
+inferor temporal gyrus,L,1,1,1.0,1.0
+inferotemporal cortex area te,L,1,1,1.0,1.0
+insular and central opercular cortex,U,1,1,0.0,
+insular c,U,1,1,0.0,
+insular cortex ba 13,U,1,3,0.3333,
+insular cortexa,U,1,1,1.0,
+insular cortexb,U,1,1,0.0,
+insular gyrus,U,1,8,0.625,
+insular sub lobar,U,1,9,1.0,
+insulo opercular region,U,1,1,1.0,
+insula cortex,U,1,6,0.3333,
+insula posterior,U,1,2,0.5,
+insula1,R,1,1,0.0,1.0
+insulaa,U,1,3,0.6667,
+insulab,U,1,1,0.0,
+insulah,U,1,1,0.0,
+insulam,U,1,1,0.0,
+insular,R,1,1,0.0,1.0
+inf parietal gyrus,L,1,1,1.0,1.0
+insula 1997,U,1,1,1.0,
+insula 47,U,1,1,0.0,
+insula anterior,U,1,10,0.5,
+insula ba 13 include putamen,R,1,1,0.0,1.0
+insula ba 41 42,L,1,1,1.0,1.0
+insula ba 48,U,1,1,1.0,
+insula cluster 2,L,1,1,1.0,1.0
+inf occipito temporal,R,1,1,0.0,1.0
+inf og,U,1,1,1.0,
+inf par,L,1,1,1.0,1.0
+inf par,U,1,2,1.0,
+inf par lob,R,1,1,0.0,1.0
+inf par lobule,U,1,1,0.0,
+inf par lobulek,U,1,1,0.0,
+inf parietal,U,1,1,1.0,
+ipcs,U,1,1,1.0,
+ipcundamh,U,1,1,0.0,
+ipl 40,L,1,1,1.0,1.0
+ipl and,L,1,1,1.0,1.0
+ipl ba 39,R,1,1,0.0,1.0
+ipl ba 40,R,1,1,0.0,1.0
+ips anterior,U,1,6,1.0,
+ips ba 7,L,1,1,1.0,1.0
+intraparietal sulcusa,L,1,1,1.0,1.0
+intraparietal sulcusa,R,1,2,0.0,1.0
+intraparietal transverseoccipital,U,1,1,1.0,
+intraprietal sulcus,L,1,1,1.0,1.0
+intraprietal sulcus,R,1,1,0.0,1.0
+ioc,U,1,4,0.25,
+ipc 1,L,1,1,1.0,1.0
+ipcdamh,U,1,2,1.0,
+intraparietal cortex,U,1,1,1.0,
+intraparietal lobule,U,1,2,0.5,
+intraparietal sulcus 1,U,1,1,0.0,
+intraparietal sulcus and transverse parietal sulcus,U,1,3,1.0,
+intraparietal sulcus ba 39,U,1,1,1.0,
+intraparietal sulcus ba 40,R,1,1,0.0,1.0
+intraparietal sulcus ba 7,L,1,3,1.0,1.0
+intraparietal sulcus ba 7,U,1,1,1.0,
+internal globus pallidus,U,1,1,1.0,
+intra occipital sulcus,U,1,1,1.0,
+intracalcarine sulcus,U,1,2,0.5,
+intracalcerine cortex,L,1,1,1.0,1.0
+intracalcerine cortex,R,1,1,0.0,1.0
+intraoccipital sulcus,L,1,1,1.0,1.0
+intrapaprietal sulcus,R,1,1,0.0,1.0
+intraparietal cortex,L,1,2,1.0,1.0
+inf front orb,L,1,1,1.0,1.0
+inf front tri,L,1,1,1.0,1.0
+inf frontal g,L,1,1,1.0,1.0
+inf frontal g,U,1,1,0.0,
+inf frontal gyr p orbitalis,U,1,1,1.0,
+inf frontal gyr p triangularis,U,1,1,1.0,
+inf frontal gyrus,R,1,1,0.0,1.0
+inf frontal gyrus ba 47,L,1,4,1.0,1.0
+inf f,R,1,1,0.0,1.0
+inf f g,R,1,2,0.0,1.0
+inf fr gy,U,1,7,0.2857,
+inf fr gyh,U,1,2,0.0,
+inf fr gym,U,1,2,0.0,
+inf fr gyp,U,1,1,1.0,
+inf fronal orb,R,1,1,0.0,1.0
+inf front,L,1,4,1.0,1.0
+ifgorb,U,1,1,0.0,
+ifj,R,1,1,0.0,1.0
+ifj,U,1,1,0.0,
+ifo,L,1,1,1.0,1.0
+increased caudate body,U,1,1,0.0,
+inf and dorsolat pfc,L,1,1,1.0,1.0
+inf and dorsolat pfc,R,1,1,0.0,1.0
+inf cerebellum,U,1,1,1.0,
+ips ba 7,R,1,1,0.0,1.0
+ips cluster 1,L,1,2,1.0,1.0
+ips cluster 2,L,1,2,1.0,1.0
+ips d,L,1,1,1.0,1.0
+ips posterior,U,1,5,1.0,
+ips v,L,1,1,1.0,1.0
+ifg9,U,1,1,0.0,
+ifgoper,U,1,1,0.0,
+lateral cerebellum,R,1,1,0.0,1.0
+lateral cuneus,U,1,1,1.0,
+lateral dlpfc,U,1,1,1.0,
+lateral extrastriate cortex,U,1,1,0.0,
+lateral fef,L,1,1,1.0,1.0
+lateral fef,U,1,1,1.0,
+lateral fog,U,1,1,1.0,
+lateral frontal cortex,L,1,1,1.0,1.0
+lat glob pallidus,R,1,1,0.0,1.0
+lat inf occipital,U,1,1,1.0,
+lateral 2nd hg,U,1,2,0.0,
+lateral anterior prefrontal cortex,L,1,1,1.0,1.0
+lateral anterior prefrontal cortex,R,1,1,0.0,1.0
+lateral bank of ips ips,R,1,1,0.0,1.0
+lateral calcarine cortex,L,1,1,1.0,1.0
+lateral cerebellum,L,1,1,1.0,1.0
+itg 37,U,1,1,1.0,
+its,L,1,1,1.0,1.0
+its,U,1,1,1.0,
+juxtapositional lobule c,U,1,1,0.0,
+laic,U,1,1,1.0,
+lamy,U,1,1,1.0,
+lat dpmc,U,1,1,1.0,
+lat glob pallidus,L,1,1,1.0,1.0
+inf frontal gyrus ba 47,R,1,2,0.0,1.0
+ipsa,L,1,1,1.0,1.0
+ipsa,R,1,1,0.0,1.0
+ipsilesional,U,1,8,0.875,
+ipsilesional psmc,U,1,1,1.0,
+ipto,U,1,2,1.0,
+irlpfc,L,1,6,1.0,1.0
+isthmus cingulate cortex,U,1,2,1.0,
+ifg orbit,R,1,3,0.0,1.0
+ifg orbitalis,U,1,1,1.0,
+ifg p op,U,1,4,1.0,
+ifg p tr,U,1,3,1.0,
+ifg p tri,U,1,1,1.0,
+ifg p triang ba 45,U,1,1,1.0,
+ifg pars opercularis,L,1,1,1.0,1.0
+ifg pars opercularis,U,1,5,0.2,
+lateral occipital cx,U,1,1,0.0,
+lateral occipital g,U,1,1,0.0,
+lateral occipital lobe,U,1,1,0.0,
+ifg opercular,L,1,1,1.0,1.0
+ifg opercular,R,1,1,0.0,1.0
+ifg opercularis,L,1,1,1.0,1.0
+ifg orb,U,1,1,0.0,
+ifg orbit,L,1,5,1.0,1.0
+lateral middle occipital gyrus,L,1,1,1.0,1.0
+lateral middle occipital gyrus,R,1,1,0.0,1.0
+lateral occ cortex,U,1,5,1.0,
+lateral occipital and lingual gyrus,L,1,1,1.0,1.0
+lateral occipital complex,U,1,1,0.0,
+lateral occipital cortex 19,U,1,1,1.0,
+lateral occipital cortex ba 19,R,1,1,0.0,1.0
+lateral occipital cortex tactile visual,L,1,1,1.0,1.0
+lateral frontal gyrus,U,1,1,0.0,
+lateral frontal pole,U,1,1,0.0,
+lateral geniculum body,U,1,1,1.0,
+lateral globus pallidus,L,1,1,1.0,1.0
+lateral gp,U,1,1,0.0,
+lateral inferior parietal cortex ba 40,L,1,4,1.0,1.0
+lateral inferior parietal cortex ba 40,R,1,1,0.0,1.0
+lateral middle frontal,U,1,1,0.0,
+lateral orbitofrontal,U,1,1,0.0,
+lateral orbitofrontal cortex,L,1,2,1.0,1.0
+lateral orbitofrontal cortex,R,1,1,0.0,1.0
+lateral orbitofrontal cortex ba 47,U,1,2,0.5,
+lateral orbitofrontal ctx,U,1,1,1.0,
+lateral orbitofrontal gyrus,R,1,1,0.0,1.0
+lateral pfc,R,1,2,0.0,1.0
+lateral prefrontal,U,1,2,0.0,
+lateral occipitalcortex,L,1,1,1.0,1.0
+lateral occipitalcortex,R,1,1,0.0,1.0
+lateral occipitotemporal gyrus,R,1,1,0.0,1.0
+lateral orbital cortex,L,1,1,1.0,1.0
+lateral orbital frontal cortex,U,1,1,1.0,
+lateral orbital g,U,1,1,0.0,
+lateral orbital gyrus,R,1,2,0.0,1.0
+lateral orbito frontal,U,1,2,0.5,
+ifg triangular,L,1,1,1.0,1.0
+ifg triangularis,U,1,3,0.6667,
+ifg2,U,1,1,0.0,
+ifg3,U,1,1,0.0,
+ifg4,U,1,1,0.0,
+lateral occipital sulcus,L,1,1,1.0,1.0
+lateral occipital sulcus,R,1,1,0.0,1.0
+lateral occipital visual area,U,1,1,0.0,
+ifg pars opercularis 44,U,1,4,0.5,
+ifg pars opercularis 45,U,1,1,0.0,
+ifg pars triangularis,L,1,2,1.0,1.0
+ifg pars triangularis 45,U,1,2,0.5,
+ifg pars triangularis ba 44,U,1,1,1.0,
+ifg pars yriangularis,U,1,1,1.0,
+ifg tri,U,1,1,0.0,
+ifg triang,L,1,4,1.0,1.0
+lfpc,U,1,2,0.5,
+lg ba 18,R,1,1,0.0,1.0
+lifg ba 45,U,1,2,1.0,
+lifg ba 45 44 47,U,1,1,1.0,
+lifg ba 45 47 44,U,1,2,1.0,
+lifg ba 47,U,1,1,1.0,
+lifg pars opercularis,U,1,1,1.0,
+lifga,U,1,2,1.0,
+leniform nuclues,U,1,1,0.0,
+lenticular nucleus,U,1,1,1.0,
+lentiform ncl,U,1,1,1.0,
+lentiform nuclear,L,1,1,1.0,1.0
+lentiform nuclear,R,1,1,0.0,1.0
+lentiform nucleus globus pallidus,L,1,1,1.0,1.0
+lfc,U,1,1,1.0,
+lfef,U,1,1,1.0,
+lateral temporal cortex ba 22,R,1,1,0.0,1.0
+lateral temporal cortex ba 37,R,1,1,0.0,1.0
+lateral temporal cortex ba 42,R,1,1,0.0,1.0
+lateral temporal occipital cortex,L,1,1,1.0,1.0
+lateral thalamus,U,1,1,1.0,
+lateral ventral frontopolar cortex,U,1,1,1.0,
+lef opercular part of inferior frontal gyrus,U,1,1,1.0,
+leftt lingual gyrus,U,1,1,1.0,
+lateral prefrontal cortex medial prefrontal cortex orbitofrontal cortex anterior cingulate cortex,U,1,2,0.5,
+lateral premotor ba 6,U,1,1,0.0,
+lateral premotor cortex,U,1,1,0.0,
+lateral premotor cortex ba 6,L,1,2,1.0,1.0
+lateral rostral pfc ba 10,L,1,4,1.0,1.0
+lateral rostral pfc ba 10,R,1,1,0.0,1.0
+lateral superior temporal gyrus,U,1,3,1.0,
+lateral temporal cortex ba 21,L,1,1,1.0,1.0
+ifc,U,1,1,1.0,
+ifg 13,U,1,1,0.0,
+ifg 44 45,U,1,4,1.0,
+ifg ba 10,U,1,1,1.0,
+ifg ba 45 47,U,1,1,1.0,
+ifg ba 47,L,1,1,1.0,1.0
+ifg ba 47,U,1,1,0.0,
+ifg ba 9,U,1,1,1.0,
+i mpfc,U,1,1,0.0,
+i supplementary motor area,U,1,2,0.0,
+i temporal g,U,1,1,0.0,
+i temporal lobe,U,1,1,0.0,
+i temporal pole,U,1,1,0.0,
+icc,R,1,1,0.0,1.0
+ifc,L,1,1,1.0,1.0
+ifc,R,1,1,0.0,1.0
+ling,B,1,1,1.0,
+ling,L,1,1,0.0,0.0
+ling gyrus v1,U,1,1,1.0,
+lingal gyrus,U,1,1,0.0,
+lingual cortex,U,1,1,0.0,
+lingual g ba 18,U,1,3,0.6667,
+hyppocampus,U,1,1,0.0,
+i middle cingulate cortex,U,1,1,0.0,
+lifs,L,1,2,1.0,1.0
+light mtg,U,1,1,1.0,
+limbic lobe,U,1,1,1.0,
+limbic lobe anterior cingulate gyrus,L,1,4,1.0,1.0
+limbic lobe anterior cingulate gyrus,R,1,2,0.5,0.5
+limbic lobe posterior cingulate,R,1,1,0.0,1.0
+limbic posterior cingulate,L,1,1,1.0,1.0
+lin ba 18,R,1,2,0.0,1.0
+lobule ix of cerebellum,U,1,3,0.6667,
+lobule ix of the cerebellum,U,1,2,0.0,
+lobule vi of the cerebellum,U,1,3,0.3333,
+lobule viib,L,1,2,0.0,0.0
+lobule viib,R,1,2,1.0,0.0
+lobule viiia of cerebellum,U,1,1,1.0,
+loc and posterior middle temporal gyrus,L,1,1,1.0,1.0
+loc superior division,L,1,1,1.0,1.0
+linguala,R,1,1,0.0,1.0
+lingualgyrus,L,1,1,1.0,1.0
+lingulai gyrus,U,1,1,0.0,
+lins,U,1,1,1.0,
+linual gyrus,L,1,2,1.0,1.0
+lmc,U,1,2,0.0,
+lmfga,U,1,1,1.0,
+lobule,U,1,1,1.0,
+lingual gyrus ba 18,R,1,1,0.0,1.0
+lingual gyrus ba 19,U,1,1,1.0,
+lingual gyrus ba 8,R,1,1,0.0,1.0
+lingual gyrus6,R,1,1,0.0,1.0
+lingual gyrusf,U,1,1,1.0,
+lingual gyrusinferior temporal gyrus,U,1,3,0.6667,
+lingual gyurs,U,1,1,0.0,
+lingual or fusiform gyrus,U,1,1,1.0,
+ifg oper,B,1,1,1.0,
+ifg oper,U,1,3,1.0,
+ifg operc,L,1,1,1.0,1.0
+ifg operc,R,1,1,0.0,1.0
+lingual gyr,U,1,1,0.0,
+lingual gyrus 17,R,1,2,0.0,1.0
+lingual gyrus 17,U,1,1,0.0,
+lingual gyrus ba 17,U,1,1,0.0,
+hippocampus head,R,1,1,0.0,1.0
+hippocampus tail,R,1,1,0.0,1.0
+hippocampusa,U,1,2,0.5,
+hippocampusb,U,1,1,1.0,
+hippocampusroi,U,1,1,0.0,
+hips,L,1,1,1.0,1.0
+hoc4v,U,1,1,0.0,
+hoc5,U,1,2,0.5,
+hippocampal area,U,1,2,1.0,
+hippocampal cortex,U,1,1,1.0,
+hippocampal region,L,1,1,1.0,1.0
+hippocampal region,R,1,1,0.0,1.0
+hippocampus amygdala,U,1,2,1.0,
+hippocampus and fusiform,L,1,1,1.0,1.0
+hippocampus ba 35,L,1,1,1.0,1.0
+hippocampus entorhinal cortex,R,1,1,0.0,1.0
+los,R,1,1,0.0,1.0
+los,U,1,1,1.0,
+lotc,U,1,4,1.0,
+heschl region,U,1,1,1.0,
+heschls gyrus ba 48,R,1,1,0.0,1.0
+hipocampus,U,1,1,1.0,
+hipp,L,1,1,1.0,1.0
+hipp,R,1,1,0.0,1.0
+loc superior division,R,1,1,0.0,1.0
+lofa,U,1,3,1.0,
+lofc,L,1,1,1.0,1.0
+lofc,R,1,2,0.0,1.0
+loop for complex sentences,U,1,2,1.0,
+loop for semantics,U,1,2,1.0,
+lop,U,1,1,1.0,
+los,L,1,2,1.0,1.0
+ltalamus,U,1,1,1.0,
+ltc,U,1,1,1.0,
+ltha,U,1,1,1.0,
+lv1v2,U,1,1,1.0,
+lv3a,U,1,1,1.0,
+lv4 vp,U,1,1,1.0,
+lv5,U,1,2,1.0,
+lvcs,U,1,1,1.0,
+lps,U,1,2,0.0,
+lps ba 7,U,1,3,0.6667,
+lps ba 7 40,U,1,1,0.0,
+lpsts,U,1,2,1.0,
+lsloc,U,1,1,1.0,
+lsma,U,1,1,1.0,
+lstg,U,1,1,1.0,
+lsts,U,1,2,1.0,
+lpi ba 40,U,1,6,0.3333,
+lpi ba 7 40,U,1,1,1.0,
+lpic,U,1,1,1.0,
+lpips,U,1,1,1.0,
+lpm,L,1,1,1.0,1.0
+lpmtg,U,1,3,1.0,
+lppc,U,1,1,1.0,
+lprecg,U,1,1,1.0,
+horizontal ramus of the anterior segment of the lateral fissure,U,1,1,1.0,
+lotv,U,1,2,0.5,
+lpc ba 4,U,1,1,1.0,
+lpc ba 5 7,U,1,1,0.0,
+lpcc,U,1,1,1.0,
+lpcg,U,1,1,1.0,
+lpfca,R,1,1,0.0,1.0
+lpi ba 39,U,1,2,0.5,
+med fr gy,U,1,2,0.5,
+med fr gy to sup fr gy,U,1,1,0.0,
+med fr gy to sup fr gyg,U,1,1,0.0,
+med fr gy0,U,1,1,0.0,
+med fr gyh,U,1,1,0.0,
+med fr gyo,U,1,1,1.0,
+med frontal gyrus,L,1,1,1.0,1.0
+med frontal gyrus,R,1,1,0.0,1.0
+maximum 3 thalamus,R,1,1,0.0,1.0
+mcc and precuneus,B,1,1,0.0,
+mcg,L,1,1,1.0,1.0
+mcg,R,1,1,0.0,1.0
+mdlpfc,U,1,2,0.5,
+mdn,U,1,1,0.0,
+mdn thalamus,L,1,1,1.0,1.0
+mdn thalamus,R,1,1,0.0,1.0
+m1 and thalamus,U,1,1,1.0,
+m1a,U,1,1,1.0,
+m1damh,U,1,4,1.0,
+marginal branch of the cingulate sulcus,U,1,2,1.0,
+marginal sulcus,L,1,1,1.0,1.0
+maximum 1 middle temporal gyrus,U,1,1,0.0,
+maximum 2,U,1,1,1.0,
+maximum 3 sma,U,1,1,1.0,
+lventro lateral prefrontal cortex,U,1,1,1.0,
+lvstr,U,1,2,1.0,
+lvv,U,1,1,1.0,
+lyngual gyrus ba 18,U,1,1,1.0,
+m middle cingulate cortex,U,1,1,0.0,
+m paracingulate ba 6 8,U,1,1,0.0,
+m posterior medial frontal gyrus,U,1,5,0.8,
+m1 4,U,1,2,1.0,
+gti ba 37,U,1,1,1.0,
+gtm ba 19,U,1,1,1.0,
+gtm ba 21,U,1,5,0.6,
+gtm ba 21 37,U,1,1,1.0,
+gtm ba 37,U,1,1,1.0,
+gtm ba 39,U,1,1,0.0,
+gts ba 22,U,1,6,0.3333,
+gts ba 38,U,1,1,1.0,
+medial cuneus,U,1,1,1.0,
+medial dlpfc,U,1,1,1.0,
+medial fontal gyrus,R,1,1,0.0,1.0
+gprc ba 4 6,U,1,5,0.4,
+gprc ba 6,U,1,3,0.6667,
+gray ba 11,U,1,1,0.0,
+gsc ba 25,U,1,1,1.0,
+gsm 40,U,1,5,0.6,
+medial 2nd hg hs,U,1,1,0.0,
+medial ahg,U,1,2,0.0,
+medial aspect of frontal lobe,U,1,1,1.0,
+medial cerebellum,R,1,2,0.0,1.0
+medial cerebellum,U,1,1,0.0,
+medial cingulate cortex,L,1,1,1.0,1.0
+medial cingulate cortex,U,1,1,1.0,
+medial cingulum,U,1,1,0.0,
+med frontal orb,R,1,1,0.0,1.0
+med orbital gyrus,R,1,1,0.0,1.0
+med prefrontal,L,1,1,1.0,1.0
+med sfc ba 6,R,1,1,0.0,1.0
+med sup frontal,L,1,1,1.0,1.0
+med sup frontal g,U,1,1,1.0,
+media frontal gyrus,U,1,1,1.0,
+medial 2nd hg,U,1,1,1.0,
+medial frontal gyrus 32,U,1,1,1.0,
+medial frontal gyrus 6,R,1,4,0.0,1.0
+medial frontal gyrus 9,U,1,1,1.0,
+medial frontal gyrus ba 10,R,1,1,0.0,1.0
+medial frontal gyrus ba 10,U,1,4,1.0,
+medial frontal gyrus ba 10 11,L,1,1,1.0,1.0
+medial frontal gyrus ba 23,U,1,1,0.0,
+medial frontal gyrus ba 25,L,1,1,1.0,1.0
+medial frontal g,L,1,2,1.0,1.0
+medial frontal g ba 10,U,1,1,0.0,
+medial frontal g ba 9,R,1,1,0.0,1.0
+medial frontal g ba 9,U,1,2,0.5,
+medial frontal gyrus 10,U,1,2,0.5,
+medial frontal gyrus 11,L,1,1,1.0,1.0
+medial frontal gyrus 29,U,1,1,1.0,
+medial frontal gyrus 32,L,1,1,1.0,1.0
+head of the caudate nucleus,B,1,2,1.0,
+heschels gyrus,U,1,1,1.0,
+heschis,R,1,1,0.0,1.0
+heschis gyrus,L,1,1,1.0,1.0
+medial frontal cortex 10 11,U,1,1,1.0,
+medial frontal cortex 11,U,1,1,1.0,
+medial frontal cortex 24 32,U,1,1,1.0,
+medial frontal cortex and anterior cingulated,U,1,1,1.0,
+gts ba 42,U,1,1,0.0,
+gtt ba 41 42,U,1,2,0.5,
+gyrus descendens,U,1,1,0.0,
+gyrus frontalis inferior pars opercularis,U,1,1,1.0,
+gyrus frontalis medius,U,1,2,0.5,
+gyrus fusiformis,U,1,1,1.0,
+head of caudate nucleus,U,1,2,0.5,
+head of the caudate and subgenual area,U,1,1,0.0,
+medial occipito temporal gyrus lingual gyrus,U,1,1,1.0,
+medial occipito temporal gyrus parahippocampal gyrus,U,1,2,1.0,
+medial occipito temporal sculcus and lingual sulcus,U,1,1,1.0,
+medial occipitotemporal gyrus,R,1,1,0.0,1.0
+medial ofc ba 11,U,1,1,0.0,
+medial orbital cortex,U,1,1,0.0,
+medial orbital frontal,L,1,1,1.0,1.0
+medial orbital gyrus,L,1,1,1.0,1.0
+medial lingual gyrus,R,1,1,0.0,1.0
+medial lingual gyrus ba 18,L,1,1,1.0,1.0
+medial m1 ba 4,U,1,1,0.0,
+medial nucleus of septum,U,1,1,0.0,
+medial occipital cortex ba 18,L,1,1,1.0,1.0
+medial occipital cortex ba 19,R,1,1,0.0,1.0
+medial occipital lobe,U,1,1,0.0,
+medial occipito parietal cortex ba 7 19,L,1,1,1.0,1.0
+medial frontal polar cortex ba 10,U,1,3,0.0,
+medial frontal polar cortex ba 9,U,1,1,1.0,
+medial frontal polar cortex ba 9 10,U,1,1,0.0,
+medial frontal pole,U,1,1,1.0,
+medial geniculate body,U,1,1,1.0,
+medial hg,U,1,1,0.0,
+medial insula,R,1,1,0.0,1.0
+medial lingual gyrus,L,1,1,1.0,1.0
+medial frontal gyrus ba 32,R,1,1,0.0,1.0
+medial frontal gyrus ba 8,R,1,2,0.0,1.0
+medial frontal gyrus orbitalis,R,1,2,0.0,1.0
+medial frontal gyrusb,L,1,1,1.0,1.0
+medial frontal gyrusb,U,1,2,0.0,
+medial frontal lobe,L,1,1,1.0,1.0
+medial frontal ofc,U,1,1,0.0,
+medial frontal orbitalis,U,1,2,0.0,
+gl ba 19,U,1,3,0.3333,
+gl pallidus,U,1,1,0.0,
+global pallidus,U,1,2,0.5,
+globus pallidum,R,1,1,0.0,1.0
+globus pallidum,U,1,1,1.0,
+go ba 19,U,1,3,0.3333,
+gom,U,1,1,1.0,
+gom ba 18,U,1,2,0.0,
+gfm ba 8,U,1,1,0.0,
+gfm ba 9,U,1,4,0.75,
+gfs ba 10,U,1,6,0.3333,
+gfs ba 9,U,1,2,0.5,
+gh ba 28,U,1,1,0.0,
+gh ba 28 35,U,1,1,0.0,
+gl ba 17 18,U,1,1,0.0,
+gl ba 18,U,1,5,0.2,
+gfd ba 9,U,1,1,1.0,
+gfi ba 44,U,1,5,0.2,
+gfi ba 45,U,1,2,1.0,
+gfi ba 47,U,1,4,0.5,
+gfm ba 10,U,1,2,0.5,
+gfm ba 46,U,1,2,1.0,
+gfm ba 46 9,U,1,1,0.0,
+gfm ba 6,U,1,3,0.3333,
+medial orbital gyrus,R,1,1,0.0,1.0
+medial orbital gyrus 25,U,1,1,1.0,
+medial orbital sulcus,U,1,1,0.0,
+medial orbito frontal cortex,R,1,2,0.0,1.0
+medial orbitofrontal,L,1,1,1.0,1.0
+medial orbitofrontal,R,1,1,0.0,1.0
+medial orbitofrontal ba 11,U,1,1,0.0,
+gfd ba 8,U,1,3,0.6667,
+medial prefrontal gyrus ba 10,L,1,1,1.0,1.0
+medial premotor cortex,R,1,1,0.0,1.0
+medial premotor cortex,U,1,1,0.0,
+medial rostral pfc ba 10,L,1,1,1.0,1.0
+medial sup frontal,L,1,3,1.0,1.0
+medial sup frontal,R,1,1,0.0,1.0
+medial superior frontal gryus,U,1,2,1.0,
+medial superior parietal cortex ba 7,U,1,1,1.0,
+medial prefrontal ba 9 10,U,1,1,0.0,
+medial prefrontal cortex,B,1,1,0.0,
+medial prefrontal cortex ba 10,L,1,2,1.0,1.0
+medial prefrontal cortex ba 10,U,1,2,0.0,
+medial prefrontal cortex ba 32,U,1,1,0.0,
+medial prefrontal cortex ba 8,U,1,1,0.0,
+medial prefrontal ctx,U,1,1,0.0,
+medial prefrontal gyrus,L,1,1,1.0,1.0
+medial pfc,L,1,1,1.0,1.0
+medial pfc,R,1,1,0.0,1.0
+medial pfc ba 8,R,1,1,0.0,1.0
+medial posterior parietal and precuneus,U,1,1,1.0,
+medial pre frontal,U,1,1,1.0,
+medial precentral gyrus,U,1,1,1.0,
+medial precuneus,U,1,1,1.0,
+medial prefrontal,R,1,1,0.0,1.0
+gom ba 19 37,U,1,2,1.0,
+gpi,U,1,2,0.0,
+gpoc,R,1,1,0.0,1.0
+gprc ba 4,U,1,1,0.0,
+medial orbitofrontal gyrus,U,1,1,0.0,
+medial parahippocampal gyrus,L,1,1,1.0,1.0
+medial parietal,U,1,1,0.0,
+medial parietal lobe,U,1,1,1.0,
+g8 insular and sublobar,L,1,1,1.0,1.0
+ga ba 39,U,1,2,0.5,
+gc ba 31,U,1,3,0.0,
+gc ba 32,U,1,3,0.6667,
+genu,U,1,1,0.0,
+genu of corpus callosum,U,1,1,0.0,
+gf ba 19,U,1,1,1.0,
+gfd ba 10,U,1,2,0.5,
+fusiform gyrus ba 36,L,1,1,1.0,1.0
+fusiform gyrus ba 37,L,1,3,1.0,1.0
+fusiform gyrus ba 37 include parahippocampal gyrus ba 36,L,1,1,1.0,1.0
+fusiform gyrusa,R,1,1,0.0,1.0
+fusiform itg,U,1,1,1.0,
+fusiformgyrus,R,1,1,0.0,1.0
+fusifrom gyrus,U,1,1,1.0,
+g1 temporal lobe ba 37,R,1,1,0.0,1.0
+medial temportal pole,U,1,1,0.0,
+medial thalamus,L,1,1,1.0,1.0
+medial tts,U,1,2,0.5,
+fusiform gyrus 20,R,1,1,0.0,1.0
+fusiform gyrus 20 37,U,1,1,1.0,
+fusiform gyrus 36,U,1,1,0.0,
+fusiform gyrus and lingual gyrus,R,1,1,0.0,1.0
+fusiform gyrus ba 18,L,1,1,1.0,1.0
+medial supplementary motor area,U,1,2,0.5,
+medial temporal,R,1,1,0.0,1.0
+medial temporal cortex,R,1,2,0.0,1.0
+medial temporal gyrus,L,1,1,1.0,1.0
+medial temporal gyrus,R,1,1,0.0,1.0
+medial temporal lobe ba 20 27 35 36,L,1,1,1.0,1.0
+medial temporal lobe ba 20 27 35 36,R,1,1,0.0,1.0
+medial temporal pole,L,1,1,1.0,1.0
+mid acc 24,U,1,1,0.0,
+fusifom gyrus,R,1,1,0.0,1.0
+fusiform area,L,1,1,1.0,1.0
+fusiform area,R,1,1,0.0,1.0
+fusiform area,U,1,6,0.5,
+fusiform ba 19 20 20,L,1,1,1.0,1.0
+fusiform ba 19 20 37,R,1,1,0.0,1.0
+fusiform ba 19 37,L,1,2,1.0,1.0
+mfg 6,U,1,2,0.5,
+mfg ba 6,U,1,2,0.0,
+mfg ba 8,L,1,1,1.0,1.0
+mfg ba 9,R,1,1,0.0,1.0
+mfg1,U,1,1,0.0,
+mfg2,U,1,1,0.0,
+mfga,U,1,2,0.0,
+mid acc,U,1,1,0.0,
+mediodorsal thalamic nucleus,U,1,1,0.0,
+mediodorsal thalamus,L,1,1,1.0,1.0
+medulla,U,1,1,0.0,
+mefg,B,1,1,1.0,
+mefg,U,1,2,0.5,
+men versus women,U,1,3,0.6667,
+mesial cingulate cortex,U,1,4,0.5,
+mesial prefrontal cortex,U,1,2,0.5,
+gfd ba 6,U,1,2,0.5,
+medial ventral frontopolar cortex,U,1,1,0.0,
+medial wall and precuneus,U,1,1,1.0,
+median cingulate and paracingulate gyrus,L,1,2,1.0,1.0
+median cingulate and paracingulate gyrus,R,1,1,1.0,0.0
+median cingulate and paracingulate gyrus,U,1,1,1.0,
+median cingulate gyrus,R,1,1,0.0,1.0
+mediodorsal nc,U,1,2,0.0,
+mid fr gyk,U,1,1,0.0,
+mid fr gyl,U,1,2,0.0,
+mid front,L,1,1,1.0,1.0
+mid frontal,U,1,1,1.0,
+mid frontal g,U,1,1,1.0,
+mid frontal gyrusb,U,1,1,0.0,
+mid frontal gyurs,U,1,1,0.0,
+mid frontal lobe,R,1,1,0.0,1.0
+mid cc ba 24,R,1,1,0.0,1.0
+mid cing,U,1,1,1.0,
+mid cingulate cortx,U,1,1,0.0,
+mid cingulum,L,1,1,1.0,1.0
+mid cingulum gyrus,U,1,1,0.0,
+mid fg,U,1,1,1.0,
+mid fr gy,U,1,13,0.2308,
+mid fr gyh,U,1,4,0.0,
+fusiform g,L,1,3,1.0,1.0
+fusiform g,R,1,1,0.0,1.0
+fusiform g ba 19,U,1,1,1.0,
+fusiform gyq,U,1,1,0.0,
+fusiform gyrsu,R,1,1,0.0,1.0
+mid anterior stg,L,1,1,1.0,1.0
+mid anterior superior temporal gyrus,R,1,2,0.0,1.0
+mid cc,U,1,1,1.0,
+fusiform ba 19 37,R,1,2,0.0,1.0
+fusiform ba 37,L,1,1,1.0,1.0
+fusiform ba 37,R,1,1,0.0,1.0
+fusiform cortex,R,1,1,0.0,1.0
+fusiform cortex ba 37,L,1,1,1.0,1.0
+fusiform cortex ba 37,R,1,2,0.0,1.0
+fusiform face area,R,1,1,0.0,1.0
+fusiform face area ba 19,L,1,1,1.0,1.0
+mid orbital gyrus,R,1,1,0.0,1.0
+mid posterior insula,U,1,2,0.5,
+mid posterior stg,L,1,1,1.0,1.0
+mid psts,U,1,2,0.0,
+mid stg,L,1,2,1.0,1.0
+mid stg,R,1,1,0.0,1.0
+mid sts,R,1,1,0.0,1.0
+mid temp,U,1,6,0.8333,
+mid occipital g,R,1,1,0.0,1.0
+mid occipital gyrus ba 18,U,1,1,0.0,
+mid occipital lobe,L,1,1,1.0,1.0
+mid ofc,U,1,1,0.0,
+mid og,U,1,1,1.0,
+mid orbital frontal,U,1,1,1.0,
+mid orbital gyr,U,1,1,1.0,
+mid orbital gyrus,L,1,1,1.0,1.0
+mid insular cortex,U,1,1,1.0,
+mid lofc,U,1,1,1.0,
+mid occ,U,1,1,1.0,
+mid occ gyr,L,1,1,1.0,1.0
+mid occ gyr,R,1,1,0.0,1.0
+mid occip gyrus,U,1,2,0.5,
+mid occipital and calcarine,L,1,1,1.0,1.0
+mid occipital cortex,U,1,1,0.0,
+mid frontal orb,L,1,1,1.0,1.0
+mid frontal orb,R,1,1,0.0,1.0
+mid fusiform gyrus,L,1,1,1.0,1.0
+mid fusiform gyrus,U,1,1,0.0,
+mid ifg,U,1,2,0.5,
+mid insula,R,1,2,0.0,1.0
+mid insula cortex,L,1,1,1.0,1.0
+mid insula cortex,R,1,1,0.0,1.0
+frontoinsula,L,1,1,1.0,1.0
+frontomarginal sulcus,R,1,1,0.0,1.0
+frontomedial cortex,U,1,1,0.0,
+frontoparietal operculum,U,1,1,0.0,
+frontopolar,L,1,1,1.0,1.0
+frontopolar,R,1,1,0.0,1.0
+frontopolar 10,R,1,2,0.0,1.0
+frontopolar area,U,1,1,0.0,
+frontal wm,R,1,1,0.0,1.0
+fronto insular cortex,U,1,3,0.6667,
+fronto marginal gyrus and sulcus,U,1,1,1.0,
+fronto occipital fasciculus,L,1,1,0.0,0.0
+fronto occipital fasciculus,R,1,1,1.0,0.0
+fronto polar,R,1,1,0.0,1.0
+fronto polar cortex,U,1,1,1.0,
+fronto superior medial gyrus ba 9,L,1,1,1.0,1.0
+mid temporal pole,R,1,1,0.0,1.0
+mid temporal pole,U,1,1,1.0,
+mid to inf temp gy,U,1,1,1.0,
+mid tp,L,1,2,0.5,0.5
+frontal superior medial gyrus ba 32,U,1,1,1.0,
+frontal superior orbital gyrus,R,1,1,0.0,1.0
+frontal triangular gyrus,U,1,1,0.0,
+frontal wm,L,1,1,1.0,1.0
+mid temp gy,U,1,2,0.0,
+mid temp gyp,U,1,1,0.0,
+mid temp gyr,L,1,1,1.0,1.0
+mid temp gyr,R,1,1,0.0,1.0
+mid temporal cortex,L,1,1,1.0,1.0
+mid temporal gyr,U,1,2,0.0,
+mid temporal gyrus ba 21,U,1,1,1.0,
+mid temporal lobe,R,1,1,0.0,1.0
+middle and posterior cingulate gyrus,U,1,1,0.0,
+middle and superior,L,1,1,1.0,1.0
+middle and superior frontal gyrus 10,R,1,1,0.0,1.0
+middle and superior occipital gyrus,L,1,1,1.0,1.0
+middle and superior temporal gyrus,R,1,1,0.0,1.0
+middle anterior cingulate cortex,U,1,3,1.0,
+middle anterior part of the cingulate gyrus and sulcus,U,1,2,1.0,
+middle anterior temporal cortex,U,1,2,1.0,
+middle,L,1,1,1.0,1.0
+middle,R,1,1,0.0,1.0
+middle and anterior cingulate,U,1,1,0.0,
+middle and inferior frontal,R,1,1,0.0,1.0
+middle and inferior frontal,U,1,1,0.0,
+middle and inferior frontal gyrus,L,1,1,1.0,1.0
+middle and inferior frontal gyrus,R,1,1,0.0,1.0
+middle and inferior frontal gyrus 10 46,R,1,1,0.0,1.0
+mid tp,R,1,3,0.0,1.0
+mid vlpfc,U,1,1,1.0,
+midbrain,R,1,1,0.0,1.0
+midbrain subthalamic nucleus,L,1,1,1.0,1.0
+midcingulate ba 24,U,1,1,0.0,
+midcingulate crtx,U,1,1,0.0,
+midcingulum,U,1,1,1.0,
+middel frontal gyrus,U,1,1,1.0,
+frontopolar cortex ba 10,L,1,1,1.0,1.0
+frontopolar cortex ba 10,R,1,1,0.0,1.0
+frpole,U,1,1,1.0,
+furiform gyrus,L,1,1,1.0,1.0
+fus,U,1,1,0.0,
+fus gyr,U,1,1,1.0,
+fusi,U,1,1,1.0,
+fusicform,U,1,1,0.0,
+frontal pole ba 10,U,1,1,1.0,
+frontal pole cortex,R,1,2,0.0,1.0
+frontal poleb,L,1,1,1.0,1.0
+frontal sub gyral,L,1,1,1.0,1.0
+frontal sub gyral,U,1,1,0.0,
+frontal sub gyral ba 6,L,1,1,1.0,1.0
+frontal subgyral,U,1,1,1.0,
+frontal sup medeal,U,1,1,1.0,
+middle cingulate gyrus ba 23,U,1,1,0.0,
+middle cingulate gyrus ba 24,R,1,1,0.0,1.0
+frontal polar,R,1,1,0.0,1.0
+frontal polar,U,1,1,0.0,
+frontal polar c,R,1,1,0.0,1.0
+frontal pole 9,U,1,1,0.0,
+frontal pole anterior medial prefrontal cortex,U,1,2,0.0,
+frontal pole ba 10,R,1,1,0.0,1.0
+middle cingulate cortex 6,U,1,1,1.0,
+middle cingulate cortex ba 23,R,1,1,0.0,1.0
+middle cingulate cortex ba 23,U,1,1,1.0,
+middle cingulate cortex ba 24,L,1,1,1.0,1.0
+middle cingulate cortex ba 31,L,1,1,1.0,1.0
+middle cingulate g,B,1,1,0.0,
+middle cingulate g,U,1,1,1.0,
+middle cingulate gurus,L,1,1,1.0,1.0
+middle central sulcus,L,1,1,1.0,1.0
+middle cerebellar peduncle,U,1,1,1.0,
+middle cigulate cortex,U,1,1,1.0,
+middle cingulate and paracingulate gyrus,U,1,1,0.0,
+middle cingulate cortex 24,U,1,1,0.0,
+middle cingulate cortex 31,U,1,1,0.0,
+middle cingulate cortex 32 24,L,1,3,1.0,1.0
+middle cingulate cortex 32 24,R,1,1,0.0,1.0
+middle frontal gyrus 10 44,L,1,1,1.0,1.0
+frontal medial cortex,U,1,2,0.5,
+frontal medial gyrus,U,1,1,0.0,
+frontal mid 5,U,1,2,1.0,
+frontal mid 8,U,1,1,1.0,
+frontal mid orb,R,1,1,0.0,1.0
+frontal mid orb,U,1,1,1.0,
+frontal middle,L,1,1,1.0,1.0
+middle frontal and precentral gyrus,L,1,3,1.0,1.0
+middle frontal ba 10,R,1,1,0.0,1.0
+middle frontal ba 6,R,1,1,0.0,1.0
+middle frontal ba 9 10,R,1,1,0.0,1.0
+middle frontal cortex ba 8,U,1,1,0.0,
+middle frontal ctx,U,1,1,0.0,
+middle frontal g ba 10,U,1,3,1.0,
+middle frontal gyru,R,1,1,0.0,1.0
+middle cingulum cortex,L,1,1,1.0,1.0
+middle cingulum cortex,R,1,1,0.0,1.0
+middle dorsal insula,L,1,1,1.0,1.0
+middle dorsal insula,R,1,1,0.0,1.0
+middle fontal gyrus,U,1,1,0.0,
+middle friontal gyrus,R,1,1,0.0,1.0
+middle fronal gyrus,L,1,1,1.0,1.0
+middle frontal 9,L,1,1,1.0,1.0
+frontal sup media,L,1,1,1.0,1.0
+frontal sup media,R,1,2,0.0,1.0
+frontal superior,U,1,1,1.0,
+frontal superior gyrus,R,1,1,0.0,1.0
+frontal superior gyrus,U,1,1,0.0,
+frontal superior medial,U,1,1,1.0,
+frontal superior medial ba 10,U,1,1,0.0,
+middle cingulum ba 32,U,1,2,0.0,
+middle frontal gyrus 8,L,1,2,1.0,1.0
+middle frontal gyrus 8 9,R,1,1,0.0,1.0
+middle frontal gyrus and posterior inferior frontal gyrus,U,1,1,0.0,
+middle frontal gyrus and precentral sulcus,U,1,1,0.0,
+middle frontal gyrus ba 11,R,1,1,0.0,1.0
+middle frontal gyrus ba 11 47,R,1,1,0.0,1.0
+middle frontal gyrus ba 13,R,1,1,1.0,0.0
+middle frontal gyrus ba 4,L,1,1,1.0,1.0
+middle frontal gyrus 32,L,1,1,1.0,1.0
+middle frontal gyrus 36,U,1,1,1.0,
+middle frontal gyrus 45,R,1,1,0.0,1.0
+middle frontal gyrus 45,U,1,4,1.0,
+middle frontal gyrus 46,R,1,1,0.0,1.0
+middle frontal gyrus 47,L,1,1,1.0,1.0
+middle frontal gyrus 6 8,L,1,1,1.0,1.0
+middle frontal gyrus 6 8 9,L,1,1,1.0,1.0
+frontal operculum p opercularis,U,1,1,1.0,
+frontal operculum p triangularis,U,1,1,1.0,
+frontal orbital,L,1,2,1.0,1.0
+frontal orbital,R,1,1,0.0,1.0
+middle frontal gyrus 11,R,1,1,0.0,1.0
+middle frontal gyrus 11,U,1,2,0.5,
+middle frontal gyrus 11 47,L,1,1,1.0,1.0
+middle frontal gyrus 21,L,1,1,1.0,1.0
+frontal middle,R,1,1,0.0,1.0
+frontal middle gyrus,L,1,1,1.0,1.0
+frontal middle gyrus,R,1,1,0.0,1.0
+frontal middle gyrus,U,1,2,1.0,
+frontal middle orbital,L,1,1,1.0,1.0
+frontal middle orbital gyrus,L,1,2,1.0,1.0
+frontal middle orbital gyrus,R,1,2,0.0,1.0
+frontal network,U,1,1,0.0,
+frontal inferior triangularisangularis,U,1,5,0.8,
+frontal insular cortex,L,1,1,1.0,1.0
+frontal insular cortex,R,1,1,0.0,1.0
+frontal lobe frame gyrus,U,1,1,1.0,
+frontal lobe frontal gyrus,R,1,1,0.0,1.0
+frontal lobe inferior frontal gyrus,L,1,4,1.0,1.0
+frontal lobe inferior frontal gyrus,R,1,1,0.0,1.0
+frontal lobe medial frontal gyrus,L,1,1,1.0,1.0
+frontal inf orb 47,U,1,1,1.0,
+frontal inf p o,L,1,1,1.0,1.0
+frontal inf p o,R,1,1,0.0,1.0
+frontal inf p t,L,1,1,1.0,1.0
+frontal inf p t,R,1,1,0.0,1.0
+frontal inferior opercularis,R,1,1,0.0,1.0
+frontal inferior orbital gyrus,R,1,1,0.0,1.0
+frontal inferior triangularis,R,1,1,0.0,1.0
+middle frontal gyrus ba 9 46,U,1,1,0.0,
+middle frontal gyrus ba 9 46 include middle frontal gyrus ba 10,R,1,1,0.0,1.0
+middle frontal gyrus in orbital part,U,1,1,0.0,
+middle frontal gyrus rb,U,1,1,0.0,
+middle frontal gyrus3,U,1,1,0.0,
+middle frontal gyrus4,U,1,1,0.0,
+middle frontal gyrusb,U,1,1,1.0,
+middle frontal gyrusd,R,1,1,0.0,1.0
+middle frontal gyrus ba 44,L,1,1,1.0,1.0
+middle frontal gyrus ba 45,R,1,1,0.0,1.0
+middle frontal gyrus ba 46,L,1,1,1.0,1.0
+middle frontal gyrus ba 46 3,U,1,1,0.0,
+middle frontal gyrus ba 47,L,1,1,1.0,1.0
+middle frontal gyrus ba 6 include precentral gyrus ba 6,L,1,1,1.0,1.0
+middle frontal gyrus ba 8 9,U,1,2,0.5,
+middle frontal gyrus ba 9 10 46,L,1,1,1.0,1.0
+middle occipital and lingual gyrus,U,1,1,0.0,
+middle occipital ba 18,U,1,1,0.0,
+middle occipital ba 18 19,L,1,2,1.0,1.0
+middle occipital ba 18 19,R,1,2,0.0,1.0
+middle occipital cortex,L,1,1,1.0,1.0
+fpc,L,1,2,1.0,1.0
+fpc,R,1,3,0.0,1.0
+fpc middle frontal gyrus,U,1,2,0.5,
+middle inferior occipital gyrus,R,1,1,0.0,1.0
+middle inferior occipital gyrus,U,1,3,0.0,
+middle insula,R,1,1,0.0,1.0
+middle intraparietal sulcus,L,1,3,1.0,1.0
+middle intraparietal sulcus,R,1,3,0.0,1.0
+middle ips,L,1,1,1.0,1.0
+middle longitudinal fasciculus wm,U,1,2,0.0,
+middle occipital and fusiform gyrus,U,1,1,0.0,
+middle frontal precentral gyrus,R,1,1,0.0,1.0
+middle frontal region,U,1,2,0.0,
+middle frontal sulcus,R,1,1,0.0,1.0
+middle frontalgyrus,L,1,5,1.0,1.0
+middle fusiform gyrus,L,1,1,1.0,1.0
+middle hippocampus,L,1,1,1.0,1.0
+middle hippocampus,R,1,2,0.0,1.0
+middle inferior occipital gyrus,L,1,1,1.0,1.0
+frontal lobe paracentral lobule,U,1,1,0.0,
+frontal lobe sub gyral,L,1,1,1.0,1.0
+frontal lobe superior frontal gyrus,L,1,1,1.0,1.0
+frontal med orb and,B,1,1,1.0,
+frontal medial,R,1,1,0.0,1.0
+middle frontal lobe,L,1,1,1.0,1.0
+middle frontal lobe,U,1,2,0.5,
+middle frontal orbital part,L,1,1,1.0,1.0
+middle occipital gyrus ba 39,R,1,1,0.0,1.0
+middle occipital gyrus cluster 1,L,1,1,1.0,1.0
+middle occipital gyrusa,U,1,1,0.0,
+middle occipital lobe,L,1,1,1.0,1.0
+middle occipital lobe,R,1,1,0.0,1.0
+middle occipital sulcus,L,1,1,1.0,1.0
+middle occipitalgyrus,L,1,3,1.0,1.0
+middle occipitalgyrus,R,1,1,0.0,1.0
+middle occipital gyrus 18,L,1,1,1.0,1.0
+middle occipital gyrus 18,R,1,1,0.0,1.0
+middle occipital gyrus 37,L,1,1,1.0,1.0
+middle occipital gyrus 37,R,1,1,0.0,1.0
+middle occipital gyrus 37 18 19,R,1,1,0.0,1.0
+middle occipital gyrus 39,U,1,1,0.0,
+middle occipital gyrus ba 37,R,1,1,0.0,1.0
+middle occipital gyrus ba 37,U,1,1,0.0,
+frontal eye field ba 8,R,1,1,0.0,1.0
+frontal gyrus,L,1,1,1.0,1.0
+frontal gyrus,R,1,1,0.0,1.0
+frontal inf,R,1,1,0.0,1.0
+frontal inf gy,U,1,3,1.0,
+frontal inf oper 44,U,1,2,1.0,
+middle occipital g,L,1,2,1.0,1.0
+middle occipital g ba 19,U,1,2,0.0,
+fppfc,U,1,5,1.0,
+front med orbit,R,1,1,0.0,1.0
+front mid orbit,R,1,1,0.0,1.0
+front pole,L,1,1,1.0,1.0
+frontal and subcortical area,U,1,1,1.0,
+frontal ba 10,L,1,1,1.0,1.0
+frontal ba 10,R,1,1,0.0,1.0
+frontal cortex sma,B,1,2,1.0,
+fef sphere,L,1,1,1.0,1.0
+fef sphere,R,1,1,0.0,1.0
+fefa,L,1,1,1.0,1.0
+fefa,R,1,1,0.0,1.0
+fefs,U,1,2,0.0,
+ffa ba 37,L,1,1,1.0,1.0
+ffa ba 37,R,1,1,0.0,1.0
+ffa1 mask,L,1,3,1.0,1.0
+middle stg,L,1,1,1.0,1.0
+middle stg,R,1,1,0.0,1.0
+middle sts,L,1,1,1.0,1.0
+middle superior temporal sulcus,U,1,1,0.0,
+fef 8,U,1,1,0.0,
+fef ba 9,R,1,1,0.0,1.0
+fef lat,L,1,1,0.0,0.0
+fef left2,U,1,1,1.0,
+middle orbital gyrus ba 32,L,1,1,1.0,1.0
+middle orbito frontal,L,1,1,1.0,1.0
+middle orbitofrontal,U,1,2,0.5,
+middle orbitofrontal cortex,U,1,1,1.0,
+middle orbitofrontal gyrus,U,1,1,0.0,
+middle orbitofrontal gyrusa,U,1,1,0.0,
+middle orbitofrontal lobe,U,1,2,0.0,
+middle posterior part of the cingulate gyrus and sulcus,U,1,2,1.0,
+middle occipito temporal gyrus,U,1,1,1.0,
+middle occipito temporal gyrusa,U,1,1,1.0,
+middle occpital gyrus ba 18,L,1,1,1.0,1.0
+middle ofc,U,1,1,0.0,
+middle orbiral gyrus,U,1,1,0.0,
+middle orbital,L,1,1,1.0,1.0
+middle orbital frontal gyrus,L,1,1,1.0,1.0
+middle orbital gyrus ba 11,U,1,1,0.0,
+middle temporal gyrus 39,L,1,1,0.0,0.0
+middle temporal gyrus ba 19,L,1,1,1.0,1.0
+middle temporal gyrus ba 19,R,1,1,0.0,1.0
+middle temporal gyrus ba 20,R,1,1,0.0,1.0
+middle temporal gyrus ba 20,U,1,1,0.0,
+middle temporal gyrus ba 21 37,U,1,1,0.0,
+middle temporal gyrus ba 21 a,R,1,1,0.0,1.0
+middle temporal gyrus ba 22,L,1,1,1.0,1.0
+middle temporal g ba 39,U,1,1,0.0,
+middle temporal gyrus 19,L,1,1,1.0,1.0
+middle temporal gyrus 19,R,1,1,0.0,1.0
+middle temporal gyrus 1997,U,1,1,1.0,
+middle temporal gyrus 21 22,R,1,1,0.0,1.0
+middle temporal gyrus 21 22,U,1,2,0.5,
+middle temporal gyrus 22,R,1,1,0.0,1.0
+middle temporal gyrus 22 37,L,1,1,1.0,1.0
+first and second heschls gyrus,R,1,1,0.0,1.0
+fmri study,U,1,6,0.3333,
+forceps major,U,1,1,0.0,
+middle temporal and,L,1,1,1.0,1.0
+middle temporal and gyrus,R,1,1,0.0,1.0
+middle temporal g,L,1,4,1.0,1.0
+middle temporal g ba 21,U,1,1,1.0,
+middle temporal g ba 22,U,1,1,1.0,
+ffa1 mask,R,1,3,0.0,1.0
+ffa2 mask,L,1,3,1.0,1.0
+ffa2 mask,R,1,3,0.0,1.0
+ffsiform gyrus 37,L,1,1,1.0,1.0
+fg mask,L,1,3,1.0,1.0
+fg mask,R,1,3,0.0,1.0
+fimbria,U,1,1,1.0,
+first and second heschls gyrus,L,1,1,1.0,1.0
+midline,U,1,2,0.0,
+midline calcerine gyrus,U,1,1,1.0,
+midline medial pfc,U,1,1,1.0,
+midline mid cingulate cortex,U,1,1,1.0,
+midline prefrontal,U,1,1,0.0,
+midline thalamus,U,1,1,1.0,
+midsupitempg,U,1,1,1.0,
+midtemporal gyrus,R,1,1,0.0,1.0
+middle temporal lobe ba 21,R,1,1,0.0,1.0
+middle temporal occipital gyrus,R,1,1,0.0,1.0
+middle temporal sulcus,U,1,1,1.0,
+middle temporalgyrus,R,1,3,0.0,1.0
+middlefrontal,U,1,1,0.0,
+middorsal insula,U,1,2,0.5,
+midinsula,L,1,1,1.0,1.0
+midinsula,U,1,1,0.0,
+middle temporal gyrusl superior temporal gyrus,L,1,1,1.0,1.0
+middle temporal gyrusl superior temporal gyrusleft inferior parietal lobe,L,1,1,1.0,1.0
+middle temporal gyrusr superior temporal gyrus,R,1,2,0.0,1.0
+middle temporal gyrusr superior temporal gyrusr inferior parietal lobe,R,1,1,0.0,1.0
+middle temporal gyus,U,1,1,1.0,
+middle temporal lobe,L,1,2,1.0,1.0
+middle temporal lobe,R,1,1,0.0,1.0
+middle temporal lobe,U,1,8,0.25,
+middle temporal gyrus ba 22,R,1,1,0.0,1.0
+middle temporal gyrus ba 37,L,1,1,1.0,1.0
+middle temporal gyrus ba 37,R,1,1,0.0,1.0
+middle temporal gyrus ba 37,U,1,2,0.0,
+middle temporal gyrus ba 37 21,U,1,1,1.0,
+middle temporal gyrus ba 41,R,1,1,0.0,1.0
+middle temporal gyrus wm,R,1,1,0.0,1.0
+middle temporal gyrusa,L,1,1,1.0,1.0
+extrastriate body area,U,1,1,0.0,
+extrastriate cortex,L,1,1,1.0,1.0
+extrastriate vis cortex ba 18,U,1,2,1.0,
+extrastriate vis cortex ba 19,U,1,5,0.4,
+extrastriate visual cortex,L,1,1,0.0,0.0
+extrastriate visual cortex,R,1,1,1.0,0.0
+extrastriate visual cortex,U,1,2,1.0,
+f middle gyrus,R,1,1,0.0,1.0
+executive network,U,1,1,0.0,
+ext insula,U,1,1,1.0,
+external capsule,L,1,1,1.0,1.0
+external capsule,R,1,1,1.0,0.0
+extra striate cortex,L,1,1,1.0,1.0
+extra striate cortex,R,1,1,0.0,1.0
+extrastriate,L,1,1,1.0,1.0
+extrastriate,R,1,3,0.0,1.0
+mocg,R,1,2,0.0,1.0
+mocg,U,1,1,1.0,
+mofc ba 11,R,1,1,0.0,1.0
+enthorinal cortex,U,1,1,1.0,
+entorhinal,R,1,1,0.0,1.0
+entorhinal cortex 30,U,1,1,0.0,
+esc,U,1,2,1.0,
+evc,U,1,2,0.0,
+midtemporal gyrus,U,1,1,0.0,
+midtg,U,1,1,0.0,
+mins,U,1,1,0.0,
+miog,U,1,2,1.0,
+mips,U,1,2,0.5,
+moc,L,1,1,1.0,1.0
+moc,U,1,1,1.0,
+mocg,L,1,2,1.0,1.0
+mpfc middle,U,1,1,1.0,
+mpfc ventral,U,1,1,1.0,
+mpfg,U,1,1,1.0,
+mppc,L,1,3,1.0,1.0
+mppc,R,1,2,0.0,1.0
+msfg,B,1,1,0.0,
+msn,U,1,1,1.0,
+mt ba 37,L,1,4,0.75,0.75
+mpfc 10,U,1,1,0.0,
+mpfc ba 10 32,U,1,1,1.0,
+mpfc ba 8 9 32,U,1,1,0.0,
+mpfc ba 9,U,1,1,0.0,
+mpfc ba 9 10 32,U,1,1,1.0,
+mpfc cing,U,1,1,0.0,
+mpfc dacc,U,1,1,1.0,
+mpfc dorsal,U,1,1,1.0,
+motor,L,1,1,1.0,1.0
+motor,U,1,1,1.0,
+motor and sensorimotor cortex,L,1,1,1.0,1.0
+motor and sensorimotor cortex,R,1,1,0.0,1.0
+motor ba 4,L,1,1,1.0,1.0
+motor ba 4,R,1,1,0.0,1.0
+motorcortex,L,1,1,1.0,1.0
+motorcortex,R,1,1,0.0,1.0
+f middle temporal gyrus,L,1,1,1.0,1.0
+f sup gyrus,L,1,3,1.0,1.0
+f sup gyrus,R,1,3,0.0,1.0
+f3t,U,1,1,1.0,
+fba,U,1,1,0.0,
+mog 18,U,1,1,0.0,
+mog 19,U,1,1,0.0,
+mortor cortex,R,1,1,0.0,1.0
+nucleus ruber,U,1,2,0.5,
+nucleus subthalamicus,U,1,2,0.5,
+o amygdala,U,1,1,0.0,
+o dorsal premotor cortex,U,1,1,0.0,
+o fusiform gyrus,U,1,1,1.0,
+o inferior frontal gyrus,U,1,4,0.0,
+o middle frontal gyrus,U,1,1,1.0,
+o parahippocampal gyrus,U,1,2,1.0,
+nc accumbens,L,1,1,1.0,1.0
+nd hg,U,1,2,0.5,
+negative precuneus,U,1,1,0.0,
+negative superior frontal gyrus,U,1,1,1.0,
+no label,U,1,1,1.0,
+non bpd,U,1,5,0.6,
+none at cwp 0 001,U,1,1,1.0,
+nucleus of the diagonal band of broca,U,1,1,0.0,
+mts,R,1,1,0.0,1.0
+n ac,U,1,1,0.0,
+n accumbens,L,1,1,1.0,1.0
+n accumbens,R,1,1,0.0,1.0
+n accumbens,U,1,2,1.0,
+n ach,U,1,1,0.0,
+n caudatus,U,1,1,1.0,
+na ba 34,U,1,1,1.0,
+mt ba 37,R,1,5,0.2,0.8
+mtc,U,1,2,0.5,
+mtg 21,L,1,1,1.0,1.0
+mtg 39,U,1,1,1.0,
+mtg ba 22,R,1,1,0.0,1.0
+mtgb,R,1,1,0.0,1.0
+mtl,U,1,2,1.0,
+mts,L,1,1,1.0,1.0
+dorsolateral prefrontal ctx,U,1,1,1.0,
+dorsolateral premotor cortex,U,1,1,1.0,
+dorsolateral visual cortex 18,U,1,1,1.0,
+dorsoloateral prefrontal cortex,U,1,2,0.5,
+dorsomedial frontal cortex,U,1,1,1.0,
+dorsomedial prefrontal cortex ba 8,U,1,1,0.0,
+dorsomedial prefrontal cortex ba 9,U,1,4,0.5,
+dorsomedial prefrontal gyrus,L,1,1,0.0,0.0
+occipital fusiform,U,1,1,0.0,
+occipital fusiform 19,R,1,1,0.0,1.0
+occipital fusiform cortex,U,1,1,0.0,
+dorsolateral prefrontal cortex 46,L,1,2,1.0,1.0
+dorsolateral prefrontal cortex ba 10,U,1,1,0.0,
+dorsolateral prefrontal cortex ba 10 4,U,1,1,0.0,
+dorsolateral prefrontal cortex ba 9,L,1,1,1.0,1.0
+dorsolateral prefrontal cortex5,U,1,1,0.0,
+occipital cortex,B,1,4,0.5,
+occipital cortex and thalamus,R,1,1,0.0,1.0
+occipital cortex and thalamus,U,1,1,0.0,
+occipital cortex ba 18,L,1,2,1.0,1.0
+occipital cortex ba 18,R,1,1,0.0,1.0
+occipital cortex ba 18,U,1,1,1.0,
+occipital cortex ba 18 4,U,1,1,1.0,
+occipital fusiform,R,1,1,0.0,1.0
+o precentral gyrus,U,1,1,0.0,
+o sma,U,1,2,0.5,
+o superior frontal gyrus,U,1,2,0.5,
+occipital and cerebellar area,U,1,1,0.0,
+occipital and fusiform gyrus,L,1,1,1.0,1.0
+occipital and fusiform gyrus,R,1,1,0.0,1.0
+occipital and temporal cortex,R,1,1,0.0,1.0
+occipital c,L,1,1,1.0,1.0
+occipital pole and cerebellum,R,1,1,1.0,0.0
+occipital pole and lingual gyrus,U,1,1,0.0,
+occipital region,L,1,1,1.0,1.0
+occipital sup,L,1,2,1.0,1.0
+occipital sup,R,1,1,0.0,1.0
+occipital sup,U,1,3,0.6667,
+occipital superior lobe,L,1,1,1.0,1.0
+occipital temporal gyrus 37,L,1,1,1.0,1.0
+occipital lobe 18,U,1,1,0.0,
+occipital lobe ba 18,U,1,2,0.0,
+occipital lobe cl,U,1,1,0.0,
+occipital lobe cuneus,R,1,1,0.0,1.0
+occipital lobe il,U,1,1,1.0,
+occipital lobe lingual gyrus,L,1,1,1.0,1.0
+occipital medial area,U,1,2,0.0,
+occipital parietal junction,R,1,1,0.0,1.0
+occipital fusiform gyrus 19,L,1,2,1.0,1.0
+occipital gyrus,L,1,2,1.0,1.0
+occipital gyrus,R,1,1,0.0,1.0
+occipital gyrus 19,R,1,1,0.0,1.0
+occipital gyrus 19,U,1,1,1.0,
+occipital gyrus ba 18,U,1,3,0.6667,
+occipital inf,L,1,1,1.0,1.0
+occipital inferior,U,1,1,0.0,
+dorsomedial thalamus,L,1,2,1.0,1.0
+dpcc,L,1,1,0.0,0.0
+dpcc ba 23,U,1,6,0.5,
+dpins,R,1,1,0.0,1.0
+dpm,U,1,1,1.0,
+dpmc 6,U,1,1,0.0,
+e hippocampus,L,1,1,1.0,1.0
+early visual area,U,1,1,1.0,
+ofc orbital,U,1,1,0.0,
+oifg,U,1,1,0.0,
+oig,L,1,1,1.0,1.0
+oig,R,1,1,1.0,0.0
+olfactory,L,1,1,1.0,1.0
+olfactory,R,1,1,0.0,1.0
+olfactory,U,1,1,0.0,
+olfactory lobe,L,1,1,1.0,1.0
+occipitotemporal cortex,R,1,3,0.0,1.0
+occipitotemporal junction,R,1,1,0.0,1.0
+occiput wedge leaf,U,1,1,0.0,
+occitpital cortex,U,1,1,0.0,
+occp,L,1,1,1.0,1.0
+ocg,U,1,1,1.0,
+ofa,R,1,1,1.0,0.0
+ofc lateral,U,1,1,0.0,
+occipito temporal junction inferior occipital gyrusr inferior temporal gyrusr middle temporal gyrus,R,1,1,0.0,1.0
+occipito temporal junction middle occipital gyrusl middle temporal gyrusl inferior occipital gyrusl superior temporal gyrusl inferior parietal lobe,L,1,1,1.0,1.0
+occipito temporal junction middle temporal gyrusr inferior temporal gyrus,R,1,1,0.0,1.0
+occipito temporal sulcus,L,1,1,1.0,1.0
+occipitoparietal fissure,L,1,1,1.0,1.0
+occipitoparietal junction,R,1,1,0.0,1.0
+occipitopemporal,U,1,1,0.0,
+occipitotemporal,L,1,1,1.0,1.0
+occipital temporal gyrus 37,R,1,1,0.0,1.0
+occipital temporal lobe 37,R,1,1,0.0,1.0
+occipito parietal cortex,U,1,1,0.0,
+occipito parietal junction,U,1,4,1.0,
+occipito temporal,L,1,1,1.0,1.0
+occipito temporal,R,1,1,0.0,1.0
+occipito temporal junction,L,1,1,1.0,1.0
+occipito temporal junction,R,1,2,0.0,1.0
+dorso lateral prefrontal cortex,L,1,1,1.0,1.0
+dorso lateral prefrontal cortex,U,1,1,1.0,
+dorso medial prefrontal cortex,U,1,1,1.0,
+dorso ventral pfc,U,1,1,0.0,
+dorsolateral frontal cortex,L,1,1,1.0,1.0
+dorsolateral frontal gyrus,R,1,1,0.0,1.0
+dorsolateral frontal gyrus,U,1,2,0.5,
+dorsolateral pfc,L,1,1,1.0,1.0
+dorsal premotor area,U,1,2,0.5,
+dorsal sfg,U,1,1,1.0,
+dorsal stream,L,1,2,1.0,1.0
+dorsal striatum,R,1,1,1.0,0.0
+dorsal superior medial frontal gyrus,L,1,1,1.0,1.0
+dorsal superior medial frontal gyrus,R,1,2,0.0,1.0
+dorsal thalamus,U,1,2,0.5,
+dorsalateral prefrontal cortex,R,1,1,0.0,1.0
+operculum,R,1,1,0.0,1.0
+operculum,U,1,2,1.0,
+operculum 41,U,1,1,0.0,
+operculum cortex,U,1,1,0.0,
+opj,U,1,1,1.0,
+opjx,U,1,1,0.0,
+optjx,U,1,1,0.0,
+dorsal premotor,U,1,1,1.0,
+olfactory sulcus,U,1,1,1.0,
+ompfc,U,1,1,1.0,
+op 3,U,1,1,1.0,
+op1,U,1,1,1.0,
+operc sii,L,1,1,1.0,1.0
+opercular cortex,U,1,2,0.5,
+opercular inferior frontal gyrus,R,1,1,0.0,1.0
+opercular part of the inferior frontal gyrus,U,1,1,0.0,
+orbitofrontal cortex ba 47,U,1,1,0.0,
+orbitofrontal cortex1,U,1,1,1.0,
+orbitofrontal cortex4,U,1,1,0.0,
+orbitofrontal gyrus,B,1,1,0.0,
+orbitofrontal gyrus 11,U,1,2,0.0,
+orbitofrontal gyrus 47,L,1,1,1.0,1.0
+orbitofrontalcortex,L,1,1,1.0,1.0
+orbitofrontalcortex,R,1,1,0.0,1.0
+orbitofrontal 11,R,1,1,0.0,1.0
+orbitofrontal 11 47,L,1,4,1.0,1.0
+orbitofrontal ba 11,L,1,2,1.0,1.0
+orbitofrontal c,U,1,1,1.0,
+orbitofrontal cortex 11,L,1,1,1.0,1.0
+orbitofrontal cortex 47,L,1,1,1.0,1.0
+orbitofrontal cortex 47,R,1,1,0.0,1.0
+orbitofrontal cortex ba 11,R,1,1,0.0,1.0
+orbital gyrus,L,1,1,1.0,1.0
+orbital gyrus 18,U,1,2,1.0,
+orbital gyrus ba 11,U,1,1,0.0,
+orbital inferior frontal gyrus,U,1,1,0.0,
+orbital medial frontal gyrus,U,1,2,0.5,
+orbital middle frontal gyrus,U,1,1,0.0,
+orbital superior frontal gyrus,R,1,1,0.0,1.0
+orbito frontal region,R,1,3,0.0,1.0
+dorsolateral pfc,R,1,1,0.0,1.0
+dorsolateral pfc ba 6 46,R,1,1,0.0,1.0
+dorsolateral pfc ba 9,L,1,2,1.0,1.0
+dorsolateral prefontral cortex,U,1,1,1.0,
+dorsolateral prefronatl cortex,L,1,1,1.0,1.0
+dorsolateral prefrontal,L,1,1,1.0,1.0
+dorsolateral prefrontal,R,1,1,0.0,1.0
+orbital frontal lobe,U,1,1,0.0,
+paracg,U,1,1,1.0,
+paracingulate,R,1,1,0.0,1.0
+paracingulate,U,1,2,0.0,
+paracingulate cortex,L,1,1,1.0,1.0
+paracingulate cortex,U,1,2,0.0,
+paracingulate gyrus 32,U,1,1,1.0,
+paracingulate gyrus ventromedial prefrontal cortex,U,1,2,0.5,
+paracyngulate gyrus,U,1,1,1.0,
+paracentral gyrus ba 5,R,1,1,0.0,1.0
+paracentral lobe,L,1,1,0.0,0.0
+paracentral lobe,U,1,4,0.5,
+paracentral lobule 6,U,1,1,1.0,
+paracentral lobule ba 4,L,1,1,1.0,1.0
+paracentral lobule ba 6,R,1,1,0.0,1.0
+paracentral lobule ba 6,U,1,1,0.0,
+paracentral lobuleu,U,1,1,0.0,
+para cingulate g,U,1,1,0.0,
+para hippocampal cortex,R,1,1,1.0,0.0
+para hippocampus gyrus,U,1,1,1.0,
+paracental lobule,U,1,1,0.0,
+paracentral,R,1,1,0.0,1.0
+paracentral gyrus,R,1,1,1.0,0.0
+paracentral gyrus and sulcus and postcentral sulcus,U,1,1,0.0,
+paracentral gyrus ba 5,L,1,1,1.0,1.0
+orbitomedial frontal gyrus,B,1,1,1.0,
+orbitomedial prefrontal cortex,U,1,3,0.6667,
+orbsup,L,1,1,1.0,1.0
+otpj,U,1,3,0.6667,
+p cingulate,U,1,1,0.0,
+pacc,L,1,2,1.0,1.0
+pag,U,1,1,1.0,
+pallidus,U,1,1,1.0,
+dorsal portion of the anterior cingulate cortex,U,1,1,0.0,
+dorsal posterior cingulate cortex,B,1,1,1.0,
+dorsal posterior cingulate cortex,R,1,1,0.0,1.0
+dorsal posterior insula,L,1,1,1.0,1.0
+dorsal precentral gyrus,L,1,1,1.0,1.0
+dorsal precentral gyrus,R,1,1,0.0,1.0
+dorsal precentral gyrus,U,1,1,1.0,
+dorsal precentral gyrus and sulcus,U,1,4,0.5,
+dorsal medial premotor cortex,U,1,1,1.0,
+dorsal mi,U,1,1,1.0,
+dorsal occipital cortex,L,1,1,1.0,1.0
+dorsal occipital cortex,R,1,1,0.0,1.0
+dorsal part,U,1,1,0.0,
+dorsal pop,L,1,3,1.0,1.0
+dorsal pop,R,1,2,0.0,1.0
+dorsal portion of the anterior cingulate cortex,R,1,1,0.0,1.0
+parahippcampus,U,1,1,0.0,
+dorsal lateral prefrontal cortex 46 10 9,R,1,1,0.0,1.0
+dorsal lateral prefrontal cortex 46 9,L,1,2,1.0,1.0
+dorsal lateral prefrontal cortex 46 9,R,1,3,0.0,1.0
+dorsal lateral prefrontal cortex 9,L,1,1,1.0,1.0
+dorsal lateral prefrontal cortex 9 10,L,1,1,1.0,1.0
+dorsal medial frontal g,U,1,2,0.0,
+dorsal medial prefrontal cortex,L,1,2,1.0,1.0
+parahc,U,1,1,1.0,
+parahg,R,1,1,0.0,1.0
+parahip,L,1,1,1.0,1.0
+parahip,U,1,1,0.0,
+parahip pocampal gyrus,U,1,2,0.5,
+parahip resected area,L,1,1,1.0,1.0
+parahipopocampal gyrus,U,1,1,0.0,
+parahipp gyrus,U,1,1,1.0,
+parahippocampal gyrus ba 19,U,1,1,1.0,
+parahippocampal gyrus ba 20,L,1,1,1.0,1.0
+parahippocampal gyrus ba 27,L,1,1,1.0,1.0
+parahippocampal gyrus ba 28,L,1,3,1.0,1.0
+parahippocampal gyrus ba 28,U,1,2,1.0,
+parahippocampal gyrus ba 34,L,1,1,1.0,1.0
+parahippocampal gyrus ba 35,L,1,1,1.0,1.0
+parahippocampal gyrus ba 35,U,1,1,0.0,
+parahippocampal gyrus 28,L,1,1,1.0,1.0
+parahippocampal gyrus 34,U,1,1,1.0,
+parahippocampal gyrus 35,L,1,1,1.0,1.0
+parahippocampal gyrus 36,R,1,1,0.0,1.0
+parahippocampal gyrus 37 36,L,1,1,1.0,1.0
+parahippocampal gyrus 38,U,1,1,1.0,
+parahippocampal gyrus amygdala,L,1,1,1.0,1.0
+parahippocampal gyrus ba 19,L,1,1,1.0,1.0
+parahippocampal area,U,1,1,1.0,
+parahippocampal ba 35 36,R,1,1,0.0,1.0
+parahippocampal ctx,U,1,1,1.0,
+parahippocampal g,L,1,1,1.0,1.0
+parahippocampal g ba 35,U,1,1,1.0,
+parahippocampal gyrus 19,U,1,1,1.0,
+parahippocampal gyrus 20,U,1,1,0.0,
+parahippocampal gyrus 27,U,1,1,0.0,
+dorsal precuneus,U,1,2,0.5,
+dorsal premotor,L,1,2,1.0,1.0
+parahippg,U,1,1,0.0,
+parahippocamal gyrus,U,1,1,1.0,
+parahippocampa,L,1,1,1.0,1.0
+parahippocampa,R,1,1,0.0,1.0
+parahippocampagyrus,R,1,1,0.0,1.0
+parahippocampal 9,U,1,2,1.0,
+dorsal frontal cortex,U,1,1,1.0,
+dorsal frontomedian cortex,U,1,1,0.0,
+dorsal hippocampus,L,1,1,1.0,1.0
+dorsal ifg,L,1,4,1.0,1.0
+dorsal ifg,R,1,3,0.0,1.0
+dorsal inferior frontal g,L,1,1,1.0,1.0
+dorsal inferior frontal gyrus,L,1,1,0.0,0.0
+dorsal ips,L,1,1,1.0,1.0
+dorsal anterior cingulate gyrus,L,1,1,1.0,1.0
+dorsal anterior insula,L,1,1,1.0,1.0
+dorsal caudate,R,1,3,0.0,1.0
+dorsal caudate,U,1,1,1.0,
+dorsal central sulcus,L,1,1,1.0,1.0
+dorsal central sulcus,R,1,1,0.0,1.0
+dorsal central sulcus,U,1,2,0.5,
+dorsal cingulate cortex,U,1,1,0.0,
+parahippocampus gyrus,U,1,1,0.0,
+parahippoccampal gyrus,L,1,1,1.0,1.0
+parahoppocampal cortex,U,1,1,0.0,
+dorsal amcc,U,1,1,0.0,
+dorsal anterior cingulate,L,1,1,1.0,1.0
+dorsal anterior cingulate,R,1,4,0.0,1.0
+dorsal anterior cingulate ba 24,U,1,1,1.0,
+dorsal anterior cingulate cortex 24 32,B,1,1,0.0,
+parahippocampal gyrus ba 35 36,R,1,1,0.0,1.0
+parahippocampal gyrus ba 36,L,1,1,1.0,1.0
+parahippocampal gyrus ba 37,U,1,1,0.0,
+parahippocampal gyrus limbic lobe,U,1,1,1.0,
+parahippocampal gyrusa,U,1,2,0.0,
+parahippocampale gyrus,U,1,2,0.0,
+parahippocampalgyrus,L,1,1,1.0,1.0
+parahippocampalgyrus,R,1,1,1.0,0.0
+dlpfc ba 9,L,1,1,1.0,1.0
+dlpfc ba 9 46,U,1,1,0.0,
+dlpfc ipl,B,1,1,1.0,
+dlpfc lb,U,1,1,1.0,
+dlpfc only,U,1,1,0.0,
+dlpfc sphere,L,1,1,1.0,1.0
+dlpfc sphere,R,1,1,0.0,1.0
+dlpfca,L,1,1,1.0,1.0
+parietal lobule,R,1,1,0.0,1.0
+parietal occipital junction,L,1,1,1.0,1.0
+parietal occipital junction,R,1,1,0.0,1.0
+parietal occipital sulcus,L,1,2,0.5,0.5
+parietal occipital sulcus,R,1,1,0.0,1.0
+parietal occipital sulcus,U,1,2,0.5,
+parietal operc cx,U,1,1,0.0,
+parietal opercular cortex,U,1,1,1.0,
+parietal inferior cortex,U,1,1,1.0,
+parietal inferior lobe,U,1,2,1.0,
+parietal lobe 7,R,1,1,0.0,1.0
+parietal lobe ba 7,L,1,1,1.0,1.0
+parietal lobe central opercular cortex,L,1,1,1.0,1.0
+parietal lobe postcentral gyrus,R,1,1,0.0,1.0
+parietal lobe precuneus,L,1,2,1.0,1.0
+parietal lobule,L,1,1,1.0,1.0
+dorsal lateral occipital cortex,L,1,1,1.0,1.0
+dorsal lateral occipital cortex,R,1,1,0.0,1.0
+dorsal lateral pmc,U,1,1,1.0,
+dorsal lateral prefrontal cortex,L,1,1,1.0,1.0
+dorsal lateral prefrontal cortex,R,1,1,0.0,1.0
+parietal cortex ba 7,U,1,1,0.0,
+parietal cortex ba 7 4,U,1,1,0.0,
+parietal eye field,U,1,1,0.0,
+parietotemporal junction ba 40,L,1,1,1.0,1.0
+parietotemporal junction ba 40,R,1,1,0.0,1.0
+pars opercularis,L,1,2,1.0,1.0
+pars orbitalis,R,1,2,0.0,1.0
+pars percularis,U,1,1,1.0,
+pars triangularis of inferior frontal gyrus,L,1,1,1.0,1.0
+parsop,U,1,1,1.0,
+pcc 23,U,1,1,0.0,
+parietal superior lobe,U,1,1,1.0,
+parieto occipital cortex,U,1,2,0.5,
+parieto occipital junction,U,1,4,0.5,
+parieto occipital lobe,R,1,1,0.0,1.0
+parieto occipital lobea,R,1,1,0.0,1.0
+parieto occipital sulcus,R,1,2,0.0,1.0
+parieto occipital transition cortex,U,1,1,1.0,
+parieto occipital transition zone,U,1,1,1.0,
+dmpfc1,U,1,1,1.0,
+dor lat frontal 9,R,1,2,0.0,1.0
+dor pcu,R,1,1,0.0,1.0
+dorsal acc 32,U,1,1,0.0,
+dorsal acc ba 24,U,1,4,0.0,
+parietal operculum cortex,U,1,1,0.0,
+parietal operculuma,L,1,1,1.0,1.0
+parietal superior,L,1,1,1.0,1.0
+dlpfcb,R,1,1,0.0,1.0
+dlpfcc,U,1,1,1.0,
+dlpfcdamh,U,1,2,1.0,
+dlprcs,L,1,1,1.0,1.0
+dmpfc,B,1,2,0.0,
+dmpfc 8,U,1,1,1.0,
+dmpfc ba 32,U,1,1,0.0,
+dmpfc bi,U,1,1,0.0,
+pefs,U,1,1,0.0,
+pericalcarine,U,1,1,1.0,
+pericalcarine gyrus,L,1,1,1.0,1.0
+pericallosal sulcus,U,1,3,1.0,
+pericingulate,U,1,1,0.0,
+perigenual anterior cingulate,U,1,1,1.0,
+peripheral visual cortex cuneus phg,L,1,2,1.0,1.0
+peripheral visual cortex cuneus phg,R,1,2,0.0,1.0
+pcu 19,L,1,1,1.0,1.0
+pcu ba 19 31,U,1,2,0.5,
+pcu ba 7,U,1,7,0.5714,
+pcun,B,1,1,1.0,
+pcun ba 7,L,1,3,1.0,1.0
+pdlpfc,L,1,1,1.0,1.0
+pdlpfc,U,1,2,0.5,
+peak of sub cluster temporal pole,U,1,1,1.0,
+pcc precun,U,1,1,0.0,
+pcca,R,1,1,0.0,1.0
+pcca,U,1,1,0.0,
+pcg si,L,1,1,1.0,1.0
+pcig 23,L,1,2,1.0,1.0
+pcl,L,1,1,1.0,1.0
+pcl,U,1,1,1.0,
+pcu,B,1,1,0.0,
+pcc 30,U,1,1,1.0,
+pcc ba 23,L,1,2,1.0,1.0
+pcc ba 23,U,1,1,0.0,
+pcc ba 29,U,1,1,0.0,
+pcc ba 30,U,1,1,0.0,
+pcc ba 31,U,1,1,0.0,
+pcc dlpfc,U,1,1,0.0,
+pcc lingual,U,1,1,1.0,
+declive cerebellum,U,1,1,0.0,
+declive of cerebellum,R,1,1,0.0,1.0
+decreased occipito temporal gyrus,U,1,1,0.0,
+decreased ofc,U,1,1,0.0,
+default mode network,U,1,1,1.0,
+delta extracted from the acc,U,1,1,1.0,
+dfc,L,1,1,0.0,0.0
+difg,L,1,1,1.0,1.0
+phipp,U,1,1,0.0,
+dacc ba 32,L,1,1,1.0,1.0
+dacc ba 32,R,1,1,0.0,1.0
+dacc ba 32,U,1,1,0.0,
+dacc sphere,U,1,1,0.0,
+dacca,U,1,1,1.0,
+dcc,L,1,1,1.0,1.0
+declive 19,L,1,1,0.0,0.0
+pft,U,1,2,0.5,
+pga,U,1,2,1.0,
+pgacc dlpfc,L,1,1,1.0,1.0
+pgacc ic,R,1,1,0.0,1.0
+pha,L,1,2,1.0,1.0
+pha,R,1,2,0.0,1.0
+phc,R,1,3,0.0,1.0
+phg ba 28,R,1,1,0.0,1.0
+perirhinal cortex,R,1,1,0.0,1.0
+perirhinal cortex ba 36,L,1,1,1.0,1.0
+pfc acc,U,1,1,1.0,
+pfc anterior,R,1,1,0.0,1.0
+pffg,L,1,1,1.0,1.0
+pffg,R,1,1,0.0,1.0
+pfg,U,1,1,1.0,
+pfop,U,1,1,1.0,
+pitg,R,1,1,0.0,1.0
+pitg,U,1,1,0.0,
+planum temporal,L,1,2,1.0,1.0
+pm v,U,1,1,1.0,
+pmc ba 44 6,U,1,2,0.5,
+pmc ba 6,U,1,4,0.75,
+pmc ba 6 44,U,1,3,1.0,
+pmcv,U,1,2,1.0,
+pifg,R,1,1,0.0,1.0
+pifg,U,1,1,0.0,
+pins,R,1,4,0.0,1.0
+pins d,U,1,1,1.0,
+pipl,U,1,1,1.0,
+pips,R,1,2,0.0,1.0
+pips,U,1,2,1.0,
+pitg,L,1,1,1.0,1.0
+dlpfc ba 10,U,1,1,0.0,
+dlpfc ba 46 9,U,1,1,0.0,
+dlpfc ba 6,U,1,2,0.0,
+dlpfc ba 8 9,L,1,1,1.0,1.0
+phpc gyrus,U,1,1,1.0,
+pia,R,1,1,0.0,1.0
+pib,L,1,1,1.0,1.0
+pifg,L,1,1,1.0,1.0
+dipfc,L,1,1,1.0,1.0
+dipfc,R,1,1,0.0,1.0
+dipsa,U,1,1,1.0,
+dipsas,R,1,1,0.0,1.0
+dipsm,L,1,1,1.0,1.0
+dipsm,R,1,1,0.0,1.0
+dlpc,R,1,1,0.0,1.0
+dlpfc 46,U,1,1,1.0,
+cuneus ba 17,R,1,1,0.0,1.0
+cuneus ba 17 18 19,B,1,1,0.0,
+cuneus ba 18,R,1,1,0.0,1.0
+cuneus ba 7,R,1,1,0.0,1.0
+cuneus ba 7,U,1,2,0.0,
+cuneusa,U,1,3,0.3333,
+cuneusb,L,1,1,1.0,1.0
+cuneusb,R,1,1,0.0,1.0
+pog,L,1,1,1.0,1.0
+pog,R,1,1,0.0,1.0
+poipst,R,1,1,0.0,1.0
+polar mpf dorsal,U,1,1,1.0,
+cuneus 18,U,1,1,0.0,
+cuneus 7,R,1,1,0.0,1.0
+cuneus and lingual,R,1,1,0.0,1.0
+cuneus and middle occipital,R,1,1,0.0,1.0
+pmvdamh,U,1,1,1.0,
+pocg,L,1,1,1.0,1.0
+pocg 1,L,1,1,1.0,1.0
+pocg 2,U,1,2,0.0,
+pocg 3,L,1,1,1.0,1.0
+pocg 3,U,1,1,1.0,
+pof,U,1,1,1.0,
+pofc,U,1,1,0.0,
+pmddamh,U,1,2,1.0,
+pmdundamh,U,1,1,0.0,
+pmfc ba 32,U,1,3,0.6667,
+pmtg,L,1,1,1.0,1.0
+pmtg,R,1,1,0.0,1.0
+pmtg 21,U,1,3,0.3333,
+pmv ba 6,U,1,1,0.0,
+pmv cl,U,1,1,0.0,
+post cingulate cortex,R,1,1,0.0,1.0
+post cingulate cortex,U,1,1,1.0,
+post cingulate g,R,1,1,0.0,1.0
+post cingulate gyrus,L,1,1,1.0,1.0
+post cingulate gyrus,U,1,1,0.0,
+post cingulate sulcus,R,1,1,0.0,1.0
+post inferior temporal sulcus,U,1,1,0.0,
+post inferior temporal sulcusc,U,1,1,0.0,
+post central cortex,U,1,1,1.0,
+post central gyrus ba 4,U,1,1,0.0,
+post central gyrus ba 7,L,1,1,1.0,1.0
+post cing,L,1,1,1.0,1.0
+post cing,U,1,3,0.0,
+post cing gy,U,1,1,0.0,
+post cingulate,R,1,1,0.0,1.0
+post cingulate cortex,L,1,1,1.0,1.0
+porb,U,1,1,1.0,
+pos cingulate,L,1,1,1.0,1.0
+pos cingulate,U,1,1,1.0,
+pos thalamus,R,1,1,0.0,1.0
+poscentral gyrus,L,1,1,1.0,1.0
+posetrior parietal cortex,L,1,1,1.0,1.0
+post acc,U,1,1,0.0,
+post and pre central gyrus,U,1,1,0.0,
+cuneusc,R,1,1,0.0,1.0
+d fusiform gyrus,L,1,1,1.0,1.0
+d gprc,U,1,1,0.0,
+dacc,B,1,1,1.0,
+polar mpf middle,U,1,1,1.0,
+pon,U,1,1,1.0,
+pop,U,1,1,0.0,
+porb,R,1,1,0.0,1.0
+csma,U,1,1,0.0,
+cu ba 19,U,1,3,0.6667,
+cu ba 31,U,1,1,1.0,
+cul,L,1,1,1.0,1.0
+culmen of the cerebellum,U,1,1,0.0,
+culmen of vermis,R,1,1,0.0,1.0
+culmen of vermis,U,1,1,0.0,
+cun,L,1,1,1.0,1.0
+post temporal cortex,U,1,1,0.0,
+postc g,U,1,1,1.0,
+postc gyr,U,1,1,1.0,
+postcent,L,1,2,1.0,1.0
+postcent,R,1,1,0.0,1.0
+crus ii,L,1,1,1.0,1.0
+cruz ii,U,1,2,0.5,
+csd,R,1,1,0.0,1.0
+post parahippocampal gyrus,R,1,1,0.0,1.0
+post precentral g,L,1,1,1.0,1.0
+post stg,U,1,1,0.0,
+post sts,U,1,1,0.0,
+post superior temp gyrus,R,1,1,0.0,1.0
+post superior temporal gyrus,L,1,1,1.0,1.0
+post temporal,L,1,1,1.0,1.0
+post temporal,R,1,1,0.0,1.0
+post ips,L,1,1,1.0,1.0
+post ips,R,1,1,0.0,1.0
+post itg,U,1,1,1.0,
+post midline region,U,1,1,1.0,
+post mtg,R,1,1,0.0,1.0
+post occipital,L,1,2,1.0,1.0
+post occipital,R,1,1,0.0,1.0
+post occipital,U,1,7,0.5714,
+postcentral gyrus 7,L,1,1,1.0,1.0
+postcentral gyrus and central sulcus,U,1,1,1.0,
+postcentral gyrus and superior parietal lobule,L,1,1,1.0,1.0
+postcentral gyrus ba 2,U,1,1,1.0,
+postcentral gyrus ba 3 4,U,1,1,1.0,
+postcentral gyrus ba 4,L,1,1,1.0,1.0
+postcentral gyrus ba 7,U,1,1,1.0,
+postcentral gyrus lc,U,1,1,1.0,
+postcentral gyrus 1 2,R,1,1,0.0,1.0
+postcentral gyrus 1 2 3,R,1,1,0.0,1.0
+postcentral gyrus 2,L,1,1,1.0,1.0
+postcentral gyrus 2,R,1,2,0.0,1.0
+postcentral gyrus 2,U,1,1,1.0,
+postcentral gyrus 2 1,U,1,1,0.0,
+postcentral gyrus 3,L,1,1,1.0,1.0
+postcentral gyrus 43,L,1,2,1.0,1.0
+cuneus 17,U,1,2,0.5,
+postcentr gy,U,1,1,0.0,
+postcentral 1,U,1,4,0.5,
+postcentral cortex,L,1,1,1.0,1.0
+postcentral g ba 4,U,1,1,1.0,
+postcentral gryrus,L,1,1,1.0,1.0
+postcentral gy,U,1,1,1.0,
+postcentral gyr,U,1,2,0.5,
+cun,R,1,1,0.0,1.0
+cun ba 17,L,1,1,1.0,1.0
+cuneal cortex,R,1,1,0.0,1.0
+cuneal cx,U,1,1,0.0,
+cuneate lobe,L,1,1,1.0,1.0
+cuneate lobe,R,1,1,0.0,1.0
+cunes,L,1,1,1.0,1.0
+cuneus 17,L,1,2,1.0,1.0
+cluster 3,U,1,1,0.0,
+cluster 4,U,1,1,0.0,
+cluster spanning,U,1,2,0.5,
+cmiddle frontal gyrus,U,1,2,0.0,
+cn v main sensory n,U,1,1,1.0,
+collateral sulcus,U,1,2,0.5,
+common area,U,1,1,1.0,
+contralesional,U,1,8,0.0,
+posterior cingulate,B,1,1,1.0,
+cingulum ant and,B,1,3,0.3333,
+cingulum ba 31,R,1,2,0.0,1.0
+cingulum mid 24,U,1,2,1.0,
+cingulum middle,U,1,2,1.0,
+cingulum post,R,1,1,0.0,1.0
+cingulum post,U,1,1,1.0,
+cluster 2,U,1,1,0.0,
+postcs,L,1,1,1.0,1.0
+posterior,R,1,1,0.0,1.0
+posterior and middle cingulate cortex,U,1,1,0.0,
+posterior calcarine sulcus,U,1,2,1.0,
+posterior caudate,L,1,1,1.0,1.0
+posterior central gyrus,U,1,1,1.0,
+posterior cerebellum,R,1,1,0.0,1.0
+posterior cingular,U,1,1,0.0,
+postcentral gyrus precentral gyrus,U,1,1,0.0,
+postcentral gyrusa,U,1,1,0.0,
+postcentral sulcus,R,1,1,0.0,1.0
+postcentralgyrus,L,1,2,1.0,1.0
+postcentrral sulcus,R,1,1,0.0,1.0
+postcg,L,1,1,1.0,1.0
+postcg,U,1,1,1.0,
+postcgyrs,U,1,3,0.3333,
+posterior cingulate gurus,L,1,1,1.0,1.0
+posterior cingulate gyrus 23,U,1,1,0.0,
+posterior cingulate gyrus 24,U,1,1,0.0,
+posterior cingulate gyrus 29,R,1,1,0.0,1.0
+posterior cingulate gyrus 29,U,1,1,0.0,
+posterior cingulate gyrus 30,L,1,1,1.0,1.0
+posterior cingulate gyrus 30,R,1,1,0.0,1.0
+posterior cingulate gyrus 31,U,1,1,1.0,
+posterior cingulate ba 31,U,1,1,1.0,
+posterior cingulate bi,U,1,1,0.0,
+posterior cingulate cortex 23,U,1,1,1.0,
+posterior cingulate cortex ba 23,U,1,1,0.0,
+posterior cingulate cortex ba 30,U,1,3,0.3333,
+posterior cingulate cortex ba 31,L,1,1,1.0,1.0
+posterior cingulate ctx,U,1,1,0.0,
+posterior cingulate g,U,1,1,1.0,
+posterior cingulate 30,R,1,1,0.0,1.0
+posterior cingulate 31,U,1,1,0.0,
+posterior cingulate ba 23,R,1,1,0.0,1.0
+posterior cingulate ba 23,U,1,1,0.0,
+posterior cingulate ba 23 26 29 30 31,U,1,1,1.0,
+posterior cingulate ba 23 31,U,1,1,0.0,
+posterior cingulate ba 30,R,1,1,0.0,1.0
+posterior cingulate ba 31,R,1,1,0.0,1.0
+contralesional psmc,U,1,1,0.0,
+convolution,L,1,1,1.0,1.0
+corpus callosum,U,1,1,0.0,
+cortico spinal tract,U,1,1,0.0,
+crus 4 5,U,1,1,1.0,
+posterior cingulate 24,U,1,1,1.0,
+posterior cingulate 29,R,1,1,0.0,1.0
+posterior cingulate 29,U,1,1,0.0,
+cingulate gyrus 31,L,1,1,1.0,1.0
+cingulate gyrus 31,R,1,1,0.0,1.0
+cingulate gyrus 31,U,1,2,1.0,
+cingulate gyrus 32,L,1,1,1.0,1.0
+cingulate gyrus 32,R,1,2,0.0,1.0
+cingulate gyrus 32,U,1,1,1.0,
+cingulate gyrus and sulcus,U,1,2,0.5,
+cingulate gyrus ba 24,L,1,1,1.0,1.0
+posterior hippocampal roia,U,1,1,1.0,
+posterior hippocampus,L,1,1,1.0,1.0
+posterior inferior frontal gyrus,U,1,1,1.0,
+posterior inferior frontal sulcus,L,1,1,1.0,1.0
+posterior inferior parietal lobule,U,1,1,1.0,
+posterior inferior temporal gyrus,R,1,1,0.0,1.0
+cingulate gyrus 24,U,1,1,0.0,
+cingulate gyrus 24 31,L,1,1,1.0,1.0
+posterior dorsal ifg,U,1,1,1.0,
+posterior dorsal part of the cingulate gyrus,U,1,2,1.0,
+posterior dorsal putamen,U,1,1,1.0,
+posterior edge of the middle temporal sulcus,U,1,1,0.0,
+posterior frontal gyrus,U,1,1,1.0,
+posterior fusiform,U,1,1,1.0,
+posterior fusiform gyrus,U,1,2,1.0,
+posterior hippocampal roi,U,1,1,1.0,
+posterior cingulate gyrus and precuneus,B,1,1,1.0,
+posterior cingulate gyrus ba 23,L,1,1,1.0,1.0
+posterior cingulate gyrus ba 29,L,1,1,1.0,1.0
+posterior cingulate gyrus ba 29,R,1,1,0.0,1.0
+posterior cingulate gyrus bi,U,1,1,1.0,
+posterior cingulum,L,1,1,1.0,1.0
+posterior cingulum ba 23,U,1,2,0.5,
+posterior corona radiata,U,1,1,1.0,
+posterior medial frontal,L,1,1,1.0,1.0
+posterior medial frontal cortex,U,1,3,0.0,
+posterior medial frontal gyrus,L,1,1,1.0,1.0
+posterior medial frontal lobe,B,1,1,0.0,
+posterior medial gyrus,U,1,1,1.0,
+posterior mfg,L,1,1,1.0,1.0
+posterior mid cingulate,L,1,1,1.0,1.0
+posterior mid cingulate cortex,U,1,2,0.5,
+posterior intraparietal sulcus,U,1,2,1.0,
+posterior lateral orbitofrontal cortex,U,1,2,0.0,
+posterior limb of,U,1,1,1.0,
+posterior limb of internal capsule,L,1,1,0.0,0.0
+posterior limb of internal capsule,U,1,1,0.0,
+posterior lingual gyrus,U,1,2,0.0,
+posterior lobe declive,L,1,1,1.0,1.0
+posterior lobe of cerebellum,U,1,1,0.0,
+cingulated gyrus,R,1,1,0.0,1.0
+cingulum,L,1,1,0.0,0.0
+posterior inferior temporal gyrus ba 20,U,1,1,0.0,
+posterior inferiorfrontal sulcus,B,1,1,0.0,
+posterior insular,U,1,1,0.0,
+posterior insular cortex,L,1,1,1.0,1.0
+posterior intraparietal sulcus,L,1,1,1.0,1.0
+posterior intraparietal sulcus,R,1,1,0.0,1.0
+cingulate gyrus ba 24 include acc ba 32,R,1,1,0.0,1.0
+cingulate gyrus ba 31,L,1,1,1.0,1.0
+cingulate gyrus ba 31,U,1,1,0.0,
+cingulate gyrus ba 32,U,1,1,0.0,
+cingulate motor,U,1,1,0.0,
+cingulate sulc,U,1,1,1.0,
+cingulate sulcus,L,1,1,1.0,1.0
+cingulated gyrus,L,1,1,1.0,1.0
+posterior part of middle temporal gyrus,U,1,1,0.0,
+posterior part of smtg ba 21 22,U,1,3,1.0,
+posterior planum temporale,L,1,1,1.0,1.0
+posterior planum temporale,U,1,1,1.0,
+posterior prefrontal cortex,R,1,1,0.0,1.0
+posterior ramus of the lateral sulcus,U,1,3,1.0,
+posterior region,U,1,1,1.0,
+posterior rostral medial frontal area,R,1,1,0.0,1.0
+posterior parahippocampal gyrus,R,1,1,0.0,1.0
+posterior parahippocampal gyrus,U,1,1,1.0,
+posterior parahippocampal gyrus 36,R,1,1,0.0,1.0
+posterior parietal,U,1,1,1.0,
+posterior parietal and,L,1,1,1.0,1.0
+posterior parietal ba 40,R,1,1,0.0,1.0
+posterior parietal cortex ba 7 40,L,1,1,1.0,1.0
+posterior parietal cortex ba 7 40,R,1,1,0.0,1.0
+posterior occipital,R,1,1,0.0,1.0
+posterior occipital cortex,U,1,2,0.5,
+posterior occipital lobe,U,1,1,1.0,
+posterior ofc,L,1,1,1.0,1.0
+posterior operculum,L,1,3,1.0,1.0
+posterior operculum,R,1,2,0.0,1.0
+posterior orbital gyrus,R,1,1,0.0,1.0
+posterior parahippocampal gyrus,L,1,1,1.0,1.0
+posterior mid temporal,R,1,1,0.0,1.0
+posterior middle cingulate,U,1,1,1.0,
+posterior middle cingulate cortex,U,1,2,1.0,
+posterior middle temporal ba 39,U,1,1,0.0,
+posterior middle temporal gyrus 21,L,1,1,1.0,1.0
+posterior middle temporal gyrus ba 21 37,R,1,2,0.0,1.0
+posterior mtg,R,1,1,0.0,1.0
+posterior occipital,L,1,1,1.0,1.0
+cingulate ba 32,R,1,1,0.0,1.0
+cingulate cortex 32,U,1,2,1.0,
+cingulate g,L,1,3,1.0,1.0
+cingulate g,R,1,2,0.0,1.0
+cingulate g ba 24,L,1,1,1.0,1.0
+cingulate g ba 24,R,1,1,0.0,1.0
+cingulate g ba 31,U,1,1,1.0,
+cingulate grus,U,1,1,1.0,
+cingular,U,1,1,0.0,
+cingulate,B,1,3,1.0,
+cingulate,R,1,1,0.0,1.0
+cingulate 24,L,1,1,1.0,1.0
+cingulate anterior dorsal,R,1,1,0.0,1.0
+cingulate area,L,1,1,1.0,1.0
+cingulate ba 23,L,1,1,1.0,1.0
+cingulate ba 31,L,1,1,1.0,1.0
+posterior superior parietal lobule,L,1,1,1.0,1.0
+posterior superior tem poral cortex,U,1,1,1.0,
+cerebral peduncle,L,1,1,1.0,1.0
+cerebrum sub lobar,R,1,1,0.0,1.0
+cg ba 24,R,1,1,0.0,1.0
+cing gy,U,1,2,0.5,
+cing gyi,U,1,1,1.0,
+cing gyu,U,1,1,0.0,
+posterior superior and middle frontal gyrus ba 8 9,L,1,2,1.0,1.0
+posterior superior and middle temporal gyrus,L,1,1,1.0,1.0
+posterior superior frontal gyrus,L,1,1,1.0,1.0
+posterior superior frontal gyrus,U,1,2,0.5,
+posterior superior frontal sulcus,B,1,1,1.0,
+posterior superior frontal sulcus,L,1,1,1.0,1.0
+posterior superior parietal,L,1,1,1.0,1.0
+posterior superior parietal,R,1,1,0.0,1.0
+posteror transverse collateral sulcus,U,1,1,1.0,
+posteror ventral part of the cingulate gyrus,U,1,1,1.0,
+postg,U,1,1,0.0,
+postr parietal ctx,U,1,2,0.5,
+postr parietal gyr,U,1,1,0.0,
+ppc ba 5,U,1,1,0.0,
+ppc ba 7,U,1,1,0.0,
+ppc center,U,1,2,0.0,
+posterior temporal lobe,U,1,1,0.0,
+posterior thalamic nucleus,U,1,1,1.0,
+posterior thalamus,L,1,1,1.0,1.0
+posterior thalamus,R,1,1,0.0,1.0
+posterior transverse collateral sulcus,U,1,1,1.0,
+posterior vlpfc,R,1,1,0.0,1.0
+posterior vot,L,1,1,1.0,1.0
+posterolateral temporal lobe,L,1,1,1.0,1.0
+posterior superior temporal sulcus and gyrus,U,1,1,0.0,
+posterior superior temporal sulcus ba 21,U,1,1,1.0,
+posterior temporal,L,1,1,1.0,1.0
+posterior temporal cortex,L,1,1,1.0,1.0
+posterior temporal cortex,R,1,1,0.0,1.0
+posterior temporal cortex,U,1,2,0.5,
+posterior temporal lobe,L,1,1,1.0,1.0
+posterior temporal lobe,R,1,1,0.0,1.0
+cingulate gyrus 1997,U,1,1,1.0,
+cingulate gyrus 23,R,1,1,0.0,1.0
+posterior superior temporal gyrus ba 22,U,1,1,0.0,
+posterior superior temporal gyrus ba 41,U,1,1,0.0,
+posterior superior temporal gyrusa,U,1,1,1.0,
+posterior superior temporal sulcus,B,1,1,0.0,
+posterior superior temporal sulcus,R,1,1,0.0,1.0
+posterior superior temporal sulcus and angular gyrus,U,1,1,0.0,
+pre cuneus,U,1,1,1.0,
+pre motor,L,1,1,1.0,1.0
+pre motor,U,1,2,0.5,
+pre motor cortex,L,1,1,1.0,1.0
+pre motor cortex,R,1,1,0.0,1.0
+pre post central gyrus,L,1,1,1.0,1.0
+pre postcentral,L,1,2,1.0,1.0
+pre sma 6,L,1,1,1.0,1.0
+pre central g,R,1,1,0.0,1.0
+pre central gy,U,1,1,1.0,
+pre central gyo,U,1,1,1.0,
+pre central gyrus ba 4,U,1,1,1.0,
+pre central gyrus ba 6,L,1,1,1.0,1.0
+pre central gyrus ba 6,U,1,1,1.0,
+pre central gyrus1,L,1,1,1.0,1.0
+pre cun,U,1,3,1.0,
+prcs,U,1,2,0.5,
+pre,U,1,2,1.0,
+pre and postcentral gyrus,B,1,1,1.0,
+pre and postcentral gyrus,L,1,1,1.0,1.0
+pre and postcentral gyrus,R,1,1,0.0,1.0
+pre and postcentral gyrus,U,1,5,0.2,
+pre and postcentral gyrus ba 3 4,U,1,1,1.0,
+pre central,U,1,1,1.0,
+ppc sphere,L,1,1,1.0,1.0
+ppc sphere,R,1,1,0.0,1.0
+ppcdamh,U,1,4,1.0,
+ppcundamh,U,1,4,0.0,
+ppl,U,1,4,0.5,
+prcg d,U,1,1,1.0,
+prcg v,U,1,1,1.0,
+prcs,R,1,1,0.0,1.0
+cerebellum declive,L,1,1,1.0,1.0
+cerebellum declive,R,1,1,0.0,1.0
+cerebellum declive,U,1,1,0.0,
+cerebellum declive lobule vi,R,1,1,0.0,1.0
+cerebellum inferior semi lunar,R,1,2,0.0,1.0
+cerebellum ix,U,1,1,1.0,
+cerebellum lobule v,U,1,1,0.0,
+cerebellum lobule vi,L,1,1,1.0,1.0
+precent,R,1,1,0.0,1.0
+cerebellum crus ii,U,1,1,1.0,
+cerebellum crus1,U,1,2,0.5,
+cerebellum crus2,U,1,2,0.0,
+cerebellum crust i,L,1,1,1.0,1.0
+cerebellum culmen,R,1,2,0.0,1.0
+cerebellum culmen,U,1,1,0.0,
+cerebellum culmen lobule vi,L,1,1,1.0,1.0
+prea,L,1,1,1.0,1.0
+prea,R,1,1,0.0,1.0
+prec,L,1,1,1.0,1.0
+prec,U,1,2,0.5,
+prec gyr,U,1,1,1.0,
+prec gyrus,U,1,1,0.0,
+precenrtal g,R,1,1,0.0,1.0
+precent,L,1,1,1.0,1.0
+pre sma 6,R,1,1,0.0,1.0
+pre sma 6,U,1,2,1.0,
+pre sma ba 6,L,1,1,1.0,1.0
+pre sma ba 6,U,1,1,1.0,
+pre sma sphere,U,1,1,1.0,
+pre supplementary motor area ba 6,U,1,2,1.0,
+pre supplementary motor area ba 6 8,U,1,1,0.0,
+pre supplementary motor cortex,U,1,1,0.0,
+precentral g ba 6,U,1,2,1.0,
+precentral g ba 9,U,1,1,0.0,
+precentral gyrus 3,L,1,1,0.0,0.0
+cerebellar crus ii,L,1,1,1.0,1.0
+cerebellar culmen,L,1,1,1.0,1.0
+cerebellar declive,L,1,1,1.0,1.0
+cerebellar declive,R,1,1,0.0,1.0
+cerebellar hemisphere,U,1,2,1.0,
+precentral and middle frontal gyrus,U,1,1,1.0,
+precentral and postcentral gyrus,L,1,1,1.0,1.0
+precentral and postcentral gyrus,R,1,1,0.0,1.0
+precentral and postcentral gyrus 4 1 2 3,L,1,1,1.0,1.0
+precentral ba 44,L,1,1,1.0,1.0
+precentral ba 6,R,1,1,0.0,1.0
+precentral frontal gyrus,R,1,1,0.0,1.0
+precentral g ba 6,R,1,1,0.0,1.0
+cerebellum viiia,U,1,1,0.0,
+cerebellum viiib,U,1,1,0.0,
+cerebelum,L,1,1,1.0,1.0
+cerebelum 4 5,L,1,1,1.0,1.0
+cerebelum 4 5,R,1,1,0.0,1.0
+cerebelum superior,R,1,2,0.0,1.0
+precentr gy,U,1,2,0.0,
+precentral and inferior frontal gyrus,U,1,2,0.0,
+cerebellum lobule viia,L,1,1,1.0,1.0
+cerebellum lobule viibs,U,1,1,0.0,
+cerebellum posterior lobe,L,1,1,1.0,1.0
+cerebellum posterior lobe,U,1,1,1.0,
+cerebellum pyramis,L,1,2,1.0,1.0
+cerebellum pyramis,R,1,3,0.0,1.0
+cerebellum vi,R,1,1,0.0,1.0
+cerebellum viib,R,1,1,0.0,1.0
+precentral gyrus ba 9,L,1,1,1.0,1.0
+precentral gyrus medial segment,U,1,1,0.0,
+precentral gyrus rb,U,1,1,0.0,
+precentral gyrusa,U,1,1,0.0,
+precentral gyrusc,L,1,1,1.0,1.0
+precentral gyruse,U,1,1,1.0,
+precentral gyurs,U,1,1,0.0,
+precentral li,U,1,1,1.0,
+precentral gyrus 9,L,1,1,1.0,1.0
+precentral gyrus 9,U,1,1,1.0,
+precentral gyrus ba 13,U,1,1,0.0,
+precentral gyrus ba 4 include middle frontal gyrus ba 6,R,1,1,0.0,1.0
+precentral gyrus ba 43,U,1,1,1.0,
+precentral gyrus ba 44,L,1,2,1.0,1.0
+precentral gyrus ba 5,R,1,1,0.0,1.0
+precentral gyrus ba 6 2,U,1,1,0.0,
+cerebellum 7b,U,1,1,1.0,
+cerebellum 9,U,1,2,1.0,
+cerebellum anterior lobe,U,1,1,1.0,
+cerebellum crus,L,1,1,0.0,0.0
+cerebellum crus i,R,1,1,0.0,1.0
+precentral gyrus 4 6,L,1,1,1.0,1.0
+precentral gyrus 44,L,1,1,1.0,1.0
+precentral gyrus 44,R,1,1,0.0,1.0
+cerebellar lobule,U,1,2,0.5,
+cerebellar lobule viii,L,1,1,1.0,1.0
+cerebellar tonsil,L,1,1,0.0,0.0
+cerebellar tonsil,R,1,1,0.0,1.0
+cerebellar vermis,R,1,1,0.0,1.0
+cerebellar vermis,U,1,2,0.5,
+cerebellum,B,1,2,0.0,
+cerebellum 10,U,1,2,1.0,
+caudateh,U,1,1,0.0,
+caudatel,U,1,1,0.0,
+caudaten,U,1,1,0.0,
+caudater,R,1,2,0.0,1.0
+cbl,L,1,1,1.0,1.0
+ccma,L,1,1,1.0,1.0
+ceneus,L,1,1,1.0,1.0
+ceneus,R,1,1,0.0,1.0
+precun,U,1,3,0.3333,
+precuneal cortex,U,1,1,1.0,
+precuneas,U,1,1,0.0,
+precuneous,R,1,1,0.0,1.0
+precuneous c,U,1,1,0.0,
+precuneous cortex,B,1,1,1.0,
+caudate2,U,1,1,1.0,
+caudateb,L,1,1,1.0,1.0
+precentral white matter,L,1,1,1.0,1.0
+precentralgyrus,R,1,2,0.0,1.0
+precentralgyrus 6,U,1,1,0.0,
+precg,L,1,1,1.0,1.0
+precg 4,U,1,1,1.0,
+precg 43,U,1,1,0.0,
+precg 6,U,1,2,0.5,
+precs,U,1,1,0.0,
+precentral lobe ba 4,U,1,1,0.0,
+precentral region,U,1,1,1.0,
+precentral sulcus,L,1,1,1.0,1.0
+precentral sulcus,R,1,1,0.0,1.0
+precentral sulcus and middle frontal gyrus,U,1,1,1.0,
+precentral sulcus ba 4 6,B,1,1,1.0,
+precentral sulcus ba 4 6,R,1,1,0.0,1.0
+precentral sulcus ba 6,R,1,1,0.0,1.0
+precuneus cortex,L,1,2,1.0,1.0
+precuneusa,B,1,1,0.0,
+precuneusa,R,1,1,0.0,1.0
+precuneusb,R,1,1,0.0,1.0
+precuneuso,U,1,1,0.0,
+precunneus,R,1,1,0.0,1.0
+prefontal cortex,U,1,1,0.0,
+prefrontal,R,1,6,0.0,1.0
+precuneus 19,U,1,1,1.0,
+precuneus 28,U,1,1,0.0,
+precuneus 31,L,1,1,1.0,1.0
+precuneus 31,R,1,1,0.0,1.0
+precuneus 7 19,R,1,1,0.0,1.0
+precuneus and cingulate gyrus 7 31,R,1,1,0.0,1.0
+precuneus ba 19,R,1,1,0.0,1.0
+precuneus ba 5,L,1,1,1.0,1.0
+central opercularcortex,U,1,1,0.0,
+central sulcus,R,1,1,0.0,1.0
+centrolateral prefrontal cortex,U,1,1,0.0,
+centromedial amygdala,R,1,1,0.0,1.0
+cer,R,1,1,0.0,1.0
+cerbellum,L,1,1,1.0,1.0
+cereb,L,1,4,1.0,1.0
+precunes ba 7,L,1,1,0.0,0.0
+central cortex,U,1,1,1.0,
+central gyrus,L,1,2,1.0,1.0
+central gyrus,R,1,1,0.0,1.0
+central insula,U,1,1,0.0,
+central occipital gyrus,U,1,1,1.0,
+central oper cortex,U,1,1,0.0,
+central opercular cortex,L,1,1,1.0,1.0
+central opercular cortex,U,1,1,1.0,
+caudal fusiform gyrus and inferior occipital sulcus,U,1,1,0.0,
+caudal intraparietal sulcus,L,1,1,1.0,1.0
+caudal itg,L,1,4,1.0,1.0
+caudal itg,R,1,4,0.0,1.0
+caudal premotor area,U,1,1,1.0,
+caudal supplementary motor area,U,1,1,1.0,
+caudate head,B,1,1,1.0,
+caudate nucleus,B,1,1,0.0,
+premotor area 1997,U,1,1,1.0,
+calcarine sulcus and lingual gyrus,U,1,1,1.0,
+calcarinea,R,1,1,0.0,1.0
+callosal body,U,1,1,1.0,
+canterior cingulate,U,1,1,0.0,
+caudal acc,U,1,1,1.0,
+caudal cuneus and calcarine sulcus,U,1,1,1.0,
+caudal dlpfc,R,1,1,0.0,1.0
+prefrontal subgyral area,R,1,1,0.0,1.0
+preg,U,1,1,1.0,
+pregenual anterior cingulate cortex,U,1,3,0.0,
+pregenual anterior cingulate cortex 24,L,1,1,1.0,1.0
+pregenual anterior cingulate cortex 24 and rostral prefrontal cortex 10,L,1,1,1.0,1.0
+pregenual anterior cingulate cortex ba 24,U,1,4,1.0,
+pregenual cing,U,1,1,1.0,
+premotor,L,1,2,1.0,1.0
+prefrontal,U,1,1,1.0,
+prefrontal area,U,1,5,0.4,
+prefrontal corrtex ba 10,L,1,1,1.0,1.0
+prefrontal cortex ba 10,R,1,1,0.0,1.0
+prefrontal cortex ba 9 10,L,1,1,1.0,1.0
+prefrontal dorsolateral cortex,U,1,1,1.0,
+prefrontal gyrus,B,1,1,1.0,
+prefrontal lobe,U,1,1,0.0,
+calcar,R,1,1,0.0,1.0
+calcarine 18,L,1,1,1.0,1.0
+calcarine 3,R,1,1,0.0,1.0
+calcarine ba 17,L,1,2,1.0,1.0
+calcarine ba 17,R,1,1,0.0,1.0
+calcarine ba 17,U,1,1,1.0,
+calcarine cortex ba 17,L,1,1,1.0,1.0
+calcarine cortex ba 19,L,1,1,1.0,1.0
+primary motor area ba 6,U,1,1,0.0,
+primary motor cortex leg area,U,1,2,1.0,
+primary olfactory area,U,1,1,0.0,
+primary sensorimotor cortex,L,1,1,1.0,1.0
+primary somato sensory cortex,U,1,2,0.5,
+primary somatosensory area,U,1,2,0.5,
+primary visual,U,1,1,1.0,
+primary visual region,U,1,1,0.0,
+prestriate,U,1,5,0.6,
+prestriate cortex,R,1,1,0.0,1.0
+prg,L,1,4,1.0,1.0
+prg,R,1,1,0.0,1.0
+primary and secondary somatosensory area,U,1,3,1.0,
+primary and secondary visual cortex,U,1,1,0.0,
+primary motor,L,1,1,1.0,1.0
+primary motor,U,1,5,0.4,
+caudate nucleus head,R,1,3,0.0,1.0
+caudate tail,R,1,1,0.0,1.0
+premotor c,L,1,1,1.0,1.0
+premotor cortex ba 6,L,1,1,1.0,1.0
+premotor cortex ba 6,U,1,1,1.0,
+premotor cortex bi,U,1,1,1.0,
+premotor cortical area,L,1,1,1.0,1.0
+presef,L,1,1,1.0,1.0
+put,U,1,1,0.0,
+put amen,U,1,1,0.0,
+put ant,U,1,1,1.0,
+put anterior,R,1,1,0.0,1.0
+put post,U,1,2,1.0,
+putamam,U,1,1,1.0,
+putamen nucleus,L,1,1,1.0,1.0
+putamen1,L,1,1,1.0,1.0
+ptpj,U,1,1,1.0,
+ptr,L,1,2,1.0,1.0
+ptr,R,1,2,0.0,1.0
+ptr,U,1,11,1.0,
+ptr ba 45,U,1,1,1.0,
+ptri,U,1,2,1.0,
+pulv,U,1,1,0.0,
+put,L,1,1,1.0,1.0
+psfg,U,1,1,0.0,
+pspl,R,1,1,0.0,1.0
+pstcg,U,1,2,0.0,
+pstg,R,1,1,0.0,1.0
+pstg 22,U,1,4,0.25,
+pstg 41,U,1,2,0.5,
+pstg 42,U,1,1,1.0,
+pt 42,U,1,1,0.0,
+calcarine fissure andsurrounding cortex,L,1,1,1.0,1.0
+calcarine fissure andsurrounding cortex,R,1,1,0.0,1.0
+calcarine g,L,1,1,1.0,1.0
+calcarine g,U,1,1,0.0,
+calcarine gyrus ba 19,L,1,1,1.0,1.0
+calcarine region,L,1,1,1.0,1.0
+prmfc,U,1,2,0.0,
+procuneous cortex,U,1,1,0.0,
+retrosplenial cortex,L,1,1,1.0,1.0
+retrosplenial cortex ba 31,L,1,2,1.0,1.0
+retrosplenium,U,1,4,0.75,
+reward,U,1,1,1.0,
+rfef,U,1,1,0.0,
+rffa,U,1,2,0.0,
+rifg,U,1,3,0.0,
+rifg ba 45 47,U,1,1,0.0,
+rectus gyrus,L,1,1,1.0,1.0
+restrosplenial cortex,U,1,2,0.5,
+retrospenial cortex,U,1,1,1.0,
+retrospinal cortex,U,1,1,0.0,
+retrosplenial,R,1,1,0.0,1.0
+retrosplenial and lingual gyrus,R,1,1,0.0,1.0
+retrosplenial cingulate cortex,R,1,1,0.0,1.0
+retrosplenial cortex,B,1,1,1.0,
+rag,U,1,1,0.0,
+ralpfc,U,1,1,0.0,
+ramy,U,1,1,0.0,
+rcn,U,1,1,0.0,
+rcs,U,1,1,0.0,
+rcz,U,1,1,1.0,
+rectal gyrus ba 11,R,1,1,0.0,1.0
+rectus and,B,1,2,0.5,
+putamen1,R,1,1,0.0,1.0
+putamena,U,1,1,0.0,
+putamendamh,U,1,1,1.0,
+putamenh,U,1,2,0.5,
+putamenm,U,1,1,0.0,
+putamenn,U,1,1,0.0,
+putamenundamh,U,1,1,0.0,
+racc,L,1,1,1.0,1.0
+brodmann area 6,U,1,2,0.5,
+brodmann area 8,R,1,1,0.0,1.0
+brodmann area 9,R,1,1,0.0,1.0
+brodmann area 9,U,1,1,0.0,
+c hippocampus,R,1,1,0.0,1.0
+c inferior parietal lobule,U,1,2,1.0,
+c precentral gyrus,U,1,1,1.0,
+c superior parietal lobule,U,1,1,1.0,
+brodmann area 35 medial aspect of the inferior temporal lobe perirhinal cortex of the parahippocampus,U,1,1,1.0,
+brodmann area 37,L,1,1,1.0,1.0
+brodmann area 39,L,1,1,1.0,1.0
+brodmann area 39,R,1,2,0.0,1.0
+brodmann area 43 distal tip of postcentral gyrus,R,1,1,0.0,1.0
+brodmann area 44,U,1,2,1.0,
+brodmann area 6,L,1,1,1.0,1.0
+brodmann area 6,R,1,1,0.0,1.0
+brainstem,R,1,2,0.0,1.0
+broca s area,U,1,1,1.0,
+brocas area,U,1,1,1.0,
+brocas area ba 44,U,1,1,1.0,
+brodmann area 13,R,1,1,0.0,1.0
+brodmann area 19,R,1,1,0.0,1.0
+brodmann area 30,R,1,1,0.0,1.0
+brodmann area 32,L,1,1,1.0,1.0
+rifga,U,1,1,0.0,
+rightleft,U,1,1,0.0,
+rightpostcentral gyrus 1,U,1,1,0.0,
+rightpostcentral gyrus 2,U,1,1,0.0,
+rihgt inferior parietal lobule,U,1,2,0.0,
+ring anterior insula,U,1,1,0.0,
+rips,U,1,1,0.0,
+brainstem,L,1,1,1.0,1.0
+rostral anterior cingulate,R,1,1,0.0,1.0
+rostral anterior cingulate,U,1,2,1.0,
+rostral anterior cingulate ba 32,U,1,2,0.5,
+rostral anterior cingulate cortex,B,1,1,0.0,
+rostral anterior cingulate cortex,L,1,1,1.0,1.0
+rostral anterior cingulate gyrus,R,1,1,0.0,1.0
+rostral anterior insula,U,1,1,0.0,
+rostral caudate,U,1,1,1.0,
+rolandic opercolum,U,1,1,1.0,
+rolandic opercular gyrus,U,1,1,1.0,
+rolandic operculum ba 44,R,1,1,0.0,1.0
+rolandic operculum ba 6,U,1,1,1.0,
+rolandic operculum op3,U,1,1,0.0,
+rolandic operculum op4,U,1,1,0.0,
+rostral acc,L,1,1,0.0,0.0
+rostral acc,R,1,1,0.0,1.0
+rmpfc,U,1,1,0.0,
+rofc,U,1,1,0.0,
+roi 1,U,1,2,0.5,
+roi 2,U,1,2,0.5,
+rol operc,R,1,1,0.0,1.0
+rolandic oper,L,1,1,1.0,1.0
+rolandic oper 44,U,1,1,1.0,
+rolandic oper 7,U,1,2,1.0,
+c supra marginal gyrus,U,1,1,1.0,
+cacc,U,1,1,0.0,
+cal,L,1,1,1.0,1.0
+cal,R,1,1,0.0,1.0
+cal,U,1,2,0.5,
+rlpfc,L,1,2,1.0,1.0
+rlpfc,U,1,1,1.0,
+rmc,U,1,1,1.0,
+rpfc,U,1,1,0.0,
+rpips,U,1,1,0.0,
+rpmtg,U,1,1,0.0,
+rppc,U,1,1,0.0,
+rsc,L,1,1,1.0,1.0
+rsc,R,1,1,0.0,1.0
+rsfg,U,1,1,0.0,
+rsloc,U,1,1,0.0,
+rostrolateral frontal cortex,U,1,1,0.0,
+rostrolateral pfc,U,1,3,0.3333,
+rostrolateral prefrontal cortex,U,1,2,0.5,
+rostromedial frontal lobe,L,1,1,1.0,1.0
+rostromedial pfc,U,1,1,1.0,
+rparahippocampal gyrus,U,1,1,0.0,
+rpcg,U,1,1,0.0,
+rpcn,U,1,1,0.0,
+rostral portion of the postcentral gyrus,U,1,12,0.5,
+rostral prefrontal cortex 10,L,1,2,1.0,1.0
+rostral prefrontal cortex 10,R,1,1,0.0,1.0
+rostral prefrontal cortex 10,U,1,1,1.0,
+rostral premotor area,U,1,1,0.0,
+rostral stg,L,1,1,1.0,1.0
+rostral stg,R,1,1,0.0,1.0
+rostral superior parietal gyrus,R,1,2,0.0,1.0
+rostral cingulate zone,U,1,1,0.0,
+rostral dorsolateral pfc,U,1,1,0.0,
+rostral medial frontal,B,1,2,1.0,
+rostral medial frontal,L,1,5,1.0,1.0
+rostral medial frontal g,U,1,4,0.5,
+rostral medial pfc ba 10,U,1,1,0.0,
+rostral medial prefrontal cortex ba 10,U,1,1,0.0,
+rostral middle frontal gyrus,U,1,2,0.0,
+ba 9 middle frontal gyrus,R,1,1,0.0,1.0
+bank of superior temporal sulcus,U,1,1,1.0,
+banks of the superior temporal sulcus,U,1,1,1.0,
+basal nucleus of meynert,U,1,1,1.0,
+basal temporopolar cortex,U,1,1,1.0,
+base of inferior frontal gyrus,R,1,1,0.0,1.0
+bcg,U,1,1,0.0,
+beta 1 extracted from the pcc,U,1,1,0.0,
+s1 1 2 3,U,1,2,1.0,
+ba 7,R,1,1,0.0,1.0
+ba 7 precuneus,R,1,1,0.0,1.0
+ba 8,R,1,1,0.0,1.0
+ba 9,L,1,1,0.0,0.0
+ba 9 46,U,1,1,0.0,
+ba 9 medial prefrontal cortex,U,1,1,1.0,
+ba 9 middle frontal gyrus,L,1,2,1.0,1.0
+rv3b,U,1,1,0.0,
+rv4 vp,U,1,1,0.0,
+rv5,U,1,2,0.0,
+rvcs,U,1,1,0.0,
+rvfc,U,1,1,0.0,
+rvstr,U,1,2,0.0,
+s i,U,1,1,0.0,
+s ii,U,1,2,0.0,
+rsmg,U,1,1,0.0,
+rstg and insula,U,1,1,0.0,
+rsts,U,1,1,0.0,
+rtemp,U,1,1,0.0,
+rtha,U,1,1,0.0,
+rtpj 40,U,1,1,0.0,
+rv1 v2,U,1,1,0.0,
+rv3a,U,1,1,0.0,
+sensorimotor,R,1,1,0.0,1.0
+sensorimotor,U,1,1,0.0,
+sensorimotor area,R,1,2,0.0,1.0
+sensorimotor cortex,R,1,2,0.0,1.0
+sensorimotor network,U,1,1,0.0,
+sensorimotor region,U,1,1,1.0,
+sensory,U,1,2,0.5,
+sensory association cortex,U,1,1,0.0,
+second somatosensory cortex,R,1,2,0.0,1.0
+secondary auditory cortex,L,1,1,0.0,0.0
+secondary clusters,U,1,3,1.0,
+secondary olfactory area,U,1,1,1.0,
+secondary olfactory areas1,U,1,2,0.5,
+secondary somatosensory,U,1,1,0.0,
+secondary visual cortex,L,1,1,1.0,1.0
+sef sphere,U,1,1,1.0,
+bpd,U,1,6,0.3333,
+brain stem,R,1,1,0.0,1.0
+s1 hand 3,R,1,1,0.0,1.0
+s1damh,U,1,3,1.0,
+s1undamh,U,1,1,0.0,
+s2 cl,U,1,1,0.0,
+sacc,U,1,1,1.0,
+second somatosensory cortex,L,1,3,1.0,1.0
+beta 2 extracted from the pcc,U,1,1,1.0,
+beta 2 extracted from the precuneus,U,1,1,1.0,
+bi anterior rostral medial prefrontal cortex,U,1,1,1.0,
+bi lingual,U,1,1,1.0,
+bj versus ej versus aj,U,1,1,1.0,
+body of the calcarine fissure and cuneus,U,1,1,1.0,
+body of the calcarine sulcus,U,1,4,0.5,
+body of the corpus callosum,U,1,1,0.0,
+sma proper,L,1,1,1.0,1.0
+sma proper pre sma,U,1,2,0.0,
+smadamh,U,1,3,1.0,
+small volume correction,U,1,6,0.5,
+smaundamh,U,1,1,0.0,
+smc,U,1,1,1.0,
+smfc,R,1,1,0.0,1.0
+smfc,U,1,1,1.0,
+sii ba 40,U,1,1,0.0,
+sii la,U,1,1,1.0,
+sips,U,1,2,0.5,
+slf,U,1,1,0.0,
+sma 6,L,1,2,1.0,1.0
+sma 6,R,1,2,0.0,1.0
+sma ba 5,R,1,1,0.0,1.0
+sma premotor,L,1,1,1.0,1.0
+sfg ba 6 8,R,1,1,0.0,1.0
+sfg ba 8,R,1,1,0.0,1.0
+sfg ba 9,L,1,1,1.0,1.0
+sfg4,U,1,1,0.0,
+sfj,L,1,2,1.0,1.0
+sfrg,U,1,1,1.0,
+sgacc,L,1,2,1.0,1.0
+sgacc,U,1,1,1.0,
+septal,U,1,1,1.0,
+septal area,U,1,2,0.5,
+septal part of nucleus accumbens,U,1,1,0.0,
+sfc ba 6,R,1,1,0.0,1.0
+sfg 10,U,1,2,0.0,
+sfg 6,U,1,1,0.0,
+sfg 9,R,1,1,0.0,1.0
+sfg ba 6,R,1,1,0.0,1.0
+ba 40 parietal lobe,R,1,1,0.0,1.0
+ba 40 supramarginal gyrus,U,1,2,0.0,
+ba 41,U,1,5,0.6,
+ba 41 temporal transversus gyrus,L,1,1,1.0,1.0
+ba 43,R,1,1,0.0,1.0
+ba 43 2,U,1,1,1.0,
+ba 44 dlpfc,U,1,3,0.3333,
+ba 44 dorsolateral prefrontal cortex,U,1,1,1.0,
+spc ba 7,L,1,1,1.0,1.0
+spg,L,1,1,1.0,1.0
+spg,U,1,2,0.0,
+ba 39,L,1,2,1.0,1.0
+ba 4 precentral gyrus,L,1,1,1.0,1.0
+ba 4 precentral gyrus,U,1,1,1.0,
+ba 40,L,1,1,1.0,1.0
+ba 40,R,1,1,0.0,1.0
+somato motor cortex,U,1,1,1.0,
+somatomotor cortex,U,1,1,0.0,
+somatosensorial 1,U,1,2,0.5,
+somatosensory,U,1,2,0.5,
+somatosensory association cortex,U,1,6,0.5,
+somatosensory association cortex and associative visual cortex,U,1,1,0.0,
+spc,L,1,1,1.0,1.0
+spc,U,1,1,1.0,
+smg ba 40,U,1,1,1.0,
+smg ba 42,U,1,1,0.0,
+smg d,U,1,1,1.0,
+smg stg,L,1,1,1.0,1.0
+smma,L,1,1,1.0,1.0
+smma,R,1,1,0.0,1.0
+sofg,R,1,1,0.0,1.0
+sog 19,R,1,1,0.0,1.0
+striate cortex,L,1,1,1.0,1.0
+striate visual cortex,U,1,1,1.0,
+striatum,B,1,1,1.0,
+sts region,R,1,2,0.0,1.0
+sub gyral,L,1,1,1.0,1.0
+sub gyral ba 10,R,1,1,0.0,1.0
+sub gyrus 6,R,1,1,0.0,1.0
+sub lobar,L,1,2,1.0,1.0
+stg 2,U,1,1,0.0,
+stg 3,U,1,1,1.0,
+stg 39,U,1,1,0.0,
+stg ba 22,L,1,1,1.0,1.0
+stg ba 22 21,L,1,1,1.0,1.0
+stp,U,1,2,0.0,
+str,U,1,1,0.0,
+striate,U,1,6,0.3333,
+spl3,U,1,1,0.0,
+spl7p,U,1,1,0.0,
+spoc,L,1,1,1.0,1.0
+spoc,U,1,3,0.3333,
+sps,R,1,1,0.0,1.0
+stc,L,1,2,1.0,1.0
+stc,R,1,1,0.0,1.0
+stg 1,U,1,1,0.0,
+ba 45 dlpfc,U,1,1,1.0,
+ba 45 dorsolateral prefrontal cortex,U,1,1,1.0,
+ba 46,R,1,1,1.0,0.0
+ba 47 inferior frontal gyrus,L,1,1,1.0,1.0
+ba 4a,L,1,1,1.0,1.0
+spl 7,U,1,1,0.0,
+spl cl,U,1,1,0.0,
+spl ext to stg,L,1,1,1.0,1.0
+subgenual prefrontal cortex,R,1,1,0.0,1.0
+subgenual vmpfc,U,1,1,0.0,
+subgyral,R,1,1,0.0,1.0
+subgyral grey matter 37,L,1,1,1.0,1.0
+subgyral temporal,R,1,1,0.0,1.0
+subiculum,U,1,1,1.0,
+sublobar insula,R,1,1,0.0,1.0
+sublobular,U,1,1,0.0,
+subgenual acc,U,1,2,0.5,
+subgenual acc ba 25,U,1,2,0.0,
+subgenual acca,L,1,1,1.0,1.0
+subgenual acca,R,1,1,0.0,1.0
+subgenual anterior cingulate cortex,U,1,3,0.3333,
+subgenual anterior cingulate cortex ba 25,U,1,2,0.0,
+subgenual cingulate,L,1,1,1.0,1.0
+subgenual cortex,U,1,1,0.0,
+subcallosal gyrus 34,U,1,1,0.0,
+subcallosal gyrus wm,L,1,1,1.0,1.0
+subcc,U,1,1,0.0,
+subcentral gyrus,U,1,1,0.0,
+subcentral gyrusb,U,1,1,0.0,
+subcortex white matter,U,1,1,0.0,
+subcortical ifg,R,1,2,0.0,1.0
+sube,U,1,3,0.6667,
+sub lobar,R,1,1,0.0,1.0
+sub lobar amygdala,L,1,1,1.0,1.0
+sub lobar amygdala,R,1,1,0.0,1.0
+sub lobar caudate,L,1,1,1.0,1.0
+subacc,U,1,1,1.0,
+subcallosal cingulate,U,1,1,1.0,
+subcallosal cortex,L,1,1,1.0,1.0
+subcallosal gyrus,L,1,2,1.0,1.0
+ba 24 32,U,1,1,0.0,
+ba 24 anterior cingulate cortex,U,1,1,1.0,
+ba 28,U,1,1,1.0,
+ba 29,U,1,1,1.0,
+ba 3 parietal gyrus,L,1,1,1.0,1.0
+ba 31,U,1,10,0.6,
+ba 31 posterior cingulate cortex,L,1,1,1.0,1.0
+ba 31 precuneus,L,1,1,1.0,1.0
+ba 19 secondary visual cortex,U,1,1,1.0,
+ba 19 visual cortex,U,1,2,0.5,
+ba 2,U,1,2,0.5,
+ba 21 middle temporal gyrus,U,1,2,0.5,
+ba 22,L,1,1,1.0,1.0
+ba 22 2,U,1,1,1.0,
+ba 22 temporal gyrus,R,1,1,0.0,1.0
+ba 24,R,1,1,0.0,1.0
+sup fr gy,U,1,12,0.0833,
+sup fr gy g,U,1,1,0.0,
+sup fr gy o,U,1,1,1.0,
+sup fr gy p,U,1,1,0.0,
+sup fr gye,U,1,1,0.0,
+sup fr gyh,U,1,2,0.0,
+ba 19 2viscx,U,1,1,0.0,
+ba 19 inferior occipital gyrus,L,1,1,1.0,1.0
+substantia nigra,L,1,1,1.0,1.0
+substantia nigra,R,1,1,0.0,1.0
+substantia nigra,U,1,1,0.0,
+subthamic nucleus,L,1,1,1.0,1.0
+sulcus,U,1,2,1.0,
+sulcus intermedius primus of jensen,U,1,2,1.0,
+sup and mid fr gy,U,1,1,0.0,
+sup and mid temporal,U,1,1,1.0,
+sup occipital gyrus,R,1,2,0.0,1.0
+sup par,U,1,1,1.0,
+sup par lobule,U,1,1,0.0,
+sup par lobulek,U,1,1,0.0,
+sup parietal,R,1,2,0.0,1.0
+sup parietal gyrus,U,1,2,0.5,
+sup parietal lobe,L,1,1,1.0,1.0
+sup parietal lobe,R,1,1,0.0,1.0
+sup frontal orb,R,1,2,0.0,1.0
+sup frontal sulcus,L,1,1,1.0,1.0
+sup ft,R,1,2,0.0,1.0
+sup lateral occipital cortex,U,1,1,0.0,
+sup loc,U,1,4,0.75,
+sup medial frontal,R,1,1,0.0,1.0
+sup medial frontal gyrus,L,1,1,1.0,1.0
+sup motor area,U,1,2,1.0,
+sup fr gyo,U,1,1,0.0,
+sup fr gys,U,1,3,0.3333,
+sup front,U,1,1,1.0,
+sup front gyrus,U,1,1,1.0,
+sup frontal g 1,L,1,1,1.0,1.0
+sup frontal g 2,L,1,1,1.0,1.0
+sup frontal med gyrus,U,1,1,1.0,
+sup frontal orb,L,1,1,1.0,1.0
+ba 32,L,1,2,1.0,1.0
+ba 32,R,1,1,0.0,1.0
+ba 32 acc,U,1,1,0.0,
+ba 32 anterior cingulate cortex,U,1,1,0.0,
+ba 36,U,1,1,0.0,
+ba 37 middle temporal gyrus,L,1,1,1.0,1.0
+ba 37 primary visual cortex,U,1,1,0.0,
+sup fr gyl,U,1,1,0.0,
+associative visual cortex,U,1,1,0.0,
+astg,L,1,1,1.0,1.0
+astg,R,1,1,0.0,1.0
+astg,U,1,2,0.0,
+asts,U,1,1,1.0,
+atl,U,1,1,0.0,
+atp,U,1,1,1.0,
+auditory and somatosensory cortex,R,1,1,0.0,1.0
+super marginal gyrus,U,1,1,1.0,
+superior,L,1,2,1.0,1.0
+superior and inferior parietal,U,1,1,1.0,
+superior and inferior parietal sulcus,U,1,1,1.0,
+artifact,U,1,7,0.4286,
+asfg,B,1,1,0.0,
+asg,U,1,2,1.0,
+aspl,R,1,2,0.0,1.0
+sup temporal g,R,1,1,0.0,1.0
+sup temporal gyrus,L,1,4,1.0,1.0
+sup temporal gyrusb,U,1,1,0.0,
+sup temporal pole,L,1,1,1.0,1.0
+sup temporal pole,R,1,1,0.0,1.0
+sup temporal pole,U,1,3,1.0,
+sup temporal sulcus,U,1,1,1.0,
+sup tp,R,1,1,0.0,1.0
+sup temp,R,1,1,0.0,1.0
+sup temp g,U,1,1,0.0,
+sup temp gy,U,1,4,0.25,
+sup temp gym,U,1,1,0.0,
+sup temp gyp,U,1,2,0.5,
+sup temp gyq,U,1,1,0.0,
+sup temp gyrus,R,1,1,0.0,1.0
+sup temporal,U,1,2,0.0,
+superior caudate,L,1,1,1.0,1.0
+superior cerebellar peduncle,U,1,1,1.0,
+superior cingulate sulcus,U,1,3,1.0,
+superior circular sulcus of the insula,U,1,1,0.0,
+superior cluster,U,1,1,0.0,
+superior colliculus,U,1,1,0.0,
+superior corona radiata,U,1,1,0.0,
+superior frontal 1,L,1,1,1.0,1.0
+superior and middle frontal gyrus ba 8 9,L,1,2,1.0,1.0
+superior and middle temporal gyrus,R,1,1,0.0,1.0
+superior and middle temporal gyrus 21,L,1,1,1.0,1.0
+superior and middle temporal gyrus 22 21,L,1,1,1.0,1.0
+superior and middle temporal gyrus 22 21,R,1,2,0.0,1.0
+superior and middle temporal gyrus 42 22 21,R,1,1,0.0,1.0
+superior anterior insula,L,1,1,1.0,1.0
+superior anterior temporal cortex,U,1,1,1.0,
+ba 18 secondary visual cortex,U,1,1,0.0,
+ba 18 visual cortex,U,1,2,0.0,
+ba 19 2vis cx,U,1,1,1.0,
+superior and middle,L,1,1,1.0,1.0
+superior and middle frontal gyrus,L,1,2,1.0,1.0
+superior and middle frontal gyrus 10,L,1,1,1.0,1.0
+superior and middle frontal gyrus 10,R,1,2,0.0,1.0
+superior and middle frontal gyrus 11,R,1,1,0.0,1.0
+ba 1,U,1,1,1.0,
+ba 10,R,1,3,0.0,1.0
+ba 10 medial frontal gyrus,R,1,1,0.0,1.0
+ba 11,U,1,3,0.6667,
+ba 13 insula,L,1,2,1.0,1.0
+ba 17,U,1,1,0.0,
+ba 18,U,1,4,0.5,
+ba 18 lingual gyrus,R,1,1,0.0,1.0
+anteroventral insula,R,1,1,0.0,1.0
+apfc ba 10,L,1,2,1.0,1.0
+apfc ba 10,R,1,1,0.0,1.0
+area 10,U,1,1,0.0,
+area 11,U,1,1,1.0,
+area 14,U,1,1,1.0,
+area 17,U,1,1,1.0,
+area 18,U,1,1,1.0,
+superior frontal gyrus and sulcus,U,1,1,0.0,
+anterior transverse collateral sulcus,U,1,1,1.0,
+anterior transverse temporal gyrus,L,1,1,1.0,1.0
+anterior vlpfc ba 10,U,1,1,1.0,
+anterior vmpfc,U,1,1,0.0,
+anterolateral prefrontal cortex,U,1,3,0.6667,
+anteromedial prefrontal cortex,U,1,1,1.0,
+anteroventral insula,L,1,1,1.0,1.0
+superior frontal gyrus 10,R,1,1,0.0,1.0
+superior frontal gyrus 11,L,1,1,1.0,1.0
+superior frontal gyrus 11,U,1,1,0.0,
+superior frontal gyrus 1997,U,1,1,1.0,
+superior frontal gyrus 24,U,1,1,0.0,
+superior frontal gyrus 8,L,1,2,1.0,1.0
+superior frontal gyrus 8 9,R,1,1,0.0,1.0
+superior frontal gyrus 9 10,L,1,1,1.0,1.0
+superior frontal cortex ba 10,U,1,1,1.0,
+superior frontal cortex ba 6,U,1,1,1.0,
+superior frontal ctx,U,1,2,1.0,
+superior frontal g ba 6,U,1,1,1.0,
+superior frontal g ba 8,U,1,2,0.0,
+superior frontal g ba 9,U,1,1,0.0,
+superior frontal gryus,U,1,1,1.0,
+superior frontal gyr,U,1,1,1.0,
+superior frontal orbital lobe ba 11,R,1,1,0.0,1.0
+superior frontal region,U,1,1,1.0,
+superior frontal sulc,U,1,3,1.0,
+superior frontal sulcus,R,1,1,0.0,1.0
+superior frontal sulcus 8,L,1,1,1.0,1.0
+superior frontal tracts,R,1,1,0.0,1.0
+superior gyrus,U,1,3,0.0,
+superior lateral frontal gyrus,R,1,1,0.0,1.0
+superior frontal gyrus orbital part,L,1,1,1.0,1.0
+superior frontal gyrus orbital part,R,1,1,0.0,1.0
+superior frontal gyrus wm,R,1,1,0.0,1.0
+superior frontal gyrus3,U,1,1,0.0,
+superior frontal lobe,R,1,1,0.0,1.0
+superior frontal lobea,L,1,1,1.0,1.0
+superior frontal medial cortex,U,1,2,0.5,
+superior frontal medial gyrus,L,1,1,0.0,0.0
+area tringularis,U,1,1,0.0,
+area44,U,1,1,0.0,
+armfc,U,1,1,0.0,
+superior frontal gyrus ba 10,U,1,1,1.0,
+superior frontal gyrus ba 6 8,L,1,1,0.0,0.0
+superior frontal gyrus ba 9 1,U,1,2,0.5,
+superior frontal gyrus ba 9 2,U,1,1,0.0,
+superior frontal gyrus medial region,U,1,1,1.0,
+area 19,U,1,1,0.0,
+area 21,U,1,1,1.0,
+area 22,U,1,2,0.5,
+area 23,U,1,1,0.0,
+area 4a,U,1,9,0.7778,
+area 5,U,1,2,0.5,
+area 8,U,1,2,0.5,
+area 9,U,1,2,0.5,
+anterior superior temporal sulcus,R,1,1,0.0,1.0
+anterior supramarginal gyrus,R,1,2,0.0,1.0
+anterior supramarginal gyrus,U,1,1,1.0,
+anterior temporal,L,1,1,1.0,1.0
+anterior temporal cortex,R,1,1,0.0,1.0
+anterior temporal cortex,U,1,1,0.0,
+anterior temporal fusiform cortex,U,1,1,1.0,
+anterior temporal lobe,R,1,1,0.0,1.0
+superior medial frontal lobe,R,1,1,0.0,1.0
+anterior sts,B,1,1,0.0,
+anterior superior frontal gyrus,U,1,1,1.0,
+anterior superior frontal sulcus,L,1,1,1.0,1.0
+anterior superior frontal sulcus,U,1,2,0.5,
+anterior superior medial frontal gyrus,L,1,1,1.0,1.0
+anterior superior medial frontal gyrus,R,1,1,0.0,1.0
+anterior superior temporal lobe gm,U,1,1,0.0,
+superior medial,L,1,3,1.0,1.0
+superior medial,R,1,2,0.0,1.0
+superior medial frontal cortex,L,1,1,1.0,1.0
+superior medial frontal cortex,R,1,1,0.0,1.0
+superior medial frontal cortex ba 10,U,1,1,0.0,
+superior medial frontal gyrus 32,U,1,1,1.0,
+superior medial frontal gyrus ba 8,L,1,1,0.0,0.0
+superior medial frontal lobe,L,1,1,1.0,1.0
+superior lateral occipital,L,1,2,1.0,1.0
+superior lateral occipital,R,1,1,0.0,1.0
+superior lateral occipital cortex and precuneous,U,1,1,1.0,
+superior lateral occipital gyrus,R,1,1,0.0,1.0
+superior lingual gyrus,U,1,2,0.5,
+superior longitudinal fasciculus posterior part,R,1,1,0.0,1.0
+superior longitudinal fasciculus temporal part,R,1,1,1.0,0.0
+superior longitudinal fasciculus wm,U,1,1,1.0,
+superior occipital gyrus ba 18,U,1,1,0.0,
+anterior mtl,R,1,1,0.0,1.0
+anterior mtl,U,1,1,1.0,
+anterior nucleus,U,1,1,0.0,
+anterior occipital cortex,U,1,2,0.0,
+anterior occipital sulcus,L,1,1,1.0,1.0
+anterior ofc,L,1,1,1.0,1.0
+anterior ots,L,1,2,1.0,1.0
+superior middle frontal,U,1,1,1.0,
+superior middle frontal lobe,U,1,1,0.0,
+superior motor area,U,1,2,1.0,
+superior occipital,L,1,1,1.0,1.0
+superior occipital cortexc,R,1,1,0.0,1.0
+superior occipital g,U,1,5,1.0,
+superior occipital gyrus 19,R,1,1,0.0,1.0
+superior occipital gyrus 19,U,1,2,0.5,
+superior medial gyrus ba 32,R,1,1,0.0,1.0
+superior medial gyrus ba 9,L,1,2,1.0,1.0
+superior medial pfc,R,1,1,0.0,1.0
+superior medial pfc ba 8,L,1,1,1.0,1.0
+superior medial pfc ba 9,L,1,1,1.0,1.0
+superior medial prefrontal cortex,L,1,1,1.0,1.0
+superior medial prefrontal cortex,R,1,1,0.0,1.0
+superior medial prefrontal cortex,U,1,1,1.0,
+anterior temporal pole,R,1,1,0.0,1.0
+anterior temporal pole,U,1,1,0.0,
+anterior thalamic projection,U,1,1,0.0,
+anterior thalamic radiation,R,1,5,0.0,1.0
+anterior to mid intraparietal sulcus,L,1,1,1.0,1.0
+superior medial frontal lobe,U,1,2,0.0,
+superior medial g,L,1,1,1.0,1.0
+superior medial gyrus 9,U,1,1,1.0,
+superior parietal ba 5,U,1,1,0.0,
+superior parietal ba 7,R,1,1,0.0,1.0
+superior parietal ba 7,U,1,2,0.5,
+superior parietal cortex 7,U,1,2,1.0,
+superior parietal cortex bi,U,1,1,0.0,
+superior parietal lobe 7,U,1,4,1.0,
+superior parietal lobea,R,1,4,0.0,1.0
+superior parietal lobule 3,R,1,2,0.0,1.0
+superior occipital gyrus ba 39,U,1,1,0.0,
+superior occipital lobe,L,1,1,1.0,1.0
+superior occipital lobe,R,1,1,0.0,1.0
+superior orbital frontal gyrus ba 11,R,1,1,0.0,1.0
+superior orbital gyrus,R,1,2,0.0,1.0
+superior orbitofrontal,U,1,1,0.0,
+superior orbitofrontal cortex,U,1,1,0.0,
+superior orbitofrontal gyrus,U,1,1,1.0,
+anterior prefrontal cortex,L,1,1,1.0,1.0
+anterior prefrontal cortex and dorsolateral prefrontal cortex,U,1,1,0.0,
+anterior putamen,L,1,1,1.0,1.0
+anterior rostral medial frontal area,R,1,1,0.0,1.0
+anterior segment of the circular sulcus of the insula,U,1,2,1.0,
+anterior sma,B,1,1,0.0,
+anterior stg,L,1,1,1.0,1.0
+anterior stg 38,U,1,3,1.0,
+anterior parahippocampal gyrus,R,1,1,0.0,1.0
+anterior parahippocampus,R,1,2,0.0,1.0
+anterior parietal region,U,1,2,1.0,
+anterior parietal region 1997,U,1,1,1.0,
+anterior part of the cingulate gyrus and sulcus,U,1,1,1.0,
+anterior pfc ba 10,U,1,1,0.0,
+anterior pre sma,U,1,1,0.0,
+anterior prefrontal cortex,B,1,1,0.0,
+anterior limb of internal capsule,U,1,1,0.0,
+anterior limb of the internal capsule,R,1,1,0.0,1.0
+anterior limb of the internal capsule,U,1,1,1.0,
+anterior lingual gyrus,U,1,1,1.0,
+anterior lobe of cerebellum,R,1,1,0.0,1.0
+anterior medial frontal cortex,R,1,2,0.0,1.0
+anterior medial pfc,U,1,1,0.0,
+anterior median prefrontal cortex,R,1,2,0.0,1.0
+superior pmc,U,1,1,1.0,
+anterior insular cortex2,U,1,3,0.6667,
+anterior ips,L,1,2,1.0,1.0
+anterior itg,U,1,1,1.0,
+anterior itg and fusiform,L,1,1,1.0,1.0
+anterior lateral orbitofrontal cortex,U,1,1,0.0,
+anterior lateral stg,L,1,1,1.0,1.0
+anterior lateral stg,R,1,1,0.0,1.0
+superior parietal lobule1,R,1,1,0.0,1.0
+superior parietal lobule1,U,1,1,1.0,
+superior parietal occipital cortex,L,1,1,1.0,1.0
+superior parietal occipital cortex,R,1,1,0.0,1.0
+superior parietallobule,R,1,1,0.0,1.0
+superior parieto occipital cortex,L,1,1,1.0,1.0
+superior part of the precentral sulcus,U,1,2,1.0,
+superior patietal cortex,L,1,1,1.0,1.0
+superior parietal lobule 5,L,1,1,1.0,1.0
+superior parietal lobule 7pc,U,1,1,0.0,
+superior parietal lobule ba 2 5,B,1,1,1.0,
+superior parietal lobule ba 2 5,R,1,1,0.0,1.0
+superior parietal lobule ba 5,R,1,1,0.0,1.0
+superior parietal lobule ba 7,U,1,1,1.0,
+superior parietal lobule ba 7 include precuneus ba 7,L,1,1,1.0,1.0
+superior parietal lobule extending downward into the intra occipital sulcus,U,1,1,1.0,
+superior temporal gyrus 22 42,R,1,1,0.0,1.0
+superior temporal gyrus 38,U,1,1,1.0,
+superior temporal gyrus 39,L,1,1,1.0,1.0
+superior temporal gyrus 39,R,1,1,0.0,1.0
+superior temporal gyrus 39,U,1,3,0.6667,
+superior temporal gyrus 39 22,L,1,1,1.0,1.0
+superior temporal gyrus 41,L,1,1,1.0,1.0
+superior temporal gyrus 41,R,1,3,0.0,1.0
+superior temporal cortex,R,1,1,0.0,1.0
+superior temporal g ba 22,U,1,1,1.0,
+superior temporal gurus,L,1,1,1.0,1.0
+superior temporal gyr,U,1,1,0.0,
+superior temporal gyrus,B,1,1,1.0,
+superior temporal gyrus 21,R,1,1,0.0,1.0
+superior temporal gyrus 21 22,L,1,1,1.0,1.0
+superior temporal gyrus 22 42,L,1,1,1.0,1.0
+superior precuneus,U,1,1,1.0,
+superior prefontal ctx,U,1,1,1.0,
+superior prefrontal gyrus,U,1,1,1.0,
+superior segment of the circular sulcus of the insula,U,1,1,1.0,
+superior sma,R,1,1,0.0,1.0
+superior srontal g,L,1,1,1.0,1.0
+superior temp gyrus,U,1,2,0.0,
+superior temporal area,B,1,1,1.0,
+anterior mid cingulate cortex,R,1,1,0.0,1.0
+anterior midcingulate cortex,L,1,2,1.0,1.0
+anterior midcingulate cortex,R,1,2,0.0,1.0
+anterior middle temporal gyrus,L,1,1,1.0,1.0
+anterior middle temporal gyrus,R,1,1,0.0,1.0
+anterior mtg,R,1,1,0.0,1.0
+superior precentral sulcus,L,1,4,1.0,1.0
+superior precentral sulcus,R,1,3,0.0,1.0
+anterior hippocampal roia,U,1,1,1.0,
+anterior hippocampus,U,1,1,1.0,
+anterior ifg,U,1,1,1.0,
+anterior inferior frontal gyrus,U,1,1,1.0,
+anterior inferior insula,U,1,2,0.5,
+anterior inferior insula ba 13 14,U,1,4,1.0,
+anterior inferior temporal gyrus,U,1,1,1.0,
+anterior insula,B,1,1,0.0,
+superior temporal gyrus ba 42,R,1,1,0.0,1.0
+anterior dorsolateral prefrontal cortex,R,1,1,0.0,1.0
+anterior dorsolateral prefrontal cortex,U,1,3,0.0,
+anterior frontal,U,1,1,1.0,
+anterior fusiform and itg,U,1,1,1.0,
+anterior fusiform gyrus,R,1,1,0.0,1.0
+anterior hc ba 34,U,1,1,1.0,
+anterior hippocampal roi,U,1,1,1.0,
+superior temporal gyrus ba 38,L,1,1,1.0,1.0
+superior temporal gyrus ba 38,R,1,1,0.0,1.0
+superior temporal gyrus ba 38,U,1,1,1.0,
+superior temporal gyrus ba 39,U,1,1,1.0,
+superior temporal gyrus ba 41,R,1,2,0.0,1.0
+superior temporal gyrus ba 41 42,L,1,1,1.0,1.0
+superior temporal gyrus ba 41 42 a,L,1,1,1.0,1.0
+superior temporal gyrus ba 42,L,1,1,1.0,1.0
+superior temporal gyrus 42,L,1,1,1.0,1.0
+superior temporal gyrus 42,R,1,1,0.0,1.0
+superior temporal gyrus 42 22,L,1,1,1.0,1.0
+superior temporal gyrus 42 22,R,1,1,0.0,1.0
+superior temporal gyrus and sulcus,R,1,1,0.0,1.0
+superior temporal gyrus ant,U,1,1,0.0,
+superior temporal gyrus anterior,U,1,1,0.0,
+superior temporal gyrus ba 21,U,1,1,0.0,
+superior temporalsulcus,U,1,1,0.0,
+superior tg,U,1,2,1.0,
+superior to middle frontal gyrus,U,1,1,0.0,
+superiortemporal gyrus,U,1,1,1.0,
+superiortemporalgyrus,U,1,1,0.0,
+superor dlpfc,U,1,1,1.0,
+supmgyrs,U,1,1,0.0,
+supmidfg,U,1,1,1.0,
+superior temporal pole gyrus ba 38,L,1,1,1.0,1.0
+superior temporal sulcus 21,U,1,1,1.0,
+superior temporal sulcus 22,U,1,1,0.0,
+superior temporal sulcus anterior,R,1,1,0.0,1.0
+superior temporal sulcus ba 22,R,1,1,0.0,1.0
+superior temporal sulcus ba 22 21,U,1,1,1.0,
+superior temporal sulcus posterior,R,1,1,0.0,1.0
+superior temporalgyrus,U,1,2,1.0,
+superior temporal gyrus cluster 2,R,1,1,0.0,1.0
+superior temporal gyrus planum polare,U,1,2,1.0,
+superior temporal gyrus planum temporale,U,1,3,1.0,
+superior temporal gyrus posterior,U,1,1,1.0,
+superior temporal gyrusb,U,1,1,1.0,
+superior temporal gyrys,U,1,1,0.0,
+superior temporal pole ba 22,R,1,2,0.0,1.0
+superior temporal pole ba 38,U,1,1,1.0,
+anterior insula 47,U,1,2,1.0,
+anterior insula and inferior frontal operculum,U,1,2,0.0,
+anterior insula ba 13,R,1,1,0.0,1.0
+anterior insula cortex,L,1,1,1.0,1.0
+anterior insula cortex,R,1,1,0.0,1.0
+anterior insula cortex,U,1,2,0.5,
+anterior insula short insular gyrus,U,1,2,1.0,
+superior temporal gyrus ba 48,R,1,1,0.0,1.0
+anterior cingulate gyrus ba 32,U,1,1,0.0,
+anterior cingulate gyrus ba 9,L,1,1,1.0,1.0
+anterior cingulate gyrus ba 9,R,1,1,0.0,1.0
+anterior cingulate gyrusa,U,1,2,0.5,
+anterior cingulate2,U,1,1,0.0,
+anterior cingulated,U,1,1,0.0,
+anterior cingulated cortex,U,1,1,1.0,
+anterior cingulated gyrus,U,1,1,1.0,
+anterior cingulate cortex4,U,1,1,0.0,
+anterior cingulate g,U,1,1,0.0,
+anterior cingulate g ba 32,U,1,1,0.0,
+anterior cingulate gyrus 24,U,1,1,0.0,
+anterior cingulate gyrus 32,U,1,1,0.0,
+anterior cingulate gyrus and sulcus,U,1,1,1.0,
+anterior cingulate gyrus ba 24,U,1,1,1.0,
+anterior cingulate gyrus ba 32,R,1,2,0.0,1.0
+supplemental motor,U,1,1,1.0,
+supplemental motor area,R,1,1,0.0,1.0
+supplementar motor area ba 6,U,1,1,0.0,
+supplementary,R,1,1,0.0,1.0
+supplementary mortor area,U,1,2,0.5,
+supplementary motor area 6,L,1,1,1.0,1.0
+supplementary motor area 6,U,1,1,0.0,
+supplementary motor area ba 8,L,1,1,1.0,1.0
+supp motor,L,1,1,1.0,1.0
+supp temporal gyrus,L,1,1,1.0,1.0
+supperior frontal,L,1,1,1.0,1.0
+supperior frontal,R,1,1,0.0,1.0
+supperior medial frontal,L,1,1,1.0,1.0
+suppl motor,R,1,1,0.0,1.0
+suppl motor area,L,1,2,1.0,1.0
+suppl motor area,U,1,1,0.0,
+supramarginal and angular gyrus,L,1,1,1.0,1.0
+supramarginal ba 40,U,1,1,0.0,
+supramarginal g ba 40,U,1,2,0.5,
+supramarginal gy,U,1,1,0.0,
+supramarginal gyr,U,1,3,0.6667,
+supramarginal gyral,U,1,1,1.0,
+supramarginal gyrus 2 40,U,1,1,1.0,
+supramarginal gyrus 40,L,1,5,1.0,1.0
+supra frontal gyrus,R,1,1,0.0,1.0
+supra marginal,L,1,1,1.0,1.0
+supra marginal,U,1,1,0.0,
+supra marginal gyrus,L,1,1,1.0,1.0
+supra marginal white matter,U,1,1,0.0,
+supracalcarine cortex,R,1,1,0.0,1.0
+suprae,U,1,4,0.75,
+supramarg g,R,1,1,0.0,1.0
+supplementary motor cortex,R,1,1,0.0,1.0
+supplementary motor gyrus,U,1,1,1.0,
+supplementary motora area,U,1,1,0.0,
+supplementary motoro area,R,1,1,0.0,1.0
+supplemetary motor area,U,1,1,1.0,
+supr medial gyr,U,1,1,1.0,
+supr parietal lobule,U,1,1,1.0,
+supr temporal gyr,U,1,1,1.0,
+anterior cingulum,L,1,1,1.0,1.0
+anterior cingulum ba 24,U,1,1,1.0,
+anterior cingulum ba 32,U,1,1,0.0,
+anterior corona radiata,L,1,1,1.0,1.0
+anterior corpus callosum,R,1,1,0.0,1.0
+anterior dorsolateral prefrontal cortex,L,1,1,1.0,1.0
+supplementary motor area ba 8,R,1,1,0.0,1.0
+supplementary motor area proper,U,1,2,0.5,
+anterior cingulate ba 10,L,1,1,1.0,1.0
+anterior cingulate ba 24,U,1,1,0.0,
+anterior cingulate ba 25,L,1,1,1.0,1.0
+anterior cingulate ba 32,U,1,2,0.5,
+anterior cingulate ba 9 32,L,1,1,1.0,1.0
+anterior cingulate cl,U,1,1,0.0,
+anterior cingulate cortex 11 32,U,1,1,1.0,
+anterior cingulate cortex 24 32,U,1,2,0.5,
+tapatum,L,1,1,0.0,0.0
+te1,U,1,1,1.0,
+anterior cingulate 24,L,1,1,1.0,1.0
+anterior cingulate and medial prefrontal,R,1,1,0.0,1.0
+anterior cingulate and paracingulate gyrus,L,1,1,1.0,1.0
+anterior cingulate and paracingulate gyrus,R,1,1,0.0,1.0
+anterior cingulate and paracingulate gyrus,U,1,4,0.75,
+anterior cingulate and supplementary motor cortex,U,1,1,0.0,
+supramarginal gyurs,U,1,1,1.0,
+supramarginal parietal lobule,R,1,1,0.0,1.0
+supramarginalgyrus 40,U,1,1,1.0,
+supramarginalis,U,1,2,0.5,
+supran,U,1,2,0.5,
+suprmarg,L,1,1,1.0,1.0
+suprmarg gyrs,U,1,1,0.0,
+t o junction,U,1,1,1.0,
+supramarginal gyrus 40,R,1,1,0.0,1.0
+supramarginal gyrus and postcentral sulcus,U,1,1,1.0,
+supramarginal gyrus anterior division,U,1,1,1.0,
+supramarginal gyrus ba 1,U,1,1,1.0,
+supramarginal gyrus ba 48,R,1,1,0.0,1.0
+supramarginal gyrus posterior division,U,1,1,0.0,
+supramarginal gyrusa,R,1,1,0.0,1.0
+supramarginal gyurs,L,1,1,1.0,1.0
+temporal middle lobe,U,1,2,1.0,
+temporal middle pole,U,1,1,1.0,
+temporal network,U,1,1,0.0,
+temporal occipital cortex,L,1,1,1.0,1.0
+temporal occipital fusiform cortex,R,1,4,0.0,1.0
+temporal occipital fusiform cortex,U,1,1,1.0,
+temporal occipital fusiform gyrus,U,1,1,1.0,
+temporal parietal junction,L,1,1,1.0,1.0
+temporal inferior,R,1,1,0.0,1.0
+temporal lobe 20 21,U,1,1,1.0,
+temporal lobe 28 34,U,1,1,0.0,
+temporal lobe fusiform gyrus,L,1,1,1.0,1.0
+temporal lobe stg,U,1,6,1.0,
+temporal mid 21,U,1,1,1.0,
+temporal midbrain,U,1,1,0.0,
+temporal middle,R,1,1,0.0,1.0
+temp pole,L,1,1,1.0,1.0
+tempo parietal junction,L,1,1,1.0,1.0
+temporal cortex,L,1,1,1.0,1.0
+temporal fusiform cortex,L,1,1,1.0,1.0
+temporal fusiform cortex,R,1,1,0.0,1.0
+temporal fusiform cortex,U,1,1,1.0,
+temporal gyrus,R,1,1,0.0,1.0
+temporal inferior,L,1,2,1.0,1.0
+anterior cingulate cortex 32,U,1,4,0.5,
+anterior cingulate cortex and,B,1,2,1.0,
+anterior cingulate cortex ba 24,R,1,1,0.0,1.0
+anterior cingulate cortex ba 24,U,1,1,1.0,
+anterior cingulate cortex ba 24 32,U,1,1,0.0,
+anterior cingulate cortex ba 32,L,1,1,1.0,1.0
+anterior cingulate cortex ba 33,R,1,1,0.0,1.0
+anterior cingulate cortex wm,R,1,1,0.0,1.0
+ant mtg sts,U,1,1,1.0,
+ant sts,L,1,2,1.0,1.0
+ant thalamus,L,1,1,1.0,1.0
+anteiror cingulum,U,1,2,0.5,
+anterio cingulate,U,1,1,0.0,
+anterior and middle cingulate cortex,U,1,1,0.0,
+anterior and superior corona radiata,L,1,1,1.0,1.0
+anterior calcarine sulcus,U,1,1,1.0,
+ant hippocampus,L,1,2,1.0,1.0
+ant inferior temporal gyrus,U,1,1,1.0,
+ant ins,L,1,1,1.0,1.0
+ant ins,R,1,2,0.0,1.0
+ant insula cl,U,1,1,0.0,
+ant lobe cerebellum culmen,R,1,1,0.0,1.0
+ant mtg,L,1,1,1.0,1.0
+ant mtg itg,U,1,1,1.0,
+temporal pole ba 48,L,1,1,1.0,1.0
+temporal pole mid,L,1,1,1.0,1.0
+temporal pole mid,U,1,1,1.0,
+temporal pole middle,R,1,1,0.0,1.0
+ant cingulate gyrus,R,1,1,0.0,1.0
+ant cingulum,L,1,1,1.0,1.0
+ant fusiform,L,1,1,1.0,1.0
+ant fusiform,R,1,1,0.0,1.0
+temporal parietal occipital,L,1,1,1.0,1.0
+temporal parietal occipital,R,1,1,0.0,1.0
+temporal parieto occipital c,U,1,1,1.0,
+temporal pole 20 38,U,1,1,0.0,
+temporal pole 38,R,1,1,0.0,1.0
+temporal pole and lateral superior temporal gyrus,U,1,1,0.0,
+temporal pole ba 20,L,1,1,1.0,1.0
+temporal pole ba 38,U,1,2,1.0,
+temporo parietal white matter,R,1,1,0.0,1.0
+temporoparietal cortex,L,1,1,1.0,1.0
+temporoparietal junction ba 7,R,1,1,0.0,1.0
+temporopolar,L,1,1,1.0,1.0
+temporopolar,R,1,1,0.0,1.0
+termporal mid,R,1,1,0.0,1.0
+ternporal mid,R,1,3,0.0,1.0
+thal,L,1,1,1.0,1.0
+temporo occipital gyrus,L,1,2,1.0,1.0
+temporo occipital junction,L,1,1,1.0,1.0
+temporo occipital sulcus,L,1,1,1.0,1.0
+temporo parietal,L,1,1,1.0,1.0
+temporo parietal area,R,1,1,0.0,1.0
+temporo parietal junction area,L,1,1,1.0,1.0
+temporo parietal junction ba 39,L,1,2,1.0,1.0
+temporo parietal lobe,L,1,1,1.0,1.0
+temporal sub gyrus,U,1,1,1.0,
+temporal superior,U,1,1,0.0,
+temporal superior lobe,U,1,1,1.0,
+temporal superior pole,U,1,2,0.0,
+temporal thalamus,L,1,5,0.8,0.8
+temporal wm,L,1,1,1.0,1.0
+temporo basal,U,1,4,0.25,
+temporo occipital fusiform,L,1,1,1.0,1.0
+anterior cc,U,1,1,1.0,
+anterior cigulate cortex,U,1,1,1.0,
+temporal pole middle gyrus,R,1,1,0.0,1.0
+temporal pole middle temporal gyrus,R,1,2,0.0,1.0
+temporal pole region,U,1,1,0.0,
+temporal pole sup,U,1,1,1.0,
+temporal pole superior gyrus,L,1,1,1.0,1.0
+temporal pole superior temporal gyrus,R,1,1,0.0,1.0
+toc1,U,1,1,1.0,
+tp pole,R,1,2,0.0,1.0
+tpj,B,1,2,0.5,
+tpj a,R,1,1,0.0,1.0
+tpj ba 40,L,1,1,1.0,1.0
+tpja,L,1,1,1.0,1.0
+tpo,U,1,1,0.0,
+tpole,L,1,1,1.0,1.0
+thalamusa,U,1,1,1.0,
+thalamush,U,1,1,0.0,
+the insula,R,1,1,0.0,1.0
+the middle temporal gyrus,R,1,1,0.0,1.0
+the postcentral gyrus,R,1,1,0.0,1.0
+the superior temporal gyrus,R,1,1,0.0,1.0
+tifg,U,1,1,0.0,
+tmp,U,1,1,1.0,
+thalamus medial lr,U,1,1,0.0,
+thalamus midline nucleus,L,1,1,1.0,1.0
+thalamus posterior,L,1,1,1.0,1.0
+thalamus posterior,R,1,1,0.0,1.0
+thalamus proper,U,1,1,1.0,
+thalamus van,U,1,1,1.0,
+thalamus ventral posterior,L,1,1,1.0,1.0
+thalamus ventral posterior,R,1,1,0.0,1.0
+thal,U,1,1,0.0,
+thal m,U,1,1,1.0,
+thal pref,U,1,2,0.5,
+thalamic,R,1,2,0.0,1.0
+thalamus and other subcortical region,L,1,1,1.0,1.0
+thalamus and other subcortical region,R,1,1,0.0,1.0
+thalamus cortex,U,1,1,1.0,
+thalamus lateral nucleus,U,1,3,0.3333,
+angular gyurs,R,1,1,0.0,1.0
+angular gyurs,U,1,1,1.0,
+angular sulcus,R,1,1,0.0,1.0
+ant cing cortex,U,1,2,0.5,
+ant cing gyrus,U,1,1,0.0,
+ant cingulate,R,1,1,0.0,1.0
+ant cingulate,U,1,1,1.0,
+ant cingulate cortex,L,1,1,1.0,1.0
+angular gyrus ba 40,R,1,1,0.0,1.0
+angular gyrus ba 40,U,1,1,1.0,
+angular gyrus ba 7,R,1,1,0.0,1.0
+angular gyrus ba 7,U,1,3,0.0,
+angular gyrus temporal parietal junction,L,1,2,1.0,1.0
+angular gyrus temporal parietal junction,R,1,2,0.0,1.0
+angular gyrus2,U,1,1,1.0,
+angular gyrusa,R,1,1,0.0,1.0
+transverse temporal,U,1,2,0.5,
+transverse temporal and superior temporal gyrus,L,1,1,1.0,1.0
+angular g 1,L,1,1,1.0,1.0
+angular g 2,L,1,1,1.0,1.0
+angular gy,U,1,3,0.6667,
+angular gyrus 39,L,1,1,1.0,1.0
+angular gyrus 39,R,1,1,0.0,1.0
+angular gyrus and superior temporal sulcus,U,1,1,0.0,
+tpomid,R,1,1,0.0,1.0
+trans temporal gyrus,B,1,1,0.0,
+transitional zone,U,1,1,1.0,
+transverse and superior temporal gyrus 41 42 22,L,1,1,1.0,1.0
+transverse and superior temporal gyrus 42 22,L,1,1,1.0,1.0
+transverse occipital sulcus,U,1,1,1.0,
+transverse temporal,L,1,1,1.0,1.0
+transverse temporal,R,1,1,0.0,1.0
+vapfc,U,1,1,0.0,
+vemis vii,U,1,1,0.0,
+vent apfc,L,1,1,1.0,1.0
+vent apfc,R,1,1,0.0,1.0
+ventral acc,L,1,1,1.0,1.0
+ventral anterior cingulate cortex 24,R,1,2,0.0,1.0
+ventral anterior cingulate cortex 25,B,1,4,0.5,
+ventral anterior insula,L,1,1,1.0,1.0
+uncus ba 36,U,1,1,0.0,
+undefined,U,1,1,1.0,
+upper bank of caudal sts,U,1,1,1.0,
+v gprc,U,1,1,0.0,
+v1 area,L,1,1,1.0,1.0
+v3 4,U,1,1,1.0,
+v3a,L,1,3,1.0,1.0
+v3a,R,1,1,0.0,1.0
+trigeminal system,U,1,1,1.0,
+ttg,R,1,1,0.0,1.0
+ttg 42,U,1,1,0.0,
+ttgl,U,1,2,1.0,
+uncinate fasciculus,R,1,1,0.0,1.0
+unclassified white matter,U,1,1,1.0,
+uncus and amygdala,U,1,1,0.0,
+uncus ba 28,R,1,1,0.0,1.0
+ant cingulate cortex,R,1,1,0.0,1.0
+ant cingulate gyrus,L,1,1,1.0,1.0
+transverse temporal cortex,U,1,2,0.5,
+transverse temporal gyrus 41,L,1,1,1.0,1.0
+transverse temporal gyrus 41,U,1,1,0.0,
+transverse temporal gyrus and sulcus,U,1,1,0.0,
+triangular part of inferior frontal gyrus,L,1,1,1.0,1.0
+triangular part of inferior frontal gyrus1,L,1,1,1.0,1.0
+ventral occipito temporal cortex,U,1,1,1.0,
+ventral occipitotemporal cortex,U,1,2,1.0,
+ventral pallidum,U,1,1,0.0,
+ventral parietal ctx,U,1,1,1.0,
+ventral pars triangularis,U,1,1,1.0,
+ventral part,U,1,1,0.0,
+ventral pcc,U,1,2,0.5,
+ventral pop,L,1,1,1.0,1.0
+ventral lateral occipital cortex,L,1,1,1.0,1.0
+ventral lateral prefrontal cortex,L,1,1,1.0,1.0
+ventral medial frontal gyrus,U,1,1,1.0,
+ventral mpfc,L,1,1,1.0,1.0
+ventral occipital cortex,L,1,1,1.0,1.0
+ventral occipital cortex,R,1,1,0.0,1.0
+ventral occipital temporal lobe,L,1,1,1.0,1.0
+ventral occipital temporal lobe,R,1,1,0.0,1.0
+ventral ifg,R,1,1,0.0,1.0
+ventral ifg,U,1,1,1.0,
+ventral insula,R,1,1,0.0,1.0
+ventral intraparietal sulcus,R,1,1,0.0,1.0
+ventral ips,R,1,1,0.0,1.0
+ventral lateral,U,1,1,0.0,
+ventral lateral nucleus,L,1,1,1.0,1.0
+ventral lateral nucleus,R,1,1,0.0,1.0
+ventral anterior insula,R,1,1,0.0,1.0
+ventral anterior nc,U,1,1,0.0,
+ventral anterior nucleus,U,1,1,0.0,
+ventral anterior thalamus,R,1,1,0.0,1.0
+ventral anterior thalamus nucleus,U,1,1,1.0,
+ventral caudate nucleus,U,1,1,1.0,
+ventral diencephalon,R,1,1,0.0,1.0
+ventral ifg,L,1,4,1.0,1.0
+and precuneus,R,1,1,0.0,1.0
+and precuneus,U,1,1,1.0,
+and supplementary motor area,B,1,1,1.0,
+and supramarginal gyrus,L,1,1,1.0,1.0
+and thalamus,B,1,1,1.0,
+and v1,B,1,1,0.0,
+and wm within stg,L,1,1,1.0,1.0
+angluar gyrus,U,1,1,1.0,
+amygdalaa,L,1,1,1.0,1.0
+amygdalaa,R,1,1,0.0,1.0
+amygdalab,U,1,2,0.5,
+amygdale,L,1,2,1.0,1.0
+amygdaloid body,L,1,1,1.0,1.0
+and 10,U,1,1,0.0,
+and inferior occipital gyrus,B,1,1,0.0,
+and middle temporal gyrus ba 21,R,1,1,0.0,1.0
+ventral prefrontal cortex,U,1,3,0.3333,
+ventral prefrontal cortex 47,L,1,1,1.0,1.0
+ventral prefrontal cortex ba 44,U,1,1,0.0,
+ventral prefrontal cortex ba 45,U,1,1,0.0,
+ventral prefrontal cortex ba 47,U,1,1,0.0,
+ventral premotor,R,1,2,0.0,1.0
+amygdala parahippocampal gyrus,R,1,2,0.0,1.0
+amygdala roi,U,1,1,0.0,
+ventral posterior cingulate,U,1,1,0.0,
+ventral posterior cingulate cortex,R,1,1,0.0,1.0
+ventral posterior cingulate gyrus,U,1,1,0.0,
+ventral posterior insula,L,1,1,1.0,1.0
+ventral posterior medial nucleus,U,1,2,1.0,
+ventral posterior medial thalamus,U,1,1,0.0,
+ventral pre frontal,R,1,1,0.0,1.0
+ventral precuneus,U,1,2,0.0,
+ventrolateral prefrontal cortex ba 45,L,1,1,1.0,1.0
+ventrolateral prefrontal cortex ba 45,U,1,4,0.5,
+ventrolateral prefrontal cortex ba 46,U,1,1,0.0,
+ventrolateral prefrontal cortex ba 47,R,1,1,0.0,1.0
+ventrolateral prefrontal cortex2,U,1,1,1.0,
+ventrolateral premotor cortex,R,1,1,0.0,1.0
+ventrolateral premotor cortex,U,1,1,0.0,
+ventrolateral temporopolar cortex,U,1,1,1.0,
+ventro medial,U,1,1,0.0,
+ventro medial pfc,U,1,1,1.0,
+ventro parietal cortex,R,1,1,0.0,1.0
+ventro parietal cortex ba 39,R,1,1,0.0,1.0
+ventrolateral,U,1,1,1.0,
+ventrolateral pfc,R,1,1,0.0,1.0
+ventrolateral pfc ba 47,R,1,1,0.0,1.0
+ventrolateral prefrontal cortex ba 44,U,1,1,1.0,
+ventral striatum,B,1,1,1.0,
+ventral superior temporal gyrus,U,1,2,0.5,
+ventral tegmental areaa,U,1,1,0.0,
+ventral temporal cortex,L,1,1,1.0,1.0
+ventral temporal cortex,U,1,1,0.0,
+ventral visual area 4,L,1,1,1.0,1.0
+ventro lateral pre frontal,R,1,1,0.0,1.0
+ventro lateral prefrontal cortex,U,1,1,1.0,
+angular and inferior parietal,U,1,1,1.0,
+angular cortex,L,1,3,1.0,1.0
+angular cortex,R,1,1,0.0,1.0
+angular cortex,U,1,1,1.0,
+ventral premotor cortex ba 6,U,1,2,0.5,
+ventral rv3b,U,1,1,0.0,
+ventral stream,L,1,3,1.0,1.0
+ventral stream,R,1,3,0.0,1.0
+vpm thalamus,U,1,1,1.0,
+vpmc ba 44 45,L,1,1,1.0,1.0
+vpmc ba 44 45,R,1,1,0.0,1.0
+vwfa,L,1,2,1.0,1.0
+white matter adjacent to posterior thalamus,U,1,1,1.0,
+white matter to inferior frontal gyrus,R,1,1,0.0,1.0
+white matter2,U,1,1,0.0,
+visual cortex ba 18,L,1,1,1.0,1.0
+vmpfc ba 11 12 25,U,1,1,0.0,
+vmpfc1,U,1,1,1.0,
+vpcc,R,1,1,0.0,1.0
+vpcc ba 24,U,1,2,0.5,
+vpfc,L,1,1,1.0,1.0
+vpfc,R,1,1,0.0,1.0
+vpfc,U,1,1,1.0,
+vpl,U,1,1,1.0,
+vlpfc sphere,R,1,1,0.0,1.0
+vlpfc to dlpfc,U,1,1,0.0,
+vlprcs,L,1,1,1.0,1.0
+vltn,U,1,1,1.0,
+vlpc,R,1,1,0.0,1.0
+vmpfc 11,U,1,1,1.0,
+vmpfc 11 10,U,1,1,1.0,
+vmpfc ba 10,U,1,2,1.0,
+amcc,R,1,2,0.5,0.5
+amfg,L,1,1,1.0,1.0
+amfg,R,1,1,0.0,1.0
+amg,U,1,1,0.0,
+ampfc,U,1,4,0.5,
+amydala,U,1,1,1.0,
+amyg,R,1,1,0.0,1.0
+vlpfc sphere,L,1,1,1.0,1.0
+ag ba 39,R,1,1,0.0,1.0
+ag ba 39,U,1,2,1.0,
+ahc,U,1,1,1.0,
+aib,R,1,1,0.0,1.0
+aic,R,1,1,0.0,1.0
+aic,U,1,2,0.5,
+aifg,U,1,2,0.5,
+aifs,U,1,1,0.0,
+accl,U,1,1,1.0,
+accm,U,1,1,0.0,
+acco,U,1,1,0.0,
+accs,U,1,1,1.0,
+accumb ncl,U,1,1,1.0,
+acg,U,1,2,0.5,
+acs,U,1,1,0.0,
+adacc,U,1,1,0.0,
+acc and medial frontal gyrus,U,1,1,0.0,
+acc ba 32,L,1,2,1.0,1.0
+women versus men,U,1,2,0.0,
+acc roi,U,1,1,0.0,
+accb,U,1,1,1.0,
+acce,U,1,1,0.0,
+accg,U,1,1,0.0,
+acch,U,1,3,0.3333,
+visual cortex ba 18,R,1,1,0.0,1.0
+visual region,U,1,1,1.0,
+vl thalamus,L,1,1,1.0,1.0
+vlpc,L,1,2,1.0,1.0
+acc d,U,1,1,1.0,
+a47,B,1,1,0.0,
+acc 32,L,1,1,1.0,1.0
+acc 32,U,1,1,0.0,

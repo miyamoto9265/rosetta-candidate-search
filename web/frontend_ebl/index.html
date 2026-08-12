@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RCS_EBL (local test) — 文献名 → BNA 候補</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./site-nav.css" />
+    <link rel="stylesheet" href="./site-trust.css" />
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a href="./index.html" class="site-brand">RCS_EBL (local)</a>
+        <nav class="site-nav-links" aria-label="サイトメニュー">
+          <a href="./index.html" aria-current="page">BNA 候補検索</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">RCS_EBL · local test</p>
+        <h1>文献領域名から BNA 候補を検索</h1>
+        <p class="lead">
+          現行 RCS（HOMBA）とは独立したテスト版です。照合は RCS の
+          normalize / exact / fuzzy / BM25 を流用し、ヒットした文献呼称を
+          EBL の BNA 確率分布へ展開します。
+        </p>
+      </section>
+
+      <section class="search-card" aria-label="候補検索フォーム">
+        <label for="query">入力テキスト（脳領域・解剖構造名）</label>
+        <textarea
+          id="query"
+          rows="3"
+          placeholder="例: frontal eye field / Left TPJ / SMA"
+          autocomplete="off"
+          spellcheck="false"
+        ></textarea>
+
+        <label for="context" class="context-label">メモ（任意・サーバには送りますが未使用）</label>
+        <textarea
+          id="context"
+          rows="2"
+          placeholder="空欄可"
+          autocomplete="off"
+          spellcheck="false"
+        ></textarea>
+
+        <div class="controls">
+          <div class="control-group">
+            <label for="topK">候補数</label>
+            <input id="topK" type="number" min="1" max="30" value="10" />
+          </div>
+          <div class="control-group">
+            <label for="level">BNA レベル</label>
+            <select id="level">
+              <option value="l3">L3 細領域</option>
+              <option value="l2">L2 脳回</option>
+            </select>
+          </div>
+          <button id="searchButton" type="button">検索</button>
+        </div>
+
+        <p id="status" class="status" role="status"></p>
+      </section>
+
+      <section class="results-card" aria-label="検索結果">
+        <div class="results-header">
+          <h2>BNA 候補</h2>
+          <p id="summary"></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>順位</th>
+                <th>BNA abbr</th>
+                <th>名称</th>
+                <th>L2</th>
+                <th>label L/R</th>
+                <th>p_raw</th>
+                <th>Score</th>
+                <th>一致根拠</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody">
+              <tr>
+                <td colspan="8" class="empty">検索すると候補がここに表示されます。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>RCS_EBL</h2>
+        <p>Local test: RCS matching algorithms × EBL name→BNA tables. Not production.</p>
+        <p class="disclaimer"><span id="engineMeta">Engine</span></p>
+      </div>
+    </footer>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

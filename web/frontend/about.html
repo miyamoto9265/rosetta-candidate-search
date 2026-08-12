@@ -24,9 +24,10 @@
         <a href="./index.html" class="site-brand">ROSETTA Candidate Search</a>
         <nav class="site-nav-links" aria-label="サイトメニュー">
           <a href="./index.html">候補検索</a>
+          <a href="./ebl/index.html">EBL→BNA（テスト）</a>
           <a href="./scoring-guide.html">スコアリング解説</a>
           <a href="./walkthrough-bla.html">Walkthrough (BLA)</a>
-          <a href="./reports/2026-08-02.html">Reports</a>
+          <a href="./reports/2026-08-12.html">Reports</a>
           <a href="./about.html" aria-current="page">このサイトについて</a>
         </nav>
       </div>
@@ -49,8 +50,9 @@
           論文や atlas から抽出した脳領域・解剖学的構造名（例: <code>Pulvinar nucleus</code>、
           <code>Left basolateral amygdala (BLA)</code>）を入力すると、
           HOMBA（Human Occipital-and-More Brain Atlas）オントロジー上の候補 ID と名称を
-          スコア付きで返します。ROSETTA プロジェクトの候補生成エンジン（Python v0.8.0）を
-          ブラウザから利用できる公開 UI です。
+          スコア付きで返します。ROSETTA プロジェクトの候補生成エンジン（Python v0.8.5）に、
+          クエリ清掃と候補裁定を行う AI 補助レイヤ（API v0.9.0、DeepSeek 社 LLM への送信を含む）を
+          加えた公開 UI です。
         </p>
       </section>
 
@@ -79,6 +81,7 @@
         <h2>プライバシー・データの扱い</h2>
         <ul>
           <li>検索フォームに入力した<strong>脳領域テキスト</strong>は、候補生成のため API（AWS Lambda）に POST されます。</li>
+          <li>AI 補助が有効な場合、クエリと任意のコンテキスト欄の内容は候補判定のため <strong>DeepSeek 社の LLM API に送信</strong>されます。個人情報・機微情報は入力しないでください。AI は検索画面のトグルで無効化できます。</li>
           <li>アカウント登録・ログイン機能はありません。</li>
           <li>決済・パスワード・氏名・メールアドレス等の個人情報は<strong>収集しません</strong>。</li>
           <li>Cookie によるトラッキングや第三者広告は使用していません。</li>
@@ -103,13 +106,13 @@
           <a href="./index.html">候補検索</a>
           <a href="./about.html">このサイトについて</a>
           <a href="./scoring-guide.html">スコアリング解説</a>
-          <a href="./reports/2026-08-02.html">Reports</a>
+          <a href="./reports/2026-08-12.html">Reports</a>
           <a href="./humans.txt">humans.txt</a>
           <a href="./robots.txt">robots.txt</a>
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.8.0 · &copy; ROSETTA project
+          · Engine v0.8.5 · API v0.9.0 · &copy; ROSETTA project
         </p>
       </div>
     </footer>

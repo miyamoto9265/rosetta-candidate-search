@@ -315,9 +315,10 @@
       <a href="index.html" class="site-brand">ROSETTA Candidate Search</a>
       <nav class="site-nav-links" aria-label="サイトメニュー">
       <a href="index.html">候補検索</a>
+      <a href="ebl/index.html">EBL→BNA（テスト）</a>
       <a href="scoring-guide.html" aria-current="page">スコアリング解説</a>
       <a href="walkthrough-bla.html">Walkthrough (BLA)</a>
-      <a href="reports/2026-08-02.html">Reports</a>
+      <a href="reports/2026-08-12.html">Reports</a>
       <a href="about.html">このサイトについて</a>
       </nav>
     </div>
@@ -330,15 +331,17 @@
       <p>
         脳領域名のテキスト入力から HOMBA 候補を返す RCS の「スコア」がどのように算出されるかを、
         前処理から最終ランキングまで順を追って説明します。
-        実装は <code>rcs/rosetta_candidate_generator.py</code>（v0.8.0）に基づきます。
+        実装は <code>rcs/rosetta_candidate_generator.py</code>（v0.8.5）に基づきます。
+        API v0.9.0 ではスコアリング本体を変えずに AI 統合レイヤ（後述）が追加されています。
       </p>
     </header>
 
 
     <div class="meta-bar">
-      <span>バージョン: v0.8.0</span>
-      <span>最終更新: 2026-07-11</span>
-      <span>参照: docs/rcs_algorithm.md</span>
+      <span>エンジン: v0.8.5</span>
+      <span>API: v0.9.0（AI 統合）</span>
+      <span>最終更新: 2026-08-12</span>
+      <span>参照: docs/rcs_algorithm.md / docs/ai_integration_spec.md</span>
       <span>スコア範囲: 0.0 〜 1.0</span>
     </div>
 
@@ -360,6 +363,7 @@
         <li><a href="#ranking">ソートと出力</a></li>
         <li><a href="#params">パラメータ一覧</a></li>
         <li><a href="#example">計算例</a></li>
+        <li><a href="#ai">AI 統合レイヤ（API v0.9.0）</a></li>
       </ol>
     </nav>
 
@@ -933,6 +937,80 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
       </div>
     </section>
 
+    <!-- 16. AI integration -->
+    <section id="ai">
+      <h2>16. AI 統合レイヤ（API v0.9.0）</h2>
+      <p class="lead">
+        API はデフォルトで AI 統合が有効です。RCS のスコアリング本体は一切変更されず、
+        その前後に LLM（DeepSeek flash）の補助段が挟まります。
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">AI-1</div>
+          <div class="flow-body">
+            <strong>Preprocess（本質外除去）</strong>
+            クエリから laterality（left/right 等）・遺伝子/マーカー・細胞型語・実験的修飾を除去し、
+            清掃済みクエリ <code>roi_query</code> を生成。RCS はこれで検索する
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-body">
+            <strong>RCS（本書 1〜15 の処理）</strong>
+            スコアリングは完全に従来どおり。<code>candidates</code> は常に RCS 生の top_k
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">AI-3</div>
+          <div class="flow-body">
+            <strong>Postprocess（候補裁定）</strong>
+            RCS 候補（最大 10 件）から妥当なものだけを 0〜4 件選び、クエリとの関係ラベルを付与
+          </div>
+        </div>
+      </div>
+
+      <h3>リクエストの AI フラグ（いずれも既定 ON）</h3>
+      <table>
+        <thead>
+          <tr><th>フィールド</th><th>既定</th><th>説明</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>use_ai_preprocess</code></td><td>true</td><td>preprocess LLM の ON/OFF</td></tr>
+          <tr><td><code>use_ai_postprocess</code></td><td>true</td><td>postprocess LLM の ON/OFF</td></tr>
+          <tr><td><code>context</code></td><td>（空）</td><td>AI の判断材料となる自由記述（例: 論文タイトル）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>関係ラベル（クエリ視点）</h3>
+      <table>
+        <thead>
+          <tr><th>relation</th><th>意味</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>'=</code></td><td>一致（同一構造・同義・慣用表記ゆれ）。Excel 対策で先頭アポストロフィ付き</td></tr>
+          <tr><td><code>&lt;</code></td><td>クエリのほうが小さい（HOMBA が親・コンテナ）</td></tr>
+          <tr><td><code>&gt;</code></td><td>クエリのほうが大きい（HOMBA が部分・下位）</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>設計上の注意:</strong>
+        AI は候補を「発明」しません（RCS 候補リスト内からのみ選択）。
+        解剖学的に wrong と判断した候補は AI 結果に含めず、妥当なものが無ければ
+        <code>ai.results</code> は空配列になります。
+        LLM の confidence 数値は本質的な意味を持たないため、API・UI いずれにも出しません。
+        AI が失敗・タイムアウトしても検索自体は成功し、RCS 候補は必ず返ります（soft-fail）。
+      </div>
+
+      <div class="callout warn">
+        <strong>評価結果（2026-08-12）:</strong>
+        non-neocortex suitable 3,458 件で AI on/off を比較。
+        aligned +89、useful +179、wrong −180 だが、AI が「該当なし」と返す no_match は +247 に増加。
+        詳細は <a href="reports/2026-08-12/ai_eval_report.html">AI on/off 比較レポート</a>。
+      </div>
+    </section>
+
     <footer class="site-footer" role="contentinfo">
       <div class="site-footer-inner">
         <h2>ROSETTA Candidate Search</h2>
@@ -942,12 +1020,12 @@ BM25_norm = BM25_raw / (BM25_raw + 4.0)</pre>
           <a href="about.html">このサイトについて</a>
           <a href="scoring-guide.html">スコアリング解説</a>
           <a href="walkthrough-bla.html">Walkthrough (BLA)</a>
-          <a href="reports/2026-08-02.html">Reports</a>
+          <a href="reports/2026-08-12.html">Reports</a>
           <a href="humans.txt">humans.txt</a>
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.8.0 · <a href="about.html#contact">Contact / security</a>
+          · Engine v0.8.5 · API v0.9.0 · <a href="about.html#contact">Contact / security</a>
         </p>
       </div>
     </footer>

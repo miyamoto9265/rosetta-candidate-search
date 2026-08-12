@@ -1,0 +1,71 @@
+variant,canonical,source,rcs_bidirectional,homba_id,dist_mm,ratio,k_variant,decision
+sma,supplementary motor area,HOMBA_derived,,HOMBA:AA30012,0.0,0.0,154,MERGE
+ofc,orbital frontal cortex,HOMBA_derived,,HOMBA:10194,0.0,0.0,44,MERGE
+mcc,midcingulate cortex,HOMBA_derived,,HOMBA:10282,0.0,0.0,27,MERGE
+amy,amygdaloid complex,HOMBA_derived,,HOMBA:10361,0.0,0.0,5,MERGE
+dlpfc,dorsolateral prefrontal cortex,RCS_abbrev,,RCS_abbrev,0.0,0.0,96,MERGE
+mpfc,medial prefrontal cortex,RCS_abbrev,,RCS_abbrev,0.0,0.0,53,MERGE
+vlpfc,ventrolateral prefrontal cortex,RCS_abbrev,,RCS_abbrev,0.0,0.0,26,MERGE
+insula,insular lobe,RCS_alias,,RCS_alias,0.0,0.0,532,MERGE
+pallidum,globus pallidus,RCS_alias,,RCS_alias,0.0,0.0,48,MERGE
+primary somatosensory cortex,somatosensory cortex,RCS_alias,,RCS_alias,0.0,0.0,10,MERGE
+ifg,inferior frontal gyrus,HOMBA_derived,,HOMBA:12117,1.2,0.06,101,MERGE
+itg,inferior temporal gyrus,HOMBA_derived,,HOMBA:12142,1.5,0.06,34,MERGE
+stg,superior temporal gyrus,HOMBA_derived,,HOMBA:12140,2.1,0.1,71,MERGE
+sfg,superior frontal gyrus,HOMBA_derived,,HOMBA:12115,3.2,0.1,46,MERGE
+pcc,posterior cingulate cortex,HOMBA_derived,,HOMBA:10285,2.8,0.14,69,MERGE
+ipc,inferior parietal cortex,HOMBA_derived,,HOMBA:10225,3.2,0.15,6,MERGE
+mtg,middle temporal gyrus,HOMBA_derived,,HOMBA:12141,5.1,0.2,74,MERGE
+mfg,middle frontal gyrus,HOMBA_derived,,HOMBA:12116,6.0,0.21,86,MERGE
+sog,superior occipital gyrus,HOMBA_derived,,HOMBA:12154,3.7,0.22,7,MERGE
+phg,parahippocampal gyrus,HOMBA_derived,,HOMBA:12162,6.2,0.26,18,MERGE
+acc,anterior cingulate cortex,HOMBA_derived,,HOMBA:10278,5.4,0.28,98,MERGE
+ipl,inferior parietal lobule,HOMBA_derived,,HOMBA:12134,5.5,0.29,69,MERGE
+primary auditory cortex,auditory cortex,RCS_alias,,RCS_alias,3.9,0.33,4,MERGE
+prcg,precentral gyrus,HOMBA_derived,,HOMBA:12114,7.6,0.34,7,MERGE
+cingulate cortex,cingulate gyrus,RCS_alias,,RCS_alias,11.2,0.36,8,MERGE
+ang,angular gyrus,HOMBA_derived,,HOMBA:12136,6.3,0.39,6,MERGE
+smg,supramarginal gyrus,HOMBA_derived,,HOMBA:12135,8.4,0.4,22,MERGE
+accumbens,nucleus accumbens,RCS_alias,,RCS_alias,2.8,0.41,4,MERGE
+nacc,nucleus accumbens,RCS_abbrev,,RCS_abbrev,2.8,0.44,6,MERGE
+pfc,prefrontal cortex,HOMBA_derived,,HOMBA:10172,10.9,0.45,5,MERGE
+primary visual cortex,visual cortex,RCS_alias,,RCS_alias,7.7,0.45,6,MERGE
+ips,intraparietal sulcus,HOMBA_derived,,HOMBA:10620,7.1,0.46,33,MERGE
+sts,superior temporal sulcus,HOMBA_derived,,HOMBA:10629,9.1,0.48,25,MERGE
+sfs,superior frontal sulcus,HOMBA_derived,,HOMBA:10639,13.2,0.53,2,MERGE
+spl,superior parietal lobule,HOMBA_derived,,HOMBA:12133,13.9,0.54,47,MERGE
+heschls gyrus,transverse temporal gyrus,RCS_alias,,RCS_alias,5.9,0.54,15,MERGE
+hpc,hippocampus,RCS_abbrev,,RCS_abbrev,8.7,0.56,2,MERGE
+iog,inferior occipital gyrus,HOMBA_derived,,HOMBA:12153,8.2,0.61,13,MERGE
+heschl gyrus,transverse temporal gyrus,RCS_alias,,RCS_alias,5.6,0.62,5,MERGE
+hip,hippocampus,HOMBA_derived,,HOMBA:AA30093,13.6,0.63,3,MERGE
+ifs,inferior frontal sulcus,HOMBA_derived,,HOMBA:10631,8.1,0.64,4,MERGE
+itc,inferior temporal cortex,HOMBA_derived,,HOMBA:AA30846,18.6,0.66,5,MERGE
+parahippocampal cortex,parahippocampal gyrus,RCS_alias,,RCS_alias,15.2,0.66,10,MERGE
+ppc,posterior parietal cortex,HOMBA_derived,,HOMBA:10214,14.0,0.67,7,MERGE
+primary motor area,primary motor cortex,RCS_alias,,RCS_alias,17.5,0.79,2,REJECT
+striate cortex,primary visual cortex,HOMBA_derived,,HOMBA:10269,24.8,0.85,3,REJECT
+area 6,premotor cortex,HOMBA_derived,,HOMBA:10168,40.2,0.87,2,REJECT
+pocg,postcentral gyrus,HOMBA_derived,,HOMBA:12132,19.4,0.94,6,REJECT
+cun,cuneus,HOMBA_derived,,HOMBA:12150,15.0,0.95,4,REJECT
+rsc,retrosplenial cortex,HOMBA_derived,,HOMBA:10324,15.4,1.0,4,REJECT
+prcs,precentral sulcus,HOMBA_derived,,HOMBA:10628,10.8,1.16,2,REJECT
+its,inferior temporal sulcus,HOMBA_derived,,HOMBA:10632,16.3,1.44,2,REJECT
+head of caudate nucleus,caudate head,RCS_alias,,RCS_alias,7.3,1.44,1,REJECT
+cerebellar vermis,vermis,RCS_alias,,RCS_alias,30.6,1.45,2,REJECT
+ventromedial prefrontal cortex,anterior cingulate cortex,HOMBA_derived,,HOMBA:10278,24.6,1.5,23,REJECT
+ttg,transverse temporal gyrus,HOMBA_derived,,HOMBA:12144,8.0,1.5,1,REJECT
+spc,superior parietal cortex,HOMBA_derived,,HOMBA:10215,46.4,1.64,2,REJECT
+visual area,visual cortex,RCS_alias,,RCS_alias,18.5,1.76,1,REJECT
+ventral posterior medial nucleus,vpm,HOMBA_derived,,HOMBA:10425,26.2,1.78,1,REJECT
+dfc,dorsolateral prefrontal cortex,HOMBA_derived,,HOMBA:10173,25.7,1.84,3,REJECT
+vfc,ventrolateral prefrontal cortex,HOMBA_derived,,HOMBA:10185,28.1,1.87,3,REJECT
+lenticular nucleus,putamen,RCS_alias,,RCS_alias,12.4,2.07,1,REJECT
+area 23,ventral pcc,HOMBA_derived,,HOMBA:10286,58.6,3.7,1,REJECT
+middle temporal sulcus,inferior temporal sulcus,HOMBA_derived,,HOMBA:10632,26.4,3.93,1,REJECT
+str,striatum,HOMBA_derived,,HOMBA:10333,29.7,4.13,1,REJECT
+sps,subparietal sulcus,HOMBA_derived,,HOMBA:10638,52.6,7.28,1,REJECT
+area 17,primary visual cortex,HOMBA_derived,,HOMBA:10269,78.8,11.73,1,REJECT
+lateral orbital frontal cortex,a47,HOMBA_derived,,HOMBA:10205,52.7,,1,REJECT
+brocas area,broca s area,RCS_alias,,RCS_alias,20.9,,1,REJECT
+ventral lateral,ventrolateral,RCS_alias,no,RCS_alias,12.1,,1,REJECT

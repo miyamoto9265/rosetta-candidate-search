@@ -1,0 +1,72 @@
+/* Site-wide footer & about page styles */
+
+.site-footer {
+  margin-top: 2.5rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--border, #d9dee5);
+  font-size: 0.88rem;
+  color: var(--muted, #5f6b7a);
+  line-height: 1.65;
+}
+
+.site-footer-inner {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.site-footer h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--text, #1f2933);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0.75rem 0;
+}
+
+.site-footer nav a {
+  color: var(--accent, #2563eb);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer nav a:hover {
+  text-decoration: underline;
+}
+
+.site-footer .disclaimer {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 0 0;
+  border-top: 1px dashed var(--border, #d9dee5);
+  font-size: 0.82rem;
+}
+
+.about-card {
+  background: var(--card, #fff);
+  border: 1px solid var(--border, #d9dee5);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.about-card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.about-card li {
+  margin-bottom: 0.35rem;
+}
+
+#contact {
+  scroll-margin-top: 4rem;
+}

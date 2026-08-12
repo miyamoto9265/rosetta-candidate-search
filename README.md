@@ -1,8 +1,9 @@
 # ROSETTA Candidate Search
 
 脳領域・解剖学的構造名から HOMBA オントロジーの候補をスコア付きで返す検索システム（RCS）。
+API v0.9.0 から AI 統合（preprocess: クエリ清掃 / postprocess: 候補裁定＋関係ラベル）がデフォルト有効。
 
-**エンジン**: v0.8.0（2026-07-11）
+**エンジン**: v0.8.5 · **API**: v0.9.0（2026-08-12）
 
 ## ライブ環境
 
@@ -11,12 +12,13 @@
 | 検索 UI | https://rcs.mymt.site/ |
 | CloudFront（代替） | https://d5keesfj4srwa.cloudfront.net/ |
 | API | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| Reports（最新） | https://rcs.mymt.site/reports/2026-08-02/summary_report.html |
+| Reports（最新） | https://rcs.mymt.site/reports/2026-08-12.html |
 
 ```bash
 curl -sS -X POST "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates" \
   -H "Content-Type: application/json" \
-  -d '{"query":"Pulvinar nucleus","top_k":5}'
+  -d '{"query":"right NAc Drd1 neurons","top_k":10}'
+# AI を切る場合: "use_ai_preprocess":false, "use_ai_postprocess":false
 ```
 
 ## ドキュメント
@@ -24,6 +26,7 @@ curl -sS -X POST "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/ca
 | ドキュメント | 内容 |
 |---|---|
 | [API 仕様](docs/api_specification.md) | エンドポイント、リクエスト/レスポンス |
+| [AI 統合仕様](docs/ai_integration_spec.md) | preprocess / postprocess の LLM 仕様・プロンプト |
 | [アルゴリズム仕様](docs/rcs_algorithm.md) | 候補生成・スコアリング |
 | [テスト・品質管理](docs/test_and_quality.md) | テスト方針、品質基準 |
 | [AWS 運用ガイド](docs/aws_operations_guide.md) | デプロイ、運用 |
@@ -55,6 +58,13 @@ docs/             仕様書
 
 - 出典: [CCF-MAP — HOMBA ontology](https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html)
 - 本リポジトリの `rcs/HOMBA_v1_fixed.csv` は公式 CSV に対しタイポ修正等を加えた派生物です
+
+## v0.9.0 の要点（API）
+
+- AI 統合: preprocess（laterality・遺伝子・細胞型などの除去）→ RCS → postprocess（候補 0–4 件＋関係ラベル `'=`/`<`/`>`）
+- `use_ai_preprocess` / `use_ai_postprocess`（いずれも既定 ON）、`context`（自由記述の判断材料）
+- `candidates` は常に RCS 生ランキング。AI は soft-fail（失敗時も検索は成功）
+- 評価: [AI on/off 比較レポート](https://rcs.mymt.site/reports/2026-08-12/ai_eval_report.html)
 
 ## v0.8.0 の要点
 
