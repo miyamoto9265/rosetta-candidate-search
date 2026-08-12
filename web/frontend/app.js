@@ -94,7 +94,7 @@ function renderAi(data) {
     const results = ai.results || [];
     aiSummary.textContent = results.length ? `${results.length}件（先頭が最良）` : "該当なし";
     if (results.length === 0) {
-      aiResultsBody.innerHTML = `<tr><td colspan="6" class="empty">AI は妥当な対応を見つけませんでした。</td></tr>`;
+      aiResultsBody.innerHTML = `<tr><td colspan="8" class="empty">AI は妥当な対応を見つけませんでした。</td></tr>`;
       return;
     }
     aiResultsBody.innerHTML = results
@@ -105,6 +105,8 @@ function renderAi(data) {
           <td class="mono">${escapeHtml(r.homba_id)}</td>
           <td>${escapeHtml(r.name)}</td>
           <td>${escapeHtml(r.acronym)}</td>
+          <td>${escapeHtml(r.dhba_name)}</td>
+          <td>${escapeHtml(r.dhba_acronym)}</td>
           <td>${relationBadge(r.relation)}</td>
           <td>${escapeHtml(r.reason)}</td>
         </tr>`

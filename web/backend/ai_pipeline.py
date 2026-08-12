@@ -312,6 +312,8 @@ def postprocess(
                     "homba_id": hid,
                     "name": name,
                     "acronym": str(cand.get("acronym") or ""),
+                    "dhba_name": str(cand.get("dhba_name") or ""),
+                    "dhba_acronym": str(cand.get("dhba_acronym") or ""),
                     "relation": rel,
                     "reason": str(it.get("reason") or "")[:200],
                 }
