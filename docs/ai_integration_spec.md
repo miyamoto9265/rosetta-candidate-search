@@ -159,6 +159,29 @@ context=<optional free text>
 - 任意 `context`
 - preprocess 結果（`roi_query`, `removed`）
 - RCS 候補最大 10（id / name / acronym / score）
+- **curated dictionary hints**（後述。該当する場合のみ）
+
+### Curated reference dictionary（人手辞書）
+
+HOMBA の acronym が文献慣用と異なるために LLM が誤判断する問題への対策として、
+**人手で管理する参照辞書** `rcs/homba_ai_reference_dict.csv` を postprocess が参照する。
+
+| 列 | 説明 |
+|---|---|
+| `abbrev` | クエリ側の慣用略語（文献表記） |
+| `homba_id` | 正しい HOMBA ID |
+| `homba_name` | 名称（可読性用） |
+| `note` | キュレーションメモ |
+
+動作:
+
+- クエリ中に辞書の `abbrev` が**トークンとして出現**（大文字小文字を区別・単語境界）すれば、
+  プロンプトに `curated_dictionary_hints` として注入される（例: `"CN" conventionally maps to HOMBA:10660`）。
+- ヒントは **authoritative** として扱われ、対象候補行には `CURATED` マークが付く。
+- 辞書は RCS エンジンの検索には影響しない（AI 判断専用）。
+- 追加手順: 誤判断が観測されたクエリの慣用略語と正しい HOMBA ID を1行追加する。
+  シードは ai_eval の aligned→wrong 回帰 22 件（`playgrounds/260802_playground/_seed_ai_dict.py` で生成）。
+- パス解決: Lambda zip 同梱（`rcs/`）を既定とし、env `AI_DICT_PATH` で上書き可。
 
 ### 関係ラベル（クエリ視点）
 
@@ -210,6 +233,9 @@ Relation is from the QUERY's perspective vs the chosen HOMBA entry:
 Rules:
 - Every homba_id MUST appear in candidates. Never invent IDs.
 - Prefer "'=" when a synonymous exact sense exists.
+- If curated_dictionary_hints are present, they are AUTHORITATIVE for the abbreviation sense
+  (they fix cases where HOMBA's own acronym field is unconventional). Prefer the hinted entry
+  when it appears in candidates.
 - If nothing is anatomically acceptable, return {"results": []}.
 - Do NOT invent filler results. Do NOT output confidence scores.
 - Do NOT use bare "=" ; only "'=", "<", ">".
@@ -236,8 +262,10 @@ raw_query=<...>
 context=<optional free text>
 roi_query=<...>
 removed=<json array or empty>
+curated_dictionary_hints (authoritative):   # 該当時のみ
+  "<abbrev>" conventionally maps to <HOMBA:...> (<name>)
 candidates:
-  1. <homba_id>|<acronym>|<name>|score=<score>
+  1. <homba_id>|<acronym>|<name>|score=<score>[|CURATED]
   ...
 ```
 
