@@ -37,6 +37,7 @@ flowchart LR
 | フィールド | 型 | 必須 | 既定 | 説明 |
 |---|---|---|---|---|
 | `query` | string | yes | — | 生クエリ |
+| `context` | string | no | `""` | AI の判断材料となる自由記述（例: 論文タイトル）。空欄可 |
 | `top_k` | int | no | `10` | RCS 返却候補数 1–20 |
 | `dhba_filter` | string | no | `both` | 現行どおり |
 | `use_ai_preprocess` | bool | no | `true` | preprocess LLM の ON/OFF |
@@ -59,6 +60,7 @@ flowchart LR
 
 ### 目的
 クエリから解剖学的 ROI の本質以外を除き、RCS 入力を短く・ノイズ少なくする。
+任意の `context` は曖昧性解消のヒントとしてのみ使う（roi_query はあくまで query 由来）。
 
 ### 除去対象
 - laterality: left / right / bilateral / ipsilateral / contralateral 等
@@ -100,6 +102,9 @@ You clean mammalian brain-region search queries for RCS (ROSETTA Candidate Searc
 Task: given one raw query string, return the anatomical ROI essence only.
 Remove non-essential tokens; do NOT invent a new region name that was not implied by the query.
 
+An optional free-text "context" (e.g. paper title) may accompany the query. Use it only as a
+disambiguation hint; the roi_query must still come from the query itself.
+
 REMOVE (list each in "removed"):
 - laterality: left, right, bilateral, ipsilateral, contralateral, ipsi, contra, etc.
 - gene / molecular markers / driver lines: e.g. Drd1, Ppp1r1b, SST, vGluT2, Thy1, Cre lines
@@ -132,6 +137,7 @@ Schema:
 
 ```
 query=<raw query>
+context=<optional free text>
 ```
 
 ---
@@ -150,6 +156,7 @@ query=<raw query>
 
 ### 入力
 - 原文 `query`
+- 任意 `context`
 - preprocess 結果（`roi_query`, `removed`）
 - RCS 候補最大 10（id / name / acronym / score）
 
@@ -181,9 +188,13 @@ You adjudicate RCS (ROSETTA Candidate Search) candidates for mammalian brain reg
 
 You are given:
 - raw_query: original user string
+- context: optional free text (e.g. paper title) to disambiguate the intended region
 - roi_query: optional cleaned ROI used for search (may equal raw_query)
 - removed: optional list of tokens stripped in preprocess
 - candidates: up to 10 HOMBA rows from RCS (id|acronym|name|score), best-first
+
+Use context only to resolve ambiguity (e.g. which sense of an abbreviation). Do not let context
+override the query's own region.
 
 Task:
 Return 0 to 4 acceptable candidates from the list (hard max 4).
@@ -222,6 +233,7 @@ Schema:
 
 ```
 raw_query=<...>
+context=<optional free text>
 roi_query=<...>
 removed=<json array or empty>
 candidates:

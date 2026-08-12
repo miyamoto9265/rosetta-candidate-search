@@ -36,6 +36,9 @@ PREPROCESS_SYSTEM = """You clean mammalian brain-region search queries for RCS (
 Task: given one raw query string, return the anatomical ROI essence only.
 Remove non-essential tokens; do NOT invent a new region name that was not implied by the query.
 
+An optional free-text "context" (e.g. paper title) may accompany the query. Use it only as a
+disambiguation hint; the roi_query must still come from the query itself.
+
 REMOVE (list each in "removed"):
 - laterality: left, right, bilateral, ipsilateral, contralateral, ipsi, contra, etc.
 - gene / molecular markers / driver lines: e.g. Drd1, Ppp1r1b, SST, vGluT2, Thy1, Cre lines
@@ -67,9 +70,13 @@ POSTPROCESS_SYSTEM = """You adjudicate RCS (ROSETTA Candidate Search) candidates
 
 You are given:
 - raw_query: original user string
+- context: optional free text (e.g. paper title) to disambiguate the intended region
 - roi_query: optional cleaned ROI used for search (may equal raw_query)
 - removed: optional list of tokens stripped in preprocess
 - candidates: up to 10 HOMBA rows from RCS (id|acronym|name|score), best-first
+
+Use context only to resolve ambiguity (e.g. which sense of an abbreviation). Do not let context
+override the query's own region.
 
 Task:
 Return 0 to 4 acceptable candidates from the list (hard max 4).
@@ -199,13 +206,16 @@ def _norm_removed(items: Any) -> list[dict[str, str]]:
     return out
 
 
-def preprocess(query: str) -> dict[str, Any]:
+def preprocess(query: str, context: str = "") -> dict[str, Any]:
     """Return {roi_query, removed, reason, error}. On failure error is set and
     roi_query falls back to the original query."""
     if not query.strip():
         return {"roi_query": query, "removed": [], "reason": "", "error": "empty_query"}
+    user = f"query={query}"
+    if context.strip():
+        user += f"\ncontext={context.strip()}"
     try:
-        payload = _chat(PREPROCESS_SYSTEM, f"query={query}")
+        payload = _chat(PREPROCESS_SYSTEM, user)
         obj = _extract_json_obj(_content(payload))
         roi = str(obj.get("roi_query") or "").strip()
         if not roi:
@@ -249,6 +259,7 @@ def postprocess(
     roi_query: str,
     removed: list[dict[str, str]],
     candidates: list[dict[str, Any]],
+    context: str = "",
 ) -> dict[str, Any]:
     """Return {results: [...], error}. results 0..4, wrong omitted."""
     if not candidates:
@@ -263,6 +274,7 @@ def postprocess(
 
     lines = [
         f"raw_query={raw_query}",
+        f"context={context.strip()}",
         f"roi_query={roi_query}",
         f"removed={json.dumps(removed, ensure_ascii=False)}",
         "candidates:",
