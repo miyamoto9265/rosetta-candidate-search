@@ -273,6 +273,8 @@ candidates:
         "homba_id": "HOMBA:10339",
         "name": "nucleus accumbens",
         "acronym": "NAC",
+        "dhba_name": "",
+        "dhba_acronym": "",
         "relation": "'=",
         "reason": "..."
       }

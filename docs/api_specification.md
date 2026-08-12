@@ -94,6 +94,8 @@ Content-Type: application/json
 | `homba_id` | string | 候補内の HOMBA ID |
 | `name` | string | 名称 |
 | `acronym` | string | 略語 |
+| `dhba_name` | string | DHBA 対応名称（候補から補完） |
+| `dhba_acronym` | string | DHBA 略語（候補から補完） |
 | `relation` | string | `'='`（一致）/ `<`（クエリのほうが小さい）/ `>`（クエリのほうが大きい） |
 | `reason` | string | 短い理由 |
 
