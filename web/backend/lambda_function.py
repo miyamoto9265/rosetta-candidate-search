@@ -11,6 +11,9 @@ Environment variables:
 - ABBREV_RULES_KEY: S3 key for homba_abbrev_rules.csv
 - GENERATOR_CACHE_PATH: Optional override for generator_cache.pkl
 - ALLOWED_ORIGIN: CORS origin, e.g. https://example.com or *
+- DEEPSEEK_API_KEY: enables AI preprocess/postprocess when set
+- AI_MODEL: LLM model id (default: deepseek-v4-flash)
+- AI_HTTP_TIMEOUT_SEC: per-LLM-call timeout seconds (default: 8)
 """
 
 from __future__ import annotations
@@ -34,7 +37,9 @@ from rcs.generator_cache import (  # noqa: E402
     default_csv_paths,
     load_generator_cache,
 )
-from rcs.rosetta_candidate_generator import RosettaCandidateGenerator  # noqa: E402
+from rcs.rosetta_candidate_generator import ENGINE_VERSION, RosettaCandidateGenerator  # noqa: E402
+
+import ai_pipeline  # noqa: E402
 
 logger = logging.getLogger(__name__)
 if not logger.handlers:
@@ -132,6 +137,15 @@ def get_generator() -> RosettaCandidateGenerator:
     return GENERATOR
 
 
+def _bool(payload: dict, key: str, default: bool) -> bool:
+    v = payload.get(key, default)
+    if isinstance(v, bool):
+        return v
+    if isinstance(v, str):
+        return v.strip().lower() not in ("false", "0", "no", "off")
+    return bool(v)
+
+
 def lambda_handler(event, context):
     if event.get("requestContext", {}).get("http", {}).get("method") == "OPTIONS":
         return response(200, {"ok": True})
@@ -139,19 +153,61 @@ def lambda_handler(event, context):
     try:
         payload = json.loads(event.get("body") or "{}")
         query = str(payload.get("query", "")).strip()
-        top_k = int(payload.get("top_k", 5))
+        top_k = int(payload.get("top_k", 10))
         top_k = max(1, min(top_k, 20))
         dhba_filter = str(payload.get("dhba_filter", "both")).strip().lower()
         if dhba_filter not in ("both", "with", "without"):
             dhba_filter = "both"
+        use_ai_preprocess = _bool(payload, "use_ai_preprocess", True)
+        use_ai_postprocess = _bool(payload, "use_ai_postprocess", True)
         if not query:
             return response(400, {"error": "query is required"})
 
-        candidates = get_generator().generate(query, top_k=top_k, dhba_filter=dhba_filter)
+        ai_ok = ai_pipeline.ai_available()
+        ai_model_used: str | None = None
+        ai_model_env = os.environ.get("AI_MODEL") or ai_pipeline.DEFAULT_MODEL
 
-        return response(
-            200,
-            {"query": query, "top_k": top_k, "dhba_filter": dhba_filter, "candidates": candidates},
+        body: dict[str, object] = {
+            "query": query,
+            "top_k": top_k,
+            "dhba_filter": dhba_filter,
+            "use_ai_preprocess": use_ai_preprocess,
+            "use_ai_postprocess": use_ai_postprocess,
+            "meta": {"rcs_version": ENGINE_VERSION, "ai_model": None},
+        }
+
+        # --- preprocess ---
+        search_query = query
+        removed: list[dict[str, str]] = []
+        if use_ai_preprocess and ai_ok:
+            pre = ai_pipeline.preprocess(query)
+            ai_model_used = ai_model_used or ai_model_env
+            body["preprocess"] = {
+                "roi_query": pre["roi_query"],
+                "removed": pre["removed"],
+                "reason": pre["reason"],
+                "error": pre["error"],
+            }
+            if not pre["error"]:
+                search_query = pre["roi_query"]
+                removed = pre["removed"]
+
+        # --- RCS ---
+        internal_k = max(top_k, 10) if (use_ai_postprocess and ai_ok) else top_k
+        candidates = get_generator().generate(
+            search_query, top_k=internal_k, dhba_filter=dhba_filter
         )
+        body["candidates"] = candidates[:top_k]
+
+        # --- postprocess ---
+        if use_ai_postprocess and ai_ok:
+            post = ai_pipeline.postprocess(query, search_query, removed, candidates)
+            ai_model_used = ai_model_used or ai_model_env
+            body["ai"] = {"results": post["results"], "error": post["error"]}
+
+        if ai_model_used:
+            body["meta"]["ai_model"] = ai_model_used  # type: ignore[index]
+
+        return response(200, body)
     except Exception as exc:
         return response(500, {"error": str(exc)})
