@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>non-neocortex 改善プロセス方針 — 260802</title>
+  <style>
+    :root {
+      --bg:#f4f6f9; --panel:#fff; --text:#1a2332; --muted:#667085; --line:#d8dee8;
+      --ok:#0b7a4b; --parent:#2f6fed; --warn:#b7791f; --bad:#b42318; --issue:#7a3fb4; --unknown:#475467;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif; background:var(--bg); color:var(--text); }
+    header { padding:28px 32px 20px; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%); color:#fff; }
+    header h1 { margin:0 0 8px; font-size:24px; }
+    header p { margin:0; color:#cbd5e1; max-width:1000px; line-height:1.65; font-size:14px; }
+    main { padding:22px 32px 56px; max-width:1400px; margin:0 auto; }
+    section { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:0 0 16px; }
+    h2 { margin:0 0 12px; font-size:18px; }
+    h3 { margin:16px 0 8px; font-size:14px; color:var(--muted); }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(140px,1fr)); gap:10px; margin:12px 0 4px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fafbfd; }
+    .card-title { color:var(--muted); font-size:12px; }
+    .card-value { font-size:24px; font-weight:700; margin-top:2px; }
+    .card-sub { color:var(--muted); font-size:12px; margin-top:2px; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { border-bottom:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; font-size:13px; }
+    th { background:#f2f4f7; font-size:12px; }
+    .num { text-align:right; font-variant-numeric:tabular-nums; }
+    .note { color:var(--muted); line-height:1.6; font-size:13px; }
+    code { background:#eef2f6; border-radius:4px; padding:1px 5px; font-size:12px; }
+    .pill { display:inline-block; padding:2px 8px; border-radius:999px; color:#fff; font-size:11px; font-weight:600; }
+    .pill.ok { background:var(--ok); } .pill.parent { background:var(--parent); } .pill.warn { background:var(--warn); }
+    .pill.bad { background:var(--bad); } .pill.issue { background:var(--issue); } .pill.unknown { background:var(--unknown); }
+    ol.tight li { margin:6px 0; line-height:1.6; }
+    .flow { background:#0f172a; color:#e2e8f0; border-radius:10px; padding:14px 16px; font-family:ui-monospace,Consolas,monospace; font-size:12.5px; line-height:1.7; overflow:auto; }
+    .kbd { background:#eef2f6; border-radius:4px; padding:0 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>non-neocortex — Agent自律改善プロセス方針</h1>
+    <p>
+      精査済み non_neocortex suitable（abbrev 2,368 / fullname 1,090）の baseline 検証結果から、
+      「テスト→問題分析→修正→再テスト」を回すための実データ観察と方針です。
+    </p>
+  </header>
+  <main>
+    <section>
+      <h2>1. 実データで見えた構造</h2>
+      <div class="cards">
+        <div class="card"><div class="card-title">総クエリ</div><div class="card-value">3458</div>
+          <div class="card-sub">abbrev 2368 / fullname 1090</div></div>
+        <div class="card"><div class="card-title">RCS マッチ</div><div class="card-value">2795</div>
+          <div class="card-sub">no_match 663</div></div>
+        <div class="card"><div class="card-title">マッチ中 aligned</div><div class="card-value">1139</div>
+          <div class="card-sub">40.8%</div></div>
+        <div class="card"><div class="card-title">wrong（全体）</div><div class="card-value">692</div>
+          <div class="card-sub">abbrev 476 / fullname 216</div></div>
+      </div>
+      <ol class="tight">
+        <li><b>略語の no_match が主問題。</b> abbrev の RCS 無マッチ <b>656</b> 件。
+            同一構造の fullname はヒットしているのに abbrev が落ちるケースが <b>476</b> 件
+            （うち fullname が aligned なのは 137）。→ <b>略語テーブル／略語展開の未網羅</b> が最大の欠陥。</li>
+        <li><b>略語の誤ヒットは高スコア混在。</b> abbrev wrong 476 件の多くは fuzzy/bm25 由来で、
+            <code>VP</code>→ventral posterior visual area（正: ventral pallidum）、<code>DMS</code>→dorsal migratory stream（正: dorsomedial striatum）
+            など、<b>同字面の別構造に吸われる</b>。高スコア（≥0.75）でも wrong が目立つ。</li>
+        <li><b>fullname は比較的健全だが「上位構造」判定が多い。</b> fullname aligned 419 / broader_parent 354。
+            これは RCS の階層親昇格ではなく、<b>LLM 判定ラベル</b>（top1 が解剖学的に親／広い）である。
+            親昇格（<code>_promote_common_parents</code>）は v0.8.0 で廃止済み。</li>
+        <li><b>判定の安定性は高い。</b> vote 3-0 が 2,542 件、high certainty 3,050 件。
+            3-pass（Flash 0731）の多数決は改善ループの「審判」として十分使える。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>2. 失敗ファミリ（abbrev wrong）</h2>
+      <table>
+        <thead><tr><th>family</th><th class="num">件数</th></tr></thead>
+        <tbody>
+          <tr><td>other</td><td class='num'>325</td></tr><tr><td>thalamus</td><td class='num'>78</td></tr><tr><td>striatum</td><td class='num'>26</td></tr><tr><td>spinal</td><td class='num'>21</td></tr><tr><td>brainstem</td><td class='num'>16</td></tr><tr><td>hippocampal</td><td class='num'>9</td></tr><tr><td>amygdala</td><td class='num'>1</td></tr>
+        </tbody>
+      </table>
+      <p class="note">other は文脈依存の短い略語（VP/DMS/DLS/CP/PP/PV 等）が中心。同字面の別構造に吸われる「略語衝突」が本質。</p>
+    </section>
+
+    <section>
+      <h2>3. 改善プロセス方針（LLM-based Recursive Improvement）</h2>
+      <p class="note">
+        <code>eval_harness.py</code> は判定キャッシュ（query→top1）を持つので、
+        <b>RCS が変わって top1 が変わった組だけ再判定</b>すればよい。3-pass は Flash 0731 のみで統一。
+      </p>
+      <div class="flow">
+Round 0  baseline（本レポート）… abbrev 改善余地が最大
+  │
+Round 1  略語辞書拡充（最優先）
+  │   ├─ abbrev no_match & fullname hit 476 件 → abbrev テーブル追加
+  │   └─ abbrev wrong 高スコア衝突 → abbrev→正式名の一意化ルール
+  │   期待: abbrev no_match 656 → 大幅減 / abbrev aligned ↑
+  │
+Round 2  誤ヒット抑制
+  │   ├─ 同字面衝突（VP/DMS/DLS/CP/PP/PV…）に種別・文脈制約
+  │   └─ fullname 一致時は abbrev を fullname 展開で再スコア
+  │   期待: wrong 692 ↓ / aligned 1,139 ↑
+  │
+Round 3  fullname 側の精度（親昇格は既に廃止済み）
+      ├─ broader_parent 354 = LLM が「top1 が親／広い」と判定した件数
+      │   （RCS が親を昇格させたわけではない）
+      ├─ alias / specificity / region-anchor で具体名を top1 に押し上げる
+      └─ partial_or_narrower 243 の化合物・部分構造の扱いを整理
+  </div>
+      <ol class="tight">
+        <li><b>評価指標</b>: aligned_rate（matched 中 aligned 割合）、abbrev_no_match、wrong_high_conf（score≥0.75 で wrong）を主 KPI。
+            broader_parent は「正しいが粗い」として aligned と別に追跡。</li>
+        <li><b>判定は固定</b>（Flash 0731 ×3、pro なし）。審判を変えないことで改善量を素直に比較する。</li>
+        <li><b>回帰ガード</b>: 既に aligned のペアが悪化しないよう、毎ラウンド差分レポート（improved/regressed）を必須化。</li>
+        <li><b>コスト制御</b>: 変化した query→top1 のみ再判定。fullname 側は安定なので abbrev 優先。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>4. Round 1 の対象例 — abbrev no_match &amp; fullname hit</h2>
+      <table><thead><tr><th>n_mentions</th><th>query</th><th>fullname</th></tr></thead><tbody><tr><td>134</td><td>LH</td><td>lateral hypothalamus</td></tr><tr><td>96</td><td>dLGN</td><td>dorsal lateral geniculate nucleus</td></tr><tr><td>94</td><td>TRN</td><td>thalamic reticular nucleus</td></tr><tr><td>90</td><td>LHb</td><td>lateral habenula</td></tr><tr><td>84</td><td>DCN</td><td>dorsal cochlear nucleus</td></tr><tr><td>84</td><td>LS</td><td>lateral septum</td></tr><tr><td>70</td><td>LHA</td><td>lateral hypothalamic area</td></tr><tr><td>68</td><td>VLPAG</td><td>ventrolateral periaqueductal gray</td></tr><tr><td>67</td><td>LGN</td><td>lateral geniculate nucleus</td></tr><tr><td>62</td><td>POm</td><td>posterior medial thalamus</td></tr><tr><td>62</td><td>vHPC</td><td>ventral hippocampus</td></tr><tr><td>56</td><td>Sub</td><td>subiculum</td></tr><tr><td>53</td><td>MGB</td><td>medial geniculate body</td></tr><tr><td>49</td><td>PBN</td><td>parabrachial nucleus</td></tr><tr><td>47</td><td>HDB</td><td>horizontal diagonal band</td></tr><tr><td>42</td><td>vCA1</td><td>ventral CA1</td></tr><tr><td>41</td><td>MVN</td><td>medial vestibular nucleus</td></tr><tr><td>38</td><td>CPu</td><td>caudate putamen</td></tr><tr><td>36</td><td>RVLM</td><td>rostral ventrolateral medulla</td></tr><tr><td>35</td><td>dCA3</td><td>dorsal CA3</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>5. Round 2 の対象例 — abbrev wrong（高スコア）</h2>
+      <table><thead><tr><th>n_mentions</th><th>query</th><th>top_name</th><th>score</th><th>pass1_reason</th></tr></thead><tbody><tr><td>118</td><td>VP</td><td>ventral posterior visual area (ventral third visual area, V3V)</td><td>1.0</td><td>VP abbreviation for ventral pallidum matched to visual area V3V; anatomically different.</td></tr><tr><td>102</td><td>DMS</td><td>dorsal migratory stream</td><td>1.0</td><td>DMS intended as dorsomedial striatum; top1 &#x27;dorsal migratory stream&#x27; is a different structure.</td></tr><tr><td>77</td><td>DLS</td><td>(dorso)lateral sulcus</td><td>1.0</td><td>DLS is dorsolateral striatum, but top1 is lateral sulcus, an anatomically different structure.</td></tr><tr><td>65</td><td>PPN</td><td>parietopontine fibers</td><td>1.0</td><td>PPN given as pedunculopontine nucleus, but top1 is parietopontine fibers, a different structure.</td></tr><tr><td>44</td><td>CN</td><td>cerebral nuclei</td><td>1.0</td><td>Query &#x27;CN&#x27; with fullname context &#x27;cerebellar nuclei&#x27;; top1 &#x27;cerebral nuclei&#x27; is a different structure, not an accepted synonym.</td></tr><tr><td>44</td><td>MEC</td><td>caudal medial nucleus</td><td>1.0</td><td>Query &#x27;MEC&#x27; with context &#x27;medial entorhinal cortex&#x27;; top1 &#x27;caudal medial nucleus&#x27; is a different structure, not a synonym.</td></tr><tr><td>30</td><td>Gr</td><td>gracile fasciculus</td><td>1.0</td><td>Gr abbreviation maps to gracile nucleus, but top1 gracile fasciculus is a fiber tract, not the nucleus.</td></tr><tr><td>28</td><td>Cd</td><td>central dorsal nucleus of thalamus</td><td>1.0</td><td>Query Cd with fullname caudate nucleus; top1 central dorsal nucleus of thalamus is a different structure.</td></tr><tr><td>28</td><td>PP</td><td>peripeduncular nucleus</td><td>1.0</td><td>Query PP expands to piriform cortex; top1 peripeduncular nucleus is a distinct structure, not a synonym or subdivision.</td></tr><tr><td>27</td><td>CP</td><td>cortical plate of neocortex</td><td>1.0</td><td>Query CP corresponds to caudate putamen; top1 cortical plate of neocortex is a different structure.</td></tr><tr><td>24</td><td>PV</td><td>paraventricular nucleus of hypothalamus</td><td>1.0</td><td>Context indicates PV refers to principal trigeminal nucleus, but top1 is paraventricular nucleus of hypothalamus, a different structure.</td></tr><tr><td>23</td><td>VN</td><td>vomeronasal nerve</td><td>1.0</td><td>Query VN with context vestibular nucleus; top1 vomeronasal nerve is a different structure, off-target.</td></tr><tr><td>20</td><td>ANT</td><td>angular nucleus of thalamus</td><td>1.0</td><td>ANT is anterior nucleus of thalamus; top1 angular nucleus of thalamus is a different nucleus.</td></tr><tr><td>20</td><td>TH</td><td>medial division of PHC (area TH)</td><td>1.0</td><td>TH here is used as abbreviation for thalamus, but top1 is parahippocampal area TH, a different structure.</td></tr><tr><td>18</td><td>ICc</td><td>caudal limb of internal capsule</td><td>1.0</td><td>ICc is central nucleus of inferior colliculus; top1 is caudal limb of internal capsule, a different structure.</td></tr><tr><td>15</td><td>PRh</td><td>prepositus hypoglossal nucleus</td><td>1.0</td><td>PRh is perirhinal cortex, not prepositus hypoglossal nucleus.</td></tr><tr><td>14</td><td>SON</td><td>superior olivary nucleus</td><td>1.0</td><td>SON is ambiguous; fullname context indicates supraoptic nucleus, but top1 is superior olivary nucleus, a different structure.</td></tr><tr><td>12</td><td>LSC</td><td>lateral spinal nucleus in cervical spinal cord</td><td>1.0</td><td>Top1 is lateral spinal nucleus (spinal cord); LSC here denotes lateral superior colliculus (midbrain), so the structure is off-lobe.</td></tr><tr><td>10</td><td>Acb</td><td>anterior lobe of cerebellar cortex</td><td>1.0</td><td>Acb is nucleus accumbens; top1 is anterior lobe of cerebellar cortex, anatomically unrelated.</td></tr><tr><td>10</td><td>CeM</td><td>central medial nucleus of thalamus</td><td>1.0</td><td>CeM in this record is medial division of central amygdaloid nucleus; top1 is central medial nucleus of thalamus, a different structure.</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>6. fullname 側の wrong（上位ヒット/別構造）</h2>
+      <table><thead><tr><th>n_mentions</th><th>query</th><th>top_name</th><th>score</th><th>pass1_reason</th></tr></thead><tbody><tr><td>170</td><td>paraventricular nucleus</td><td>paraventricular nucleus of thalamus</td><td>1.0</td><td>PVN context indicates hypothalamus, but top1 is paraventricular nucleus of thalamus.</td></tr><tr><td>27</td><td>arcuate nucleus</td><td>arcuate nucleus of medulla oblongata</td><td>0.786859</td><td>Arcuate nucleus has multiple referents (hypothalamus vs medulla); top1 selects medulla, so query alone is ambiguous.</td></tr><tr><td>20</td><td>anterior nucleus of the thalamus</td><td>rostral division of pulvinar</td><td>0.779723</td><td>Pulvinar is posterior thalamus; anterior nucleus of thalamus is a different thalamic nuclear region.</td></tr><tr><td>19</td><td>central amygdala lateral</td><td>lateral nucleus of amygdala</td><td>0.774127</td><td>Top1 is lateral nucleus of amygdala, a different structure from central amygdala lateral.</td></tr><tr><td>15</td><td>medial inferior pulvinar</td><td>medial division of pulvinar</td><td>0.860569</td><td>PIm/medial inferior pulvinar is part of inferior pulvinar; medial division of pulvinar is a different major subdivision.</td></tr><tr><td>7</td><td>rostral dorsal lateral geniculate nucleus</td><td>dorsal (rostral) division of medial geniculate nucleus</td><td>0.76821</td><td>Rostral DLG is visual geniculate; medial geniculate is auditory, off-structure.</td></tr><tr><td>6</td><td>posterior nucleus of the ventral tegmental area</td><td>ventral tegmental nucleus (of Gudden)</td><td>0.792678</td><td>Posterior nucleus of ventral tegmental area is not the ventral tegmental nucleus of Gudden; these are distinct structures.</td></tr><tr><td>5</td><td>magnocellular preoptic nucleus</td><td>red nucleus, magnocellular division</td><td>0.782981</td><td>Magnocellular preoptic nucleus is in basal forebrain; red nucleus is midbrain. Distinct structures.</td></tr><tr><td>4</td><td>Efferent Vestibular Nucleus</td><td>vestibular nuclei in pons</td><td>0.854167</td><td>Efferent vestibular nucleus is a separate efferent nucleus, not part of the vestibular nuclear complex in pons; top1 is anatomically different.</td></tr><tr><td>4</td><td>dorsal aspect of the anterior pretectal nucleus</td><td>dorsal (posterior/sublentiform) pretectal nucleus</td><td>0.783115</td><td>Dorsal aspect of anterior pretectal nucleus (APTD) is not the dorsal/posterior/sublentiform pretectal nucleus; different structure.</td></tr><tr><td>4</td><td>CART+ Edinger-Westphal nucleus</td><td>pre-Edinger-Westphal nucleus</td><td>0.767848</td><td>pre-Edinger-Westphal nucleus is a distinct structure, not synonymous with CART+ Edinger-Westphal nucleus.</td></tr><tr><td>3</td><td>right caudal medullary</td><td>caudal (posterior, inferior) medullary velum</td><td>0.935</td><td>Right caudal medullary refers to medulla region; top1 is the caudal medullary velum, a different cerebellar/ventricular structure, and lacks laterality.</td></tr><tr><td>3</td><td>substantia nigra pars reticulata dorsal</td><td>substantia nigra, compact division, dorsal subdivision</td><td>0.838466</td><td>Query is pars reticulata dorsal, but top1 is pars compacta dorsal subdivision, a different anatomical division.</td></tr><tr><td>3</td><td>lateral division of the lateral habenula nucleus</td><td>interstitial (dorsal) division of lateral habenular nucleus</td><td>0.806102</td><td>Interstitial dorsal division is a distinct habenular subdivision, not the lateral division queried.</td></tr><tr><td>3</td><td>anteroventral dorsomedial nucleus</td><td>dorsomedial part of pontine nucleus</td><td>0.785985</td><td>Query is anteroventral dorsomedial nucleus; top1 is a pontine nucleus subdivision, an anatomically different structure.</td></tr><tr><td>3</td><td>internal lateral nucleus</td><td>lateral nucleus of amygdala</td><td>0.769022</td><td>internal lateral nucleus (PBil) is a parabrachial subdivision; top1 lateral nucleus of amygdala is a different structure.</td></tr><tr><td>3</td><td>posterior medial amygdala nucleus</td><td>posterior (caudal) cortical nucleus of amygdala</td><td>0.760678</td><td>MeP is posterior medial amygdala nucleus; top1 is posterior cortical nucleus of amygdala, a different nucleus.</td></tr><tr><td>3</td><td>lateral subnucleus of mediodorsal thalamus</td><td>lateral dorsal nucleus of thalamus</td><td>0.75423</td><td>Lateral dorsal nucleus of thalamus is a distinct nucleus, not the lateral subnucleus of mediodorsal thalamus.</td></tr><tr><td>2</td><td>lateral nucleus of the central amygdala</td><td>lateral nucleus of amygdala</td><td>0.938221</td><td>Top1 &#x27;lateral nucleus of amygdala&#x27; is likely the lateral amygdaloid nucleus, not the lateral subdivision of central amygdala (CEAl).</td></tr><tr><td>2</td><td>dorsal inferior reticular nucleus</td><td>dorsal reticular nucleus</td><td>0.906614</td><td>Dorsal reticular nucleus is a distinct nucleus from dorsal inferior reticular nucleus; missing &#x27;inferior&#x27; changes the anatomical entity.</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>7. abbrev wrong &amp; fullname aligned（略語だけが外れる）</h2>
+      <table><thead><tr><th>n_mentions</th><th>query</th><th>top_name</th><th>score</th><th>pass1_reason</th></tr></thead><tbody><tr><td>118</td><td>VP</td><td>ventral posterior visual area (ventral third visual area, V3V)</td><td>1.0</td><td>VP abbreviation for ventral pallidum matched to visual area V3V; anatomically different.</td></tr><tr><td>65</td><td>PPN</td><td>parietopontine fibers</td><td>1.0</td><td>PPN given as pedunculopontine nucleus, but top1 is parietopontine fibers, a different structure.</td></tr><tr><td>44</td><td>CN</td><td>cerebral nuclei</td><td>1.0</td><td>Query &#x27;CN&#x27; with fullname context &#x27;cerebellar nuclei&#x27;; top1 &#x27;cerebral nuclei&#x27; is a different structure, not an accepted synonym.</td></tr><tr><td>44</td><td>MEC</td><td>caudal medial nucleus</td><td>1.0</td><td>Query &#x27;MEC&#x27; with context &#x27;medial entorhinal cortex&#x27;; top1 &#x27;caudal medial nucleus&#x27; is a different structure, not a synonym.</td></tr><tr><td>43</td><td>preBötC</td><td>tuber cinereum</td><td>0.307108</td><td>Top1 is tuber cinereum, a hypothalamic structure, unrelated to the pre-Bötzinger complex.</td></tr><tr><td>30</td><td>Gr</td><td>gracile fasciculus</td><td>1.0</td><td>Gr abbreviation maps to gracile nucleus, but top1 gracile fasciculus is a fiber tract, not the nucleus.</td></tr><tr><td>28</td><td>Cd</td><td>central dorsal nucleus of thalamus</td><td>1.0</td><td>Query Cd with fullname caudate nucleus; top1 central dorsal nucleus of thalamus is a different structure.</td></tr><tr><td>28</td><td>PP</td><td>peripeduncular nucleus</td><td>1.0</td><td>Query PP expands to piriform cortex; top1 peripeduncular nucleus is a distinct structure, not a synonym or subdivision.</td></tr><tr><td>24</td><td>PV</td><td>paraventricular nucleus of hypothalamus</td><td>1.0</td><td>Context indicates PV refers to principal trigeminal nucleus, but top1 is paraventricular nucleus of hypothalamus, a different structure.</td></tr><tr><td>20</td><td>TH</td><td>medial division of PHC (area TH)</td><td>1.0</td><td>TH here is used as abbreviation for thalamus, but top1 is parahippocampal area TH, a different structure.</td></tr><tr><td>18</td><td>ICc</td><td>caudal limb of internal capsule</td><td>1.0</td><td>ICc is central nucleus of inferior colliculus; top1 is caudal limb of internal capsule, a different structure.</td></tr><tr><td>16</td><td>EP</td><td>ependyma of spinal cord</td><td>0.315135</td><td>EP in context is entopeduncular nucleus; ependyma of spinal cord is an unrelated structure.</td></tr><tr><td>14</td><td>SON</td><td>superior olivary nucleus</td><td>1.0</td><td>SON is ambiguous; fullname context indicates supraoptic nucleus, but top1 is superior olivary nucleus, a different structure.</td></tr><tr><td>11</td><td>NOT</td><td>general lamination of spinal cord (for users who do not know specific spinal segments)</td><td>0.175921</td><td>Query NOT is abbreviation for nucleus of optic tract; top1 is spinal cord lamination, unrelated.</td></tr><tr><td>11</td><td>VII</td><td>lobule VII (folium and tuber)</td><td>0.298159</td><td>Top1 is lobule VII of cerebellum, not facial nucleus (cranial nerve VII).</td></tr><tr><td>10</td><td>MR</td><td>marginal ramus of cingulate sulcus</td><td>1.0</td><td>MR in context is brainstem median raphe; top1 is marginal ramus of cingulate sulcus, different structure.</td></tr><tr><td>10</td><td>SpV</td><td>vein system of spinal cord</td><td>1.0</td><td>SpV should be spinal trigeminal nucleus; top1 is vein system of spinal cord, unrelated vascular structure.</td></tr><tr><td>9</td><td>AHA</td><td>amygdalohippocampal area</td><td>1.0</td><td>AHA intended as anterior hypothalamic area per context, but top1 is amygdalohippocampal area, a distinct region.</td></tr><tr><td>9</td><td>AP</td><td>ansa peduncularis</td><td>1.0</td><td>AP in context is area postrema, but top1 ansa peduncularis is a different structure.</td></tr><tr><td>8</td><td>ME</td><td>medial nuclear complex of amygdala</td><td>1.0</td><td>ME is median eminence per context; top1 is medial nuclear complex of amygdala, anatomically different structure.</td></tr></tbody></table>
+    </section>
+
+    <section>
+      <h2>8. まとめ</h2>
+      <ol class="tight">
+        <li>最大の改善対象は <b>abbrev の no_match 656 件</b>（うち fullname はヒットする 476 件）。略語テーブル拡充が効く。</li>
+        <li>次点は <b>abbrev wrong の高スコア衝突</b>。同字面の別構造への誤マッチを、fullname 文脈と種別制約で絞る。</li>
+        <li>判定は Flash 0731 ×3 で固定。キャッシュ再利用で安く再テストし、<code>generate_report.py</code> で各ラウンドを同じUIで比較する。</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

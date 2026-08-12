@@ -23,7 +23,7 @@ cea,central nucleus of amygdala,CeA = central amygdala
 pvn,paraventricular nucleus of hypothalamus,PVN = hypothalamic paraventricular nucleus (more common usage than thalamic PVN)
 pvnh,paraventricular nucleus of hypothalamus,PVNh alternate form
 scn,suprachiasmatic nucleus,SCN = suprachiasmatic nucleus
-arc,arcuate nucleus,ARC = arcuate nucleus of hypothalamus (disambiguation: 3-char safe)
+arc,arcuate nucleus of hypothalamus,ARC = arcuate nucleus of hypothalamus (prefer ArH over medullary arcuate)
 drn,dorsal raphe nucleus,DRN = dorsal raphe nucleus
 mnr,median raphe nucleus,MnR = median raphe nucleus
 dg,dentate gyrus,DG = dentate gyrus (2-char: full-query)
@@ -42,3 +42,527 @@ cm,centromedian nucleus of thalamus,CM = centromedian nucleus
 cmpf,centromedian nucleus of thalamus,CM-Pf complex abbreviation
 fst,temporoparietal area containing area FST,FST = fundal superior temporal / temporoparietal FST
 stgg,superior temporal gyrus,STGg macaque superior temporal gyrus parcel
+dLGN,dorsal lateral geniculate nucleus,corpus: no_match; fullname aligned
+TRN,thalamic reticular nucleus,corpus: no_match; fullname aligned
+LHb,lateral habenula,corpus: no_match; fullname aligned
+DCN,dorsal cochlear nucleus,corpus: no_match; fullname aligned
+LS,lateral septum,corpus: no_match; fullname aligned
+VLPAG,ventrolateral periaqueductal gray,corpus: no_match; fullname aligned
+LGN,lateral geniculate nucleus,corpus: no_match; fullname aligned
+POm,posterior medial thalamus,corpus: no_match; fullname broader_parent
+vHPC,ventral hippocampus,corpus: no_match; fullname broader_parent
+Sub,subiculum,corpus: no_match; fullname aligned
+MGB,medial geniculate body,corpus: no_match; fullname aligned
+HDB,horizontal diagonal band,corpus: no_match; fullname aligned
+vCA1,ventral CA1,corpus: no_match; fullname aligned
+MVN,medial vestibular nucleus,corpus: no_match; fullname aligned
+RVLM,rostral ventrolateral medulla,corpus: no_match; fullname broader_parent
+dCA3,dorsal CA3,corpus: no_match; fullname broader_parent
+aPVT,anterior paraventricular thalamus,corpus: no_match; fullname broader_parent
+VLM,ventrolateral medulla,corpus: no_match; fullname broader_parent
+vSUB,ventral subiculum,corpus: no_match; fullname broader_parent
+DMV,dorsal motor nucleus of the vagus,corpus: no_match; fullname aligned
+ATN,anterior thalamic nucleus,corpus: no_match; fullname aligned
+DN,dentate nucleus,corpus: no_match; fullname aligned
+RVM,rostral ventromedial medulla,corpus: no_match; fullname broader_parent
+dCA1,dorsal CA1,corpus: no_match; fullname broader_parent
+MeA,medial amygdala,corpus: no_match; fullname aligned
+NBM,nucleus basalis of Meynert,corpus: no_match; fullname aligned
+AVPV,anteroventral periventricular nucleus,corpus: no_match; fullname aligned
+LPAG,lateral periaqueductal gray,corpus: no_match; fullname aligned
+MGv,ventral medial geniculate nucleus,corpus: no_match; fullname aligned
+DCIC,dorsal central inferior colliculus,corpus: no_match; fullname aligned
+BA,basal amygdala,corpus: no_match; fullname aligned
+GPePV,globus pallidus external segment parvicellular,corpus: no_match; fullname broader_parent
+MGN,medial geniculate nucleus,corpus: no_match; fullname aligned
+VB,ventrobasal thalamus,corpus: no_match; fullname broader_parent
+dPAG,dorsal periaqueductal gray matter,corpus: no_match; fullname broader_parent
+LPO,lateral preoptic area,corpus: no_match; fullname aligned
+MNTB,medial nucleus of the trapezoid body,corpus: no_match; fullname aligned
+SDH,spinal dorsal horn,corpus: no_match; fullname aligned
+VCN,ventral cochlear nucleus,corpus: no_match; fullname aligned
+MDN,mediodorsal nucleus,corpus: no_match; fullname aligned
+MPOA,medial preoptic area,corpus: no_match; fullname aligned
+BMA,basomedial amygdala,corpus: no_match; fullname aligned
+cNTS,caudal nucleus of the solitary tract,corpus: no_match; fullname broader_parent
+FN,fastigial nucleus,corpus: no_match; fullname aligned
+ALS,anterior lobe segment,corpus: no_match; fullname broader_parent
+dHPC,dorsal hippocampus,corpus: no_match; fullname broader_parent
+Gi,gigantocellular reticular nucleus,corpus: no_match; fullname aligned
+IPN,interpeduncular nucleus,corpus: no_match; fullname aligned
+LDT,laterodorsal tegmental nucleus,corpus: no_match; fullname aligned
+MGd,dorsal medial geniculate nucleus,corpus: no_match; fullname aligned
+AVCN,anterior ventral cochlear nucleus,corpus: no_match; fullname broader_parent
+BPN,basilar pontine nuclei,corpus: no_match; fullname aligned
+LCN,lateral cerebellar nucleus,corpus: no_match; fullname aligned
+PrSd,postrhinal dorsal,corpus: no_match; fullname broader_parent
+RTN,retrotrapezoid nucleus,corpus: no_match; fullname aligned
+ECT,ectorhinal cortex,corpus: no_match; fullname aligned
+POA,preoptic area,corpus: no_match; fullname aligned
+PPTg,pedunculopontine tegmentum,corpus: no_match; fullname broader_parent
+pPVT,posterior paraventricular thalamus,corpus: no_match; fullname broader_parent
+TS,tail of the striatum,corpus: no_match; fullname broader_parent
+Med,medulla,corpus: no_match; fullname aligned
+nAmb,nucleus ambiguus,corpus: no_match; fullname aligned
+POR,postrhinal area,corpus: no_match; fullname aligned
+TMN,tuberomammillary nucleus,corpus: no_match; fullname aligned
+vDG,ventral dentate gyrus,corpus: no_match; fullname aligned
+cBNST,caudal bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+eCb,early cerebellum,corpus: no_match; fullname broader_parent
+MGBv,ventral division of the medial geniculate body,corpus: no_match; fullname aligned
+NRe,nucleus reuniens,corpus: no_match; fullname aligned
+NRTP,nucleus retrorubral tegmenti pedunculopontini,corpus: no_match; fullname aligned
+PVCN,posterior ventral cochlear nucleus,corpus: no_match; fullname broader_parent
+TLCv,ventral nucleus of the lateral lemniscus,corpus: no_match; fullname aligned
+VNTB,ventral nucleus of the trapezoid body,corpus: no_match; fullname aligned
+APC,anterior piriform cortex,corpus: no_match; fullname broader_parent
+CVLM,caudal ventrolateral medulla,corpus: no_match; fullname broader_parent
+DMN,dorsal motor nucleus,corpus: no_match; fullname aligned
+iCb,intermediate cerebellum,corpus: no_match; fullname broader_parent
+MRN,midbrain reticular nucleus,corpus: no_match; fullname broader_parent
+Vme,trigeminal mesencephalic nucleus,corpus: no_match; fullname aligned
+Ce,central nucleus,corpus: no_match; fullname aligned
+LPMR,mediorostral part of the lateral posterior thalamic nucleus,corpus: no_match; fullname broader_parent
+MHb,medial habenula,corpus: no_match; fullname aligned
+PrSv,postrhinal ventral,corpus: no_match; fullname broader_parent
+SNpl,substantia nigra pars lateralis,corpus: no_match; fullname broader_parent
+cMRF,caudal mesencephalic reticular formation,corpus: no_match; fullname broader_parent
+KFn,Kölliker-Fuse nucleus,corpus: no_match; fullname aligned
+LRN,lateral reticular nucleus,corpus: no_match; fullname aligned
+PSTN,parasubthalamic nucleus,corpus: no_match; fullname aligned
+SVNsp,subnucleus pars spinalis of the solitary nucleus,corpus: no_match; fullname broader_parent
+ADS,anterior dorsal striatum,corpus: no_match; fullname broader_parent
+aTRN,auditory thalamic reticular nucleus,corpus: no_match; fullname broader_parent
+BLC,basolateral amygdala complex,corpus: no_match; fullname aligned
+cCA1,caudal CA1,corpus: no_match; fullname aligned
+dSUB,dorsal subiculum,corpus: no_match; fullname broader_parent
+ECin,superficial entorhinal cortex,corpus: no_match; fullname broader_parent
+F1R,rostral fastigial nucleus,corpus: no_match; fullname broader_parent
+LMVN,left medial vestibular nucleus,corpus: no_match; fullname broader_parent
+LOC,lateral olivocochlear,corpus: no_match; fullname broader_parent
+nRT,nucleus reticularis thalami,corpus: no_match; fullname aligned
+OPC,oval paracentral nucleus,corpus: no_match; fullname broader_parent
+PMT,pedunculopontine tegmental nucleus,corpus: no_match; fullname aligned
+VENT,ventral group of the dorsal thalamus,corpus: no_match; fullname broader_parent
+VLG,ventral lateral geniculate,corpus: no_match; fullname aligned
+VLS,ventrolateral striatum,corpus: no_match; fullname broader_parent
+aNB,anterior nucleus basalis,corpus: no_match; fullname broader_parent
+cSpC,cervical spinal cord,corpus: no_match; fullname aligned
+cStr,central caudate striatum,corpus: no_match; fullname broader_parent
+dBNST,dorsal bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+dmPAG,dorsomedial periaqueductal gray,corpus: no_match; fullname aligned
+ECIC,external inferior colliculus,corpus: no_match; fullname aligned
+LGv,ventral lateral geniculate nucleus,corpus: no_match; fullname aligned
+MGm,medial medial geniculate body,corpus: no_match; fullname broader_parent
+mNTS,medial nucleus of the solitary tract,corpus: no_match; fullname aligned
+MPTA,medial pontine tegmentum area,corpus: no_match; fullname broader_parent
+MSC,medial septal complex,corpus: no_match; fullname broader_parent
+PoRh,postrhinal cortex,corpus: no_match; fullname aligned
+PVA,paraventricular thalamic nucleus,corpus: no_match; fullname aligned
+SOv,superior olivary complex ventral,corpus: no_match; fullname broader_parent
+AcbC,core of nucleus accumbens,corpus: no_match; fullname aligned
+APul,anterior pulvinar,corpus: no_match; fullname aligned
+BAa,basolateral amygdala anterior,corpus: no_match; fullname broader_parent
+BAp,basolateral amygdala posterior,corpus: no_match; fullname broader_parent
+BSTDL,dorsolateral bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+C7,anterior horn of C7 (cervical spinal cord),corpus: no_match; fullname broader_parent
+cPAG,caudal part of the PAG,corpus: no_match; fullname broader_parent
+DCP,dorsal caudal putamen,corpus: no_match; fullname broader_parent
+dlPAG,dorsolateral periaqueductal gray,corpus: no_match; fullname aligned
+DMX,dorsal motor nucleus of the vagus nerve,corpus: no_match; fullname aligned
+HY,hypothalamus,corpus: no_match; fullname aligned
+iHC,intermediate hippocampus,corpus: no_match; fullname broader_parent
+iIPN,intermediate subnucleus of the interpeduncular nucleus,corpus: no_match; fullname aligned
+MePD,posterodorsal medial amygdala,corpus: no_match; fullname broader_parent
+mNAc,medial nucleus accumbens,corpus: no_match; fullname broader_parent
+PBcl,centrolateral nucleus,corpus: no_match; fullname aligned
+pDLS,Posterior dorsolateral striatum,corpus: no_match; fullname broader_parent
+PeFLH,perifornical area of the hypothalamus,corpus: no_match; fullname broader_parent
+rBLA,rostral basolateral amygdala,corpus: no_match; fullname broader_parent
+rCA2,right CA2,corpus: no_match; fullname broader_parent
+RM,retromammillary nucleus,corpus: no_match; fullname broader_parent
+rNST,rostral nucleus of the solitary tract,corpus: no_match; fullname broader_parent
+SubM,submedius thalamic nucleus,corpus: no_match; fullname aligned
+SVNc,subnucleus pars centralis of the solitary nucleus,corpus: no_match; fullname broader_parent
+vBNST,ventral bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+ACo,amygdaloid cortex,corpus: no_match; fullname broader_parent
+AH,anterior hypothalamus,corpus: no_match; fullname broader_parent
+ArcN,arcuate nucleus of the hypothalamus,corpus: no_match; fullname aligned
+cBLA,caudal basolateral amygdala,corpus: no_match; fullname broader_parent
+dDH,deep dorsal horn,corpus: no_match; fullname broader_parent
+DRP,dorsal rostral putamen,corpus: no_match; fullname broader_parent
+EA,extended amygdala,corpus: no_match; fullname aligned
+ECout,deep entorhinal cortex,corpus: no_match; fullname broader_parent
+ENTl,lateral entorhinal area,corpus: no_match; fullname aligned
+ENTm,medial entorhinal area,corpus: no_match; fullname aligned
+EPd,endopiriform nucleus dorsal part,corpus: no_match; fullname aligned
+NRM,nucleus raphe magnus,corpus: no_match; fullname aligned
+ObOc,accessory oculomotor nucleus,corpus: no_match; fullname aligned
+PetMR,Pet+ median raphe,corpus: no_match; fullname broader_parent
+PMCo,posteromedial amygdala cortex,corpus: no_match; fullname broader_parent
+rsCla,rostral-to-striatum claustrum,corpus: no_match; fullname broader_parent
+RVS,right ventral striatum,corpus: no_match; fullname broader_parent
+SSN,superior salivatory nucleus,corpus: no_match; fullname aligned
+sVo,trigeminal subnucleus pars oralis,corpus: no_match; fullname aligned
+TNC,trigeminal nucleus caudalis,corpus: no_match; fullname aligned
+tVTA,tail of the ventral tegmental area (rostromedial tegmental nucleus),corpus: no_match; fullname broader_parent
+vlVPM,ventral lateral ventral posterior medial thalamic nucleus,corpus: no_match; fullname broader_parent
+vMGB,ventral medial geniculate body of the thalamus,corpus: no_match; fullname aligned
+Vmo,trigeminal motor nucleus,corpus: no_match; fullname aligned
+VPLvm,ventromedial part of the ventral posterolateral nucleus,corpus: no_match; fullname broader_parent
+VTAR,rostral ventral tegmental area,corpus: no_match; fullname broader_parent
+aBLA,anterior basolateral amygdala,corpus: no_match; fullname broader_parent
+aBNST,anterior bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+ACBdm,dorsomedial nucleus accumbens,corpus: no_match; fullname broader_parent
+AONpP,anterior olfactory nucleus pars principalis,corpus: no_match; fullname broader_parent
+AOP,posterior complex of the anterior olfactory nucleus,corpus: no_match; fullname broader_parent
+aPBG,anterior parabigeminal nucleus,corpus: no_match; fullname broader_parent
+BMP,basomedial posterior amygdaloid nucleus,corpus: no_match; fullname broader_parent
+BSTp,posterior bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+CHp,caudate posterior,corpus: no_match; fullname aligned
+cSC,contralateral superior colliculus,corpus: no_match; fullname broader_parent
+DB,diagonal band of Broca,corpus: no_match; fullname aligned
+DEn,dorsal endopiriform nucleus,corpus: no_match; fullname aligned
+dlVP,dorsolateral ventral pallidum,corpus: no_match; fullname broader_parent
+dMHb,dorsal medial habenula,corpus: no_match; fullname aligned
+dPL,dorsal portion of lateral pulvinar,corpus: no_match; fullname broader_parent
+INLL,intermediate nucleus of the lateral lemniscus,corpus: no_match; fullname aligned
+iTh,ipsilesional thalamus,corpus: no_match; fullname aligned
+LDDM,dorsomedial part of laterodorsal thalamic nucleus,corpus: no_match; fullname broader_parent
+LGP,lateral globus pallidus,corpus: no_match; fullname broader_parent
+LPLR,lateral posterior thalamic nucleus (laterorostral),corpus: no_match; fullname broader_parent
+MBmot,motor-related midbrain,corpus: no_match; fullname broader_parent
+MOB,main olfactory bulb,corpus: no_match; fullname broader_parent
+mTh,motor thalamus,corpus: no_match; fullname broader_parent
+NAcCA,anterior nucleus accumbens core,corpus: no_match; fullname broader_parent
+NPC,nucleus of the posterior commissure,corpus: no_match; fullname aligned
+NPH,nucleus prepositus hypoglossi,corpus: no_match; fullname aligned
+OV,vascular organ of the lamina terminalis,corpus: no_match; fullname broader_parent
+pBLA,posterior basolateral amygdala,corpus: no_match; fullname broader_parent
+PeriV,peritrigeminal area,corpus: no_match; fullname aligned
+pPaHC,posterior parahippocampal gyrus,corpus: no_match; fullname aligned
+pPir,posterior piriform cortex,corpus: no_match; fullname broader_parent
+PRF,pontine reticular formation,corpus: no_match; fullname aligned
+PVp,posterior part of the paraventricular nucleus,corpus: no_match; fullname aligned
+rECIC,rostral external cortex of inferior colliculus,corpus: no_match; fullname broader_parent
+SCA,superior colliculus anterior,corpus: no_match; fullname broader_parent
+SRF,superior reticular formation,corpus: no_match; fullname broader_parent
+SVN,superior vestibular nucleus,corpus: no_match; fullname aligned
+vCA3,ventral CA3,corpus: no_match; fullname aligned
+VMPO,ventromedial preoptic,corpus: no_match; fullname broader_parent
+vPul,ventral pulvinar,corpus: no_match; fullname broader_parent
+ZIm,medial zona incerta,corpus: no_match; fullname broader_parent
+ABN,abducens nucleus,corpus: no_match; fullname aligned
+AHiPM,amygdalo-hippocampal transition area,corpus: no_match; fullname aligned
+AONpE,anterior olfactory nucleus pars externa,corpus: no_match; fullname broader_parent
+AudTRN,auditory sector of thalamic reticular nucleus,corpus: no_match; fullname broader_parent
+BMAp,posterior basomedial amygdala,corpus: no_match; fullname broader_parent
+BNSTp,principal region of bed nucleus of the stria terminalis,corpus: no_match; fullname broader_parent
+C6,cervical spinal cord segment 6,corpus: no_match; fullname broader_parent
+CA3d,CA3 dorsal,corpus: no_match; fullname broader_parent
+cDR,caudal dorsal raphe,corpus: no_match; fullname aligned
+cECIC,caudal external cortex of inferior colliculus,corpus: no_match; fullname broader_parent
+CGPn,pontine central gray pons,corpus: no_match; fullname aligned
+CHa,caudate head anterior,corpus: no_match; fullname broader_parent
+CHd,caudate head,corpus: no_match; fullname aligned
+cHPC,caudal hippocampus,corpus: no_match; fullname broader_parent
+CIp,central nucleus of the inferior pulvinar,corpus: no_match; fullname broader_parent
+cIPN,caudal interpeduncular nucleus,corpus: no_match; fullname aligned
+cLGN,contralateral lateral geniculate nucleus,corpus: no_match; fullname broader_parent
+CNU,cerebral nuclei,corpus: no_match; fullname aligned
+cOPN,contralateral olivary pretectal nucleus,corpus: no_match; fullname aligned
+cvPVH,caudal ventral paraventricular hypothalamus,corpus: no_match; fullname broader_parent
+dCA2,dorsal cornu ammonis area 2,corpus: no_match; fullname broader_parent
+dCA3a,distal CA3a,corpus: no_match; fullname broader_parent
+DNLL,dorsal nucleus of the lateral lemniscus,corpus: no_match; fullname aligned
+DTM,dorsal tuberomammillary,corpus: no_match; fullname broader_parent
+dTMN,dorsal tuberomammillary nucleus,corpus: no_match; fullname broader_parent
+DVN,dorsal vestibular nucleus,corpus: no_match; fullname broader_parent
+FL,flocculus,corpus: no_match; fullname aligned
+GENd,geniculate group of the dorsal thalamus,corpus: no_match; fullname broader_parent
+HPF,hippocampal formation,corpus: no_match; fullname aligned
+ICE,external cortex (inferior colliculus external),corpus: no_match; fullname aligned
+iLS,intermediate lateral septum,corpus: no_match; fullname aligned
+iNTS,intermediate nucleus of the tractus solitarius,corpus: no_match; fullname aligned
+iPIR,intermediate piriform cortex,corpus: no_match; fullname broader_parent
+LAp,lateral amygdala posterior,corpus: no_match; fullname broader_parent
+lFN,lateral subnucleus of facial nucleus,corpus: no_match; fullname aligned
+LHLEPR,lateral hypothalamus leptin receptor-expressing,corpus: no_match; fullname broader_parent
+lNAcc,lateral shell of nucleus accumbens,corpus: no_match; fullname broader_parent
+LPTN,lateral posterior thalamic nucleus,corpus: no_match; fullname aligned
+LRMR,mediorostral division of the lateral posterior thalamic nucleus,corpus: no_match; fullname broader_parent
+lwDR,lateral wings subdivision of the dorsal raphe nucleus,corpus: no_match; fullname aligned
+MBsen,midbrain sensory,corpus: no_match; fullname broader_parent
+MD1,mediodorsal thalamus subpopulation 1,corpus: no_match; fullname broader_parent
+MD2,mediodorsal thalamus subpopulation 2,corpus: no_match; fullname broader_parent
+mDStr,medial dorsal striatum,corpus: no_match; fullname broader_parent
+MDTH,medial-dorsal thalamus,corpus: no_match; fullname aligned
+MeApd,medial amygdala posterodorsal,corpus: no_match; fullname broader_parent
+MEAv,ventral medial amygdala,corpus: no_match; fullname broader_parent
+MePV,medial amygdala posteroventral,corpus: no_match; fullname broader_parent
+MGBd,dorsal division of the medial geniculate body,corpus: no_match; fullname aligned
+MMlat,medial mammillary nucleus lateral part,corpus: no_match; fullname aligned
+mOT,medial olfactory tubercle,corpus: no_match; fullname broader_parent
+mSNr,medial substantia nigra pars reticulata,corpus: no_match; fullname broader_parent
+mVTA,medial ventral tegmental area,corpus: no_match; fullname broader_parent
+nICP,interstitial nucleus of the posterior commissure,corpus: no_match; fullname aligned
+NVsnpr,main sensory nucleus,corpus: no_match; fullname broader_parent
+OG,olfactory glomerulus,corpus: no_match; fullname broader_parent
+PBdl,dorsolateral nucleus,corpus: no_match; fullname aligned
+PBNL,lateral parabrachial nuclei,corpus: no_match; fullname aligned
+PBNLE,lateral external parabrachial nucleus,corpus: no_match; fullname aligned
+PeRhr,rostral perirhinal cortex,corpus: no_match; fullname broader_parent
+Peri5,peritrigeminal premotor area,corpus: no_match; fullname broader_parent
+PFas,parafascicular nucleus of thalamus,corpus: no_match; fullname aligned
+PfT,parafascicular thalamus,corpus: no_match; fullname aligned
+pPBG,posterior parabigeminal nucleus,corpus: no_match; fullname broader_parent
+PVHpv,periventricular part of the paraventricular nucleus of hypothalamus,corpus: no_match; fullname broader_parent
+pvMeA,posteroventral medial amygdala,corpus: no_match; fullname broader_parent
+PVNd,descending PVN,corpus: no_match; fullname broader_parent
+rEPN,rostral entopeduncular nucleus,corpus: no_match; fullname broader_parent
+rTRN,rostral thalamic reticular nucleus,corpus: no_match; fullname broader_parent
+SD1,striatal D1 nucleus,corpus: no_match; fullname broader_parent
+SD2,striatal D2 nucleus,corpus: no_match; fullname broader_parent
+SLM,stratum lacunosum-moleculare,corpus: no_match; fullname aligned
+SLS,spinal lumbar segment,corpus: no_match; fullname broader_parent
+sSpC,sacral spinal cord,corpus: no_match; fullname aligned
+StA,strial part of the preoptic area,corpus: no_match; fullname broader_parent
+Subl,subincertal nucleus,corpus: no_match; fullname aligned
+TuLH,tuberal lateral hypothalamus,corpus: no_match; fullname aligned
+vBF,ventral basal forebrain,corpus: no_match; fullname broader_parent
+vCA2,ventral CA2,corpus: no_match; fullname aligned
+VHm,medial part of ventral horn,corpus: no_match; fullname broader_parent
+vlFN,ventrolateral fastigial nucleus,corpus: no_match; fullname broader_parent
+vTMN,ventral tuberomammillary nucleus,corpus: no_match; fullname aligned
+WT,whole thalamus,corpus: no_match; fullname aligned
+ZII,intermediate zona incerta,corpus: no_match; fullname broader_parent
+VP,ventral pallidum,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+CN,cerebellar nuclei,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+MEC,medial entorhinal cortex,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+Gr,gracile nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+Cd,caudate nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PP,piriform cortex,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PV,principal trigeminal nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+TH,thalamus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+ICc,central nucleus of the inferior colliculus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+EP,entopeduncular nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+SON,supraoptic nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+NOT,nucleus of the optic tract,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+VII,facial nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+MR,median raphe nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+SpV,spinal trigeminal nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+AHA,anterior hypothalamic area,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+AP,area postrema,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+ME,median eminence,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+III,oculomotor nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PTN,posterior thalamic nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+BG,basal ganglia,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+DL,dorsal lateral nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+IG,intermediate gray,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+LPN,lateral posterior nucleus of the thalamus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+OPT,olivary pretectal nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PHN,prepositus hypoglossi nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+SO,stratum oriens,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+BN,Barrington's nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+LSN,lateral spinal nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PTg,pontine tegmentum,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+Sol,solitary nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+CAL,Cerebellum Anterior Lobe,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+Hb,habenula,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+POST,postsubiculum,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+RPC,parvicellular part of the red nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+A6,A6 (locus coeruleus),"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+BLv,ventral subdivision of the basolateral nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+CA3v,CA3 ventral,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+Eth,ethmoid thalamic nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PON,pontine nuclei,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+PuM,medial pulvinar,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+SL,stratum lucidum,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+SpVc,caudalis division of spinal trigeminal nucleus,"corpus: abbrev wrong, fullname aligned (HOMBA acronym collision)"
+DMS,dorsomedial striatum,corpus: high-conf abbrev collision
+DLS,dorsolateral striatum,corpus: high-conf abbrev collision
+VN,vestibular nucleus,corpus: high-conf abbrev collision
+PRh,perirhinal cortex,corpus: high-conf abbrev collision
+LSC,lateral superior colliculus,corpus: high-conf abbrev collision
+CeM,medial division of central nucleus,corpus: high-conf abbrev collision
+VMS,ventromedial striatum,corpus: high-conf abbrev collision
+PRN,pontine reticular nuclei,corpus: high-conf abbrev collision
+PuC,pulvinar complex,corpus: high-conf abbrev collision
+SMT,sensorimotor thalamus,corpus: high-conf abbrev collision
+SuML,supramammillary nucleus medial lobe,corpus: high-conf abbrev collision
+LH,lateral hypothalamus,corpus: frequent abbrev no_match
+LHA,lateral hypothalamic area,corpus: frequent abbrev no_match
+PBN,parabrachial nucleus,corpus: frequent abbrev no_match
+CPu,caudate putamen,corpus: frequent abbrev no_match
+MS,medial septum,corpus: frequent abbrev no_match
+MDT,mediodorsal thalamus,corpus: frequent abbrev no_match
+RMTg,rostromedial tegmental nucleus,corpus: frequent abbrev no_match
+TSC,torus semicircularis pars centralis,corpus: frequent abbrev no_match
+LPBN,lateral parabrachial nucleus,corpus: frequent abbrev no_match
+DC,dorsal cochlear nucleus,corpus: frequent abbrev no_match
+SLD,sublaterodorsal nucleus,corpus: frequent abbrev no_match
+dSTR,dorsal striatum,corpus: frequent abbrev no_match
+NAcSh,nucleus accumbens shell,corpus: frequent abbrev no_match
+ENT,entorhinal cortex,corpus: frequent abbrev no_match
+PIm,medial inferior pulvinar,corpus: frequent abbrev no_match
+CP,dorsal striatum,round4: literature caudate putamen / CP vs cortical plate
+Acb,nucleus accumbens,round4: Acb vs anterior cerebellar cortex acronym
+ANT,anterior nuclear complex of thalamus,round4: anterior thalamus vs angular nucleus
+PAL,globus pallidus,round4: pallidum vs paralemniscal
+CUN,cuneiform nucleus,round4: CnF vs cuneus gyrus
+CS,dorsal striatum,round4: caudal/central striatum literature vs central sulcus
+PCx,piriform cortex,round4: piriform vs parietal cortex
+OP,olivary pretectal nucleus,round4: OPT vs occipital pole
+dSC,deep gray layer of superior colliculus,round4: deep SC vs dorsal spinocerebellar tract
+pTh,ventral thalamus,round4: prethalamus ~ ventral thalamus vs pallidothalamic tract
+SPA,subparaventricular zone,round4: SPZ vs spinal artery
+LAT,dentate (lateral) nucleus,round4: lateral CB nucleus vs lamina terminalis
+MCN,fastigial (medial) nucleus,round4: medial CB nuclei vs hypothalamic MCN
+PMN,ventral posterior medial nucleus of thalamus,round4: posterior medial thalamus
+DCS,dorsal striatum,round4: dorsal central striatum
+MdD,medullary reticular nucleus,round4: medullary reticular vs MD densocellular
+TeO,midbrain tectum,round4: tectal optic / midbrain tectum
+VeCb,cerebellum,round4: vestibulocerebellum broader parent
+A8,retrorubral field,round4: A8 dopamine group vs cortical area 8
+A7,A7 noradrenaline cell group,round4: A7 NA group vs cortical area 7
+Su3,supraoculomotor nucleus,round4: Su3 / supraoculomotor PAG family
+matrix,matrix of the striatum,round4: striatal matrix vs cerebellar VZ matrix
+CLN,caudal intralaminar nuclei of thalamus,round4: no_match fill
+vTRN,reticular nucleus of thalamus,round4: ventral TRN
+LCIC,lateral shell of inferior colliculus,round4: lateral IC
+PuI,pulvinar of thalamus,round4: inferior/intermediate pulvinar
+bVM,ventral medial nucleus of thalamus,round4: basal VM thalamus
+PORa,posterior parahippocampal region,round4: anterior POR
+PPT,pedunculopontine tegmental nucleus,round4: support PPTvGlut2 strip
+NAc-S,shell of nucleus accumbens,round4: NAc shell compound
+NAcS,shell of nucleus accumbens,round4: NAc shell alt
+Thal,thalamus,round5_nomatch: corpus/lit: Thal = thalamus
+tha,thalamus,round5_nomatch: corpus/lit: tha = thalamus
+THL,thalamus,round5_nomatch: corpus/lit: THL = thalamus
+rThal,thalamus,round5_nomatch: lit: rThal informal → thalamus parent
+MThal,thalamus,round5_nomatch: lit/corpus: medial thalamus → thalamus
+PreS,presubiculum,round5_nomatch: lit: PreS/PrS = presubiculum
+PeRh,perirhinal cortex,round5_nomatch: lit: PeRh/PRh = perirhinal cortex
+PeRhC,perirhinal cortex,round5_nomatch: corpus: caudal perirhinal → perirhinal
+iPER,perirhinal cortex,round5_nomatch: corpus: ipsilateral perirhinal
+vHipp,ventral hippocampus,round5_nomatch: lit: vHipp = ventral hippocampus
+vHIP,ventral hippocampus,round5_nomatch: lit: vHIP = ventral hippocampus
+vHC,ventral hippocampus,round5_nomatch: lit: vHC = ventral hippocampus
+vHP,ventral hippocampus,round5_nomatch: lit: vHP = ventral hippocampus
+VH,ventral hippocampus,round5_nomatch: lit/corpus: VH = ventral hippocampus
+dcHPC,dorsal hippocampus,round5_nomatch: lit: dcHPC = dorsal(-caudal) hippocampus
+dHIP,dorsal hippocampus,round5_nomatch: lit/corpus: dHIP = dorsal hippocampus
+dHipp,dorsal hippocampus,round5_nomatch: lit: dHipp = dorsal hippocampus
+HP,hippocampus,round5_nomatch: lit/corpus: HP = hippocampus
+HC,hippocampus,round5_nomatch: lit/corpus: HC = hippocampus
+PH,posterior hypothalamic nucleus,round5_nomatch: lit/corpus: PH = posterior hypothalamus
+PHb,posterior hypothalamic nucleus,round5_nomatch: corpus: posterior hypothalamus
+PHA,posterior hypothalamic nucleus,round5_nomatch: corpus: posterior hypothalamic area
+SOA,supraoculomotor nucleus,round5_nomatch: lit: SOA = supraoculomotor area/nucleus
+SNpc,substantia nigra compact division,round5_nomatch: lit/corpus: SNpc = SNc
+SNpr,substantia nigra reticular division,round5_nomatch: lit/corpus: SNpr = SNr
+PaF,parafascicular nucleus of thalamus,round5_nomatch: lit/corpus: PaF/Pf
+PfN,parafascicular nucleus of thalamus,round5_nomatch: corpus: PfN
+ARN,arcuate nucleus of hypothalamus,round5_nomatch: lit/corpus: ARN = arcuate (hypothalamic)
+DM,dorsomedial hypothalamic nucleus,round5_nomatch: lit/corpus: DM = dorsomedial hypothalamus
+VMN,ventromedial hypothalamic nucleus,round5_nomatch: lit/corpus: VMN = VMH
+VLPO,lateral preoptic area,round5_nomatch: lit: VLPO; HOMBA lacks VLPO node → LPA parent
+GRN,gracile nucleus,round5_nomatch: lit/corpus: GRN
+APN,anterior pretectal nucleus,round5_nomatch: lit/corpus: APN
+EPN,entopeduncular nucleus,round5_nomatch: lit/corpus: EPN
+Tu,olfactory tubercle,round5_nomatch: lit/corpus: Tu
+TUB,olfactory tubercle,round5_nomatch: lit/corpus: TUB
+vLGN,pregeniculate nucleus,round5_nomatch: lit/corpus: vLGN = ventral LGN / pregeniculate
+VNLL,ventral nucleus of lateral lemniscus,round5_nomatch: lit/corpus: VNLL
+LEnt,lateral (rostral) entorhinal cortex,round5_nomatch: lit/corpus: LEnt/LEC
+MEnt,medial (caudal) entorhinal cortex,round5_nomatch: lit: MEnt/MEC
+ECx,entorhinal cortex,round5_nomatch: lit: ECx
+AcbSh,shell of nucleus accumbens,round5_nomatch: lit/corpus: AcbSh
+NAcb,nucleus accumbens,round5_nomatch: lit: NAcb
+NAcbS,shell of nucleus accumbens,round5_nomatch: lit: NAcbS
+NAshell,shell of nucleus accumbens,round5_nomatch: lit: NAshell
+APir,piriform cortex,round5_nomatch: lit/corpus: APir = anterior piriform → piriform
+PirC,piriform cortex,round5_nomatch: lit: PirC
+MPO,medial preoptic nucleus,round5_nomatch: lit/corpus: MPO
+AMG,amygdaloid complex,round5_nomatch: lit/corpus: AMG
+Amyg,amygdaloid complex,round5_nomatch: lit: Amyg
+HYTH,hypothalamus,round5_nomatch: lit/corpus: HYTH
+Hypo,hypothalamus,round5_nomatch: lit: Hypo
+DH,spinal dorsal horn,round5_nomatch: lit/corpus: DH = dorsal horn
+ADn,anterodorsal nucleus of thalamus,round5_nomatch: lit: ADn/AD
+MDTN,mediodorsal nucleus of thalamus,round5_nomatch: lit/corpus: MDTN
+nIII,oculomotor nucleus,round5_nomatch: lit: nIII = CN III nucleus
+nVI,abducens nucleus,round5_nomatch: lit: nVI = CN VI nucleus
+PaSp,parasubiculum,round5_nomatch: lit/corpus: PaSp
+ParaS,parasubiculum,round5_nomatch: lit: ParaS
+PoSub,caudal (dorsal) presubiculum (postsubiculum),round5_nomatch: lit/corpus: PoSub/postsubiculum
+pSUB,caudal (dorsal) presubiculum (postsubiculum),round5_nomatch: lit/corpus: pSUB
+sSC,superior colliculus,round5_nomatch: lit/corpus: sSC
+CNIC,central nucleus of inferior colliculus,round5_nomatch: lit/corpus: CNIC
+mRt,midbrain reticular formation,round5_nomatch: lit/corpus: mRt
+PrV,principal sensory nucleus of trigeminal nerve,round5_nomatch: lit/corpus: PrV
+SMN,supramammillary nucleus,round5_nomatch: lit/corpus: SMN
+SUBv,subiculum,round5_nomatch: lit/corpus: SUBv = ventral subiculum → subiculum
+sVc,spinal trigeminal nucleus caudalis,round5_nomatch: lit/corpus: sVc
+Vmes,mesencephalic trigeminal nucleus,round5_nomatch: lit/corpus: Vmes
+DMNV,dorsal motor nucleus of vagus,round5_nomatch: lit/corpus: DMNV/DMX
+DVMN,dorsal motor nucleus of vagus,round5_nomatch: lit/corpus: DVMN
+DmnX,dorsal motor nucleus of vagus,round5_nomatch: lit: DmnX
+MBO,mammillary body,round5_nomatch: lit/corpus: MBO
+CdN,caudate nucleus,round5_nomatch: lit: CdN
+Cau,caudate nucleus,round5_nomatch: lit/corpus: Cau
+Cdt,caudate nucleus,round5_nomatch: lit: Cdt
+CBN,cerebellar nuclei,round5_nomatch: lit: CBN = cerebellar deep nuclei
+VStr,ventral striatum,round5_nomatch: lit: VStr
+VOLT,organum vasculosum laminae terminalis,round5_nomatch: lit: VOLT = OVLT
+ZIV,zona incerta,round5_nomatch: lit/corpus: ZIV = ventral ZI → ZI
+mHab,medial habenular nucleus,round5_nomatch: lit: mHab
+Vest,vestibular nuclei,round5_nomatch: lit: Vest
+AHC,anterior hypothalamic nucleus,round5_nomatch: lit/corpus: AHC
+DBN,nucleus of diagonal band,round5_nomatch: lit: DBN
+dDG,dentate gyrus,round5_nomatch: lit: dDG → DG
+dMEC,medial (caudal) entorhinal cortex,round5_nomatch: lit: dMEC
+MDRN,medullary reticular formation in medulla oblongata,round5_nomatch: lit: MDRN
+PARN,parvicellular reticular nucleus,round5_nomatch: lit: PARN
+PRNr,pontine reticular formation,round5_nomatch: lit: PRNr
+aBST,bed nucleus of stria terminalis,round5_nomatch: lit: aBST → BNST
+pBNST,bed nucleus of stria terminalis,round5_nomatch: lit: pBNST
+aBA,basolateral nuclear group of amygdala,round5_nomatch: lit: aBA → BLA
+pBA,basolateral nuclear group of amygdala,round5_nomatch: lit: pBA
+BLAa,basolateral nuclear group of amygdala,round5_nomatch: lit: BLAa
+BLAp,basolateral nuclear group of amygdala,round5_nomatch: lit: BLAp
+pdMeA,medial nucleus of amygdala,round5_nomatch: lit: pdMeA → MeA
+aMeA,medial nucleus of amygdala,round5_nomatch: lit: aMeA
+PFA,perifornical nucleus,round5_nomatch: lit/corpus: PFA
+PeFA,perifornical nucleus,round5_nomatch: lit: PeFA
+MCPO,lateral preoptic area,round5_nomatch: lit: MCPO=magnocellular preoptic; no HOMBA node → LPA parent
+ILM,intralaminar nuclear complex of thalamus,round5_nomatch: lit/corpus: ILM
+rILN,intralaminar nuclear complex of thalamus,round5_nomatch: lit/corpus: rILN
+VNC,vestibular nuclei,round5_nomatch: lit/corpus: VNC = vestibular nuclear complex
+MLR,gray matter of midbrain,round5_nomatch: lit: MLR functional region → midbrain GM
+DVC,solitary nucleus,round5_nomatch: lit: DVC = dorsal vagal complex → Sol parent
+EWpg,Edinger-Westphal nucleus (accessory oculomotor nucleus),round5_nomatch: lit/corpus: EWpg
+avTRN,reticular nucleus of thalamus,round5_nomatch: lit/corpus: avTRN → Rt
+LHy,lateral hypothalamic area,round5_nomatch: lit: LHy
+PiCo,intermediate reticular nucleus,round5_nomatch: lit: PiCo = postinspiratory complex in IRt (Anderson 2016)
+mZI,zona incerta,round5_nomatch: lit: mZI = medial zona incerta → ZI
+IntA,lateral interpositus (emboliform) nucleus,round5_nomatch: lit: IntA = anterior interpositus / emboliform
+PPRF,pontine reticular formation,round5_nomatch: lit: PPRF = paramedian pontine reticular formation
+DAO,inferior olive,round5_nomatch: lit: DAO = dorsal accessory olive → IO
+dPul,pulvinar of thalamus,round5_nomatch: lit: dPul = dorsal pulvinar → Pul
+VLa,ventral lateral nucleus of thalamus,round5_nomatch: lit: VLa → VL
+rCau,caudate nucleus,round5_nomatch: lit: rCau = rostral caudate
+rGP,globus pallidus,round5_nomatch: lit: rGP → GP
+MidRF,midbrain reticular formation,round5_nomatch: lit: MidRF
+vmCAU,caudate nucleus,round5_nomatch: lit: vmCAU
+pdlPUT,putamen,round5_nomatch: lit: pdlPUT → putamen
+IVN,inferior vestibular nucleus,round5_nomatch: lit: IVN
+SupV,superior vestibular nucleus,round5_nomatch: lit: SupV
+CA3a,CA3 region of hippocampus,round5_nomatch: lit: CA3a → CA3
+A28,entorhinal cortex,round5_nomatch: lit: Brodmann A28 ≈ entorhinal
+CPr,dorsal striatum,round5_nomatch: lit/corpus: CPr=rostral caudate-putamen
+BNC,basolateral nuclear group of amygdala,round5_nomatch: lit/corpus: BNC=basolateral nucleus complex
+APTD,anterior pretectal nucleus,round5_nomatch: lit/corpus: APTD=dorsal APT
+DpMe,midbrain reticular formation,round5_nomatch: lit: DpMe=deep mesencephalic nucleus ~ MRF
+pnVTA,ventral tegmental area,round5_nomatch: lit/corpus: pnVTA=posterior VTA → VTA
+SGI,intermediate gray layer of superior colliculus,round5_nomatch: lit: SGI=stratum griseum intermedium

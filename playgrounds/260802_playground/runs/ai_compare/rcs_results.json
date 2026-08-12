@@ -1,0 +1,2604 @@
+{
+ "records": [
+  {
+   "id": "AIC-001",
+   "structure_name": "Abducens nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12418",
+    "name": "abducens nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12418",
+      "name": "abducens nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12313",
+      "name": "sagulum nucleus (nucleus sagulum)",
+      "score": 0.186604
+     },
+     {
+      "homba_id": "HOMBA:10368",
+      "name": "basolateral nucleus (basal nucleus) of amygdala",
+      "score": 0.186604
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-002",
+   "structure_name": "Amygdala",
+   "rcs": {
+    "homba_id": "HOMBA:10361",
+    "name": "amygdaloid complex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10361",
+      "name": "amygdaloid complex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30222",
+      "name": "regions of amygdaloid complex",
+      "score": 0.903017
+     },
+     {
+      "homba_id": "HOMBA:10383",
+      "name": "extended amygdala",
+      "score": 0.8125
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-003",
+   "structure_name": "Angular gyrus",
+   "rcs": {
+    "homba_id": "HOMBA:12136",
+    "name": "angular gyrus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12136",
+      "name": "angular gyrus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12121",
+      "name": "rectus gyrus",
+      "score": 0.238212
+     },
+     {
+      "homba_id": "HOMBA:12160",
+      "name": "subcallosal (subgenual) gyrus (parolfactory gyrus)",
+      "score": 0.238212
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-004",
+   "structure_name": "Anterior thalamic nuclei",
+   "rcs": {
+    "homba_id": "HOMBA:10392",
+    "name": "anterior nuclear complex of thalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10392",
+      "name": "anterior nuclear complex of thalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10423",
+      "name": "ventral posterior nuclear complex of thalamus",
+      "score": 0.553064
+     },
+     {
+      "homba_id": "HOMBA:10417",
+      "name": "ventral anterior nucleus of thalamus",
+      "score": 0.489168
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-005",
+   "structure_name": "Auditory cortex",
+   "rcs": {
+    "homba_id": "HOMBA:10236",
+    "name": "primary auditory cortex (first auditory cortex, auditory core region)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10236",
+      "name": "primary auditory cortex (first auditory cortex, auditory core region)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10239",
+      "name": "secondary auditory cortex (auditory belt region, area 42, area TB)",
+      "score": 0.856667
+     },
+     {
+      "homba_id": "HOMBA:10237",
+      "name": "main portion of primary auditory cortex (area TC, area 41)",
+      "score": 0.807181
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-006",
+   "structure_name": "Bed nucleus of stria terminalis",
+   "rcs": {
+    "homba_id": "HOMBA:10384",
+    "name": "bed nucleus of stria terminalis",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10384",
+      "name": "bed nucleus of stria terminalis",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12105",
+      "name": "lamina terminalis",
+      "score": 0.240032
+     },
+     {
+      "homba_id": "HOMBA:AA30219",
+      "name": "Bed nucleus of anterior commissure",
+      "score": 0.229164
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-007",
+   "structure_name": "Caudate nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:10334",
+    "name": "caudate nucleus (mediodorsal division of the CP)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10334",
+      "name": "caudate nucleus (mediodorsal division of the CP)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10336",
+      "name": "body of caudate nucleus",
+      "score": 0.843297
+     },
+     {
+      "homba_id": "HOMBA:10335",
+      "name": "head of caudate nucleus",
+      "score": 0.843297
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-008",
+   "structure_name": "Cerebellar cortex",
+   "rcs": {
+    "homba_id": "HOMBA:10657",
+    "name": "cerebellar cortex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10657",
+      "name": "cerebellar cortex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30378",
+      "name": "regions (lobes) of cerebellar cortex",
+      "score": 0.892857
+     },
+     {
+      "homba_id": "HOMBA:AA30426",
+      "name": "layers of cerebellar cortex",
+      "score": 0.826389
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-009",
+   "structure_name": "Cerebellar deep nuclei",
+   "rcs": {
+    "homba_id": "HOMBA:10660",
+    "name": "cerebellar deep nuclei",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10660",
+      "name": "cerebellar deep nuclei",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:13378",
+      "name": "transient glia cell group of cerebellar deep nucleus",
+      "score": 0.543262
+     },
+     {
+      "homba_id": "HOMBA:10658",
+      "name": "cerebellar vermis",
+      "score": 0.243568
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-010",
+   "structure_name": "Cerebellar hemisphere",
+   "rcs": {
+    "homba_id": "HOMBA:10659",
+    "name": "cerebellar hemisphere",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10659",
+      "name": "cerebellar hemisphere",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12384",
+      "name": "paravermis of cerebellar hemisphere",
+      "score": 0.804167
+     },
+     {
+      "homba_id": "HOMBA:AA30564",
+      "name": "lateral region of cerebellar hemisphere",
+      "score": 0.651891
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-011",
+   "structure_name": "Cerebellum",
+   "rcs": {
+    "homba_id": "HOMBA:10656",
+    "name": "cerebellum",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10656",
+      "name": "cerebellum",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12384",
+      "name": "paravermis of cerebellar hemisphere",
+      "score": 0.625
+     },
+     {
+      "homba_id": "HOMBA:AA30490",
+      "name": "arbor vitae of cerebellum",
+      "score": 0.570833
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-012",
+   "structure_name": "Cerebral hemisphere",
+   "rcs": {
+    "homba_id": "HOMBA:10158",
+    "name": "telencephalon",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10158",
+      "name": "telencephalon",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10610",
+      "name": "cerebral sulci",
+      "score": 0.265725
+     },
+     {
+      "homba_id": "HOMBA:12330",
+      "name": "cerebral peduncle (crus cerebri)",
+      "score": 0.265725
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-013",
+   "structure_name": "Claustrum",
+   "rcs": {
+    "homba_id": "HOMBA:10346",
+    "name": "claustrum",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10346",
+      "name": "claustrum",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10347",
+      "name": "dorsal claustrum",
+      "score": 0.631563
+     },
+     {
+      "homba_id": "HOMBA:10348",
+      "name": "ventral claustrum",
+      "score": 0.610221
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-014",
+   "structure_name": "Cochlear nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12437",
+    "name": "cochlear nuclei",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12437",
+      "name": "cochlear nuclei",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12438",
+      "name": "dorsal cochlear nucleus",
+      "score": 0.736733
+     },
+     {
+      "homba_id": "HOMBA:12439",
+      "name": "ventral cochlear nucleus",
+      "score": 0.734583
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-015",
+   "structure_name": "Cuneate nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12589",
+    "name": "cuneate nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12589",
+      "name": "cuneate nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12653",
+      "name": "nucleus X in medulla oblongata (preaccessory cuneate nucleus)",
+      "score": 0.755952
+     },
+     {
+      "homba_id": "HOMBA:12590",
+      "name": "cuneate nucleus, rotundus division",
+      "score": 0.742098
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-016",
+   "structure_name": "Cuneus",
+   "rcs": {
+    "homba_id": "HOMBA:12150",
+    "name": "cuneus (gyrus)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12150",
+      "name": "cuneus (gyrus)",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-017",
+   "structure_name": "Dentate gyrus",
+   "rcs": {
+    "homba_id": "HOMBA:10295",
+    "name": "dentate gyrus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10295",
+      "name": "dentate gyrus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:11265",
+      "name": "body part of DG",
+      "score": 0.818452
+     },
+     {
+      "homba_id": "HOMBA:266441247",
+      "name": "rostral (ventral) division of dentate gyrus",
+      "score": 0.736733
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-018",
+   "structure_name": "Dentate nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12396",
+    "name": "dentate (lateral) nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12396",
+      "name": "dentate (lateral) nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12398",
+      "name": "dentate nucleus, mediodorsal division",
+      "score": 0.675458
+     },
+     {
+      "homba_id": "HOMBA:12397",
+      "name": "dentate nucleus, lateroventral division",
+      "score": 0.657798
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-019",
+   "structure_name": "Diencephalon",
+   "rcs": {
+    "homba_id": "HOMBA:10389",
+    "name": "diencephalon",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10389",
+      "name": "diencephalon",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-020",
+   "structure_name": "Dorsal motor nucleus of vagus",
+   "rcs": {
+    "homba_id": "HOMBA:12550",
+    "name": "dorsal motor nucleus of the vagus (vagal nerve nucleus)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12550",
+      "name": "dorsal motor nucleus of the vagus (vagal nerve nucleus)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30452",
+      "name": "dorsal motor nucleus of vagus, caudal division",
+      "score": 0.990833
+     },
+     {
+      "homba_id": "HOMBA:12555",
+      "name": "dorsal motor nucleus of vagus, medial fringe",
+      "score": 0.976667
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-021",
+   "structure_name": "Dorsal raphe nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12225",
+    "name": "dorsal raphe nucleus, dorsal division",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12225",
+      "name": "dorsal raphe nucleus, dorsal division",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12223",
+      "name": "dorsal raphe nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12217",
+      "name": "cap of dorsal raphe nucleus",
+      "score": 0.9975
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-022",
+   "structure_name": "Emboliform nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12401",
+    "name": "lateral interpositus (emboliform) nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12401",
+      "name": "lateral interpositus (emboliform) nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12613",
+      "name": "interpositus nucleus",
+      "score": 0.30645
+     },
+     {
+      "homba_id": "HOMBA:12399",
+      "name": "interpositus (intermediate) nucleus",
+      "score": 0.30645
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-023",
+   "structure_name": "Entorhinal cortex",
+   "rcs": {
+    "homba_id": "HOMBA:10317",
+    "name": "entorhinal cortex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10317",
+      "name": "entorhinal cortex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30126",
+      "name": "lamination of entorhinal cortex",
+      "score": 0.765457
+     },
+     {
+      "homba_id": "HOMBA:11381",
+      "name": "rostral division of entorhinal cortex",
+      "score": 0.74053
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-024",
+   "structure_name": "Facial nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12420",
+    "name": "facial nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12420",
+      "name": "facial nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:15554",
+      "name": "facial nucleus, stylohyoid subnucleus",
+      "score": 0.770833
+     },
+     {
+      "homba_id": "HOMBA:12419",
+      "name": "accessory facial nucleus",
+      "score": 0.734583
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-025",
+   "structure_name": "Fastigial nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12402",
+    "name": "fastigial (medial) nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12402",
+      "name": "fastigial (medial) nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12404",
+      "name": "fastigial nucleus, medial division",
+      "score": 0.734583
+     },
+     {
+      "homba_id": "HOMBA:12403",
+      "name": "fastigial nucleus, lateral division",
+      "score": 0.722962
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-026",
+   "structure_name": "Flocculus",
+   "rcs": {
+    "homba_id": "HOMBA:AA30424",
+    "name": "lobule Xa (flocculus)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30424",
+      "name": "lobule Xa (flocculus)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12853",
+      "name": "lobule X (nodulus and flocculus)",
+      "score": 0.642846
+     },
+     {
+      "homba_id": "HOMBA:AA30423",
+      "name": "flocculonodular lobe, flocculus part",
+      "score": 0.512561
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-027",
+   "structure_name": "Fourth ventricle",
+   "rcs": {
+    "homba_id": "HOMBA:12805",
+    "name": "fourth ventricle",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12805",
+      "name": "fourth ventricle",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30479",
+      "name": "region of fourth ventricle",
+      "score": 0.899038
+     },
+     {
+      "homba_id": "HOMBA:12806",
+      "name": "roof of fourth ventricle",
+      "score": 0.854167
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-028",
+   "structure_name": "Frontal lobe",
+   "rcs": {
+    "homba_id": "HOMBA:12113",
+    "name": "frontal lobe",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12113",
+      "name": "frontal lobe",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12127",
+      "name": "frontal operculum",
+      "score": 0.241535
+     },
+     {
+      "homba_id": "HOMBA:146034888",
+      "name": "frontal pole",
+      "score": 0.241535
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-029",
+   "structure_name": "Fusiform gyrus",
+   "rcs": {
+    "homba_id": "HOMBA:AA30549",
+    "name": "fusiform (occipitotemporal) gyrus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30549",
+      "name": "fusiform (occipitotemporal) gyrus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12121",
+      "name": "rectus gyrus",
+      "score": 0.238212
+     },
+     {
+      "homba_id": "HOMBA:12160",
+      "name": "subcallosal (subgenual) gyrus (parolfactory gyrus)",
+      "score": 0.238212
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-030",
+   "structure_name": "Globose nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12400",
+    "name": "medial interpositus (globose) nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12400",
+      "name": "medial interpositus (globose) nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12613",
+      "name": "interpositus nucleus",
+      "score": 0.30645
+     },
+     {
+      "homba_id": "HOMBA:12399",
+      "name": "interpositus (intermediate) nucleus",
+      "score": 0.30645
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-031",
+   "structure_name": "Globus pallidus",
+   "rcs": {
+    "homba_id": "HOMBA:10342",
+    "name": "globus pallidus (paleostriatum)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10342",
+      "name": "globus pallidus (paleostriatum)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10344",
+      "name": "internal division of globus pallidus",
+      "score": 0.843297
+     },
+     {
+      "homba_id": "HOMBA:10343",
+      "name": "external division of globus pallidus",
+      "score": 0.725236
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-032",
+   "structure_name": "Gracile nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:12592",
+    "name": "gracile nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12592",
+      "name": "gracile nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12593",
+      "name": "gracile nucleus, central division",
+      "score": 0.755952
+     },
+     {
+      "homba_id": "HOMBA:12594",
+      "name": "gracile nucleus, rostral division (shell)",
+      "score": 0.650119
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-033",
+   "structure_name": "ACC",
+   "rcs": {
+    "homba_id": "HOMBA:AA30485",
+    "name": "caudal (posterior) branch of anterior commissure",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30485",
+      "name": "caudal (posterior) branch of anterior commissure",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10278",
+      "name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30044",
+      "name": "dorsal  ACC (rostral cingulate motor cortex, M3)",
+      "score": 0.253769
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-034",
+   "structure_name": "ARC",
+   "rcs": {
+    "homba_id": "HOMBA:10492",
+    "name": "arcuate nucleus of hypothalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10492",
+      "name": "arcuate nucleus of hypothalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10476",
+      "name": "paraventricular nucleus of hypothalamus",
+      "score": 0.336707
+     },
+     {
+      "homba_id": "HOMBA:AA30338",
+      "name": "regions of hypothalamus",
+      "score": 0.314546
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-035",
+   "structure_name": "BNST",
+   "rcs": {
+    "homba_id": "HOMBA:10384",
+    "name": "bed nucleus of stria terminalis",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10384",
+      "name": "bed nucleus of stria terminalis",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-036",
+   "structure_name": "CA1",
+   "rcs": {
+    "homba_id": "HOMBA:10297",
+    "name": "CA1 region of hippocampus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10297",
+      "name": "CA1 region of hippocampus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30150",
+      "name": "lamination of hippocampal proper (CA1, CA2, CA3)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10296",
+      "name": "hippocampal proper (Cornu Ammonis)",
+      "score": 0.856667
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-037",
+   "structure_name": "CA2",
+   "rcs": {
+    "homba_id": "HOMBA:10298",
+    "name": "CA2 region of hippocampus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10298",
+      "name": "CA2 region of hippocampus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30150",
+      "name": "lamination of hippocampal proper (CA1, CA2, CA3)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10296",
+      "name": "hippocampal proper (Cornu Ammonis)",
+      "score": 0.856667
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-038",
+   "structure_name": "CA3",
+   "rcs": {
+    "homba_id": "HOMBA:10299",
+    "name": "CA3 region of hippocampus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10299",
+      "name": "CA3 region of hippocampus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30150",
+      "name": "lamination of hippocampal proper (CA1, CA2, CA3)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10296",
+      "name": "hippocampal proper (Cornu Ammonis)",
+      "score": 0.856667
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-039",
+   "structure_name": "Cingulate cortex",
+   "rcs": {
+    "homba_id": "HOMBA:10277",
+    "name": "cingulate cortex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10277",
+      "name": "cingulate cortex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10278",
+      "name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+      "score": 0.717383
+     },
+     {
+      "homba_id": "HOMBA:10285",
+      "name": "posterior cingulate cortex (PCC)",
+      "score": 0.701506
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-040",
+   "structure_name": "Dorsal raphe",
+   "rcs": {
+    "homba_id": "HOMBA:12223",
+    "name": "dorsal raphe nucleus",
+    "confidence": 0.947851,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12223",
+      "name": "dorsal raphe nucleus",
+      "score": 0.947851
+     },
+     {
+      "homba_id": "HOMBA:12217",
+      "name": "cap of dorsal raphe nucleus",
+      "score": 0.778654
+     },
+     {
+      "homba_id": "HOMBA:12225",
+      "name": "dorsal raphe nucleus, dorsal division",
+      "score": 0.765995
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-041",
+   "structure_name": "DRN",
+   "rcs": {
+    "homba_id": "HOMBA:12223",
+    "name": "dorsal raphe nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12223",
+      "name": "dorsal raphe nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12225",
+      "name": "dorsal raphe nucleus, dorsal division",
+      "score": 0.90625
+     },
+     {
+      "homba_id": "HOMBA:12217",
+      "name": "cap of dorsal raphe nucleus",
+      "score": 0.8775
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-042",
+   "structure_name": "Entorhinal area",
+   "rcs": {
+    "homba_id": "HOMBA:10317",
+    "name": "entorhinal cortex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10317",
+      "name": "entorhinal cortex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10318",
+      "name": "lateral (rostral) entorhinal cortex",
+      "score": 0.7009
+     },
+     {
+      "homba_id": "HOMBA:10319",
+      "name": "medial (caudal) entorhinal cortex",
+      "score": 0.7009
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-043",
+   "structure_name": "GPe",
+   "rcs": {
+    "homba_id": "HOMBA:10343",
+    "name": "external division of globus pallidus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10343",
+      "name": "external division of globus pallidus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10344",
+      "name": "internal division of globus pallidus",
+      "score": 0.781767
+     },
+     {
+      "homba_id": "HOMBA:10342",
+      "name": "globus pallidus (paleostriatum)",
+      "score": 0.336716
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-044",
+   "structure_name": "GPi",
+   "rcs": {
+    "homba_id": "HOMBA:10344",
+    "name": "internal division of globus pallidus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10344",
+      "name": "internal division of globus pallidus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10343",
+      "name": "external division of globus pallidus",
+      "score": 0.657431
+     },
+     {
+      "homba_id": "HOMBA:10342",
+      "name": "globus pallidus (paleostriatum)",
+      "score": 0.336716
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-045",
+   "structure_name": "Hippocampal formation",
+   "rcs": {
+    "homba_id": "HOMBA:12170",
+    "name": "hippocampal formation",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12170",
+      "name": "hippocampal formation",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10619",
+      "name": "hippocampal fissure",
+      "score": 0.258693
+     },
+     {
+      "homba_id": "HOMBA:10560",
+      "name": "hippocampal commissure",
+      "score": 0.258693
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-046",
+   "structure_name": "Lateral geniculate body",
+   "rcs": {
+    "homba_id": "HOMBA:10429",
+    "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+    "confidence": 0.775432,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10429",
+      "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+      "score": 0.775432
+     },
+     {
+      "homba_id": "HOMBA:13042",
+      "name": "pregeniculate nucleus (ventral lateral geniculate nucleus)",
+      "score": 0.695858
+     },
+     {
+      "homba_id": "HOMBA:AA30295",
+      "name": "lateral geniculate nuclear complex",
+      "score": 0.691149
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-047",
+   "structure_name": "BLA",
+   "rcs": {
+    "homba_id": "HOMBA:10366",
+    "name": "basolateral nuclear group of amygdala",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10366",
+      "name": "basolateral nuclear group of amygdala",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10368",
+      "name": "basolateral nucleus (basal nucleus) of amygdala",
+      "score": 0.607143
+     },
+     {
+      "homba_id": "HOMBA:10372",
+      "name": "corticomedial nuclear group of amygdala",
+      "score": 0.372265
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-048",
+   "structure_name": "Cd",
+   "rcs": {
+    "homba_id": "HOMBA:10334",
+    "name": "caudate nucleus (mediodorsal division of the CP)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10334",
+      "name": "caudate nucleus (mediodorsal division of the CP)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10336",
+      "name": "body of caudate nucleus",
+      "score": 0.843297
+     },
+     {
+      "homba_id": "HOMBA:10335",
+      "name": "head of caudate nucleus",
+      "score": 0.843297
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-049",
+   "structure_name": "CeA",
+   "rcs": {
+    "homba_id": "HOMBA:10363",
+    "name": "central nucleus of amygdala",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10363",
+      "name": "central nucleus of amygdala",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10373",
+      "name": "cortical nucleus of amygdala",
+      "score": 0.75806
+     },
+     {
+      "homba_id": "HOMBA:10368",
+      "name": "basolateral nucleus (basal nucleus) of amygdala",
+      "score": 0.746335
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-050",
+   "structure_name": "CLA",
+   "rcs": {
+    "homba_id": "HOMBA:10346",
+    "name": "claustrum",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10346",
+      "name": "claustrum",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-051",
+   "structure_name": "DG",
+   "rcs": {
+    "homba_id": "HOMBA:10295",
+    "name": "dentate gyrus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10295",
+      "name": "dentate gyrus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:11265",
+      "name": "body part of DG",
+      "score": 0.818452
+     },
+     {
+      "homba_id": "HOMBA:266441247",
+      "name": "rostral (ventral) division of dentate gyrus",
+      "score": 0.736733
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-052",
+   "structure_name": "DN",
+   "rcs": {
+    "homba_id": "HOMBA:12396",
+    "name": "dentate (lateral) nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12396",
+      "name": "dentate (lateral) nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12398",
+      "name": "dentate nucleus, mediodorsal division",
+      "score": 0.80625
+     },
+     {
+      "homba_id": "HOMBA:12397",
+      "name": "dentate nucleus, lateroventral division",
+      "score": 0.785714
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-053",
+   "structure_name": "DR",
+   "rcs": {
+    "homba_id": "HOMBA:12223",
+    "name": "dorsal raphe nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12223",
+      "name": "dorsal raphe nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30887",
+      "name": "dorsal roots of spinal nerves",
+      "score": 0.267831
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-054",
+   "structure_name": "EC",
+   "rcs": {
+    "homba_id": "HOMBA:AA30847",
+    "name": "caudal division of entorhinal cortex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30847",
+      "name": "caudal division of entorhinal cortex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10317",
+      "name": "entorhinal cortex",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-055",
+   "structure_name": "LC",
+   "rcs": {
+    "homba_id": "HOMBA:12499",
+    "name": "nucleus coeruleus (locus coeruleus)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12499",
+      "name": "nucleus coeruleus (locus coeruleus)",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-056",
+   "structure_name": "LGN",
+   "rcs": {
+    "homba_id": "HOMBA:10429",
+    "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10429",
+      "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:13042",
+      "name": "pregeniculate nucleus (ventral lateral geniculate nucleus)",
+      "score": 0.75465
+     },
+     {
+      "homba_id": "HOMBA:AA30295",
+      "name": "lateral geniculate nuclear complex",
+      "score": 0.639206
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-057",
+   "structure_name": "LHb",
+   "rcs": {
+    "homba_id": "HOMBA:10453",
+    "name": "lateral habenular nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10453",
+      "name": "lateral habenular nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10454",
+      "name": "magnocellular (lateral) division of LHN",
+      "score": 0.6321
+     },
+     {
+      "homba_id": "HOMBA:10455",
+      "name": "parvicellular (medial) division of LHN",
+      "score": 0.6321
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-058",
+   "structure_name": "LS",
+   "rcs": {
+    "homba_id": "HOMBA:10352",
+    "name": "lateral septal nuclear complex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10352",
+      "name": "lateral septal nuclear complex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:11551",
+      "name": "intermediate division of lateral septal nucleus",
+      "score": 0.726064
+     },
+     {
+      "homba_id": "HOMBA:AA30217",
+      "name": "rostral extension of lateral septal nucleus (semilunar nucleus)",
+      "score": 0.721221
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-059",
+   "structure_name": "MGB",
+   "rcs": {
+    "homba_id": "HOMBA:AA30307",
+    "name": "medial geniculate nuclear complex",
+    "confidence": 0.57689,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30307",
+      "name": "medial geniculate nuclear complex",
+      "score": 0.57689
+     },
+     {
+      "homba_id": "HOMBA:10434",
+      "name": "medial geniculate nucleus",
+      "score": 0.567765
+     },
+     {
+      "homba_id": "HOMBA:10439",
+      "name": "medial division of medial geniculate nucleus",
+      "score": 0.502143
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-060",
+   "structure_name": "NAc",
+   "rcs": {
+    "homba_id": "HOMBA:10339",
+    "name": "nucleus accumbens",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10339",
+      "name": "nucleus accumbens",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10340",
+      "name": "core of nucleus accumbens",
+      "score": 0.736733
+     },
+     {
+      "homba_id": "HOMBA:10341",
+      "name": "shell of nucleus accumbens",
+      "score": 0.736733
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-061",
+   "structure_name": "OB",
+   "rcs": {
+    "homba_id": "HOMBA:10307",
+    "name": "olfactory bulb",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10307",
+      "name": "olfactory bulb",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30841",
+      "name": "unspecified parastriate cortex (area 18, area OB, V2)",
+      "score": 0.346676
+     },
+     {
+      "homba_id": "HOMBA:AA30827",
+      "name": "ventral secondary visual cortex (ventral area 18, ventral area OB, area 18b)",
+      "score": 0.248983
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-062",
+   "structure_name": "RN",
+   "rcs": {
+    "homba_id": "HOMBA:12247",
+    "name": "red nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12247",
+      "name": "red nucleus",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-063",
+   "structure_name": "SCN",
+   "rcs": {
+    "homba_id": "HOMBA:10480",
+    "name": "suprachiasmatic nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10480",
+      "name": "suprachiasmatic nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:13066",
+      "name": "central division of suprachiasmatic nucleus",
+      "score": 0.796474
+     },
+     {
+      "homba_id": "HOMBA:13065",
+      "name": "dorsal division of suprachiasmatic nucleus",
+      "score": 0.694978
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-064",
+   "structure_name": "SN",
+   "rcs": {
+    "homba_id": "HOMBA:12251",
+    "name": "substantia nigra",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12251",
+      "name": "substantia nigra",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12252",
+      "name": "substantia nigra, compact division",
+      "score": 0.660445
+     },
+     {
+      "homba_id": "HOMBA:12257",
+      "name": "substantia nigra, lateral division",
+      "score": 0.660445
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-065",
+   "structure_name": "SNc",
+   "rcs": {
+    "homba_id": "HOMBA:12252",
+    "name": "substantia nigra, compact division",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12252",
+      "name": "substantia nigra, compact division",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12253",
+      "name": "substantia nigra, compact division, dorsal subdivision",
+      "score": 0.731827
+     },
+     {
+      "homba_id": "HOMBA:12254",
+      "name": "substantia nigra, compact division, medial subdivision",
+      "score": 0.731827
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-066",
+   "structure_name": "SNr",
+   "rcs": {
+    "homba_id": "HOMBA:12259",
+    "name": "substantia nigra, reticular division",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12259",
+      "name": "substantia nigra, reticular division",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12251",
+      "name": "substantia nigra",
+      "score": 0.715474
+     },
+     {
+      "homba_id": "HOMBA:12252",
+      "name": "substantia nigra, compact division",
+      "score": 0.602649
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-067",
+   "structure_name": "STN",
+   "rcs": {
+    "homba_id": "HOMBA:10466",
+    "name": "subthalamic nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10466",
+      "name": "subthalamic nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12089",
+      "name": "subthalamic fasciculus",
+      "score": 0.103375
+     },
+     {
+      "homba_id": "HOMBA:12313",
+      "name": "sagulum nucleus (nucleus sagulum)",
+      "score": 0.103147
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-068",
+   "structure_name": "VPL",
+   "rcs": {
+    "homba_id": "HOMBA:10424",
+    "name": "ventral posterior lateral nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10424",
+      "name": "ventral posterior lateral nucleus",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-069",
+   "structure_name": "VTA",
+   "rcs": {
+    "homba_id": "HOMBA:12261",
+    "name": "ventral tegmental area",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12261",
+      "name": "ventral tegmental area",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:146034938",
+      "name": "ventral tegmental region of midbrain",
+      "score": 0.657607
+     },
+     {
+      "homba_id": "HOMBA:12366",
+      "name": "ventral tegmental decussation",
+      "score": 0.578575
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-070",
+   "structure_name": "ZI",
+   "rcs": {
+    "homba_id": "HOMBA:10463",
+    "name": "zona incerta",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10463",
+      "name": "zona incerta",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30320",
+      "name": "rostral division of ZI",
+      "score": 0.306749
+     },
+     {
+      "homba_id": "HOMBA:AA30321",
+      "name": "caudal division of ZI",
+      "score": 0.263804
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-071",
+   "structure_name": "Anterior commissure",
+   "rcs": {
+    "homba_id": "HOMBA:10559",
+    "name": "anterior commissure",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10559",
+      "name": "anterior commissure",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30484",
+      "name": "rostral (anterior) branch of anterior commissure",
+      "score": 0.697635
+     },
+     {
+      "homba_id": "HOMBA:AA30485",
+      "name": "caudal (posterior) branch of anterior commissure",
+      "score": 0.609167
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-072",
+   "structure_name": "Gr",
+   "rcs": {
+    "homba_id": "HOMBA:12592",
+    "name": "gracile nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12592",
+      "name": "gracile nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12593",
+      "name": "gracile nucleus, central division",
+      "score": 0.755952
+     },
+     {
+      "homba_id": "HOMBA:12594",
+      "name": "gracile nucleus, rostral division (shell)",
+      "score": 0.650119
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-073",
+   "structure_name": "IC",
+   "rcs": {
+    "homba_id": "HOMBA:12305",
+    "name": "inferior colliculus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12305",
+      "name": "inferior colliculus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12327",
+      "name": "brachium of inferior colliculus",
+      "score": 0.813844
+     },
+     {
+      "homba_id": "HOMBA:12333",
+      "name": "commissure of inferior colliculus",
+      "score": 0.785985
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-074",
+   "structure_name": "LH",
+   "rcs": {
+    "homba_id": "HOMBA:13337",
+    "name": "accessory secretory cells of lateral hypothalamus",
+    "confidence": 0.517401,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:13337",
+      "name": "accessory secretory cells of lateral hypothalamus",
+      "score": 0.517401
+     },
+     {
+      "homba_id": "HOMBA:AA30338",
+      "name": "regions of hypothalamus",
+      "score": 0.311188
+     },
+     {
+      "homba_id": "HOMBA:10467",
+      "name": "hypothalamus",
+      "score": 0.311188
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-075",
+   "structure_name": "LHA",
+   "rcs": {
+    "homba_id": "HOMBA:10494",
+    "name": "lateral hypothalamic area, tuberal part",
+    "confidence": 0.847588,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10494",
+      "name": "lateral hypothalamic area, tuberal part",
+      "score": 0.847588
+     },
+     {
+      "homba_id": "HOMBA:AA30350",
+      "name": "lateral  hypothalamic area, mammillary part",
+      "score": 0.811484
+     },
+     {
+      "homba_id": "HOMBA:AA30341",
+      "name": "lateral hypothalamic area, supraoptic part",
+      "score": 0.811484
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-076",
+   "structure_name": "MD",
+   "rcs": {
+    "homba_id": "HOMBA:10398",
+    "name": "mediodorsal nucleus of thalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10398",
+      "name": "mediodorsal nucleus of thalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10399",
+      "name": "densocellular (paralamellar) division of MD",
+      "score": 0.289984
+     },
+     {
+      "homba_id": "HOMBA:10402",
+      "name": "central (parvicellular) division of MD",
+      "score": 0.249386
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-077",
+   "structure_name": "MDT",
+   "rcs": {
+    "homba_id": "HOMBA:10398",
+    "name": "mediodorsal nucleus of thalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10398",
+      "name": "mediodorsal nucleus of thalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:13054",
+      "name": "subparafascicular nucleus of thalamus",
+      "score": 0.288019
+     },
+     {
+      "homba_id": "HOMBA:10449",
+      "name": "centromedian nucleus of thalamus",
+      "score": 0.277306
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-078",
+   "structure_name": "MS",
+   "rcs": {
+    "homba_id": "HOMBA:10351",
+    "name": "medial septal nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10351",
+      "name": "medial septal nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12098",
+      "name": "septum pellucidum",
+      "score": 0.267759
+     },
+     {
+      "homba_id": "HOMBA:10352",
+      "name": "lateral septal nuclear complex",
+      "score": 0.230273
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-079",
+   "structure_name": "NAcc",
+   "rcs": {
+    "homba_id": "HOMBA:10339",
+    "name": "nucleus accumbens",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10339",
+      "name": "nucleus accumbens",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10341",
+      "name": "shell of nucleus accumbens",
+      "score": 0.736733
+     },
+     {
+      "homba_id": "HOMBA:10340",
+      "name": "core of nucleus accumbens",
+      "score": 0.48
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-080",
+   "structure_name": "NTS",
+   "rcs": {
+    "homba_id": "HOMBA:12557",
+    "name": "solitary nucleus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12557",
+      "name": "solitary nucleus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12561",
+      "name": "solitary nucleus, gelatinous division",
+      "score": 0.858333
+     },
+     {
+      "homba_id": "HOMBA:12558",
+      "name": "solitary nucleus, commissural division",
+      "score": 0.847826
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-081",
+   "structure_name": "PAG",
+   "rcs": {
+    "homba_id": "HOMBA:AA30359",
+    "name": "periaqueductal gray region",
+    "confidence": 0.94,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30359",
+      "name": "periaqueductal gray region",
+      "score": 0.94
+     },
+     {
+      "homba_id": "HOMBA:12215",
+      "name": "periaqueductal gray substance, pleioglial division",
+      "score": 0.634175
+     },
+     {
+      "homba_id": "HOMBA:12211",
+      "name": "periaqueductal gray substance,dorsomedial division",
+      "score": 0.630297
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-082",
+   "structure_name": "PVN",
+   "rcs": {
+    "homba_id": "HOMBA:10476",
+    "name": "paraventricular nucleus of hypothalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10476",
+      "name": "paraventricular nucleus of hypothalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10492",
+      "name": "arcuate nucleus of hypothalamus",
+      "score": 0.336707
+     },
+     {
+      "homba_id": "HOMBA:AA30338",
+      "name": "regions of hypothalamus",
+      "score": 0.314546
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-083",
+   "structure_name": "PVT",
+   "rcs": {
+    "homba_id": "HOMBA:10457",
+    "name": "paraventricular nucleus of thalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10457",
+      "name": "paraventricular nucleus of thalamus",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-084",
+   "structure_name": "RE",
+   "rcs": {
+    "homba_id": "HOMBA:10403",
+    "name": "reuniens (medioventral) nucleus of thalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10403",
+      "name": "reuniens (medioventral) nucleus of thalamus",
+      "score": 1.0
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-085",
+   "structure_name": "SC",
+   "rcs": {
+    "homba_id": "HOMBA:12292",
+    "name": "superior colliculus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12292",
+      "name": "superior colliculus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12328",
+      "name": "brachium of superior colliculus",
+      "score": 0.813844
+     },
+     {
+      "homba_id": "HOMBA:AA30487",
+      "name": "commissure of superior colliculus",
+      "score": 0.785985
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-086",
+   "structure_name": "Sub",
+   "rcs": {
+    "homba_id": "HOMBA:10302",
+    "name": "subiculum proper (strictly defined subiculum)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10302",
+      "name": "subiculum proper (strictly defined subiculum)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:266441407",
+      "name": "uncal division of subiculum",
+      "score": 0.7625
+     },
+     {
+      "homba_id": "HOMBA:11309",
+      "name": "body part of subiculum",
+      "score": 0.709559
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-087",
+   "structure_name": "VL",
+   "rcs": {
+    "homba_id": "HOMBA:10420",
+    "name": "ventral lateral nucleus of thalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10420",
+      "name": "ventral lateral nucleus of thalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10421",
+      "name": "rostral division of VL",
+      "score": 0.297315
+     },
+     {
+      "homba_id": "HOMBA:AA30293",
+      "name": "ventromedial division of VL",
+      "score": 0.297315
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-088",
+   "structure_name": "Arcuate nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:10492",
+    "name": "arcuate nucleus of hypothalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10492",
+      "name": "arcuate nucleus of hypothalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:12536",
+      "name": "arcuate nucleus of medulla oblongata",
+      "score": 0.786859
+     },
+     {
+      "homba_id": "HOMBA:10476",
+      "name": "paraventricular nucleus of hypothalamus",
+      "score": 0.286707
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-089",
+   "structure_name": "Brainstem",
+   "rcs": {
+    "homba_id": "HOMBA:10648",
+    "name": "gray matter of midbrain (mesencephalon, upper brainstem)",
+    "confidence": 0.7625,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10648",
+      "name": "gray matter of midbrain (mesencephalon, upper brainstem)",
+      "score": 0.7625
+     },
+     {
+      "homba_id": "HOMBA:12694",
+      "name": "marginal zone of lower brainstem",
+      "score": 0.483775
+     },
+     {
+      "homba_id": "HOMBA:12678",
+      "name": "ventricular (matrix) zone of lower brainstem",
+      "score": 0.471722
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-090",
+   "structure_name": "Inferior fronto-occipital fasciculus",
+   "rcs": {
+    "homba_id": "HOMBA:AA30496",
+    "name": "vertical occipital fasciculus",
+    "confidence": 0.613503,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30496",
+      "name": "vertical occipital fasciculus",
+      "score": 0.613503
+     },
+     {
+      "homba_id": "HOMBA:12070",
+      "name": "inferior occipitofrontal fasciculus",
+      "score": 0.323368
+     },
+     {
+      "homba_id": "HOMBA:10580",
+      "name": "inferior longitudinal fasciculus",
+      "score": 0.288129
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-091",
+   "structure_name": "Insular cortex",
+   "rcs": {
+    "homba_id": "HOMBA:10288",
+    "name": "major insular cortex",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10288",
+      "name": "major insular cortex",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10328",
+      "name": "agranular insular cortex (area Iag)",
+      "score": 0.854167
+     },
+     {
+      "homba_id": "HOMBA:10289",
+      "name": "dysgranular insular cortex (area Idg)",
+      "score": 0.822917
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-092",
+   "structure_name": "Lenticular nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:10338",
+    "name": "putamen (lateroventral division of the CP)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10338",
+      "name": "putamen (lateroventral division of the CP)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:AA30859",
+      "name": "middle putamen",
+      "score": 0.856667
+     },
+     {
+      "homba_id": "HOMBA:11537",
+      "name": "rostral putamen",
+      "score": 0.856667
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-093",
+   "structure_name": "Limbic system",
+   "rcs": {
+    "homba_id": "HOMBA:AA30788",
+    "name": "spinal artery system",
+    "confidence": 0.237586,
+    "reason": "rcs methods=bm25",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30788",
+      "name": "spinal artery system",
+      "score": 0.237586
+     },
+     {
+      "homba_id": "HOMBA:AA30804",
+      "name": "vein system of brain",
+      "score": 0.237586
+     },
+     {
+      "homba_id": "HOMBA:10154",
+      "name": "central nervous system (neural tube)",
+      "score": 0.237586
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-094",
+   "structure_name": "Medial hypothalamus",
+   "rcs": {
+    "homba_id": "HOMBA:10467",
+    "name": "hypothalamus",
+    "confidence": 0.786184,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10467",
+      "name": "hypothalamus",
+      "score": 0.786184
+     },
+     {
+      "homba_id": "HOMBA:AA30338",
+      "name": "regions of hypothalamus",
+      "score": 0.619719
+     },
+     {
+      "homba_id": "HOMBA:10492",
+      "name": "arcuate nucleus of hypothalamus",
+      "score": 0.415414
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-095",
+   "structure_name": "Medial temporal lobe",
+   "rcs": {
+    "homba_id": "HOMBA:12139",
+    "name": "temporal lobe",
+    "confidence": 0.740667,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12139",
+      "name": "temporal lobe",
+      "score": 0.740667
+     },
+     {
+      "homba_id": "HOMBA:AA30021",
+      "name": "medial superior temporal area",
+      "score": 0.415529
+     },
+     {
+      "homba_id": "HOMBA:10261",
+      "name": "medial temporal-occipital cortex (area TFO, area 37m)",
+      "score": 0.363277
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-096",
+   "structure_name": "Motor cortex",
+   "rcs": {
+    "homba_id": "HOMBA:AA30009",
+    "name": "frontal motor cortex (posterior frontal cortex)",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:AA30009",
+      "name": "frontal motor cortex (posterior frontal cortex)",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10163",
+      "name": "primary motor cortex (first motor cortex, area 4, area FA)",
+      "score": 0.736733
+     },
+     {
+      "homba_id": "HOMBA:10168",
+      "name": "premotor cortex (area 6, area FB, secondary motor cortex)",
+      "score": 0.734583
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-097",
+   "structure_name": "Paraventricular nucleus",
+   "rcs": {
+    "homba_id": "HOMBA:10476",
+    "name": "paraventricular nucleus of hypothalamus",
+    "confidence": 1.0,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10476",
+      "name": "paraventricular nucleus of hypothalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10457",
+      "name": "paraventricular nucleus of thalamus",
+      "score": 1.0
+     },
+     {
+      "homba_id": "HOMBA:10458",
+      "name": "rostral paraventricular nucleus of thalamus",
+      "score": 0.755329
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-098",
+   "structure_name": "Septum",
+   "rcs": {
+    "homba_id": "HOMBA:12098",
+    "name": "septum pellucidum",
+    "confidence": 0.602563,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12098",
+      "name": "septum pellucidum",
+      "score": 0.602563
+     },
+     {
+      "homba_id": "HOMBA:10351",
+      "name": "medial septal nucleus",
+      "score": 0.566442
+     },
+     {
+      "homba_id": "HOMBA:10352",
+      "name": "lateral septal nuclear complex",
+      "score": 0.550725
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-099",
+   "structure_name": "Superior colliculus (deep layers)",
+   "rcs": {
+    "homba_id": "HOMBA:12292",
+    "name": "superior colliculus",
+    "confidence": 0.88,
+    "reason": "rcs methods=bm25+exact+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:12292",
+      "name": "superior colliculus",
+      "score": 0.88
+     },
+     {
+      "homba_id": "HOMBA:12302",
+      "name": "deep gray layer of superior colliculus",
+      "score": 0.739029
+     },
+     {
+      "homba_id": "HOMBA:12303",
+      "name": "deep white layer of superior colliculus",
+      "score": 0.732619
+     }
+    ]
+   }
+  },
+  {
+   "id": "AIC-100",
+   "structure_name": "Thalamic nuclei",
+   "rcs": {
+    "homba_id": "HOMBA:10392",
+    "name": "anterior nuclear complex of thalamus",
+    "confidence": 0.707708,
+    "reason": "rcs methods=bm25+fuzzy",
+    "top3": [
+     {
+      "homba_id": "HOMBA:10392",
+      "name": "anterior nuclear complex of thalamus",
+      "score": 0.707708
+     },
+     {
+      "homba_id": "HOMBA:10423",
+      "name": "ventral posterior nuclear complex of thalamus",
+      "score": 0.535466
+     },
+     {
+      "homba_id": "HOMBA:AA30314",
+      "name": "ethmoid thalamic nucleus",
+      "score": 0.530448
+     }
+    ]
+   }
+  }
+ ]
+}

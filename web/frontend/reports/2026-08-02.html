@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2026-08-02 RCS review reports — ROSETTA Candidate Search</title>
+    <meta name="description" content="2026-08-02 の RCS レビュー: projection corpus 精査、abbrev 改善、RCS vs 3-AI（catalog-in-context）比較。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://rcs.mymt.site/reports/2026-08-02.html" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../site-nav.css" />
+    <link rel="stylesheet" href="../site-trust.css" />
+    <style>
+      .report-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .report-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      .report-card h2 {
+        margin-bottom: 10px;
+      }
+
+      .report-card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .report-card a.report-link {
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 10px 14px;
+        text-decoration: none;
+      }
+
+      .report-card a.report-link:hover {
+        background: var(--accent-hover);
+      }
+
+      .meta-list {
+        margin: 18px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .archive-link {
+        margin-top: 24px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a href="../index.html" class="site-brand">ROSETTA Candidate Search</a>
+        <nav class="site-nav-links" aria-label="サイトメニュー">
+          <a href="../index.html">候補検索</a>
+          <a href="../scoring-guide.html">スコアリング解説</a>
+          <a href="../walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="./2026-08-02.html" aria-current="page">Reports</a>
+          <a href="../about.html">このサイトについて</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Reports / 2026-08-02</p>
+        <h1>2026-08-02 RCS review reports</h1>
+        <p class="lead">
+          projection corpus の精査、non-neocortex suitable に対する top-1 検証・abbrev 改善
+          （〜round5）、RCS と 3-AI（catalog-in-context）の比較、および RCS + AI rerank
+          プロトタイプの解説記事を含みます。確立済みの正解データではなく、レビュー補助のための分析レポートです。
+        </p>
+      </section>
+
+      <section class="report-card">
+        <h2>このページについて</h2>
+        <p>
+          コーパス curation から round5 再検証までのレポート索引です（abbrev 改善・短い略語ルール・差分を含む）。
+          まず全体像を掴む場合は総括レポートからどうぞ。
+        </p>
+        <ul class="meta-list">
+          <li>作成日: 2026-08-02</li>
+          <li>対象: curated non-neocortex suitable（abbrev + fullname）</li>
+          <li>判定: DeepSeek flash × 3-pass（pro なし）</li>
+          <li>エンジン: RCS v0.8.5（round5 短い略語ルール込み）</li>
+        </ul>
+        <p style="margin-top: 16px;">
+          <a class="report-link" href="./2026-08-02/summary_report.html">総括レポートを開く</a>
+        </p>
+      </section>
+
+      <section class="report-grid" aria-label="レポート一覧">
+        <article class="report-card">
+          <h2>総括（Master summary）</h2>
+          <p>
+            段階ストーリー＋グラフで、各ラウンドの介入と指標変化を追える総括。
+            個別レポートへの入口付き。
+          </p>
+          <a class="report-link" href="./2026-08-02/summary_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Corpus curation</h2>
+          <p>
+            projection corpus の新皮質ラベル監査とテスト適合性精査。
+            suitable / unsuitable の内訳と混入修正のまとめです。
+          </p>
+          <a class="report-link" href="./2026-08-02/curation_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Baseline validation</h2>
+          <p>
+            精査済み non-neocortex suitable に対する RCS top-1 の初期検証
+            （abbrev / fullname、DeepSeek 3-pass）。
+          </p>
+          <a class="report-link" href="./2026-08-02/baseline_validation_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Policy / process</h2>
+          <p>
+            baseline 失敗パターンから導いた改善方針と、abbrev 衝突・文献慣用優先のプロセス整理です。
+          </p>
+          <a class="report-link" href="./2026-08-02/policy_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Abbrev improvement</h2>
+          <p>
+            baseline → round3_abbrev の差分レポート。システム変更点と improve / regress 例をまとめています。
+          </p>
+          <a class="report-link" href="./2026-08-02/abbrev_improve_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Round3 validation</h2>
+          <p>
+            abbrev 整備後の再検証詳細。ラベル分布とケース一覧付きの validation レポートです。
+          </p>
+          <a class="report-link" href="./2026-08-02/round3_validation_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Next actions</h2>
+          <p>
+            Round3 までの残課題ファミリと、P0–P3 の次アクション優先度・ロードマップです。
+          </p>
+          <a class="report-link" href="./2026-08-02/next_actions_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Round4 improvement</h2>
+          <p>
+            round3 → round4（P1–P2: 衝突解消・cell-type strip・fullname 曖昧性）の差分とシステム変更です。
+          </p>
+          <a class="report-link" href="./2026-08-02/round4_improve_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Round4 validation</h2>
+          <p>
+            engine 0.8.4 再検証の詳細レポート。ラベル分布とケース一覧付きです。
+          </p>
+          <a class="report-link" href="./2026-08-02/round4_validation_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Baseline → Round4</h2>
+          <p>
+            baseline から round4 までの通算差分（improve / regress）です。
+          </p>
+          <a class="report-link" href="./2026-08-02/abbrev_improve_vs_baseline.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Round5 improvement</h2>
+          <p>
+            round4 → round5（短い略語の選択的 abbrev / alias）。no_match 削減の差分です。
+          </p>
+          <a class="report-link" href="./2026-08-02/round5_improve_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Round5 validation</h2>
+          <p>
+            engine 0.8.5 再検証の詳細レポート。ラベル分布とケース一覧付きです。
+          </p>
+          <a class="report-link" href="./2026-08-02/round5_validation_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>Baseline → Round5</h2>
+          <p>
+            baseline から round5 までの通算差分（improve / regress）です。
+          </p>
+          <a class="report-link" href="./2026-08-02/round5_improve_vs_baseline.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>RCS vs 3-AI compare</h2>
+          <p>
+            HOMBA 全カタログをプロンプトに載せた Flash / Pro / Luna と RCS の 100件比較。
+            ID 接地・aligned・推論コストを含む（Sol なし）。
+          </p>
+          <a class="report-link" href="./2026-08-02/ai_compare_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>RCS + AI rerank</h2>
+          <p>
+            RCS top10 を LLM が再選択し、関係ラベル（一致 / より大きい / より小さい / 異なる）を返す
+            プロトタイプのアーキテクチャ解説と rcs_ai_compare.csv 検証。
+          </p>
+          <a class="report-link" href="./2026-08-02/rcs_ai_rerank_article.html">記事を開く</a>
+        </article>
+      </section>
+
+      <p class="archive-link">
+        過去レポート: <a href="./2026-06-25.html">2026-06-25</a>
+      </p>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="../index.html">候補検索</a>
+          <a href="../about.html">このサイトについて</a>
+          <a href="../scoring-guide.html">スコアリング解説</a>
+          <a href="./2026-08-02.html">Reports</a>
+          <a href="../humans.txt">humans.txt</a>
+          <a href="../robots.txt">robots.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · <a href="../about.html#contact">Contact / security</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

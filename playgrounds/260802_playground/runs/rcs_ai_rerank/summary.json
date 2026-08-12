@@ -1,0 +1,26 @@
+{
+ "n_queries": 100,
+ "n_with_expected": 87,
+ "model": "deepseek-v4-flash",
+ "rcs_top1_hit_rate": 0.931,
+ "ai_best_hit_rate": 0.977,
+ "expected_in_rcs_topk_rate": 0.9885,
+ "ai_changed_from_rcs_top1": 10,
+ "rcs_wrong_ai_right": 5,
+ "rcs_right_ai_wrong": 1,
+ "relation_counts": {
+  "match": 88,
+  "smaller": 6,
+  "larger": 5,
+  "different": 1
+ },
+ "costs": {
+  "calls": 13,
+  "prompt_tokens": 36906,
+  "completion_tokens": 7378,
+  "cached_tokens": 6016,
+  "cache_miss_tokens": 30890,
+  "cost_usd": 0.006407,
+  "errors": 0
+ }
+}

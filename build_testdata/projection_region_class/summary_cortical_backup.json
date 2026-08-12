@@ -1,0 +1,33 @@
+{
+  "generated_at_utc": "2026-07-21T07:21:09.114235+00:00",
+  "input": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\rcs_projection_corpus.csv",
+  "total_records": 6935,
+  "region_class_counts": {
+    "subcortical": 3201,
+    "cortical": 1864,
+    "other": 1508,
+    "ambiguous": 361,
+    "unresolved": 1
+  },
+  "decision_stage_counts": {
+    "flash": 6915,
+    "pro": 19,
+    "unresolved": 1
+  },
+  "flash_vote_split_counts": {
+    "3-0": 6421,
+    "2-1": 494,
+    "1-1-1": 20
+  },
+  "pro_vote_split_counts": {
+    "3-0": 9,
+    "1-1-1": 1,
+    "2-1": 10
+  },
+  "models": {
+    "flash": "deepseek-v4-flash",
+    "pro": "deepseek-v4-pro"
+  },
+  "workers": 128,
+  "batch_size": 6
+}

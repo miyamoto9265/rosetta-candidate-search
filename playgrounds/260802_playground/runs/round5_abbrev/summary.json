@@ -1,0 +1,121 @@
+{
+  "total_records": 3458,
+  "dataset": "non_neocortex",
+  "models": {
+    "pass1": "deepseek-v4-flash-0731",
+    "pass2": "deepseek-v4-flash-0731",
+    "pass3": "deepseek-v4-flash-0731",
+    "pro_used": false
+  },
+  "input": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\rcs_projection_corpus_curated_non_neocortex.csv",
+  "no_match_n": 187,
+  "query_kind_counts": {
+    "abbrev": 2368,
+    "fullname": 1090
+  },
+  "datasets": {
+    "non_neocortex_abbrev": {
+      "records": 2368,
+      "label_counts": {
+        "aligned": 1019,
+        "partial_or_narrower": 180,
+        "broader_parent": 594,
+        "wrong": 378,
+        "source_or_ontology_issue": 183,
+        "ambiguous": 5,
+        "no_consensus": 9
+      },
+      "certainty_counts": {
+        "high": 2057,
+        "medium": 302,
+        "low": 9
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 2010,
+        "2-1": 169,
+        "no_match": 180,
+        "1-1-1": 7,
+        "1-1": 2
+      }
+    },
+    "non_neocortex_fullname": {
+      "records": 1090,
+      "label_counts": {
+        "aligned": 435,
+        "partial_or_narrower": 76,
+        "broader_parent": 375,
+        "wrong": 185,
+        "source_or_ontology_issue": 16,
+        "ambiguous": 1,
+        "no_consensus": 2
+      },
+      "certainty_counts": {
+        "high": 927,
+        "medium": 161,
+        "low": 2
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 989,
+        "2-1": 92,
+        "no_match": 7,
+        "1-1-1": 2
+      }
+    },
+    "non_neocortex": {
+      "records": 3458,
+      "label_counts": {
+        "aligned": 1454,
+        "partial_or_narrower": 256,
+        "broader_parent": 969,
+        "wrong": 563,
+        "source_or_ontology_issue": 199,
+        "ambiguous": 6,
+        "no_consensus": 11
+      },
+      "certainty_counts": {
+        "high": 2984,
+        "medium": 463,
+        "low": 11
+      },
+      "vote_split_pattern_counts": {
+        "3-0": 2999,
+        "2-1": 261,
+        "no_match": 187,
+        "1-1-1": 9,
+        "1-1": 2
+      }
+    }
+  },
+  "overall": {
+    "label_counts": {
+      "aligned": 1454,
+      "partial_or_narrower": 256,
+      "broader_parent": 969,
+      "wrong": 563,
+      "source_or_ontology_issue": 199,
+      "ambiguous": 6,
+      "no_consensus": 11
+    },
+    "certainty_counts": {
+      "high": 2984,
+      "medium": 463,
+      "low": 11
+    },
+    "vote_split_pattern_counts": {
+      "3-0": 2999,
+      "2-1": 261,
+      "no_match": 187,
+      "1-1-1": 9,
+      "1-1": 2
+    },
+    "uncertainty_tag_counts": {
+      "stable": 2994,
+      "majority_vote": 252,
+      "rcs_no_match": 187,
+      "stable+low_certainty": 5,
+      "majority_vote+low_certainty": 9,
+      "split_vote": 10,
+      "split_vote+low_certainty": 1
+    }
+  }
+}

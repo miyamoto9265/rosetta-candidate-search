@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="RCS top10 を LLM が再選択し、HOMBA とクエリの関係（一致・より大きい・より小さい・異なる）を返す AI 統合プロトタイプのアーキテクチャと rcs_ai_compare.csv 検証結果。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rcs.mymt.site/reports/2026-08-02/rcs_ai_rerank_article.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="RCS + AI rerank — アーキテクチャと検証" />
+  <meta property="og:description" content="RCS top10 再ランク + 関係ラベルの playground プロトタイプ解説と rcs_ai_compare.csv 比較結果。" />
+  <meta property="og:url" content="https://rcs.mymt.site/reports/2026-08-02/rcs_ai_rerank_article.html" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="ROSETTA Candidate Search" />
+  <link rel="stylesheet" href="../../site-nav.css" />
+  <link rel="stylesheet" href="../../site-trust.css" />
+  <title>RCS + AI rerank — アーキテクチャと検証 — ROSETTA</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --text: #1a1f2e;
+      --muted: #5c6478;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e2e8f0;
+      --success: #059669;
+      --success-bg: #ecfdf5;
+      --warning: #d97706;
+      --warning-bg: #fffbeb;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --code-bg: #0f172a;
+      --code-text: #e2e8f0;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .layout {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 45%, #2563eb 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    header.hero .eyebrow {
+      margin: 0 0 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    header.hero h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 1.25;
+      font-weight: 750;
+    }
+
+    header.hero .lead {
+      margin: 1rem 0 0;
+      max-width: 40rem;
+      opacity: 0.92;
+      font-size: 1.05rem;
+    }
+
+    header.hero .meta {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    nav.toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    nav.toc h2 {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    nav.toc a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    nav.toc a:hover { text-decoration: underline; }
+
+    article section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    article h2 {
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    article h3 {
+      margin: 1.5rem 0 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    article p { margin: 0 0 1rem; color: var(--text); }
+    article p:last-child { margin-bottom: 0; }
+    article ul, article ol { margin: 0 0 1rem; padding-left: 1.35rem; }
+    article li { margin-bottom: 0.35rem; }
+
+    .muted { color: var(--muted); }
+    .note {
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      padding: 0.85rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .warn {
+      background: var(--warning-bg);
+      border-left: 4px solid var(--warning);
+      padding: 0.85rem 1rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin: 1.25rem 0;
+    }
+
+    .metric {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+    }
+
+    .metric .label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .metric .value {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 1.45rem;
+      font-weight: 750;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.2;
+    }
+
+    .metric .value.up { color: var(--success); }
+    .metric .value.flat { color: var(--text); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) td { background: #fafbfc; }
+
+    code, .mono {
+      font-family: ui-monospace, "Cascadia Code", "Consolas", monospace;
+      font-size: 0.88em;
+    }
+
+    code {
+      background: #f1f5f9;
+      padding: 0.1em 0.35em;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 1rem 1.1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      margin: 1rem 0;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      margin: 1.25rem 0;
+    }
+
+    @media (min-width: 720px) {
+      .flow {
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        align-items: stretch;
+      }
+      .flow .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        font-size: 1.4rem;
+        padding: 0 0.15rem;
+      }
+    }
+
+    .flow-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .flow-box h4 {
+      margin: 0 0 0.4rem;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+
+    .flow-box p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .arrow { display: none; }
+
+    .badge {
+      display: inline-block;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+
+    .badge-match { background: var(--success-bg); color: var(--success); }
+    .badge-larger { background: var(--accent-soft); color: #1d4ed8; }
+    .badge-smaller { background: var(--warning-bg); color: #b45309; }
+    .badge-diff { background: var(--danger-bg); color: var(--danger); }
+
+    .case {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin: 0.65rem 0;
+      background: #fafbfc;
+      font-size: 0.92rem;
+    }
+
+    .case strong { display: block; margin-bottom: 0.25rem; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    @media (min-width: 700px) {
+      .compare-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .compare-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      background: #f8fafc;
+    }
+
+    .compare-card h4 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .compare-card ul { margin: 0; padding-left: 1.2rem; font-size: 0.9rem; }
+
+    footer.page-foot {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer.page-foot a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../index.html" class="site-brand">ROSETTA Candidate Search</a>
+      <nav class="site-nav-links" aria-label="サイトメニュー">
+        <a href="../../index.html">候補検索</a>
+        <a href="../../scoring-guide.html">スコアリング解説</a>
+        <a href="../../walkthrough-bla.html">Walkthrough (BLA)</a>
+        <a href="../2026-08-02.html" aria-current="page">Reports</a>
+        <a href="../../about.html">このサイトについて</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <header class="hero">
+      <p class="eyebrow">Reports / 2026-08-02 · Prototype</p>
+      <h1>RCS + AI rerank<br />アーキテクチャと検証</h1>
+      <p class="lead">
+        RCS の top10 候補を LLM が読み、最良 HOMBA を選び、クエリとの関係
+        （一致 / より大きい / より小さい / 異なる）を返す。
+        本番 API ではなく playground プロトタイプの設計と、
+        <code style="background:rgba(255,255,255,.15);color:#fff">rcs_ai_compare.csv</code>
+        100 件での検証結果です。
+      </p>
+      <div class="meta">
+        <span>モデル: deepseek-v4-flash</span>
+        <span>スコア付きクエリ: 87 / 100</span>
+        <span>推定コスト: ≈ $0.0064</span>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#summary">要点</a></li>
+        <li><a href="#architecture">アーキテクチャ</a></li>
+        <li><a href="#vs-catalog">catalog-in-context との違い</a></li>
+        <li><a href="#results">検証結果（rcs_ai_compare.csv）</a></li>
+        <li><a href="#cases">代表ケース</a></li>
+        <li><a href="#api-shape">将来の API 形</a></li>
+        <li><a href="#limits">限界と次のステップ</a></li>
+      </ol>
+    </nav>
+
+    <article>
+      <section id="summary">
+        <h2>1. 要点</h2>
+        <div class="metrics">
+          <div class="metric">
+            <span class="label">RCS top1 hit</span>
+            <span class="value flat">93.1%</span>
+          </div>
+          <div class="metric">
+            <span class="label">AI best hit</span>
+            <span class="value up">97.7%</span>
+          </div>
+          <div class="metric">
+            <span class="label">expected ∈ top10</span>
+            <span class="value flat">98.9%</span>
+          </div>
+          <div class="metric">
+            <span class="label">RCS✗ → AI✓</span>
+            <span class="value up">+5</span>
+          </div>
+          <div class="metric">
+            <span class="label">RCS✓ → AI✗</span>
+            <span class="value flat">−1</span>
+          </div>
+          <div class="metric">
+            <span class="label">AI が top1 変更</span>
+            <span class="value flat">10</span>
+          </div>
+        </div>
+        <ul>
+          <li>AI は <strong>HOMBA 全カタログを見ない</strong>。RCS が返した最大 10 件だけを選ぶ。</li>
+          <li>主効果は略語・粒度の取り違え修正（ACC / EC / MGB / PAG など）。</li>
+          <li>関係ラベルは評価用 3-pass judge とは別。本番応答に載せる価値のある情報として設計。</li>
+          <li>RCS エンジン本体は未変更（別系統の精度改善と競合しない playground 実装）。</li>
+        </ul>
+      </section>
+
+      <section id="architecture">
+        <h2>2. アーキテクチャ</h2>
+        <p>
+          現行の統合は <strong>RCS を第一段、LLM を第二段の再選択器</strong> とする二段構成です。
+          LLM は検索エンジンではなく、候補リスト上の裁定者です。
+        </p>
+
+        <div class="flow" aria-label="処理フロー">
+          <div class="flow-box">
+            <h4>1. RCS</h4>
+            <p>exact / fuzzy / BM25 とルールで候補を生成・スコアリング。<code>top_k=10</code> を返す。</p>
+          </div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <h4>2. LLM rerank</h4>
+            <p>候補 ID だけを見て最良 1 件を選択。カタログ外 ID は拒否。</p>
+          </div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="flow-box">
+            <h4>3. Relation</h4>
+            <p>選んだ HOMBA がクエリに対して match / larger / smaller / different かを付与。</p>
+          </div>
+        </div>
+
+        <h3>関係ラベルの向き</h3>
+        <p>ラベルは常に <strong>最良 HOMBA レコードがクエリに対してどうか</strong> を表します。</p>
+        <table>
+          <thead>
+            <tr>
+              <th>API 値</th>
+              <th>日本語</th>
+              <th>意味</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-match">match</span></td>
+              <td>一致</td>
+              <td>同一構造・同義・慣用表記ゆれ</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-larger">larger</span></td>
+              <td>より大きい</td>
+              <td>HOMBA の方が広い（親・コンテナ）</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-smaller">smaller</span></td>
+              <td>より小さい</td>
+              <td>HOMBA の方が狭い（部分・下位）</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-diff">different</span></td>
+              <td>異なる</td>
+              <td>解剖学的に別構造（候補内に妥当な一致がない場合含む）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>実装上の制約</h3>
+        <ul>
+          <li><code>homba_id</code> は必ず候補リスト内。発明 ID はパース時に破棄し RCS top1 へフォールバック。</li>
+          <li>1 クエリあたり LLM 呼び出しは <strong>1 回</strong>（選択と関係ラベルを同レスポンスで取得）。</li>
+          <li>3-pass majority vote（整合性評価）は使わない。評価パイプラインとは分離。</li>
+          <li>モデル既定は <code>deepseek-v4-flash</code>（低コスト・低レイテンシ）。</li>
+        </ul>
+
+        <div class="note">
+          ハーネス:
+          <code>playgrounds/260802_playground/rcs_ai_rerank_harness.py</code>
+          · 出力:
+          <code>runs/rcs_ai_rerank/</code>
+        </div>
+      </section>
+
+      <section id="vs-catalog">
+        <h2>3. catalog-in-context との違い</h2>
+        <p>
+          同日の別実験（
+          <a href="./ai_compare_report.html">RCS vs 3-AI compare</a>
+          ）では、HOMBA 全件（約 2342）を毎回プロンプトに載せ、LLM に単独マッピングさせていました。
+          今回の AI 統合はその対極にあります。
+        </p>
+
+        <div class="compare-grid">
+          <div class="compare-card">
+            <h4>catalog-in-context（研究比較）</h4>
+            <ul>
+              <li>目的: 「AI だけで RCS を置き換えられるか」</li>
+              <li>入力: クエリ + 全カタログ</li>
+              <li>出力: 単一 HOMBA ID</li>
+              <li>トークン: リクエストあたり数万</li>
+              <li>100 件規模で map だけで数十セント級</li>
+              <li>本番運用前提ではない</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <h4>RCS → AI rerank（今回）</h4>
+            <ul>
+              <li>目的: RCS を残したまま AI で改善</li>
+              <li>入力: クエリ + RCS top10</li>
+              <li>出力: 最良 ID + 関係ラベル</li>
+              <li>トークン: 候補 10 件程度</li>
+              <li>100 件で ≈ $0.006</li>
+              <li>将来の <code>use_ai</code> API オプション候補</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="muted">
+          catalog 実験では Luna 等が raw ID match で RCS をわずかに上回る場面もありましたが、
+          コスト・レイテンシ・運用境界の面で「RCS 置換」は選ばず、
+          <strong>候補再選択 + 関係説明</strong> に寄せたのが現在の統合方針です。
+        </p>
+      </section>
+
+      <section id="results">
+        <h2>4. 検証結果（rcs_ai_compare.csv）</h2>
+        <p>
+          データセット 100 クエリのうち、expected HOMBA ID がある 87 件で
+          ID hit rate を算出（残り 13 件は関係ラベル分布のみ集計対象）。
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>指標</th>
+              <th>RCS top1</th>
+              <th>AI best（top10 内）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ID hit rate（n=87）</td>
+              <td>93.1%</td>
+              <td><strong>97.7%</strong></td>
+            </tr>
+            <tr>
+              <td>expected が RCS top10 内</td>
+              <td colspan="2">98.9%（天井。AI はこれ以上を原理的に超えられない）</td>
+            </tr>
+            <tr>
+              <td>AI が RCS top1 を変更</td>
+              <td colspan="2">10 / 100</td>
+            </tr>
+            <tr>
+              <td>改善（RCS✗→AI✓）</td>
+              <td colspan="2">5</td>
+            </tr>
+            <tr>
+              <td>悪化（RCS✓→AI✗）</td>
+              <td colspan="2">1（BLA）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>難易度別 ID hit</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>difficulty</th>
+              <th>n（expected あり）</th>
+              <th>RCS</th>
+              <th>AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>easy</td>
+              <td>32</td>
+              <td>96.9%</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td>medium</td>
+              <td>38</td>
+              <td>92.1%</td>
+              <td>97.4%</td>
+            </tr>
+            <tr>
+              <td>hard</td>
+              <td>17</td>
+              <td>88.2%</td>
+              <td>94.1%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>関係ラベル分布（全 100）</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>relation</th>
+              <th>件数</th>
+              <th>読み</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-match">match</span> 一致</td>
+              <td>88</td>
+              <td>大半は同義・慣用一致として裁定</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-smaller">smaller</span> より小さい</td>
+              <td>6</td>
+              <td>広いクエリに対し下位候補しかない場合など</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-larger">larger</span> より大きい</td>
+              <td>5</td>
+              <td>親・コンテナへのフォールバック</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-diff">different</span> 異なる</td>
+              <td>1</td>
+              <td>Septum → septum pellucidum（意味ずれ）</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>コスト</h3>
+        <ul>
+          <li>API calls: 13（バッチ 8）</li>
+          <li>prompt ≈ 37k tok / completion ≈ 7.4k tok</li>
+          <li>合計 ≈ <strong>$0.0064</strong>（100 クエリ）</li>
+          <li>catalog-in-context 比較一式（≈ $0.30）より二桁安い</li>
+        </ul>
+      </section>
+
+      <section id="cases">
+        <h2>5. 代表ケース</h2>
+
+        <h3>改善例（RCS top1 誤り → AI 正解）</h3>
+        <div class="case">
+          <strong>AIC-033 ACC</strong>
+          RCS: caudal branch of anterior commissure →
+          AI: anterior cingulate cortex（match）。
+          略語の文献慣用を候補内から拾い直した典型例。
+        </div>
+        <div class="case">
+          <strong>AIC-054 EC / AIC-059 MGB / AIC-081 PAG</strong>
+          RCS が division / complex / region 側に寄ったところを、
+          AI が慣用の親構造（entorhinal cortex / medial geniculate nucleus /
+          periaqueductal gray substance）へ戻した。
+        </div>
+        <div class="case">
+          <strong>AIC-021 Dorsal raphe nucleus</strong>
+          RCS が dorsal division を top1 にしたのを、クエリ全体に合う親ノードへ修正。
+        </div>
+
+        <h3>悪化例（1 件）</h3>
+        <div class="case">
+          <strong>AIC-047 BLA</strong>
+          expected / RCS top1: basolateral amygdaloid complex（HOMBA:10366）。
+          AI: basolateral nucleus（HOMBA:10368）を match と判定。
+          略語 BLA の「複合 vs 核」粒度で食い違い。関係ラベルは match のままなので、
+          confidence や粒度ポリシーの調整余地がある。
+        </div>
+
+        <h3>関係ラベルが効く例</h3>
+        <div class="case">
+          <strong>larger</strong> —
+          Cerebral hemisphere → telencephalon、
+          Medial hypothalamus → hypothalamus。
+          オントロジーに exact が無い／広すぎるクエリで親へ寄せ、かつ「一致ではない」と明示。
+        </div>
+        <div class="case">
+          <strong>smaller</strong> —
+          Auditory cortex → primary auditory cortex、
+          Brainstem → midbrain gray。
+          候補が狭い側しか無いことをラベルで伝える。
+        </div>
+        <div class="case">
+          <strong>different</strong> —
+          Septum → septum pellucidum。
+          候補内最良でも意味がずれるケースを正直にフラグ。
+        </div>
+
+        <div class="warn">
+          天井: expected が RCS top10 に無いケース（例: LH → lateral hypothalamic area, tuberal part）は
+          AI でも回復不能。AI 統合は RCS 召回の品質に依存する。
+        </div>
+      </section>
+
+      <section id="api-shape">
+        <h2>6. 将来の API 形（草案）</h2>
+        <p>
+          本番 Lambda にはまだ載せていません。playground の結合レコードが示す応答イメージです。
+        </p>
+<pre><code>{
+  "query": "ACC",
+  "top_k": 10,
+  "candidates": [ /* RCS のスコア付き候補 */ ],
+  "ai": {
+    "enabled": true,
+    "best_homba_id": "HOMBA:10278",
+    "best_name": "anterior cingulate cortex (...)",
+    "relation": "match",
+    "relation_ja": "一致",
+    "confidence": 0.95,
+    "reason": "ACC is a standard abbreviation for anterior cingulate cortex."
+  }
+}</code></pre>
+        <ul>
+          <li>リクエスト案: <code>use_ai: true</code>（既定 false）。オフ時は現行どおり candidates のみ。</li>
+          <li>AI 失敗時は candidates を返し、<code>ai.error</code> を付ける（検索自体は落とさない）。</li>
+          <li>エンジン改善と AI 層は分離。RCS の精度向上はそのまま rerank の天井を上げる。</li>
+        </ul>
+      </section>
+
+      <section id="limits">
+        <h2>7. 限界と次のステップ</h2>
+        <ul>
+          <li><strong>召回依存</strong>: top10 に無い正解は救えない。RCS 側の abbrev / alias 改善が引き続き本丸。</li>
+          <li><strong>粒度曖昧</strong>: BLA のような complex vs nucleus はポリシーまたは追加シグナルが必要。</li>
+          <li><strong>ラベル品質</strong>: 今回の relation は LLM 自己申告。別系統の 3-pass judge で監査する余地はある（ただし API 応答自体には載せない想定）。</li>
+          <li><strong>本番化</strong>: API キー管理、タイムアウト、レート制限、フロントの opt-in UI が残作業。</li>
+        </ul>
+        <p>
+          詳細な行単位表は
+          <a href="./rcs_ai_rerank_report.html">rerank 詳細レポート</a>
+          を参照。再計算は
+          <code>playgrounds/260802_playground/rcs_ai_rerank_harness.py</code>
+          で行えます。
+        </p>
+      </section>
+    </article>
+
+    <footer class="page-foot">
+      <p>
+        関連:
+        <a href="./ai_compare_report.html">RCS vs 3-AI compare</a> ·
+        <a href="../2026-08-02.html">2026-08-02 レポート一覧</a> ·
+        <a href="../../scoring-guide.html">スコアリング解説</a>
+      </p>
+      <p>Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a></p>
+    </footer>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer-inner">
+      <h2>ROSETTA Candidate Search</h2>
+      <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+      <nav aria-label="フッターナビゲーション">
+        <a href="../../index.html">候補検索</a>
+        <a href="../../about.html">このサイトについて</a>
+        <a href="../../scoring-guide.html">スコアリング解説</a>
+        <a href="../2026-08-02.html">Reports</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
