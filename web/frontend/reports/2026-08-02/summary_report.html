@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="2026-08-02 RCS レビュー総括: 各段階の改善内容と指標変化をグラフで追う可視化レポート。" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rcs.mymt.site/reports/2026-08-02/summary_report.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="2026-08-02 RCS review — 総括レポート" />
+  <meta property="og:description" content="コーパス精査から abbrev 改善、AI 比較・rerank までの段階的発展を可視化。" />
+  <meta property="og:url" content="https://rcs.mymt.site/reports/2026-08-02/summary_report.html" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:site_name" content="ROSETTA Candidate Search" />
+  <link rel="stylesheet" href="../../site-nav.css" />
+  <link rel="stylesheet" href="../../site-trust.css" />
+  <title>2026-08-02 RCS review — 総括レポート — ROSETTA</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <style>
+    :root {
+      --bg: #f4f6fa;
+      --surface: #ffffff;
+      --text: #152033;
+      --muted: #5c677a;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e2e8f0;
+      --success: #059669;
+      --success-bg: #ecfdf5;
+      --warning: #d97706;
+      --danger: #dc2626;
+      --aligned: #2563eb;
+      --useful: #0d9488;
+      --wrong: #e11d48;
+      --nomatch: #9333ea;
+      --broader: #f59e0b;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.07), 0 10px 28px rgba(15, 23, 42, 0.06);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, #dbeafe 0%, transparent 55%),
+        radial-gradient(900px 400px at 100% 0%, #ecfeff 0%, transparent 50%),
+        var(--bg);
+    }
+    .layout {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.25rem 1.15rem 4rem;
+    }
+    header.hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 48%, #2563eb 100%);
+      color: #fff;
+      border-radius: 18px;
+      padding: 2.4rem 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -40% 40%;
+      height: 220px;
+      background: radial-gradient(circle, rgba(255,255,255,.18), transparent 65%);
+      pointer-events: none;
+    }
+    header.hero .eyebrow {
+      margin: 0 0 0.45rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    header.hero h1 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3.8vw, 2.2rem);
+      line-height: 1.22;
+      font-weight: 750;
+    }
+    header.hero .lead {
+      margin: 0.95rem 0 0;
+      max-width: 44rem;
+      opacity: 0.93;
+      font-size: 1.04rem;
+    }
+    header.hero .meta {
+      margin-top: 1.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 1rem;
+      font-size: 0.84rem;
+      opacity: 0.88;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    @media (max-width: 860px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem 1.05rem;
+      box-shadow: var(--shadow);
+    }
+    .kpi .label { font-size: 0.72rem; color: var(--muted); font-weight: 700; letter-spacing: 0.02em; }
+    .kpi .value {
+      margin-top: 0.2rem;
+      font-size: 1.55rem;
+      font-weight: 780;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.15;
+    }
+    .kpi .value.up { color: var(--success); }
+    .kpi .value.down { color: var(--nomatch); }
+    .kpi .sub { margin-top: 0.2rem; font-size: 0.78rem; color: var(--muted); }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem 1.25rem 1.4rem;
+      margin-bottom: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.28rem;
+    }
+    .panel .section-lead {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Journey rail */
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 0.4rem;
+      margin: 0.4rem 0 1rem;
+    }
+    @media (max-width: 900px) {
+      .journey { grid-template-columns: repeat(4, 1fr); }
+    }
+    .j-step {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 0.65rem 0.45rem;
+      cursor: pointer;
+      text-align: center;
+      transition: border-color .15s, background .15s, transform .15s, box-shadow .15s;
+      font: inherit;
+      color: inherit;
+      min-height: 74px;
+    }
+    .j-step:hover { border-color: #93c5fd; background: #eff6ff; }
+    .j-step[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, #eff6ff, #fff);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+      transform: translateY(-1px);
+    }
+    .j-step .n {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 750;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .j-step .t {
+      display: block;
+      margin-top: 0.2rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .stage-detail {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .stage-detail { grid-template-columns: 1fr; }
+    }
+    .stage-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.05rem;
+      background: linear-gradient(180deg, #f8fafc, #fff);
+    }
+    .stage-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.05rem;
+    }
+    .stage-card p { margin: 0 0 0.7rem; font-size: 0.93rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.6rem 0; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      border-radius: 999px;
+      padding: 0.22rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      border: 1px solid transparent;
+    }
+    .chip.up { background: var(--success-bg); color: var(--success); }
+    .chip.down { background: #faf5ff; color: #7e22ce; }
+    .chip.flat { background: #f1f5f9; color: var(--muted); }
+    .chip.warn { background: #fff1f2; color: var(--danger); }
+    .did-list { margin: 0; padding-left: 1.15rem; font-size: 0.9rem; }
+    .did-list li { margin-bottom: 0.25rem; }
+    .stage-link {
+      display: inline-block;
+      margin-top: 0.55rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .stage-link:hover { text-decoration: underline; }
+
+    .delta-bars { display: grid; gap: 0.55rem; }
+    .delta-row { display: grid; grid-template-columns: 5.5rem 1fr auto; gap: 0.5rem; align-items: center; font-size: 0.82rem; }
+    .delta-row .name { color: var(--muted); font-weight: 650; }
+    .delta-track {
+      height: 10px;
+      background: #eef2f7;
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .delta-fill {
+      height: 100%;
+      border-radius: 999px;
+      width: 0;
+      transition: width .45s ease;
+    }
+    .delta-fill.pos { background: linear-gradient(90deg, #34d399, #059669); }
+    .delta-fill.neg { background: linear-gradient(90deg, #c084fc, #9333ea); }
+    .delta-fill.bad { background: linear-gradient(90deg, #fb7185, #e11d48); }
+    .delta-val { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 3.2rem; text-align: right; }
+
+    .charts {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .charts { grid-template-columns: 1fr; }
+    }
+    .chart-box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 0.9rem 0.6rem;
+      background: #fff;
+    }
+    .chart-box h3 {
+      margin: 0 0 0.35rem;
+      font-size: 0.95rem;
+    }
+    .chart-box p {
+      margin: 0 0 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .chart-wrap { position: relative; height: 280px; }
+    .chart-wrap.tall { height: 300px; }
+
+    .legend-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      margin: 0.25rem 0 0.85rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .legend-inline span::before {
+      content: "";
+      display: inline-block;
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 2px;
+      margin-right: 0.35rem;
+      vertical-align: -1px;
+    }
+    .lg-aligned::before { background: var(--aligned); }
+    .lg-useful::before { background: var(--useful); }
+    .lg-wrong::before { background: var(--wrong); }
+    .lg-nomatch::before { background: var(--nomatch); }
+    .lg-broader::before { background: var(--broader); }
+
+    table.compact {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-top: 0.75rem;
+    }
+    table.compact th, table.compact td {
+      border: 1px solid var(--border);
+      padding: 0.42rem 0.5rem;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    table.compact th:first-child, table.compact td:first-child { text-align: left; }
+    table.compact th { background: #f1f5f9; }
+    table.compact tr.active td { background: #eff6ff; font-weight: 650; }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 860px) {
+      .ai-grid { grid-template-columns: 1fr; }
+    }
+
+    .verdict {
+      background: linear-gradient(180deg, #eff6ff, #f8fafc);
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 0.85rem;
+      font-size: 0.98rem;
+    }
+    .verdict strong { color: #1e40af; }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.55rem;
+    }
+    .link-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem 0.9rem;
+      background: #f8fafc;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .link-card:hover {
+      border-color: #93c5fd;
+      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.08);
+    }
+    .link-card h4 { margin: 0 0 0.25rem; font-size: 0.9rem; color: var(--accent); }
+    .link-card p { margin: 0; font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+    footer.page-foot {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer.page-foot a { color: var(--accent); }
+
+    .hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-nav-inner">
+      <a href="../../index.html" class="site-brand">ROSETTA Candidate Search</a>
+      <nav class="site-nav-links" aria-label="サイトメニュー">
+        <a href="../../index.html">候補検索</a>
+        <a href="../../scoring-guide.html">スコアリング解説</a>
+        <a href="../../walkthrough-bla.html">Walkthrough (BLA)</a>
+        <a href="../2026-08-02.html" aria-current="page">Reports</a>
+        <a href="../../about.html">このサイトについて</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <header class="hero">
+      <p class="eyebrow">Reports / 2026-08-02 · Master summary</p>
+      <h1>段階的に見る RCS 改善の一日</h1>
+      <p class="lead">
+        コーパス精査 → abbrev 改善（R1–R5）→ AI 方針決定までの発展を、
+        グラフと段階ストーリーで追える総括です。下の段階ボタンで「その時点で何をしたか／何が変わったか」を切り替えてください。
+      </p>
+      <div class="meta">
+        <span>評価クエリ: 3,458（abbrev + fullname）</span>
+        <span>判定: DeepSeek flash × 3-pass</span>
+        <span>到達: RCS v0.8.5</span>
+      </div>
+    </header>
+
+    <div class="kpi-row" aria-label="到達点 KPI">
+      <div class="kpi">
+        <div class="label">no_match</div>
+        <div class="value down">−476</div>
+        <div class="sub">663 → 187</div>
+      </div>
+      <div class="kpi">
+        <div class="label">aligned</div>
+        <div class="value up">+315</div>
+        <div class="sub">1,139 → 1,454</div>
+      </div>
+      <div class="kpi">
+        <div class="label">useful (aligned+parent)</div>
+        <div class="value up">+595</div>
+        <div class="sub">1,828 → 2,423</div>
+      </div>
+      <div class="kpi">
+        <div class="label">AI rerank hit</div>
+        <div class="value up">97.7%</div>
+        <div class="sub">RCS 93.1% から +4.6pt</div>
+      </div>
+    </div>
+
+    <section class="panel" id="journey">
+      <h2>発展ストーリー</h2>
+      <p class="section-lead">段階を選ぶと、そのラウンドの介入内容と直前からの変化量が更新されます。グラフ上の強調も連動します。</p>
+      <p class="hint">ヒント: 左から右へ進むほど「診断 → 辞書拡充 → 衝突制御 → 短略語 → AI 補助」と役割が移ります。</p>
+
+      <div class="journey" role="toolbar" aria-label="段階選択">
+        <button type="button" class="j-step" data-stage="0" aria-pressed="false"><span class="n">01</span><span class="t">Curation</span></button>
+        <button type="button" class="j-step" data-stage="1" aria-pressed="true"><span class="n">02</span><span class="t">Baseline</span></button>
+        <button type="button" class="j-step" data-stage="2" aria-pressed="false"><span class="n">03</span><span class="t">Round 1</span></button>
+        <button type="button" class="j-step" data-stage="3" aria-pressed="false"><span class="n">04</span><span class="t">Round 2</span></button>
+        <button type="button" class="j-step" data-stage="4" aria-pressed="false"><span class="n">05</span><span class="t">Round 3</span></button>
+        <button type="button" class="j-step" data-stage="5" aria-pressed="false"><span class="n">06</span><span class="t">Round 4</span></button>
+        <button type="button" class="j-step" data-stage="6" aria-pressed="false"><span class="n">07</span><span class="t">Round 5</span></button>
+        <button type="button" class="j-step" data-stage="7" aria-pressed="false"><span class="n">08</span><span class="t">AI 方針</span></button>
+      </div>
+
+      <div class="stage-detail">
+        <div class="stage-card" id="stageNarrative">
+          <!-- filled by JS -->
+        </div>
+        <div class="stage-card">
+          <h3>直前段階からの変化</h3>
+          <div class="delta-bars" id="deltaBars"></div>
+          <p class="hint" id="deltaHint" style="margin-top:0.75rem;margin-bottom:0;"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="trends">
+      <h2>指標の推移</h2>
+      <p class="section-lead">
+        望ましい方向: <strong>aligned / useful 上昇</strong>、
+        <strong>no_match / wrong 下降</strong>。
+        Round2 は衝突 demotion のため一時的に揺れたあと、R3–R5 で再上昇します。
+      </p>
+      <div class="legend-inline">
+        <span class="lg-aligned">aligned</span>
+        <span class="lg-useful">useful</span>
+        <span class="lg-wrong">wrong</span>
+        <span class="lg-nomatch">no_match</span>
+        <span class="lg-broader">broader_parent</span>
+      </div>
+      <div class="charts">
+        <div class="chart-box">
+          <h3>主指標の時系列</h3>
+          <p>選択中の段階に縦線マーカーを表示</p>
+          <div class="chart-wrap tall"><canvas id="trendChart" aria-label="主指標時系列グラフ"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3>ラベル構成（積み上げ）</h3>
+          <p>各段階の判定ラベル内訳</p>
+          <div class="chart-wrap tall"><canvas id="stackChart" aria-label="ラベル構成積み上げグラフ"></canvas></div>
+        </div>
+      </div>
+
+      <table class="compact" id="metricsTable">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>aligned</th>
+            <th>broader</th>
+            <th>wrong</th>
+            <th>no_match</th>
+            <th>useful</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="waterfall">
+      <h2>どこで効いたか（累積改善）</h2>
+      <p class="section-lead">baseline からの累積 Δ。棒の長さが「その時点までにどれだけ良くなったか」を示します。</p>
+      <div class="charts">
+        <div class="chart-box">
+          <h3>累積 Δ aligned / no_match</h3>
+          <p>aligned は上方向、no_match は削減量を正で表示</p>
+          <div class="chart-wrap"><canvas id="cumulChart" aria-label="累積改善グラフ"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3>ラウンド間の寄与（Δ no_match）</h3>
+          <p>負 = no_match 増加（悪化）、正 = 削減</p>
+          <div class="chart-wrap"><canvas id="stepChart" aria-label="ラウンド間no_match寄与グラフ"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="ai">
+      <h2>AI 章: 置換ではなく補助</h2>
+      <div class="verdict">
+        <strong>方針:</strong>
+        全カタログを渡しても AI は +4pt 程度。コストと運用境界から RCS 置換は却下し、
+        <strong>RCS top10 → LLM 再選択 + 関係ラベル</strong>を将来の <code>use_ai</code> 候補とする。
+      </div>
+      <div class="ai-grid">
+        <div class="chart-box">
+          <h3>catalog-in-context（aligned %）</h3>
+          <p>n=100 · RCS vs Flash / Pro / Luna</p>
+          <div class="chart-wrap"><canvas id="aiAlignChart" aria-label="AI aligned比較"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <h3>rerank: ID hit とコスト感</h3>
+          <p>expected あり 87 件 · コストは相対スケール</p>
+          <div class="chart-wrap"><canvas id="rerankChart" aria-label="rerank比較"></canvas></div>
+        </div>
+      </div>
+      <ul style="margin:1rem 0 0;padding-left:1.2rem;font-size:0.93rem;">
+        <li>rerank: RCS top1 hit 93.1% → AI best 97.7%（純改善 +5 / 悪化 −1）</li>
+        <li>関係ラベル: match 88 / larger 5 / smaller 6 / different 1</li>
+        <li>コスト: rerank ≈ $0.006 / 100、catalog 比較一式 ≈ $0.30</li>
+      </ul>
+      <p style="margin:0.85rem 0 0;font-size:0.9rem;">
+        詳細:
+        <a href="./ai_compare_report.html">AI compare</a> ·
+        <a href="./rcs_ai_rerank_article.html">rerank 記事</a> ·
+        <a href="./rcs_ai_rerank_report.html">rerank 表</a>
+      </p>
+    </section>
+
+    <section class="panel" id="catalog">
+      <h2>個別レポート</h2>
+      <p class="section-lead">索引: <a href="../2026-08-02.html">2026-08-02.html</a></p>
+      <div class="link-grid">
+        <a class="link-card" href="./curation_report.html"><h4>Corpus curation</h4><p>6,935 → suitable non-neo 2,368</p></a>
+        <a class="link-card" href="./baseline_validation_report.html"><h4>Baseline</h4><p>aligned 1,139 / no_match 663</p></a>
+        <a class="link-card" href="./policy_report.html"><h4>Policy</h4><p>文献略語優先・審判固定</p></a>
+        <a class="link-card" href="./abbrev_improve_report.html"><h4>→ Round3 差分</h4><p>最初の大きなジャンプ</p></a>
+        <a class="link-card" href="./round3_validation_report.html"><h4>Round3 validation</h4><p>0.8.3 詳細</p></a>
+        <a class="link-card" href="./next_actions_report.html"><h4>Next actions</h4><p>P0–P3 ロードマップ</p></a>
+        <a class="link-card" href="./round4_improve_report.html"><h4>Round4 improvement</h4><p>衝突・strip・曖昧性</p></a>
+        <a class="link-card" href="./round4_validation_report.html"><h4>Round4 validation</h4><p>wrong 削減が主益</p></a>
+        <a class="link-card" href="./abbrev_improve_vs_baseline.html"><h4>Baseline → R4</h4><p>中間通算</p></a>
+        <a class="link-card" href="./round5_improve_report.html"><h4>Round5 improvement</h4><p>短い略語</p></a>
+        <a class="link-card" href="./round5_validation_report.html"><h4>Round5 validation</h4><p>0.8.5 到達点</p></a>
+        <a class="link-card" href="./round5_improve_vs_baseline.html"><h4>Baseline → R5</h4><p>最終通算差分</p></a>
+      </div>
+    </section>
+
+    <footer class="page-foot">
+      <p>Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a></p>
+    </footer>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer-inner">
+      <h2>ROSETTA Candidate Search</h2>
+      <p>Research application for mapping brain-region names to HOMBA ontology entries.</p>
+      <nav aria-label="フッターナビゲーション">
+        <a href="../../index.html">候補検索</a>
+        <a href="../../about.html">このサイトについて</a>
+        <a href="../2026-08-02.html">Reports</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const STAGES = [
+      {
+        key: "curation",
+        label: "Curation",
+        chartIndex: null,
+        title: "コーパス精査 — 評価土台を切る",
+        did: [
+          "projection corpus 6,935 を region_class / suitability で監査",
+          "改善ループ本体を suitable non-neocortex 2,368 構造に限定",
+          "混入（例: ACC）を neocortex へ戻す訂正 244"
+        ],
+        why: "以降の全検証の母集団定義。ここで切らないと改善が測れない。",
+        link: "./curation_report.html",
+        linkLabel: "curation レポート",
+        metrics: null,
+        prev: null
+      },
+      {
+        key: "baseline",
+        label: "Baseline",
+        chartIndex: 0,
+        title: "Baseline — 痛みの診断",
+        did: [
+          "3,458 クエリ（abbrev + fullname）で top-1 を flash×3 判定",
+          "aligned 32.9%、no_match 663 が最大ボトルネックと判明",
+          "文献略語優先・審判固定の policy を定義"
+        ],
+        why: "「何を直すか」の基準線。以降の Δ はすべてここから測る。",
+        link: "./baseline_validation_report.html",
+        linkLabel: "baseline レポート",
+        metrics: { aligned: 1139, broader: 689, wrong: 692, no_match: 663, useful: 1828 },
+        prev: null
+      },
+      {
+        key: "r1",
+        label: "Round 1",
+        chartIndex: 1,
+        title: "Round 1 — 文献略語の拡充",
+        did: [
+          "コーパス慣用の abbrev / alias を大量追加",
+          "「略語が辞書に無い」ことによる no_match を直接攻撃",
+          "最大の一回ジャンプ（no_match −332）"
+        ],
+        why: "召回の穴を先に塞ぐ。衝突の精緻化は次ラウンド。",
+        link: "./policy_report.html",
+        linkLabel: "policy（方針）",
+        metrics: { aligned: 1336, broader: 888, wrong: 627, no_match: 331, useful: 2224 },
+        prev: { aligned: 1139, broader: 689, wrong: 692, no_match: 663, useful: 1828 }
+      },
+      {
+        key: "r2",
+        label: "Round 2",
+        chartIndex: 2,
+        title: "Round 2 — 衝突 demotion",
+        did: [
+          "HOMBA acronym 衝突（例: VP / PPN）をスコア側で demote",
+          "誤った exact を落とし、正しい慣用を上げる",
+          "一時的に no_match / wrong が揺れるトレードオフ局面"
+        ],
+        why: "召回を増やしたあと、誤ヒットを抑える位相。数字は一時悪化しうる。",
+        link: "./abbrev_improve_report.html",
+        linkLabel: "abbrev 改善（〜R3）",
+        metrics: { aligned: 1327, broader: 830, wrong: 680, no_match: 344, useful: 2157 },
+        prev: { aligned: 1336, broader: 888, wrong: 627, no_match: 331, useful: 2224 }
+      },
+      {
+        key: "r3",
+        label: "Round 3",
+        chartIndex: 3,
+        title: "Round 3 — 整備の定着（0.8.3）",
+        did: [
+          "略語ルールと demotion を 0.8.3 として固定",
+          "wrong を再削減し、useful を持ち直す",
+          "残課題を P0–P3 ロードマップに整理"
+        ],
+        why: "最初の本番候補ライン。次は衝突残りと cell-type / 複合句。",
+        link: "./round3_validation_report.html",
+        linkLabel: "round3 validation",
+        metrics: { aligned: 1338, broader: 860, wrong: 642, no_match: 344, useful: 2198 },
+        prev: { aligned: 1327, broader: 830, wrong: 680, no_match: 344, useful: 2157 }
+      },
+      {
+        key: "r4",
+        label: "Round 4",
+        chartIndex: 4,
+        title: "Round 4 — P1–P2 実行（0.8.4）",
+        did: [
+          "高信頼衝突の追加解消（TH / CN / CP / PVN など）",
+          "cell-type strip と fullname 曖昧性・複合句対策",
+          "wrong −58、aligned +34（質の改善が主）"
+        ],
+        why: "「当たっているが間違っている」を減らすラウンド。",
+        link: "./round4_improve_report.html",
+        linkLabel: "round4 improvement",
+        metrics: { aligned: 1372, broader: 898, wrong: 584, no_match: 324, useful: 2270 },
+        prev: { aligned: 1338, broader: 860, wrong: 642, no_match: 344, useful: 2198 }
+      },
+      {
+        key: "r5",
+        label: "Round 5",
+        chartIndex: 5,
+        title: "Round 5 — 短い略語（0.8.5）到達点",
+        did: [
+          "残存 no_match の短い略語へ選択的 abbrev / alias",
+          "no_match −137（324→187）、aligned +82",
+          "r4→r5 の悪化はわずか 2 件"
+        ],
+        why: "abbrev ラウンドの到達点。残りは粒度・曖昧性と HOMBA 欠落。",
+        link: "./round5_improve_vs_baseline.html",
+        linkLabel: "baseline → round5",
+        metrics: { aligned: 1454, broader: 969, wrong: 563, no_match: 187, useful: 2423 },
+        prev: { aligned: 1372, broader: 898, wrong: 584, no_match: 324, useful: 2270 }
+      },
+      {
+        key: "ai",
+        label: "AI 方針",
+        chartIndex: 5,
+        title: "AI — 置換ではなく top-k 補助",
+        did: [
+          "catalog-in-context で RCS 80% vs Luna/Pro 84% を確認し置換を却下",
+          "RCS top10 再選択 + 関係ラベル（match/larger/smaller/different）を試作",
+          "ID hit 93.1%→97.7%、コスト ≈ $0.006/100"
+        ],
+        why: "エンジン改善と直交する第二段。召回天井は RCS 側が決める。",
+        link: "./rcs_ai_rerank_article.html",
+        linkLabel: "AI rerank 記事",
+        metrics: { aligned: 1454, broader: 969, wrong: 563, no_match: 187, useful: 2423 },
+        prev: { aligned: 1454, broader: 969, wrong: 563, no_match: 187, useful: 2423 },
+        aiOnly: true
+      }
+    ];
+
+    const SERIES = {
+      labels: ["Baseline", "R1", "R2", "R3", "R4", "R5"],
+      aligned: [1139, 1336, 1327, 1338, 1372, 1454],
+      broader: [689, 888, 830, 860, 898, 969],
+      wrong: [692, 627, 680, 642, 584, 563],
+      no_match: [663, 331, 344, 344, 324, 187],
+      useful: [1828, 2224, 2157, 2198, 2270, 2423],
+      partial: [243, 244, 245, 243, 248, 256],
+      other: [32, 19, 19, 18, 20, 17] // ambiguous + no_consensus approx remainder of 3458
+    };
+    // Fix other so stack sums to 3458
+    SERIES.other = SERIES.labels.map((_, i) =>
+      3458 - SERIES.aligned[i] - SERIES.broader[i] - SERIES.wrong[i]
+        - SERIES.no_match[i] - SERIES.partial[i]
+    );
+
+    let active = 1;
+    let trendChart, stackChart, markerPlugin;
+
+    const fmt = (n) => n.toLocaleString("en-US");
+    const signed = (n) => (n > 0 ? `+${fmt(n)}` : fmt(n));
+
+    function renderNarrative(stage) {
+      const el = document.getElementById("stageNarrative");
+      const m = stage.metrics;
+      const chips = m ? `
+        <div class="chips">
+          <span class="chip flat">aligned ${fmt(m.aligned)}</span>
+          <span class="chip flat">useful ${fmt(m.useful)}</span>
+          <span class="chip flat">wrong ${fmt(m.wrong)}</span>
+          <span class="chip flat">no_match ${fmt(m.no_match)}</span>
+        </div>` : `
+        <div class="chips">
+          <span class="chip flat">suitable non-neo 2,368</span>
+          <span class="chip flat">total corpus 6,935</span>
+        </div>`;
+      el.innerHTML = `
+        <h3>${stage.title}</h3>
+        <p>${stage.why}</p>
+        ${chips}
+        <ul class="did-list">${stage.did.map((d) => `<li>${d}</li>`).join("")}</ul>
+        <a class="stage-link" href="${stage.link}">${stage.linkLabel} →</a>
+      `;
+    }
+
+    function renderDeltas(stage) {
+      const bars = document.getElementById("deltaBars");
+      const hint = document.getElementById("deltaHint");
+      if (!stage.metrics || !stage.prev || stage.aiOnly) {
+        if (stage.key === "curation") {
+          bars.innerHTML = `<p class="hint" style="margin:0">数値変化は Baseline 以降で表示します。まずは評価セットの切り出し。</p>`;
+          hint.textContent = "";
+          return;
+        }
+        if (stage.aiOnly) {
+          bars.innerHTML = `
+            <div class="chips">
+              <span class="chip up">rerank hit +4.6pt</span>
+              <span class="chip up">純改善 +5</span>
+              <span class="chip warn">悪化 −1</span>
+              <span class="chip flat">≈ $0.006 / 100</span>
+            </div>
+            <p style="margin:0.6rem 0 0;font-size:0.88rem;color:var(--muted)">
+              catalog 比較では Luna/Pro が aligned 84%（RCS 80%）。置換コストに見合わず、rerank 補助を選択。
+            </p>`;
+          hint.textContent = "この段階はエンジン指標の Δ ではなく、統合方針の決定点です。";
+          return;
+        }
+        bars.innerHTML = `<p class="hint" style="margin:0">基準線のため直前比較はありません。</p>`;
+        hint.textContent = "ここからの改善量が以降の累積 Δ になります。";
+        return;
+      }
+      const rows = [
+        { key: "aligned", label: "aligned", better: "up" },
+        { key: "useful", label: "useful", better: "up" },
+        { key: "wrong", label: "wrong", better: "down" },
+        { key: "no_match", label: "no_match", better: "down" }
+      ];
+      const deltas = rows.map((r) => ({
+        ...r,
+        d: stage.metrics[r.key] - stage.prev[r.key]
+      }));
+      const maxAbs = Math.max(...deltas.map((x) => Math.abs(x.d)), 1);
+      bars.innerHTML = deltas.map((x) => {
+        const good = (x.better === "up" && x.d > 0) || (x.better === "down" && x.d < 0);
+        const bad = (x.better === "up" && x.d < 0) || (x.better === "down" && x.d > 0);
+        const fillClass = bad ? "bad" : (x.d === 0 ? "" : (x.better === "down" ? "neg" : "pos"));
+        const width = `${(Math.abs(x.d) / maxAbs) * 100}%`;
+        const valClass = good ? "up" : (bad ? "warn" : "flat");
+        return `
+          <div class="delta-row">
+            <div class="name">${x.label}</div>
+            <div class="delta-track"><div class="delta-fill ${fillClass}" style="width:${x.d === 0 ? "0%" : width}"></div></div>
+            <div class="delta-val"><span class="chip ${valClass}">${signed(x.d)}</span></div>
+          </div>`;
+      }).join("");
+      hint.textContent = "緑系 = 望ましい方向、赤系 = 悪化、紫系 = no_match 削減（望ましい）。";
+    }
+
+    function renderTable(activeChartIndex) {
+      const tbody = document.querySelector("#metricsTable tbody");
+      tbody.innerHTML = SERIES.labels.map((lab, i) => `
+        <tr class="${i === activeChartIndex ? "active" : ""}">
+          <td>${lab}</td>
+          <td>${fmt(SERIES.aligned[i])}</td>
+          <td>${fmt(SERIES.broader[i])}</td>
+          <td>${fmt(SERIES.wrong[i])}</td>
+          <td>${fmt(SERIES.no_match[i])}</td>
+          <td>${fmt(SERIES.useful[i])}</td>
+        </tr>`).join("");
+    }
+
+    markerPlugin = {
+      id: "stageMarker",
+      afterDraw(chart) {
+        const idx = chart.$markerIndex;
+        if (idx == null || idx < 0) return;
+        const meta = chart.getDatasetMeta(0);
+        const pt = meta.data[idx];
+        if (!pt) return;
+        const { ctx, chartArea } = chart;
+        ctx.save();
+        ctx.strokeStyle = "rgba(37,99,235,0.55)";
+        ctx.lineWidth = 2;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(pt.x, chartArea.top);
+        ctx.lineTo(pt.x, chartArea.bottom);
+        ctx.stroke();
+        ctx.restore();
+      }
+    };
+
+    function buildCharts() {
+      const commonOpts = {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: { labels: { boxWidth: 12, font: { size: 11 } } }
+        },
+        scales: {
+          x: { ticks: { font: { size: 11 } }, grid: { display: false } },
+          y: { ticks: { font: { size: 11 } }, grid: { color: "rgba(15,23,42,0.06)" } }
+        }
+      };
+
+      trendChart = new Chart(document.getElementById("trendChart"), {
+        type: "line",
+        data: {
+          labels: SERIES.labels,
+          datasets: [
+            { label: "aligned", data: SERIES.aligned, borderColor: "#2563eb", backgroundColor: "rgba(37,99,235,.12)", tension: 0.25, fill: false, pointRadius: 4 },
+            { label: "useful", data: SERIES.useful, borderColor: "#0d9488", backgroundColor: "rgba(13,148,136,.12)", tension: 0.25, fill: false, pointRadius: 4 },
+            { label: "wrong", data: SERIES.wrong, borderColor: "#e11d48", tension: 0.25, fill: false, pointRadius: 4 },
+            { label: "no_match", data: SERIES.no_match, borderColor: "#9333ea", tension: 0.25, fill: false, pointRadius: 4 }
+          ]
+        },
+        options: {
+          ...commonOpts,
+          plugins: {
+            ...commonOpts.plugins,
+            tooltip: {
+              callbacks: {
+                afterBody(items) {
+                  const i = items[0].dataIndex;
+                  if (i === 0) return "";
+                  const dA = SERIES.aligned[i] - SERIES.aligned[i - 1];
+                  const dN = SERIES.no_match[i] - SERIES.no_match[i - 1];
+                  return [`Δ aligned ${signed(dA)}`, `Δ no_match ${signed(dN)}`];
+                }
+              }
+            }
+          }
+        },
+        plugins: [markerPlugin]
+      });
+      trendChart.$markerIndex = 0;
+
+      stackChart = new Chart(document.getElementById("stackChart"), {
+        type: "bar",
+        data: {
+          labels: SERIES.labels,
+          datasets: [
+            { label: "aligned", data: SERIES.aligned, backgroundColor: "#2563eb", stack: "s" },
+            { label: "broader", data: SERIES.broader, backgroundColor: "#f59e0b", stack: "s" },
+            { label: "partial", data: SERIES.partial, backgroundColor: "#94a3b8", stack: "s" },
+            { label: "wrong", data: SERIES.wrong, backgroundColor: "#e11d48", stack: "s" },
+            { label: "no_match", data: SERIES.no_match, backgroundColor: "#9333ea", stack: "s" },
+            { label: "other", data: SERIES.other, backgroundColor: "#cbd5e1", stack: "s" }
+          ]
+        },
+        options: {
+          ...commonOpts,
+          scales: {
+            x: { stacked: true, ticks: { font: { size: 11 } }, grid: { display: false } },
+            y: { stacked: true, max: 3458, ticks: { font: { size: 11 } }, grid: { color: "rgba(15,23,42,0.06)" } }
+          }
+        },
+        plugins: [markerPlugin]
+      });
+      stackChart.$markerIndex = 0;
+
+      const cumulAligned = SERIES.aligned.map((v) => v - SERIES.aligned[0]);
+      const cumulNmCut = SERIES.no_match.map((v) => SERIES.no_match[0] - v);
+      new Chart(document.getElementById("cumulChart"), {
+        type: "bar",
+        data: {
+          labels: SERIES.labels,
+          datasets: [
+            { label: "累積 Δ aligned", data: cumulAligned, backgroundColor: "rgba(37,99,235,.75)" },
+            { label: "累積 no_match 削減", data: cumulNmCut, backgroundColor: "rgba(147,51,234,.7)" }
+          ]
+        },
+        options: commonOpts
+      });
+
+      const stepNm = SERIES.no_match.map((v, i) =>
+        i === 0 ? 0 : SERIES.no_match[i - 1] - v
+      );
+      new Chart(document.getElementById("stepChart"), {
+        type: "bar",
+        data: {
+          labels: SERIES.labels,
+          datasets: [{
+            label: "Δ no_match 削減（正=改善）",
+            data: stepNm,
+            backgroundColor: stepNm.map((v) => v >= 0 ? "rgba(147,51,234,.75)" : "rgba(225,29,72,.7)")
+          }]
+        },
+        options: {
+          ...commonOpts,
+          plugins: {
+            ...commonOpts.plugins,
+            tooltip: {
+              callbacks: {
+                label(ctx) {
+                  const v = ctx.raw;
+                  return v >= 0 ? `no_match を ${v} 削減` : `no_match が ${-v} 増加`;
+                }
+              }
+            }
+          }
+        }
+      });
+
+      new Chart(document.getElementById("aiAlignChart"), {
+        type: "bar",
+        data: {
+          labels: ["RCS", "Flash", "Pro", "Luna"],
+          datasets: [{
+            label: "aligned %",
+            data: [80, 83, 84, 84],
+            backgroundColor: ["#64748b", "#38bdf8", "#2563eb", "#0ea5e9"]
+          }]
+        },
+        options: {
+          ...commonOpts,
+          indexAxis: "y",
+          scales: {
+            x: { min: 70, max: 90, ticks: { callback: (v) => v + "%" }, grid: { color: "rgba(15,23,42,0.06)" } },
+            y: { grid: { display: false } }
+          }
+        }
+      });
+
+      new Chart(document.getElementById("rerankChart"), {
+        type: "bar",
+        data: {
+          labels: ["RCS top1 hit", "AI best hit", "cost (相対)"],
+          datasets: [{
+            label: "値",
+            data: [93.1, 97.7, 2.1],
+            backgroundColor: ["#64748b", "#059669", "#f59e0b"]
+          }]
+        },
+        options: {
+          ...commonOpts,
+          plugins: {
+            ...commonOpts.plugins,
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label(ctx) {
+                  if (ctx.dataIndex === 2) return "catalog比較を100とした相対 ≈ 2";
+                  return ctx.raw + "%";
+                }
+              }
+            }
+          },
+          scales: {
+            y: { min: 0, max: 100, ticks: { callback: (v) => v + (v <= 100 ? "" : "") } }
+          }
+        }
+      });
+    }
+
+    function setStage(idx) {
+      active = idx;
+      document.querySelectorAll(".j-step").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.stage === String(idx) ? "true" : "false");
+      });
+      const stage = STAGES[idx];
+      renderNarrative(stage);
+      renderDeltas(stage);
+      const cidx = stage.chartIndex;
+      renderTable(cidx);
+      if (trendChart) {
+        trendChart.$markerIndex = cidx;
+        trendChart.update("none");
+      }
+      if (stackChart) {
+        stackChart.$markerIndex = cidx;
+        stackChart.update("none");
+      }
+    }
+
+    document.querySelectorAll(".j-step").forEach((btn) => {
+      btn.addEventListener("click", () => setStage(Number(btn.dataset.stage)));
+    });
+
+    buildCharts();
+    setStage(1);
+  });
+  </script>
+</body>
+</html>

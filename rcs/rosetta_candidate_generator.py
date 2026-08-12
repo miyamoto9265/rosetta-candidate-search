@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# VERSION: 0.8.0
+# VERSION: 0.8.5
 # Versioning rule:
 # - Behavior changes or scoring logic changes: increment PATCH (e.g. 0.1.0 -> 0.1.1)
 # - Backward-compatible input/output field additions: increment MINOR (e.g. 0.1.0 -> 0.2.0)
@@ -7,7 +7,7 @@
 # Lambda imports this module from rcs/ via scripts/package_lambda.* (no duplicate copy).
 """ROSETTA Candidate Search — candidate generation for mapping brain-region mentions to HOMBA terms.
 
-This module intentionally stays dependency-free.  It implements the practical
+    This module intentionally stays dependency-free.  It implements the practical
 parts of the implementation plan: normalization, alias lookup, fuzzy string
 matching, and a lightweight BM25-style token search.
 """
@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-ENGINE_VERSION = "0.8.0"
+ENGINE_VERSION = "0.8.5"
 
 # Pure positional / directional words.  On their own these do not identify a
 # structure: two unrelated regions can both be "posterior" or "ventral".  They
@@ -174,6 +174,46 @@ class AbbrevRule:
 
 DEFAULT_ABBREV_RULES_CSV = Path(__file__).with_name("homba_abbrev_rules.csv")
 
+# Roman numerals are valid cranial-nerve abbrevs as *full* queries (III =
+# oculomotor) but devastate layer/subdivision strings when substituted inline
+# ("laminae III-IV", "EC III").
+_ROMAN_NUMERAL_RE = re.compile(r"^[ivxlcdm]+$")
+
+# Side / laterality tokens that may accompany an abbrev for inline expansion
+# (e.g. "ipsi-DMS", "left NAc").
+_INLINE_ABBREV_SIDE_TOKENS = frozenset({
+    "left", "right", "bilateral", "both",
+    "ipsi", "contra", "ipsilateral", "contralateral",
+})
+
+# Generic residue words allowed beside an abbrev during inline expansion.
+# Real anatomical content left in the residue (e.g. "interpositus" in
+# "DCN interpositus") blocks substitution so corpus rules cannot rewrite the
+# distinctive part of a compound query.
+_INLINE_ABBREV_GENERIC_TOKENS = frozenset({
+    "and", "or", "of", "the", "a", "an",
+    "part", "parts", "division", "divisions", "zone", "zones",
+    "region", "regions", "area", "areas", "nucleus", "nuclei",
+    "complex", "group", "portion", "subregion",
+})
+
+# Molecular / cell-type tags stripped before search so ROI abbrevs remain
+# (BLA Ppp1r1b → BLA, MDTGlut → MDT, NAc-S D1-SPNs → NAc S).
+_MOLECULAR_TOKEN_RE = re.compile(
+    r"(?i)\b(?:"
+    r"ppp1r1b|rspo2|crf|mc4r|npy|sst|"
+    r"parvalbumin|somatostatin|calbindin|calretinin|"
+    r"glutamatergic|gabaergic|dopaminergic|cholinergic|"
+    r"interneurons|interneuron|neurons|neuron|cells|cell|"
+    r"spns?|d1r?|d2r?|"
+    r"vglut2?|vglut|glut2?|glut|"
+    r"cre|flp|aav"
+    r")\b"
+)
+_FUSED_MOLECULAR_SUFFIX_RE = re.compile(
+    r"(?i)(?:vglut2?|glut2?|gabaergic|glutamatergic)$"
+)
+
 
 def normalize_text(text: str) -> str:
     """Normalize text for alias lookup and string similarity."""
@@ -197,6 +237,31 @@ def strip_laterality(text: str, config: LexiconConfig | None = None) -> str:
 
 def strip_parenthetical(text: str) -> str:
     return re.sub(r"\([^)]*\)", " ", text)
+
+
+def strip_molecular_and_celltype_tags(text: str) -> str:
+    """Remove gene/marker/cell-type tokens, keeping the anatomical ROI phrase.
+
+    Returns the original text when stripping would leave nothing usable, so a
+    bare marker query is not erased.
+    """
+    if not (text or "").strip():
+        return text
+    cleaned = _MOLECULAR_TOKEN_RE.sub(" ", text)
+    # Fused suffixes on compact abbrevs: MDTGlut, MSVglut2, PPTvGlut2.
+    parts = []
+    for tok in re.split(r"(\s+)", cleaned):
+        if tok.isspace() or not tok:
+            parts.append(tok)
+            continue
+        stripped = _FUSED_MOLECULAR_SUFFIX_RE.sub("", tok)
+        parts.append(stripped if stripped else tok)
+    cleaned = "".join(parts)
+    cleaned = re.sub(r"[+]+", " ", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip(" -_/")
+    if len(normalize_text(cleaned)) < 2:
+        return text
+    return cleaned
 
 
 def tokenize(text: str, *, keep_stopwords: bool = False, config: LexiconConfig | None = None) -> list[str]:
@@ -309,23 +374,70 @@ def load_abbrev_rules(abbrev_rules_csv: str | Path = DEFAULT_ABBREV_RULES_CSV) -
     return rules
 
 
-def apply_abbrev_rules(query: str, abbrev_rules: list[AbbrevRule]) -> list[str]:
+def _inline_abbrev_residue_ok(
+    normalized_query: str,
+    abbrev: str,
+    *,
+    allowed_residue: frozenset[str],
+) -> bool:
+    """Whether non-abbrev residue is modifier/side-only (safe for inline expand)."""
+    residue = re.sub(
+        rf"(?<![a-z0-9]){re.escape(abbrev)}(?![a-z0-9])",
+        " ",
+        normalized_query,
+    )
+    toks = [t for t in residue.split() if t]
+    if not toks:
+        return False
+    # Refuse roman-numeral residue ("EC III") and any distinctive content word
+    # ("DCN interpositus").  Pure digits (layers, area codes) are also refused.
+    for tok in toks:
+        if _ROMAN_NUMERAL_RE.match(tok) or tok.isdigit():
+            return False
+        if tok not in allowed_residue:
+            return False
+    return True
+
+
+def apply_abbrev_rules(
+    query: str,
+    abbrev_rules: list[AbbrevRule],
+    *,
+    allowed_inline_residue: frozenset[str] | None = None,
+) -> list[str]:
     """Expand abbreviations in a query (query-side only).
 
     Strategy
     --------
-    * Full-query match: works for any abbreviation length.
+    * Full-query match: works for any abbreviation length (including roman
+      numerals such as III → oculomotor nucleus).
     * Word-boundary substitution within a longer query: only for abbreviations
-      of 3+ characters to avoid false positives with 1-2 char tokens.
+      of 3+ characters that are not roman numerals, and only when every
+      remaining token is a side/positional/generic modifier.  This keeps
+      "dorsolateral PAG" / "lateral VTA" expandable while blocking corpus rules
+      from rewriting "DCN interpositus" or "laminae III-IV".
     """
     if not abbrev_rules:
         return [query]
     normalized = normalize_text(query)
     variants = [query]
+    allowed = allowed_inline_residue or (
+        _INLINE_ABBREV_SIDE_TOKENS
+        | _INLINE_ABBREV_GENERIC_TOKENS
+        | POSITIONAL_WORDS
+    )
     for rule in abbrev_rules:
         if normalized == rule.abbrev:
             variants.append(rule.expansion)
-        elif len(rule.abbrev) >= 3:
+        elif (
+            # 2-char rules (CP, GP, …) are full-query-safe; with residue_ok they
+            # are also safe inline ("caudal CP" → caudal dorsal striatum).
+            len(rule.abbrev) >= 2
+            and not _ROMAN_NUMERAL_RE.match(rule.abbrev)
+            and _inline_abbrev_residue_ok(
+                normalized, rule.abbrev, allowed_residue=allowed
+            )
+        ):
             replaced = re.sub(
                 rf"(?<![a-z0-9]){re.escape(rule.abbrev)}(?![a-z0-9])",
                 rule.expansion,
@@ -405,25 +517,63 @@ def query_variants(
     config = config or DEFAULT_CONFIG
     alias_rules = alias_rules or []
     abbrev_rules = abbrev_rules or []
-    variants = [query, strip_laterality(query, config), strip_parenthetical(query)]
+    roi_query = strip_molecular_and_celltype_tags(query)
+    variants = [
+        query,
+        roi_query,
+        strip_laterality(query, config),
+        strip_laterality(roi_query, config),
+        strip_parenthetical(query),
+        strip_parenthetical(roi_query),
+    ]
 
     # Keep parenthetical content as ordinary tokens so "Anterior nucleus
     # (thalamus)" also searches as "Anterior nucleus thalamus".
     variants.append(re.sub(r"[()]", " ", query))
+    variants.append(re.sub(r"[()]", " ", roi_query))
 
     # "thalamus (excluding pulvinar)" should still search for "thalamus".
-    variants.append(re.sub(r"\b(excluding|except|without)\b.*$", " ", strip_parenthetical(query), flags=re.I))
+    variants.append(
+        re.sub(
+            r"\b(excluding|except|without)\b.*$",
+            " ",
+            strip_parenthetical(roi_query),
+            flags=re.I,
+        )
+    )
 
     expanded: list[str] = []
     for variant in variants:
         expanded.extend(expand_with_alias_rules(variant, alias_rules))
 
-    # Apply abbreviation expansion last (query-only; not used for HOMBA alias expansion).
+    # Apply abbreviation expansion (query-only; not used for HOMBA alias expansion).
+    # Residue may include lexicon laterality / weak modifiers as well as the
+    # built-in positional and generic sets.
+    allowed_inline = (
+        _INLINE_ABBREV_SIDE_TOKENS
+        | _INLINE_ABBREV_GENERIC_TOKENS
+        | POSITIONAL_WORDS
+        | set(config.laterality_words)
+        | set(config.weak_terms)
+        | set(config.modifier_terms)
+    )
     abbrev_expanded: list[str] = []
     for variant in expanded:
-        abbrev_expanded.extend(apply_abbrev_rules(variant, abbrev_rules))
+        abbrev_expanded.extend(
+            apply_abbrev_rules(
+                variant,
+                abbrev_rules,
+                allowed_inline_residue=frozenset(allowed_inline),
+            )
+        )
 
-    return unique_preserve_order(abbrev_expanded)
+    # Re-apply alias rules to abbrev expansions so e.g. LHb → "lateral habenula"
+    # can still reach "lateral habenular nuclei" via alias rules.
+    final_variants: list[str] = []
+    for variant in abbrev_expanded:
+        final_variants.extend(expand_with_alias_rules(variant, alias_rules))
+
+    return unique_preserve_order(final_variants)
 
 
 def extract_modifier_terms(query: str, config: LexiconConfig | None = None) -> list[str]:
@@ -622,6 +772,10 @@ class RosettaCandidateGenerator:
             "posterior", "ventral", "dorsal", "lateral", "medial",
             "caudal", "rostral", "oral",
         }
+        # Generic gray-matter class words.  Treating them as content lets
+        # "lateral nuclei accumbens" (from nucleus↔nuclei aliasing) look like a
+        # real content match to "lateral nucleus of amygdala" via nucleus alone.
+        structure_generics = {"nucleus", "nuclei", "ganglion", "ganglia"}
         # Lobe labels still provide useful anatomical evidence and are
         # deliberately excluded from weak-only matching.
         lobe_words = {"frontal", "parietal", "temporal", "occipital", "opercular"}
@@ -629,6 +783,7 @@ class RosettaCandidateGenerator:
             self.config.laterality_words
             | self.config.weak_terms
             | (self.config.modifier_terms & direction_words)
+            | structure_generics
         ) - lobe_words
         self._content_cache: dict[str, frozenset[str]] = {}
         self._area_id_cache: dict[int, frozenset[str]] = {}
@@ -769,6 +924,44 @@ class RosettaCandidateGenerator:
         modifier_terms = extract_modifier_terms(query, self.config)
         candidate_state: dict[int, dict[str, object]] = {}
 
+        # Literature-priority abbrev expansions (query-side rules).  When the
+        # query (or its laterality / molecular-stripped form) is an abbrev with
+        # a curated expansion, prefer expansion-path candidates over conflicting
+        # HOMBA-acronym exact hits (VP, DMS, TH/area-TH, contralateral MEC, …).
+        abbrev_probe = unique_preserve_order(
+            [
+                query,
+                strip_molecular_and_celltype_tags(query),
+                strip_laterality(query, self.config),
+                strip_laterality(
+                    strip_molecular_and_celltype_tags(query), self.config
+                ),
+            ]
+        )
+        # Also probe individual tokens so "caudal CP" activates the CP rule for
+        # collision demotion even though the full string is not a bare abbrev.
+        for probe in list(abbrev_probe):
+            abbrev_probe.extend(normalize_text(probe).split())
+        abbrev_probe = unique_preserve_order(abbrev_probe)
+        abbrev_expansions: set[str] = set()
+        abbrev_raw = ""
+        for probe in abbrev_probe:
+            probe_norm = normalize_text(probe)
+            if not probe_norm:
+                continue
+            hits = {
+                rule.expansion
+                for rule in self.abbrev_rules
+                if rule.abbrev == probe_norm and rule.expansion != probe_norm
+            }
+            if hits:
+                abbrev_expansions |= hits
+                # Prefer the shortest probe (bare abbrev) as the collision key.
+                if not abbrev_raw or len(probe_norm) < len(abbrev_raw):
+                    abbrev_raw = probe_norm
+        self._abbrev_raw_query = abbrev_raw
+        self._abbrev_expansions = abbrev_expansions
+
         for variant in variants:
             normalized = normalize_text(variant)
             if not normalized:
@@ -790,6 +983,32 @@ class RosettaCandidateGenerator:
         for term_index, score, alias, matched_query in self._bm25_candidates(variants, per_method_k):
             self._add_candidate(candidate_state, term_index, "bm25", score, alias, matched_query)
 
+        # Expansion support for literature-abbrev demotion.
+        # * exact: expansion retrieved an exact alias hit (safe to suppress
+        #   conflicting HOMBA acronyms such as VP / PPN).
+        # * soft: weaker fuzzy expansion hit — used only for clear acronym
+        #   collisions whose HOMBA name is dissimilar to the literature sense
+        #   (DMS migratory stream vs dorsomedial striatum), never to demote
+        #   CA1-style terms whose name embeds the acronym.
+        expansion_exact = False
+        expansion_soft = False
+        best_expansion_score = 0.0
+        if abbrev_expansions:
+            for state in candidate_state.values():
+                if not state.get("matched_via_abbrev_expansion"):
+                    continue
+                score = float(state.get("best_method_score", 0.0))
+                best_expansion_score = max(best_expansion_score, score)
+                methods = state.get("methods") or set()
+                if score >= 0.96 or "exact" in methods:
+                    expansion_exact = True
+                elif score >= 0.45:
+                    expansion_soft = True
+        self._abbrev_expansion_exact = expansion_exact
+        self._abbrev_expansion_soft = expansion_soft
+        self._abbrev_expansion_support = expansion_exact or expansion_soft
+        self._abbrev_best_expansion_score = best_expansion_score
+
         # Determine which positional words in the query actually *resolve* to a
         # specific structure in the candidate pool.  A positional word is only
         # meaningful for ranking when some candidate that shares the query's core
@@ -802,9 +1021,12 @@ class RosettaCandidateGenerator:
             query, modifier_terms, candidate_state)
 
         ranked = []
+        q_toks = tokenize(query, config=self.config)
         for term_index, state in candidate_state.items():
             term = self.terms[term_index]
             final_score, modifier_score = self._score_candidate(query, modifier_terms, term_index, state)
+            name_core = strip_parenthetical(term.name)
+            name_jaccard = token_jaccard(q_toks, tokenize(name_core, config=self.config))
             ranked.append(
                 {
                     "homba_id": term.homba_id,
@@ -823,10 +1045,21 @@ class RosettaCandidateGenerator:
                     "modifier_terms": ";".join(modifier_terms),
                     "modifier_match_score": round(modifier_score, 6),
                     "hierarchy_reason": state.get("hierarchy_reason", ""),
+                    "_name_jaccard": name_jaccard,
                 }
             )
 
-        ranked.sort(key=lambda item: (-float(item["score"]), str(item["name"]).lower(), str(item["homba_id"])))
+        ranked.sort(
+            key=lambda item: (
+                -float(item["score"]),
+                -float(item.get("_name_jaccard") or 0.0),
+                -int(item.get("depth") or 0),
+                str(item["name"]).lower(),
+                str(item["homba_id"]),
+            )
+        )
+        for item in ranked:
+            item.pop("_name_jaccard", None)
 
         if dhba_filter == "with":
             ranked = [c for c in ranked if c["dhba_name"]]
@@ -854,8 +1087,17 @@ class RosettaCandidateGenerator:
         exact = method_scores.get("exact", 0.0)
         fuzzy = method_scores.get("fuzzy", 0.0)
         bm25 = method_scores.get("bm25", 0.0)
+        # For literature abbrev expansions, score specificity / content against
+        # the expanded phrase rather than the bare acronym (e.g. TRN →
+        # "thalamic reticular nucleus"), otherwise every expansion looks
+        # over-specific relative to a 2-4 letter query.
+        score_query = query
+        if state.get("matched_via_abbrev_expansion"):
+            mq = str(state.get("matched_query") or "").strip()
+            if mq:
+                score_query = mq
         token_score = max(
-            token_jaccard(tokenize(query, config=self.config), tokenize(alias, config=self.config))
+            token_jaccard(tokenize(score_query, config=self.config), tokenize(alias, config=self.config))
             for alias in term.aliases
         )
         modifier_score = modifier_match_score(modifier_terms, term.aliases)
@@ -873,7 +1115,7 @@ class RosettaCandidateGenerator:
         weak_only_match = False
         if not exact and (fuzzy or bm25):
             matched_query = str(state.get("matched_query") or "")
-            query_content = self._content_tokens(query) | self._content_tokens(matched_query)
+            query_content = self._content_tokens(score_query) | self._content_tokens(matched_query)
             if query_content:
                 alias_content: set[str] = set()
                 alias_tokens: set[str] = set()
@@ -881,7 +1123,7 @@ class RosettaCandidateGenerator:
                     alias_content |= self._content_tokens(alias)
                     alias_tokens |= set(tokenize(alias, config=self.config))
                 if not self._content_overlap(query_content, alias_content):
-                    query_tokens = set(tokenize(query, config=self.config)) | set(
+                    query_tokens = set(tokenize(score_query, config=self.config)) | set(
                         tokenize(matched_query, config=self.config)
                     )
                     overlap = query_tokens & alias_tokens
@@ -903,7 +1145,7 @@ class RosettaCandidateGenerator:
         # Apply specificity penalty only to fuzzy/bm25 matches that lack an
         # exact match.
         if not exact and (fuzzy or bm25):
-            final_score *= self._specificity_penalty(query, modifier_terms, term)
+            final_score *= self._specificity_penalty(score_query, modifier_terms, term)
 
         # Area / cell-group identifier mismatch: if both the query and the
         # candidate carry numeric area identifiers (e.g. cingulate "area 23c"
@@ -916,7 +1158,7 @@ class RosettaCandidateGenerator:
         # generic visual-cortex parent that lacks the code.
         if not exact:
             matched_query = str(state.get("matched_query") or "")
-            query_ids = set(self._area_ids_from_text(query)) | set(
+            query_ids = set(self._area_ids_from_text(score_query)) | set(
                 self._area_ids_from_text(matched_query))
             cand_ids = set(self._term_area_ids(term_index, term))
             if query_ids and cand_ids:
@@ -939,14 +1181,14 @@ class RosettaCandidateGenerator:
 
         # Structure-class mismatch (tract↔nucleus, cortex↔claustrum, …).
         if not exact:
-            q_toks = tokenize(query, keep_stopwords=True, config=self.config)
             matched_query = str(state.get("matched_query") or "")
+            q_toks = tokenize(score_query, keep_stopwords=True, config=self.config)
             if matched_query:
                 q_toks = tokenize(matched_query, keep_stopwords=True, config=self.config)
             c_toks = tokenize(term.name, keep_stopwords=True, config=self.config)
             if _structure_class_conflict(q_toks, c_toks):
                 final_score *= 0.50
-            q_content = self._content_tokens(query) | self._content_tokens(matched_query)
+            q_content = self._content_tokens(score_query) | self._content_tokens(matched_query)
             c_content: set[str] = set()
             for alias in term.aliases:
                 c_content |= self._content_tokens(alias)
@@ -959,7 +1201,7 @@ class RosettaCandidateGenerator:
         # weak near-misses.
         if not exact:
             matched_query = str(state.get("matched_query") or "")
-            q_toks = set(tokenize(query, config=self.config)) | set(
+            q_toks = set(tokenize(score_query, config=self.config)) | set(
                 tokenize(matched_query, config=self.config))
             missing_anchors = self._missing_region_anchors(q_toks, term)
             if missing_anchors:
@@ -967,7 +1209,7 @@ class RosettaCandidateGenerator:
 
         # Plural group queries ("… nuclei") should not prefer a single named
         # nucleus when the candidate name is singular and adds no group cue.
-        if not exact and self._plural_nuclei_mismatch(query, term):
+        if not exact and self._plural_nuclei_mismatch(score_query, term):
             final_score *= 0.72
 
         # Keep weak-only matches (no shared identifying content word — only a
@@ -976,6 +1218,32 @@ class RosettaCandidateGenerator:
         # surface instead of an unrelated same-direction structure.
         if weak_only_match:
             final_score = min(final_score, 0.38)
+
+        # Literature abbrev priority: demote HOMBA-acronym exact hits that
+        # conflict with a curated literature expansion.  Never demote terms
+        # that also matched via the expansion (e.g. VTA), or CA1-style terms
+        # whose name embeds the acronym as a primary field label.
+        # "area TH" / "(area 5)" style cortical codes are NOT treated as
+        # primary embeds — those are the collision cases literature rules
+        # exist to override.
+        if (
+            state.get("matched_via_raw_abbrev")
+            and not state.get("matched_via_abbrev_expansion")
+        ):
+            raw = getattr(self, "_abbrev_raw_query", "") or ""
+            if raw and not self._primary_acronym_embed(term, raw):
+                term_acr = normalize_text(term.acronym)
+                mq_toks = set(
+                    normalize_text(str(state.get("matched_query") or "")).split()
+                )
+                if getattr(self, "_abbrev_expansion_exact", False):
+                    final_score *= 0.48
+                elif getattr(self, "_abbrev_expansion_soft", False) and (
+                    term_acr == raw or raw in mq_toks
+                ):
+                    # Soft path: HOMBA acronym collision (DLS/CN) OR leftover
+                    # bare-abbrev token in a compound match ("caudalis cp").
+                    final_score *= 0.48
 
         return final_score, modifier_score
 
@@ -1083,6 +1351,24 @@ class RosettaCandidateGenerator:
                 if anchor in alias_norm:
                     covered.add(anchor)
         return q_anchors - covered
+
+    @staticmethod
+    def _primary_acronym_embed(term: HOMBATerm, raw_acronym: str) -> bool:
+        """Whether the term name embeds *raw_acronym* as a primary field label.
+
+        True for ``CA1 region of hippocampus``.  False for cortical area codes
+        such as ``medial division of PHC (area TH)`` or ``area 5``, which are
+        HOMBA acronym collisions literature rules should be allowed to override.
+        """
+        if not raw_acronym:
+            return False
+        name_norm = normalize_text(term.name)
+        name_toks = set(name_norm.split())
+        if raw_acronym not in name_toks:
+            return False
+        if re.search(rf"\barea\s+{re.escape(raw_acronym)}\b", name_norm):
+            return False
+        return True
 
     @staticmethod
     def _plural_nuclei_mismatch(query: str, term: HOMBATerm) -> bool:
@@ -1235,6 +1521,8 @@ class RosettaCandidateGenerator:
                 "matched_query": matched_query,
                 "best_method_score": score,
                 "hierarchy_reason": hierarchy_reason,
+                "matched_via_raw_abbrev": False,
+                "matched_via_abbrev_expansion": False,
             },
         )
         state["methods"].add(method)
@@ -1246,6 +1534,29 @@ class RosettaCandidateGenerator:
             state["matched_query"] = matched_query
         if hierarchy_reason:
             state["hierarchy_reason"] = hierarchy_reason
+
+        mq_norm = normalize_text(matched_query)
+        raw = getattr(self, "_abbrev_raw_query", "") or ""
+        expansions = getattr(self, "_abbrev_expansions", set()) or set()
+        term = self.terms[term_index]
+        exp_content: set[str] = set()
+        for exp in expansions:
+            exp_content |= set(self._content_tokens(exp))
+        cand_content: set[str] = set()
+        for cand_alias in term.aliases:
+            cand_content |= set(self._content_tokens(cand_alias))
+        overlaps_expansion = bool(
+            exp_content and self._content_overlap(exp_content, cand_content)
+        )
+        mq_toks = set(mq_norm.split()) if mq_norm else set()
+        if raw and (mq_norm == raw or (raw in mq_toks and not overlaps_expansion)):
+            # Bare abbrev hit, including "caudalis cp" style leftovers that never
+            # absorbed the literature expansion.
+            state["matched_via_raw_abbrev"] = True
+        elif raw and expansions and mq_norm and mq_norm != raw and overlaps_expansion:
+            # Literature-expansion path only with real content overlap (CeM /
+            # amygdaloid vs central medial thalamus).
+            state["matched_via_abbrev_expansion"] = True
 
 
 def load_generator(homba_csv_path: str | Path) -> RosettaCandidateGenerator:

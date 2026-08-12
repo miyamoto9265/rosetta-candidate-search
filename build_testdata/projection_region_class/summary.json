@@ -1,0 +1,43 @@
+{
+  "generated_at_utc": "2026-07-21T07:36:47.079872+00:00",
+  "schema": "neocortex_non_neocortex_v1",
+  "input": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\rcs_projection_corpus.csv",
+  "seed_classified": "d:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\projection_region_class\\classified_full_cortical_backup.csv",
+  "total_records": 6935,
+  "seed_kept": 4810,
+  "api_records": 2125,
+  "seed_stage_counts": {
+    "seed_remap": 4709,
+    "seed_keyword": 101
+  },
+  "region_class_counts": {
+    "non_neocortex": 3523,
+    "other": 1688,
+    "neocortex": 1458,
+    "ambiguous": 261,
+    "unresolved": 5
+  },
+  "decision_stage_counts": {
+    "seed_remap": 4709,
+    "flash": 2074,
+    "pro": 46,
+    "seed_keyword": 101,
+    "unresolved": 5
+  },
+  "flash_vote_split_counts": {
+    "2-1": 408,
+    "3-0": 1666,
+    "1-1-1": 51
+  },
+  "pro_vote_split_counts": {
+    "3-0": 19,
+    "2-1": 27,
+    "1-1-1": 5
+  },
+  "models": {
+    "flash": "deepseek-v4-flash",
+    "pro": "deepseek-v4-pro"
+  },
+  "workers": 128,
+  "batch_size": 6
+}

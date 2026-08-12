@@ -16,18 +16,10 @@ Thumbs.db
 # Cursor personal settings (project rules in .cursor/rules/ are tracked)
 .cursor/settings.json
 
-# Local credentials / private notes
-bdbra/
-
 # Lambda build artifact
 dist/
 rcs/generator_cache.pkl
 
 # Auto-improve local cache / heavy run dumps (keep scripts + summaries tracked)
-archive/260711_playground/auto_improve/cache/
-archive/260711_playground/auto_improve/**/__pycache__/
-archive/260711_playground/auto_improve/_baseline_engine_v040/
-archive/260711_playground/auto_improve/runs/**/records.csv
-archive/260711_playground/auto_improve/runs/**/analysis_*.txt
-archive/260711_playground/auto_improve/runs/**/diff_*.txt
+archive/
 *.pyc

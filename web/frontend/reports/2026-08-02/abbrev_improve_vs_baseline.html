@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abbrev improvement report — baseline → round4_abbrev</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --panel: #fff;
+      --text: #1a2332;
+      --muted: #667085;
+      --line: #d8dee8;
+      --ok: #0b7a4b;
+      --parent: #2f6fed;
+      --warn: #b7791f;
+      --bad: #b42318;
+      --issue: #7a3fb4;
+      --unknown: #475467;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      padding: 28px 32px 20px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      color: #fff;
+    }
+    header h1 { margin: 0 0 8px; font-size: 24px; font-weight: 700; }
+    header p {
+      margin: 0;
+      color: #cbd5e1;
+      max-width: 980px;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    main { padding: 22px 32px 48px; max-width: 1400px; margin: 0 auto; }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 0 0 16px;
+    }
+    h2 { margin: 0 0 12px; font-size: 18px; }
+    h3 { margin: 16px 0 8px; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      gap: 10px;
+      margin: 12px 0 4px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: #fafbfd;
+    }
+    .card-title { color: var(--muted); font-size: 12px; }
+    .card-value {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .card-sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f2f4f7;
+      font-size: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      white-space: nowrap;
+    }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .muted { color: var(--muted); }
+    .small { font-size: 12px; }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pill.ok { background: var(--ok); }
+    .pill.parent { background: var(--parent); }
+    .pill.warn { background: var(--warn); }
+    .pill.bad { background: var(--bad); }
+    .pill.issue { background: var(--issue); }
+    .pill.unknown { background: var(--unknown); }
+    .bar {
+      display: flex;
+      height: 10px;
+      background: #eef2f6;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 8px 0 12px;
+    }
+    .bar-seg.ok { background: var(--ok); }
+    .bar-seg.parent { background: var(--parent); }
+    .bar-seg.warn { background: var(--warn); }
+    .bar-seg.bad { background: var(--bad); }
+    .bar-seg.issue { background: var(--issue); }
+    .bar-seg.unknown { background: var(--unknown); }
+    .note { color: var(--muted); line-height: 1.65; font-size: 13px; }
+    .note li { margin: 0 0 6px; }
+    code {
+      background: #eef2f6;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 12px;
+    }
+    .table-wrap {
+      max-height: 520px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .query-cell { font-weight: 600; }
+    @media (max-width: 900px) {
+      main { padding: 16px; }
+      .cards, .grid2 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Abbrev 精度向上レポート</h1>
+    <p>
+      論文コーパス上の略語慣用を優先しつつ HOMBA acronym は維持する方針で、
+      RCS abbrev 経路を整備した結果です。比較:
+      <code>baseline</code> → <code>round4_abbrev</code>
+      （判定は DeepSeek flash × 3-pass、baseline と同条件）。
+    </p>
+  </header>
+  <main>
+    <section>
+      <h2>サマリー</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-title">総クエリ</div>
+          <div class="card-value">3458</div>
+          <div class="card-sub">abbrev 2368 / fullname 1090</div>
+        </div>
+        <div class="card">
+          <div class="card-title">no_match</div>
+          <div class="card-value">324</div>
+          <div class="card-sub">baseline 663 → -339</div>
+        </div>
+        <div class="card">
+          <div class="card-title">aligned</div>
+          <div class="card-value">1372</div>
+          <div class="card-sub">baseline 1139 → +233</div>
+        </div>
+        <div class="card">
+          <div class="card-title">label 改善 / 悪化</div>
+          <div class="card-value">517 / 46</div>
+          <div class="card-sub">abbrev のみ 484 / 36</div>
+        </div>
+      </div>
+      <h3>全体ラベル分布</h3>
+      <div class="bar"><div class="bar-seg ok" style="width:39.68%" title="aligned: 1372"></div><div class="bar-seg parent" style="width:25.97%" title="broader_parent: 898"></div><div class="bar-seg warn" style="width:7.17%" title="partial_or_narrower: 248"></div><div class="bar-seg bad" style="width:16.89%" title="wrong: 584"></div><div class="bar-seg unknown" style="width:0.17%" title="ambiguous: 6"></div><div class="bar-seg issue" style="width:0.35%" title="source_or_ontology_issue: 12"></div><div class="bar-seg unknown" style="width:0.40%" title="no_consensus: 14"></div><div class="bar-seg issue" style="width:9.37%" title="no_match: 324"></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>label</th>
+              <th class="num">before</th><th class="num">%</th>
+              <th class="num">after</th><th class="num">%</th>
+              <th class="num">Δ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="pill ok">aligned</span><div class="muted small">同一構造・同義語</div></td><td class="num">1139</td><td class="num">32.9%</td><td class="num">1372</td><td class="num">39.7%</td><td class="num"><span class="pill ok">+233</span></td></tr><tr><td><span class="pill parent">broader_parent</span><div class="muted small">正しい上位構造</div></td><td class="num">689</td><td class="num">19.9%</td><td class="num">898</td><td class="num">26.0%</td><td class="num"><span class="pill ok">+209</span></td></tr><tr><td><span class="pill warn">partial_or_narrower</span><div class="muted small">一部分・狭すぎる</div></td><td class="num">243</td><td class="num">7.0%</td><td class="num">248</td><td class="num">7.2%</td><td class="num"><span class="pill unknown">+5</span></td></tr><tr><td><span class="pill bad">wrong</span><div class="muted small">異なる構造</div></td><td class="num">692</td><td class="num">20.0%</td><td class="num">584</td><td class="num">16.9%</td><td class="num"><span class="pill ok">-108</span></td></tr><tr><td><span class="pill unknown">ambiguous</span><div class="muted small">判定困難</div></td><td class="num">8</td><td class="num">0.2%</td><td class="num">6</td><td class="num">0.2%</td><td class="num"><span class="pill unknown">-2</span></td></tr><tr><td><span class="pill issue">source_or_ontology_issue</span><div class="muted small">入力/オントロジー問題</div></td><td class="num">12</td><td class="num">0.3%</td><td class="num">12</td><td class="num">0.3%</td><td class="num"><span class="pill unknown">0</span></td></tr><tr><td><span class="pill unknown">no_consensus</span><div class="muted small">多数意見なし</div></td><td class="num">12</td><td class="num">0.3%</td><td class="num">14</td><td class="num">0.4%</td><td class="num"><span class="pill unknown">+2</span></td></tr><tr><td><span class="pill issue">no_match</span><div class="muted small">RCS no_match</div></td><td class="num">663</td><td class="num">19.2%</td><td class="num">324</td><td class="num">9.4%</td><td class="num"><span class="pill ok">-339</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>abbrev のみ</h3>
+      <div class="bar"><div class="bar-seg ok" style="width:39.70%" title="aligned: 940"></div><div class="bar-seg parent" style="width:22.68%" title="broader_parent: 537"></div><div class="bar-seg warn" style="width:7.14%" title="partial_or_narrower: 169"></div><div class="bar-seg bad" style="width:16.26%" title="wrong: 385"></div><div class="bar-seg unknown" style="width:0.21%" title="ambiguous: 5"></div><div class="bar-seg issue" style="width:0.13%" title="source_or_ontology_issue: 3"></div><div class="bar-seg unknown" style="width:0.51%" title="no_consensus: 12"></div><div class="bar-seg issue" style="width:13.39%" title="no_match: 317"></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>label</th>
+              <th class="num">before</th><th class="num">%</th>
+              <th class="num">after</th><th class="num">%</th>
+              <th class="num">Δ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="pill ok">aligned</span><div class="muted small">同一構造・同義語</div></td><td class="num">720</td><td class="num">30.4%</td><td class="num">940</td><td class="num">39.7%</td><td class="num"><span class="pill ok">+220</span></td></tr><tr><td><span class="pill parent">broader_parent</span><div class="muted small">正しい上位構造</div></td><td class="num">335</td><td class="num">14.1%</td><td class="num">537</td><td class="num">22.7%</td><td class="num"><span class="pill ok">+202</span></td></tr><tr><td><span class="pill warn">partial_or_narrower</span><div class="muted small">一部分・狭すぎる</div></td><td class="num">163</td><td class="num">6.9%</td><td class="num">169</td><td class="num">7.1%</td><td class="num"><span class="pill unknown">+6</span></td></tr><tr><td><span class="pill bad">wrong</span><div class="muted small">異なる構造</div></td><td class="num">476</td><td class="num">20.1%</td><td class="num">385</td><td class="num">16.3%</td><td class="num"><span class="pill ok">-91</span></td></tr><tr><td><span class="pill unknown">ambiguous</span><div class="muted small">判定困難</div></td><td class="num">7</td><td class="num">0.3%</td><td class="num">5</td><td class="num">0.2%</td><td class="num"><span class="pill unknown">-2</span></td></tr><tr><td><span class="pill issue">source_or_ontology_issue</span><div class="muted small">入力/オントロジー問題</div></td><td class="num">6</td><td class="num">0.3%</td><td class="num">3</td><td class="num">0.1%</td><td class="num"><span class="pill ok">-3</span></td></tr><tr><td><span class="pill unknown">no_consensus</span><div class="muted small">多数意見なし</div></td><td class="num">5</td><td class="num">0.2%</td><td class="num">12</td><td class="num">0.5%</td><td class="num"><span class="pill unknown">+7</span></td></tr><tr><td><span class="pill issue">no_match</span><div class="muted small">RCS no_match</div></td><td class="num">656</td><td class="num">27.7%</td><td class="num">317</td><td class="num">13.4%</td><td class="num"><span class="pill ok">-339</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>システム変更（原理）</h2>
+      <div class="note">
+        <p><strong>方針:</strong> HOMBA の <code>unified_ontology_acronym</code> は消さない。
+        コーパスが示す論文慣用と衝突する場合は、クエリ側の略語展開とスコアリングで文献側を優先する。
+        オントロジーに存在しない区画へ無理に当てはめない（例: DMS → striatum 親への broader_parent）。</p>
+        <ol>
+          <li><strong>コーパス由来 abbrev ルール追加</strong>（<code>rcs/homba_abbrev_rules.csv</code>）
+            — no_match / HOMBA acronym 衝突で、fullname 側が妥当なケースから文献展開を抽出。</li>
+          <li><strong>文献略語優先の demotion</strong>（engine 0.8.x）
+            — フルクエリが略語ルールに一致し、展開側が候補を取れたとき、生略語だけの HOMBA acronym ヒットを抑制。
+            CA1 のように名前に略語が埋め込まれる語は保護。DMS のような非類似 acronym 衝突は soft demotion。</li>
+          <li><strong>略語展開後の alias 再適用</strong>
+            — LHb → lateral habenula → lateral habenular nuclei など。</li>
+          <li><strong>展開パスのスコアクエリ</strong>
+            — specificity / content 判定を展開語句に対して行い、短い略語の過大ペナルティを回避。</li>
+          <li><strong>インライン展開の安全弁</strong>
+            — ローマ数字の文中展開禁止; 残トークンが修飾語・側性のみのときだけ文中置換
+            （<code>DCN interpositus</code> / <code>laminae III-IV</code> を壊さない）。</li>
+          <li><strong>nucleus/nuclei を non-content 化</strong>
+            — <code>lateral nuclei accumbens</code> が扁桃体 lateral nucleus に勝つ誤爆を抑制。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>代表例（abbrev）</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>query</th><th>before</th><th>after</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="query-cell"><code>VP</code></td><td><span class="pill bad">wrong</span><div class="muted small">ventral posterior visual area (ventral third visual area, V3V)</div></td><td><span class="pill ok">aligned</span><div class="muted small">ventral pallidum</div></td></tr><tr><td class="query-cell"><code>DMS</code></td><td><span class="pill bad">wrong</span><div class="muted small">dorsal migratory stream</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">striatum (neostriatum)</div></td></tr><tr><td class="query-cell"><code>PPN</code></td><td><span class="pill bad">wrong</span><div class="muted small">parietopontine fibers</div></td><td><span class="pill ok">aligned</span><div class="muted small">pedunculo(pontine) tegmental  nucleus</div></td></tr><tr><td class="query-cell"><code>CA1</code></td><td><span class="pill ok">aligned</span><div class="muted small">CA1 region of hippocampus</div></td><td><span class="pill ok">aligned</span><div class="muted small">CA1 region of hippocampus</div></td></tr><tr><td class="query-cell"><code>ARC</code></td><td><span class="pill ok">aligned</span><div class="muted small">arcuate nucleus of hypothalamus</div></td><td><span class="pill ok">aligned</span><div class="muted small">arcuate nucleus of hypothalamus</div></td></tr><tr><td class="query-cell"><code>III</code></td><td><span class="pill bad">wrong</span><div class="muted small">lobule III (central lobule and wing, posterior part)</div></td><td><span class="pill ok">aligned</span><div class="muted small">oculomotor nucleus</div></td></tr><tr><td class="query-cell"><code>DCN interpositus</code></td><td><span class="pill ok">aligned</span><div class="muted small">interpositus (intermediate) nucleus</div></td><td><span class="pill ok">aligned</span><div class="muted small">interpositus nucleus</div></td></tr><tr><td class="query-cell"><code>EC III</code></td><td><span class="pill parent">broader_parent</span><div class="muted small">caudal division of entorhinal cortex</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">caudal division of entorhinal cortex</div></td></tr><tr><td class="query-cell"><code>lateral NAcc</code></td><td><span class="pill parent">broader_parent</span><div class="muted small">nucleus accumbens</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">nucleus accumbens</div></td></tr><tr><td class="query-cell"><code>dorsolateral PAG</code></td><td><span class="pill ok">aligned</span><div class="muted small">periaqueductal gray substance, dorsolateral division</div></td><td><span class="pill ok">aligned</span><div class="muted small">periaqueductal gray substance, dorsolateral division</div></td></tr><tr><td class="query-cell"><code>NAc shell</code></td><td><span class="pill ok">aligned</span><div class="muted small">shell of nucleus accumbens</div></td><td><span class="pill ok">aligned</span><div class="muted small">shell of nucleus accumbens</div></td></tr><tr><td class="query-cell"><code>LHb</code></td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">lateral habenular nucleus</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0;border:none;background:transparent">
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px">
+        <h2>改善例（517）</h2>
+        <p class="note small">ラベル順位が良くなったクエリ（先頭 25）</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>kind</th><th>query</th><th>before</th><th>after</th></tr></thead>
+            <tbody><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">paraventricular nucleus</td><td><span class="pill bad">wrong</span><div class="muted small">paraventricular nucleus of thalamus</div></td><td><span class="pill ok">aligned</span><div class="muted small">paraventricular nucleus of hypothalamus</div></td></tr><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">nucleus tractus solitarius</td><td><span class="pill bad">wrong</span><div class="muted small">parasolitary nucleus</div></td><td><span class="pill ok">aligned</span><div class="muted small">solitary nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">LH</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">accessory secretory cells of lateral hypothalamus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">VP</td><td><span class="pill bad">wrong</span><div class="muted small">ventral posterior visual area (ventral third visual area, V3V)</div></td><td><span class="pill ok">aligned</span><div class="muted small">ventral pallidum</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">DMS</td><td><span class="pill bad">wrong</span><div class="muted small">dorsal migratory stream</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">striatum (neostriatum)</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">dLGN</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">lateral geniculate nucleus (dorsal lateral geniculate nucleus)</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">TRN</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">reticular nucleus of thalamus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">LHb</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">lateral habenular nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">DCN</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">dorsal cochlear nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">LS</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">lateral septal nuclear complex</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">DLS</td><td><span class="pill bad">wrong</span><div class="muted small">(dorso)lateral sulcus</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">striatum (neostriatum)</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">LHA</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">lateral hypothalamic area, tuberal part</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">VLPAG</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">periaqueductal gray substance, ventrolateral division</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">LGN</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">lateral geniculate nucleus (dorsal lateral geniculate nucleus)</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">PPN</td><td><span class="pill bad">wrong</span><div class="muted small">parietopontine fibers</div></td><td><span class="pill ok">aligned</span><div class="muted small">pedunculo(pontine) tegmental  nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">POm</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill bad">wrong</span><div class="muted small">periventricular area of posterior thalamus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">vHPC</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">hippocampus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">Sub</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">subiculum proper (strictly defined subiculum)</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">MGB</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">medial geniculate nuclear complex</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">PBN</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">parabrachial nuclei</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">HDB</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">horizontal division of nucleus of diagonal band</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">CN</td><td><span class="pill bad">wrong</span><div class="muted small">cerebral nuclei</div></td><td><span class="pill ok">aligned</span><div class="muted small">cerebellar deep nuclei</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">MEC</td><td><span class="pill bad">wrong</span><div class="muted small">caudal medial nucleus</div></td><td><span class="pill ok">aligned</span><div class="muted small">medial (caudal) entorhinal cortex</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">vCA1</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">rostral (ventral) division of CA1</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">MVN</td><td><span class="pill issue">no_match</span><div class="muted small">(no_match)</div></td><td><span class="pill ok">aligned</span><div class="muted small">medial vestibular nucleus</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px">
+        <h2>悪化例（46）</h2>
+        <p class="note small">ラベル順位が悪くなったクエリ（先頭 25）。<code>contra-DMS</code>/<code>ipsi-DMS</code> は baseline が migratory stream への誤 aligned で、striatum 親への broader_parent は文献優先の意図的変化。</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>kind</th><th>query</th><th>before</th><th>after</th></tr></thead>
+            <tbody><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">dorsal raphe nucleus</td><td><span class="pill ok">aligned</span><div class="muted small">dorsal raphe nucleus</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">dorsal raphe nucleus, dorsal division</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">Sp5</td><td><span class="pill ok">aligned</span><div class="muted small">spinal trigeminal nucleus</div></td><td><span class="pill bad">wrong</span><div class="muted small">spinal trigeminal tract</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">dorsal raphe nucleus</td><td><span class="pill ok">aligned</span><div class="muted small">dorsal raphe nucleus</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">dorsal raphe nucleus, dorsal division</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">Me5</td><td><span class="pill ok">aligned</span><div class="muted small">mesencephalic trigeminal nucleus</div></td><td><span class="pill bad">wrong</span><div class="muted small">mesencephalic trigeminal tract</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">NA core</td><td><span class="pill ok">aligned</span><div class="muted small">core of nucleus accumbens</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">lateral subdivision of the core</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">OT</td><td><span class="pill ok">aligned</span><div class="muted small">olfactory tubercle</div></td><td><span class="pill bad">wrong</span><div class="muted small">optic tract</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">basal nucleus of the amygdala</td><td><span class="pill ok">aligned</span><div class="muted small">basolateral nucleus (basal nucleus) of amygdala</div></td><td><span class="pill bad">wrong</span><div class="muted small">basal nucleus of Meynert</div></td></tr><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">ventral lateral ventral posterior medial thalamic nucleus</td><td><span class="pill parent">broader_parent</span><div class="muted small">ventral posterior nuclear complex of thalamus</div></td><td><span class="pill bad">wrong</span><div class="muted small">ventral lateral nucleus of thalamus</div></td></tr><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">neuropeptide Y promoter-expressing spinal dorsal horn inhibitory interneurons</td><td><span class="pill parent">broader_parent</span><div class="muted small">dorsal column (horn) of spinal cord</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">dorsal horn of coccygeal spinal cord</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">matrix thalamus</td><td><span class="pill parent">broader_parent</span><div class="muted small">thalamus</div></td><td><span class="pill bad">wrong</span><div class="muted small">ventricular (matrix, germinal) zone of spinal cord</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">medial parabrachial nucleus</td><td><span class="pill ok">aligned</span><div class="muted small">medial parabrachial nucleus</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">medial parabrachial nucleus, medial division</div></td></tr><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">medial parabrachial nucleus</td><td><span class="pill ok">aligned</span><div class="muted small">medial parabrachial nucleus</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">medial parabrachial nucleus, medial division</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">NAc medial shell</td><td><span class="pill ok">aligned</span><div class="muted small">medial subdivision of the shell</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">shell of nucleus accumbens</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">simple lobule</td><td><span class="pill ok">aligned</span><div class="muted small">lobule VI (simple lobule)</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">lobule VIA (simple lobule, rostral part)</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">BLA IN</td><td><span class="pill parent">broader_parent</span><div class="muted small">basolateral nuclear group of amygdala</div></td><td><span class="pill bad">wrong</span><div class="muted small">intermediate division of lateral nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">BLA.ac</td><td><span class="pill parent">broader_parent</span><div class="muted small">basolateral nuclear group of amygdala</div></td><td><span class="pill bad">wrong</span><div class="muted small">anterior commissure</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">BLA.al</td><td><span class="pill parent">broader_parent</span><div class="muted small">basolateral nuclear group of amygdala</div></td><td><span class="pill bad">wrong</span><div class="muted small">ansa lenticularis</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">BLA.am</td><td><span class="pill parent">broader_parent</span><div class="muted small">basolateral nuclear group of amygdala</div></td><td><span class="pill bad">wrong</span><div class="muted small">anteromedial nucleus of thalamus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">CA1-3</td><td><span class="pill parent">broader_parent</span><div class="muted small">hippocampal proper (Cornu Ammonis)</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">CA1 region of hippocampus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">cervical spinal cord (C6)</td><td><span class="pill parent">broader_parent</span><div class="muted small">cervical spinal cord</div></td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">lamina VI of cervical spinal cord</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">contra-DMS</td><td><span class="pill ok">aligned</span><div class="muted small">dorsal migratory stream</div></td><td><span class="pill parent">broader_parent</span><div class="muted small">striatum (neostriatum)</div></td></tr><tr><td><span class="pill unknown">fullname</span></td><td class="query-cell">nucleus reticularis tegmenti pontis</td><td><span class="pill ok">aligned</span><div class="muted small">reticulotegmental nucleus</div></td><td><span class="pill bad">wrong</span><div class="muted small">pedunculo(pontine) tegmental  nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">contralateral PN</td><td><span class="pill parent">broader_parent</span><div class="muted small">pons</div></td><td><span class="pill bad">wrong</span><div class="muted small">pontine nucleus</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">distal CA1</td><td><span class="pill parent">broader_parent</span><div class="muted small">hippocampal proper (Cornu Ammonis)</div></td><td><span class="pill bad">wrong</span><div class="muted small">body part of CA1</div></td></tr><tr><td><span class="pill parent">abbrev</span></td><td class="query-cell">dorsal horn (TL)</td><td><span class="pill warn">partial_or_narrower</span><div class="muted small">dorsal horn of lumbar spinal cord</div></td><td><span class="pill bad">wrong</span><div class="muted small">dorsal horn of sacral spinal cord</div></td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>残課題（原理的限界）</h2>
+      <ul class="note">
+        <li>HOMBA に文献区画がない場合（多くの striatal compartment 略語）は親への <code>broader_parent</code> が上限。</li>
+        <li>ドット接尾辞付きマーカー（<code>BLA.ac</code>）や細胞型付きクエリは略語展開対象外のまま。</li>
+        <li>曖昧なフルクエリ（bare <code>arcuate nucleus</code>）は延髄 vs 視床下部が競合し得る — abbrev <code>ARC</code> は視床下部を明示展開。</li>
+        <li>top1 変更数: 705 / 3458</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>成果物</h2>
+      <ul class="note">
+        <li>engine: <code>rcs/rosetta_candidate_generator.py</code> (0.8.3)</li>
+        <li>rules: <code>rcs/homba_abbrev_rules.csv</code></li>
+        <li>runs: <code>playgrounds/260802_playground/runs/baseline</code> /
+            <code>.../runs/round4_abbrev</code></li>
+        <li>after no_match=324 /
+            before no_match=663</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

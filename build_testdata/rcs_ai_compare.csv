@@ -1,0 +1,101 @@
+id,structure_name,fullname,expected_homba_id,expected_homba_name,difficulty,query_kind,source,gt_status,n_mentions,notes
+AIC-001,Abducens nucleus,abducens nucleus,HOMBA:12418,abducens nucleus,easy,fullname,rcs_core,verified,3,pons | cranial nerve VI
+AIC-002,Amygdala,amygdala,HOMBA:10361,amygdaloid complex,easy,fullname,rcs_core,verified,145,basic
+AIC-003,Angular gyrus,,HOMBA:12136,angular gyrus,easy,fullname,rcs_core,verified,,gyrus_name | gyrus
+AIC-004,Anterior thalamic nuclei,anterior thalamic nuclei,HOMBA:10392,anterior nuclear complex of thalamus,easy,fullname,rcs_core,verified,5,thalamus
+AIC-005,Auditory cortex,,HOMBA:10236,"primary auditory cortex (first auditory cortex, auditory core region)",easy,fullname,rcs_core,verified,,cortex | generic
+AIC-006,Bed nucleus of stria terminalis,bed nucleus of stria terminalis,HOMBA:10384,bed nucleus of stria terminalis,easy,fullname,rcs_core,verified,2,full_name | BNST
+AIC-007,Caudate nucleus,caudate nucleus,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),easy,fullname,rcs_core,verified,5,basal_ganglia
+AIC-008,Cerebellar cortex,cerebellar cortex,HOMBA:10657,cerebellar cortex,easy,fullname,rcs_core,verified,21,cerebellum
+AIC-009,Cerebellar deep nuclei,,HOMBA:10660,cerebellar deep nuclei,easy,fullname,rcs_core,verified,,cerebellum
+AIC-010,Cerebellar hemisphere,cerebellar hemisphere,HOMBA:10659,cerebellar hemisphere,easy,fullname,rcs_core,verified,2,cerebellum
+AIC-011,Cerebellum,cerebellum,HOMBA:10656,cerebellum,easy,fullname,rcs_core,verified,102,basic | cerebellum
+AIC-012,Cerebral hemisphere,,HOMBA:10158,telencephalon,easy,fullname,rcs_core,verified,,basic
+AIC-013,Claustrum,claustrum,HOMBA:10346,claustrum,easy,fullname,rcs_core,verified,50,subcortical
+AIC-014,Cochlear nucleus,cochlear nucleus,HOMBA:12437,cochlear nuclei,easy,fullname,rcs_core,verified,13,cranial_nerve
+AIC-015,Cuneate nucleus,cuneate nucleus,HOMBA:12589,cuneate nucleus,easy,fullname,rcs_core,verified,6,
+AIC-016,Cuneus,,HOMBA:12150,cuneus (gyrus),easy,abbrev,rcs_core,verified,,lobe_structure | gyrus | occipital
+AIC-017,Dentate gyrus,dentate gyrus,HOMBA:10295,dentate gyrus,easy,fullname,rcs_core,verified,23,gyrus_name | gyrus | hippocampal subregion
+AIC-018,Dentate nucleus,dentate nucleus,HOMBA:12396,dentate (lateral) nucleus,easy,fullname,rcs_core,verified,12,cerebellar_nucleus | cerebellum
+AIC-019,Diencephalon,diencephalon,HOMBA:10389,diencephalon,easy,fullname,rcs_core,verified,8,basic
+AIC-020,Dorsal motor nucleus of vagus,dorsal motor nucleus of vagus,HOMBA:12550,dorsal motor nucleus of the vagus (vagal nerve nucleus),easy,fullname,rcs_core,verified,1,medulla | cranial nerve X
+AIC-021,Dorsal raphe nucleus,dorsal raphe nucleus,HOMBA:12223,dorsal raphe nucleus,easy,fullname,rcs_core,verified,8,raphe | DRN
+AIC-022,Emboliform nucleus,,HOMBA:12401,lateral interpositus (emboliform) nucleus,easy,fullname,rcs_core,verified,,cerebellar_nucleus | cerebellum
+AIC-023,Entorhinal cortex,entorhinal cortex,HOMBA:10317,entorhinal cortex,easy,fullname,rcs_core,verified,36,cortex_name | cortex
+AIC-024,Facial nucleus,facial nucleus,HOMBA:12420,facial nucleus,easy,fullname,rcs_core,verified,2,medulla | cranial nerve VII
+AIC-025,Fastigial nucleus,fastigial nucleus,HOMBA:12402,fastigial (medial) nucleus,easy,fullname,rcs_core,verified,8,cerebellar_nucleus | cerebellum
+AIC-026,Flocculus,flocculus,HOMBA:AA30424,lobule Xa (flocculus),easy,fullname,rcs_core,verified,1,cerebellum
+AIC-027,Fourth ventricle,,HOMBA:12805,fourth ventricle,easy,fullname,rcs_core,verified,,ventricle
+AIC-028,Frontal lobe,,HOMBA:12113,frontal lobe,easy,fullname,rcs_core,verified,,lobe
+AIC-029,Fusiform gyrus,,HOMBA:AA30549,fusiform (occipitotemporal) gyrus,easy,fullname,rcs_core,verified,,gyrus_name | gyrus
+AIC-030,Globose nucleus,,HOMBA:12400,medial interpositus (globose) nucleus,easy,fullname,rcs_core,verified,,cerebellar_nucleus | cerebellum
+AIC-031,Globus pallidus,globus pallidus,HOMBA:10342,globus pallidus (paleostriatum),easy,fullname,rcs_core,verified,4,basal_ganglia
+AIC-032,Gracile nucleus,gracile nucleus,HOMBA:12592,gracile nucleus,easy,fullname,rcs_core,verified,5,
+AIC-033,ACC,,HOMBA:10278,anterior cingulate  cortex (ventromedial prefrontal cortex),medium,abbrev,rcs_core,verified,,abbreviation | anterior cingulate cortex
+AIC-034,ARC,arcuate nucleus,HOMBA:10492,arcuate nucleus of hypothalamus,medium,abbrev,rcs_core,verified,27,abbrev | arcuate nucleus
+AIC-035,BNST,bed nucleus of the stria terminalis,HOMBA:10384,bed nucleus of stria terminalis,medium,abbrev,rcs_core,verified,140,abbreviation | abbrev | bed nucleus of stria terminalis
+AIC-036,CA1,CA1,HOMBA:10297,CA1 region of hippocampus,medium,abbrev,rcs_core,verified,176,abbreviation | abbrev | hippocampal_subfield | hippocampal subfield
+AIC-037,CA2,CA2,HOMBA:10298,CA2 region of hippocampus,medium,abbrev,rcs_core,verified,46,abbrev | hippocampal subfield
+AIC-038,CA3,CA3,HOMBA:10299,CA3 region of hippocampus,medium,abbrev,rcs_core,verified,108,abbreviation | abbrev | hippocampal_subfield | hippocampal subfield
+AIC-039,Cingulate cortex,,HOMBA:10277,cingulate cortex,medium,synonym,rcs_core,verified,,synonym | cortex | should match HOMBA cingulate cortex
+AIC-040,Dorsal raphe,dorsal raphe,HOMBA:12223,dorsal raphe nucleus,medium,abbrev,rcs_core,verified,9,abbreviation | missing nucleus
+AIC-041,DRN,dorsal raphe nucleus,HOMBA:12223,dorsal raphe nucleus,medium,abbrev,rcs_core,verified,60,abbrev | dorsal raphe
+AIC-042,Entorhinal area,,HOMBA:10317,entorhinal cortex,medium,synonym,rcs_core,verified,,synonym | alternative name for entorhinal cortex | alternative for entorhinal cortex
+AIC-043,GPe,globus pallidus externus,HOMBA:10343,external division of globus pallidus,medium,abbrev,rcs_core,verified,123,abbrev | external globus pallidus
+AIC-044,GPi,globus pallidus internus,HOMBA:10344,internal division of globus pallidus,medium,abbrev,rcs_core,verified,47,abbrev | internal globus pallidus
+AIC-045,Hippocampal formation,hippocampal formation,HOMBA:12170,hippocampal formation,medium,synonym,rcs_core,verified,6,synonym | alternative name for hippocampus group
+AIC-046,Lateral geniculate body,,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),medium,synonym,rcs_core,verified,,synonym | LGN alternative
+AIC-047,BLA,basolateral amygdala,HOMBA:10366,basolateral nuclear group of amygdala,medium,abbrev,curated_non_neocortex,verified_via_fullname,345,corpus abbrev | basolateral amygdala | n_mentions=345
+AIC-048,Cd,caudate nucleus,HOMBA:10334,caudate nucleus (mediodorsal division of the CP),medium,abbrev,curated_non_neocortex,verified_via_fullname,28,corpus abbrev | caudate nucleus | n_mentions=28
+AIC-049,CeA,central amygdala,HOMBA:10363,central nucleus of amygdala,medium,abbrev,curated_non_neocortex,verified_via_fullname,134,corpus abbrev | central amygdala | n_mentions=134
+AIC-050,CLA,claustrum,HOMBA:10346,claustrum,medium,abbrev,curated_non_neocortex,verified_via_fullname,61,corpus abbrev | claustrum | n_mentions=61
+AIC-051,DG,dentate gyrus,HOMBA:10295,dentate gyrus,medium,abbrev,curated_non_neocortex,verified_via_fullname,90,corpus abbrev | dentate gyrus | n_mentions=90
+AIC-052,DN,dentate nucleus,HOMBA:12396,dentate (lateral) nucleus,medium,abbrev,curated_non_neocortex,verified_via_fullname,27,corpus abbrev | dentate nucleus | n_mentions=27
+AIC-053,DR,dorsal raphe,HOMBA:12223,dorsal raphe nucleus,medium,abbrev,curated_non_neocortex,verified_via_fullname,31,corpus abbrev | dorsal raphe | n_mentions=31
+AIC-054,EC,entorhinal cortex,HOMBA:10317,entorhinal cortex,medium,abbrev,curated_non_neocortex,verified_via_fullname,53,corpus abbrev | entorhinal cortex | n_mentions=53
+AIC-055,LC,locus coeruleus,HOMBA:12499,nucleus coeruleus (locus coeruleus),medium,abbrev,curated_non_neocortex,verified,149,corpus abbrev fill | locus coeruleus
+AIC-056,LGN,lateral geniculate nucleus,HOMBA:10429,lateral geniculate nucleus (dorsal lateral geniculate nucleus),medium,abbrev,curated_non_neocortex,verified_via_fullname,67,corpus abbrev | lateral geniculate nucleus | n_mentions=67
+AIC-057,LHb,lateral habenula,HOMBA:10453,lateral habenular nucleus,medium,abbrev,curated_non_neocortex,verified_via_fullname,90,corpus abbrev | lateral habenula | n_mentions=90
+AIC-058,LS,lateral septum,HOMBA:10352,lateral septal nuclear complex,medium,abbrev,curated_non_neocortex,verified_via_fullname,84,corpus abbrev | lateral septum | n_mentions=84
+AIC-059,MGB,medial geniculate body,HOMBA:10434,medial geniculate nucleus,medium,abbrev,curated_non_neocortex,verified_via_fullname,53,corpus abbrev | medial geniculate body | n_mentions=53
+AIC-060,NAc,nucleus accumbens,HOMBA:10339,nucleus accumbens,medium,abbrev,curated_non_neocortex,verified_via_fullname,172,corpus abbrev | nucleus accumbens | n_mentions=172
+AIC-061,OB,olfactory bulb,HOMBA:10307,olfactory bulb,medium,abbrev,curated_non_neocortex,verified_via_fullname,26,corpus abbrev fill | olfactory bulb
+AIC-062,RN,red nucleus,HOMBA:12247,red nucleus,medium,abbrev,curated_non_neocortex,verified_via_fullname,26,corpus abbrev fill | red nucleus
+AIC-063,SCN,suprachiasmatic nucleus,HOMBA:10480,suprachiasmatic nucleus,medium,abbrev,curated_non_neocortex,verified,37,corpus abbrev fill | suprachiasmatic nucleus
+AIC-064,SN,substantia nigra,HOMBA:12251,substantia nigra,medium,abbrev,curated_non_neocortex,verified,28,corpus abbrev fill | substantia nigra
+AIC-065,SNc,substantia nigra pars compacta,HOMBA:12252,"substantia nigra, compact division",medium,abbrev,curated_non_neocortex,verified,66,corpus abbrev fill | substantia nigra pars compacta
+AIC-066,SNr,substantia nigra pars reticulata,HOMBA:12259,"substantia nigra, reticular division",medium,abbrev,curated_non_neocortex,verified,123,corpus abbrev | substantia nigra pars reticulata | n_mentions=123
+AIC-067,STN,subthalamic nucleus,HOMBA:10466,subthalamic nucleus,medium,abbrev,curated_non_neocortex,verified,110,corpus abbrev | subthalamic nucleus | n_mentions=110
+AIC-068,VPL,ventral posterolateral nucleus,HOMBA:10424,ventral posterior lateral nucleus,medium,abbrev,curated_non_neocortex,verified_via_fullname,56,corpus abbrev | ventral posterolateral nucleus | n_mentions=56
+AIC-069,VTA,ventral tegmental area,HOMBA:12261,ventral tegmental area,medium,abbrev,curated_non_neocortex,verified,320,corpus abbrev fill | ventral tegmental area
+AIC-070,ZI,zona incerta,HOMBA:10463,zona incerta,medium,abbrev,curated_non_neocortex,verified_via_fullname,71,corpus abbrev | zona incerta | n_mentions=71
+AIC-071,Anterior commissure,,HOMBA:10559,anterior commissure,hard,fullname,rcs_core,verified,,fiber_tract
+AIC-072,Gr,gracile nucleus,HOMBA:12592,gracile nucleus,hard,abbrev,curated_non_neocortex,verified_via_fullname,30,corpus hard abbrev | gracile nucleus | ambiguous_or_short | n_mentions=30
+AIC-073,IC,inferior colliculus,HOMBA:12305,inferior colliculus,hard,abbrev,curated_non_neocortex,verified_via_fullname,162,corpus hard abbrev | inferior colliculus | ambiguous_or_short | n_mentions=162
+AIC-074,LH,lateral hypothalamus,HOMBA:10494,"lateral hypothalamic area, tuberal part",hard,abbrev,curated_non_neocortex,verified_via_fullname,134,corpus hard abbrev | lateral hypothalamus | ambiguous_or_short | n_mentions=134
+AIC-075,LHA,lateral hypothalamic area,HOMBA:10494,"lateral hypothalamic area, tuberal part",hard,abbrev,curated_non_neocortex,verified_via_fullname,70,corpus hard abbrev | lateral hypothalamic area | ambiguous_or_short | n_mentions=70
+AIC-076,MD,mediodorsal thalamus,HOMBA:10398,mediodorsal nucleus of thalamus,hard,abbrev,curated_non_neocortex,verified_via_fullname,133,corpus hard abbrev | mediodorsal thalamus | ambiguous_or_short | n_mentions=133
+AIC-077,MDT,mediodorsal thalamus,HOMBA:10398,mediodorsal nucleus of thalamus,hard,abbrev,curated_non_neocortex,verified_via_fullname,33,corpus hard abbrev | mediodorsal thalamus | ambiguous_or_short | n_mentions=33
+AIC-078,MS,medial septum,HOMBA:10351,medial septal nucleus,hard,abbrev,curated_non_neocortex,verified_via_fullname,35,corpus hard abbrev | medial septum | ambiguous_or_short | n_mentions=35
+AIC-079,NAcc,nucleus accumbens,HOMBA:10339,nucleus accumbens,hard,abbrev,curated_non_neocortex,verified_via_fullname,41,corpus hard abbrev | nucleus accumbens | ambiguous_or_short | n_mentions=41
+AIC-080,NTS,nucleus tractus solitarius,HOMBA:12557,solitary nucleus,hard,abbrev,curated_non_neocortex,verified,157,corpus hard abbrev | nucleus tractus solitarius | ambiguous_or_short | n_mentions=157
+AIC-081,PAG,periaqueductal gray,HOMBA:12209,periaqueductal gray substance,hard,abbrev,curated_non_neocortex,verified,126,corpus hard abbrev | periaqueductal gray | ambiguous_or_short | n_mentions=126
+AIC-082,PVN,paraventricular nucleus,HOMBA:10476,paraventricular nucleus of hypothalamus,hard,abbrev,curated_non_neocortex,verified,170,corpus hard abbrev | paraventricular nucleus | ambiguous_or_short | n_mentions=170
+AIC-083,PVT,paraventricular thalamus,HOMBA:10457,paraventricular nucleus of thalamus,hard,abbrev,curated_non_neocortex,provisional,124,corpus hard abbrev | paraventricular thalamus | ambiguous_or_short | n_mentions=124
+AIC-084,RE,reuniens nucleus,HOMBA:10403,reuniens (medioventral) nucleus of thalamus,hard,abbrev,curated_non_neocortex,provisional,94,corpus hard abbrev | reuniens nucleus | ambiguous_or_short | n_mentions=94
+AIC-085,SC,superior colliculus,HOMBA:12292,superior colliculus,hard,abbrev,curated_non_neocortex,verified_via_fullname,170,corpus hard abbrev | superior colliculus | ambiguous_or_short | n_mentions=170
+AIC-086,Sub,subiculum,HOMBA:10302,subiculum proper (strictly defined subiculum),hard,abbrev,curated_non_neocortex,verified_via_fullname,56,corpus hard abbrev | subiculum | ambiguous_or_short | n_mentions=56
+AIC-087,VL,ventrolateral thalamus,HOMBA:10420,ventral lateral nucleus of thalamus,hard,abbrev,curated_non_neocortex,verified_via_fullname,59,corpus hard abbrev | ventrolateral thalamus | ambiguous_or_short | n_mentions=59
+AIC-088,Arcuate nucleus,arcuate nucleus,,,hard,ambiguous,rcs_challenge,open,3,"name | hypothalamus | hypothalamic - disambiguation needed | issue: 視床下部と延髄に同名の弓状核が存在し、文脈なしでは正解を一意に定められない（ANALYSIS_REPORT_03 §5-1, §8 T-2）"
+AIC-089,Brainstem,,,,hard,ambiguous,rcs_challenge,open,,"collective_term | basic | collective | no single HOMBA entry | issue: 粒度・スコープの誤りにより、brainstem 全体を表す単一の HOMBA エントリが存在しない（ANALYSIS_REPORT_03 §5-1, §8 T-1）"
+AIC-090,Inferior fronto-occipital fasciculus,,,,hard,ambiguous,rcs_challenge,open,,fiber_tract | IFOF | issue: HOMBA に IFOF エントリがなく、vertical occipital fasciculus への誤マッチとなる（ANALYSIS_REPORT_03 §5-1）
+AIC-091,Insular cortex,,,,hard,ambiguous,rcs_challenge,open,,"synonym | insula synonym | issue: Insula（insular lobe, HOMBA:12176）と notes 上同義語だが expected が不一致"
+AIC-092,Lenticular nucleus,,,,hard,ambiguous,rcs_challenge,open,,basal_ganglia | putamen+GP combined | issue: 解剖学的には putamen + globus pallidus だが、HOMBA ギャップにより putamen のみで近似（homba_alias_rules.csv に明記）
+AIC-093,Limbic system,,,,hard,ambiguous,rcs_challenge,open,,"collective_term | collective | no HOMBA entry | issue: 粒度・スコープの誤りにより、limbic system を表す単一の HOMBA エントリが存在しない（機能的概念）（ANALYSIS_REPORT_03 §5-2, §8 T-1）"
+AIC-094,Medial hypothalamus,,,,hard,ambiguous,rcs_challenge,open,,modifier | issue: 修飾語が無視され、hypothalamus 全体に汎化される
+AIC-095,Medial temporal lobe,,,,hard,ambiguous,rcs_challenge,open,,compound_term | issue: medial の修飾が落ち、temporal lobe 全体に汎化される
+AIC-096,Motor cortex,,,,hard,ambiguous,rcs_challenge,open,,cortex | common name | issue: 汎用名称が frontal motor cortex（上位）にマップされる。文脈により primary motor cortex が望ましい場合あり（ANALYSIS_REPORT_03 §8 T-2）
+AIC-097,Paraventricular nucleus,paraventricular nucleus,,,hard,ambiguous,rcs_challenge,open,2,name | hypothalamus | hypothalamic or thalamic - ambiguous | PVN ambiguous thalamus vs hypothalamus | issue: 視床下部 PVN と視床 PVN の曖昧性。PVN 略語行は視床下部だが、フル名は視床側にマッチする（ANALYSIS_REPORT_03 §8 T-2）
+AIC-098,Septum,septum,,,hard,ambiguous,rcs_challenge,open,16,common | basal_forebrain | septal area common name | septal area generic | issue: テスト意図は septal area（中隔野）だが、RCS は septum pellucidum（透明中隔）にマッチする。Septal area/nuclei（HOMBA:10350）と別構造（ANALYSIS_REPORT_03 §5-1）
+AIC-099,Superior colliculus (deep layers),,,,hard,ambiguous,rcs_challenge,open,,parenthetical | specific layer | issue: 括弧内の層指定が反映されず superior colliculus 全体にマッチする（deep gray layer が 2 位候補）
+AIC-100,Thalamic nuclei,thalamic nuclei,,,hard,ambiguous,rcs_challenge,open,18,collective | plural of thalamic nucleus | issue: 複数形の集合名詞が特定の視床核群 1 つ（ventral midline nuclei）にマップされる

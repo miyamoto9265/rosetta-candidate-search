@@ -11,7 +11,7 @@
 | 検索 UI | https://rcs.mymt.site/ |
 | CloudFront（代替） | https://d5keesfj4srwa.cloudfront.net/ |
 | API | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| Reports（最新） | https://rcs.mymt.site/reports/2026-07-11.html |
+| Reports（最新） | https://rcs.mymt.site/reports/2026-08-02/summary_report.html |
 
 ```bash
 curl -sS -X POST "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates" \

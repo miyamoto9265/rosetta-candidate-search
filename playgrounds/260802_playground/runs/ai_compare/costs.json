@@ -1,0 +1,68 @@
+{
+ "mode": "catalog_in_context",
+ "catalog_entries": 2342,
+ "pricing_note": "USD regular rates Aug 2026; DeepSeek cache hit/miss; OpenAI cache read as input_hit. Peak-hour surcharges not applied. Full HOMBA catalog is included in every AI mapping prompt.",
+ "pricing": {
+  "deepseek-v4-flash": {
+   "input_miss": 0.14,
+   "input_hit": 0.0028,
+   "output": 0.28
+  },
+  "deepseek-v4-pro": {
+   "input_miss": 0.435,
+   "input_hit": 0.003625,
+   "output": 0.87
+  },
+  "gpt-5.6-luna": {
+   "input_miss": 0.2,
+   "input_hit": 0.02,
+   "output": 1.2
+  }
+ },
+ "inference": {
+  "deepseek_v4_flash": {
+   "calls": 20,
+   "prompt_tokens": 910067,
+   "completion_tokens": 7267,
+   "cached_tokens": 514944,
+   "cache_miss_tokens": 395123,
+   "reasoning_tokens": 0,
+   "cost_usd": 0.058794,
+   "errors": 0
+  },
+  "deepseek_v4_pro": {
+   "calls": 20,
+   "prompt_tokens": 910067,
+   "completion_tokens": 7310,
+   "cached_tokens": 535680,
+   "cache_miss_tokens": 374387,
+   "reasoning_tokens": 0,
+   "cost_usd": 0.17116,
+   "errors": 0
+  },
+  "gpt56_luna": {
+   "calls": 20,
+   "prompt_tokens": 924112,
+   "completion_tokens": 7132,
+   "cached_tokens": 874152,
+   "cache_miss_tokens": 49960,
+   "reasoning_tokens": 1746,
+   "cost_usd": 0.036033,
+   "errors": 0
+  }
+ },
+ "inference_total_usd": 0.265987,
+ "validation": {
+  "model": "deepseek-v4-flash",
+  "passes": 3,
+  "calls": 300,
+  "prompt_tokens": 201409,
+  "completion_tokens": 74737,
+  "cached_tokens": 76800,
+  "cache_miss_tokens": 124609,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.038587,
+  "errors": 0
+ },
+ "grand_total_usd": 0.304574
+}

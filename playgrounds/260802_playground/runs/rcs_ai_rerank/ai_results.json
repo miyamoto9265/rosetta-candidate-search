@@ -1,0 +1,1002 @@
+{
+ "AIC-049": {
+  "record_id": 49,
+  "homba_id": "HOMBA:10363",
+  "name": "central nucleus of amygdala",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "CeA is standard abbreviation for central nucleus of amygdala.",
+  "error": null
+ },
+ "AIC-050": {
+  "record_id": 50,
+  "homba_id": "HOMBA:10346",
+  "name": "claustrum",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "CLA is abbreviation for claustrum.",
+  "error": null
+ },
+ "AIC-051": {
+  "record_id": 51,
+  "homba_id": "HOMBA:10295",
+  "name": "dentate gyrus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "DG is standard abbreviation for dentate gyrus.",
+  "error": null
+ },
+ "AIC-052": {
+  "record_id": 52,
+  "homba_id": "HOMBA:12396",
+  "name": "dentate (lateral) nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "DN is abbreviation for dentate nucleus.",
+  "error": null
+ },
+ "AIC-053": {
+  "record_id": 53,
+  "homba_id": "HOMBA:12223",
+  "name": "dorsal raphe nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "DR is standard abbreviation for dorsal raphe nucleus.",
+  "error": null
+ },
+ "AIC-054": {
+  "record_id": 54,
+  "homba_id": "HOMBA:10317",
+  "name": "entorhinal cortex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "EC commonly refers to entorhinal cortex; caudal division is more specific.",
+  "error": null
+ },
+ "AIC-055": {
+  "record_id": 55,
+  "homba_id": "HOMBA:12499",
+  "name": "nucleus coeruleus (locus coeruleus)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "LC is abbreviation for locus coeruleus.",
+  "error": null
+ },
+ "AIC-056": {
+  "record_id": 56,
+  "homba_id": "HOMBA:10429",
+  "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "LGN is abbreviation for lateral geniculate nucleus.",
+  "error": null
+ },
+ "AIC-009": {
+  "record_id": 9,
+  "homba_id": "HOMBA:10660",
+  "name": "cerebellar deep nuclei",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query.",
+  "error": null
+ },
+ "AIC-010": {
+  "record_id": 10,
+  "homba_id": "HOMBA:10659",
+  "name": "cerebellar hemisphere",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query.",
+  "error": null
+ },
+ "AIC-011": {
+  "record_id": 11,
+  "homba_id": "HOMBA:10656",
+  "name": "cerebellum",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query.",
+  "error": null
+ },
+ "AIC-012": {
+  "record_id": 12,
+  "homba_id": "HOMBA:10158",
+  "name": "telencephalon",
+  "relation": "larger",
+  "relation_ja": "より大きい",
+  "confidence": 0.9,
+  "reason": "Telencephalon is the larger structure containing the cerebral hemispheres.",
+  "error": null
+ },
+ "AIC-013": {
+  "record_id": 13,
+  "homba_id": "HOMBA:10346",
+  "name": "claustrum",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query.",
+  "error": null
+ },
+ "AIC-014": {
+  "record_id": 14,
+  "homba_id": "HOMBA:12437",
+  "name": "cochlear nuclei",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Plural form matches query; accepted synonym.",
+  "error": null
+ },
+ "AIC-015": {
+  "record_id": 15,
+  "homba_id": "HOMBA:12589",
+  "name": "cuneate nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query.",
+  "error": null
+ },
+ "AIC-016": {
+  "record_id": 16,
+  "homba_id": "HOMBA:12150",
+  "name": "cuneus (gyrus)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query.",
+  "error": null
+ },
+ "AIC-025": {
+  "record_id": 25,
+  "homba_id": "HOMBA:12402",
+  "name": "fastigial (medial) nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for fastigial nucleus.",
+  "error": null
+ },
+ "AIC-026": {
+  "record_id": 26,
+  "homba_id": "HOMBA:AA30424",
+  "name": "lobule Xa (flocculus)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for flocculus.",
+  "error": null
+ },
+ "AIC-027": {
+  "record_id": 27,
+  "homba_id": "HOMBA:12805",
+  "name": "fourth ventricle",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for fourth ventricle.",
+  "error": null
+ },
+ "AIC-028": {
+  "record_id": 28,
+  "homba_id": "HOMBA:12113",
+  "name": "frontal lobe",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for frontal lobe.",
+  "error": null
+ },
+ "AIC-029": {
+  "record_id": 29,
+  "homba_id": "HOMBA:AA30549",
+  "name": "fusiform (occipitotemporal) gyrus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for fusiform gyrus.",
+  "error": null
+ },
+ "AIC-030": {
+  "record_id": 30,
+  "homba_id": "HOMBA:12400",
+  "name": "medial interpositus (globose) nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for globose nucleus.",
+  "error": null
+ },
+ "AIC-031": {
+  "record_id": 31,
+  "homba_id": "HOMBA:10342",
+  "name": "globus pallidus (paleostriatum)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for globus pallidus.",
+  "error": null
+ },
+ "AIC-032": {
+  "record_id": 32,
+  "homba_id": "HOMBA:12592",
+  "name": "gracile nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for gracile nucleus.",
+  "error": null
+ },
+ "AIC-017": {
+  "record_id": 17,
+  "homba_id": "HOMBA:10295",
+  "name": "dentate gyrus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Dentate gyrus'.",
+  "error": null
+ },
+ "AIC-018": {
+  "record_id": 18,
+  "homba_id": "HOMBA:12396",
+  "name": "dentate (lateral) nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Dentate nucleus'.",
+  "error": null
+ },
+ "AIC-019": {
+  "record_id": 19,
+  "homba_id": "HOMBA:10389",
+  "name": "diencephalon",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Diencephalon'.",
+  "error": null
+ },
+ "AIC-020": {
+  "record_id": 20,
+  "homba_id": "HOMBA:12550",
+  "name": "dorsal motor nucleus of the vagus (vagal nerve nucleus)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Dorsal motor nucleus of vagus'.",
+  "error": null
+ },
+ "AIC-021": {
+  "record_id": 21,
+  "homba_id": "HOMBA:12223",
+  "name": "dorsal raphe nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Dorsal raphe nucleus'.",
+  "error": null
+ },
+ "AIC-022": {
+  "record_id": 22,
+  "homba_id": "HOMBA:12401",
+  "name": "lateral interpositus (emboliform) nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Synonym match: emboliform nucleus is the lateral interpositus nucleus.",
+  "error": null
+ },
+ "AIC-023": {
+  "record_id": 23,
+  "homba_id": "HOMBA:10317",
+  "name": "entorhinal cortex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Entorhinal cortex'.",
+  "error": null
+ },
+ "AIC-024": {
+  "record_id": 24,
+  "homba_id": "HOMBA:12420",
+  "name": "facial nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Facial nucleus'.",
+  "error": null
+ },
+ "AIC-057": {
+  "record_id": 57,
+  "homba_id": "HOMBA:10453",
+  "name": "lateral habenular nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "LHb is the standard abbreviation for lateral habenular nucleus.",
+  "error": null
+ },
+ "AIC-058": {
+  "record_id": 58,
+  "homba_id": "HOMBA:10352",
+  "name": "lateral septal nuclear complex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "LS is the standard abbreviation for lateral septal nucleus/complex.",
+  "error": null
+ },
+ "AIC-059": {
+  "record_id": 59,
+  "homba_id": "HOMBA:10434",
+  "name": "medial geniculate nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "MGB is a common abbreviation for medial geniculate body/nucleus.",
+  "error": null
+ },
+ "AIC-060": {
+  "record_id": 60,
+  "homba_id": "HOMBA:10339",
+  "name": "nucleus accumbens",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "NAc is the standard abbreviation for nucleus accumbens.",
+  "error": null
+ },
+ "AIC-061": {
+  "record_id": 61,
+  "homba_id": "HOMBA:10307",
+  "name": "olfactory bulb",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "OB is the standard abbreviation for olfactory bulb.",
+  "error": null
+ },
+ "AIC-062": {
+  "record_id": 62,
+  "homba_id": "HOMBA:12247",
+  "name": "red nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "RN is the standard abbreviation for red nucleus.",
+  "error": null
+ },
+ "AIC-063": {
+  "record_id": 63,
+  "homba_id": "HOMBA:10480",
+  "name": "suprachiasmatic nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "SCN is the standard abbreviation for suprachiasmatic nucleus.",
+  "error": null
+ },
+ "AIC-064": {
+  "record_id": 64,
+  "homba_id": "HOMBA:12251",
+  "name": "substantia nigra",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "SN is the standard abbreviation for substantia nigra.",
+  "error": null
+ },
+ "AIC-033": {
+  "record_id": 33,
+  "homba_id": "HOMBA:10278",
+  "name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "ACC is a standard abbreviation for anterior cingulate cortex.",
+  "error": null
+ },
+ "AIC-034": {
+  "record_id": 34,
+  "homba_id": "HOMBA:10492",
+  "name": "arcuate nucleus of hypothalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "ARC commonly refers to arcuate nucleus of hypothalamus.",
+  "error": null
+ },
+ "AIC-035": {
+  "record_id": 35,
+  "homba_id": "HOMBA:10384",
+  "name": "bed nucleus of stria terminalis",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "BNST is the standard abbreviation for bed nucleus of stria terminalis.",
+  "error": null
+ },
+ "AIC-036": {
+  "record_id": 36,
+  "homba_id": "HOMBA:10297",
+  "name": "CA1 region of hippocampus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "CA1 is the exact name for this hippocampal subfield.",
+  "error": null
+ },
+ "AIC-037": {
+  "record_id": 37,
+  "homba_id": "HOMBA:10298",
+  "name": "CA2 region of hippocampus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "CA2 is the exact name for this hippocampal subfield.",
+  "error": null
+ },
+ "AIC-038": {
+  "record_id": 38,
+  "homba_id": "HOMBA:10299",
+  "name": "CA3 region of hippocampus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "CA3 is the exact name for this hippocampal subfield.",
+  "error": null
+ },
+ "AIC-039": {
+  "record_id": 39,
+  "homba_id": "HOMBA:10277",
+  "name": "cingulate cortex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for query 'Cingulate cortex'.",
+  "error": null
+ },
+ "AIC-040": {
+  "record_id": 40,
+  "homba_id": "HOMBA:12223",
+  "name": "dorsal raphe nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Dorsal raphe is the common name for this nucleus.",
+  "error": null
+ },
+ "AIC-001": {
+  "record_id": 1,
+  "homba_id": "HOMBA:12418",
+  "name": "abducens nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Abducens nucleus'.",
+  "error": null
+ },
+ "AIC-002": {
+  "record_id": 2,
+  "homba_id": "HOMBA:10361",
+  "name": "amygdaloid complex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Amygdaloid complex is the standard term for amygdala in HOMBA.",
+  "error": null
+ },
+ "AIC-003": {
+  "record_id": 3,
+  "homba_id": "HOMBA:12136",
+  "name": "angular gyrus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Angular gyrus'.",
+  "error": null
+ },
+ "AIC-004": {
+  "record_id": 4,
+  "homba_id": "HOMBA:10392",
+  "name": "anterior nuclear complex of thalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Anterior nuclear complex is the HOMBA term for anterior thalamic nuclei.",
+  "error": null
+ },
+ "AIC-005": {
+  "record_id": 5,
+  "homba_id": "HOMBA:10236",
+  "name": "primary auditory cortex (first auditory cortex, auditory core region)",
+  "relation": "smaller",
+  "relation_ja": "より小さい",
+  "confidence": 0.9,
+  "reason": "Query 'Auditory cortex' is broader; primary auditory cortex is a subdivision.",
+  "error": null
+ },
+ "AIC-006": {
+  "record_id": 6,
+  "homba_id": "HOMBA:10384",
+  "name": "bed nucleus of stria terminalis",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Bed nucleus of stria terminalis'.",
+  "error": null
+ },
+ "AIC-007": {
+  "record_id": 7,
+  "homba_id": "HOMBA:10334",
+  "name": "caudate nucleus (mediodorsal division of the CP)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Caudate nucleus'.",
+  "error": null
+ },
+ "AIC-008": {
+  "record_id": 8,
+  "homba_id": "HOMBA:10657",
+  "name": "cerebellar cortex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match to query 'Cerebellar cortex'.",
+  "error": null
+ },
+ "AIC-041": {
+  "record_id": 41,
+  "homba_id": "HOMBA:12223",
+  "name": "dorsal raphe nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "DRN is a common abbreviation for dorsal raphe nucleus; exact match.",
+  "error": null
+ },
+ "AIC-042": {
+  "record_id": 42,
+  "homba_id": "HOMBA:10317",
+  "name": "entorhinal cortex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Entorhinal area is synonymous with entorhinal cortex.",
+  "error": null
+ },
+ "AIC-043": {
+  "record_id": 43,
+  "homba_id": "HOMBA:10343",
+  "name": "external division of globus pallidus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "GPe is the standard abbreviation for external globus pallidus.",
+  "error": null
+ },
+ "AIC-044": {
+  "record_id": 44,
+  "homba_id": "HOMBA:10344",
+  "name": "internal division of globus pallidus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "GPi is the standard abbreviation for internal globus pallidus.",
+  "error": null
+ },
+ "AIC-045": {
+  "record_id": 45,
+  "homba_id": "HOMBA:12170",
+  "name": "hippocampal formation",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact name match for hippocampal formation.",
+  "error": null
+ },
+ "AIC-046": {
+  "record_id": 46,
+  "homba_id": "HOMBA:10429",
+  "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 0.9,
+  "reason": "Lateral geniculate body is commonly used for the lateral geniculate nucleus; slight ambiguity with complex.",
+  "error": null
+ },
+ "AIC-047": {
+  "record_id": 47,
+  "homba_id": "HOMBA:10368",
+  "name": "basolateral nucleus (basal nucleus) of amygdala",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 0.9,
+  "reason": "BLA typically refers to the basolateral nucleus of the amygdala.",
+  "error": null
+ },
+ "AIC-048": {
+  "record_id": 48,
+  "homba_id": "HOMBA:10334",
+  "name": "caudate nucleus (mediodorsal division of the CP)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Cd is a common abbreviation for caudate nucleus.",
+  "error": null
+ },
+ "AIC-097": {
+  "record_id": 97,
+  "homba_id": "HOMBA:10476",
+  "name": "paraventricular nucleus of hypothalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 0.95,
+  "reason": "Query 'Paraventricular nucleus' is ambiguous, but PVH is the most common and exact match.",
+  "error": null
+ },
+ "AIC-098": {
+  "record_id": 98,
+  "homba_id": "HOMBA:12098",
+  "name": "septum pellucidum",
+  "relation": "different",
+  "relation_ja": "異なる",
+  "confidence": 0.3,
+  "reason": "Query 'Septum' likely refers to the septal area, not septum pellucidum. No exact match; least-bad pick.",
+  "error": null
+ },
+ "AIC-099": {
+  "record_id": 99,
+  "homba_id": "HOMBA:12302",
+  "name": "deep gray layer of superior colliculus",
+  "relation": "smaller",
+  "relation_ja": "より小さい",
+  "confidence": 0.9,
+  "reason": "Query specifies deep layers; SCdg is a deep layer, but not all deep layers. Best specific match.",
+  "error": null
+ },
+ "AIC-100": {
+  "record_id": 100,
+  "homba_id": "HOMBA:10392",
+  "name": "anterior nuclear complex of thalamus",
+  "relation": "smaller",
+  "relation_ja": "より小さい",
+  "confidence": 0.4,
+  "reason": "Query 'Thalamic nuclei' is broad; no single nucleus matches. ANC is a specific complex, not the whole set.",
+  "error": null
+ },
+ "AIC-081": {
+  "record_id": 81,
+  "homba_id": "HOMBA:12209",
+  "name": "periaqueductal gray substance",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for PAG abbreviation.",
+  "error": null
+ },
+ "AIC-082": {
+  "record_id": 82,
+  "homba_id": "HOMBA:10476",
+  "name": "paraventricular nucleus of hypothalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for PVN abbreviation.",
+  "error": null
+ },
+ "AIC-083": {
+  "record_id": 83,
+  "homba_id": "HOMBA:10457",
+  "name": "paraventricular nucleus of thalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for PVT abbreviation.",
+  "error": null
+ },
+ "AIC-084": {
+  "record_id": 84,
+  "homba_id": "HOMBA:10403",
+  "name": "reuniens (medioventral) nucleus of thalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for RE abbreviation.",
+  "error": null
+ },
+ "AIC-085": {
+  "record_id": 85,
+  "homba_id": "HOMBA:12292",
+  "name": "superior colliculus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for SC abbreviation.",
+  "error": null
+ },
+ "AIC-086": {
+  "record_id": 86,
+  "homba_id": "HOMBA:10302",
+  "name": "subiculum proper (strictly defined subiculum)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for Sub abbreviation.",
+  "error": null
+ },
+ "AIC-087": {
+  "record_id": 87,
+  "homba_id": "HOMBA:10420",
+  "name": "ventral lateral nucleus of thalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for VL abbreviation.",
+  "error": null
+ },
+ "AIC-088": {
+  "record_id": 88,
+  "homba_id": "HOMBA:10492",
+  "name": "arcuate nucleus of hypothalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for 'Arcuate nucleus'.",
+  "error": null
+ },
+ "AIC-065": {
+  "record_id": 65,
+  "homba_id": "HOMBA:12252",
+  "name": "substantia nigra, compact division",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "SNc is the standard abbreviation for substantia nigra pars compacta, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-066": {
+  "record_id": 66,
+  "homba_id": "HOMBA:12259",
+  "name": "substantia nigra, reticular division",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "SNr is the standard abbreviation for substantia nigra pars reticulata, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-067": {
+  "record_id": 67,
+  "homba_id": "HOMBA:10466",
+  "name": "subthalamic nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "STN is the standard abbreviation for subthalamic nucleus, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-068": {
+  "record_id": 68,
+  "homba_id": "HOMBA:10424",
+  "name": "ventral posterior lateral nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "VPL is the standard abbreviation for ventral posterior lateral nucleus, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-069": {
+  "record_id": 69,
+  "homba_id": "HOMBA:12261",
+  "name": "ventral tegmental area",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "VTA is the standard abbreviation for ventral tegmental area, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-070": {
+  "record_id": 70,
+  "homba_id": "HOMBA:10463",
+  "name": "zona incerta",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "ZI is the standard abbreviation for zona incerta, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-071": {
+  "record_id": 71,
+  "homba_id": "HOMBA:10559",
+  "name": "anterior commissure",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "The query 'Anterior commissure' exactly matches the candidate name.",
+  "error": null
+ },
+ "AIC-072": {
+  "record_id": 72,
+  "homba_id": "HOMBA:12592",
+  "name": "gracile nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Gr is the standard abbreviation for gracile nucleus, which matches the candidate exactly.",
+  "error": null
+ },
+ "AIC-073": {
+  "record_id": 73,
+  "homba_id": "HOMBA:12305",
+  "name": "inferior colliculus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "IC is the standard abbreviation for inferior colliculus; exact match.",
+  "error": null
+ },
+ "AIC-074": {
+  "record_id": 74,
+  "homba_id": "HOMBA:10467",
+  "name": "hypothalamus",
+  "relation": "larger",
+  "relation_ja": "より大きい",
+  "confidence": 0.7,
+  "reason": "LH typically refers to lateral hypothalamus, a subdivision of hypothalamus; no exact match, so choose broader structure.",
+  "error": null
+ },
+ "AIC-075": {
+  "record_id": 75,
+  "homba_id": "HOMBA:10494",
+  "name": "lateral hypothalamic area, tuberal part",
+  "relation": "smaller",
+  "relation_ja": "より小さい",
+  "confidence": 0.6,
+  "reason": "LHA is the lateral hypothalamic area; the candidate is a subdivision, so smaller.",
+  "error": null
+ },
+ "AIC-076": {
+  "record_id": 76,
+  "homba_id": "HOMBA:10398",
+  "name": "mediodorsal nucleus of thalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "MD is the standard abbreviation for mediodorsal nucleus of thalamus; exact match.",
+  "error": null
+ },
+ "AIC-077": {
+  "record_id": 77,
+  "homba_id": "HOMBA:10398",
+  "name": "mediodorsal nucleus of thalamus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 0.9,
+  "reason": "MDT likely refers to mediodorsal thalamic nucleus; candidate is the closest match.",
+  "error": null
+ },
+ "AIC-078": {
+  "record_id": 78,
+  "homba_id": "HOMBA:10351",
+  "name": "medial septal nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "MS is the standard abbreviation for medial septal nucleus; exact match.",
+  "error": null
+ },
+ "AIC-079": {
+  "record_id": 79,
+  "homba_id": "HOMBA:10339",
+  "name": "nucleus accumbens",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "NAcc is a common abbreviation for nucleus accumbens; exact match.",
+  "error": null
+ },
+ "AIC-080": {
+  "record_id": 80,
+  "homba_id": "HOMBA:12557",
+  "name": "solitary nucleus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "NTS is the standard abbreviation for nucleus tractus solitarius (solitary nucleus); exact match.",
+  "error": null
+ },
+ "AIC-089": {
+  "record_id": 89,
+  "homba_id": "HOMBA:10648",
+  "name": "gray matter of midbrain (mesencephalon, upper brainstem)",
+  "relation": "smaller",
+  "relation_ja": "より小さい",
+  "confidence": 0.9,
+  "reason": "Midbrain is part of brainstem; no exact brainstem candidate, so best is a subdivision.",
+  "error": null
+ },
+ "AIC-090": {
+  "record_id": 90,
+  "homba_id": "HOMBA:12070",
+  "name": "inferior occipitofrontal fasciculus",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 0.95,
+  "reason": "Synonym for inferior fronto-occipital fasciculus.",
+  "error": null
+ },
+ "AIC-091": {
+  "record_id": 91,
+  "homba_id": "HOMBA:10288",
+  "name": "major insular cortex",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for insular cortex.",
+  "error": null
+ },
+ "AIC-092": {
+  "record_id": 92,
+  "homba_id": "HOMBA:10338",
+  "name": "putamen (lateroventral division of the CP)",
+  "relation": "smaller",
+  "relation_ja": "より小さい",
+  "confidence": 0.8,
+  "reason": "Putamen is part of lenticular nucleus; no exact match, best candidate is a component.",
+  "error": null
+ },
+ "AIC-093": {
+  "record_id": 93,
+  "homba_id": "HOMBA:10154",
+  "name": "central nervous system (neural tube)",
+  "relation": "larger",
+  "relation_ja": "より大きい",
+  "confidence": 0.7,
+  "reason": "Limbic system is part of CNS; no exact match, CNS is the closest broader structure.",
+  "error": null
+ },
+ "AIC-094": {
+  "record_id": 94,
+  "homba_id": "HOMBA:10467",
+  "name": "hypothalamus",
+  "relation": "larger",
+  "relation_ja": "より大きい",
+  "confidence": 0.9,
+  "reason": "Medial hypothalamus is a subdivision of hypothalamus; no exact match, hypothalamus is the parent.",
+  "error": null
+ },
+ "AIC-095": {
+  "record_id": 95,
+  "homba_id": "HOMBA:12139",
+  "name": "temporal lobe",
+  "relation": "larger",
+  "relation_ja": "より大きい",
+  "confidence": 0.9,
+  "reason": "Medial temporal lobe is part of temporal lobe; no exact match, temporal lobe is the parent.",
+  "error": null
+ },
+ "AIC-096": {
+  "record_id": 96,
+  "homba_id": "HOMBA:AA30009",
+  "name": "frontal motor cortex (posterior frontal cortex)",
+  "relation": "match",
+  "relation_ja": "一致",
+  "confidence": 1.0,
+  "reason": "Exact match for motor cortex.",
+  "error": null
+ }
+}

@@ -1,0 +1,2108 @@
+{
+ "deepseek_v4_flash": {
+  "AIC-001": {
+   "homba_id": "HOMBA:12418",
+   "name": "abducens nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match for abducens nucleus in catalog.",
+   "top3": []
+  },
+  "AIC-002": {
+   "homba_id": "HOMBA:10361",
+   "name": "amygdaloid complex",
+   "confidence": 1.0,
+   "reason": "Amygdala is the common term for the amygdaloid complex.",
+   "top3": []
+  },
+  "AIC-003": {
+   "homba_id": "HOMBA:12136",
+   "name": "angular gyrus",
+   "confidence": 1.0,
+   "reason": "Exact match for angular gyrus in catalog.",
+   "top3": []
+  },
+  "AIC-004": {
+   "homba_id": "HOMBA:10392",
+   "name": "anterior nuclear complex of thalamus",
+   "confidence": 1.0,
+   "reason": "Anterior thalamic nuclei correspond to the anterior nuclear complex.",
+   "top3": []
+  },
+  "AIC-005": {
+   "homba_id": "HOMBA:10236",
+   "name": "primary auditory cortex (first auditory cortex, auditory core region)",
+   "confidence": 0.9,
+   "reason": "Auditory cortex most commonly refers to primary auditory cortex.",
+   "top3": []
+  },
+  "AIC-036": {
+   "homba_id": "HOMBA:10297",
+   "name": "CA1 region of hippocampus",
+   "confidence": 1.0,
+   "reason": "CA1 is a standard abbreviation for the CA1 region of the hippocampus.",
+   "top3": []
+  },
+  "AIC-037": {
+   "homba_id": "HOMBA:10298",
+   "name": "CA2 region of hippocampus",
+   "confidence": 1.0,
+   "reason": "CA2 is a standard abbreviation for the CA2 region of the hippocampus.",
+   "top3": []
+  },
+  "AIC-038": {
+   "homba_id": "HOMBA:10299",
+   "name": "CA3 region of hippocampus",
+   "confidence": 1.0,
+   "reason": "CA3 is a standard abbreviation for the CA3 region of the hippocampus.",
+   "top3": []
+  },
+  "AIC-039": {
+   "homba_id": "HOMBA:10277",
+   "name": "cingulate cortex",
+   "confidence": 1.0,
+   "reason": "Cingulate cortex is a direct synonym for the cingulate cortex.",
+   "top3": []
+  },
+  "AIC-040": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "Dorsal raphe is a common abbreviation for the dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-026": {
+   "homba_id": "HOMBA:AA30423",
+   "name": "flocculonodular lobe, flocculus part",
+   "confidence": 0.95,
+   "reason": "Flocculus is the flocculus part of the flocculonodular lobe.",
+   "top3": []
+  },
+  "AIC-027": {
+   "homba_id": "HOMBA:12805",
+   "name": "fourth ventricle",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Fourth ventricle'.",
+   "top3": []
+  },
+  "AIC-028": {
+   "homba_id": "HOMBA:12113",
+   "name": "frontal lobe",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Frontal lobe'.",
+   "top3": []
+  },
+  "AIC-029": {
+   "homba_id": "HOMBA:AA30549",
+   "name": "fusiform (occipitotemporal) gyrus",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Fusiform gyrus'.",
+   "top3": []
+  },
+  "AIC-030": {
+   "homba_id": "HOMBA:12401",
+   "name": "lateral interpositus (emboliform) nucleus",
+   "confidence": 0.6,
+   "reason": "Globose nucleus is the medial interpositus nucleus; closest catalog entry is lateral interpositus.",
+   "top3": []
+  },
+  "AIC-021": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-022": {
+   "homba_id": "HOMBA:12401",
+   "name": "lateral interpositus (emboliform) nucleus",
+   "confidence": 1.0,
+   "reason": "Emboliform nucleus is the lateral interpositus nucleus in the cerebellum.",
+   "top3": []
+  },
+  "AIC-023": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for entorhinal cortex.",
+   "top3": []
+  },
+  "AIC-024": {
+   "homba_id": "HOMBA:12420",
+   "name": "facial nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for facial nucleus.",
+   "top3": []
+  },
+  "AIC-025": {
+   "homba_id": "HOMBA:12402",
+   "name": "fastigial (medial) nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for fastigial nucleus.",
+   "top3": []
+  },
+  "AIC-011": {
+   "homba_id": "HOMBA:10656",
+   "name": "cerebellum",
+   "confidence": 1.0,
+   "reason": "Query 'Cerebellum' directly matches the catalog entry HOMBA:10656.",
+   "top3": []
+  },
+  "AIC-012": {
+   "homba_id": "HOMBA:10155",
+   "name": "brain",
+   "confidence": 0.6,
+   "reason": "No exact 'cerebral hemisphere' entry; closest is 'brain' (HOMBA:10155), which is the parent structure.",
+   "top3": []
+  },
+  "AIC-013": {
+   "homba_id": "HOMBA:10346",
+   "name": "claustrum",
+   "confidence": 1.0,
+   "reason": "Query 'Claustrum' directly matches the catalog entry HOMBA:10346.",
+   "top3": []
+  },
+  "AIC-014": {
+   "homba_id": "HOMBA:12437",
+   "name": "cochlear nuclei",
+   "confidence": 1.0,
+   "reason": "Query 'Cochlear nucleus' matches the catalog entry HOMBA:12437 (cochlear nuclei).",
+   "top3": []
+  },
+  "AIC-015": {
+   "homba_id": "HOMBA:12589",
+   "name": "cuneate nucleus",
+   "confidence": 1.0,
+   "reason": "Query 'Cuneate nucleus' directly matches the catalog entry HOMBA:12589.",
+   "top3": []
+  },
+  "AIC-031": {
+   "homba_id": "HOMBA:10342",
+   "name": "globus pallidus (paleostriatum)",
+   "confidence": 1.0,
+   "reason": "Query is the full name 'Globus pallidus', which directly matches the catalog entry.",
+   "top3": []
+  },
+  "AIC-032": {
+   "homba_id": "HOMBA:12592",
+   "name": "gracile nucleus",
+   "confidence": 1.0,
+   "reason": "Query is the full name 'Gracile nucleus', which directly matches the catalog entry.",
+   "top3": []
+  },
+  "AIC-033": {
+   "homba_id": "HOMBA:10278",
+   "name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+   "confidence": 0.9,
+   "reason": "ACC is a common abbreviation for anterior cingulate cortex, which is the most likely meaning in this context.",
+   "top3": []
+  },
+  "AIC-034": {
+   "homba_id": "HOMBA:10492",
+   "name": "arcuate nucleus of hypothalamus",
+   "confidence": 1.0,
+   "reason": "The fullname_hint 'arcuate nucleus' and the abbreviation ARC point to the arcuate nucleus of the hypothalamus.",
+   "top3": []
+  },
+  "AIC-035": {
+   "homba_id": "HOMBA:10384",
+   "name": "bed nucleus of stria terminalis",
+   "confidence": 1.0,
+   "reason": "The fullname_hint 'bed nucleus of the stria terminalis' and the abbreviation BNST directly match the catalog entry.",
+   "top3": []
+  },
+  "AIC-016": {
+   "homba_id": "HOMBA:12150",
+   "name": "cuneus (gyrus)",
+   "confidence": 0.95,
+   "reason": "Cuneus is a gyrus of the occipital lobe; catalog entry HOMBA:12150 matches.",
+   "top3": []
+  },
+  "AIC-017": {
+   "homba_id": "HOMBA:10295",
+   "name": "dentate gyrus",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry HOMBA:10295.",
+   "top3": []
+  },
+  "AIC-018": {
+   "homba_id": "HOMBA:12396",
+   "name": "dentate (lateral) nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry HOMBA:12396.",
+   "top3": []
+  },
+  "AIC-019": {
+   "homba_id": "HOMBA:10389",
+   "name": "diencephalon",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry HOMBA:10389.",
+   "top3": []
+  },
+  "AIC-020": {
+   "homba_id": "HOMBA:12550",
+   "name": "dorsal motor nucleus of the vagus (vagal nerve nucleus)",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry HOMBA:12550.",
+   "top3": []
+  },
+  "AIC-006": {
+   "homba_id": "HOMBA:10384",
+   "name": "bed nucleus of stria terminalis",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for bed nucleus of stria terminalis.",
+   "top3": []
+  },
+  "AIC-007": {
+   "homba_id": "HOMBA:10334",
+   "name": "caudate nucleus (mediodorsal division of the CP)",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for caudate nucleus.",
+   "top3": []
+  },
+  "AIC-008": {
+   "homba_id": "HOMBA:10657",
+   "name": "cerebellar cortex",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for cerebellar cortex.",
+   "top3": []
+  },
+  "AIC-009": {
+   "homba_id": "HOMBA:10660",
+   "name": "cerebellar deep nuclei",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for cerebellar deep nuclei.",
+   "top3": []
+  },
+  "AIC-010": {
+   "homba_id": "HOMBA:10659",
+   "name": "cerebellar hemisphere",
+   "confidence": 1.0,
+   "reason": "Exact match to catalog entry for cerebellar hemisphere.",
+   "top3": []
+  },
+  "AIC-046": {
+   "homba_id": "HOMBA:10429",
+   "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+   "confidence": 0.95,
+   "reason": "Lateral geniculate body is a synonym for the dorsal lateral geniculate nucleus.",
+   "top3": []
+  },
+  "AIC-047": {
+   "homba_id": "HOMBA:10368",
+   "name": "basolateral nucleus (basal nucleus) of amygdala",
+   "confidence": 0.95,
+   "reason": "BLA is the standard abbreviation for the basolateral nucleus of the amygdala.",
+   "top3": []
+  },
+  "AIC-048": {
+   "homba_id": "HOMBA:10334",
+   "name": "caudate nucleus (mediodorsal division of the CP)",
+   "confidence": 0.95,
+   "reason": "Cd is a common abbreviation for the caudate nucleus.",
+   "top3": []
+  },
+  "AIC-049": {
+   "homba_id": "HOMBA:10363",
+   "name": "central nucleus of amygdala",
+   "confidence": 0.95,
+   "reason": "CeA is the standard abbreviation for the central nucleus of the amygdala.",
+   "top3": []
+  },
+  "AIC-050": {
+   "homba_id": "HOMBA:10346",
+   "name": "claustrum",
+   "confidence": 0.95,
+   "reason": "CLA is a common abbreviation for the claustrum.",
+   "top3": []
+  },
+  "AIC-066": {
+   "homba_id": "HOMBA:12259",
+   "name": "substantia nigra, reticular division",
+   "confidence": 1.0,
+   "reason": "SNr is the standard abbreviation for substantia nigra pars reticulata, matching the reticular division.",
+   "top3": []
+  },
+  "AIC-067": {
+   "homba_id": "HOMBA:10466",
+   "name": "subthalamic nucleus",
+   "confidence": 1.0,
+   "reason": "STN is the standard abbreviation for subthalamic nucleus.",
+   "top3": []
+  },
+  "AIC-068": {
+   "homba_id": "HOMBA:10424",
+   "name": "ventral posterior lateral nucleus",
+   "confidence": 1.0,
+   "reason": "VPL is the standard abbreviation for ventral posterolateral nucleus, matching the ventral posterior lateral nucleus.",
+   "top3": []
+  },
+  "AIC-069": {
+   "homba_id": "HOMBA:12261",
+   "name": "ventral tegmental area",
+   "confidence": 1.0,
+   "reason": "VTA is the standard abbreviation for ventral tegmental area.",
+   "top3": []
+  },
+  "AIC-070": {
+   "homba_id": "HOMBA:10463",
+   "name": "zona incerta",
+   "confidence": 1.0,
+   "reason": "ZI is the standard abbreviation for zona incerta.",
+   "top3": []
+  },
+  "AIC-061": {
+   "homba_id": "HOMBA:10307",
+   "name": "olfactory bulb",
+   "confidence": 1.0,
+   "reason": "OB is the standard abbreviation for olfactory bulb.",
+   "top3": []
+  },
+  "AIC-062": {
+   "homba_id": "HOMBA:12247",
+   "name": "red nucleus",
+   "confidence": 1.0,
+   "reason": "RN is the standard abbreviation for red nucleus.",
+   "top3": []
+  },
+  "AIC-063": {
+   "homba_id": "HOMBA:10480",
+   "name": "suprachiasmatic nucleus",
+   "confidence": 1.0,
+   "reason": "SCN is the standard abbreviation for suprachiasmatic nucleus.",
+   "top3": []
+  },
+  "AIC-064": {
+   "homba_id": "HOMBA:12251",
+   "name": "substantia nigra",
+   "confidence": 1.0,
+   "reason": "SN is the standard abbreviation for substantia nigra.",
+   "top3": []
+  },
+  "AIC-065": {
+   "homba_id": "HOMBA:12252",
+   "name": "substantia nigra, compact division",
+   "confidence": 1.0,
+   "reason": "SNc is the standard abbreviation for substantia nigra pars compacta.",
+   "top3": []
+  },
+  "AIC-056": {
+   "homba_id": "HOMBA:10429",
+   "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+   "confidence": 0.99,
+   "reason": "LGN is the standard abbreviation for the lateral geniculate nucleus, a dorsal thalamic relay nucleus.",
+   "top3": []
+  },
+  "AIC-057": {
+   "homba_id": "HOMBA:10453",
+   "name": "lateral habenular nucleus",
+   "confidence": 0.99,
+   "reason": "LHb is the standard abbreviation for the lateral habenular nucleus, part of the epithalamus.",
+   "top3": []
+  },
+  "AIC-058": {
+   "homba_id": "HOMBA:10352",
+   "name": "lateral septal nuclear complex",
+   "confidence": 0.99,
+   "reason": "LS is the standard abbreviation for the lateral septal nucleus, a major component of the septal region.",
+   "top3": []
+  },
+  "AIC-059": {
+   "homba_id": "HOMBA:10434",
+   "name": "medial geniculate nucleus",
+   "confidence": 0.99,
+   "reason": "MGB is the standard abbreviation for the medial geniculate body, which is the medial geniculate nucleus.",
+   "top3": []
+  },
+  "AIC-060": {
+   "homba_id": "HOMBA:10339",
+   "name": "nucleus accumbens",
+   "confidence": 0.99,
+   "reason": "NAc is the standard abbreviation for the nucleus accumbens, a key ventral striatal structure.",
+   "top3": []
+  },
+  "AIC-051": {
+   "homba_id": "HOMBA:10295",
+   "name": "dentate gyrus",
+   "confidence": 1.0,
+   "reason": "DG is the standard abbreviation for dentate gyrus, matching the catalog entry.",
+   "top3": []
+  },
+  "AIC-052": {
+   "homba_id": "HOMBA:12396",
+   "name": "dentate (lateral) nucleus",
+   "confidence": 1.0,
+   "reason": "DN is the standard abbreviation for dentate nucleus, a cerebellar deep nucleus.",
+   "top3": []
+  },
+  "AIC-053": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "DR is the standard abbreviation for dorsal raphe nucleus, matching the catalog entry.",
+   "top3": []
+  },
+  "AIC-054": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 1.0,
+   "reason": "EC is the standard abbreviation for entorhinal cortex, matching the catalog entry.",
+   "top3": []
+  },
+  "AIC-055": {
+   "homba_id": "HOMBA:12499",
+   "name": "nucleus coeruleus (locus coeruleus)",
+   "confidence": 1.0,
+   "reason": "LC is the standard abbreviation for locus coeruleus, matching the catalog entry.",
+   "top3": []
+  },
+  "AIC-071": {
+   "homba_id": "HOMBA:10559",
+   "name": "anterior commissure",
+   "confidence": 1.0,
+   "reason": "Exact match for 'Anterior commissure' in catalog.",
+   "top3": []
+  },
+  "AIC-072": {
+   "homba_id": "HOMBA:12592",
+   "name": "gracile nucleus",
+   "confidence": 1.0,
+   "reason": "Abbreviation 'Gr' with hint 'gracile nucleus' matches catalog entry.",
+   "top3": []
+  },
+  "AIC-073": {
+   "homba_id": "HOMBA:12305",
+   "name": "inferior colliculus",
+   "confidence": 1.0,
+   "reason": "Abbreviation 'IC' with hint 'inferior colliculus' matches catalog entry.",
+   "top3": []
+  },
+  "AIC-074": {
+   "homba_id": "HOMBA:10467",
+   "name": "hypothalamus",
+   "confidence": 0.7,
+   "reason": "Abbreviation 'LH' with hint 'lateral hypothalamus' is ambiguous; catalog has 'lateral hypothalamic area' parts, but 'hypothalamus' is the closest general match.",
+   "top3": []
+  },
+  "AIC-075": {
+   "homba_id": "HOMBA:10494",
+   "name": "lateral hypothalamic area, tuberal part",
+   "confidence": 0.8,
+   "reason": "Abbreviation 'LHA' with hint 'lateral hypothalamic area' matches catalog entries; 'lateral hypothalamic area, tuberal part' is a specific match.",
+   "top3": []
+  },
+  "AIC-041": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "DRN is the standard abbreviation for dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-042": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 1.0,
+   "reason": "Entorhinal area is a synonym for entorhinal cortex.",
+   "top3": []
+  },
+  "AIC-043": {
+   "homba_id": "HOMBA:10343",
+   "name": "external division of globus pallidus",
+   "confidence": 1.0,
+   "reason": "GPe is the abbreviation for globus pallidus externus, matching external division.",
+   "top3": []
+  },
+  "AIC-044": {
+   "homba_id": "HOMBA:10344",
+   "name": "internal division of globus pallidus",
+   "confidence": 1.0,
+   "reason": "GPi is the abbreviation for globus pallidus internus, matching internal division.",
+   "top3": []
+  },
+  "AIC-045": {
+   "homba_id": "HOMBA:12170",
+   "name": "hippocampal formation",
+   "confidence": 1.0,
+   "reason": "Exact match for hippocampal formation.",
+   "top3": []
+  },
+  "AIC-076": {
+   "homba_id": "HOMBA:10398",
+   "name": "mediodorsal nucleus of thalamus",
+   "confidence": 0.99,
+   "reason": "MD is the standard abbreviation for the mediodorsal nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-077": {
+   "homba_id": "HOMBA:10398",
+   "name": "mediodorsal nucleus of thalamus",
+   "confidence": 0.99,
+   "reason": "MDT is a common abbreviation for the mediodorsal nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-078": {
+   "homba_id": "HOMBA:10351",
+   "name": "medial septal nucleus",
+   "confidence": 0.99,
+   "reason": "MS is the standard abbreviation for the medial septal nucleus.",
+   "top3": []
+  },
+  "AIC-079": {
+   "homba_id": "HOMBA:10339",
+   "name": "nucleus accumbens",
+   "confidence": 0.99,
+   "reason": "NAcc is a common abbreviation for the nucleus accumbens.",
+   "top3": []
+  },
+  "AIC-080": {
+   "homba_id": "HOMBA:12557",
+   "name": "solitary nucleus",
+   "confidence": 0.99,
+   "reason": "NTS is the standard abbreviation for the nucleus tractus solitarius (solitary nucleus).",
+   "top3": []
+  },
+  "AIC-081": {
+   "homba_id": "HOMBA:12209",
+   "name": "periaqueductal gray substance",
+   "confidence": 1.0,
+   "reason": "PAG is the standard abbreviation for periaqueductal gray substance.",
+   "top3": []
+  },
+  "AIC-082": {
+   "homba_id": "HOMBA:10476",
+   "name": "paraventricular nucleus of hypothalamus",
+   "confidence": 1.0,
+   "reason": "PVN is the standard abbreviation for the paraventricular nucleus of the hypothalamus.",
+   "top3": []
+  },
+  "AIC-083": {
+   "homba_id": "HOMBA:10457",
+   "name": "paraventricular nucleus of thalamus",
+   "confidence": 1.0,
+   "reason": "PVT is the standard abbreviation for the paraventricular nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-084": {
+   "homba_id": "HOMBA:10403",
+   "name": "reuniens (medioventral) nucleus of thalamus",
+   "confidence": 1.0,
+   "reason": "RE is the standard abbreviation for the reuniens nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-085": {
+   "homba_id": "HOMBA:12292",
+   "name": "superior colliculus",
+   "confidence": 1.0,
+   "reason": "SC is the standard abbreviation for the superior colliculus.",
+   "top3": []
+  },
+  "AIC-086": {
+   "homba_id": "HOMBA:10302",
+   "name": "subiculum proper (strictly defined subiculum)",
+   "confidence": 0.95,
+   "reason": "Query 'Sub' with hint 'subiculum' maps to the subiculum proper.",
+   "top3": []
+  },
+  "AIC-087": {
+   "homba_id": "HOMBA:10420",
+   "name": "ventral lateral nucleus of thalamus",
+   "confidence": 0.9,
+   "reason": "Query 'VL' with hint 'ventrolateral thalamus' maps to the ventral lateral nucleus.",
+   "top3": []
+  },
+  "AIC-088": {
+   "homba_id": "HOMBA:10492",
+   "name": "arcuate nucleus of hypothalamus",
+   "confidence": 0.8,
+   "reason": "Query 'Arcuate nucleus' is ambiguous but most common in brain context is hypothalamic.",
+   "top3": []
+  },
+  "AIC-089": {
+   "homba_id": "HOMBA:10653",
+   "name": "gray matter of hindbrain (rhombencephalon)",
+   "confidence": 0.7,
+   "reason": "Brainstem is not a direct HOMBA term; closest is hindbrain gray matter.",
+   "top3": []
+  },
+  "AIC-090": {
+   "homba_id": "HOMBA:12070",
+   "name": "inferior occipitofrontal fasciculus",
+   "confidence": 0.95,
+   "reason": "Query 'Inferior fronto-occipital fasciculus' matches the inferior occipitofrontal fasciculus.",
+   "top3": []
+  },
+  "AIC-091": {
+   "homba_id": "HOMBA:10288",
+   "name": "major insular cortex",
+   "confidence": 0.9,
+   "reason": "Query 'Insular cortex' maps to the major insular cortex, the standard neuroanatomical structure.",
+   "top3": []
+  },
+  "AIC-092": {
+   "homba_id": "HOMBA:10342",
+   "name": "globus pallidus (paleostriatum)",
+   "confidence": 0.7,
+   "reason": "Lenticular nucleus is a classic term for the putamen and globus pallidus; globus pallidus is the closest single catalog entry.",
+   "top3": []
+  },
+  "AIC-093": {
+   "homba_id": "HOMBA:10155",
+   "name": "brain",
+   "confidence": 0.4,
+   "reason": "Limbic system is a functional system not a discrete structure; brain is the closest broad catalog entry.",
+   "top3": []
+  },
+  "AIC-094": {
+   "homba_id": "HOMBA:10467",
+   "name": "hypothalamus",
+   "confidence": 0.8,
+   "reason": "Medial hypothalamus refers to the medial part of the hypothalamus; hypothalamus is the closest catalog entry.",
+   "top3": []
+  },
+  "AIC-095": {
+   "homba_id": "HOMBA:12162",
+   "name": "parahippocampal gyrus",
+   "confidence": 0.6,
+   "reason": "Medial temporal lobe is a broad region; parahippocampal gyrus is a key structure within it.",
+   "top3": []
+  },
+  "AIC-096": {
+   "homba_id": "HOMBA:AA30009",
+   "name": "frontal motor cortex (posterior frontal cortex)",
+   "confidence": 0.9,
+   "reason": "Motor cortex most commonly refers to the frontal motor cortex, including M1 and premotor areas.",
+   "top3": []
+  },
+  "AIC-097": {
+   "homba_id": "HOMBA:10476",
+   "name": "paraventricular nucleus of hypothalamus",
+   "confidence": 0.8,
+   "reason": "Paraventricular nucleus most commonly refers to the hypothalamic nucleus, a major neuroendocrine center.",
+   "top3": []
+  },
+  "AIC-098": {
+   "homba_id": "HOMBA:10350",
+   "name": "septal region (septal nuclear complex)",
+   "confidence": 0.9,
+   "reason": "Septum in brain context typically refers to the septal region/nuclear complex.",
+   "top3": []
+  },
+  "AIC-099": {
+   "homba_id": "HOMBA:12298",
+   "name": "intermediate layer of the superior colliculus",
+   "confidence": 0.9,
+   "reason": "Deep layers of superior colliculus include intermediate and deep layers; intermediate is the most specific match.",
+   "top3": []
+  },
+  "AIC-100": {
+   "homba_id": "HOMBA:AA30265",
+   "name": "regions of thalamus",
+   "confidence": 0.9,
+   "reason": "Thalamic nuclei refers to the collection of nuclei within the thalamus, best matched by the regions entry.",
+   "top3": []
+  }
+ },
+ "deepseek_v4_pro": {
+  "AIC-001": {
+   "homba_id": "HOMBA:12418",
+   "name": "abducens nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match for the abducens nucleus (6N) in the pons.",
+   "top3": []
+  },
+  "AIC-002": {
+   "homba_id": "HOMBA:10361",
+   "name": "amygdaloid complex",
+   "confidence": 1.0,
+   "reason": "Direct match for the amygdala, which is the amygdaloid complex.",
+   "top3": []
+  },
+  "AIC-003": {
+   "homba_id": "HOMBA:12136",
+   "name": "angular gyrus",
+   "confidence": 1.0,
+   "reason": "Direct match for the angular gyrus (AnG).",
+   "top3": []
+  },
+  "AIC-004": {
+   "homba_id": "HOMBA:10392",
+   "name": "anterior nuclear complex of thalamus",
+   "confidence": 1.0,
+   "reason": "Direct match for the anterior thalamic nuclei (ANC).",
+   "top3": []
+  },
+  "AIC-005": {
+   "homba_id": "HOMBA:10236",
+   "name": "primary auditory cortex (first auditory cortex, auditory core region)",
+   "confidence": 0.95,
+   "reason": "Auditory cortex most commonly refers to the primary auditory cortex (Au1).",
+   "top3": []
+  },
+  "AIC-006": {
+   "homba_id": "HOMBA:10384",
+   "name": "bed nucleus of stria terminalis",
+   "confidence": 1.0,
+   "reason": "Exact match for full name in the catalog.",
+   "top3": []
+  },
+  "AIC-007": {
+   "homba_id": "HOMBA:10334",
+   "name": "caudate nucleus (mediodorsal division of the CP)",
+   "confidence": 1.0,
+   "reason": "Exact match for full name in the catalog.",
+   "top3": []
+  },
+  "AIC-008": {
+   "homba_id": "HOMBA:10657",
+   "name": "cerebellar cortex",
+   "confidence": 1.0,
+   "reason": "Exact match for full name in the catalog.",
+   "top3": []
+  },
+  "AIC-009": {
+   "homba_id": "HOMBA:10660",
+   "name": "cerebellar deep nuclei",
+   "confidence": 1.0,
+   "reason": "Exact match for full name in the catalog.",
+   "top3": []
+  },
+  "AIC-010": {
+   "homba_id": "HOMBA:10659",
+   "name": "cerebellar hemisphere",
+   "confidence": 1.0,
+   "reason": "Exact match for full name in the catalog.",
+   "top3": []
+  },
+  "AIC-036": {
+   "homba_id": "HOMBA:10297",
+   "name": "CA1 region of hippocampus",
+   "confidence": 1.0,
+   "reason": "Direct match for CA1 region of hippocampus.",
+   "top3": []
+  },
+  "AIC-037": {
+   "homba_id": "HOMBA:10298",
+   "name": "CA2 region of hippocampus",
+   "confidence": 1.0,
+   "reason": "Direct match for CA2 region of hippocampus.",
+   "top3": []
+  },
+  "AIC-038": {
+   "homba_id": "HOMBA:10299",
+   "name": "CA3 region of hippocampus",
+   "confidence": 1.0,
+   "reason": "Direct match for CA3 region of hippocampus.",
+   "top3": []
+  },
+  "AIC-039": {
+   "homba_id": "HOMBA:10277",
+   "name": "cingulate cortex",
+   "confidence": 1.0,
+   "reason": "Direct match for cingulate cortex.",
+   "top3": []
+  },
+  "AIC-040": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match for dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-016": {
+   "homba_id": "HOMBA:12150",
+   "name": "cuneus (gyrus)",
+   "confidence": 0.95,
+   "reason": "Cuneus is a standard neuroanatomical term for a gyrus in the occipital lobe, matching HOMBA:12150.",
+   "top3": []
+  },
+  "AIC-017": {
+   "homba_id": "HOMBA:10295",
+   "name": "dentate gyrus",
+   "confidence": 1.0,
+   "reason": "Direct fullname match for the hippocampal structure.",
+   "top3": []
+  },
+  "AIC-018": {
+   "homba_id": "HOMBA:12396",
+   "name": "dentate (lateral) nucleus",
+   "confidence": 1.0,
+   "reason": "Direct fullname match for the cerebellar deep nucleus.",
+   "top3": []
+  },
+  "AIC-019": {
+   "homba_id": "HOMBA:10389",
+   "name": "diencephalon",
+   "confidence": 1.0,
+   "reason": "Direct fullname match for the brain region.",
+   "top3": []
+  },
+  "AIC-020": {
+   "homba_id": "HOMBA:12550",
+   "name": "dorsal motor nucleus of the vagus (vagal nerve nucleus)",
+   "confidence": 1.0,
+   "reason": "Direct fullname match for the medullary nucleus.",
+   "top3": []
+  },
+  "AIC-011": {
+   "homba_id": "HOMBA:10656",
+   "name": "cerebellum",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Cerebellum' in the catalog.",
+   "top3": []
+  },
+  "AIC-012": {
+   "homba_id": "HOMBA:10659",
+   "name": "cerebellar hemisphere",
+   "confidence": 0.9,
+   "reason": "Best match for 'Cerebral hemisphere' is 'cerebellar hemisphere' as the most specific entry in the catalog.",
+   "top3": []
+  },
+  "AIC-013": {
+   "homba_id": "HOMBA:10346",
+   "name": "claustrum",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Claustrum' in the catalog.",
+   "top3": []
+  },
+  "AIC-014": {
+   "homba_id": "HOMBA:12437",
+   "name": "cochlear nuclei",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Cochlear nucleus' (plural form 'cochlear nuclei' in catalog).",
+   "top3": []
+  },
+  "AIC-015": {
+   "homba_id": "HOMBA:12589",
+   "name": "cuneate nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match for 'Cuneate nucleus' in the catalog.",
+   "top3": []
+  },
+  "AIC-021": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match for 'Dorsal raphe nucleus' in the catalog.",
+   "top3": []
+  },
+  "AIC-022": {
+   "homba_id": "HOMBA:12401",
+   "name": "lateral interpositus (emboliform) nucleus",
+   "confidence": 1.0,
+   "reason": "Emboliform nucleus is the synonym for lateral interpositus nucleus in the catalog.",
+   "top3": []
+  },
+  "AIC-023": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 1.0,
+   "reason": "Exact match for 'Entorhinal cortex' in the catalog.",
+   "top3": []
+  },
+  "AIC-024": {
+   "homba_id": "HOMBA:12420",
+   "name": "facial nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match for 'Facial nucleus' in the catalog.",
+   "top3": []
+  },
+  "AIC-025": {
+   "homba_id": "HOMBA:12402",
+   "name": "fastigial (medial) nucleus",
+   "confidence": 1.0,
+   "reason": "Exact match for 'Fastigial nucleus' in the catalog.",
+   "top3": []
+  },
+  "AIC-026": {
+   "homba_id": "HOMBA:AA30424",
+   "name": "lobule Xa (flocculus)",
+   "confidence": 0.95,
+   "reason": "Flocculus is a specific lobule of the cerebellum, matching the catalog entry for lobule Xa.",
+   "top3": []
+  },
+  "AIC-027": {
+   "homba_id": "HOMBA:12805",
+   "name": "fourth ventricle",
+   "confidence": 1.0,
+   "reason": "Direct match for the full name of the fourth ventricle.",
+   "top3": []
+  },
+  "AIC-028": {
+   "homba_id": "HOMBA:12113",
+   "name": "frontal lobe",
+   "confidence": 1.0,
+   "reason": "Direct match for the full name of the frontal lobe.",
+   "top3": []
+  },
+  "AIC-029": {
+   "homba_id": "HOMBA:AA30549",
+   "name": "fusiform (occipitotemporal) gyrus",
+   "confidence": 1.0,
+   "reason": "Fusiform gyrus is a common synonym for the occipitotemporal gyrus.",
+   "top3": []
+  },
+  "AIC-030": {
+   "homba_id": "HOMBA:12400",
+   "name": "medial interpositus (globose) nucleus",
+   "confidence": 1.0,
+   "reason": "Globose nucleus is a synonym for the medial interpositus nucleus.",
+   "top3": []
+  },
+  "AIC-051": {
+   "homba_id": "HOMBA:10295",
+   "name": "dentate gyrus",
+   "confidence": 1.0,
+   "reason": "DG is the standard abbreviation for dentate gyrus in mammalian neuroanatomy.",
+   "top3": []
+  },
+  "AIC-052": {
+   "homba_id": "HOMBA:12396",
+   "name": "dentate (lateral) nucleus",
+   "confidence": 1.0,
+   "reason": "DN is the standard abbreviation for the dentate nucleus of the cerebellum.",
+   "top3": []
+  },
+  "AIC-053": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "DR is the standard abbreviation for the dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-054": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 1.0,
+   "reason": "EC is the standard abbreviation for entorhinal cortex.",
+   "top3": []
+  },
+  "AIC-055": {
+   "homba_id": "HOMBA:12499",
+   "name": "nucleus coeruleus (locus coeruleus)",
+   "confidence": 1.0,
+   "reason": "LC is the standard abbreviation for locus coeruleus.",
+   "top3": []
+  },
+  "AIC-066": {
+   "homba_id": "HOMBA:12259",
+   "name": "substantia nigra, reticular division",
+   "confidence": 1.0,
+   "reason": "SNr is the standard abbreviation for substantia nigra pars reticulata.",
+   "top3": []
+  },
+  "AIC-067": {
+   "homba_id": "HOMBA:10466",
+   "name": "subthalamic nucleus",
+   "confidence": 1.0,
+   "reason": "STN is the standard abbreviation for subthalamic nucleus.",
+   "top3": []
+  },
+  "AIC-068": {
+   "homba_id": "HOMBA:10424",
+   "name": "ventral posterior lateral nucleus",
+   "confidence": 1.0,
+   "reason": "VPL is the standard abbreviation for ventral posterior lateral nucleus.",
+   "top3": []
+  },
+  "AIC-069": {
+   "homba_id": "HOMBA:12261",
+   "name": "ventral tegmental area",
+   "confidence": 1.0,
+   "reason": "VTA is the standard abbreviation for ventral tegmental area.",
+   "top3": []
+  },
+  "AIC-070": {
+   "homba_id": "HOMBA:10463",
+   "name": "zona incerta",
+   "confidence": 1.0,
+   "reason": "ZI is the standard abbreviation for zona incerta.",
+   "top3": []
+  },
+  "AIC-056": {
+   "homba_id": "HOMBA:10429",
+   "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+   "confidence": 0.99,
+   "reason": "LGN is the standard abbreviation for lateral geniculate nucleus, matching HOMBA:10429.",
+   "top3": []
+  },
+  "AIC-057": {
+   "homba_id": "HOMBA:10453",
+   "name": "lateral habenular nucleus",
+   "confidence": 0.99,
+   "reason": "LHb is the standard abbreviation for lateral habenula, matching HOMBA:10453.",
+   "top3": []
+  },
+  "AIC-058": {
+   "homba_id": "HOMBA:10352",
+   "name": "lateral septal nuclear complex",
+   "confidence": 0.99,
+   "reason": "LS is the standard abbreviation for lateral septum, matching HOMBA:10352.",
+   "top3": []
+  },
+  "AIC-059": {
+   "homba_id": "HOMBA:10434",
+   "name": "medial geniculate nucleus",
+   "confidence": 0.99,
+   "reason": "MGB is the standard abbreviation for medial geniculate body, matching HOMBA:10434.",
+   "top3": []
+  },
+  "AIC-060": {
+   "homba_id": "HOMBA:10339",
+   "name": "nucleus accumbens",
+   "confidence": 0.99,
+   "reason": "NAc is the standard abbreviation for nucleus accumbens, matching HOMBA:10339.",
+   "top3": []
+  },
+  "AIC-046": {
+   "homba_id": "HOMBA:10429",
+   "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+   "confidence": 0.99,
+   "reason": "Lateral geniculate body is a common synonym for the lateral geniculate nucleus (dorsal lateral geniculate nucleus).",
+   "top3": []
+  },
+  "AIC-047": {
+   "homba_id": "HOMBA:10368",
+   "name": "basolateral nucleus (basal nucleus) of amygdala",
+   "confidence": 0.95,
+   "reason": "BLA is the standard abbreviation for the basolateral nucleus of the amygdala.",
+   "top3": []
+  },
+  "AIC-048": {
+   "homba_id": "HOMBA:10334",
+   "name": "caudate nucleus (mediodorsal division of the CP)",
+   "confidence": 0.99,
+   "reason": "Cd is the standard abbreviation for the caudate nucleus.",
+   "top3": []
+  },
+  "AIC-049": {
+   "homba_id": "HOMBA:10363",
+   "name": "central nucleus of amygdala",
+   "confidence": 0.99,
+   "reason": "CeA is the standard abbreviation for the central nucleus of the amygdala.",
+   "top3": []
+  },
+  "AIC-050": {
+   "homba_id": "HOMBA:10346",
+   "name": "claustrum",
+   "confidence": 0.99,
+   "reason": "CLA is the standard abbreviation for the claustrum.",
+   "top3": []
+  },
+  "AIC-061": {
+   "homba_id": "HOMBA:10307",
+   "name": "olfactory bulb",
+   "confidence": 1.0,
+   "reason": "Direct match of abbreviation and fullname to a primary HOMBA entry.",
+   "top3": []
+  },
+  "AIC-062": {
+   "homba_id": "HOMBA:12247",
+   "name": "red nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match of abbreviation and fullname to a primary HOMBA entry.",
+   "top3": []
+  },
+  "AIC-063": {
+   "homba_id": "HOMBA:10480",
+   "name": "suprachiasmatic nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match of abbreviation and fullname to a primary HOMBA entry.",
+   "top3": []
+  },
+  "AIC-064": {
+   "homba_id": "HOMBA:12251",
+   "name": "substantia nigra",
+   "confidence": 1.0,
+   "reason": "Direct match of abbreviation and fullname to a primary HOMBA entry.",
+   "top3": []
+  },
+  "AIC-065": {
+   "homba_id": "HOMBA:12252",
+   "name": "substantia nigra, compact division",
+   "confidence": 1.0,
+   "reason": "Abbreviation 'SNc' and fullname 'substantia nigra pars compacta' match the compact division entry.",
+   "top3": []
+  },
+  "AIC-041": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "DRN is the standard abbreviation for dorsal raphe nucleus, matching HOMBA:12223.",
+   "top3": []
+  },
+  "AIC-042": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 0.95,
+   "reason": "Entorhinal area is a common synonym for entorhinal cortex, matching HOMBA:10317.",
+   "top3": []
+  },
+  "AIC-043": {
+   "homba_id": "HOMBA:10343",
+   "name": "external division of globus pallidus",
+   "confidence": 1.0,
+   "reason": "GPe is the standard abbreviation for the external division of globus pallidus, matching HOMBA:10343.",
+   "top3": []
+  },
+  "AIC-044": {
+   "homba_id": "HOMBA:10344",
+   "name": "internal division of globus pallidus",
+   "confidence": 1.0,
+   "reason": "GPi is the standard abbreviation for the internal division of globus pallidus, matching HOMBA:10344.",
+   "top3": []
+  },
+  "AIC-045": {
+   "homba_id": "HOMBA:12170",
+   "name": "hippocampal formation",
+   "confidence": 1.0,
+   "reason": "Hippocampal formation is the exact name for HOMBA:12170.",
+   "top3": []
+  },
+  "AIC-071": {
+   "homba_id": "HOMBA:10559",
+   "name": "anterior commissure",
+   "confidence": 1.0,
+   "reason": "Direct match for the full name 'Anterior commissure' in the catalog.",
+   "top3": []
+  },
+  "AIC-072": {
+   "homba_id": "HOMBA:12592",
+   "name": "gracile nucleus",
+   "confidence": 1.0,
+   "reason": "Abbreviation 'Gr' matches the catalog entry for gracile nucleus, confirmed by the fullname hint.",
+   "top3": []
+  },
+  "AIC-073": {
+   "homba_id": "HOMBA:12305",
+   "name": "inferior colliculus",
+   "confidence": 1.0,
+   "reason": "Abbreviation 'IC' matches the catalog entry for inferior colliculus, confirmed by the fullname hint.",
+   "top3": []
+  },
+  "AIC-074": {
+   "homba_id": "HOMBA:10494",
+   "name": "lateral hypothalamic area, tuberal part",
+   "confidence": 0.6,
+   "reason": "Abbreviation 'LH' is ambiguous; 'lateral hypothalamic area' is the most common neuroanatomical sense, mapped to its tuberal part as the best available specific entry.",
+   "top3": []
+  },
+  "AIC-075": {
+   "homba_id": "HOMBA:10494",
+   "name": "lateral hypothalamic area, tuberal part",
+   "confidence": 0.9,
+   "reason": "Abbreviation 'LHA' matches 'lateral hypothalamic area'. The catalog's most specific entry for this area is the tuberal part.",
+   "top3": []
+  },
+  "AIC-031": {
+   "homba_id": "HOMBA:10342",
+   "name": "globus pallidus (paleostriatum)",
+   "confidence": 1.0,
+   "reason": "Direct match for the full name 'Globus pallidus'.",
+   "top3": []
+  },
+  "AIC-032": {
+   "homba_id": "HOMBA:12592",
+   "name": "gracile nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match for the full name 'Gracile nucleus'.",
+   "top3": []
+  },
+  "AIC-033": {
+   "homba_id": "HOMBA:10278",
+   "name": "anterior cingulate  cortex (ventromedial prefrontal cortex)",
+   "confidence": 0.95,
+   "reason": "Abbreviation 'ACC' most commonly refers to anterior cingulate cortex in mammalian neuroanatomy.",
+   "top3": []
+  },
+  "AIC-034": {
+   "homba_id": "HOMBA:10492",
+   "name": "arcuate nucleus of hypothalamus",
+   "confidence": 0.9,
+   "reason": "Abbreviation 'ARC' with hint 'arcuate nucleus' most commonly refers to the hypothalamic arcuate nucleus.",
+   "top3": []
+  },
+  "AIC-035": {
+   "homba_id": "HOMBA:10384",
+   "name": "bed nucleus of stria terminalis",
+   "confidence": 1.0,
+   "reason": "Abbreviation 'BNST' is a standard acronym for the bed nucleus of the stria terminalis.",
+   "top3": []
+  },
+  "AIC-081": {
+   "homba_id": "HOMBA:12209",
+   "name": "periaqueductal gray substance",
+   "confidence": 1.0,
+   "reason": "PAG is the standard abbreviation for periaqueductal gray substance.",
+   "top3": []
+  },
+  "AIC-082": {
+   "homba_id": "HOMBA:10476",
+   "name": "paraventricular nucleus of hypothalamus",
+   "confidence": 0.95,
+   "reason": "PVN commonly refers to the hypothalamic paraventricular nucleus in mammalian literature.",
+   "top3": []
+  },
+  "AIC-083": {
+   "homba_id": "HOMBA:10457",
+   "name": "paraventricular nucleus of thalamus",
+   "confidence": 1.0,
+   "reason": "PVT is the standard abbreviation for paraventricular nucleus of thalamus.",
+   "top3": []
+  },
+  "AIC-084": {
+   "homba_id": "HOMBA:10403",
+   "name": "reuniens (medioventral) nucleus of thalamus",
+   "confidence": 1.0,
+   "reason": "RE is the standard abbreviation for the reuniens nucleus of thalamus.",
+   "top3": []
+  },
+  "AIC-085": {
+   "homba_id": "HOMBA:12292",
+   "name": "superior colliculus",
+   "confidence": 1.0,
+   "reason": "SC is the standard abbreviation for superior colliculus.",
+   "top3": []
+  },
+  "AIC-076": {
+   "homba_id": "HOMBA:10398",
+   "name": "mediodorsal nucleus of thalamus",
+   "confidence": 0.99,
+   "reason": "MD is the standard abbreviation for mediodorsal nucleus of thalamus.",
+   "top3": []
+  },
+  "AIC-077": {
+   "homba_id": "HOMBA:10398",
+   "name": "mediodorsal nucleus of thalamus",
+   "confidence": 0.85,
+   "reason": "MDT is a common variant abbreviation for mediodorsal thalamus; mapped to MD.",
+   "top3": []
+  },
+  "AIC-078": {
+   "homba_id": "HOMBA:10351",
+   "name": "medial septal nucleus",
+   "confidence": 0.99,
+   "reason": "MS is the standard abbreviation for medial septal nucleus.",
+   "top3": []
+  },
+  "AIC-079": {
+   "homba_id": "HOMBA:10339",
+   "name": "nucleus accumbens",
+   "confidence": 0.99,
+   "reason": "NAcc is a standard abbreviation for nucleus accumbens.",
+   "top3": []
+  },
+  "AIC-080": {
+   "homba_id": "HOMBA:12557",
+   "name": "solitary nucleus",
+   "confidence": 0.99,
+   "reason": "NTS is the standard abbreviation for nucleus tractus solitarius (solitary nucleus).",
+   "top3": []
+  },
+  "AIC-086": {
+   "homba_id": "HOMBA:10302",
+   "name": "subiculum proper (strictly defined subiculum)",
+   "confidence": 0.95,
+   "reason": "Query 'Sub' is a standard abbreviation for subiculum. HOMBA:10302 is the primary entry for subiculum proper.",
+   "top3": []
+  },
+  "AIC-087": {
+   "homba_id": "HOMBA:10420",
+   "name": "ventral lateral nucleus of thalamus",
+   "confidence": 0.95,
+   "reason": "Query 'VL' is the standard abbreviation for the ventral lateral nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-088": {
+   "homba_id": "HOMBA:10492",
+   "name": "arcuate nucleus of hypothalamus",
+   "confidence": 0.9,
+   "reason": "In mammalian neuroanatomy, 'Arcuate nucleus' most commonly refers to the hypothalamic nucleus. HOMBA:12536 is the medullary arcuate nucleus, a less common sense.",
+   "top3": []
+  },
+  "AIC-089": {
+   "homba_id": "HOMBA:10648",
+   "name": "gray matter of midbrain (mesencephalon, upper brainstem)",
+   "confidence": 0.6,
+   "reason": "Brainstem is not a single HOMBA entry. The midbrain is the upper brainstem. The hindbrain (HOMBA:10653) is the lower brainstem. Choosing the upper part as a best-effort match.",
+   "top3": []
+  },
+  "AIC-090": {
+   "homba_id": "HOMBA:12070",
+   "name": "inferior occipitofrontal fasciculus",
+   "confidence": 0.99,
+   "reason": "Direct match for the full name of the inferior occipitofrontal fasciculus.",
+   "top3": []
+  },
+  "AIC-096": {
+   "homba_id": "HOMBA:AA30009",
+   "name": "frontal motor cortex (posterior frontal cortex)",
+   "confidence": 0.9,
+   "reason": "Motor cortex commonly refers to frontal motor areas; HOMBA:AA30009 is the parent for M1, premotor, etc.",
+   "top3": []
+  },
+  "AIC-097": {
+   "homba_id": "HOMBA:10476",
+   "name": "paraventricular nucleus of hypothalamus",
+   "confidence": 0.95,
+   "reason": "In mammalian neuroanatomy, 'paraventricular nucleus' most often means the hypothalamic PVH.",
+   "top3": []
+  },
+  "AIC-098": {
+   "homba_id": "HOMBA:10350",
+   "name": "septal region (septal nuclear complex)",
+   "confidence": 0.9,
+   "reason": "Septum in brain context typically refers to the septal region (basal forebrain).",
+   "top3": []
+  },
+  "AIC-099": {
+   "homba_id": "HOMBA:12301",
+   "name": "deep layer of colliculus",
+   "confidence": 0.85,
+   "reason": "Deep layers of superior colliculus correspond to HOMBA:12301 (SCde).",
+   "top3": []
+  },
+  "AIC-100": {
+   "homba_id": "HOMBA:10391",
+   "name": "dorsal thalamus",
+   "confidence": 0.85,
+   "reason": "Thalamic nuclei are part of the dorsal thalamus; HOMBA:10391 is the parent structure.",
+   "top3": []
+  },
+  "AIC-091": {
+   "homba_id": "HOMBA:10288",
+   "name": "major insular cortex",
+   "confidence": 0.95,
+   "reason": "Query 'Insular cortex' directly matches the conventional neuroanatomical term for the insular cortex, which is 'major insular cortex' in the catalog.",
+   "top3": []
+  },
+  "AIC-092": {
+   "homba_id": "HOMBA:10338",
+   "name": "putamen (lateroventral division of the CP)",
+   "confidence": 0.8,
+   "reason": "'Lenticular nucleus' is a classic term for the putamen and globus pallidus. The catalog's putamen is the best single match for this combined structure.",
+   "top3": []
+  },
+  "AIC-093": {
+   "homba_id": "HOMBA:10156",
+   "name": "gray matter of forebrain (prosencephalon)",
+   "confidence": 0.3,
+   "reason": "'Limbic system' is a functional concept, not a single catalog entry. The forebrain gray matter is the most encompassing structural parent for its components.",
+   "top3": []
+  },
+  "AIC-094": {
+   "homba_id": "HOMBA:10468",
+   "name": "preoptic region of HTH",
+   "confidence": 0.4,
+   "reason": "'Medial hypothalamus' is a broad region. The preoptic region is a major medial hypothalamic area, though not a perfect match for the entire medial zone.",
+   "top3": []
+  },
+  "AIC-095": {
+   "homba_id": "HOMBA:10235",
+   "name": "temporal cortex",
+   "confidence": 0.7,
+   "reason": "'Medial temporal lobe' is a gross anatomical region. The temporal cortex is the best structural match, as the lobe's medial aspect is not a single catalog entry.",
+   "top3": []
+  }
+ },
+ "gpt56_luna": {
+  "AIC-036": {
+   "homba_id": "HOMBA:10297",
+   "name": "CA1 region of hippocampus",
+   "confidence": 0.99,
+   "reason": "CA1 conventionally denotes the CA1 region of the hippocampus.",
+   "top3": []
+  },
+  "AIC-037": {
+   "homba_id": "HOMBA:10298",
+   "name": "CA2 region of hippocampus",
+   "confidence": 0.99,
+   "reason": "CA2 conventionally denotes the CA2 region of the hippocampus.",
+   "top3": []
+  },
+  "AIC-038": {
+   "homba_id": "HOMBA:10299",
+   "name": "CA3 region of hippocampus",
+   "confidence": 0.99,
+   "reason": "CA3 conventionally denotes the CA3 region of the hippocampus.",
+   "top3": []
+  },
+  "AIC-039": {
+   "homba_id": "HOMBA:10277",
+   "name": "cingulate cortex",
+   "confidence": 0.99,
+   "reason": "Cingulate cortex directly matches the catalog entry for cingulate cortex.",
+   "top3": []
+  },
+  "AIC-040": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 0.98,
+   "reason": "Dorsal raphe conventionally refers to the dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-016": {
+   "homba_id": "HOMBA:12150",
+   "name": "cuneus (gyrus)",
+   "confidence": 0.99,
+   "reason": "Cuneus conventionally refers to the occipital cuneus gyrus.",
+   "top3": []
+  },
+  "AIC-017": {
+   "homba_id": "HOMBA:10295",
+   "name": "dentate gyrus",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for dentate gyrus.",
+   "top3": []
+  },
+  "AIC-018": {
+   "homba_id": "HOMBA:12396",
+   "name": "dentate (lateral) nucleus",
+   "confidence": 0.99,
+   "reason": "Dentate nucleus conventionally refers to the lateral deep nucleus of the cerebellum.",
+   "top3": []
+  },
+  "AIC-019": {
+   "homba_id": "HOMBA:10389",
+   "name": "diencephalon",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for diencephalon.",
+   "top3": []
+  },
+  "AIC-020": {
+   "homba_id": "HOMBA:12550",
+   "name": "dorsal motor nucleus of the vagus (vagal nerve nucleus)",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for the dorsal motor nucleus of the vagus.",
+   "top3": []
+  },
+  "AIC-011": {
+   "homba_id": "HOMBA:10656",
+   "name": "cerebellum",
+   "confidence": 1.0,
+   "reason": "Direct match to the catalog entry for cerebellum.",
+   "top3": []
+  },
+  "AIC-012": {
+   "homba_id": "HOMBA:10158",
+   "name": "telencephalon",
+   "confidence": 0.72,
+   "reason": "Cerebral hemisphere conventionally refers to the telencephalic hemisphere; no exact hemisphere entry is listed.",
+   "top3": []
+  },
+  "AIC-013": {
+   "homba_id": "HOMBA:10346",
+   "name": "claustrum",
+   "confidence": 1.0,
+   "reason": "Direct match to the catalog entry for claustrum.",
+   "top3": []
+  },
+  "AIC-014": {
+   "homba_id": "HOMBA:12437",
+   "name": "cochlear nuclei",
+   "confidence": 0.95,
+   "reason": "Best catalog match for the singular term cochlear nucleus.",
+   "top3": []
+  },
+  "AIC-015": {
+   "homba_id": "HOMBA:12589",
+   "name": "cuneate nucleus",
+   "confidence": 1.0,
+   "reason": "Direct match to the catalog entry for cuneate nucleus.",
+   "top3": []
+  },
+  "AIC-006": {
+   "homba_id": "HOMBA:10384",
+   "name": "bed nucleus of stria terminalis",
+   "confidence": 0.99,
+   "reason": "Exact catalog match for the conventional neuroanatomical structure.",
+   "top3": []
+  },
+  "AIC-007": {
+   "homba_id": "HOMBA:10334",
+   "name": "caudate nucleus (mediodorsal division of the CP)",
+   "confidence": 0.98,
+   "reason": "Exact caudate nucleus entry; catalog specifies its mediodorsal caudoputamen division.",
+   "top3": []
+  },
+  "AIC-008": {
+   "homba_id": "HOMBA:10657",
+   "name": "cerebellar cortex",
+   "confidence": 0.99,
+   "reason": "Exact catalog match.",
+   "top3": []
+  },
+  "AIC-009": {
+   "homba_id": "HOMBA:10660",
+   "name": "cerebellar deep nuclei",
+   "confidence": 0.99,
+   "reason": "Exact catalog match.",
+   "top3": []
+  },
+  "AIC-010": {
+   "homba_id": "HOMBA:10659",
+   "name": "cerebellar hemisphere",
+   "confidence": 0.99,
+   "reason": "Exact catalog match.",
+   "top3": []
+  },
+  "AIC-001": {
+   "homba_id": "HOMBA:12418",
+   "name": "abducens nucleus",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for the abducens nucleus.",
+   "top3": []
+  },
+  "AIC-002": {
+   "homba_id": "HOMBA:10361",
+   "name": "amygdaloid complex",
+   "confidence": 0.98,
+   "reason": "Amygdala conventionally refers to the amygdaloid complex.",
+   "top3": []
+  },
+  "AIC-003": {
+   "homba_id": "HOMBA:12136",
+   "name": "angular gyrus",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for angular gyrus.",
+   "top3": []
+  },
+  "AIC-004": {
+   "homba_id": "HOMBA:10392",
+   "name": "anterior nuclear complex of thalamus",
+   "confidence": 0.94,
+   "reason": "Anterior thalamic nuclei collectively map to the anterior nuclear complex.",
+   "top3": []
+  },
+  "AIC-005": {
+   "homba_id": "HOMBA:10236",
+   "name": "primary auditory cortex (first auditory cortex, auditory core region)",
+   "confidence": 0.86,
+   "reason": "Auditory cortex most commonly denotes primary auditory cortex in mammalian neuroanatomical usage.",
+   "top3": []
+  },
+  "AIC-026": {
+   "homba_id": "HOMBA:AA30424",
+   "name": "lobule Xa (flocculus)",
+   "confidence": 0.99,
+   "reason": "Flocculus is explicitly represented as cerebellar lobule Xa.",
+   "top3": []
+  },
+  "AIC-027": {
+   "homba_id": "HOMBA:12805",
+   "name": "fourth ventricle",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for the fourth ventricle.",
+   "top3": []
+  },
+  "AIC-028": {
+   "homba_id": "HOMBA:12113",
+   "name": "frontal lobe",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for frontal lobe.",
+   "top3": []
+  },
+  "AIC-029": {
+   "homba_id": "HOMBA:AA30549",
+   "name": "fusiform (occipitotemporal) gyrus",
+   "confidence": 0.99,
+   "reason": "Fusiform gyrus is explicitly represented by the occipitotemporal fusiform gyrus entry.",
+   "top3": []
+  },
+  "AIC-030": {
+   "homba_id": "HOMBA:12400",
+   "name": "medial interpositus (globose) nucleus",
+   "confidence": 0.98,
+   "reason": "Globose nucleus is the conventional name for the medial interpositus nucleus.",
+   "top3": []
+  },
+  "AIC-031": {
+   "homba_id": "HOMBA:10342",
+   "name": "globus pallidus (paleostriatum)",
+   "confidence": 0.99,
+   "reason": "Direct match to the conventional mammalian globus pallidus.",
+   "top3": []
+  },
+  "AIC-032": {
+   "homba_id": "HOMBA:12592",
+   "name": "gracile nucleus",
+   "confidence": 0.99,
+   "reason": "Direct match to the medullary gracile nucleus.",
+   "top3": []
+  },
+  "AIC-033": {
+   "homba_id": "HOMBA:10278",
+   "name": "anterior cingulate cortex (ventromedial prefrontal cortex)",
+   "confidence": 0.98,
+   "reason": "ACC conventionally denotes anterior cingulate cortex.",
+   "top3": []
+  },
+  "AIC-034": {
+   "homba_id": "HOMBA:10492",
+   "name": "arcuate nucleus of hypothalamus",
+   "confidence": 0.96,
+   "reason": "ARC with arcuate nucleus context conventionally denotes the hypothalamic arcuate nucleus.",
+   "top3": []
+  },
+  "AIC-035": {
+   "homba_id": "HOMBA:10384",
+   "name": "bed nucleus of stria terminalis",
+   "confidence": 0.99,
+   "reason": "BNST is the standard abbreviation for bed nucleus of the stria terminalis.",
+   "top3": []
+  },
+  "AIC-021": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 0.99,
+   "reason": "Exact conventional neuroanatomical match.",
+   "top3": []
+  },
+  "AIC-022": {
+   "homba_id": "HOMBA:12401",
+   "name": "lateral interpositus (emboliform) nucleus",
+   "confidence": 0.98,
+   "reason": "Emboliform nucleus is the conventional name for the lateral interpositus nucleus.",
+   "top3": []
+  },
+  "AIC-023": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 0.99,
+   "reason": "Exact conventional neuroanatomical match.",
+   "top3": []
+  },
+  "AIC-024": {
+   "homba_id": "HOMBA:12420",
+   "name": "facial nucleus",
+   "confidence": 0.99,
+   "reason": "Exact conventional neuroanatomical match.",
+   "top3": []
+  },
+  "AIC-025": {
+   "homba_id": "HOMBA:12402",
+   "name": "fastigial (medial) nucleus",
+   "confidence": 0.98,
+   "reason": "Fastigial nucleus is the conventional name for the medial cerebellar deep nucleus.",
+   "top3": []
+  },
+  "AIC-041": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 0.99,
+   "reason": "DRN conventionally abbreviates dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-042": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 0.95,
+   "reason": "Entorhinal area is the conventional synonym for entorhinal cortex.",
+   "top3": []
+  },
+  "AIC-043": {
+   "homba_id": "HOMBA:10343",
+   "name": "external division of globus pallidus",
+   "confidence": 0.99,
+   "reason": "GPe conventionally denotes the external division of the globus pallidus.",
+   "top3": []
+  },
+  "AIC-044": {
+   "homba_id": "HOMBA:10344",
+   "name": "internal division of globus pallidus",
+   "confidence": 0.99,
+   "reason": "GPi conventionally denotes the internal division of the globus pallidus.",
+   "top3": []
+  },
+  "AIC-045": {
+   "homba_id": "HOMBA:12170",
+   "name": "hippocampal formation",
+   "confidence": 1.0,
+   "reason": "Exact catalog match for hippocampal formation.",
+   "top3": []
+  },
+  "AIC-061": {
+   "homba_id": "HOMBA:10307",
+   "name": "olfactory bulb",
+   "confidence": 1.0,
+   "reason": "OB conventionally denotes olfactory bulb.",
+   "top3": []
+  },
+  "AIC-062": {
+   "homba_id": "HOMBA:12247",
+   "name": "red nucleus",
+   "confidence": 1.0,
+   "reason": "RN conventionally denotes the red nucleus.",
+   "top3": []
+  },
+  "AIC-063": {
+   "homba_id": "HOMBA:10480",
+   "name": "suprachiasmatic nucleus",
+   "confidence": 0.95,
+   "reason": "SCN conventionally denotes the suprachiasmatic nucleus; HOMBA uses acronym SCH.",
+   "top3": []
+  },
+  "AIC-064": {
+   "homba_id": "HOMBA:12251",
+   "name": "substantia nigra",
+   "confidence": 1.0,
+   "reason": "SN conventionally denotes substantia nigra.",
+   "top3": []
+  },
+  "AIC-065": {
+   "homba_id": "HOMBA:12252",
+   "name": "substantia nigra, compact division",
+   "confidence": 1.0,
+   "reason": "SNc conventionally denotes substantia nigra pars compacta.",
+   "top3": []
+  },
+  "AIC-056": {
+   "homba_id": "HOMBA:10429",
+   "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+   "confidence": 0.99,
+   "reason": "LGN conventionally denotes the lateral geniculate nucleus.",
+   "top3": []
+  },
+  "AIC-057": {
+   "homba_id": "HOMBA:10453",
+   "name": "lateral habenular nucleus",
+   "confidence": 0.99,
+   "reason": "LHb conventionally denotes the lateral habenula/lateral habenular nucleus.",
+   "top3": []
+  },
+  "AIC-058": {
+   "homba_id": "HOMBA:10352",
+   "name": "lateral septal nuclear complex",
+   "confidence": 0.95,
+   "reason": "LS conventionally denotes the lateral septum; the catalog entry is its lateral septal nuclear complex.",
+   "top3": []
+  },
+  "AIC-059": {
+   "homba_id": "HOMBA:10434",
+   "name": "medial geniculate nucleus",
+   "confidence": 0.99,
+   "reason": "MGB conventionally denotes the medial geniculate body, represented here by the medial geniculate nucleus.",
+   "top3": []
+  },
+  "AIC-060": {
+   "homba_id": "HOMBA:10339",
+   "name": "nucleus accumbens",
+   "confidence": 0.99,
+   "reason": "NAc conventionally denotes the nucleus accumbens.",
+   "top3": []
+  },
+  "AIC-066": {
+   "homba_id": "HOMBA:12259",
+   "name": "substantia nigra, reticular division",
+   "confidence": 0.99,
+   "reason": "SNr conventionally denotes substantia nigra pars reticulata; catalog entry is the reticular division.",
+   "top3": []
+  },
+  "AIC-067": {
+   "homba_id": "HOMBA:10466",
+   "name": "subthalamic nucleus",
+   "confidence": 0.98,
+   "reason": "STN conventionally denotes subthalamic nucleus; catalog uses acronym STH for this structure.",
+   "top3": []
+  },
+  "AIC-068": {
+   "homba_id": "HOMBA:10424",
+   "name": "ventral posterior lateral nucleus",
+   "confidence": 1.0,
+   "reason": "VPL directly matches the catalog acronym and conventional ventral posterolateral nucleus.",
+   "top3": []
+  },
+  "AIC-069": {
+   "homba_id": "HOMBA:12261",
+   "name": "ventral tegmental area",
+   "confidence": 1.0,
+   "reason": "VTA directly matches the catalog acronym and conventional ventral tegmental area.",
+   "top3": []
+  },
+  "AIC-070": {
+   "homba_id": "HOMBA:10463",
+   "name": "zona incerta",
+   "confidence": 1.0,
+   "reason": "ZI directly matches the catalog acronym and zona incerta.",
+   "top3": []
+  },
+  "AIC-046": {
+   "homba_id": "HOMBA:10429",
+   "name": "lateral geniculate nucleus (dorsal lateral geniculate nucleus)",
+   "confidence": 0.98,
+   "reason": "Lateral geniculate body is the conventional synonym for the lateral geniculate nucleus.",
+   "top3": []
+  },
+  "AIC-047": {
+   "homba_id": "HOMBA:10368",
+   "name": "basolateral nucleus (basal nucleus) of amygdala",
+   "confidence": 0.95,
+   "reason": "BLA conventionally denotes the basolateral amygdala, represented by the basolateral nucleus.",
+   "top3": []
+  },
+  "AIC-048": {
+   "homba_id": "HOMBA:10334",
+   "name": "caudate nucleus (mediodorsal division of the CP)",
+   "confidence": 0.98,
+   "reason": "Cd is a standard abbreviation for caudate nucleus.",
+   "top3": []
+  },
+  "AIC-049": {
+   "homba_id": "HOMBA:10363",
+   "name": "central nucleus of amygdala",
+   "confidence": 0.98,
+   "reason": "CeA conventionally denotes the central nucleus of the amygdala.",
+   "top3": []
+  },
+  "AIC-050": {
+   "homba_id": "HOMBA:10346",
+   "name": "claustrum",
+   "confidence": 0.98,
+   "reason": "CLA is commonly used as an abbreviation for claustrum.",
+   "top3": []
+  },
+  "AIC-076": {
+   "homba_id": "HOMBA:10398",
+   "name": "mediodorsal nucleus of thalamus",
+   "confidence": 0.99,
+   "reason": "MD conventionally denotes the mediodorsal thalamic nucleus.",
+   "top3": []
+  },
+  "AIC-077": {
+   "homba_id": "HOMBA:10398",
+   "name": "mediodorsal nucleus of thalamus",
+   "confidence": 0.9,
+   "reason": "MDT is commonly used for mediodorsal thalamus; catalog maps this to MD.",
+   "top3": []
+  },
+  "AIC-078": {
+   "homba_id": "HOMBA:10351",
+   "name": "medial septal nucleus",
+   "confidence": 0.9,
+   "reason": "MS conventionally refers to the medial septum, represented by the medial septal nucleus.",
+   "top3": []
+  },
+  "AIC-079": {
+   "homba_id": "HOMBA:10339",
+   "name": "nucleus accumbens",
+   "confidence": 0.99,
+   "reason": "NAcc is the standard abbreviation for nucleus accumbens.",
+   "top3": []
+  },
+  "AIC-080": {
+   "homba_id": "HOMBA:12557",
+   "name": "solitary nucleus",
+   "confidence": 0.98,
+   "reason": "NTS denotes nucleus tractus solitarius, cataloged as the solitary nucleus.",
+   "top3": []
+  },
+  "AIC-051": {
+   "homba_id": "HOMBA:10295",
+   "name": "dentate gyrus",
+   "confidence": 1.0,
+   "reason": "DG is the standard abbreviation for dentate gyrus.",
+   "top3": []
+  },
+  "AIC-052": {
+   "homba_id": "HOMBA:12396",
+   "name": "dentate (lateral) nucleus",
+   "confidence": 0.9,
+   "reason": "Dentate nucleus maps to the cerebellar dentate nucleus, cataloged as DT.",
+   "top3": []
+  },
+  "AIC-053": {
+   "homba_id": "HOMBA:12223",
+   "name": "dorsal raphe nucleus",
+   "confidence": 1.0,
+   "reason": "DR conventionally denotes the dorsal raphe nucleus.",
+   "top3": []
+  },
+  "AIC-054": {
+   "homba_id": "HOMBA:10317",
+   "name": "entorhinal cortex",
+   "confidence": 0.95,
+   "reason": "EC is commonly used for entorhinal cortex; ERC is the catalog's general entorhinal cortex entry.",
+   "top3": []
+  },
+  "AIC-055": {
+   "homba_id": "HOMBA:12499",
+   "name": "nucleus coeruleus (locus coeruleus)",
+   "confidence": 0.98,
+   "reason": "LC conventionally denotes the locus coeruleus.",
+   "top3": []
+  },
+  "AIC-081": {
+   "homba_id": "HOMBA:12209",
+   "name": "periaqueductal gray substance",
+   "confidence": 0.99,
+   "reason": "PAG conventionally denotes periaqueductal gray in mammalian neuroanatomy.",
+   "top3": []
+  },
+  "AIC-082": {
+   "homba_id": "HOMBA:10476",
+   "name": "paraventricular nucleus of hypothalamus",
+   "confidence": 0.98,
+   "reason": "PVN conventionally denotes the hypothalamic paraventricular nucleus.",
+   "top3": []
+  },
+  "AIC-083": {
+   "homba_id": "HOMBA:10457",
+   "name": "paraventricular nucleus of thalamus",
+   "confidence": 0.99,
+   "reason": "PVT denotes the paraventricular nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-084": {
+   "homba_id": "HOMBA:10403",
+   "name": "reuniens (medioventral) nucleus of thalamus",
+   "confidence": 0.98,
+   "reason": "RE conventionally denotes the thalamic nucleus reuniens.",
+   "top3": []
+  },
+  "AIC-085": {
+   "homba_id": "HOMBA:12292",
+   "name": "superior colliculus",
+   "confidence": 0.99,
+   "reason": "SC conventionally denotes the superior colliculus in this neuroanatomical context.",
+   "top3": []
+  },
+  "AIC-071": {
+   "homba_id": "HOMBA:10559",
+   "name": "anterior commissure",
+   "confidence": 1.0,
+   "reason": "Direct match to the named white-matter commissure.",
+   "top3": []
+  },
+  "AIC-072": {
+   "homba_id": "HOMBA:12592",
+   "name": "gracile nucleus",
+   "confidence": 0.99,
+   "reason": "The expansion identifies Gr as the gracile nucleus.",
+   "top3": []
+  },
+  "AIC-073": {
+   "homba_id": "HOMBA:12305",
+   "name": "inferior colliculus",
+   "confidence": 0.99,
+   "reason": "The supplied expansion disambiguates IC as inferior colliculus rather than internal capsule.",
+   "top3": []
+  },
+  "AIC-074": {
+   "homba_id": "HOMBA:10494",
+   "name": "lateral hypothalamic area, tuberal part",
+   "confidence": 0.55,
+   "reason": "LH conventionally denotes lateral hypothalamus; the catalog's closest parent-level entry is its tuberal part.",
+   "top3": []
+  },
+  "AIC-075": {
+   "homba_id": "HOMBA:10494",
+   "name": "lateral hypothalamic area, tuberal part",
+   "confidence": 0.62,
+   "reason": "LHA denotes lateral hypothalamic area; the catalog lacks an undivided parent entry, so tuberal LHA is the closest match.",
+   "top3": []
+  },
+  "AIC-086": {
+   "homba_id": "HOMBA:10302",
+   "name": "subiculum proper (strictly defined subiculum)",
+   "confidence": 0.96,
+   "reason": "“Sub” is conventionally used as an abbreviation for subiculum; the catalog’s best match is subiculum proper.",
+   "top3": []
+  },
+  "AIC-087": {
+   "homba_id": "HOMBA:10420",
+   "name": "ventral lateral nucleus of thalamus",
+   "confidence": 0.95,
+   "reason": "VL conventionally denotes the ventral lateral nucleus of the thalamus.",
+   "top3": []
+  },
+  "AIC-088": {
+   "homba_id": "HOMBA:10492",
+   "name": "arcuate nucleus of hypothalamus",
+   "confidence": 0.93,
+   "reason": "In mammalian neuroanatomy, arcuate nucleus most commonly refers to the hypothalamic arcuate nucleus.",
+   "top3": []
+  },
+  "AIC-089": {
+   "homba_id": "HOMBA:10155",
+   "name": "brain",
+   "confidence": 0.38,
+   "reason": "The catalog has no unified brainstem entry; brain is the broadest available best-effort match.",
+   "top3": []
+  },
+  "AIC-090": {
+   "homba_id": "HOMBA:12070",
+   "name": "inferior occipitofrontal fasciculus",
+   "confidence": 0.94,
+   "reason": "Inferior fronto-occipital fasciculus is conventionally mapped to the catalog’s inferior occipitofrontal fasciculus.",
+   "top3": []
+  },
+  "AIC-096": {
+   "homba_id": "HOMBA:10163",
+   "name": "primary motor cortex (first motor cortex, area 4, area FA)",
+   "confidence": 0.86,
+   "reason": "Motor cortex conventionally refers to primary motor cortex (M1) in mammalian neuroanatomy.",
+   "top3": []
+  },
+  "AIC-097": {
+   "homba_id": "HOMBA:10476",
+   "name": "paraventricular nucleus of hypothalamus",
+   "confidence": 0.9,
+   "reason": "The unqualified paraventricular nucleus most commonly denotes the hypothalamic PVN.",
+   "top3": []
+  },
+  "AIC-098": {
+   "homba_id": "HOMBA:10350",
+   "name": "septal region (septal nuclear complex)",
+   "confidence": 0.72,
+   "reason": "Unqualified septum most commonly refers to the septal region or septal nuclear complex.",
+   "top3": []
+  },
+  "AIC-099": {
+   "homba_id": "HOMBA:12301",
+   "name": "deep layer of colliculus",
+   "confidence": 0.98,
+   "reason": "The query explicitly specifies the deep layers of the superior colliculus; this catalog entry represents its deep layer.",
+   "top3": []
+  },
+  "AIC-100": {
+   "homba_id": "HOMBA:AA30265",
+   "name": "regions of thalamus",
+   "confidence": 0.78,
+   "reason": "Thalamic nuclei is a collective term best matched to the catalog's regions-of-thalamus entry.",
+   "top3": []
+  },
+  "AIC-091": {
+   "homba_id": "HOMBA:10288",
+   "name": "major insular cortex",
+   "confidence": 0.98,
+   "reason": "Insular cortex conventionally maps directly to the catalog's major insular cortex entry.",
+   "top3": []
+  },
+  "AIC-092": {
+   "homba_id": "HOMBA:10342",
+   "name": "globus pallidus (paleostriatum)",
+   "confidence": 0.55,
+   "reason": "Lenticular nucleus usually denotes the putamen–globus pallidus complex; no composite entry exists, so globus pallidus is the best catalog match.",
+   "top3": []
+  },
+  "AIC-093": {
+   "homba_id": "HOMBA:12170",
+   "name": "hippocampal formation",
+   "confidence": 0.3,
+   "reason": "Limbic system has no direct catalog entry; hippocampal formation is a prominent conventional limbic structure and best available match.",
+   "top3": []
+  },
+  "AIC-094": {
+   "homba_id": "HOMBA:10467",
+   "name": "hypothalamus",
+   "confidence": 0.62,
+   "reason": "Medial hypothalamus is a broad hypothalamic region, but the catalog lacks a dedicated medial hypothalamus entry.",
+   "top3": []
+  },
+  "AIC-095": {
+   "homba_id": "HOMBA:12139",
+   "name": "temporal lobe",
+   "confidence": 0.42,
+   "reason": "Medial temporal lobe lacks a direct entry; temporal lobe is broader but is the closest catalog-level anatomical match.",
+   "top3": []
+  }
+ }
+}

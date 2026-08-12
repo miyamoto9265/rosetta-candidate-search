@@ -1,0 +1,66 @@
+{
+  "generated_at_utc": "2026-08-01T15:21:34.271345+00:00",
+  "schema": "projection_corpus_curation_v1",
+  "input": "D:\\OneDrive - miyamoto tatsuya\\workspaces\\ROSETTA\\build_testdata\\rcs_projection_corpus_classified.csv",
+  "total_records": 6935,
+  "api_records": 673,
+  "rule_only_records": 6262,
+  "api_priority_counts": {
+    "spotcheck": 116,
+    "flash_split": 256,
+    "contamination_suspect": 127,
+    "weak_neocortex": 174
+  },
+  "region_class_before": {
+    "non_neocortex": 3523,
+    "other": 1688,
+    "neocortex": 1458,
+    "ambiguous": 261,
+    "unresolved": 5
+  },
+  "region_class_after": {
+    "non_neocortex": 3398,
+    "other": 1771,
+    "neocortex": 1526,
+    "ambiguous": 240
+  },
+  "class_corrected_n": 244,
+  "contamination_non_neo_to_neo": 108,
+  "flip_neo_to_non_neo": 0,
+  "suitability_counts": {
+    "suitable": 3360,
+    "unsuitable": 3575
+  },
+  "unsuitable_reason_counts": {
+    "too_broad": 67,
+    "other": 827,
+    "fiber_tract_or_ventricle": 164,
+    "cell_type_or_marker": 1331,
+    "compound_multi_region": 440,
+    "ambiguous_name": 145,
+    "layer_only": 514,
+    "acronym_unresolved": 74,
+    "not_anatomical": 13
+  },
+  "suitable_total": 3360,
+  "suitable_non_neocortex": 2368,
+  "suitable_neocortex": 992,
+  "audit_stage_counts": {
+    "flash": 637,
+    "rule": 6262,
+    "pro": 33,
+    "unresolved": 3
+  },
+  "models": {
+    "flash": "deepseek-v4-flash",
+    "pro": "deepseek-v4-pro"
+  },
+  "workers": 128,
+  "batch_size": 6,
+  "spotcheck_n": 120,
+  "notes": [
+    "DeepSeek flash 3-pass + pro on splits completed (resume after top-up).",
+    "Majority accepted from available flash votes (incl. 2/2 when a pass missing).",
+    "No-majority rows keep prior region_class (audit_stage=unresolved)."
+  ]
+}

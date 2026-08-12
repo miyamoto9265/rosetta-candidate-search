@@ -1,0 +1,993 @@
+structure_name,fullname,species,paper,n_mentions,n_papers,region_class,suitability,unsuitable_reason,class_corrected,region_class_before,audit_stage,final_certainty,final_confidence
+M1,primary motor cortex,Mouse,PM33836602,347,184,neocortex,suitable,,no,neocortex,rule,high,0.98
+mPFC,medial prefrontal cortex,Mouse,PM36063145,297,149,neocortex,suitable,,no,neocortex,rule,high,0.98
+ACC,anterior cingulate cortex,Mouse,PM39614717,261,78,neocortex,suitable,,yes,non_neocortex,flash,high,0.9567
+V1,primary visual cortex,Mouse,PM38802410,250,103,neocortex,suitable,,no,neocortex,rule,high,0.98
+S1,primary somatosensory cortex,Mouse,PM36446382,200,105,neocortex,suitable,,no,neocortex,rule,high,0.98
+PFC,prefrontal cortex,Mouse,PM37660322,171,79,neocortex,suitable,,no,neocortex,rule,high,0.9967
+motor cortex,motor cortex,Mouse,PM39630872,167,111,neocortex,suitable,,no,neocortex,rule,high,0.9967
+PL,prelimbic cortex,Mouse,PM35838139,130,59,neocortex,suitable,,no,neocortex,rule,high,0.99
+OFC,orbitofrontal cortex,Mouse,PM32424057,99,42,neocortex,suitable,,no,neocortex,rule,high,0.9967
+IL,infralimbic cortex,Mouse,PM40046441,98,44,neocortex,suitable,,no,neocortex,rule,high,0.99
+M2,secondary motor cortex,Mouse,PM37001992,94,48,neocortex,suitable,,no,neocortex,rule,high,0.9967
+MOp,primary motor cortex,Mouse,PM41415035,68,24,neocortex,suitable,,no,neocortex,rule,high,0.9967
+PrL,prelimbic cortex,Mouse,PM42156719,68,38,neocortex,suitable,,no,neocortex,rule,high,0.9967
+somatosensory cortex,somatosensory cortex,Mouse,PM35551446,63,43,neocortex,suitable,,no,neocortex,rule,high,0.9967
+sensorimotor cortex,sensorimotor cortex,Mouse,PM34449938,59,33,neocortex,suitable,,no,neocortex,rule,high,0.9967
+prefrontal cortex,prefrontal cortex,Human,PM34617601,58,44,neocortex,suitable,,no,neocortex,rule,high,0.9967
+S2,secondary somatosensory cortex,Mouse,PM40346961,58,27,neocortex,suitable,,no,neocortex,rule,high,0.9967
+primary motor cortex,primary motor cortex,Human,PM35982397,57,48,neocortex,suitable,,no,neocortex,rule,high,0.9833
+vmPFC,ventromedial prefrontal cortex,Mouse,PM33790281,57,23,neocortex,suitable,,no,neocortex,rule,high,0.9833
+PPC,posterior parietal cortex,Mouse,PM36117273,55,19,neocortex,suitable,,no,neocortex,rule,high,0.9833
+RSC,retrosplenial cortex,Mouse,PM39511453,54,23,neocortex,suitable,,no,neocortex,flash,high,0.8833
+AI,anterior insula,Mouse,PM42107475,52,23,neocortex,suitable,,no,neocortex,flash,high,0.8767
+ACA,anterior cingulate area,Mouse,PM39149348,50,25,neocortex,suitable,,no,neocortex,flash,high,0.8867
+AC,auditory cortex,Mouse,PM35366148,47,22,neocortex,suitable,,no,neocortex,rule,high,0.98
+insula,insula,Mouse,PM34117229,45,19,neocortex,suitable,,no,neocortex,flash,high,0.9033
+visual cortex,visual cortex,Mouse,PM38890758,45,26,neocortex,suitable,,no,neocortex,rule,high,0.98
+A1,primary auditory cortex,Mouse,PM33157020,43,22,neocortex,suitable,,no,neocortex,rule,high,0.98
+MO,motor cortex,Mouse,PM39392390,42,19,neocortex,suitable,,no,neocortex,rule,high,0.98
+prostriata,area prostriata,Rat,PM34795559,41,2,neocortex,suitable,,yes,ambiguous,flash,high,0.8167
+SMA,supplementary motor area,Human,PM34121656,40,29,neocortex,suitable,,no,neocortex,rule,high,0.9833
+PCC,posterior cingulate cortex,Human,PM41840687,39,6,neocortex,suitable,,yes,non_neocortex,flash,high,0.9233
+auditory cortex,auditory cortex,Mouse,PM34366798,38,25,neocortex,suitable,,no,neocortex,rule,high,0.9833
+VISp,primary visual cortex,Mouse,PM39149348,38,13,neocortex,suitable,,no,neocortex,rule,high,0.9833
+dmPFC,dorsomedial prefrontal cortex,Mouse,PM33790281,36,19,neocortex,suitable,,no,neocortex,rule,high,0.9833
+insular cortex,insular cortex,Mouse,PM36542188,36,22,neocortex,suitable,,no,neocortex,rule,high,0.85
+frontal cortex,frontal cortex,Mouse,PM37398221,34,27,neocortex,suitable,,no,neocortex,rule,high,0.9833
+precuneus,precuneus,Human,PM39103495,34,13,neocortex,suitable,,no,neocortex,rule,high,0.9833
+RSP,retrosplenial cortex,Mouse,PM39814996,34,13,neocortex,suitable,,no,neocortex,flash,high,0.94
+PM,premotor cortex,Mouse,PM39937647,33,19,neocortex,suitable,,no,neocortex,rule,high,0.9833
+aIC,anterior insular cortex,Mouse,PM32940600,32,16,neocortex,suitable,,yes,non_neocortex,flash,high,0.94
+V2,secondary visual cortex,Rat,PM32361987,31,19,neocortex,suitable,,no,neocortex,rule,high,0.9833
+retrosplenial cortex,retrosplenial cortex,Mouse,PM32964131,30,24,neocortex,suitable,,yes,ambiguous,flash,high,0.94
+AL,anterolateral area,Mouse,PM35082302,29,10,neocortex,suitable,,no,neocortex,flash,high,0.84
+SSp,primary somatosensory cortex,Mouse,PM38712231,29,15,neocortex,suitable,,no,neocortex,rule,high,0.95
+ALM,anterior lateral motor cortex,Mouse,PM36171427,28,8,neocortex,suitable,,no,neocortex,rule,high,0.95
+PMv,ventral premotor cortex,Human,PM34121656,28,20,neocortex,suitable,,no,neocortex,rule,high,0.95
+temporal cortex,temporal cortex,Human,PM36661404,28,18,neocortex,suitable,,no,neocortex,flash,high,0.8667
+MI,primary motor cortex,Mouse,PM34665323,27,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+prelimbic cortex,prelimbic cortex,Rat,PM37823340,27,16,neocortex,suitable,,no,neocortex,rule,high,0.9833
+premotor cortex,premotor cortex,Human,PM40667064,27,17,neocortex,suitable,,no,neocortex,rule,high,1.0
+anterior cingulate cortex,anterior cingulate cortex,Human,PM32964131,26,19,neocortex,suitable,,yes,non_neocortex,flash,high,0.93
+DLPFC,dorsolateral prefrontal cortex,Human,PM35441221,25,17,neocortex,suitable,,no,neocortex,rule,high,1.0
+medial prefrontal cortex,medial prefrontal cortex,Mouse,PM42362551,25,24,neocortex,suitable,,no,neocortex,rule,high,1.0
+cingulate cortex,cingulate cortex,Rat,PM40800920,23,18,neocortex,suitable,,yes,non_neocortex,flash,high,0.8833
+occipital cortex,occipital cortex,Human,PM36661404,23,18,neocortex,suitable,,no,neocortex,rule,high,1.0
+orbitofrontal cortex,orbitofrontal cortex,Human,PM36542188,23,16,neocortex,suitable,,no,neocortex,rule,high,1.0
+ACx,auditory cortex,Mouse,PM35857536,22,9,neocortex,suitable,,no,neocortex,rule,high,0.9933
+MOs,secondary motor cortex,Mouse,PM41256530,22,16,neocortex,suitable,,no,neocortex,rule,high,0.9933
+MT,middle temporal area,Marmoset,PM37408682,22,11,neocortex,suitable,,no,neocortex,rule,high,0.9933
+ORB,orbitofrontal cortex,Mouse,PM39149348,22,9,neocortex,suitable,,no,neocortex,rule,high,0.9933
+parietal cortex,parietal cortex,Human,PM41115879,22,17,neocortex,suitable,,no,neocortex,rule,high,0.9933
+PMC,premotor cortex,Mouse,PM35813503,22,9,neocortex,suitable,,no,neocortex,rule,high,0.9933
+RFA,rostral forelimb area,Rat,PM38265300,21,7,neocortex,suitable,,no,neocortex,rule,high,0.9767
+S1HL,primary somatosensory cortex hindlimb,Mouse,PM36846300,20,9,neocortex,suitable,,no,neocortex,rule,high,0.9933
+frontal lobe,frontal lobe,Human,PM39912002,19,10,neocortex,suitable,,no,neocortex,rule,high,0.9667
+neocortex,neocortex,Mouse,PM33516814,19,13,neocortex,suitable,,no,neocortex,rule,high,1.0
+PMd,dorsal premotor cortex,Macaque,PM37490921,19,13,neocortex,suitable,,no,neocortex,rule,high,0.9333
+FC,frontal cortex,Mouse,PM38883723,18,7,neocortex,suitable,,no,neocortex,rule,high,0.9333
+pIC,posterior insular cortex,Mouse,PM39192198,18,9,neocortex,suitable,,no,neocortex,flash,high,0.9167
+Ins,insula,rats and mice,PM42101519,17,5,neocortex,suitable,,no,neocortex,flash,high,0.95
+isocortex,isocortex,Mouse,PM40777408,17,10,neocortex,suitable,,no,neocortex,rule,high,0.9667
+mOFC,medial orbitofrontal cortex,Mouse,PM41851827,17,4,neocortex,suitable,,no,neocortex,rule,high,0.9667
+pACC,posterior anterior cingulate cortex,Human,PM34276282,17,4,neocortex,suitable,,yes,non_neocortex,flash,high,0.86
+primary somatosensory cortex,primary somatosensory cortex,Mouse,PM37353897,17,15,neocortex,suitable,,no,neocortex,rule,high,0.9667
+anterior insula,anterior insula,Human,PM32594910,16,9,neocortex,suitable,,yes,non_neocortex,flash,high,0.86
+fS1,,Mouse,PM36255325,16,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+LM,lateromedial area,Mouse,PM35082302,16,13,neocortex,suitable,,no,neocortex,rule,high,0.9567
+sgACC,subgenual anterior cingulate cortex,Macaque,PM42362380,16,4,neocortex,suitable,,yes,non_neocortex,flash,high,0.8767
+6M,,,PM41542588,15,1,neocortex,suitable,,no,neocortex,rule,high,0.8533
+FEF,frontal eye field,Macaque,PM42393312,15,10,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left M1,left primary motor cortex,Human,PM35624941,15,7,neocortex,suitable,,no,neocortex,rule,high,1.0
+MFG,middle frontal gyrus,Human,PM39103495,15,7,neocortex,suitable,,no,neocortex,rule,high,1.0
+posterior insula,posterior insula,Mouse,PM39273133,15,5,neocortex,suitable,,no,neocortex,rule,high,0.8333
+RSPd,dorsal retrosplenial cortex,,PM39814996,15,1,neocortex,suitable,,yes,ambiguous,flash,high,0.8933
+vlPFC,ventrolateral prefrontal cortex,Macaque,PM35510840,15,7,neocortex,suitable,,no,neocortex,rule,high,1.0
+AUD,auditory cortex,Mouse,PM32795386,14,13,neocortex,suitable,,no,neocortex,rule,high,0.9667
+AUDp,primary auditory area,Mouse,PM35312957,14,6,neocortex,suitable,,no,neocortex,rule,high,0.9667
+SPL,superior parietal lobule,Human,PM41405705,14,6,neocortex,suitable,,no,neocortex,rule,high,0.9767
+SSs,secondary somatosensory cortex,Mouse,PM37986757,14,10,neocortex,suitable,,no,neocortex,rule,high,0.9667
+VISl,lateral visual cortex,Mouse,PM41345053,14,3,neocortex,suitable,,no,neocortex,rule,high,0.96
+CFA,caudal forelimb area,Mouse,PM38551963,13,8,neocortex,suitable,,no,neocortex,rule,high,0.95
+Cg,cingulate cortex,Mouse,PM41319286,13,9,neocortex,suitable,,yes,ambiguous,flash,high,0.85
+DP,dorsal peduncular cortex,Mouse,PM40204437,13,9,neocortex,suitable,,no,neocortex,rule,high,0.9167
+FrA,frontal area,Mouse,PM36944634,13,3,neocortex,suitable,,no,neocortex,rule,high,0.95
+pgACC,perigenual anterior cingulate cortex,Macaque,PM42362380,13,3,neocortex,suitable,,yes,non_neocortex,flash,high,0.9
+vM1,ventral primary motor cortex,Mouse,PM38712153,13,6,neocortex,suitable,,no,neocortex,rule,high,0.9667
+A2,secondary auditory cortex,Mouse,PM33328909,12,6,neocortex,suitable,,no,neocortex,rule,high,0.9667
+area 17,area 17,Ferret,PM34611910,12,4,neocortex,suitable,,no,neocortex,rule,high,0.9667
+dACC,dorsal anterior cingulate cortex,Human,PM39103495,12,7,neocortex,suitable,,yes,non_neocortex,flash,high,0.9233
+infralimbic cortex,infralimbic cortex,Rat,PM41362369,12,8,neocortex,suitable,,no,neocortex,flash,high,0.96
+LPFC,lateral prefrontal cortex,Human,PM42239197,12,7,neocortex,suitable,,no,neocortex,rule,high,0.9767
+MCX,motor cortex,Rat,PM37094762,12,6,neocortex,suitable,,no,neocortex,rule,high,0.9767
+posterior cingulate cortex,posterior cingulate cortex,Human,PM37244076,12,10,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+V4,visual area 4,Macaque,PM38741760,12,10,neocortex,suitable,,no,neocortex,rule,high,0.9767
+VC,visual cortex,Mouse,PM38262418,12,7,neocortex,suitable,,no,neocortex,rule,high,0.9767
+AIV,"agranular insular cortex, ventral part",Rat,PM37152205,11,3,neocortex,suitable,,yes,non_neocortex,flash,high,0.8967
+area 11,area 11,Human,PM41212268,11,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+AudC,auditory cortex,Mouse,PM36824753,11,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+Cing,cingulate cortex,,PM42101519,11,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+IPL,inferior parietal lobule,Mouse,PM41405705,11,7,neocortex,suitable,,no,neocortex,rule,high,0.9667
+lOFC,lateral orbitofrontal cortex,Rat,PM41853064,11,4,neocortex,suitable,,no,neocortex,rule,high,0.9667
+lS2,left secondary somatosensory cortex,,PM33036334,11,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+primary visual cortex,primary visual cortex,Mouse,PM35687687,11,8,neocortex,suitable,,no,neocortex,rule,high,0.9833
+rIFG,right inferior frontal gyrus,Human,PM38666118,11,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+secondary motor cortex,secondary motor cortex,Rat,PM37353897,11,10,neocortex,suitable,,no,neocortex,rule,high,0.9833
+superior frontal gyrus,superior frontal gyrus,Human,PM40535582,11,6,neocortex,suitable,,no,neocortex,rule,high,0.9833
+V2M,medial secondary visual cortex,Mouse,PM35241493,11,5,neocortex,suitable,,no,neocortex,rule,high,0.9833
+VO,ventral orbital cortex,Mouse,PM42107475,11,7,neocortex,suitable,,no,neocortex,rule,high,0.9833
+area 3b,primary somatosensory cortex (area 3b),Galago,PM41849378,10,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+area 44,area 44,Macaque,PM35510840,10,4,neocortex,suitable,,no,neocortex,rule,high,0.9833
+Au1,primary auditory cortex,Mouse,PM41639097,10,5,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral prostriata,prostriata,Mouse,PM33324173,10,1,neocortex,suitable,,yes,non_neocortex,pro,medium,0.9167
+F4,,,PM32639229,10,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+IFG,inferior frontal gyrus,Human,PM38666118,10,7,neocortex,suitable,,no,neocortex,rule,high,0.9833
+LO,lateral orbitofrontal cortex,Rat,PM42395549,10,8,neocortex,suitable,,no,neocortex,rule,high,0.9833
+precentral gyrus,precentral gyrus,Human,PM36900055,10,8,neocortex,suitable,,no,neocortex,rule,high,0.9833
+RSg,granular retrosplenial cortex,Mouse,PM34876468,10,6,neocortex,suitable,,yes,non_neocortex,flash,high,0.9467
+TeA,temporal association cortex,Mouse,PM40464272,10,8,neocortex,suitable,,no,neocortex,rule,high,0.97
+area 8,area 8,Human,PM41947581,9,2,neocortex,suitable,,no,neocortex,rule,high,0.97
+AuV,ventral auditory cortex,Mouse,PM40455405,9,7,neocortex,suitable,,no,neocortex,rule,high,0.97
+lIns,left insula,,PM33036334,9,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.92
+Mctx,motor cortex,,PM41379994,9,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+middle frontal gyrus,middle frontal gyrus,Human,PM40535582,9,7,neocortex,suitable,,no,neocortex,rule,high,0.9833
+pars triangularis,,,PM40535582,9,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+posterior parietal cortex,posterior parietal cortex,Human,PM40127934,9,9,neocortex,suitable,,no,neocortex,rule,high,0.9833
+PreCG,precentral gyrus,Human,PM32700105,9,4,neocortex,suitable,,no,neocortex,rule,high,0.95
+rIns,right insula,,PM33036334,9,1,neocortex,suitable,,yes,ambiguous,flash,high,0.91
+sensory cortex,sensory cortex,Human,PM37398221,9,8,neocortex,suitable,,no,neocortex,rule,high,0.95
+SSpbfd,barrel field region of primary somatosensory cortex,Mouse,PM36693103,9,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+V2L,lateral visual areas,Mouse,PM33522479,9,3,neocortex,suitable,,no,neocortex,rule,high,0.95
+angular gyrus,angular gyrus,Human,PM39103495,8,3,neocortex,suitable,,no,neocortex,rule,high,0.9633
+anterior cingulate,anterior cingulate cortex,Human,PM40535582,8,6,neocortex,suitable,,yes,non_neocortex,flash,high,0.8733
+area 10,area 10,Human,PM41212268,8,2,neocortex,suitable,,no,neocortex,rule,high,0.9633
+Cg1,cingulate cortex 1,Mouse,PM39097664,8,8,neocortex,suitable,,no,neocortex,flash,high,0.9
+Cg2,Cingulate Cortex Area 2,Mouse,PM36061004,8,7,neocortex,suitable,,no,neocortex,flash,high,0.8967
+dorsolateral prefrontal cortex,dorsolateral prefrontal cortex,Human,PM38973167,8,7,neocortex,suitable,,no,neocortex,rule,high,0.98
+FOF,frontal orienting fields,Rat,PM39026895,8,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+gRSC,granular retrosplenial cortex,Mouse,PM39924777,8,3,neocortex,suitable,,yes,ambiguous,flash,high,0.91
+MIP,rostral medial intraparietal area,Macaque,PM38544445,8,4,neocortex,suitable,,no,neocortex,rule,high,0.9833
+occipital lobe,occipital lobe,Human,PM39912002,8,5,neocortex,suitable,,no,neocortex,rule,high,0.9833
+POrbM,posterolateral orbital medial cortex,,PM42101519,8,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+postcentral gyrus,postcentral gyrus,Human,PM41602988,8,7,neocortex,suitable,,no,neocortex,rule,high,0.9833
+S1FL,forelimb region of primary somatosensory cortex,Mouse,PM33836602,8,6,neocortex,suitable,,no,neocortex,rule,high,0.9833
+sgCC,subgenual anterior cingulate cortex,Human,PM42326819,8,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.875
+A25,medial prefrontal cortex area 25,Marmoset,PM34267273,7,4,neocortex,suitable,,no,neocortex,flash,high,0.93
+area 6M,,Marmoset,PM34255833,7,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+barrel cortex,barrel cortex,Mouse,PM35145380,7,5,neocortex,suitable,,no,neocortex,rule,high,0.9767
+dPFC,dorsolateral prefrontal cortex,Human,PM36032258,7,6,neocortex,suitable,,no,neocortex,rule,high,0.98
+GU,gustatory cortex,Mouse,PM36774552,7,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+HVAs,higher visual areas,Mouse,PM39566501,7,4,neocortex,suitable,,no,neocortex,rule,high,0.95
+ILA,infralimbic cortex,Mouse,PM40343331,7,4,neocortex,suitable,,no,neocortex,rule,high,0.95
+lITC,,,PM37775310,7,1,neocortex,suitable,,no,neocortex,pro,medium,0.6333
+lS1,left primary somatosensory cortex,,PM33036334,7,1,neocortex,suitable,,no,neocortex,rule,high,0.9633
+right M1,right primary motor cortex,Human,PM39654423,7,4,neocortex,suitable,,no,neocortex,rule,high,0.9633
+sgC,subgenual cingulate cortex,Pig,PM39340562,7,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9
+vS1,ventral primary somatosensory cortex,Mouse,PM38926084,7,5,neocortex,suitable,,no,neocortex,rule,high,0.98
+wS1,whisker primary somatosensory cortex,Mouse,PM40010627,7,4,neocortex,suitable,,no,neocortex,rule,high,0.98
+A32,prelimbic cortex,Marmoset,PM34267273,6,2,neocortex,suitable,,no,neocortex,rule,high,0.9767
+A6m,,Marmoset,PM34372593,6,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+ACAd,"anterior cingulate cortex, dorsal",Rat,PM42101519,6,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.95
+AID,anterior agranular insular cortex,Mouse,PM37152205,6,3,neocortex,suitable,,yes,non_neocortex,flash,high,0.9233
+Area 13,,Human,PM35347401,6,1,neocortex,suitable,,no,neocortex,flash,medium,0.6833
+CMA,cortical masticatory area,Mouse,PM33432122,6,3,neocortex,suitable,,no,neocortex,rule,high,0.95
+cOFC,central orbitofrontal cortex,Macaque,PM34276282,6,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+cS1,contralateral S1,Mouse,PM40068685,6,3,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsal peduncular cortex,dorsal peduncular cortex,Rat,PM37152205,6,4,neocortex,suitable,,no,neocortex,rule,high,0.9
+Foxp2-V1 interneurons,Foxp2-V1 interneurons,Mouse,PM38076820,6,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+frontal,medial prefrontal cortex,,PM38402231,6,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+inferior frontal gyrus,inferior frontal gyrus,Human,PM41211046,6,5,neocortex,suitable,,no,neocortex,rule,high,0.9933
+lateral sensorimotor cortex,lateral sensorimotor cortex,Mouse,PM39713479,6,4,neocortex,suitable,,no,neocortex,rule,high,0.9833
+middle temporal gyrus,middle temporal gyrus,Human,PM40535582,6,4,neocortex,suitable,,no,neocortex,rule,high,0.9767
+pars opercularis,,,PM40535582,6,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+posterior cingulate,posterior cingulate cortex,Human,PM32562780,6,3,neocortex,suitable,,yes,non_neocortex,flash,high,0.9133
+SMG,supramarginal gyrus,Human,PM35263607,6,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+temporal neocortex,temporal neocortex,Human,PM33434884,6,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ventromedial prefrontal cortex,ventromedial prefrontal cortex,Human,PM34341471,6,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+wM1,whisker primary motor cortex,Mouse,PM33626343,6,5,neocortex,suitable,,no,neocortex,rule,high,1.0
+AAF,anterior auditory field,Mouse,PM38528192,5,3,neocortex,suitable,,no,neocortex,rule,high,1.0
+ACtx,auditory cortex,Mouse,PM40791381,5,4,neocortex,suitable,,no,neocortex,rule,high,1.0
+aRSC,anterior retrosplenial cortex,Rat,PM34737148,5,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+Au,auditory cortex,Mouse,PM40464272,5,4,neocortex,suitable,,no,neocortex,rule,high,0.9667
+BC,barrel cortex,Mouse,PM37205722,5,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+cACC,cingulate anterior cortex,Mouse,PM40795854,5,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.925
+cingulate,cingulate cortex,Human,PM41405705,5,3,neocortex,suitable,,yes,ambiguous,flash,medium,0.8667
+contralateral motor cortex,contralateral motor cortex,Mouse,PM39592428,5,4,neocortex,suitable,,no,neocortex,rule,high,0.9667
+contralateral S1,primary somatosensory cortex,Mouse,PM40368888,5,5,neocortex,suitable,,no,neocortex,rule,high,0.9667
+contralesional somatosensory cortex,contralesional somatosensory cortex,,PM35551446,5,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+dorsal premotor cortex,dorsal premotor cortex,Human,PM41554725,5,5,neocortex,suitable,,no,neocortex,rule,high,0.9633
+dorsolateral cortex,dorsolateral cortex,Mouse,PM33350438,5,2,neocortex,suitable,,no,neocortex,rule,high,0.8667
+dPCC,dorsal posterior cingulate cortex,,PM36155245,5,1,neocortex,suitable,,no,neocortex,flash,high,0.9167
+dRSC,dysgranular retrosplenial cortex,,PM39924777,5,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9067
+F5a,,,PM41405705,5,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+frontal pole,frontal pole,Human,PM37188633,5,4,neocortex,suitable,,no,neocortex,rule,high,0.9767
+HVA,higher visual areas,Mouse,PM41279517,5,4,neocortex,suitable,,no,neocortex,rule,high,0.9733
+iM1,ipsilateral M1,Mouse,PM36471512,5,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+inferior temporal gyrus,inferior temporal gyrus,,PM40535582,5,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+ipsilateral insular cortex,,,PM32528401,5,1,neocortex,suitable,,no,neocortex,flash,high,0.8833
+lateral OFC,lateral orbitofrontal cortex,Rat,PM42395549,5,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+lM1,left primary motor cortex,Human,PM40946271,5,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+M1 leg,primary motor cortex leg region,,PM34624846,5,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M1 shoulder area,primary motor cortex shoulder area,,PM34624846,5,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M3,primary motor cortex,Macaque,PM33558867,5,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+MFC,medial prefrontal cortex,Mouse,PM40204437,5,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+MST,medial superior temporal area,Primate,PM39813398,5,4,neocortex,suitable,,no,neocortex,rule,high,0.95
+Occipital,Occipital cortex,Human,PM36661404,5,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+ORBvl,ventrolateral orbitofrontal cortex,Mouse,PM38802410,5,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+parietal,superior parietal lobule,,PM38402231,5,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+parietal lobe,parietal lobe,Human,PM41354955,5,5,neocortex,suitable,,no,neocortex,rule,high,0.96
+POrbVL,ventrolateral orbital cortex,,PM42101519,5,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+posterior insular cortex,posterior insular cortex,,PM39273133,5,1,neocortex,suitable,,no,neocortex,rule,high,0.8267
+premotor areas,premotor areas,Human,PM41405705,5,2,neocortex,suitable,,no,neocortex,rule,high,0.9633
+rACC,rostral anterior cingulate cortex,Mouse,PM36062147,5,3,neocortex,suitable,,no,neocortex,flash,high,0.95
+right middle frontal gyrus,right middle frontal gyrus,Human,PM41886010,5,4,neocortex,suitable,,no,neocortex,rule,high,0.99
+RL,rostrolateral area,Mouse,PM35082302,5,4,neocortex,suitable,,no,neocortex,flash,high,0.84
+RS,retrosplenial,Rat,PM34795559,5,4,neocortex,suitable,,yes,non_neocortex,flash,high,0.9467
+rS2,right secondary somatosensory cortex,,PM33036334,5,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+RSPv,retrosplenial cortex ventral,,PM39814996,5,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+secondary somatosensory cortex,secondary somatosensory cortex,Mouse,PM37034798,5,5,neocortex,suitable,,no,neocortex,rule,high,0.9967
+somatosensory areas,somatosensory areas,Mouse,PM40119176,5,3,neocortex,suitable,,no,neocortex,rule,high,0.9967
+superior occipital gyrus,superior occipital gyrus,,PM36542188,5,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+supplementary motor area,supplementary motor area,Human,PM41602988,5,5,neocortex,suitable,,no,neocortex,rule,high,0.9967
+TP,temporal pole,,PM37100843,5,2,neocortex,suitable,,no,neocortex,rule,high,0.8767
+ventral premotor cortex,ventral premotor cortex,Human,PM41314273,5,5,neocortex,suitable,,no,neocortex,rule,high,0.9733
+VIS,visual cortex,Mouse,PM35687689,5,4,neocortex,suitable,,no,neocortex,rule,high,0.9733
+VLO,ventrolateral orbitofrontal cortex,Mouse,PM40707921,5,2,neocortex,suitable,,no,neocortex,rule,high,0.9333
+vlOFC,ventrolateral orbitofrontal cortex,Mouse,PM41207892,5,3,neocortex,suitable,,no,neocortex,rule,high,0.9333
+8B,,,PM41542588,4,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+9M or 8B,,,PM41542588,4,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+anterior DI,anterior dysgranular insula,,PM37152205,4,1,neocortex,suitable,,no,neocortex,flash,high,0.8867
+area 1,area 1,Macaque,PM38993679,4,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+Area 14,,Human,PM35347401,4,1,neocortex,suitable,,no,neocortex,flash,medium,0.735
+area 21a,cortical area 21a,Ferret,PM34938163,4,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+contralesional motor cortex,contralesional motor cortex,Rat,PM41043679,4,4,neocortex,suitable,,no,neocortex,rule,high,0.95
+dmIns,dorsomedial insula,Human,PM41131362,4,1,neocortex,suitable,,no,neocortex,flash,high,0.8533
+EVA,early visual areas,Human,PM41279862,4,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+extrastriate cortex,extrastriate cortex,Macaque,PM34147628,4,3,neocortex,suitable,,no,neocortex,rule,high,0.9633
+FLS1,forelimb primary somatosensory cortex,Mouse,PM40415372,4,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+granular retrosplenial cortex,granular retrosplenial cortex,Rat,PM34301721,4,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+IFGOp,,,PM41928907,4,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+IFGOrb,,,PM41928907,4,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+IFGTri,,,PM41928907,4,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+infralimbic mPFC,infralimbic subregion of medial prefrontal cortex,Mouse,PM41533508,4,2,neocortex,suitable,,no,neocortex,flash,high,0.9433
+ipsilateral frontal cortex,,,PM34727171,4,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+left DLPFC,left dorsolateral prefrontal cortex,Human,PM42127800,4,2,neocortex,suitable,,no,neocortex,rule,high,0.9733
+medial insula,medial insular cortex,Mouse,PM39561925,4,1,neocortex,suitable,,no,neocortex,flash,high,0.9333
+medial orbitofrontal cortex,medial orbitofrontal cortex,Human,PM42266157,4,4,neocortex,suitable,,no,neocortex,rule,high,0.9733
+mIC,middle insular cortex,Mouse,PM32940600,4,2,neocortex,suitable,,no,neocortex,flash,high,0.9133
+mid 47/12,,,PM35510840,4,1,neocortex,suitable,,no,neocortex,flash,high,0.8333
+middle cingulate cortex,middle cingulate cortex,Human,PM32562780,4,2,neocortex,suitable,,yes,unresolved,flash,medium,0.7933
+motor cortices,motor cortices,Mouse,PM32585679,4,3,neocortex,suitable,,no,neocortex,rule,high,0.9333
+MSTl,lateral subdivision of the medial superior temporal area,Macaque,PM38544445,4,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+PAC,primary auditory cortex,Human,PM41839572,4,3,neocortex,suitable,,no,neocortex,rule,high,0.98
+parietal DI,parietal dysgranular insula,,PM37152205,4,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+PLv,ventral prelimbic cortex,Mouse,PM40204437,4,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+pre-SMA,pre-supplementary motor area,,PM39712140,4,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+prelimbic mPFC,prelimbic subregion of medial prefrontal cortex,Mouse,PM41533508,4,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+primary visual cortex transplants,primary visual cortex,Mouse,PM35687687,4,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+PTLp,posterior parietal cortex,Mouse,PM42395580,4,3,neocortex,suitable,,no,neocortex,rule,high,0.95
+right AIC,anterior insula cortex,Human,PM38782961,4,1,neocortex,suitable,,no,neocortex,flash,high,0.8333
+right IPL,Inferior Parietal Lobule,Human,PM41507470,4,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+right precentral gyrus,precentral gyrus,Human,PM42252837,4,4,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right superior frontal gyrus,superior frontal gyrus – medial area 6,Human,PM42252837,4,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+RSCg,"Retrosplenial cortex, granular area",Mouse,PM39511453,4,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9
+SEF,supplementary eye field,Macaque,PM33658308,4,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+sensory cortices,sensory cortices,Mouse,PM42107475,4,4,neocortex,suitable,,no,neocortex,rule,high,0.9333
+SFA,sensory forelimb area,,PM36044580,4,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+SS,somatosensory cortex,Mouse,PM42039543,4,4,neocortex,suitable,,no,neocortex,rule,high,0.95
+subplate,subplate,Mouse,PM33579707,4,3,neocortex,suitable,,no,neocortex,rule,high,0.9333
+Temporal,Temporal cortex,Human,PM36661404,4,2,neocortex,suitable,,no,neocortex,rule,high,0.9867
+temporal association cortex,temporal association cortex,Mouse,PM35613891,4,2,neocortex,suitable,,no,neocortex,rule,high,0.9867
+V3,tertiary visual cortex,Human,PM38849423,4,4,neocortex,suitable,,no,neocortex,rule,high,0.9867
+VISal,Visual anterior lateral area,Mouse,PM38319699,4,2,neocortex,suitable,,no,neocortex,rule,high,0.9867
+VTC,ventral temporal cortex,Human,PM37188514,4,2,neocortex,suitable,,no,neocortex,rule,high,0.9867
+ACC A25,anterior cingulate cortex A25,Macaque,PM32677044,3,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.8933
+AII,secondary auditory cortex,Mouse,PM38528192,3,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+AIP,"anterior insula, posterior",Mouse,PM39012916,3,3,neocortex,suitable,,no,neocortex,flash,high,0.84
+anterior cingulate area,anterior cingulate area,Mouse,PM40250719,3,3,neocortex,suitable,,no,neocortex,flash,high,0.94
+area 12r,rostral area 12r,Macaque,PM41405705,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+area 18,area 18,Ferret,PM34611910,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+area 45,area 45 (pars triangularis),Human,PM41947581,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9933
+area 8b,area 8b,,PM34255833,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+AuC,auditory cortex,Mouse,PM41143504,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9933
+BA 10,,,PM39712140,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+Brodmann areas 1 & 2,Brodmann areas 1 & 2,Human,PM33836270,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+Brodmann areas 3a & 3b,Brodmann areas 3a & 3b,Human,PM33836270,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+CalCx-Cu,calcarine cortex - upper cuneal bank,,PM41493598,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+caudal VLPFC,caudal ventrolateral prefrontal cortex,Macaque,PM40933619,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+cM1,contralateral primary motor cortex,Rat,PM36471512,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral M1,contralateral primary motor cortex,Mouse,PM38423792,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9767
+contralateral mPFC,medial prefrontal cortex,Mouse,PM40646084,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9767
+contralesional M1,primary motor cortex,Human,PM41688540,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9767
+cuneus,cuneus,Human,PM42130753,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+FBS,forelimb barrel subfield,Rat,PM39235156,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+frontocentral cortex,frontocentral cortex,Human,PM38561227,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+fusiform gyrus,fusiform gyrus,Human,PM41602988,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+Heschl's gyrus,Heschl's gyrus,Human,PM41813678,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9333
+hindlimb motor cortex,hindlimb motor cortex,Rat,PM41168240,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9333
+inferior frontal area,,,PM40800920,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+iS1,ipsilateral S1bfd,Mouse,PM40068685,3,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+L M1,left primary motor cortex,Human,PM35720694,3,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral orbital field,,,PM34301721,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9167
+lateral precuneus,lateral precuneus,,PM39103495,3,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral prefrontal cortex,lateral prefrontal cortex,Human,PM34718460,3,3,neocortex,suitable,,no,neocortex,rule,high,0.96
+LdmPFC,left dorsomedial prefrontal cortex,Mouse,PM42034280,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+left motor cortex,contralesional (left) motor cortex,Rat,PM35552276,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+left parietal cortex,,Human,PM36237410,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+left posterior cingulate gyrus,,Human,PM35432176,3,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.93
+lM2,left secondary motor cortex,Rat,PM36157577,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+M1 leg area,primary motor cortex leg area,,PM34624846,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+medial OFC,medial orbitofrontal cortex,Mouse,PM38155094,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9767
+medial sensorimotor cortex,medial sensorimotor cortex,Mouse,PM36823038,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+MI cortex,motor cortex (MI),Rat,PM34665323,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+MMA,Medio-Medial-Anterior cortex,Mouse,PM33159207,3,1,neocortex,suitable,,no,neocortex,pro,medium,0.8
+MOG,middle occipital gyrus,,PM41493598,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+neocortical visuomotor regions,,Human,PM40750361,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9867
+OC,occipital cortex,Mouse,PM36062147,3,3,neocortex,suitable,,no,neocortex,rule,high,0.99
+orbital cortex,orbital cortex,Mouse,PM41279263,3,3,neocortex,suitable,,no,neocortex,rule,high,0.99
+PCL,paracentral lobule,Human,PM38788234,3,2,neocortex,suitable,,no,neocortex,rule,high,0.99
+PEip,PEip,,PM34039649,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+PL-3,,,PM36309684,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+PLd,dorsal prelimbic cortex,,PM40204437,3,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+postCG,postcentral gyrus,Human,PM35263607,3,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+precentral motor cortex,,Human,PM35441404,3,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+prefrontal regions,prefrontal cortex,Mouse,PM34965430,3,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+preSMA,pre-supplementary motor area,Human,PM40902803,3,3,neocortex,suitable,,no,neocortex,rule,high,1.0
+primary motor area,primary motor area,Mouse,PM35787428,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+primary sensory cortex,primary sensory cortex,Rat,PM40132571,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9833
+pSTS,posterior superior temporal sulcus,Human,PM41611043,3,2,neocortex,suitable,,no,neocortex,rule,high,0.8833
+RdmPFC,right dorsomedial prefrontal cortex,Mouse,PM42034280,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right inferior frontal gyrus,inferior frontal gyrus,Human,PM37756204,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right inferior parietal lobule,inferior parietal lobule,Human,PM37756204,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right insula,right insula,Human,PM34449938,3,2,neocortex,suitable,,yes,unresolved,flash,high,0.9333
+right motor cortex,ipsilesional (right) motor cortex,,PM35552276,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+rolandic cortex,rolandic cortex,Human,PM41115879,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+rostrolateral cortex,rostrolateral sensorimotor cortex,Mouse,PM34686320,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+S1 cortex,primary somatosensory cortex,Rat,PM41369359,3,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+S1BC,primary somatosensory area barrel cortex,Mouse,PM38573932,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+SFG,superior frontal gyrus,Human,PM40865499,3,3,neocortex,suitable,,no,neocortex,rule,high,1.0
+SMC,secondary motor cortex,Rat,PM41356801,3,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+SSpII,secondary somatosensory cortex,Mouse,PM37311832,3,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+STG,superior temporal gyrus,,PM35263607,3,2,neocortex,suitable,,no,neocortex,rule,high,1.0
+UF,ultrasonic frequency area,Mouse,PM38528192,3,1,neocortex,suitable,,no,neocortex,flash,high,0.89
+VISpm,posteromedial visual cortex,Mouse,PM41345053,3,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+wS2,whisker secondary somatosensory cortex,Mouse,PM40010627,3,3,neocortex,suitable,,no,neocortex,rule,high,0.9667
+(D)LO,,Mouse,PM42107475,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8167
+24,,,PM41542588,2,2,neocortex,suitable,,yes,non_neocortex,pro,medium,0.9167
+A19,area 19,Cat,PM38753019,2,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+A19M,,Marmoset,PM41867795,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8333
+A23V,,Marmoset,PM41867795,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8567
+A6DR,A6DR premotor cortex,Marmoset,PM41916301,2,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+ACAa,,,PM40667970,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8267
+ACC A24a,anterior cingulate cortex A24a,,PM32677044,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9667
+ACd,anterior dorsal cingulate,,PM40204437,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9367
+agranular insular area,agranular insular area,Mouse,PM40795854,2,2,neocortex,suitable,,no,neocortex,flash,high,0.9333
+agranular insular cortex,agranular insular cortex,,PM42101519,2,2,neocortex,suitable,,no,neocortex,flash,high,0.9
+aMCC,anterior mid-cingulate cortex,Human,PM41131362,2,1,neocortex,suitable,,no,neocortex,flash,high,0.8667
+area 10m,area 10m,Macaque,PM42362380,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+area 24,area 24,Human,PM41947581,2,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9133
+area 32,area 32,Human,PM41947581,2,2,neocortex,suitable,,yes,ambiguous,flash,high,0.87
+area 32 V,medial prefrontal cortex (area 32 V),common marmoset (Callithrix jacchus),PM41212268,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+Area 5,Area 5 of the parietal cortex,Cat,PM35383368,2,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+area 9,dorsal area 9,Human,PM40542691,2,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+association cortex,association cortex,,PM32361987,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+associative cortex,,Human,PM37858906,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+AUD_i,ipsilateral auditory cortex,Mouse,PM35318336,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+AudCx,auditory cortex,Mouse,PM39721025,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+BA 4,primary motor cortex,Human,PM37318767,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+BA 46,,,PM39712140,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+BA 6,supplementary motor area,Human,PM37318767,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+banks of the superior temporal sulcus,,,PM40924875,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+BAR,barrel cortex,Mouse,PM40777408,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9933
+BC',barrel cortex contralateral,Mouse,PM38019920,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+bilateral secondary motor areas,secondary motor areas,,PM33652469,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+bilateral supplementary motor area,supplementary motor area,Human,PM32677282,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+Broca area,Broca area,,PM41762365,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+Broca's area,Broca's area,Human,PM40766497,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+Brodmann area 5,Brodmann area 5,,PM40902803,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+CalCx,calcarine cortex,,PM41493598,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+cALM,contralateral anterior lateral motor cortex,Mouse,PM36171427,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+caudal anterior cingulate,,,PM40924875,2,1,neocortex,suitable,,no,neocortex,flash,high,0.8767
+caudal forelimb motor cortex,caudal forelimb motor cortex,Rat,PM37837331,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+caudal middle frontal two,,,PM40924875,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+central posterior gyrus,central posterior gyrus,,PM41211046,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+cingulated gyrus,cingulated gyrus,Human,PM33531807,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8733
+cMOp,contralateral primary motor cortex,,PM38712231,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+con-IC,contralateral insular cortex,Mouse,PM41275018,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8167
+con-S1,contralateral somatosensory cortex,Mouse,PM41275018,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral auditory cortex,auditory cortex,Rat,PM39809536,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral M2,contralateral M2,Mouse,PM39178853,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+contralesional PM,contralesional premotor cortex,Macaque,PM39174504,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+cortical caudal hindlimb area,cortical caudal hindlimb area,Mouse,PM35115383,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+cSSp,contralateral primary somatosensory cortex,,PM38712231,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+dIPL,dorsal inferior parietal lobule,Human,PM32428227,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dlPFCv,,Marmoset,PM37196659,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsal mPFC,dorsal medial prefrontal cortex,,PM40381894,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsal-posterior insula,dorsal-posterior insula,Human,PM35413481,2,2,neocortex,suitable,,no,neocortex,flash,high,0.94
+dPMC,dorsal premotor cortex,Human,PM40619278,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+DPPC,dorso-posterior parietal cortex,Human,PM33789136,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+early visual cortex,early visual cortex,Human,PM41867795,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9333
+F1,,Macaque,PM41405705,2,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+F2,,,PM34039649,2,1,neocortex,suitable,,no,neocortex,flash,medium,0.5667
+F3,,,PM34039649,2,1,neocortex,suitable,,no,neocortex,flash,medium,0.75
+FP-S1,forepaw primary somatosensory cortex,Rat,PM35107125,2,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+frontal area,,,PM35844218,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8
+frontal areas,frontal areas,,PM34039649,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8
+frontal opercular,,Macaque,PM41405705,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+fronto-parietal cortex,,Macaque,PM34147628,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+granular insular cortex,agranular insular cortex,,PM34611777,2,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+HG,Heschl's gyrus,Human,PM34343726,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+HO-AC,higher-order auditory cortex,Mouse,PM37742187,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+IL of mPFC,infralimbic region of medial prefrontal cortex,,PM38777132,2,1,neocortex,suitable,,no,neocortex,rule,high,0.94
+infralimbic frontal cortex,infralimbic frontal cortex,Mouse,PM34686328,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9433
+iPNsFezf2 in S1bfd,,,PM37348506,2,1,neocortex,suitable,,no,neocortex,rule,high,0.91
+ipsilateral motor cortex,,,PM39592428,2,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+ipsilesional motor cortex,ipsilesional motor cortex,,PM38195605,2,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+ipsiM1,,Mouse,PM37348506,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+ipsiS1fl,,Mouse,PM37348506,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+ITG,inferior temporal gyrus,,PM38290158,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+L-Precuneus,Left precuneus,,PM36088305,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+LAG,left angular gyrus,Human,PM33625938,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+lateral PM,lateral premotor cortex,Human,PM39959718,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+lateral temporal cortex,lateral temporal cortex,,PM38081873,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+lateral vAIns,lateral ventral anterior insula,Human,PM41131362,2,1,neocortex,suitable,,no,neocortex,flash,high,0.83
+ld dorsal prostriata,ld (lamina dissecans) of dorsal prostriata,Mouse,PM34795559,2,1,neocortex,suitable,,yes,non_neocortex,unresolved,low,0.45
+left AC,left primary auditory cortex,Gerbil,PM35064004,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left AIC,anterior insula cortex,Human,PM38782961,2,1,neocortex,suitable,,no,neocortex,flash,high,0.8667
+left dorsal ACC,dorsal anterior cingulate cortex,Human,PM38782961,2,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+left frontal cortex,,Human,PM36237410,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left IPL,left inferior parietal lobule,Human,PM37951951,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left middle frontal gyrus,left middle frontal gyrus,,PM41886010,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left occipital cortex,left occipital cortex,Human,PM37244076,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left OFC,left orbitofrontal cortex,,PM33907206,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left paracingulate gyrus,left paracingulate gyrus,,PM34432348,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8833
+left postcentral gyrus,left postcentral gyrus,Human,PM42361949,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left precentral gyrus,precentral gyrus – caudal dorsolateral area 6,Human,PM42252837,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left primary motor cortex,left primary motor cortex,,PM40131525,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+left rectus,left rectus,Human,PM34815270,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+left superior parietal gyrus,,Human,PM35432176,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+LJBSF,lower jaw barrel subfield,Rat,PM39235156,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+LT,lateral temporal,Ferret,PM34611910,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+M1FACE,primary motor cortex face area,Human,PM32932052,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M1HAND,primary motor cortex hand representation,Human,PM36629338,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M2 cortex,secondary motor cortex,Mouse,PM37001992,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M2+ patches,M2+ patches,Mouse,PM38650594,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M2− interpatches,M2− interpatches,Mouse,PM38650594,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial frontal gyrus,medial frontal gyrus,,PM34718460,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial PM,medial premotor cortex,Human,PM39959718,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial prefrontal cortices,,,PM42107475,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial superior frontal region,,,PM40924875,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+mesial frontal regions,mesial frontal regions,Human,PM37788939,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+mesial premotor,,Macaque,PM41405705,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+MII,secondary motor cortex,Mouse,PM37539042,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+MOs-c,central region of the secondary motor cortex,Mouse,PM41612025,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9967
+motor,motor cortex,Human,PM41542588,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9933
+multilobar cortical regions,,Human,PM32736326,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8333
+non-whisker S1,non-whisker S1 area,Mouse,PM34759028,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9633
+occipital regions,occipital regions,Human,PM40784215,2,2,neocortex,suitable,,no,neocortex,rule,high,0.95
+orbitofrontal,orbitofrontal cortex,Rat,PM38947053,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+ORBm,medial orbitofrontal cortex,Mouse,PM40256320,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+parietal areas,parietal areas,,PM34039649,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+parietal-occipital cortex,parietal-occipital cortex,Human,PM34296169,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+pars opercularis two,,,PM40924875,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+pars T.,triangular part of the inferior frontal gyrus,Human,PM35263607,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+pars triangularis one,,,PM40924875,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+peri-infarct cortex,,Mouse,PM36072905,2,1,neocortex,suitable,,no,neocortex,flash,high,0.8433
+peri-infarct motor cortex,,Mouse,PM33377130,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+PI,posterior insula,Human,PM37188633,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+PMA,premotor area,Human,PM33611621,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9567
+pmHG,posteromedial Heschl's gyrus,Human,PM42314916,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+pmL,lateral pre-motor area,Human,PM34284239,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9567
+precentral gyrus (M1),precentral gyrus (M1),Human,PM33338201,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+Prefrontal,Prefrontal cortex,Human,PM36661404,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9967
+prefrontal areas,,Mouse,PM41405705,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9833
+primary auditory cortex,primary auditory cortex,Mouse,PM40832125,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9967
+primary sensorimotor cortex,primary sensorimotor cortex,Mouse,PM36077034,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+primary sensorimotor regions,,Human,PM35076030,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ProSt,prostriata,Marmoset,PM41867795,2,1,neocortex,suitable,,no,neocortex,flash,high,0.8167
+pSTG,posterior superior temporal gyrus,Human,PM42314916,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+RAG,right angular gyrus,Human,PM33625938,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+RFO,rostral forelimb-orofacial area,Mouse,PM40470211,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+right AC,right primary auditory cortex,Gerbil,PM35064004,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+right DLPFC,right dorsolateral prefrontal cortex,Macaque,PM42127800,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+right dorsal ACC,right dorsal anterior cingulate cortex,,PM36371438,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.95
+right IFCop,right Inferior frontal cortex pars opercularis,Human,PM36057839,2,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+right IFG,right inferior frontal gyrus,Human,PM36335806,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+right ITG,,,PM33061917,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+right MOG,right middle occipital gyrus,,PM42127800,2,2,neocortex,suitable,,no,neocortex,rule,high,0.99
+right postcentral gyrus,postcentral gyrus – area 2,Human,PM42252837,2,2,neocortex,suitable,,no,neocortex,rule,high,0.99
+right primary motor cortex,right primary motor cortex,Human,PM40131525,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9967
+right superior parietal gyrus,,Human,PM41352082,2,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+right TP,,,PM39103495,2,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+rostral 6M,6M,,PM34255833,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+rostral motor area,,,PM34999565,2,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+S1-HL,primary somatosensory cortex hindlimb area,Mouse,PM40202848,2,2,neocortex,suitable,,no,neocortex,rule,high,0.98
+sACC,subgenual anterior cingulate cortex,,PM34276282,2,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9533
+secondary visual cortex,secondary visual cortex,Mouse,PM40475427,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+sensorimotor,sensorimotor cortex,Human,PM33222299,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+sensorimotor cortices,sensorimotor cortices,Human,PM35265840,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+SII,secondary somatosensory area,Mouse,PM37539042,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+SOG,superior occipital gyrus,,PM41493598,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+somatomotor,somatomotor cortex,Mouse,PM34117229,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+somatomotor areas,somatomotor areas,,PM38801564,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+somatomotor cortex,somatomotor cortex,Rat,PM34279492,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9667
+somatosensory,somatosensory cortex,Mouse,PM34117229,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+superior frontal gyrus (F1),superior frontal gyrus (F1),Human,PM33338201,2,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+superior parietal gyrus,superior parietal gyrus,Human,PM38083210,2,2,neocortex,suitable,,no,neocortex,rule,high,0.97
+superior temporal gyrus,superior temporal gyrus,Human,PM36115054,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+supplementary motor cortex,supplementary motor cortex,Human,PM34718460,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+supramarginal gyrus,supramarginal gyrus,,PM42130753,2,2,neocortex,suitable,,no,neocortex,rule,high,0.96
+unimodal cortices,unimodal cortices,Human,PM37532129,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+V5,extrastriate cortex (V5),Human,PM33399415,2,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+ventral anterior cingulate,,Marmoset,PM34999565,2,2,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+VISa,anterolateral visual area,,PM36228099,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9933
+VISam,anteromedial visual cortex,Mouse,PM40667970,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9933
+VISrl,rostrolateral visual area,,PM36228099,2,2,neocortex,suitable,,no,neocortex,rule,high,0.9933
+Wernicke's area,Wernicke's area,Human,PM32620531,2,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+1P-CFA,primary forelimb area (1P-CFA),Mouse,PM34348983,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+23c,,,PM34039649,1,1,neocortex,suitable,,no,neocortex,flash,medium,0.785
+24b,anterior cingulate cortex (ACC) Cg1 (24b),Mouse,PM38160873,1,1,neocortex,suitable,,no,neocortex,flash,high,0.9667
+2P-CFA,secondary forelimb area (2P-CFA),Mouse,PM34348983,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+4,,,PM41542588,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+46v,,,PM41405705,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+A20,area 20,Cat,PM38753019,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+A21a,area 21a,Cat,PM33488364,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+A24a',medial cingulate cortex A24a',,PM39614717,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.95
+A24b',medial cingulate cortex A24b',,PM39614717,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9433
+A29c,A29c,,PM39614717,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.93
+A30,A30,,PM39614717,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9267
+ACAv,anterior cingulate cortex ventral,,PM42101519,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+ACC A24b,anterior cingulate cortex A24b,,PM32677044,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+ACC A24c,anterior cingulate cortex A24c,,PM32677044,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+ACC A32,anterior cingulate cortex A32,,PM32677044,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+aCg,anterior cingulate,Mouse,PM35721461,1,1,neocortex,suitable,,no,neocortex,flash,high,0.95
+acoustic areas,acoustic areas,Human,PM35347401,1,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+ACX dorsal,auditory cortex dorsal,Mouse,PM32424057,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+ACX primary,auditory cortex primary,Mouse,PM32424057,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+ACX ventral,auditory cortex ventral,Mouse,PM32424057,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+AG,angular gyrus,Human,PM38376527,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+AGm,rostral agranular medial cortex,Rat,PM33914862,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+agranular pIC,agranular posterior insular cortex,Rat,PM35622887,1,1,neocortex,suitable,,no,neocortex,flash,high,0.85
+aIPL,anterior inferior parietal lobule,Human,PM32428227,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+aM2,anterior secondary motor cortex,Mouse,PM42395580,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+amBC,anteromedial barrel cortex,Mouse,PM38019920,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+ANG,angular gyrus,Human,PM32424290,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+anterior central gyrus,anterior central gyrus,,PM41211046,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+anterior cingulate gyrus,anterior cingulate gyrus,Human,PM34766648,1,1,neocortex,suitable,,yes,ambiguous,flash,high,0.8767
+anterior insular,anterior insular cortex,Human,PM36126672,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9267
+anterior insular cortex,,,PM36230940,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+anterior isocortex,,,PM36968064,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+anterior M2,anterior secondary motor cortex,Mouse,PM42395580,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+anterior motor cortex,,Mouse,PM40579424,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+anterolateral motor cortex,,Mouse,PM33377130,1,1,neocortex,suitable,,no,neocortex,rule,high,0.94
+area 19,area 19,Ferret,PM34611910,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+area 21,area 21,Ferret,PM34611910,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+area 25,,Human,PM41947581,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9133
+area 46,area 46,,PM40542691,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+area 46v,area 46v of lateral prefrontal cortex,Macaque,PM37908780,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+area 47,,Human,PM41947581,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+area 6VR,anterior ventral premotor region (area 6VR),Human,PM32424290,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+area 8aD,area 8aD,Marmoset,PM38359822,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+association auditory cortex,association auditory cortex,,PM40832125,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+association cortices,association cortices,Mouse,PM34905771,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+associative areas,associative areas,Mouse,PM35687687,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+AuCx,auditory cortex,,PM34301949,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+AUDd,,,PM40667970,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+AudI,auditory cortex,Mouse,PM36824753,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+auditory areas,,Human,PM35347401,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+auditory cerebral cortex,,Rat,PM37621862,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+AuP,primary regions of auditory cortex,Mouse,PM37742187,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+BA 9,,,PM39712140,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+BA3b,Broadman Area 3b,Human,PM38250330,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+BA4,Brodmann area 4,,PM36388195,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+BA6,Brodmann area 6,,PM36388195,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+BCTX,somatosensory cortex,Mouse,PM35667848,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+bilateral A1,bilateral primary auditory cortex,Human,PM36335806,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+bilateral DLPFC,bilateral dorsolateral prefrontal cortex,,PM42127800,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+bilateral frontal cortices,frontal cortex,Human,PM33399415,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+bilateral middle temporal poles,bilateral middle temporal poles,Human,PM34815270,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+bilateral MPFC,bilateral medial prefrontal cortex,,PM42127800,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+bilateral occipital cortex,bilateral occipital cortex,Human,PM37244076,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+bilateral occipital regions,bilateral occipital regions,Human,PM37244076,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+bilateral primary motor cortex,primary motor cortex,,PM33652469,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+bilateral SC,sensory cortex,Human,PM41167411,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+bilateral STG,bilateral superior temporal gyrus,Human,PM36335806,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+bilateral temporal cortices,bilateral temporal cortices,Human,PM34126289,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+caudal cingulate zone,caudal cingulate zone,,PM35787428,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8533
+caudal Ins cortex,caudal insular cortex,,PM42101519,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9533
+caudal middle frontal,,,PM40924875,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8667
+caudal motor cortex,,Human,PM34999565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+central anterior gyrus,central anterior gyrus,,PM41211046,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+central motor areas,central motor areas,,PM33361565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+central opercular cortex,,,PM32541059,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+Cg ctx,cingulate cortex,,PM32354756,1,1,neocortex,suitable,,yes,unresolved,flash,high,0.8633
+CgC,cingulate cortex,,PM42002070,1,1,neocortex,suitable,,yes,unresolved,flash,high,0.8633
+CGIC,caudal granular insular cortex,Rat,PM41402127,1,1,neocortex,suitable,,no,neocortex,flash,high,0.94
+cingulate gyrus,cingulate gyrus,Human,PM38083210,1,1,neocortex,suitable,,yes,non_neocortex,flash,medium,0.74
+cM2,contralateral secondary motor cortex,Mouse,PM35396593,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+CMAd,,,PM37723869,1,1,neocortex,suitable,,no,neocortex,flash,medium,0.7767
+cmPFC,contralateral mPFC,,PM37491314,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+contralateral A1,primary auditory cortex,Mouse,PM40883389,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+contralateral ACA,anterior cingulate area,Mouse,PM37626171,1,1,neocortex,suitable,,no,neocortex,flash,high,0.9333
+contralateral ACC,anterior cingulate cortex,,PM39614717,1,1,neocortex,suitable,,no,neocortex,flash,high,0.94
+contralateral amBC,anteromedial barrel cortex contralateral,Mouse,PM38019920,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+contralateral area 8,area 8,Marmoset,PM38359822,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+contralateral BC,barrel cortex contralateral,Mouse,PM38019920,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+contralateral Ins area,contralateral insular area,,PM42101519,1,1,neocortex,suitable,,no,neocortex,flash,high,0.9167
+contralateral lateral OFC,lateral orbitofrontal cortex,Human,PM41759515,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+contralateral medial OFC,medial orbitofrontal cortex,Human,PM41759515,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+contralateral plBC,posterolateral barrel cortex contralateral,Mouse,PM38019920,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+contralateral POrbM,posterolateral orbital medial cortex,,PM42101519,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+contralateral PPC,contralateral posterior parietal cortex,Mouse,PM37662297,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral premotor cortex,contralateral premotor cortex,Marmoset,PM40667064,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral primary motor cortex,contralateral primary motor cortex,Human,PM32697330,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+contralateral sensorimotor cortex,contralateral sensorimotor cortex,Mouse,PM40849908,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+contralateral somatosensory cortex,,,PM40650995,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+contralateral somatosensory motor cortex,contralateral somatosensory motor cortex,Mouse,PM41975600,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+contralateral visual cortex,contralateral visual cortex,Mouse,PM35687687,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+contralateral VLPFC,contralateral ventrolateral prefrontal cortex,Macaque,PM40933619,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+contralesional MI,contralesional motor cortex (primary motor cortex),Japanese macaque,PM34077429,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+contralesional RFA,contralesional rostral forelimb area,,PM40089466,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+cortex (association),,,PM40615590,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+cortical auditory structures,cortical auditory structures,Human,PM35392412,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+cortical excitatory population,cortical excitatory population,,PM37143862,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+cortical lamina IV,cortical lamina IV,Mouse,PM36618009,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+cortical plate,cortical plate,Human,PM38914171,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8167
+cPFC,contralateral prefrontal cortex,Mouse,PM33338423,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+cPPC,contralateral posterior parietal cortex,Mouse,PM41174169,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+CTXin,insular cortex,Rat,PM38977300,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+deep orbitomedial prefrontal cortex (area lambda),deep orbitomedial prefrontal cortex (area lambda),,PM41279263,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+DI,dorsal insula,Rat,PM38736977,1,1,neocortex,suitable,,yes,ambiguous,flash,high,0.8533
+DLO1,dysgranular insular cortex 1,,PM37152205,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.95
+DLO2,dysgranular insular cortex 2,,PM37152205,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.94
+dlPFCd,,Marmoset,PM37196659,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+dorsal AAC,dorsal anterior auditory cortex,Mouse,PM34043305,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+dorsal anterior cingulate cortex (Cg1),dorsal anterior cingulate cortex,,PM32964131,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.94
+dorsal frontal cortex,dorsal frontal cortex,,PM40608009,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsal lateral prefrontal cortex,dorsal lateral prefrontal cortex,Human,PM37353098,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+dorsal part of the agranular insular area,,,PM34048871,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.93
+dorsal PFC,dorsal prefrontal cortex,Rat,PM36414405,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsal posterior parietal cortex,posterior parietal cortex,Marmoset,PM34255833,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+dorsal prefrontal cortex,,,PM34999565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9867
+dorsal prelimbic cortex,dorsal prelimbic cortex,,PM37152205,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9467
+dorsal visual cortex,dorsal visual cortex,Human,PM39709961,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+dorsolateral frontal cortex,dorsolateral frontal cortex,,PM37100843,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9867
+dorsolateral PFC,dorsolateral prefrontal cortex,Human,PM33782048,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsomedial prefrontal cortex,dorsomedial prefrontal cortex,,PM34718460,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dorsoventral retrosplenial cortex,dorsoventral (granular) retrosplenial cortex,,PM37461601,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.92
+dPFCpol,,Ferret,PM32458050,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8333
+dPNsFezf2 in CFA motor cortex,,,PM37348506,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+dPNsFezf2 in S1bfd somatosensory,,,PM37348506,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+DV(gr.)RtSpl,dorsoventral (granular) retrosplenial cortex,,PM38378961,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.93
+dysgranular insula,dysgranular insula,Macaque,PM33548458,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+dysgranular S1,dysgranular primary somatosensory cortex,,PM39197940,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+extrastriate body area,,,PM40081159,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+F6,,,PM41405705,1,1,neocortex,suitable,,no,neocortex,flash,medium,0.77
+FFA,fusiform face area,,PM37100843,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+FG,fusiform face gyrus,,PM38290158,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+FIC,frontoinsular cortex,Macaque,PM35510840,1,1,neocortex,suitable,,yes,non_neocortex,flash,medium,0.74
+forelimb sensorimotor areas,,Mouse,PM41612025,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+forelimb sensorimotor cortex,forelimb sensorimotor cortex,Mouse,PM41154154,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+FP,frontal pole,Human,PM32476629,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+frontal cortex lateral to RFA,frontal cortex lateral to RFA,Rat,PM38265300,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+frontal cortex medial to RFA,frontal cortex medial to RFA,Rat,PM38265300,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+frontal cortical areas,frontal cortical areas,,PM41893879,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+frontal eye field region,,,PM34999565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+frontal lobes,frontal lobes,,PM36542188,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+frontal medial cortex,frontal medial cortex,,PM34432348,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+frontal medial gyrus,frontal medial gyrus,Human,PM41698490,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+frontal motor areas,frontal motor areas,Macaque,PM33376156,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+frontal motor cortex,left frontal motor cortex of the forelimb motor area,Mouse,PM38767487,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+frontal opercular areas,,,PM41405705,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+frontal operculum,frontal operculum,Macaque,PM33376156,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+frontal parietal cortex,frontal parietal cortex,,PM41211046,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+fusiform,fusiform cortex,,PM40800805,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+glioma sites (motor cortex OGX),motor cortex,,PM39630872,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+granular cortices,granular cortices,Macaque,PM42362380,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8333
+gustative areas,,Human,PM35347401,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+gyrus rectus,,,PM34999565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+hindlimb cortical region,hindlimb cortical region,Mouse,PM38887838,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+hindlimb sensorimotor cortex,hindlimb sensorimotor cortex,Mouse,PM38887838,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+HLA,hindlimb area of motor cortex,Rat,PM33059344,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+host occipital cortex,host occipital cortex,Rat,PM37282449,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+host visual cortex,host visual cortex,Rat,PM37282449,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+hV6A,medial posterior parietal area hV6A,Human,PM40472912,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+iAUDp,ipsilateral auditory cortex posterolateral,Mouse,PM35396593,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+ICx,insular cortex,Mouse,PM35857536,1,1,neocortex,suitable,,no,neocortex,flash,high,0.9333
+iM2,ipsilateral M2,Mouse,PM40068685,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+inferior frontal cortex,,,PM36542188,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+inferior parietal,inferior parietal cortex,Macaque,PM33376156,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+inferior parietal gyrus,,,PM36542188,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+inferior temporal cortex,,,PM41350413,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+inferior temporal lobe,inferior temporal lobe,,PM40608009,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+infralimbic area,infralimbic area,,PM32621762,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+infralimbic cortex (IL),infralimbic cortex,Mouse,PM40757734,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+Ins cortex,,,PM42101519,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8833
+insula cortex,,,PM32541059,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8833
+insular,,,PM36395541,1,1,neocortex,suitable,,no,neocortex,flash,medium,0.79
+insular and visceral areas,,Mouse,PM40470211,1,1,neocortex,suitable,,yes,other,flash,medium,0.9167
+intercalated PL,intercalated prelimbic area,,PM42101519,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+interhemispheric somatosensory areas,,Mouse,PM36693103,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+IOG,inferior occipital gyrus,,PM41493598,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+iPNsFezf2 in CFA motor cortex,,,PM37348506,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+iPNsFezf2 in S1bfd somatosensory,,,PM37348506,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ipsilateral ACC,anterior cingulate cortex,,PM39614717,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.925
+ipsilateral granular/disgranular insular cortex,,,PM32528401,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8833
+ipsilateral M1,ipsilateral primary motor cortex,Human,PM32697330,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+ipsilateral motor cortices,,,PM37851709,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ipsilateral parietal cortex,ipsilateral parietal cortex,Human,PM42239197,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+ipsilateral prefrontal cortex,ipsilateral prefrontal cortex,Human,PM42239197,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+ipsilateral prostriata,prostriata,Mouse,PM33324173,1,1,neocortex,suitable,,yes,ambiguous,pro,medium,0.75
+ipsilateral S2,ipsilateral secondary somatosensory cortex,Mouse,PM39896513,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+ipsilateral sensorimotor cortex,ipsilateral sensorimotor cortex,Mouse,PM40849908,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+ipsilateral somatosensory cortex,,,PM40650995,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilateral supramarginal gyrus,ipsilateral supramarginal gyrus,Human,PM35624941,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilateral temporal cortex,ipsilateral temporal cortex,Human,PM42239197,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilateral V1,ipsilateral primary visual cortex,Rat,PM37415464,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilesional M1,primary motor cortex,Human,PM37402647,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilesional motor control,primary motor cortex,Human,PM37402647,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilesional PM,ipsilesional premotor cortex,Macaque,PM39174504,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilesional precentral gyrus,ipsilesional precentral gyrus,Human,PM41698490,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilesional primary motor cortex (M1),primary motor cortex,Human,PM37402647,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsilesional somatosensory cortex,ipsilesional somatosensory cortex,,PM35551446,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+ipsiM2,,Mouse,PM37348506,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+ipsiS1bfd,,Mouse,PM37348506,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+L(ag.)RtSpl,lateral (agranular) retrosplenial cortex,,PM38378961,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.925
+L-ACC-sup,"Left anterior cingulate cortex, supracallosal",,PM36088305,1,1,neocortex,suitable,,yes,ambiguous,flash,high,0.9467
+L-Cingulate-post,Left posterior cingulate gyrus,,PM36088305,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9067
+LA5-6,pars opercularis,,PM40535582,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+LA6,pars opercularis,,PM40535582,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+lamina IV,,Mouse,PM36618009,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+lateral (agranular) retrosplenial,,,PM37461601,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9333
+lateral agranular cortex,lateral agranular cortex,Rat,PM33543335,1,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+lateral association visual cortex,lateral association visual cortex,,PM40832125,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral FEF,lateral frontal eye fields,Macaque,PM42175784,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral frontal lobe,lateral surface of the frontal lobe,Human,PM35787428,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral higher visual areas,,Mouse,PM40777499,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+lateral isocortex,,,PM36968064,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+lateral occipital gyrus,,,PM36542188,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+lateral orbital gyrus,lateral orbital gyrus,,PM38601798,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+lateral orbitofrontal cortex,,,PM35061996,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral parietal cortex,lateral parietal cortex,Human,PM32562780,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral parietal region,,Human,PM36166901,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral retrosplenial cortex,lateral (agranular) retrosplenial cortex,,PM37461601,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9433
+lateral somatosensory areas,lateral somatosensory areas,Rat,PM38265300,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateral visual cortex,lateral visual cortex,Human,PM39709961,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+lateromedial visual areas,lateromedial visual areas,Mouse,PM40694892,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+LB8-9,middle frontal gyrus,,PM40535582,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+LB9,middle frontal gyrus,,PM40535582,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+left ACC,anterior cingulate cortex,Mouse,PM35240879,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9567
+left angular gyrus,angular gyrus,Human,PM35432176,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left CC,Calcarine Cortex,Human,PM41507470,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left dorsolateral prefrontal cortex,dorsolateral prefrontal cortex,Human,PM33046343,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left FP,left frontal pole,Human,PM34609038,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left HG,left Heschl's Gyrus,Human,PM34609038,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left IFCop,left Inferior frontal cortex pars opercularis,Human,PM36057839,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left inferior frontal gyrus,inferior frontal gyrus,,PM35410397,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left insula,left insula,Human,PM37938560,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+left M2,left secondary motor cortex,Mouse,PM35190665,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left middle temporal gyrus,middle temporal gyrus,Human,PM41352082,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left middle temporal pole,left middle temporal pole,Human,PM34815270,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+left orbitofrontal cortex,orbitofrontal cortex,,PM35410397,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+left PFC,prefrontal cortex,Human,PM41167411,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+left PPC,left posterior parietal cortex,Human,PM33597858,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+left PrCu,Precuneus,Human,PM41507470,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+left pre-cingulate cortex,left pre-cingulate cortex,Human,PM42173962,1,1,neocortex,suitable,,yes,ambiguous,flash,medium,0.7433
+left prefrontal cortex,left prefrontal cortex,Human,PM34126289,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+left SPL,Superior Parietal Lobule,Human,PM41507470,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+left superior frontal gyrus,superior frontal gyrus,Human,PM32677282,1,1,neocortex,suitable,,no,neocortex,rule,high,0.99
+left superior occipital gyrus,superior occipital gyrus,Human,PM41352082,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+left superior parietal area,left superior parietal area,Human,PM34815270,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+left superior temporal gyrus,superior temporal gyrus,,PM33061917,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+left ventral premotor cortex,left ventral premotor cortex,Human,PM33550120,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+left VLPFC,left ventrolateral prefrontal cortex,Human,PM33122028,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+low-level sensory cortical areas,low-level sensory cortical areas,Human,PM33246029,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+LPC,lateral posterior cortex,Rat,PM33385490,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+lPrec,left precuneus,,PM35078045,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+LTC,lateral temporal cortex,Human,PM33796017,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+M1 motor cortex,M1 motor cortex,Mouse,PM38401650,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M1CTX,primary motor cortex,Mouse,PM35667848,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+M1r,rostral primary motor cortex,Macaque,PM37938897,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+mCg,middle cingulate,Mouse,PM35721461,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9067
+medial agranular cortex,medial agranular cortex,Rat,PM33543335,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+medial FEF,medial frontal eye fields,Macaque,PM42175784,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial frontal area,medial frontal area,,PM36155245,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+medial higher visual areas,,Mouse,PM40777499,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+medial isocortex,,,PM36968064,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+medial Lamina V,medial Lamina V,,PM39487174,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+medial orbital cortex,medial orbital cortex,Rat,PM33328908,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial orbital field,,,PM37152205,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+medial orbital gyrus,medial orbital gyrus,,PM38601798,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+medial parietal cortex,medial parietal cortex,Mouse,PM35262177,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+medial prefrontal,medial prefrontal cortex,Human,PM36126672,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+medial prefrontal areas,,Mouse,PM42107475,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+medial superior frontal cortex,,,PM32541059,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+medial superior prefrontal cortex,medial superior prefrontal cortex,,PM37304427,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+mesial parietal cortex,mesial parietal cortex,Human,PM32562780,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9
+midcingulate,midcingulate,Human,PM42086322,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8767
+midcingulate cortex,midcingulate cortex,Rat,PM40315430,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.91
+middle cingulate gyrus,cingulate gyrus,,PM32541059,1,1,neocortex,suitable,,yes,non_neocortex,flash,medium,0.79
+middle temporal cortex,middle temporal cortex,Human,PM41552991,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+motor area,,,PM35844218,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+motor cortical regions,motor cortical regions,,PM38156644,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+motor cortical targets,,Mouse,PM37461601,1,1,neocortex,suitable,,no,neocortex,unresolved,low,0.45
+motor-sensory cortex,motor-sensory cortex,Mouse,PM37751813,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+mPFC PV-INs,medial prefrontal cortex parvalbumin interneurons,Mouse,PM41212632,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+mPFC VIP interneurons,medial prefrontal cortex VIP interneurons,Mouse,PM40777258,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+mpITC,medial posterior insula temporal cortex,Mouse,PM34295235,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.91
+MTG,middle temporal gyrus,,PM38290158,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+neocortical areas,,Mouse,PM40455405,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+neocortical premotor regions,,Human,PM40750361,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+NMC,neocortical microcircuit,Rat,PM34131136,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8833
+non-primary motor areas,,Human,PM32418913,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+O1,occipital lobe,Human,PM38376527,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+occipital visual cortex,occipital visual cortex,Human,PM39709961,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+OCT,occipito-temporal cortex,,PM36897881,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+orbital frontal cortex,orbital frontal cortex,,PM33380525,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+orbital gyri,,,PM34999565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ORBl,lateral orbitofrontal cortex,Mouse,PM40256320,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+orofacial sensorimotor areas,,Mouse,PM41612025,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8667
+ORpm,,,PM35838139,1,1,neocortex,suitable,,no,neocortex,flash,high,0.85
+paracentral lobule,paracentral lobule,Human,PM41996661,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+paracingulate cortex,paracingulate cortex,Human,PM33892387,1,1,neocortex,suitable,,no,neocortex,flash,high,0.935
+parieto-occipital cortex,,Human,PM36639904,1,1,neocortex,suitable,,no,neocortex,flash,high,0.9267
+pars O.,opercular part of the inferior frontal gyrus,,PM35263607,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+pars opercularis one,,,PM40924875,1,1,neocortex,suitable,,no,neocortex,rule,high,0.85
+pars orbitalis,,,PM40924875,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+parvalbumin-expressing inhibitory interneurons in dmPFC,parvalbumin-expressing inhibitory interneurons in the dorsal medial prefrontal cortex,Mouse,PM34715992,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+peri-infarct CFA,peri-infarct caudal forelimb area,,PM40089466,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+PFC-ctx,prefrontal cortex context module,,PM39333467,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9467
+PFC-PL,prefrontal cortex-prelimbic cortex,Rat,PM34276282,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+PFCx,prefrontal cortex,Mouse,PM34867199,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+pInsCx,posterior insular cortex,,PM39954251,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8567
+plBC,posterolateral barrel cortex,Mouse,PM38019920,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+PLLS,posterolateral lateral suprasylvian area,Ferret,PM34636984,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+Postcentral,Postcentral cortex,,PM36661404,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+posterior agranular insular cortex,posterior agranular insular cortex,,PM32528401,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.94
+posterior association cortex,,Mouse,PM38447690,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+posterior auditory fields,posterior auditory fields,Gerbil,PM34322001,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+posterior isocortex,,,PM36968064,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9633
+posterior middle temporal gyrus,posterior middle temporal gyrus,Human,PM34119407,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+Posterior Parietal,Posterior Parietal cortex,,PM36661404,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+posterior parietal association area,posterior parietal association area,,PM35551446,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+posterior parietal cortices,,,PM39299799,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+posterior sensorimotor cortex subregions (MOpPMM),,,PM36968064,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+posteromedial cortex,posteromedial cortex,Human,PM42239197,1,1,neocortex,suitable,,no,neocortex,flash,high,0.84
+PPr,posterior parietal rostral area,Tree shrew,PM34795566,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+pre-motor cortex,pre-motor cortex,Macaque,PM39353911,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+pre-supplementary motor area,pre-supplementary motor area,,PM35787428,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+pre-supplementary motor cortex,,,PM34999565,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+Precentral,Precentral cortex,,PM36661404,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+prefrontal area 8b,,Marmoset,PM34255833,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+prefrontal lobe,prefrontal lobe,Human,PM33531807,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+prefrontal region,,Human,PM36166901,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+prefrontal structures,prefrontal structures,Human,PM41961929,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+PreL,prelimbic cortex,Mouse,PM35219402,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+prelimbic area,,,PM34048871,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+Prelimbic region,Prelimbic region,Mouse,PM36309684,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+premotor,,,PM41542588,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+PrePMd,premotor dorsal cortex,Cebus monkey,PM38514616,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+primary ACtx,primary auditory cortex,Mouse,PM41569342,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+primary cortex,primary cortex,,PM34089121,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8167
+primary motor cortex (M1),,,PM40131525,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+primary motor cortex hand area,primary motor cortex hand area,Primate,PM40501822,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+primary sensorimotor cortices,primary sensorimotor cortices,Human,PM32932052,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+primary somatosensory area,primary somatosensory area,Mouse,PM40250719,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9967
+PrL-IL,,Rat,PM40352758,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+R aIC,right anterior insula cortex,,PM41282118,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.94
+R-ACC-pre,"Right anterior cingulate cortex, pregenual",,PM36088305,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9433
+retrosplenial area,retrosplenial area,,PM35551446,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9433
+rFEF,,Human,PM36865228,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+right ACC,anterior cingulate cortex,Mouse,PM35240879,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9633
+right AI,right anterior insula,Human,PM38309210,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.94
+right aMCC,right anterior middle cingulate cortex,,PM41146200,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9067
+right anterior cingulate gyrus,,Human,PM37756204,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.95
+right dACC,right dorsal anterior cingulate cortex,,PM41146200,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9733
+right frontal cortex,,Human,PM36237410,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+right Fus,right fusiform gyrus,Human,PM34609038,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+right fusiform gyrus,fusiform gyrus,Human,PM37862908,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+right inferior frontal gyrus opercular part,,Human,PM35432176,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+right inferior temporal gyrus,inferior temporal gyrus,Human,PM35432176,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+right M2,right secondary motor cortex,Mouse,PM35190665,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9733
+right middle occipital gyrus,middle occipital gyrus,,PM35410397,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+right middle temporal area,right middle temporal area,Human,PM34815270,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+right MTG,right middle temporal gyrus,,PM33907206,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+right paracentral lobule,,,PM33061917,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+right PCC,,,PM39103495,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.92
+right PCG,right postcentral gyrus,Human,PM33383495,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right precuneus,right precuneus,Human,PM33022581,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right prefrontal cortex,right prefrontal cortex,Human,PM34461571,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right secondary somatosensory cortex,right secondary somatosensory cortex,Human,PM35624941,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+right SMA,,,PM33061917,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right SMG,supramarginal gyrus,Human,PM38782961,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right SOG,right superior occipital gyrus,,PM42127800,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right STG,right superior temporal gyrus,Human,PM36335806,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+right superior medial frontal area,right superior medial frontal area,Human,PM34815270,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+rM1,right primary motor cortex,Human,PM40946271,1,1,neocortex,suitable,,no,neocortex,rule,high,0.97
+rolandic operculum,,,PM36395541,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+rostral ACC,rostral anterior cingulate cortex,,PM40795854,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9533
+rostral cerebral cortex,rostral (frontal) cerebral cortex,Human,PM35265840,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+rostral middle frontal two,,,PM40924875,1,1,neocortex,suitable,,no,neocortex,rule,high,0.8167
+rostral MOp,rostral primary motor cortex,Mouse,PM36711802,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+rPL,rostral prelimbic cortex,Rat,PM35491274,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9767
+rRSP,rostral retrosplenial cortex,Mouse,PM37426757,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.955
+RSA,agranular retrosplenial area,Mouse,PM34876468,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9533
+RSag,,Mouse,PM33328909,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8233
+RSagl,,Mouse,PM33328909,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8933
+rSM,rostral sensorimotor cortex,Mouse,PM34648327,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+RSPg,"retrosplenial area, granular part",Mouse,PM35241493,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.95
+S15,somatosensory cortex region 15,,PM39060240,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+S1bfd,,Mouse,PM40068685,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+S1FACE,primary sensory cortex face area,Human,PM32932052,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+S1J,jaw region of primary somatosensory cortex,Mouse,PM39192198,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+S2 cortex,secondary somatosensory cortex,,PM37851709,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+scACC,subcallosal anterior cingulate cortex,Macaque,PM37857091,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.8833
+secondary auditory cortex,,,PM32528401,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+secondary motor area,,,PM34048871,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+secondary visual field,,Mouse,PM33157020,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8333
+sensorimotor area,sensorimotor area,Human,PM33229018,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9433
+sensorimotor-related cortex,sensorimotor-related cortex,Human,PM37862908,1,1,neocortex,suitable,,no,neocortex,rule,high,0.96
+SI cortex,somatosensory cortex (SI),Rat,PM34665323,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+site L (auditory cortex),auditory cortex,Mouse,PM39809536,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+site R (contralateral auditory cortex),auditory cortex,Mouse,PM39809536,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+SM1,primary somatosensory motor cortex,Mouse,PM40610407,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+somatosensory area,somatosensory area,Mouse,PM35388122,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+somatosensory area 1-2,,Marmoset,PM34255833,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+somatosensory area 3a,,Marmoset,PM34255833,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+somatosensory barrel field,somatosensory barrel field,Mouse,PM33159207,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+somatosensory cortex (contralateral),somatosensory cortex,Mouse,PM37770450,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9633
+somatosensory cortices,somatosensory cortices,Mouse,PM42343355,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9633
+somatosensory-motor cortex,somatosensory-motor cortex,Rat,PM40275960,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9433
+SSbfd,forelimb somatosensory cortex,,PM32975316,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+SSp-m,primary somatosensory cortex mouth,Mouse,PM38107469,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+SSp-n,primary somatosensory cortex nose,Mouse,PM38107469,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+SSpbfdc,barrel field,,PM36693103,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+subgenual cingulate,,,PM35061996,1,1,neocortex,suitable,,yes,non_neocortex,flash,high,0.9167
+superior frontal regions,superior frontal regions,,PM42130753,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+superior parietal cortex,superior parietal cortex,Human,PM41996661,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+superior parietal lobule,superior parietal lobule,,PM38601798,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+supplementary motor area cortex,supplementary motor area cortex,,PM36795325,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+supralimbic cortex,,,PM37660322,1,1,neocortex,suitable,,no,neocortex,flash,medium,0.6933
+T1,superior temporal gyrus,Human,PM38376527,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9933
+TE,,,PM41878825,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+TE cortex injection site,,Macaque,PM39870740,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+TE1,eulaminate visual area TE1,Macaque,PM38746103,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+TE2,,Macaque,PM41867795,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+TE3,,Macaque,PM41867795,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+temporal association areas,,,PM35551446,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+temporal gyrus,,,PM39106176,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+temporal pole,temporal pole,,PM41350413,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+temporal-occipital fusiform gyrus,temporal-occipital fusiform gyrus,Human,PM33317410,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+TPO,,,PM35013368,1,1,neocortex,suitable,,no,neocortex,flash,high,0.8333
+transmodal cortices,transmodal cortices,Human,PM37532129,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+undamaged motor cortex,motor cortex of undamaged hemisphere,Human,PM35131634,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+V1L,lateral primary visual cortex,,PM34795559,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+V1M,medial primary visual cortex,,PM34795559,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+VCX lateral,visual cortex lateral,Mouse,PM32424057,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9633
+VCX medial,visual cortex medial,Mouse,PM32424057,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+VCX primary,visual cortex primary,Mouse,PM32424057,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ventral AAC,ventral anterior auditory cortex,Mouse,PM34043305,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+ventral anterior cingulate cortex (Cg2),ventral anterior cingulate cortex,,PM32964131,1,1,neocortex,suitable,,yes,ambiguous,flash,high,0.95
+ventral anterior insula,,Rat,PM32981657,1,1,neocortex,suitable,,yes,ambiguous,flash,high,0.9167
+ventral cortical stream,higher visual areas of the ventral cortical stream,Mouse,PM33849948,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+ventral PFC,ventral prefrontal cortex,Rat,PM36414405,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+ventral temporal cortex,ventral temporal cortex,,PM37100843,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ventral visual cortex,ventral visual cortex,Human,PM39709961,1,1,neocortex,suitable,,no,neocortex,rule,high,0.95
+ventral visual stream areas other than TE complex,,Macaque,PM39227311,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+ventral-anterior insula,ventral-anterior insula,,PM35413481,1,1,neocortex,suitable,,no,neocortex,flash,high,0.9267
+ventrolateral frontal cortex,ventrolateral frontal cortex,Marmoset,PM42060724,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+ventrolateral prefrontal cortex,ventrolateral prefrontal cortex,,PM37107982,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+ventrolateral prefrontal hand-related areas,ventrolateral prefrontal hand-related areas,Macaque,PM33376156,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+ventromedial-prefrontal cortex,ventromedial-prefrontal cortex,,PM35413481,1,1,neocortex,suitable,,no,neocortex,rule,high,0.98
+VisC,visual cortex,Mouse,PM36824753,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+VisI,visual cortex,Mouse,PM36824753,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+VISp-c,contralateral primary visual cortex,Mouse,PM33789083,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+visual area TE,visual area TE,Macaque,PM39658838,1,1,neocortex,suitable,,no,neocortex,rule,high,1.0
+visual cortical areas,,Mouse,PM42327034,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+visual cortical regions,,Human,PM36323383,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+visual cortices,,,PM37851709,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9667
+visual-related cortex,visual-related cortex,Human,PM37862908,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9333
+VLC,ventrolateral cortex,,PM37554670,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9167
+vOFC,ventral orbitofrontal cortex,Mouse,PM41716988,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833
+vPFC,ventral prefrontal cortex,,PM39049824,1,1,neocortex,suitable,,no,neocortex,rule,high,0.9833

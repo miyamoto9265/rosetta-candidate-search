@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Round4 improve report — round3_abbrev → round4_abbrev</title>
+<style>
+:root { --bg:#f4f6f9; --panel:#fff; --text:#1a2332; --muted:#667085; --line:#d8dee8;
+  --ok:#0b7a4b; --parent:#2f6fed; --warn:#b7791f; --bad:#b42318; --issue:#7a3fb4; --unknown:#475467; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif; background:var(--bg); color:var(--text); }
+header { padding:28px 32px 20px; background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%); color:#fff; }
+header h1 { margin:0 0 8px; font-size:24px; }
+header p { margin:0; color:#cbd5e1; max-width:1000px; line-height:1.65; font-size:14px; }
+main { padding:22px 32px 56px; max-width:1400px; margin:0 auto; }
+section { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin:0 0 16px; }
+h2 { margin:0 0 12px; font-size:18px; }
+h3 { margin:16px 0 8px; font-size:14px; color:var(--muted); }
+.cards { display:grid; grid-template-columns:repeat(4,minmax(140px,1fr)); gap:10px; margin:12px 0 4px; }
+.card { border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:#fafbfd; }
+.card-title { color:var(--muted); font-size:12px; }
+.card-value { font-size:24px; font-weight:700; margin-top:2px; font-variant-numeric:tabular-nums; }
+.card-sub { color:var(--muted); font-size:12px; margin-top:2px; }
+table { width:100%; border-collapse:collapse; }
+th,td { border-bottom:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; font-size:13px; }
+th { background:#f2f4f7; font-size:12px; }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+.muted { color:var(--muted); } .small { font-size:12px; }
+.note { color:var(--muted); line-height:1.65; font-size:13px; }
+.pill { display:inline-block; padding:2px 8px; border-radius:999px; color:#fff; font-size:11px; font-weight:600; }
+.pill.ok { background:var(--ok); } .pill.parent { background:var(--parent); }
+.pill.warn { background:var(--warn); } .pill.bad { background:var(--bad); }
+.pill.issue { background:var(--issue); } .pill.unknown { background:var(--unknown); }
+code { background:#eef2f6; border-radius:4px; padding:1px 5px; font-size:12px; }
+.query-cell { font-weight:600; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.table-wrap { max-height:480px; overflow:auto; border:1px solid var(--line); border-radius:10px; }
+ol.tight li { margin:6px 0; line-height:1.6; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Round4 精度改善レポート</h1>
+  <p>
+    ロードマップ P1–P2（高信頼衝突解消・cell-type strip・fullname 曖昧性・複合句）を
+    engine 0.8.4 で実装した結果です。比較: <code>round3_abbrev</code> → <code>round4_abbrev</code>
+    （デプロイなし。判定は Flash×3 固定）。
+  </p>
+</header>
+<main>
+<section>
+  <h2>サマリー</h2>
+  <div class="cards">
+    <div class="card"><div class="card-title">no_match</div>
+      <div class="card-value">324</div>
+      <div class="card-sub">r3 344 → -20
+        / baseline 663</div></div>
+    <div class="card"><div class="card-title">aligned</div>
+      <div class="card-value">1372</div>
+      <div class="card-sub">r3 1338 → +34
+        / baseline 1139</div></div>
+    <div class="card"><div class="card-title">wrong</div>
+      <div class="card-value">584</div>
+      <div class="card-sub">r3 642 → -58
+        / baseline 692</div></div>
+    <div class="card"><div class="card-title">r3→r4 改善/悪化</div>
+      <div class="card-value">111 / 34</div>
+      <div class="card-sub">baseline→r4: 517 / 46</div></div>
+  </div>
+  <h3>全体ラベル（round3 → round4）</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>label</th><th class="num">round3</th><th class="num">round4</th><th class="num">Δ</th></tr></thead>
+    <tbody><tr><td><span class='pill ok'>aligned</span></td><td class='num'>1338</td><td class='num'>1372</td><td class='num'><span class='pill ok'>+34</span></td></tr><tr><td><span class='pill parent'>broader_parent</span></td><td class='num'>860</td><td class='num'>898</td><td class='num'><span class='pill ok'>+38</span></td></tr><tr><td><span class='pill warn'>partial_or_narrower</span></td><td class='num'>243</td><td class='num'>248</td><td class='num'><span class='pill unknown'>+5</span></td></tr><tr><td><span class='pill bad'>wrong</span></td><td class='num'>642</td><td class='num'>584</td><td class='num'><span class='pill ok'>-58</span></td></tr><tr><td><span class='pill unknown'>ambiguous</span></td><td class='num'>8</td><td class='num'>6</td><td class='num'><span class='pill unknown'>-2</span></td></tr><tr><td><span class='pill issue'>source_or_ontology_issue</span></td><td class='num'>13</td><td class='num'>12</td><td class='num'><span class='pill ok'>-1</span></td></tr><tr><td><span class='pill unknown'>no_consensus</span></td><td class='num'>10</td><td class='num'>14</td><td class='num'><span class='pill unknown'>+4</span></td></tr><tr><td><span class='pill issue'>no_match</span></td><td class='num'>344</td><td class='num'>324</td><td class='num'><span class='pill ok'>-20</span></td></tr></tbody>
+  </table></div>
+  <h3>abbrev のみ</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>label</th><th class="num">round3</th><th class="num">round4</th><th class="num">Δ</th></tr></thead>
+    <tbody><tr><td><span class='pill ok'>aligned</span></td><td class='num'>913</td><td class='num'>940</td><td class='num'><span class='pill ok'>+27</span></td></tr><tr><td><span class='pill parent'>broader_parent</span></td><td class='num'>504</td><td class='num'>537</td><td class='num'><span class='pill ok'>+33</span></td></tr><tr><td><span class='pill warn'>partial_or_narrower</span></td><td class='num'>165</td><td class='num'>169</td><td class='num'><span class='pill unknown'>+4</span></td></tr><tr><td><span class='pill bad'>wrong</span></td><td class='num'>430</td><td class='num'>385</td><td class='num'><span class='pill ok'>-45</span></td></tr><tr><td><span class='pill unknown'>ambiguous</span></td><td class='num'>7</td><td class='num'>5</td><td class='num'><span class='pill unknown'>-2</span></td></tr><tr><td><span class='pill issue'>source_or_ontology_issue</span></td><td class='num'>6</td><td class='num'>3</td><td class='num'><span class='pill ok'>-3</span></td></tr><tr><td><span class='pill unknown'>no_consensus</span></td><td class='num'>7</td><td class='num'>12</td><td class='num'><span class='pill unknown'>+5</span></td></tr><tr><td><span class='pill issue'>no_match</span></td><td class='num'>336</td><td class='num'>317</td><td class='num'><span class='pill ok'>-19</span></td></tr></tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Round4 で入れた変更（engine 0.8.4）</h2>
+  <ol class="tight note">
+    <li><b>P1 衝突 demotion 強化</b> — <code>area TH</code> を primary embed から除外。soft demotion を acronym 衝突＋複合句内の裸略語残りに拡大。展開パスは content overlap 必須。</li>
+    <li><b>P1 cell-type / marker strip</b> — <code>BLA Ppp1r1b</code>、<code>CeA-CRF</code>、<code>MDTGlut</code>、<code>NAc-S D1-SPNs</code> などから分子タグを剥がして ROI 検索。</li>
+    <li><b>P1 高信頼衝突ルール追加</b> — CP/Acb/dSC/pTh/CUN/PCx/OP/ANT/… などコーパス fullname と整合する文献展開を追加。</li>
+    <li><b>P2 fullname 曖昧性</b> — bare <code>paraventricular nucleus</code> / <code>arcuate nucleus</code> を視床下部へ（alias）。</li>
+    <li><b>P2 複合句</b> — 2文字略語の安全なインライン展開（caudal CP）、exact 同点時は name–query Jaccard でタイブレーク（basal nucleus → Meynert）。</li>
+    <li><b>やらないこと</b> — HOMBA acronym 削除なし。オントロジーに無い区画への偽 exact なし。デプロイは未実施。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>代表例（round3 → round4）</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>query</th><th>round3</th><th>round4</th></tr></thead>
+    <tbody><tr><td class='query-cell'><code>TH</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>medial division of PHC (area TH)</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>thalamus</div></td></tr><tr><td class='query-cell'><code>DLS</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>(dorso)lateral sulcus</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>striatum (neostriatum)</div></td></tr><tr><td class='query-cell'><code>CN</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>cerebral nuclei</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>cerebellar deep nuclei</div></td></tr><tr><td class='query-cell'><code>CP</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>cortical plate of neocortex</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>dorsal striatum (caudoputamen complex-CP, STRd)</div></td></tr><tr><td class='query-cell'><code>Acb</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>anterior lobe of cerebellar cortex</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>nucleus accumbens</div></td></tr><tr><td class='query-cell'><code>dSC</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>dorsal spinocerebellar tract</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>deep gray layer of superior colliculus</div></td></tr><tr><td class='query-cell'><code>pTh</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>pallidothalamic tract</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>ventral thalamus</div></td></tr><tr><td class='query-cell'><code>CeM</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>central medial nucleus of thalamus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>medial division of central nucleus</div></td></tr><tr><td class='query-cell'><code>BN</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>basal ganglia (basal nuclei)</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>Barrington&#x27;s nucleus</div></td></tr><tr><td class='query-cell'><code>CUN</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>cuneus (gyrus)</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>cuneiform nucleus</div></td></tr><tr><td class='query-cell'><code>contralateral MEC</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>caudal medial nucleus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>medial (caudal) entorhinal cortex</div></td></tr><tr><td class='query-cell'><code>BLA Ppp1r1b</code></td><td><span class='pill issue'>no_match</span><div class='muted small'>(no_match)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>basolateral nuclear group of amygdala</div></td></tr><tr><td class='query-cell'><code>CeA-CRF</code></td><td><span class='pill issue'>no_match</span><div class='muted small'>(no_match)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>central nucleus of amygdala</div></td></tr><tr><td class='query-cell'><code>MDTGlut</code></td><td><span class='pill issue'>no_match</span><div class='muted small'>(no_match)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>mediodorsal nucleus of thalamus</div></td></tr><tr><td class='query-cell'><code>paraventricular nucleus</code></td><td><span class='pill unknown'>ambiguous</span><div class='muted small'>paraventricular nucleus of thalamus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>paraventricular nucleus of hypothalamus</div></td></tr><tr><td class='query-cell'><code>arcuate nucleus</code></td><td><span class='pill unknown'>ambiguous</span><div class='muted small'>arcuate nucleus of medulla oblongata</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>arcuate nucleus of hypothalamus</div></td></tr><tr><td class='query-cell'><code>caudal CP</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>tail part of CA1</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>caudal ventral domain of the striatum</div></td></tr><tr><td class='query-cell'><code>basal nucleus</code></td><td><span class='pill bad'>wrong</span><div class='muted small'>basal ganglia (basal nuclei)</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>basal nucleus of Meynert</div></td></tr><tr><td class='query-cell'><code>VP</code></td><td><span class='pill ok'>aligned</span><div class='muted small'>ventral pallidum</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>ventral pallidum</div></td></tr><tr><td class='query-cell'><code>CA1</code></td><td><span class='pill ok'>aligned</span><div class='muted small'>CA1 region of hippocampus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>CA1 region of hippocampus</div></td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0;border:none;background:transparent">
+  <div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px">
+    <h2>改善例（111）</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>kind</th><th>query</th><th>before</th><th>after</th></tr></thead>
+      <tbody><tr><td>fullname</td><td class='query-cell'>paraventricular nucleus</td><td><span class='pill bad'>wrong</span><div class='muted small'>paraventricular nucleus of thalamus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>paraventricular nucleus of hypothalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>DLS</td><td><span class='pill bad'>wrong</span><div class='muted small'>(dorso)lateral sulcus</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>striatum (neostriatum)</div></td></tr><tr><td>abbrev</td><td class='query-cell'>CN</td><td><span class='pill bad'>wrong</span><div class='muted small'>cerebral nuclei</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>cerebellar deep nuclei</div></td></tr><tr><td>abbrev</td><td class='query-cell'>CPu</td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>caudate-putamen cell bridges</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>dorsal striatum (caudoputamen complex-CP, STRd)</div></td></tr><tr><td>fullname</td><td class='query-cell'>caudate putamen</td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>caudate-putamen cell bridges</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>dorsal striatum (caudoputamen complex-CP, STRd)</div></td></tr><tr><td>fullname</td><td class='query-cell'>arcuate nucleus</td><td><span class='pill bad'>wrong</span><div class='muted small'>arcuate nucleus of medulla oblongata</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>arcuate nucleus of hypothalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>CP</td><td><span class='pill bad'>wrong</span><div class='muted small'>cortical plate of neocortex</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>dorsal striatum (caudoputamen complex-CP, STRd)</div></td></tr><tr><td>abbrev</td><td class='query-cell'>ANT</td><td><span class='pill bad'>wrong</span><div class='muted small'>angular nucleus of thalamus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>anterior nuclear complex of thalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>TH</td><td><span class='pill bad'>wrong</span><div class='muted small'>medial division of PHC (area TH)</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>thalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>PuI</td><td><span class='pill issue'>no_match</span><div class='muted small'>(no_match)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>pulvinar of thalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>spinal interneurons</td><td><span class='pill bad'>wrong</span><div class='muted small'>lamina IX of spinal cord (spinal motor neurons)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>spinal cord</div></td></tr><tr><td>abbrev</td><td class='query-cell'>MDTGlut</td><td><span class='pill issue'>no_match</span><div class='muted small'>(no_match)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>mediodorsal nucleus of thalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>Acb</td><td><span class='pill bad'>wrong</span><div class='muted small'>anterior lobe of cerebellar cortex</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>nucleus accumbens</div></td></tr><tr><td>abbrev</td><td class='query-cell'>CeM</td><td><span class='pill bad'>wrong</span><div class='muted small'>central medial nucleus of thalamus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>medial division of central nucleus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>MR</td><td><span class='pill bad'>wrong</span><div class='muted small'>marginal ramus of cingulate sulcus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>median raphe nucleus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>caudal CP</td><td><span class='pill bad'>wrong</span><div class='muted small'>tail part of CA1</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>caudal ventral domain of the striatum</div></td></tr><tr><td>fullname</td><td class='query-cell'>caudal caudate putamen</td><td><span class='pill bad'>wrong</span><div class='muted small'>caudate-putamen cell bridges</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>caudal ventral domain of the striatum</div></td></tr><tr><td>abbrev</td><td class='query-cell'>ipsi-TH</td><td><span class='pill issue'>source_or_ontology_issue</span><div class='muted small'>medial division of PHC (area TH)</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>thalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>prethalamus</td><td><span class='pill bad'>wrong</span><div class='muted small'>epithalamus</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>ventral thalamus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>PPT</td><td><span class='pill issue'>no_match</span><div class='muted small'>(no_match)</div></td><td><span class='pill ok'>aligned</span><div class='muted small'>pedunculo(pontine) tegmental  nucleus</div></td></tr></tbody>
+    </table></div>
+  </div>
+  <div style="background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px">
+    <h2>悪化例（34）</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>kind</th><th>query</th><th>before</th><th>after</th></tr></thead>
+      <tbody><tr><td>fullname</td><td class='query-cell'>dorsal raphe nucleus</td><td><span class='pill ok'>aligned</span><div class='muted small'>dorsal raphe nucleus</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>dorsal raphe nucleus, dorsal division</div></td></tr><tr><td>abbrev</td><td class='query-cell'>Sp5</td><td><span class='pill ok'>aligned</span><div class='muted small'>spinal trigeminal nucleus</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>spinal trigeminal tract</div></td></tr><tr><td>abbrev</td><td class='query-cell'>dorsal raphe nucleus</td><td><span class='pill ok'>aligned</span><div class='muted small'>dorsal raphe nucleus</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>dorsal raphe nucleus, dorsal division</div></td></tr><tr><td>abbrev</td><td class='query-cell'>Me5</td><td><span class='pill ok'>aligned</span><div class='muted small'>mesencephalic trigeminal nucleus</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>mesencephalic trigeminal tract</div></td></tr><tr><td>abbrev</td><td class='query-cell'>NA core</td><td><span class='pill ok'>aligned</span><div class='muted small'>core of nucleus accumbens</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>lateral subdivision of the core</div></td></tr><tr><td>abbrev</td><td class='query-cell'>OT</td><td><span class='pill ok'>aligned</span><div class='muted small'>olfactory tubercle</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>optic tract</div></td></tr><tr><td>abbrev</td><td class='query-cell'>basal nucleus of the amygdala</td><td><span class='pill ok'>aligned</span><div class='muted small'>basolateral nucleus (basal nucleus) of amygdala</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>basal nucleus of Meynert</div></td></tr><tr><td>fullname</td><td class='query-cell'>neuropeptide Y promoter-expressing spinal dorsal horn inhibitory interneurons</td><td><span class='pill parent'>broader_parent</span><div class='muted small'>dorsal column (horn) of spinal cord</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>dorsal horn of coccygeal spinal cord</div></td></tr><tr><td>abbrev</td><td class='query-cell'>matrix thalamus</td><td><span class='pill parent'>broader_parent</span><div class='muted small'>thalamus</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>ventricular (matrix, germinal) zone of spinal cord</div></td></tr><tr><td>abbrev</td><td class='query-cell'>medial parabrachial nucleus</td><td><span class='pill ok'>aligned</span><div class='muted small'>medial parabrachial nucleus</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>medial parabrachial nucleus, medial division</div></td></tr><tr><td>fullname</td><td class='query-cell'>medial parabrachial nucleus</td><td><span class='pill ok'>aligned</span><div class='muted small'>medial parabrachial nucleus</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>medial parabrachial nucleus, medial division</div></td></tr><tr><td>abbrev</td><td class='query-cell'>NAc medial shell</td><td><span class='pill ok'>aligned</span><div class='muted small'>medial subdivision of the shell</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>shell of nucleus accumbens</div></td></tr><tr><td>abbrev</td><td class='query-cell'>simple lobule</td><td><span class='pill ok'>aligned</span><div class='muted small'>lobule VI (simple lobule)</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>lobule VIA (simple lobule, rostral part)</div></td></tr><tr><td>abbrev</td><td class='query-cell'>VTA PBP</td><td><span class='pill ok'>aligned</span><div class='muted small'>parabrachial pigmented nucleus</div></td><td><span class='pill parent'>broader_parent</span><div class='muted small'>ventral tegmental area</div></td></tr><tr><td>abbrev</td><td class='query-cell'>cervical spinal cord (C6)</td><td><span class='pill parent'>broader_parent</span><div class='muted small'>cervical spinal cord</div></td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>lamina VI of cervical spinal cord</div></td></tr><tr><td>abbrev</td><td class='query-cell'>contralateral PN</td><td><span class='pill parent'>broader_parent</span><div class='muted small'>pons</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>pontine nucleus</div></td></tr><tr><td>abbrev</td><td class='query-cell'>dorsal horn (TL)</td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>dorsal horn of lumbar spinal cord</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>dorsal horn of sacral spinal cord</div></td></tr><tr><td>fullname</td><td class='query-cell'>dorsal horn (thoracolumbar)</td><td><span class='pill warn'>partial_or_narrower</span><div class='muted small'>dorsal horn of lumbar spinal cord</div></td><td><span class='pill bad'>wrong</span><div class='muted small'>dorsal horn of sacral spinal cord</div></td></tr><tr><td>abbrev</td><td class='query-cell'>gemini nucleus</td><td><span class='pill bad'>wrong</span><div class='muted small'>abducens nucleus</div></td><td><span class='pill unknown'>no_consensus</span><div class='muted small'>paratrigeminal nucleus</div></td></tr><tr><td>fullname</td><td class='query-cell'>interfasicular nucleus</td><td><span class='pill bad'>wrong</span><div class='muted small'>anteroventral periventricular nucleus</div></td><td><span class='pill issue'>source_or_ontology_issue</span><div class='muted small'>epifascicular nucleus</div></td></tr></tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <h2>baseline からの通算</h2>
+  <p class="note">
+    no_match 663 → 324
+    （-339）、
+    aligned 1139 → 1372、
+    wrong 692 → 584。
+    useful ≈ aligned+broader:
+    1828 →
+    2270。
+  </p>
+</section>
+</main>
+</body>
+</html>

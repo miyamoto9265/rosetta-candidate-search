@@ -1,0 +1,9 @@
+{
+ "calls": 13,
+ "prompt_tokens": 36906,
+ "completion_tokens": 7378,
+ "cached_tokens": 6016,
+ "cache_miss_tokens": 30890,
+ "cost_usd": 0.006407,
+ "errors": 0
+}
