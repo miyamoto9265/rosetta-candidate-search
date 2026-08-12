@@ -566,4 +566,3 @@ APTD,anterior pretectal nucleus,round5_nomatch: lit/corpus: APTD=dorsal APT
 DpMe,midbrain reticular formation,round5_nomatch: lit: DpMe=deep mesencephalic nucleus ~ MRF
 pnVTA,ventral tegmental area,round5_nomatch: lit/corpus: pnVTA=posterior VTA → VTA
 SGI,intermediate gray layer of superior colliculus,round5_nomatch: lit: SGI=stratum griseum intermedium
-riMLF,pontine reticular formation,alias of PPRF: riMLF=rostral interstitial nucleus of medial longitudinal fasciculus
