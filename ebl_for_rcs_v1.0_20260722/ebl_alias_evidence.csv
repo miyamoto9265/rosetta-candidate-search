@@ -1,0 +1,830 @@
+name_core,alias_core,n_papers,n_rows
+inferior frontal gyrus,pars triangularis,15,21
+inferior frontal gyrus,pars opercularis,14,24
+inferior frontal gyrus,ifg,11,21
+supplementary motor area,sma,10,14
+inferior frontal gyrus,p opercularis,10,18
+thalamus,medial dorsal nucleus,9,11
+caudate,head,7,8
+inferior frontal gyrus,pars orbitalis,7,11
+inferior frontal gyrus,p triangularis,7,13
+middle frontal gyrus,dlpfc,6,18
+middle frontal gyrus,mfg,6,19
+anterior cingulate cortex,acc,6,9
+caudate,body,5,5
+inferior temporal gyrus,itg,5,6
+thalamus,pulvinar,5,7
+superior temporal gyrus,stg,5,6
+superior frontal gyrus,sfg,5,5
+ventral premotor cortex,pmv,4,10
+inferior frontal gyrus,p orbitalis,4,5
+inferior frontal gyrus,orbital part,4,5
+putamen,lentiform nucleus,4,13
+postcentral gyrus,s1,4,10
+medial frontal gyrus,pre sma,4,8
+posterior cingulate cortex,pcc,4,4
+insula,ins,3,4
+insula,anterior,3,5
+superior frontal gyrus,medial,3,4
+thalamus,ventral lateral nucleus,3,4
+fusiform gyrus,ffa,3,3
+superior temporal gyrus,anterior,3,6
+dorsal premotor cortex,pmd,3,4
+superior temporal gyrus,posterior,3,9
+cingulate gyrus,posterior,3,3
+caudate nucleus,head,3,3
+cerebellum,declive,3,8
+lateral occipital cortex,superior division,3,5
+inferior frontal gyrus,vlpfc,3,11
+ifg,pars orbitalis,3,5
+inferior frontal gyrus,orb,3,7
+middle occipital gyrus,mog,3,7
+middle temporal gyrus,mtg,3,3
+inferior frontal junction,ifj,3,4
+lateral occipital cortex,inferior division,2,2
+dorsolateral prefrontal cortex,dlpfc,2,3
+secondary somatosensory cortex,sii,2,3
+inferior frontal gyrus,orbital,2,3
+inferior occipital gyrus,iog,2,2
+rolandic operculum,op1,2,2
+primary motor cortex,m1,2,5
+inferior frontal gyrus,tri,2,2
+declive,cerebellum,2,2
+putamen,put,2,2
+supramarginal gyrus,anterior,2,2
+cerebellum,vi,2,2
+medial frontal gyrus,medfg,2,2
+primary somatosensory cortex,si,2,3
+cerebellum,culmen,2,2
+superior temporal gyrus,temporal pole,2,2
+ifg,p orbitalis,2,2
+ifg,p tri,2,4
+ifg,p triangularis,2,3
+ifg,p opercularis,2,4
+ifg,orbitalis,2,2
+precentral gyrus,pmd,2,6
+precentral gyrus,pmc,2,5
+ifg,pars triangularis,2,7
+precentral gyrus,pmv,2,5
+dorsomedial prefrontal cortex,dmpfc,2,2
+inferior parietal lobule,ipl,2,3
+insula,posterior,2,3
+hippocampus,ca,2,4
+stg,posterior,2,2
+inferior parietal lobule,hip3,2,3
+sma,area 6,2,3
+precentral gyrus,area 6,2,3
+inferior frontal gyrus,area 44,2,5
+pre supplementary motor area,pre sma,2,5
+inferior parietal lobe,ipl,2,4
+precentral gyrus,m1,2,4
+primary visual cortex,v1,2,2
+thalamus,md,2,2
+orbitofrontal cortex,ofc,2,4
+middle cingulate cortex,mcc,2,2
+anterior insula,ains,2,3
+anterior cingulate gyrus,acg,2,3
+parahippocampal gyrus,hippocampus,2,2
+,posterior,2,3
+middle frontal gyrus,wb,2,2
+thalamus,anterior nucleus,2,2
+middle temporal gyrus,posterior,2,4
+occipital pole,extrastriate cortex,1,5
+precentral gyrus,pmd area 44,1,1
+middle temporal gyrus,see fig 2a,1,1
+occipital lobe,wb,1,1
+occipital lobe,roi,1,2
+occipital lobe,middle,1,1
+occipital lobe,cl,1,1
+precentral gyrus,pmd ba 6,1,1
+middle temporal gyrus,temporal mid,1,3
+precentral gyrus,pmd sma,1,1
+occipital cortex,v1,1,2
+occipital cortex,primary visual,1,1
+precentral gyrus,pmv ba 6,1,1
+precentral gyrus,premotor cortex,1,1
+precentral gyrus,primary motor cortex,1,1
+precentral gyrus,sma,1,2
+precentral gyrus,wb,1,1
+precentral gyrus,pmd m1,1,1
+precentral gyrus,fef,1,1
+precentral gyrus,frontal,1,1
+middle temporal gyrus,posterior division,1,2
+precentral gyrus,frontal lobe,1,1
+orbitofrontal gyrus,inferior,1,1
+precentral gyrus,il,1,2
+primary sensory cortex,s1,1,1
+orbitofrontal cortex,il,1,1
+occipito temporal junction inferior occipital gyrusr inferior temporal gyrusr middle temporal gyrus,mt v5,1,1
+middle temporal gyrus,see,1,1
+precentral gyrus,m1 hand area,1,1
+precentral gyrus,mi,1,1
+ompfc,medial frontal gyrus,1,1
+precentral gyrus,mi ba 4,1,1
+precentral gyrus,pcg,1,1
+occipito temporal junction middle temporal gyrusr inferior temporal gyrus,mt v5,1,1
+occipito temporal junction middle occipital gyrusl middle temporal gyrusl inferior occipital gyrusl superior temporal gyrusl inferior parietal lobe,mt v5,1,1
+precentral gyrus,pmc m1,1,1
+orbitofrontal cortex,fontral inf orb,1,1
+o inferior frontal gyrus,orb,1,4
+presupplementary motor area,pre sma,1,1
+prg,insula,1,1
+primary auditory cortex,a1,1,1
+msfg,pre sma,1,1
+mpfc,see table 2,1,1
+middle temporal gyrus,temporal pole,1,5
+primary auditory cortex,stg,1,8
+precg,area 6,1,1
+primary motor cortex,lm1,1,1
+primary motor cortex leg area,ba 4a,1,2
+mpfc,see,1,1
+mpfc,medial frontal gyrus,1,1
+mpfc,frontopolar cortex,1,3
+mpfc,frontal,1,1
+middle temporal gyrus,temporoccipital part,1,2
+middle temporal gyrus,wm,1,1
+middle temporal gyrus,wb,1,2
+primary motor cortex,leg area,1,1
+precuneus,il,1,2
+occipital cortex,mid,1,1
+occipital cortex,lateral superior,1,6
+precuneus,inferior,1,1
+precuneus,parietal,1,1
+occipital cortex,lateral inferior,1,4
+precuneus,pcm,1,1
+precuneus,pcu,1,1
+precuneus,pcu1,1,1
+pregenual acc,vmpfc,1,2
+occipital cortex,cuneus,1,1
+occipital cortex,area 19,1,1
+precuneus,prc,1,1
+primary sensory cortex,ba 3a,1,1
+precuneus,spl 7p,1,1
+precuneus,superior,1,1
+occipital cortex,area 18,1,1
+occipital,precuneus,1,1
+precuneus,wb,1,1
+precuneus,pcu2,1,1
+pmc,ba 44 rolandic operculum,1,1
+pmd,caudal ba 6,1,1
+pmd,mfg ba 6,1,1
+pmd,rostral ba 6,1,1
+parahippocampal gyrus,limbic lobe,1,1
+pmd ba 6,mfg,1,1
+pocg,op 1,1,1
+pocg,op 4,1,2
+pog,cingulate gyrus,1,1
+precentral gyrus,dpm,1,2
+post central gyrus,poscg,1,1
+post central gyrus,wm,1,1
+post cingulate,limbic,1,1
+parahippocampal gyrus,amygdala,1,2
+post itg,lo,1,1
+postcentral,s1,1,1
+parahippocampal ctx,phc,1,1
+postcentral gyrus,area 2,1,3
+postcentral gyrus,area 3b,1,1
+parahippocampal,ph,1,1
+pog,insula,1,1
+parietal operculum,sii,1,2
+parietal operculum,sii ba 43,1,3
+parieto occipital fissure,cuneus,1,1
+parietal operculum,s2,1,2
+parietal occipital sulcus,precuneus,1,2
+parieto occipital sulcus,v6,1,1
+parietal lobule,superior,1,2
+pars opercularis,inferior frontal,1,2
+pcc,pcc roi,1,1
+planum temporale,medial,1,1
+pcc,retrosplenial cortex,1,1
+parietal,precuneus,1,1
+pcc,roi 10,1,1
+perigenual anterior cingulate cortex,pgacc,1,1
+pfc,ifs,1,2
+pins,ext to mins,1,2
+pipl,ag,1,1
+parahippocampus,decrease,1,1
+planum polare,medial,1,1
+parahippocampal gyrus,posterior,1,1
+parietal cortex,precuneus,1,1
+postcgyrs,area 4p,1,1
+posterior cingulate,limbic system,1,1
+posterior cingulate cortex,area 31,1,2
+orbitofrontal gyrus,superior,1,1
+posterior fusiform gyrus,pfusg,1,1
+posterior insula,pi,1,1
+posterior insula,wm,1,1
+posterior insular cortex,pic,1,1
+posterior middle temporal gyrus,pmtg,1,1
+postcentral gyrus,cl,1,2
+posterior superior temporal sulcus,psts,1,2
+posterior temporal cortex,toj,1,2
+pre supplementary motor area,psma,1,1
+precentral and postcentral gyrus,entire,1,1
+orbitofrontal gyrus,middle,1,1
+precentral cortex,mi,1,1
+precentral cortex,pmd,1,1
+precentral g,m1,1,1
+precentral gyrus,cl,1,2
+orbitofrontal gyrus,medial,1,1
+posterior sts,22,1,4
+postcentral gyrus,dorsal,1,1
+postcentral gyrus,il,1,2
+postcentral gyrus,l40,1,1
+postcentral gyrus,m1 s1,1,1
+postcentral gyrus,pocg,1,1
+postcentral gyrus,precuneus,1,1
+paracingulate gyrus,anterior division,1,2
+paracingulate gyrus,amcc,1,1
+paracentral lobule,sma m1,1,1
+postcgyrs,area 3b,1,1
+paracentral lobule,sma,1,1
+postcentral gyrus,si,1,1
+postcentral gyrus,somatosensory cortex ba 2r,1,1
+paracentral lobule,sm1,1,4
+paracentral lobule,m1,1,1
+postcentral gyrus,svc,1,1
+postcentral gyrus precentral gyrus,pocg,1,1
+postcentral gyrus precentral gyrus,prcg,1,1
+postcgyrs,area 2,1,1
+pallidus,pal,1,1
+postcentral gyrus,primary somatosensory cortex,1,3
+supramarginal gyrus anterior division,tpj,1,1
+supramarginal gyrus posterior division,tpj,1,1
+temporal,cerebellum,1,1
+temporal,temporal,1,1
+temporal cortex,mid,1,2
+temporal cortex,superior,1,2
+temporal cortex,superior temporal gyrus,1,1
+temporal fusiform cortex,posterior,1,1
+temporal fusiform gyrus,posterior division,1,1
+temporal gyrus,middle posterior,1,1
+temporal gyrus,superior,1,2
+secondary visual cortex,v2,1,2
+temporal network,language comprehension,1,1
+temporal pole,middle,1,2
+temporal pole,no label,1,2
+temporal pole,superior,1,2
+temporo parietal junction,tpj,1,4
+temporoparietal junction,ltpj,1,1
+temporoparietal junction,tpj,1,2
+temporoparietal junction,tpj ipl,1,1
+amygdala,applying anatomical mask,1,1
+thalamus,anterior thalamic radiation,1,2
+thalamus,dm vl p,1,3
+temporal lobe,cl,1,1
+superior temporal gyrus,temporal lobe,1,1
+superior temporal gyrus planum temporale,pt,1,1
+superior temporal sulcus,anterior,1,1
+superior temporal sulcus,posterior,1,1
+superior temporalsulcus,sts,1,1
+supperior frontal,medial,1,2
+supplemental motor area,pre,1,1
+supplementary motor area,il,1,2
+supplementary motor area,pre,1,1
+supplementary motor area,superior frontal gyrus,1,1
+supplementary motor cortex,ba 6l,1,1
+supramarginal gyrus,wb,1,1
+supra marginal white matter,superior longitudinal fasciculus,1,1
+supramarg g,area pft,1,1
+supramarginal,decrease,1,1
+supramarginal gyrus,op1 ipl,1,1
+supramarginal gyrus,pf,1,2
+supramarginal gyrus,posterior,1,1
+supramarginal gyrus,posterior division,1,2
+supramarginal gyrus,s2,1,2
+supramarginal gyrus,si ba 2,1,2
+supramarginal gyrus,smg,1,1
+supramarginal gyrus,somatosensory cortex,1,1
+supplementary motor cortex,ba 6r,1,1
+amygdala,sf,1,2
+v3,associative visual cortex,1,2
+v4,anterior,1,1
+v4,posterior,1,1
+vent apfc,frontal,1,1
+ventral acc,wb,1,1
+ventral anterior cingulate cortex,vacc,1,2
+ventral lateral nucleus,thalamus,1,1
+ventral occipito temporal cortex,combined,1,1
+ventral posterior medial nucleus,thalamus,1,2
+ventral premotor cortex,pmd,1,1
+thalamus,dorsomedial nc,1,1
+ventral premotor cortex ba 6,pm,1,2
+ventral striatum,caudate head,1,1
+ventral striatum,n accumbens,1,1
+ventral tegmental area,vta,1,1
+ventral visual area 4,v4v,1,1
+ventro lateral prefrontal cortex,vlpfc,1,1
+ventro medial pfc,vmpfc,1,1
+ventrotemporal cortex andcerebellum,vt cereb,1,2
+vlpfc,frontal,1,1
+vlpfc,ifg,1,1
+vlpfc,orbitofrontal cortex,1,1
+ventral premotor cortex,vpmc,1,1
+thalamus,lateral posterior nucleus,1,1
+thalamus,lgn,1,2
+thalamus,mammilary body,1,2
+thalamus,mdnc,1,1
+thalamus,mediodorsal md,1,1
+thalamus,ncl vpn vpl,1,1
+thalamus,portas et al,1,1
+thalamus,pulvinar lgb,1,1
+thalamus,pulvinar red nucleus,1,1
+thalamus,red nucleus,1,1
+thalamus,subcortical,1,1
+ttg,heschls g,1,1
+thalamus,ventral intermediate vim,1,1
+thalamus,ventral lateral,1,1
+thalamus,vim,1,1
+thalamus,vl,1,1
+amygdaloid complex,baso lateral nucleus,1,1
+thalamus,vpl n,1,1
+tpj,parietal operculum cortex,1,2
+trans temporal gyrus,helsch gyrus,1,1
+trans temporal gyrus,helschs gyrus,1,1
+transverse occipital sulcus,v3a,1,1
+transverse temporal gyrus,a1,1,1
+thalamus,tha,1,1
+stg,anterior,1,1
+stg,temporopolar,1,2
+straight gyrus,frontal lobe,1,1
+striatum,nucleus accumbens,1,1
+striatum,put caud,1,6
+striatum,str,1,1
+striatum,ventral and dorsal,1,1
+sub gyral,frontal lobe,1,1
+subcentral gyrus and sulcus,central operculum,1,2
+subgenual cingulate cortex,sgc,1,1
+subthalamic nucleus,thalamus,1,1
+superior temporal gyrus,te 1 0,1,1
+sup fr gy g,pre sma,1,1
+sup fr gy o,pre sma,1,1
+sup fr gy p,pre sma,1,1
+superior and medial frontal gyrus,rsmfg,1,1
+superior frontal cortex,sfc,1,1
+superior frontal gyr,sfg,1,1
+superior frontal gyrus,apfc,1,1
+superior frontal gyrus,ba 6,1,1
+superior frontal gyrus,ba 8,1,1
+superior frontal gyrus,cl,1,1
+superior frontal gyrus,dlpfc,1,3
+sup fr gy,pre sma,1,3
+pulvinar,thalamus,1,2
+putamen,roi,1,2
+putamen,ventral,1,1
+putamen,wb,1,1
+rolandic operculum,insula,1,1
+rolandic operculum,op4,1,2
+rolandic operculum,rol,1,1
+rolandic operculum,rolandic oper,1,1
+rolandic operculum,s2,1,5
+rolandic operculum,wb,1,1
+rostral middle frontal gyrus,rmfg,1,1
+somato motor cortex,svc,1,1
+middle temporal gyrus,lobe,1,1
+sensorimotor cortex,a 1,1,1
+sensorimotor cortex,smc,1,1
+sensorimotor network,m1,1,1
+sensory,visual,1,2
+sfg,cingulate gyrus,1,2
+sma,parietal,1,1
+small volume correction,vmpfc,1,5
+small volume correction,vs,1,1
+smc,postcentral precentral gyrus,1,1
+smg,mpfc ba 10,1,2
+rostral superior parietal gyrus,rspg,1,2
+superior parietal lobule,cl,1,1
+superior parietal lobule,m 7p 7a,1,1
+superior parietal lobule,ppc,1,2
+superior parietal lobule,secondary sensorimotor cortex,1,2
+superior parietal lobule,spl,1,1
+superior parietal lobule,spl7a,1,2
+superior parietal lobule,wm,1,1
+superior parieto occipital cortex,spoc,1,1
+superior srontal g,frontal roi,1,1
+superior temporal gyr,stg,1,1
+superior temporal gyrus,ai ba 41,1,2
+superior frontal gyrus,dmpfc,1,1
+superior temporal gyrus,anteior,1,1
+superior temporal gyrus,insula,1,1
+superior temporal gyrus,ipl,1,1
+superior temporal gyrus,lstg,1,1
+superior temporal gyrus,mid anterior,1,1
+superior temporal gyrus,mid posterior,1,1
+superior temporal gyrus,no label,1,3
+superior temporal gyrus,op1,1,2
+superior temporal gyrus,planum polare,1,1
+superior temporal gyrus,pstg,1,2
+superior temporal gyrus,s2,1,2
+superior temporal gyrus,aii ba 22,1,1
+superior frontal gyrus,dorsal,1,1
+superior frontal gyrus,dpm,1,1
+superior frontal gyrus,frontal sup,1,1
+superior frontal gyrus,mpfc,1,1
+superior frontal gyrus,orbital portion,1,1
+superior frontal gyrus,paramedian frontal cortex,1,1
+superior frontal gyrus,sma,1,2
+superior frontal gyrus,sma ba 6,1,1
+superior frontal sulc,sfs,1,3
+superior frontal sulcus,sfg,1,1
+superior medial gyrus,anterior paracingulate,1,1
+superior parietal lobule,area7a,1,1
+superior parietal,ba 40 ba 7,1,1
+superior parietal cortex,area 1,1,1
+superior parietal cortex,area 7,1,1
+superior parietal cortex,lspc,1,1
+superior parietal cortex,parietal sup,1,1
+superior parietal cortex,precuneus,1,1
+superior parietal cortex,rspc,1,1
+superior parietal lobe,area 2 1,1,1
+superior parietal lobe,area 7a,1,3
+superior parietal lobe,spl,1,2
+superior parietal lobule,area 7a,1,1
+superior medial gyrus,smg,1,1
+dorsolateral prefrontal cortex,inferior frontal gyrus,1,1
+dorsolateral prefrontal cortex,middle frontal gyrus,1,1
+dorsolateral prefrontal cortex,roi,1,1
+dorsolateral prefrontal ctx,dlpfc,1,1
+dorsolateral premotor cortex,pmd,1,1
+executive network,central executive,1,1
+fmri study,kanwisher et al,1,1
+fmri study,vuilleumier et al,1,2
+frontal,precentral,1,4
+frontal cortex,pre,1,2
+frontal gyrus,middle,1,5
+middle frontal gyrus,medial,1,1
+frontal gyrus,superior,1,3
+frontal network,frontopolar,1,1
+frontal operculum,brocas,1,1
+fronto marginal gyrus and sulcus,of wernicke,1,1
+fusiform,ffg,1,1
+fusiform,lateral,1,2
+fusiform,medial,1,1
+fusiform g,see,1,2
+fusiform g,see table 2,1,2
+fusiform gyrus,ffg,1,1
+fusiform gyrus,fg,1,3
+frontal gyrus,precentral,1,1
+cuneus,cun,1,1
+cuneus,occipital lobe,1,2
+cuneus,pips,1,2
+cuneus,pre,1,1
+default mode network,pcc,1,1
+dfc,frontal,1,1
+dlpfc,fat thin,1,1
+dlpfc,mfg,1,1
+dlpfc,pars opercularis,1,3
+dlpfc,pars triangularis,1,2
+dlpfc ba 46 9,mfg,1,1
+dorsolateral prefrontal cortex,area 9 46,1,1
+dmpfc ba 8,medial frontal gyrus,1,1
+dorsal acc,roi,1,1
+dorsal lateral prefrontal cortex,dlpfc,1,1
+dorsal prefrontal cortex,dpfc,1,1
+dorsal premotor,pmd,1,1
+dorsal premotor cortex,lpmd,1,1
+dorsal premotor cortex,rpmd,1,1
+dorsal striatum,caudate,1,1
+dorso lateral prefrontal cortex,dlpfc,1,1
+dorsolateral frontal cortex,middle frontal gyrus,1,1
+dorsolateral pfc,ba 9,1,1
+dlpfc ba 9,mfg,1,1
+ifg,pars tri,1,1
+ifg,triangularis,1,1
+ifg 45,p triangularis,1,1
+inf f g,opercular,1,2
+inf fronal orb,fi,1,1
+inf front,op,1,1
+inf front,orb,1,1
+inf front,tri,1,2
+inf frontal gyr p orbitalis,ifgo,1,1
+inf frontal gyr p triangularis,ifgt,1,1
+inf frontal gyrus,oper,1,1
+fusiform gyrus,o4,1,1
+inf frontal orb,fi,1,2
+inf temporal sulc,its,1,1
+inferior frontal,operculum,1,2
+inferior frontal,trigone,1,1
+inferior frontal cortex,pars triangularis ba 47,1,1
+inferior frontal g,triangularis,1,1
+inferior frontal gyrus,47,1,1
+inferior frontal gyrus,area 45,1,1
+inferior frontal gyrus,brocas area,1,1
+inferior frontal gyrus,brodmann area 46,1,1
+inferior frontal gyrus,frontal inf tri,1,1
+inf frontal gyrus,tri,1,1
+fusiform gyrus,occipital lobe,1,2
+fusiform gyrus,temporal lobe,1,1
+gyrus rectus,orbitofrontal,1,1
+hc,lhc,1,3
+hc,rhc,1,3
+heschl,wb,1,1
+heschl gyrus,lockwood et al,1,1
+heschls gyrus,hg,1,2
+heschls gyrus,te 1 1,1,1
+hippocampus,ca sub,1,2
+hippocampus,cornu ammonis,1,1
+ifg,pars opercularis,1,2
+hippocampus,hipp,1,1
+hippocampus,hpc,1,1
+hippocampus,para,1,1
+hippocampus,posterior,1,1
+hippocampus,roi,1,1
+hippocampus,temporal lobe,1,1
+hoc4v,extrastriate visual cortex,1,1
+ifg,opercularis,1,1
+ifg,p oper,1,3
+ifg,p opercularis ba 44,1,2
+ifg,p triangularis ba 45,1,2
+hippocampus,hf,1,1
+amygdala,amygdala,1,1
+amygdala,amyl,1,1
+anterior cingulate cortex,lobe,1,1
+anterior cingulate cortex,posterior supracallosal,1,1
+anterior cingulate cortex,supracallosal,1,1
+anterior cingulate gyrus,acc,1,1
+anterior cingulate gyrus,dorsolateral,1,1
+anterior cingulate gyrus,rostral,1,1
+amygdaloid complex,centro mesial nucleus,1,2
+anterior cingulated gyrus,acg,1,1
+anterior insula,ai,1,1
+culmen,cerebellum,1,1
+anterior medial pfc,ampfc,1,1
+anterior median prefrontal cortex,ampfc,1,2
+anterior occipital sulcus,hoc5,1,1
+anterior pfc,ba 10,1,1
+anterior prefrontal cortex,apfc,1,1
+anterior supramarginal gyrus,asmg,1,3
+anterior to mid intraparietal sulcus,amips,1,1
+anterior vlpfc,sfg ba 10,1,1
+area tringularis,ifg,1,1
+ba 22,auditory,1,1
+ba 22 2,auditory,1,1
+anterior intraparietal sulcus,aips,1,2
+angular g,angular roi,1,1
+angular g,area pgp,1,2
+angular gyrus,ag,1,1
+angular gyrus,angular,1,1
+angular gyrus,cl,1,1
+angular gyrus,hip3,1,1
+angular gyrus,il,1,1
+angular gyrus,pfm,1,1
+angular gyrus,tpj,1,1
+anterior cingulate,acc,1,1
+anterior cingulate and supplementary motor cortex,acc sma,1,1
+amygdala,amg,1,1
+v1,posterior calcarine,1,1
+thalamus,vpl,1,1
+anterior cingulate gyrus,wm,1,1
+vmpfc ba 10,superior frontal gyrus,1,2
+,anterior,1,1
+,pulvinar vln,1,1
+,putamen,1,1
+,subcortical,1,1
+acc,limbic,1,1
+aipl,smg,1,1
+amyg,fat thin,1,1
+caudal supplementary motor area,csma,1,1
+cerebellum,crus ii,1,4
+cerebellum,ix tonsil,1,1
+cerebellum,lobule 6,1,1
+cerebellum,lobule iv v vi,1,1
+cerebellum,lobule vi,1,1
+cerebellum,posterior lobe declive,1,1
+cerebellum,th,1,1
+cerebellum posterior lobe,vi,1,1
+cerebelum,vi,1,1
+cingulate gyrus,anterior,1,1
+cingulate gyrus,anterior division,1,1
+ba 43,somatosensory gustatory,1,1
+cingulate gyrus,mid,1,2
+cingulate gyrus,middle part,1,1
+cingulate gyrus,posterior division,1,1
+cingulate motor area,cma,1,1
+cingulate sulcus,csv,1,1
+cingulum,hippocampus,1,2
+cmiddle frontal gyrus,lateral,1,1
+cn,head,1,1
+cruz ii,lateral cerebellum,1,2
+culmen,anterior,1,1
+culmen,anterior lobe,1,1
+cingulate gyrus,il,1,1
+ba 43 2,somatosensory gustatory,1,1
+ba 46,inferior frontal p t,1,3
+basal ganglia,caudate ncl,1,1
+calcarine,wb,1,1
+calcarine fissure and surrounding cortex,cal,1,1
+calcarine gyrus,area 17,1,1
+caudal intraparietal sulcus,cips,1,1
+amygdala,roi,1,4
+caudate,all,1,1
+caudate,cau,1,1
+caudate,caudate body,1,1
+cerebellum,crus i,1,1
+caudate,head body,1,1
+caudate,head body tail,1,2
+caudate,roi,1,1
+caudate,tail,1,1
+caudate body,roi,1,1
+caudate body,wb,1,1
+caudate head,roi,1,1
+caudate nucleus,lobe,1,1
+cereb,lob viia crus i,1,1
+cerebellum,anterior lobe,1,2
+cerebellum,anterior lobe culmen,1,1
+cerebellum,cr i,1,1
+caudate,dorsal striatum,1,1
+medial frontal gyrus,dlpfc,1,1
+medial frontal gyrus,dmpfc,1,4
+medial frontal gyrus,frontal lobe,1,1
+medial frontal gyrus,il,1,1
+medial frontal gyrus,mefg,1,1
+medial frontal gyrus,mfg,1,1
+medial frontal gyrus,pre sma sma proper,1,6
+medial frontal gyrus,rmefg,1,1
+medial frontal gyrus,sma,1,2
+medial frontal gyrus,sma pre sma,1,1
+medial frontal gyrus,supplementary motor area,1,1
+inferior frontal gyrus,il,1,2
+medial frontal gyrus 6,pre sma,1,1
+medial globus pallidus,internal,1,1
+medial ofc,svc,1,5
+medial orbital frontal gyrus,roi,1,1
+medial orbital frontal gyrus,wb,1,1
+medial orbitofrontal cortex,mofc,1,1
+medial orbitofrontal gyrus,rmofg,1,1
+medial parietal cortex,precuneus,1,1
+medial prefrontal cortex,pfc,1,1
+mediodorsal thalamus,mdthal,1,1
+mfg,ba 9 dlpfc,1,1
+medial frontal gyrus,vmpfc,1,4
+lateral orbitofrontal ctx,lofc,1,1
+lateral parietal,lp,1,1
+lateral parietal,rp,1,1
+lateral prefrontal cortex medial prefrontal cortex orbitofrontal cortex anterior cingulate cortex,acc,1,2
+lateral prefrontal cortex medial prefrontal cortex orbitofrontal cortex anterior cingulate cortex,lpfc,1,2
+lateral prefrontal cortex medial prefrontal cortex orbitofrontal cortex anterior cingulate cortex,mpfc,1,2
+lateral prefrontal cortex medial prefrontal cortex orbitofrontal cortex anterior cingulate cortex,ofc,1,2
+lateral superior temporal gyrus,stg,1,1
+lateral temporal cortex,eba,1,2
+lateral temporal occipital cortex,toc,1,1
+lentiform nucleus,lateral globus pallidus,1,1
+medial frontal gyrus,central,1,1
+lifg ba 45,and 47,1,2
+lingual gyrus,area 17,1,1
+lingual gyrus,area 18,1,1
+lingual gyrus,lg,1,2
+lingual gyrus,occipital lobe,1,1
+lpmtg,ag,1,1
+m1,handknob ba 4,1,1
+m1,medial,1,1
+mammillary body,thalamus,1,1
+medial frontal gyrus,ba 10,1,1
+medial frontal gyrus,ba 6,1,1
+lentiform nucleus,putamen,1,1
+middle frontal gyrus,midfg,1,1
+middle frontal gyrus,posterior,1,3
+middle frontal gyrus,pre sma sma,1,2
+middle frontal gyrus,rmfg,1,1
+middle frontal gyrus,roi,1,1
+middle frontal gyrus,sma ba 6,1,1
+middle frontal gyrus,ventral,1,1
+middle frontal gyrus,vlpfc,1,1
+middle frontal precentral gyrus,vpm,1,1
+middle frontalgyrus,caudal,1,2
+middle frontalgyrus,midfg,1,1
+mfg,dlpfc,1,1
+middle occipital gyrus,ab17,1,1
+middle occipital gyrus,area v5,1,1
+middle occipital gyrus,calcarine fissure,1,1
+middle occipital gyrus,hoc3v,1,1
+middle occipital gyrus,ipc,1,1
+middle occipital gyrus,rmog,1,1
+middle occipital gyrus,secondary visual cortex,1,4
+middle occipital gyrus,v5,1,1
+middle temporal gyrus,39,1,1
+middle temporal gyrus,anterior,1,1
+middle temporal gyrus,hmt,1,1
+middle frontalgyrus,rostral,1,3
+mfg,dlpfc ba 6 8 9,1,1
+mfg,dlpfc ba 9,1,1
+mid fg,loa,1,1
+mid temporal gyrus,posterior,1,1
+midbrain,substantia nigra,1,1
+middle and superior temporal gyrus,anterior,1,1
+middle frontal,dorsolateral prefrontal,1,2
+middle frontal g,dlpfc,1,1
+middle frontal gyrus,anterior,1,4
+middle frontal gyrus,apfc,1,1
+middle frontal gyrus,area 45,1,1
+middle frontal gyrus,mid dlpfc,1,1
+middle frontal gyrus,ba 44,1,2
+middle frontal gyrus,ba 6,1,1
+middle frontal gyrus,ba 6 lobe,1,1
+middle frontal gyrus,ba 8,1,1
+middle frontal gyrus,cl,1,2
+middle frontal gyrus,dlpfc ba 46,1,1
+middle frontal gyrus,dorsal,1,1
+middle frontal gyrus,frontal lobe,1,3
+middle frontal gyrus,il,1,2
+middle frontal gyrus,lobe,1,2
+middle frontal gyrus,lpfc,1,2
+and thalamus,anterior nucleus,1,1
+middle frontal gyrus,area 6,1,2
+inferior occipital gyrus,v3v,1,1
+inferior occipitalgyrus,ofa,1,1
+inferior parietal angular gyrus,ag,1,1
+inferior parietal cortex,area 39,1,1
+inferior parietal cortex,area 39 40,1,2
+inferior parietal cortex,area 40,1,1
+inferior parietal cortex,sts,1,2
+inferior parietal lobule,40,1,2
+inferior parietal lobule,aips,1,1
+inferior parietal lobule,angular gyrus,1,2
+inferior parietal lobule,angular supramarginal gyrus,1,1
+lateral occipitalcortex,loc,1,1
+inferior parietal lobule,area 2,1,1
+inferior parietal lobule,hip2,1,2
+inferior parietal lobule,il,1,1
+inferior parietal lobule,ipc,1,1
+inferior parietal lobule,l40,1,1
+inferior parietal lobule,pfm,1,1
+inferior parietal lobule,pfop,1,1
+inferior parietal lobule,s1,1,1
+inferior parietal lobule,smg,1,1
+inferior parietal lobule,spl,1,1
+inferior parietal lobule,supramarginal gyrus,1,1
+inferior parietal lobule,anterior,1,1
+inferior frontal gyrus,lifg,1,1
+inferior frontal gyrus,lpfc,1,2
+inferior frontal gyrus,oper,1,3
+inferior frontal gyrus,opercularis,1,1
+inferior frontal gyrus,operculum,1,1
+inferior frontal gyrus,orbitalis,1,1
+inferior frontal gyrus,orbitofrontal cortex,1,1
+inferior frontal gyrus,p oper,1,3
+inferior frontal gyrus,p orb,1,1
+inferior frontal gyrus,p tri,1,1
+inferior frontal gyrus,posterior,1,1
+inferior occipital gyrus,secondary visual cortex,1,1
+inferior frontal gyrus,ptri pop,1,2
+inferior frontal gyrus,rifg,1,1
+inferior frontal gyrus,triangular,1,2
+inferior frontal gyrus,triangular part,1,1
+inferior frontal gyrus,v and dlpfc,1,1
+inferior frontal gyrus ba 44,ifg,1,2
+inferior frontal gyrus ba 44 50,pars triangularis,1,1
+inferior frontal gyrus ba 45,brocas area,1,1
+inferior frontal gyrus precentral,pars opercularis,1,1
+inferior middle frontal gyrus,area 44,1,2
+inferior occipital gyrus,area v5,1,1
+inferior frontal gyrus,ptri,1,1
+intraparietal sulcus,ips,1,10
+intraparietal sulcus,posterior,1,4
+intraparietal sulcus and transverse parietal sulcus,ips,1,1
+intraparietal transverseoccipital,ipto,1,1
+ipc,lipc,1,2
+ipc,ripc,1,2
+ipc 1,pgp,1,1
+ipl,pfm,1,1
+ips,ang,1,1
+ips,fundus,1,2
+ips,posterior,1,3
+inferior parietal lobule 1,smg,1,1
+itc,ritc,1,2
+itg,litg,1,1
+itg,ritg,1,1
+lat glob pallidus,lentiform nucleus,1,2
+lateral occipital,lo itg,1,2
+lateral occipital cortex,lo,1,2
+lateral occipital cortex,loc,1,1
+lateral occipital cortex,middle division,1,2
+lateral occipital cortex,pole occipital,1,1
+lateral occipital cortex tactile visual,lotv,1,1
+lateral occipitalcortex,lo,1,1
+itc,litc,1,2
+inferior parietal supramarginal gyrus,smg,1,1
+inferior temporal cortex,area 37,1,1
+inferior temporal cortex,fusiform gyrus,1,1
+inferior temporal gyrus,lotv,1,2
+inferior temporal gyrus,temporal pole,1,2
+inferior temporal gyrus,vwfa,1,1
+inferior ventral premotor cortex,pmv,1,1
+insula,anterior and posterior,1,2
+insula,heschl,1,1
+insula,l13,1,1
+insula,limbic cortex,1,1
+intraparietal sulcus,ba 7 hip2,1,1
+insula,roi,1,3
+insula cortex,anterior,1,4
+insula cortex,posterior,1,2
+insula lobe,op2,1,1
+insular cortex,ains,1,1
+internal globus pallidus,gpi,1,1
+intra parietal sulcus,aip,1,1
+intra parietal sulcus,ips,1,1
+intrapaprietal sulcus,ips,1,1
+intraparietal cortex,pgp pga pfm,1,1
+intraparietal sulcus,ant,1,1
+intraparietal sulcus,anterior,1,2
+insula,op3,1,1

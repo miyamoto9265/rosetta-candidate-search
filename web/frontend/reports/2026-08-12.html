@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2026-08-12 RCS AI 統合レポート — ROSETTA Candidate Search</title>
+    <meta name="description" content="2026-08-12 の RCS レビュー: AI 統合（preprocess + postprocess）の本番投入と、AI on/off の 3,458 件比較評価。" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://rcs.mymt.site/reports/2026-08-12.html" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../site-nav.css" />
+    <link rel="stylesheet" href="../site-trust.css" />
+    <style>
+      .report-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .report-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 20px;
+      }
+
+      .report-card h2 {
+        margin-bottom: 10px;
+      }
+
+      .report-card p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .report-card a.report-link {
+        display: inline-block;
+        margin-top: 10px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        padding: 10px 14px;
+        text-decoration: none;
+      }
+
+      .report-card a.report-link:hover {
+        background: var(--accent-hover);
+      }
+
+      .meta-list {
+        margin: 18px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .archive-link {
+        margin-top: 24px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a href="../index.html" class="site-brand">ROSETTA Candidate Search</a>
+        <nav class="site-nav-links" aria-label="サイトメニュー">
+          <a href="../index.html">候補検索</a>
+          <a href="../scoring-guide.html">スコアリング解説</a>
+          <a href="../walkthrough-bla.html">Walkthrough (BLA)</a>
+          <a href="./2026-08-12.html" aria-current="page">Reports</a>
+          <a href="../about.html">このサイトについて</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Reports / 2026-08-12</p>
+        <h1>2026-08-12 RCS AI 統合レポート</h1>
+        <p class="lead">
+          RCS API に AI 統合（preprocess: 本質外除去 / postprocess: 候補裁定＋関係ラベル）を
+          本番投入し、non-neocortex suitable 3,458 クエリで AI on/off を比較評価しました。
+          確立済みの正解データではなく、レビュー補助のための分析レポートです。
+        </p>
+      </section>
+
+      <section class="report-card">
+        <h2>このページについて</h2>
+        <p>
+          AI 統合の仕様と、AI on/off の差分評価レポートです。
+          評価は top1 が変わったレコードのみ 3-pass 判定し、変更なしは round5 ラベルを継承しています。
+        </p>
+        <ul class="meta-list">
+          <li>作成日: 2026-08-12</li>
+          <li>対象: curated non-neocortex suitable（abbrev + fullname、3,458 クエリ）</li>
+          <li>AI: DeepSeek v4-flash（preprocess + postprocess）</li>
+          <li>判定: DeepSeek flash × 3-pass（差分のみ）</li>
+          <li>エンジン: RCS v0.8.5 + AI 統合（API v0.9.0）</li>
+        </ul>
+      </section>
+
+      <section class="report-grid" aria-label="レポート一覧">
+        <article class="report-card">
+          <h2>AI on/off 比較評価</h2>
+          <p>
+            AI 統合（preprocess + postprocess）あり/なしの 3,458 件比較。
+            ラベル分布バー、改善/悪化例、no_match の変化、relation と判定の整合性を収録。
+          </p>
+          <a class="report-link" href="./2026-08-12/ai_eval_report.html">レポートを開く</a>
+        </article>
+
+        <article class="report-card">
+          <h2>AI 統合の仕様</h2>
+          <p>
+            preprocess（遺伝子・左右などの除去）と postprocess（候補 0–4 件＋関係ラベル
+            <code>'=</code> / <code>&lt;</code> / <code>&gt;</code>）の API 仕様は
+            スコアリング解説と API ドキュメントに統合済みです。
+          </p>
+          <a class="report-link" href="../scoring-guide.html#ai">スコアリング解説（AI 統合）</a>
+        </article>
+
+        <article class="report-card">
+          <h2>前回: AI 統合の設計経緯</h2>
+          <p>
+            2026-08-02 の RCS vs 3-AI 比較と RCS + AI rerank プロトタイプ評価。
+            今回の本番統合の根拠となった実験です。
+          </p>
+          <a class="report-link" href="./2026-08-02/rcs_ai_rerank_article.html">記事を開く</a>
+        </article>
+      </section>
+
+      <p class="archive-link">
+        過去レポート: <a href="./2026-08-02.html">2026-08-02</a> · <a href="./2026-06-25.html">2026-06-25</a>
+      </p>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="site-footer-inner">
+        <h2>ROSETTA Candidate Search</h2>
+        <p>Research application for mapping brain-region names to HOMBA ontology entries. Not a login, payment, or credential collection site.</p>
+        <nav aria-label="フッターナビゲーション">
+          <a href="../index.html">候補検索</a>
+          <a href="../about.html">このサイトについて</a>
+          <a href="../scoring-guide.html">スコアリング解説</a>
+          <a href="./2026-08-12.html">Reports</a>
+          <a href="../humans.txt">humans.txt</a>
+          <a href="../robots.txt">robots.txt</a>
+        </nav>
+        <p class="disclaimer">
+          Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
+          · <a href="../about.html#contact">Contact / security</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -590,9 +590,10 @@
       <a href="index.html" class="site-brand">ROSETTA Candidate Search</a>
       <nav class="site-nav-links" aria-label="サイトメニュー">
       <a href="index.html">候補検索</a>
+      <a href="ebl/index.html">EBL→BNA（テスト）</a>
       <a href="scoring-guide.html">スコアリング解説</a>
       <a href="walkthrough-bla.html" aria-current="page">Walkthrough (BLA)</a>
-      <a href="reports/2026-08-02.html">Reports</a>
+      <a href="reports/2026-08-12.html">Reports</a>
       <a href="about.html">このサイトについて</a>
       </nav>
     </div>
@@ -613,7 +614,8 @@
       <span>クエリ: Left basolateral amygdala (BLA)</span>
       <span>バリアント: 15 件</span>
       <span>候補: 53 → top 5</span>
-      <span>エンジン: v0.8.0</span>
+      <span>エンジン: v0.8.5</span>
+      <span>API: v0.9.0（AI 統合）</span>
     </div>
 
 <section id="walkthrough">
@@ -1099,6 +1101,55 @@ flowchart TD
       </table>
     </section>
 
+    <section id="ai">
+      <h2>3. AI 統合版（API v0.9.0）でのこのクエリ</h2>
+      <p class="lead">
+        上記は RCS エンジン単体の動作です。本番 API ではデフォルトで AI 統合が有効になっており、
+        同じクエリは次のように処理されます。
+      </p>
+
+      <h3>3-1. AI preprocess（本質外除去）</h3>
+      <p>
+        LLM が <code>Left basolateral amygdala (BLA)</code> から laterality の <code>Left</code> を除去し、
+        <code>roi_query = "basolateral amygdala (BLA)"</code> 相当を生成します。
+        遺伝子名・細胞型語などが含まれるクエリではそれらも除去されます。
+        なお RCS 内部のルールベース前処理（laterality strip 等）も引き続き働くため、二重の防御になります。
+      </p>
+
+      <h3>3-2. RCS（本ページ 2-1〜2-6 と同一）</h3>
+      <p>
+        スコアリングはまったく変わりません。<code>candidates</code> には上記と同じ RCS 生ランキングが入ります。
+      </p>
+
+      <h3>3-3. AI postprocess（候補裁定）</h3>
+      <p>
+        RCS の上位候補（最大 10 件）を LLM が読み、妥当なものだけを最大 4 件、
+        クエリとの関係ラベル付きで返します。本例では top2 がともに解剖学的に妥当なため、
+        概念的には次のような出力になります:
+      </p>
+      <table>
+        <thead>
+          <tr><th>順位</th><th>HOMBA ID</th><th>名称</th><th>relation</th><th>意味</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>HOMBA:10366</td><td>basolateral nuclear group of amygdala</td>
+            <td><code>'=</code></td><td>一致（BLA の慣用対応）</td>
+          </tr>
+          <tr>
+            <td>2</td><td>HOMBA:10368</td><td>basolateral nucleus (basal nucleus) of amygdala</td>
+            <td><code>&gt;</code></td><td>クエリのほうが大きい（候補はその核・より狭い）</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note" style="color:var(--muted);font-size:0.9rem">
+        relation の向きはクエリ視点: <code>'=</code> 一致 / <code>&lt;</code> クエリが小さい（候補は親）/
+        <code>&gt;</code> クエリが大きい（候補は部分）。
+        wrong と判定された候補は AI 結果に出ません。AI が外れても RCS 候補リストは常にそのまま返ります。
+        仕様の詳細は <a href="scoring-guide.html#ai">スコアリング解説 §16</a> を参照してください。
+      </p>
+    </section>
+
     <footer class="site-footer" role="contentinfo">
       <div class="site-footer-inner">
         <h2>ROSETTA Candidate Search</h2>
@@ -1108,12 +1159,12 @@ flowchart TD
           <a href="about.html">このサイトについて</a>
           <a href="scoring-guide.html">スコアリング解説</a>
           <a href="walkthrough-bla.html">Walkthrough (BLA)</a>
-          <a href="reports/2026-08-02.html">Reports</a>
+          <a href="reports/2026-08-12.html">Reports</a>
           <a href="humans.txt">humans.txt</a>
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.8.0 · <a href="about.html#contact">Contact / security</a>
+          · Engine v0.8.5 · API v0.9.0 · <a href="about.html#contact">Contact / security</a>
         </p>
       </div>
     </footer>
