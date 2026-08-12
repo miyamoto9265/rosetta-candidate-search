@@ -28,6 +28,7 @@ Content-Type: application/json
 | フィールド | 型 | 必須 | 説明 |
 |---|---|---|---|
 | `query` | string | **必須** | 検索したい脳領域名 |
+| `context` | string | 任意 | AI の判断材料となる自由記述（例: 論文タイトル）。空欄可 |
 | `top_k` | integer | 任意 | 返す候補数（1〜20、デフォルト: `10`） |
 | `dhba_filter` | string | 任意 | `"both"`（デフォルト）/ `"with"`: DHBA_name あり / `"without"`: DHBA_name なし |
 | `use_ai_preprocess` | boolean | 任意 | AI 前処理（本質外除去）の ON/OFF。既定 `true` |
@@ -36,6 +37,7 @@ Content-Type: application/json
 ```json
 {
   "query": "right NAc Drd1 neurons",
+  "context": "Dopamine D1 receptor signaling in the striatum",
   "top_k": 10,
   "dhba_filter": "both",
   "use_ai_preprocess": true,
@@ -52,6 +54,7 @@ Content-Type: application/json
 | フィールド | 型 | 説明 |
 |---|---|---|
 | `query` | string | リクエストのクエリ |
+| `context` | string | リクエストのコンテキスト（エコー） |
 | `top_k` | integer | 指定した候補数 |
 | `dhba_filter` | string | 適用した DHBA フィルター |
 | `use_ai_preprocess` | boolean | 実効値のエコー |

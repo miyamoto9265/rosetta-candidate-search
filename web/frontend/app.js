@@ -2,6 +2,7 @@ const config = window.ROSETTA_SEARCH_CONFIG || {};
 const apiBaseUrl = (config.apiBaseUrl || "").replace(/\/$/, "");
 
 const queryInput = document.getElementById("query");
+const contextInput = document.getElementById("context");
 const topKInput = document.getElementById("topK");
 const dhbaFilterInput = document.getElementById("dhbaFilter");
 const useAiPreprocessInput = document.getElementById("useAiPreprocess");
@@ -150,6 +151,7 @@ function renderResults(data) {
 
 async function search() {
   const query = queryInput.value.trim();
+  const context = contextInput.value.trim();
   const topK = Number(topKInput.value || 10);
   const dhbaFilter = dhbaFilterInput.value || "both";
   const useAiPreprocess = useAiPreprocessInput.checked;
@@ -177,6 +179,7 @@ async function search() {
       },
       body: JSON.stringify({
         query,
+        context,
         top_k: topK,
         dhba_filter: dhbaFilter,
         use_ai_preprocess: useAiPreprocess,

@@ -153,6 +153,7 @@ def lambda_handler(event, context):
     try:
         payload = json.loads(event.get("body") or "{}")
         query = str(payload.get("query", "")).strip()
+        context = str(payload.get("context", "")).strip()
         top_k = int(payload.get("top_k", 10))
         top_k = max(1, min(top_k, 20))
         dhba_filter = str(payload.get("dhba_filter", "both")).strip().lower()
@@ -169,6 +170,7 @@ def lambda_handler(event, context):
 
         body: dict[str, object] = {
             "query": query,
+            "context": context,
             "top_k": top_k,
             "dhba_filter": dhba_filter,
             "use_ai_preprocess": use_ai_preprocess,
@@ -180,7 +182,7 @@ def lambda_handler(event, context):
         search_query = query
         removed: list[dict[str, str]] = []
         if use_ai_preprocess and ai_ok:
-            pre = ai_pipeline.preprocess(query)
+            pre = ai_pipeline.preprocess(query, context)
             ai_model_used = ai_model_used or ai_model_env
             body["preprocess"] = {
                 "roi_query": pre["roi_query"],
@@ -201,7 +203,7 @@ def lambda_handler(event, context):
 
         # --- postprocess ---
         if use_ai_postprocess and ai_ok:
-            post = ai_pipeline.postprocess(query, search_query, removed, candidates)
+            post = ai_pipeline.postprocess(query, search_query, removed, candidates, context)
             ai_model_used = ai_model_used or ai_model_env
             body["ai"] = {"results": post["results"], "error": post["error"]}
 

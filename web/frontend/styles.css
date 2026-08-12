@@ -221,6 +221,10 @@ td {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+.context-label {
+  margin-top: 14px;
+}
+
 .ai-toggles {
   display: flex;
   flex-wrap: wrap;
