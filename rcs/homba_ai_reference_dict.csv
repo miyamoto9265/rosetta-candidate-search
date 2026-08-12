@@ -2,6 +2,7 @@ abbrev,homba_id,homba_name,note
 A6,HOMBA:12499,nucleus coeruleus (locus coeruleus),"ai_eval regression: AI picked premotor cortex (area 6, area FB, secondary motor cortex); corrected to literature-conventional sense"
 AHA,HOMBA:266441551,anterior hypothalamic area,ai_eval regression: AI picked amygdalohippocampal area; corrected to literature-conventional sense
 ANT,HOMBA:10392,anterior nuclear complex of thalamus,ai_eval regression: AI picked angular nucleus of thalamus; corrected to literature-conventional sense
+BA,HOMBA:10368,basolateral nucleus (basal nucleus) of amygdala,manual curation: BA = basolateral nucleus of amygdala
 BLA,HOMBA:10366,basolateral nuclear group of amygdala,ai_eval regression: AI picked basolateral nucleus (basal nucleus) of amygdala; corrected to literature-conventional sense
 BLC,HOMBA:10366,basolateral nuclear group of amygdala,ai_eval regression: AI picked basolateral nucleus (basal nucleus) of amygdala; corrected to literature-conventional sense
 CA3v,HOMBA:266441355,rostral (ventral) division of CA3,ai_eval regression: AI picked vertical part of CA3; corrected to literature-conventional sense
