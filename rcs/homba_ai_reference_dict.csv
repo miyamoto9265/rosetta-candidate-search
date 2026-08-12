@@ -1,0 +1,23 @@
+abbrev,homba_id,homba_name,note
+A6,HOMBA:12499,nucleus coeruleus (locus coeruleus),"ai_eval regression: AI picked premotor cortex (area 6, area FB, secondary motor cortex); corrected to literature-conventional sense"
+AHA,HOMBA:266441551,anterior hypothalamic area,ai_eval regression: AI picked amygdalohippocampal area; corrected to literature-conventional sense
+ANT,HOMBA:10392,anterior nuclear complex of thalamus,ai_eval regression: AI picked angular nucleus of thalamus; corrected to literature-conventional sense
+BLA,HOMBA:10366,basolateral nuclear group of amygdala,ai_eval regression: AI picked basolateral nucleus (basal nucleus) of amygdala; corrected to literature-conventional sense
+BLC,HOMBA:10366,basolateral nuclear group of amygdala,ai_eval regression: AI picked basolateral nucleus (basal nucleus) of amygdala; corrected to literature-conventional sense
+CA3v,HOMBA:266441355,rostral (ventral) division of CA3,ai_eval regression: AI picked vertical part of CA3; corrected to literature-conventional sense
+CAL,HOMBA:12838,anterior lobe of cerebellar cortex,"ai_eval regression: AI picked lamination of hippocampal proper (CA1, CA2, CA3); corrected to literature-conventional sense"
+CN,HOMBA:10660,cerebellar deep nuclei,ai_eval regression: AI picked cerebral nuclei; corrected to literature-conventional sense
+LSN,HOMBA:AA30687,lateral spinal nucleus of spinal cord,ai_eval regression: AI picked lateral septal nuclear complex; corrected to literature-conventional sense
+MCN,HOMBA:12402,fastigial (medial) nucleus,ai_eval regression: AI picked magnocellular nucleus of posterior hypothalamus; corrected to literature-conventional sense
+NST,HOMBA:12557,solitary nucleus,ai_eval regression: AI picked nigrostriate tract; corrected to literature-conventional sense
+OP,HOMBA:12186,olivary pretectal nucleus,ai_eval regression: AI picked occipital pole; corrected to literature-conventional sense
+PCx,HOMBA:10311,piriform cortex,ai_eval regression: AI picked parietal cortex; corrected to literature-conventional sense
+PHN,HOMBA:12615,prepositus hypoglossal nucleus,ai_eval regression: AI picked posterior hypothalamic nucleus; corrected to literature-conventional sense
+PP,HOMBA:10311,piriform cortex,ai_eval regression: AI picked peripeduncular nucleus; corrected to literature-conventional sense
+pTh,HOMBA:10461,ventral thalamus,ai_eval regression: AI picked pallidothalamic tract; corrected to literature-conventional sense
+PTN,HOMBA:10440,posterior nucleus of thalamus,ai_eval regression: AI picked pretectal nuclear complex; corrected to literature-conventional sense
+PuM,HOMBA:10411,medial division of pulvinar,ai_eval regression: AI picked middle putamen; corrected to literature-conventional sense
+PV,HOMBA:12444,principal sensory nucleus of trigeminal nerve,ai_eval regression: AI picked paraventricular nucleus of hypothalamus; corrected to literature-conventional sense
+SL,HOMBA:AA30155,stratum lucidum of CA,ai_eval regression: AI picked sagittal stratum; corrected to literature-conventional sense
+SO,HOMBA:AA30157,stratum oriens of CA,ai_eval regression: AI picked supraoptic nucleus; corrected to literature-conventional sense
+SPA,HOMBA:266441555,subparaventricular zone,ai_eval regression: AI picked spinal artery system; corrected to literature-conventional sense

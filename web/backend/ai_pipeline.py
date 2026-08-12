@@ -16,16 +16,19 @@ Environment:
 
 from __future__ import annotations
 
+import csv
 import json
 import os
 import re
 import time
 import urllib.error
 import urllib.request
+from pathlib import Path
 from typing import Any
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEFAULT_MODEL = "deepseek-v4-flash"
+DICT_FILENAME = "homba_ai_reference_dict.csv"
 
 REMOVED_KINDS = {"laterality", "gene_or_marker", "cell_type", "method_or_other", "noise"}
 RELATIONS = {"'=", "<", ">"}
@@ -92,6 +95,9 @@ Relation is from the QUERY's perspective vs the chosen HOMBA entry:
 Rules:
 - Every homba_id MUST appear in candidates. Never invent IDs.
 - Prefer "'=" when a synonymous exact sense exists.
+- If curated_dictionary_hints are present, they are AUTHORITATIVE for the abbreviation sense
+  (they fix cases where HOMBA's own acronym field is unconventional). Prefer the hinted entry
+  when it appears in candidates.
 - If nothing is anatomically acceptable, return {"results": []}.
 - Do NOT invent filler results. Do NOT output confidence scores.
 - Do NOT use bare "=" ; only "'=", "<", ">".
@@ -113,6 +119,66 @@ Schema:
 
 def ai_available() -> bool:
     return bool(os.environ.get("DEEPSEEK_API_KEY"))
+
+
+_DICT_CACHE: list[dict[str, str]] | None = None
+
+
+def _dict_paths() -> list[Path]:
+    here = Path(__file__).resolve().parent
+    return [
+        here / "rcs" / DICT_FILENAME,  # Lambda zip layout
+        here.parent / "rcs" / DICT_FILENAME,  # local: web/backend -> repo rcs/
+        here.parent.parent / "rcs" / DICT_FILENAME,
+    ]
+
+
+def load_reference_dict() -> list[dict[str, str]]:
+    """Curated abbreviation -> HOMBA mapping, hand-maintained.
+
+    Referenced by postprocess so unconventional HOMBA acronyms do not mislead
+    the LLM (e.g. CN -> cerebellar deep nuclei, not cerebral nuclei)."""
+    global _DICT_CACHE
+    if _DICT_CACHE is not None:
+        return _DICT_CACHE
+    override = os.environ.get("AI_DICT_PATH")
+    paths = [Path(override)] if override else _dict_paths()
+    rows: list[dict[str, str]] = []
+    for path in paths:
+        if path.is_file():
+            with path.open(encoding="utf-8-sig", newline="") as fh:
+                for row in csv.DictReader(fh):
+                    ab = (row.get("abbrev") or "").strip()
+                    hid = (row.get("homba_id") or "").strip()
+                    if ab and hid:
+                        rows.append(
+                            {
+                                "abbrev": ab,
+                                "homba_id": hid,
+                                "homba_name": (row.get("homba_name") or "").strip(),
+                                "note": (row.get("note") or "").strip(),
+                            }
+                        )
+            break
+    _DICT_CACHE = rows
+    return rows
+
+
+def find_dict_hints(query: str) -> list[dict[str, str]]:
+    """Match curated abbreviations appearing in the query as whole tokens."""
+    if not query:
+        return []
+    hints: list[dict[str, str]] = []
+    seen: set[str] = set()
+    for row in load_reference_dict():
+        ab = row["abbrev"]
+        if ab.casefold() in seen:
+            continue
+        # case-sensitive word-boundary match (abbreviations are case-sensitive)
+        if re.search(rf"(?<![A-Za-z0-9]){re.escape(ab)}(?![A-Za-z0-9])", query):
+            hints.append(row)
+            seen.add(ab.casefold())
+    return hints
 
 
 def _model() -> str:
@@ -272,17 +338,28 @@ def postprocess(
     if not allowed:
         return {"results": [], "error": None}
 
+    hints = find_dict_hints(raw_query) or find_dict_hints(roi_query)
+    hint_ids = {h["homba_id"] for h in hints}
+
     lines = [
         f"raw_query={raw_query}",
         f"context={context.strip()}",
         f"roi_query={roi_query}",
         f"removed={json.dumps(removed, ensure_ascii=False)}",
-        "candidates:",
     ]
+    if hints:
+        lines.append("curated_dictionary_hints (authoritative):")
+        for h in hints:
+            lines.append(
+                f"  \"{h['abbrev']}\" conventionally maps to {h['homba_id']}"
+                f" ({h['homba_name']})"
+            )
+    lines.append("candidates:")
     for i, c in enumerate(candidates[:10], 1):
+        mark = "|CURATED" if str(c.get("homba_id") or "") in hint_ids else ""
         lines.append(
             f"  {i}. {c.get('homba_id')}|{c.get('acronym') or ''}|{c.get('name')}"
-            f"|score={c.get('score')}"
+            f"|score={c.get('score')}{mark}"
         )
     user = "\n".join(lines)
 
