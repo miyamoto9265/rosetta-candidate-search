@@ -33,6 +33,7 @@ rm -rf "$REPO_ROOT/dist"
 mkdir -p "$PACKAGE_DIR"
 
 cp "$REPO_ROOT/web/backend/lambda_function.py" "$PACKAGE_DIR/"
+cp "$REPO_ROOT/web/backend/ai_pipeline.py" "$PACKAGE_DIR/"
 cp -r "$REPO_ROOT/rcs" "$PACKAGE_DIR/rcs"
 rm -f "$PACKAGE_DIR/rcs/rcs_test_list.py" "$PACKAGE_DIR/rcs/rcs_test_interactive.py"
 find "$PACKAGE_DIR/rcs" -type d -name __pycache__ -exec rm -rf {} +

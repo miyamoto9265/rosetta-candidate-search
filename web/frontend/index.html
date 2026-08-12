@@ -82,7 +82,7 @@
         <div class="controls">
           <div class="control-group">
             <label for="topK">候補数</label>
-            <input id="topK" type="number" min="1" max="20" value="5" />
+            <input id="topK" type="number" min="1" max="20" value="10" />
           </div>
           <div class="control-group">
             <label for="dhbaFilter">DHBAフィルター</label>
@@ -95,12 +95,46 @@
           <button id="searchButton" type="button">検索</button>
         </div>
 
+        <div class="ai-toggles" aria-label="AI オプション">
+          <label class="toggle">
+            <input type="checkbox" id="useAiPreprocess" checked />
+            <span>AI 前処理（遺伝子・左右などを除去）</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="useAiPostprocess" checked />
+            <span>AI 判定（候補の最終選択＋関係）</span>
+          </label>
+        </div>
+
         <p id="status" class="status" role="status"></p>
+      </section>
+
+      <section class="results-card" id="aiCard" aria-label="AI 判定" hidden>
+        <div class="results-header">
+          <h2>AI 判定</h2>
+          <p id="aiSummary"></p>
+        </div>
+        <div id="aiPreprocess" class="ai-preprocess" hidden></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>順位</th>
+                <th>HOMBA ID</th>
+                <th>名称</th>
+                <th>Acronym</th>
+                <th>関係</th>
+                <th>理由</th>
+              </tr>
+            </thead>
+            <tbody id="aiResultsBody"></tbody>
+          </table>
+        </div>
       </section>
 
       <section class="results-card" aria-label="検索結果">
         <div class="results-header">
-          <h2>候補</h2>
+          <h2>RCS 候補</h2>
           <p id="summary"></p>
         </div>
         <div class="table-wrap">
@@ -141,7 +175,7 @@
         </nav>
         <p class="disclaimer">
           Official URL: <a href="https://rcs.mymt.site/">https://rcs.mymt.site/</a>
-          · Engine v0.8.0 · <a href="./about.html#contact">Contact / security</a>
+          · <span id="engineMeta">Engine</span> · <a href="./about.html#contact">Contact / security</a>
         </p>
       </div>
     </footer>

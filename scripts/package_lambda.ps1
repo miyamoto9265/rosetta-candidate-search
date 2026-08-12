@@ -47,6 +47,7 @@ if (Test-Path (Join-Path $RepoRoot "dist")) {
 New-Item -ItemType Directory -Path $PackageDir -Force | Out-Null
 
 Copy-Item (Join-Path $RepoRoot "web\backend\lambda_function.py") $PackageDir
+Copy-Item (Join-Path $RepoRoot "web\backend\ai_pipeline.py") $PackageDir
 Copy-Item -Recurse (Join-Path $RepoRoot "rcs") (Join-Path $PackageDir "rcs")
 
 # CLI scripts and playground output are not needed in Lambda.
