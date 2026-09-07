@@ -4,7 +4,8 @@ import sys
 import types
 from pathlib import Path
 
-os.environ["DEEPSEEK_API_KEY"] = ""
+if not os.environ.get("DEEPSEEK_API_KEY"):
+    raise SystemExit("DEEPSEEK_API_KEY is not set.")
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "web" / "backend"))
 sys.path.insert(0, str(REPO))
