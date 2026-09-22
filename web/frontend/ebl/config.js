@@ -1,4 +1,4 @@
-window.ROSETTA_SEARCH_CONFIG = (function () {
+﻿window.ROSETTA_SEARCH_CONFIG = (function () {
   const host = window.location.hostname;
   const local = host === "127.0.0.1" || host === "localhost";
   return {
@@ -6,7 +6,7 @@ window.ROSETTA_SEARCH_CONFIG = (function () {
     // Production uses API Gateway.
     apiBaseUrl: local
       ? window.location.origin
-      : "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com",
+      : "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com",
     candidatesPath: "/candidates-ebl",
   };
 })();

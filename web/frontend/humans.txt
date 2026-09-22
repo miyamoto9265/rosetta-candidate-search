@@ -1,7 +1,7 @@
-/* TEAM */
+﻿/* TEAM */
 Project: ROSETTA Candidate Search (RCS)
 Purpose: Research tool — map brain-region text to HOMBA ontology candidates
-Site: https://rcs.mymt.site/
+Site: https://d1kpmm576ika4i.cloudfront.net/
 
 /* SITE */
 Last update: 2026-06-25

@@ -1,6 +1,6 @@
-Contact: https://rcs.mymt.site/about.html#contact
+﻿Contact: https://d1kpmm576ika4i.cloudfront.net/about.html#contact
 Expires: 2027-06-25T00:00:00Z
 Preferred-Languages: ja, en
-Canonical: https://rcs.mymt.site/.well-known/security.txt
-Policy: https://rcs.mymt.site/about.html
-Acknowledgments: https://rcs.mymt.site/about.html
+Canonical: https://d1kpmm576ika4i.cloudfront.net/.well-known/security.txt
+Policy: https://d1kpmm576ika4i.cloudfront.net/about.html
+Acknowledgments: https://d1kpmm576ika4i.cloudfront.net/about.html

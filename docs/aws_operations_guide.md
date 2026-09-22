@@ -1,9 +1,11 @@
 # ROSETTA Candidate Search — AWS 運用ガイド
 
-**バージョン**: v0.3.1  
-**最終更新**: 2026-06-25
+**バージョン**: v0.4.0  
+**最終更新**: 2026-09-23
 
 本ドキュメントは、**構築済みの RCS 本番環境**を AWS CLI で運用・更新する手順を記す。GUI 操作手順は対象外とする。
+
+独自ドメイン（`rcs.mymt.site`）は使わない。公開 URL は CloudFront のデフォルトドメインのみ。
 
 ---
 
@@ -11,15 +13,20 @@
 
 | 項目 | 値 |
 |---|---|
-| AWS CLI | v2 以降 |
+| AWS CLI | v2 以降（`aws login` 利用時は 2.32.0 以降） |
+| CLI プロファイル | `rcs-org`（組織アカウント） |
 | デフォルトリージョン | `ap-northeast-1` |
 | 作業ディレクトリ | リポジトリルート |
-| アカウント ID | `618703232062` |
+| アカウント ID | `765959262011` |
+| IAM ユーザー | `miyamoto` |
 
 ```bash
-aws sts get-caller-identity
-aws configure get region   # ap-northeast-1 であること
+aws login --profile rcs-org
+aws sts get-caller-identity --profile rcs-org
+aws configure get region --profile rcs-org   # ap-northeast-1
 ```
+
+以降のコマンド例は `--profile rcs-org` を省略している場合がある。未設定なら付与するか、`AWS_PROFILE=rcs-org` を使う。
 
 ---
 
@@ -27,12 +34,10 @@ aws configure get region   # ap-northeast-1 であること
 
 | 対象 | プレフィックス | 例 |
 |---|---|---|
-| AWS リソース（S3 / Lambda / API Gateway / IAM） | `rcs-` | `rcs-api-data` |
+| AWS リソース（S3 / Lambda / API Gateway / IAM） | `rcs-` | `rcs-api-data-765959262011` |
 | S3 内の CSV ファイル（HOMBA オントロジーデータ） | `homba_` / `HOMBA_` | `homba_abbrev_rules.csv` |
 
-AWS リソース名は **ROSETTA Candidate Search (RCS)** に合わせて `rcs-` プレフィックスを使う。`homba` はオントロジー名であり、インフラの命名には使わない。
-
-S3 バケット名はグローバルで一意である必要がある。`rcs-data` / `rcs-web` は他アカウントに取得済みのため、現行環境では `rcs-api-data` / `rcs-api-web` を使用している。
+S3 バケット名はグローバルで一意である必要がある。個人アカウント時代の `rcs-api-data` / `rcs-api-web` は他で使用中のため、組織アカウントではアカウント ID サフィックス付きを使う。
 
 ---
 
@@ -43,26 +48,26 @@ S3 バケット名はグローバルで一意である必要がある。`rcs-dat
   |
   | HTTPS（静的ファイル）
   v
-CloudFront (E103PFXH9IO864)
-  |  Alternate domain: rcs.mymt.site
+CloudFront (EQ1U5DPE1OAUA / d1kpmm576ika4i.cloudfront.net)
+  |  独自ドメインなし（CloudFront デフォルト証明書）
   v
-S3 rcs-api-web
+S3 rcs-api-web-765959262011
   index.html, app.js, config.js, scoring-guide.html, ...
 
 利用者ブラウザ
   |
   | HTTPS POST /candidates
   v
-API Gateway HTTP API (rcs-http-api / zj7cl034xe)
+API Gateway HTTP API (rcs-http-api / hg2se72l61)
   |  Integration timeout: 30 s
   v
 Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
   |
   | 1) generator_cache.pkl をデシリアライズ（通常・約 0.1 s）
   | 2) 失敗時: 同梱 CSV から索引構築
-  | 3) それも不可: S3 rcs-api-data から CSV 取得して構築
+  | 3) それも不可: S3 rcs-api-data-765959262011 から CSV 取得して構築
   v
-（フォールバック時のみ）S3 rcs-api-data
+（フォールバック時のみ）S3 rcs-api-data-765959262011
   HOMBA_v1_fixed.csv, homba_*_rules.csv
 ```
 
@@ -70,12 +75,11 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 
 | サービス | 役割 |
 |---|---|
-| S3 `rcs-api-web` | 静的フロントエンド。CloudFront 経由で公開 |
-| CloudFront | HTTPS 配信、`rcs.mymt.site` の TLS 終端 |
-| Route 53 + ACM | カスタムドメイン DNS。ACM 証明書は **us-east-1** |
+| S3 `rcs-api-web-765959262011` | 静的フロントエンド。CloudFront 経由で公開 |
+| CloudFront | HTTPS 配信（デフォルト `*.cloudfront.net`） |
 | API Gateway HTTP API | `POST /candidates` の HTTPS エンドポイント |
 | Lambda `rcs-api` | 候補生成。デプロイ zip 内の `generator_cache.pkl` を優先ロード |
-| S3 `rcs-api-data` | CSV のフォールバック保管。Lambda IAM ロールから読み取り |
+| S3 `rcs-api-data-765959262011` | CSV のフォールバック保管。Lambda IAM ロールから読み取り |
 
 ---
 
@@ -83,29 +87,29 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 
 | 項目 | 値 |
 |---|---|
-| 検索 UI（正規 URL） | `https://rcs.mymt.site/` |
-| CloudFront URL | `https://d5keesfj4srwa.cloudfront.net/` |
-| API エンドポイント | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| Lambda 関数名 | `rcs-api` |
+| 検索 UI | `https://d1kpmm576ika4i.cloudfront.net/` |
+| API エンドポイント | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates` |
+| Lambda 関数名 | `rcs-api`（本番）、`rcs-ebl-api`（EBL テスト） |
 | Lambda ランタイム | `python3.14` |
-| Lambda メモリ / タイムアウト | 512 MB / 60 s |
+| Lambda メモリ / タイムアウト | `rcs-api`: 512 MB / 60 s · `rcs-ebl-api`: 1024 MB / 60 s |
 | Lambda ハンドラ | `lambda_function.lambda_handler` |
 | Lambda IAM ロール | `rcs-lambda-role` |
-| API Gateway 名 / ID | `rcs-http-api` / `zj7cl034xe` |
+| API Gateway 名 / ID | `rcs-http-api` / `hg2se72l61` |
 | API Gateway 統合タイムアウト | 30 s（`TimeoutInMillis: 30000`） |
-| S3 データバケット | `rcs-api-data` |
-| S3 フロントエンドバケット | `rcs-api-web` |
-| CloudFront ディストリビューション ID | `E103PFXH9IO864` |
-| CloudFront オリジン | `rcs-api-web.s3.ap-northeast-1.amazonaws.com` |
-| Route 53 ホストゾーン | `mymt.site`（`Z02353003AWQIVFUE50UY`） |
-| ACM 証明書（us-east-1） | `arn:aws:acm:us-east-1:618703232062:certificate/f7cbc93e-59a2-4411-8272-14cb06378e8d` |
+| S3 データバケット | `rcs-api-data-765959262011` |
+| S3 フロントエンドバケット | `rcs-api-web-765959262011` |
+| CloudFront ディストリビューション ID | `EQ1U5DPE1OAUA` |
+| CloudFront オリジン | `rcs-api-web-765959262011.s3.ap-northeast-1.amazonaws.com` |
+| CloudFront OAC | `E1VWRRRFQZPIX6` |
+
+独自ドメイン・Route 53・ACM（カスタム証明書）は使用しない。
 
 ### Lambda 環境変数（現状）
 
 | キー | 値 | 備考 |
 |---|---|---|
-| `HOMBA_BUCKET` | `rcs-api-data` | S3 フォールバック用 |
-| `ALLOWED_ORIGIN` | `*` | 本番では `https://rcs.mymt.site` 推奨 |
+| `HOMBA_BUCKET` | `rcs-api-data-765959262011` | S3 フォールバック用 |
+| `ALLOWED_ORIGIN` | `https://d1kpmm576ika4i.cloudfront.net` | CORS |
 | `DEEPSEEK_API_KEY` | （秘匿） | AI 統合用。未設定なら AI は自動 soft-fail（RCS のみ返却） |
 | `AI_MODEL` | `deepseek-v4-flash` | preprocess / postprocess に使う LLM |
 | `AI_HTTP_TIMEOUT_SEC` | `8` | LLM 呼出しごとのタイムアウト（API GW 30s 制約内） |
@@ -149,7 +153,8 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 aws lambda update-function-code `
   --function-name rcs-api `
   --zip-file fileb://dist/lambda.zip `
-  --region ap-northeast-1
+  --region ap-northeast-1 `
+  --profile rcs-org
 ```
 
 ```bash
@@ -158,7 +163,8 @@ aws lambda update-function-code `
 aws lambda update-function-code \
   --function-name rcs-api \
   --zip-file fileb://dist/lambda.zip \
-  --region ap-northeast-1
+  --region ap-northeast-1 \
+  --profile rcs-org
 ```
 
 索引キャッシュだけ再生成する場合:
@@ -182,11 +188,12 @@ rcs/
 ### 4-2. フロントエンドを更新する
 
 ```bash
-aws s3 sync web/frontend/ s3://rcs-api-web/ --exclude ".DS_Store"
+aws s3 sync web/frontend/ s3://rcs-api-web-765959262011/ --exclude ".DS_Store" --profile rcs-org
 
 aws cloudfront create-invalidation \
-  --distribution-id E103PFXH9IO864 \
-  --paths "/*"
+  --distribution-id EQ1U5DPE1OAUA \
+  --paths "/*" \
+  --profile rcs-org
 ```
 
 主な公開ファイル:
@@ -210,10 +217,10 @@ aws cloudfront create-invalidation \
 2. （推奨）S3 フォールバック用に同期:
 
 ```bash
-aws s3 cp rcs/HOMBA_v1_fixed.csv s3://rcs-api-data/HOMBA_v1_fixed.csv
-aws s3 cp rcs/homba_token_rules.csv s3://rcs-api-data/homba_token_rules.csv
-aws s3 cp rcs/homba_alias_rules.csv s3://rcs-api-data/homba_alias_rules.csv
-aws s3 cp rcs/homba_abbrev_rules.csv s3://rcs-api-data/homba_abbrev_rules.csv
+aws s3 cp rcs/HOMBA_v1_fixed.csv s3://rcs-api-data-765959262011/HOMBA_v1_fixed.csv --profile rcs-org
+aws s3 cp rcs/homba_token_rules.csv s3://rcs-api-data-765959262011/homba_token_rules.csv --profile rcs-org
+aws s3 cp rcs/homba_alias_rules.csv s3://rcs-api-data-765959262011/homba_alias_rules.csv --profile rcs-org
+aws s3 cp rcs/homba_abbrev_rules.csv s3://rcs-api-data-765959262011/homba_abbrev_rules.csv --profile rcs-org
 ```
 
 3. `package_lambda` → Lambda 再デプロイ（**必須**。キャッシュ再生成込み）
@@ -225,7 +232,7 @@ aws s3 cp rcs/homba_abbrev_rules.csv s3://rcs-api-data/homba_abbrev_rules.csv
 ### API（本番）
 
 ```bash
-curl -sS -X POST "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates" \
+curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates" \
   -H "Content-Type: application/json" \
   -d '{"query":"Pulvinar nucleus","top_k":5}'
 ```
@@ -241,6 +248,7 @@ aws lambda invoke \
   --function-name rcs-api \
   --cli-binary-format raw-in-base64-out \
   --payload '{"requestContext":{"http":{"method":"POST"}},"body":"{\"query\":\"Pulvinar nucleus\",\"top_k\":5}"}' \
+  --profile rcs-org \
   /tmp/rcs-response.json
 
 cat /tmp/rcs-response.json
@@ -249,11 +257,11 @@ cat /tmp/rcs-response.json
 ### リソース状態の確認
 
 ```bash
-aws lambda get-function-configuration --function-name rcs-api \
+aws lambda get-function-configuration --function-name rcs-api --profile rcs-org \
   --query "{Runtime:Runtime,Timeout:Timeout,MemorySize:MemorySize,LastModified:LastModified}"
 
-aws s3 ls s3://rcs-api-data/
-aws s3 ls s3://rcs-api-web/ --recursive --human-readable --summarize
+aws s3 ls s3://rcs-api-data-765959262011/ --profile rcs-org
+aws s3 ls s3://rcs-api-web-765959262011/ --recursive --human-readable --summarize --profile rcs-org
 ```
 
 ---
@@ -263,9 +271,10 @@ aws s3 ls s3://rcs-api-web/ --recursive --human-readable --summarize
 | スクリプト | 用途 |
 |---|---|
 | `scripts/package_lambda.ps1` / `.sh` | キャッシュ生成 + デプロイ zip 作成 |
+| `scripts/package_lambda_ebl.ps1` | EBL 用 Lambda zip 作成 |
 | `scripts/build_generator_cache.py` | `generator_cache.pkl` のみ再生成 |
-| `scripts/update_cloudfront_rcs.py` | CloudFront の Alternate domain / ACM 証明書を `rcs.mymt.site` に更新 |
-| `scripts/route53_rcs_change.json` | Route 53 変更セット（DNS 移行時の参考） |
+| `scripts/update_cloudfront_rcs.py` | **廃止**（独自ドメイン設定用。使わない） |
+| `scripts/route53_rcs_change.json` | **廃止**（DNS 移行参考。使わない） |
 
 ---
 
@@ -286,15 +295,15 @@ Lambda 直接呼び出しで `{"query":"..."}` のみ渡した場合に発生す
 ### 403 Forbidden / S3 アクセスエラー
 
 ```bash
-aws lambda get-function-configuration --function-name rcs-api --query Role
-aws iam list-role-policies --role-name rcs-lambda-role
+aws lambda get-function-configuration --function-name rcs-api --query Role --profile rcs-org
+aws iam list-role-policies --role-name rcs-lambda-role --profile rcs-org
 ```
 
-ロール `rcs-lambda-role` に `rcs-api-data` の `s3:GetObject` / `s3:ListBucket` があること、`HOMBA_BUCKET` が `s3://` なしで `rcs-api-data` であることを確認する。
+ロール `rcs-lambda-role` に `rcs-api-data-765959262011` の `s3:GetObject` / `s3:ListBucket` があること、`HOMBA_BUCKET` が `s3://` なしで `rcs-api-data-765959262011` であることを確認する。
 
 ### `NoSuchKey` / 500 エラー
 
-S3 フォールバック経路で CSV が欠けている。`aws s3 ls s3://rcs-api-data/` で4ファイルの存在を確認する。
+S3 フォールバック経路で CSV が欠けている。`aws s3 ls s3://rcs-api-data-765959262011/ --profile rcs-org` で4ファイルの存在を確認する。
 
 ### データ更新が反映されない
 
@@ -303,7 +312,7 @@ zip 内の `generator_cache.pkl` が古い。CSV 更新後に `package_lambda` �
 ### CloudWatch Logs
 
 ```bash
-aws logs tail /aws/lambda/rcs-api --since 30m --format short
+aws logs tail /aws/lambda/rcs-api --since 30m --format short --profile rcs-org
 ```
 
 ---
@@ -314,33 +323,13 @@ aws logs tail /aws/lambda/rcs-api --since 30m --format short
 |---|---|---|
 | API Gateway 統合タイムアウト | 30 s | クライアントが受け取れる最大応答時間 |
 | Lambda タイムアウト | 60 s | API Gateway より長く設定されていても、30 s で 504 になる |
-| Lambda メモリ | 512 MB | CPU 割当も連動。重いクエリはメモリ増で改善する可能性あり |
+| Lambda メモリ | 512 MB（`rcs-api`） | CPU 割当も連動。重いクエリはメモリ増で改善する可能性あり |
 
 ---
 
-## 9. DNS / CloudFront（参考）
+## 9. セキュリティ上の推奨
 
-カスタムドメイン `rcs.mymt.site` は Route 53 の A/AAAA エイリアスで CloudFront `d5keesfj4srwa.cloudfront.net` を指す。CloudFront の TLS 証明書は us-east-1 の ACM を使用する。
-
-CloudFront 設定変更の例（`scripts/update_cloudfront_rcs.py` と同等）:
-
-```bash
-python scripts/update_cloudfront_rcs.py
-```
-
-Route 53 レコード変更:
-
-```bash
-aws route53 change-resource-record-sets \
-  --hosted-zone-id Z02353003AWQIVFUE50UY \
-  --change-batch file://scripts/route53_rcs_change.json
-```
-
----
-
-## 10. セキュリティ上の推奨
-
-- `ALLOWED_ORIGIN` を `https://rcs.mymt.site` に限定する
+- `ALLOWED_ORIGIN` を CloudFront URL に限定する（現行どおり）
 - S3 バケットはパブリックアクセスブロックを維持する（CloudFront OAC 経由のみ配信）
 - 追加のアクセス制限が必要な場合は CloudFront Functions または Cognito を検討する
 

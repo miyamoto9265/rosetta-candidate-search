@@ -1,7 +1,7 @@
-# ROSETTA Candidate Search — API 仕様
+﻿# ROSETTA Candidate Search — API 仕様
 
 **バージョン**: v0.9.0  
-**最終更新**: 2026-08-12
+**最終更新**: 2026-09-23
 
 > **v0.9.0:** AI 統合を追加。`use_ai_preprocess` / `use_ai_postprocess`（いずれも既定 ON）、
 > `preprocess` / `ai` / `meta` ブロック。詳細は [AI 統合仕様](ai_integration_spec.md)。
@@ -12,12 +12,11 @@
 
 | 用途 | URL |
 |---|---|
-| **API** | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| **フロントエンド（検索 UI）** | `https://rcs.mymt.site/` |
-| **CloudFront（代替 URL）** | `https://d5keesfj4srwa.cloudfront.net/` |
+| **API** | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates` |
+| **フロントエンド（検索 UI）** | `https://d1kpmm576ika4i.cloudfront.net/` |
 
 ```
-POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates
+POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates
 Content-Type: application/json
 ```
 
@@ -205,7 +204,7 @@ Content-Type: application/json
 ## 5. 呼び出し例
 
 ```bash
-curl -X POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates \
+curl -X POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates \
   -H "Content-Type: application/json" \
   -d '{"query": "Pulvinar nucleus", "top_k": 5}'
 ```
@@ -213,7 +212,7 @@ curl -X POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candida
 ```python
 import requests
 
-API_URL = "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates"
+API_URL = "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates"
 resp = requests.post(API_URL, json={"query": "Pulvinar nucleus", "top_k": 5})
 resp.raise_for_status()
 for c in resp.json()["candidates"]:

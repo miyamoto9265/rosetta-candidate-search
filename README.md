@@ -9,13 +9,14 @@ API v0.9.0 から AI 統合（preprocess: クエリ清掃 / postprocess: 候補�
 
 | 項目 | URL |
 |---|---|
-| 検索 UI | https://rcs.mymt.site/ |
-| CloudFront（代替） | https://d5keesfj4srwa.cloudfront.net/ |
-| API | `POST https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| Reports（最新） | https://rcs.mymt.site/reports/2026-08-12.html |
+| 検索 UI | https://d1kpmm576ika4i.cloudfront.net/ |
+| API | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates` |
+| Reports（最新） | https://d1kpmm576ika4i.cloudfront.net/reports/2026-08-12.html |
+
+AWS アカウント `765959262011`（CLI プロファイル `rcs-org`）。独自ドメインは使わない。
 
 ```bash
-curl -sS -X POST "https://zj7cl034xe.execute-api.ap-northeast-1.amazonaws.com/candidates" \
+curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates" \
   -H "Content-Type: application/json" \
   -d '{"query":"right NAc Drd1 neurons","top_k":10}'
 # AI を切る場合: "use_ai_preprocess":false, "use_ai_postprocess":false
@@ -64,7 +65,7 @@ docs/             仕様書
 - AI 統合: preprocess（laterality・遺伝子・細胞型などの除去）→ RCS → postprocess（候補 0–4 件＋関係ラベル `'=`/`<`/`>`）
 - `use_ai_preprocess` / `use_ai_postprocess`（いずれも既定 ON）、`context`（自由記述の判断材料）
 - `candidates` は常に RCS 生ランキング。AI は soft-fail（失敗時も検索は成功）
-- 評価: [AI on/off 比較レポート](https://rcs.mymt.site/reports/2026-08-12/ai_eval_report.html)
+- 評価: [AI on/off 比較レポート](https://d1kpmm576ika4i.cloudfront.net/reports/2026-08-12/ai_eval_report.html)
 
 ## v0.8.0 の要点
 
@@ -89,9 +90,9 @@ python rcs/rcs_test_list.py
 ```powershell
 # Lambda
 .\scripts\package_lambda.ps1
-aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1
+aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1 --profile rcs-org
 
 # フロント
-aws s3 sync web/frontend/ s3://rcs-api-web/ --exclude ".DS_Store"
-aws cloudfront create-invalidation --distribution-id E103PFXH9IO864 --paths "/*"
+aws s3 sync web/frontend/ s3://rcs-api-web-765959262011/ --exclude ".DS_Store" --profile rcs-org
+aws cloudfront create-invalidation --distribution-id EQ1U5DPE1OAUA --paths "/*" --profile rcs-org
 ```
