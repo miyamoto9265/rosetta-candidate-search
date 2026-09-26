@@ -1,6 +1,6 @@
-﻿Contact: https://d1kpmm576ika4i.cloudfront.net/about.html#contact
+Contact: https://rcs.cobrac.site/about.html#contact
 Expires: 2027-06-25T00:00:00Z
 Preferred-Languages: ja, en
-Canonical: https://d1kpmm576ika4i.cloudfront.net/.well-known/security.txt
-Policy: https://d1kpmm576ika4i.cloudfront.net/about.html
-Acknowledgments: https://d1kpmm576ika4i.cloudfront.net/about.html
+Canonical: https://rcs.cobrac.site/.well-known/security.txt
+Policy: https://rcs.cobrac.site/about.html
+Acknowledgments: https://rcs.cobrac.site/about.html

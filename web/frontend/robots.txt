@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://d1kpmm576ika4i.cloudfront.net/sitemap.xml
+Sitemap: https://rcs.cobrac.site/sitemap.xml
