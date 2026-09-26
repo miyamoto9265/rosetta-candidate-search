@@ -1,0 +1,13 @@
+---
+description: SABRA / HOMBA / DHBA / BNA terminology used across RCS, RCS_EBL and the MCP server
+alwaysApply: true
+---
+
+# SABRA terminology
+
+- **SABRA** = Standardized Ontology of Anatomies for Brain Reference Architecture: the organisation's mixed atlas of region names.
+  - **BNA** (Brainnetome, 246 labels): neocortex 210 (IDs 1-210) + subcortical nuclei 36 (IDs 211-246: amygdala, hippocampus, basal ganglia, thalamus).
+  - **DHBA** for every other region. DHBA terms = HOMBA terms with a `DHBA_name` (`dhba_filter="with"`).
+- SABRA has no IDs of its own. Never label HOMBA output or BNA output alone as "SABRA"; say HOMBA / DHBA / BNA, and use "SABRA" only for the combined atlas or for the BNA-vs-DHBA classification.
+- RCS (`rcs/`) = HOMBA → the DHBA side. RCS_EBL (`rcs_ebl/`) = BNA side. MCP (`web/backend/mcp_function.py`) exposes both.
+- The single source of truth is `rcs/sabra.py` (constants, HOMBA boundary roots, classifiers) plus `docs/sabra.md`. Change both together; do not hard-code SABRA boundaries elsewhere.

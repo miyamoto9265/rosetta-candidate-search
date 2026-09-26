@@ -1,7 +1,8 @@
 """AWS Lambda backend for RCS_EBL (literature name → BNA candidates).
 
-Bundled data: rcs/ (matcher + rules), rcs_ebl/, ebl_data/ (rcs_ready tables).
-No AI pipeline; independent from HOMBA rcs-api.
+Bundled data: rcs/ (matcher + rules), rcs_ebl/, ebl_data/ (rcs_ready tables),
+rcs_ebl/ebl_generator_cache.pkl (pre-built matcher; CSV rebuild is the fallback).
+No AI pipeline; independent from HOMBA rcs-api. Within SABRA this is the BNA side.
 """
 
 from __future__ import annotations
@@ -44,8 +45,28 @@ def _rules_dir() -> Path:
     return _ROOT.parent / "rcs"
 
 
+def _load_from_cache() -> EblCandidateGenerator | None:
+    from rcs_ebl.ebl_cache import DEFAULT_CACHE_FILENAME, EblCacheError, load_ebl_cache
+
+    cache_path = Path(
+        os.environ.get("RCS_EBL_CACHE_PATH") or _ROOT / "rcs_ebl" / DEFAULT_CACHE_FILENAME
+    )
+    if not cache_path.is_file():
+        return None
+    try:
+        return load_ebl_cache(cache_path)
+    except EblCacheError as exc:
+        logger.warning("EBL cache rejected: %s", exc)
+    except Exception:
+        logger.exception("EBL cache load failed")
+    return None
+
+
 def get_generator() -> EblCandidateGenerator:
     global GENERATOR
+    if GENERATOR is not None:
+        return GENERATOR
+    GENERATOR = _load_from_cache()
     if GENERATOR is not None:
         return GENERATOR
     data = _data_dir()
@@ -74,6 +95,36 @@ def response(status_code: int, body: dict[str, object]) -> dict[str, object]:
     }
 
 
+def normalize_search_params(payload: dict) -> dict[str, object]:
+    """Validate/clamp request fields shared by the HTTP API and the MCP tool."""
+    level = str(payload.get("level", "l3")).strip().lower()
+    return {
+        "query": str(payload.get("query", "")).strip(),
+        "context": str(payload.get("context", "") or "").strip(),
+        "top_k": max(1, min(int(payload.get("top_k", 10)), 30)),
+        "level": level if level in ("l3", "l2") else "l3",
+        "name_top_k": max(1, min(int(payload.get("name_top_k", 5)), 15)),
+    }
+
+
+def run_search(query: str, context: str, top_k: int, level: str, name_top_k: int) -> dict[str, object]:
+    candidates = get_generator().generate(query, top_k=top_k, name_top_k=name_top_k, level=level)
+    return {
+        "query": query,
+        "context": context,
+        "top_k": top_k,
+        "level": level,
+        "use_ai_preprocess": False,
+        "use_ai_postprocess": False,
+        "candidates": candidates,
+        "meta": {
+            "rcs_ebl_version": ENGINE_VERSION,
+            "base_rcs_version": RCS_ENGINE_VERSION,
+            "engine": "RCS_EBL",
+        },
+    }
+
+
 def lambda_handler(event, context):
     method = (
         (event.get("requestContext") or {}).get("http", {}).get("method")
@@ -84,37 +135,10 @@ def lambda_handler(event, context):
         return response(200, {"ok": True})
 
     try:
-        payload = json.loads(event.get("body") or "{}")
-        query = str(payload.get("query", "")).strip()
-        if not query:
+        params = normalize_search_params(json.loads(event.get("body") or "{}"))
+        if not params["query"]:
             return response(400, {"error": "query is required"})
-
-        top_k = int(payload.get("top_k", 10))
-        top_k = max(1, min(top_k, 30))
-        level = str(payload.get("level", "l3")).strip().lower()
-        if level not in ("l3", "l2"):
-            level = "l3"
-        name_top_k = int(payload.get("name_top_k", 5))
-        name_top_k = max(1, min(name_top_k, 15))
-
-        candidates = get_generator().generate(
-            query, top_k=top_k, name_top_k=name_top_k, level=level
-        )
-        body: dict[str, object] = {
-            "query": query,
-            "context": str(payload.get("context", "")).strip(),
-            "top_k": top_k,
-            "level": level,
-            "use_ai_preprocess": False,
-            "use_ai_postprocess": False,
-            "candidates": candidates,
-            "meta": {
-                "rcs_ebl_version": ENGINE_VERSION,
-                "base_rcs_version": RCS_ENGINE_VERSION,
-                "engine": "RCS_EBL",
-            },
-        }
-        return response(200, body)
+        return response(200, run_search(**params))  # type: ignore[arg-type]
     except Exception as exc:  # noqa: BLE001
         logger.exception("RCS_EBL handler failed")
         return response(500, {"error": str(exc)})

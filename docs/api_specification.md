@@ -1,10 +1,13 @@
-﻿# ROSETTA Candidate Search — API 仕様
+# ROSETTA Candidate Search — API 仕様
 
 **バージョン**: v0.9.0  
-**最終更新**: 2026-09-23
+**最終更新**: 2026-09-27
 
 > **v0.9.0:** AI 統合を追加。`use_ai_preprocess` / `use_ai_postprocess`（いずれも既定 ON）、
 > `preprocess` / `ai` / `meta` ブロック。詳細は [AI 統合仕様](ai_integration_spec.md)。
+>
+> **2026-09-27:** RCS_EBL（`POST /candidates-ebl`、§7）と MCP サーバー（`/mcp`、§8）を追記。
+> `/candidates` のリクエスト・レスポンスに変更はない。SABRA との関係は [SABRA 定義](sabra.md)。
 
 ---
 
@@ -13,7 +16,9 @@
 | 用途 | URL |
 |---|---|
 | **API** | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| **フロントエンド（検索 UI）** | `https://d1kpmm576ika4i.cloudfront.net/` |
+| **RCS_EBL API**（BNA、§7） | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates-ebl` |
+| **MCP**（Bearer 認証、§8） | `https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp` |
+| **フロントエンド（検索 UI）** | `https://rcs.cobrac.site/` |
 
 ```
 POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates
@@ -235,7 +240,80 @@ aws lambda invoke \
 
 ---
 
-## 7. フロントエンド Web アプリ
+## 7. RCS_EBL API（`POST /candidates-ebl`）
+
+文献上の領域名 → BNA（Brainnetome Atlas）領域の**確率分布**を返す。SABRA の BNA 部分に相当。AI なし。
+実装: `rcs_ebl/`、`web/backend/lambda_function_ebl.py`（Lambda `rcs-ebl-api`）。
+
+### リクエスト
+
+| フィールド | 型 | 必須 | 説明 |
+|---|---|---|---|
+| `query` | string | **必須** | 領域名（left/right/bilateral を含めると `bna_label_id` が決まる） |
+| `top_k` | integer | 任意 | 1〜30、既定 `10` |
+| `level` | string | 任意 | `"l3"`（既定、BNA 領域）/ `"l2"`（脳回） |
+| `name_top_k` | integer | 任意 | 統合する文献名の数 1〜15、既定 `5`（exact 一致があればそれを優先） |
+| `context` | string | 任意 | エコーのみ（処理には使わない） |
+
+### レスポンス
+
+`query` / `context` / `top_k` / `level` / `use_ai_preprocess: false` / `use_ai_postprocess: false` /
+`meta`（`rcs_ebl_version`, `base_rcs_version`, `engine: "RCS_EBL"`）/ `candidates`。
+
+`candidates` の主なフィールド:
+
+| フィールド | 説明 |
+|---|---|
+| `bna_area_abbr` / `bna_area_name` | BNA 領域（l2 のときは脳回） |
+| `bna_l2_abbr` / `bna_l3_code` | 脳回略称 / L3 コード |
+| `bna_label_id_l` / `bna_label_id_r` / `bna_label_id` | BNA ラベル ID（1–246）。`bna_label_id` はクエリの左右から決定（不明なら空） |
+| `laterality` | `left` / `right` / `bilateral` / `unknown` |
+| `p_raw` | 文献座標に基づく確率（主指標）。`p` は平滑化済み（参考） |
+| `score` | 名前一致スコア × `p_raw` |
+| `match_score` / `matched_lit_name` / `methods` | 文献名との照合結果 |
+| `k_papers` / `eff_n` / `n_papers` | 信頼性（支持論文数、分布の広がり: 1 ≈ 一意） |
+| `homba_id` / `name` / `acronym` / `dhba_name` / `dhba_acronym` | **Web UI 互換の別名**（`homba_id` は `BNA:<abbr>` 形式で HOMBA ID ではない）。MCP では除去 |
+
+```bash
+curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates-ebl" \
+  -H "Content-Type: application/json" -d '{"query":"left DLPFC","top_k":3}'
+```
+
+---
+
+## 8. MCP サーバー（`/mcp`）
+
+AI エージェント（cobrac-web の Codex SDK 等）向けのリモート MCP サーバー。Lambda `rcs-mcp`、実装 `web/backend/mcp_function.py`。
+
+| 項目 | 値 |
+|---|---|
+| トランスポート | Streamable HTTP（ステートレス）。POST 1 JSON-RPC メッセージ → `application/json` 1 件 |
+| プロトコル版 | `2025-06-18` / `2025-03-26` / `2024-11-05` |
+| 認証 | `Authorization: Bearer <token>`（不一致・なしは 401） |
+| 非対応 | GET（SSE）/ DELETE は 405、セッション ID は発行しない |
+
+### ツール
+
+| ツール | 入力 | 出力 |
+|---|---|---|
+| `search_homba_candidates` | `query`（必須）, `context`, `top_k`（既定 5）, `dhba_filter`, `use_ai`（既定 true: pre/post 両方） | §3 と同じ本文 ＋ `candidates[]` と `ai.results[]` の各要素に `sabra` |
+| `search_bna_candidates` | `query`（必須）, `top_k`（既定 10）, `level`, `name_top_k` | §7 と同じ本文（UI 互換別名を除く）＋ 各候補に `sabra` |
+| `get_homba_term` | `homba_id`（`HOMBA:10339` / `10339`） | 名称・DHBA 対応・`sabra`・`ancestors`（ルートから）・`children` |
+| `get_sabra_definition` | なし | SABRA 定義（`rcs/sabra.py`） |
+
+ツール結果は `structuredContent`（JSON）と同内容の `content[0].text` で返す。入力不正は `isError: true`。
+
+`sabra` 注釈（定義は [SABRA 定義](sabra.md)）:
+
+| 形 | 意味 |
+|---|---|
+| `{"atlas":"DHBA","dhba_name","dhba_acronym","dhba_homba_id","dhba_exact"}` | SABRA では DHBA 名で表す。`dhba_exact: false` は祖先の DHBA 名 |
+| `{"atlas":"BNA","bna_territory","bna_territory_root"}` | HOMBA 項が BNA 担当範囲。SABRA 名は `search_bna_candidates` で得る |
+| `{"atlas":"BNA","bna_division":"cortical"\|"subcortical"}` | BNA 候補（ラベル 1–210 / 211–246） |
+
+---
+
+## 9. フロントエンド Web アプリ
 
 `web/frontend/` に静的フロントエンドが存在し、S3 + CloudFront で配信している。
 

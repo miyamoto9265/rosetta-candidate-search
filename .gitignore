@@ -19,6 +19,7 @@ Thumbs.db
 # Lambda build artifact
 dist/
 rcs/generator_cache.pkl
+rcs_ebl/ebl_generator_cache.pkl
 
 # Auto-improve local cache / heavy run dumps (keep scripts + summaries tracked)
 archive/

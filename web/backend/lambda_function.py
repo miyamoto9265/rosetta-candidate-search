@@ -146,70 +146,87 @@ def _bool(payload: dict, key: str, default: bool) -> bool:
     return bool(v)
 
 
+def normalize_search_params(payload: dict) -> dict[str, object]:
+    """Validate/clamp request fields shared by the HTTP API and the MCP tool."""
+    top_k = int(payload.get("top_k", 10))
+    dhba_filter = str(payload.get("dhba_filter", "both")).strip().lower()
+    if dhba_filter not in ("both", "with", "without"):
+        dhba_filter = "both"
+    return {
+        "query": str(payload.get("query", "")).strip(),
+        "context": str(payload.get("context", "") or "").strip(),
+        "top_k": max(1, min(top_k, 20)),
+        "dhba_filter": dhba_filter,
+        "use_ai_preprocess": _bool(payload, "use_ai_preprocess", True),
+        "use_ai_postprocess": _bool(payload, "use_ai_postprocess", True),
+    }
+
+
+def run_search(
+    query: str,
+    context: str,
+    top_k: int,
+    dhba_filter: str,
+    use_ai_preprocess: bool,
+    use_ai_postprocess: bool,
+) -> dict[str, object]:
+    ai_ok = ai_pipeline.ai_available()
+    ai_model_used: str | None = None
+    ai_model_env = os.environ.get("AI_MODEL") or ai_pipeline.DEFAULT_MODEL
+
+    body: dict[str, object] = {
+        "query": query,
+        "context": context,
+        "top_k": top_k,
+        "dhba_filter": dhba_filter,
+        "use_ai_preprocess": use_ai_preprocess,
+        "use_ai_postprocess": use_ai_postprocess,
+        "meta": {"rcs_version": ENGINE_VERSION, "ai_model": None},
+    }
+
+    # --- preprocess ---
+    search_query = query
+    removed: list[dict[str, str]] = []
+    if use_ai_preprocess and ai_ok:
+        pre = ai_pipeline.preprocess(query, context)
+        ai_model_used = ai_model_used or ai_model_env
+        body["preprocess"] = {
+            "roi_query": pre["roi_query"],
+            "removed": pre["removed"],
+            "reason": pre["reason"],
+            "error": pre["error"],
+        }
+        if not pre["error"]:
+            search_query = pre["roi_query"]
+            removed = pre["removed"]
+
+    # --- RCS ---
+    internal_k = max(top_k, 10) if (use_ai_postprocess and ai_ok) else top_k
+    candidates = get_generator().generate(
+        search_query, top_k=internal_k, dhba_filter=dhba_filter
+    )
+    body["candidates"] = candidates[:top_k]
+
+    # --- postprocess ---
+    if use_ai_postprocess and ai_ok:
+        post = ai_pipeline.postprocess(query, search_query, removed, candidates, context)
+        ai_model_used = ai_model_used or ai_model_env
+        body["ai"] = {"results": post["results"], "error": post["error"]}
+
+    if ai_model_used:
+        body["meta"]["ai_model"] = ai_model_used  # type: ignore[index]
+
+    return body
+
+
 def lambda_handler(event, context):
     if event.get("requestContext", {}).get("http", {}).get("method") == "OPTIONS":
         return response(200, {"ok": True})
 
     try:
-        payload = json.loads(event.get("body") or "{}")
-        query = str(payload.get("query", "")).strip()
-        context = str(payload.get("context", "")).strip()
-        top_k = int(payload.get("top_k", 10))
-        top_k = max(1, min(top_k, 20))
-        dhba_filter = str(payload.get("dhba_filter", "both")).strip().lower()
-        if dhba_filter not in ("both", "with", "without"):
-            dhba_filter = "both"
-        use_ai_preprocess = _bool(payload, "use_ai_preprocess", True)
-        use_ai_postprocess = _bool(payload, "use_ai_postprocess", True)
-        if not query:
+        params = normalize_search_params(json.loads(event.get("body") or "{}"))
+        if not params["query"]:
             return response(400, {"error": "query is required"})
-
-        ai_ok = ai_pipeline.ai_available()
-        ai_model_used: str | None = None
-        ai_model_env = os.environ.get("AI_MODEL") or ai_pipeline.DEFAULT_MODEL
-
-        body: dict[str, object] = {
-            "query": query,
-            "context": context,
-            "top_k": top_k,
-            "dhba_filter": dhba_filter,
-            "use_ai_preprocess": use_ai_preprocess,
-            "use_ai_postprocess": use_ai_postprocess,
-            "meta": {"rcs_version": ENGINE_VERSION, "ai_model": None},
-        }
-
-        # --- preprocess ---
-        search_query = query
-        removed: list[dict[str, str]] = []
-        if use_ai_preprocess and ai_ok:
-            pre = ai_pipeline.preprocess(query, context)
-            ai_model_used = ai_model_used or ai_model_env
-            body["preprocess"] = {
-                "roi_query": pre["roi_query"],
-                "removed": pre["removed"],
-                "reason": pre["reason"],
-                "error": pre["error"],
-            }
-            if not pre["error"]:
-                search_query = pre["roi_query"]
-                removed = pre["removed"]
-
-        # --- RCS ---
-        internal_k = max(top_k, 10) if (use_ai_postprocess and ai_ok) else top_k
-        candidates = get_generator().generate(
-            search_query, top_k=internal_k, dhba_filter=dhba_filter
-        )
-        body["candidates"] = candidates[:top_k]
-
-        # --- postprocess ---
-        if use_ai_postprocess and ai_ok:
-            post = ai_pipeline.postprocess(query, search_query, removed, candidates, context)
-            ai_model_used = ai_model_used or ai_model_env
-            body["ai"] = {"results": post["results"], "error": post["error"]}
-
-        if ai_model_used:
-            body["meta"]["ai_model"] = ai_model_used  # type: ignore[index]
-
-        return response(200, body)
+        return response(200, run_search(**params))  # type: ignore[arg-type]
     except Exception as exc:
         return response(500, {"error": str(exc)})

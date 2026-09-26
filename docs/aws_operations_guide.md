@@ -1,11 +1,13 @@
 # ROSETTA Candidate Search — AWS 運用ガイド
 
-**バージョン**: v0.4.0  
-**最終更新**: 2026-09-23
+**バージョン**: v0.5.0  
+**最終更新**: 2026-09-27
+
+> **v0.5.0:** MCP サーバー `rcs-mcp`（`/mcp`）を追加。RCS_EBL 索引キャッシュを導入。SABRA 用語を採用（[SABRA 定義](sabra.md)）。
 
 本ドキュメントは、**構築済みの RCS 本番環境**を AWS CLI で運用・更新する手順を記す。GUI 操作手順は対象外とする。
 
-独自ドメイン（`rcs.mymt.site`）は使わない。公開 URL は CloudFront のデフォルトドメインのみ。
+公開 URL は `https://rcs.cobrac.site/`（CloudFront `EQ1U5DPE1OAUA`）。DNS は個人アカウント Route 53（`cobrac.site` / `Z03061213087DIHGCR2EP`）、証明書・CloudFront は組織アカウント。
 
 ---
 
@@ -48,8 +50,8 @@ S3 バケット名はグローバルで一意である必要がある。個人�
   |
   | HTTPS（静的ファイル）
   v
-CloudFront (EQ1U5DPE1OAUA / d1kpmm576ika4i.cloudfront.net)
-  |  独自ドメインなし（CloudFront デフォルト証明書）
+CloudFront (EQ1U5DPE1OAUA / rcs.cobrac.site)
+  |  カスタムドメイン + ACM（us-east-1）
   v
 S3 rcs-api-web-765959262011
   index.html, app.js, config.js, scoring-guide.html, ...
@@ -69,6 +71,15 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
   v
 （フォールバック時のみ）S3 rcs-api-data-765959262011
   HOMBA_v1_fixed.csv, homba_*_rules.csv
+
+同じ API Gateway の他ルート:
+  POST /candidates-ebl → Lambda rcs-ebl-api（RCS_EBL: 文献名 → BNA。ebl_generator_cache.pkl を優先ロード）
+  ANY  /mcp            → Lambda rcs-mcp（MCP。rcs-api と同じ zip。RCS と RCS_EBL の両方を import）
+
+MCP クライアント（cobrac-web の Codex エージェント等）
+  | HTTPS POST /mcp  Authorization: Bearer <token>
+  v
+API Gateway → Lambda rcs-mcp
 ```
 
 ### 各サービスの役割
@@ -76,10 +87,12 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 | サービス | 役割 |
 |---|---|
 | S3 `rcs-api-web-765959262011` | 静的フロントエンド。CloudFront 経由で公開 |
-| CloudFront | HTTPS 配信（デフォルト `*.cloudfront.net`） |
-| API Gateway HTTP API | `POST /candidates` の HTTPS エンドポイント |
+| CloudFront | HTTPS 配信（`rcs.cobrac.site`） |
+| API Gateway HTTP API | `POST /candidates`・`POST /candidates-ebl`・`ANY /mcp` の HTTPS エンドポイント |
 | Lambda `rcs-api` | 候補生成。デプロイ zip 内の `generator_cache.pkl` を優先ロード |
+| Lambda `rcs-ebl-api` | RCS_EBL（BNA 候補。SABRA の BNA 部分）。別 zip（`package_lambda_ebl.ps1`） |
 | S3 `rcs-api-data-765959262011` | CSV のフォールバック保管。Lambda IAM ロールから読み取り |
+| Lambda `rcs-mcp` | リモート MCP サーバー（`ANY /mcp`）。`rcs-api` と同じ zip。HOMBA（RCS）と BNA（RCS_EBL）の検索＝SABRA 化の部品 |
 
 ---
 
@@ -87,12 +100,14 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 
 | 項目 | 値 |
 |---|---|
-| 検索 UI | `https://d1kpmm576ika4i.cloudfront.net/` |
+| 検索 UI | `https://rcs.cobrac.site/` |
 | API エンドポイント | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates` |
-| Lambda 関数名 | `rcs-api`（本番）、`rcs-ebl-api`（EBL テスト） |
+| Lambda 関数名 | `rcs-api`（本番）、`rcs-mcp`（MCP）、`rcs-ebl-api`（EBL テスト） |
+| MCP エンドポイント | `https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp`（Bearer 認証） |
 | Lambda ランタイム | `python3.14` |
-| Lambda メモリ / タイムアウト | `rcs-api`: 512 MB / 60 s · `rcs-ebl-api`: 1024 MB / 60 s |
-| Lambda ハンドラ | `lambda_function.lambda_handler` |
+| EBL API エンドポイント | `POST https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates-ebl` |
+| Lambda メモリ / タイムアウト | `rcs-api`: 512 MB / 60 s · `rcs-mcp`: 512 MB / 60 s · `rcs-ebl-api`: 1024 MB / 60 s |
+| Lambda ハンドラ | `lambda_function.lambda_handler`（`rcs-mcp` のみ `mcp_function.lambda_handler`） |
 | Lambda IAM ロール | `rcs-lambda-role` |
 | API Gateway 名 / ID | `rcs-http-api` / `hg2se72l61` |
 | API Gateway 統合タイムアウト | 30 s（`TimeoutInMillis: 30000`） |
@@ -102,17 +117,22 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 | CloudFront オリジン | `rcs-api-web-765959262011.s3.ap-northeast-1.amazonaws.com` |
 | CloudFront OAC | `E1VWRRRFQZPIX6` |
 
-独自ドメイン・Route 53・ACM（カスタム証明書）は使用しない。
+DNS: 個人アカウント Route 53 `cobrac.site`（`Z03061213087DIHGCR2EP`）。ACM: 組織 `us-east-1`（`cobrac.site` / `*.cobrac.site`）。apex `cobrac.site` は cobrac-web（`E294RWWP0C7KRS`）向け。
 
 ### Lambda 環境変数（現状）
 
 | キー | 値 | 備考 |
 |---|---|---|
 | `HOMBA_BUCKET` | `rcs-api-data-765959262011` | S3 フォールバック用 |
-| `ALLOWED_ORIGIN` | `https://d1kpmm576ika4i.cloudfront.net` | CORS |
+| `ALLOWED_ORIGIN` | `https://rcs.cobrac.site` | CORS |
 | `DEEPSEEK_API_KEY` | （秘匿） | AI 統合用。未設定なら AI は自動 soft-fail（RCS のみ返却） |
 | `AI_MODEL` | `deepseek-v4-flash` | preprocess / postprocess に使う LLM |
 | `AI_HTTP_TIMEOUT_SEC` | `8` | LLM 呼出しごとのタイムアウト（API GW 30s 制約内） |
+| `MCP_BEARER_TOKENS` | （秘匿） | **`rcs-mcp` のみ**。受理する Bearer トークン（カンマ区切り） |
+
+`rcs-mcp` は上記 `rcs-api` の変数をすべて複製して持つ（`DEEPSEEK_API_KEY` を更新したら両方に反映）。`rcs-ebl-api` は `ALLOWED_ORIGIN` のみ。
+
+MCP トークンの保管先は現状 **`rcs-mcp` の環境変数のみ**。IAM ユーザー `miyamoto` に `secretsmanager:CreateSecret` / `ssm:PutParameter` 権限がないため（[権限依頼](aws_org_account_permission_request.md)）。付与後は Secrets Manager `rcs/mcp-bearer-token` を正本に移す。
 
 未設定時のデフォルトキー名: `HOMBA_v1_fixed.csv`, `homba_token_rules.csv`, `homba_alias_rules.csv`, `homba_abbrev_rules.csv`
 
@@ -137,7 +157,21 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 | 実装 | `rcs/generator_cache.py` |
 | エンジンバージョン | `ENGINE_VERSION`（`rcs/rosetta_candidate_generator.py` と一致必須） |
 
-`package_lambda` 実行時にキャッシュを自動生成する。Docker が利用可能なら `public.ecr.aws/lambda/python:3.14` でビルドし、Lambda ランタイムと Python バージョンを揃える。
+`package_lambda` 実行時にキャッシュを自動生成する。Docker が利用可能なら `public.ecr.aws/lambda/python:3.14` でビルドし、Lambda ランタイムと Python バージョンを揃える（Docker なしのローカル Python 3.13 ビルドでも 3.14 で読み込めることを確認済み）。
+
+### RCS_EBL 索引キャッシュ
+
+RCS_EBL の照合器は CSV から構築すると約 30 s かかり API Gateway の 30 s 上限を超えるため、キャッシュを同梱する。
+`lambda_function_ebl.py` は **`rcs_ebl/ebl_generator_cache.pkl`** → 失敗時 `ebl_data/*.csv` から構築、の順で初期化する。
+
+| 項目 | 値 |
+|---|---|
+| 生成スクリプト | `scripts/build_ebl_generator_cache.py`（`package_lambda.*` / `package_lambda_ebl.ps1` が自動実行） |
+| 出力先 | `rcs_ebl/ebl_generator_cache.pkl`（約 6 MB、git 管理外） |
+| 実装 | `rcs_ebl/ebl_cache.py` |
+| 検証キー | `rcs_ebl.ENGINE_VERSION` と `rcs` の `ENGINE_VERSION` |
+
+EBL テーブル（`ebl_for_rcs_v1.0_20260722/rcs_ready/`）やルール CSV を変えたら、キャッシュ再生成 → `rcs-ebl-api` と `rcs-mcp` の両方を再デプロイする。
 
 ---
 
@@ -146,6 +180,7 @@ Lambda rcs-api (Python 3.14, 512 MB, timeout 60 s)
 ### 4-1. Lambda（バックエンド）を更新する
 
 コアロジックは `rcs/` に1か所だけあり、Lambda には zip 同梱で import する。`web/backend/lambda_function.py` はキャッシュ/CSV 読込・HTTP・CORS の薄いアダプター。
+`dist/lambda.zip` は **`rcs-api` と `rcs-mcp` の共通 zip**。`rcs/` や `web/backend/` を変えたら両方に反映する（下記）。
 
 ```powershell
 # Windows
@@ -177,13 +212,77 @@ zip の構成:
 
 ```
 lambda_function.py
+ai_pipeline.py
+mcp_function.py          ← rcs-mcp のハンドラ
+lambda_function_ebl.py   ← rcs-mcp の BNA ツールが import（rcs-ebl-api 本体は別 zip）
+rcs_ebl/
+  ebl_candidate_generator.py
+  ebl_cache.py
+  ebl_generator_cache.pkl  ← 事前構築索引（EBL）
+ebl_data/
+  bna_name_*.csv
 rcs/
+  sabra.py                 ← SABRA 定義
   rosetta_candidate_generator.py
   generator_cache.py
   generator_cache.pkl      ← 事前構築索引
   HOMBA_v1_fixed.csv
   homba_*_rules.csv
 ```
+
+同じ zip を MCP サーバーにも反映する（ハンドラは `mcp_function.lambda_handler`）:
+
+```powershell
+aws lambda update-function-code `
+  --function-name rcs-mcp `
+  --zip-file fileb://dist/lambda.zip `
+  --region ap-northeast-1 `
+  --profile rcs-org
+```
+
+### 4-1b. MCP サーバー（`rcs-mcp`）
+
+Streamable HTTP・ステートレスの MCP サーバー。cobrac-web の Codex エージェント等が利用する。
+RCS（HOMBA → SABRA の DHBA 部分）と RCS_EBL（→ SABRA の BNA 部分）を 1 サーバーで提供する（[SABRA 定義](sabra.md)）。
+
+| ツール | 処理 |
+|---|---|
+| `search_homba_candidates` | `POST /candidates` と同一処理（既定 `top_k=5`、`use_ai` で AI 一括 ON/OFF）＋ 各候補に `sabra` 注釈 |
+| `search_bna_candidates` | `POST /candidates-ebl` と同一処理（UI 互換の HOMBA 形フィールドは除去）＋ `sabra` 注釈 |
+| `get_homba_term` | HOMBA ID → 祖先・子・`sabra` 注釈 |
+| `get_sabra_definition` | SABRA 定義（`rcs/sabra.py`） |
+
+| 項目 | 値 |
+|---|---|
+| ルート | `rcs-http-api` の `ANY /mcp`（統合 `d09zupl`、タイムアウト 30 s） |
+| 認証 | `Authorization: Bearer <token>`。受理トークンは環境変数 `MCP_BEARER_TOKENS`（カンマ区切り、未設定なら全拒否） |
+| 環境変数 | `rcs-api` と同じ（`DEEPSEEK_API_KEY` 等）＋ `MCP_BEARER_TOKENS` |
+| 応答 | POST 1 メッセージ → `application/json` 1 件。通知は 202、GET/DELETE は 405 |
+
+トークン確認・ローテーション（旧新を併記 → 利用側更新 → 旧を削除）:
+
+```powershell
+aws lambda get-function-configuration --function-name rcs-mcp --query "Environment.Variables.MCP_BEARER_TOKENS" --output text --profile rcs-org
+```
+
+`update-function-configuration --environment` は**全変数の置き換え**なので、既存値を取得してから `MCP_BEARER_TOKENS` だけ書き換えて渡すこと。
+
+Codex（`~/.codex/config.toml`）からの接続例:
+
+```toml
+[mcp_servers.rcs]
+url = "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp"
+bearer_token_env_var = "RCS_MCP_TOKEN"
+```
+
+### 4-1c. RCS_EBL（`rcs-ebl-api`）
+
+```powershell
+.\scripts\package_lambda_ebl.ps1
+aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org
+```
+
+`rcs-ebl-api` の zip は `lambda_function_ebl.py` を `lambda_function.py` として同梱する別構成。詳細は [rcs_ebl/README.md](../rcs_ebl/README.md)。
 
 ### 4-2. フロントエンドを更新する
 
@@ -223,7 +322,8 @@ aws s3 cp rcs/homba_alias_rules.csv s3://rcs-api-data-765959262011/homba_alias_r
 aws s3 cp rcs/homba_abbrev_rules.csv s3://rcs-api-data-765959262011/homba_abbrev_rules.csv --profile rcs-org
 ```
 
-3. `package_lambda` → Lambda 再デプロイ（**必須**。キャッシュ再生成込み）
+3. `package_lambda` → `rcs-api` と `rcs-mcp` を再デプロイ（**必須**。キャッシュ再生成込み）
+4. `homba_*_rules.csv` を変えた場合は RCS_EBL も同じルールで照合するため、`package_lambda_ebl.ps1` → `rcs-ebl-api` も再デプロイ
 
 ---
 
@@ -238,6 +338,28 @@ curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/ca
 ```
 
 `HOMBA:10409`（pulvinar of thalamus）、`score: 1.0` が返れば成功。
+
+```bash
+curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates-ebl" \
+  -H "Content-Type: application/json" \
+  -d '{"query":"left DLPFC","top_k":3}'
+```
+
+`A8vl`（`bna_label_id: 23`）などが返れば成功。コールドスタートでも数秒以内（キャッシュ有効時）。
+
+### MCP（本番）
+
+```bash
+TOKEN=$(aws lambda get-function-configuration --function-name rcs-mcp --query "Environment.Variables.MCP_BEARER_TOKENS" --output text --profile rcs-org)
+curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp" \
+  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp" \
+  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"search_homba_candidates","arguments":{"query":"locus coeruleus","top_k":1,"use_ai":false}}}'
+```
+
+ツール 4 件が列挙され、`sabra.atlas: "DHBA"`（`nucleus coeruleus`）が返れば成功。トークンなしは 401。
 
 ### Lambda 直接呼び出し
 
@@ -270,9 +392,10 @@ aws s3 ls s3://rcs-api-web-765959262011/ --recursive --human-readable --summariz
 
 | スクリプト | 用途 |
 |---|---|
-| `scripts/package_lambda.ps1` / `.sh` | キャッシュ生成 + デプロイ zip 作成 |
-| `scripts/package_lambda_ebl.ps1` | EBL 用 Lambda zip 作成 |
+| `scripts/package_lambda.ps1` / `.sh` | HOMBA・EBL キャッシュ生成 + `rcs-api` / `rcs-mcp` 共通 zip 作成 |
+| `scripts/package_lambda_ebl.ps1` | EBL キャッシュ生成 + `rcs-ebl-api` 用 zip 作成 |
 | `scripts/build_generator_cache.py` | `generator_cache.pkl` のみ再生成 |
+| `scripts/build_ebl_generator_cache.py` | `rcs_ebl/ebl_generator_cache.pkl` のみ再生成 |
 | `scripts/update_cloudfront_rcs.py` | **廃止**（独自ドメイン設定用。使わない） |
 | `scripts/route53_rcs_change.json` | **廃止**（DNS 移行参考。使わない） |
 
@@ -309,10 +432,18 @@ S3 フォールバック経路で CSV が欠けている。`aws s3 ls s3://rcs-a
 
 zip 内の `generator_cache.pkl` が古い。CSV 更新後に `package_lambda` → Lambda 再デプロイを実行する。環境変数の保存し直しだけでは索引は更新されない。
 
+### MCP が 401 / ツールが見えない
+
+- 401: `Authorization: Bearer` のトークンが `rcs-mcp` の `MCP_BEARER_TOKENS` と一致しているか確認（未設定なら全拒否）
+- 405: GET（SSE）は非対応。クライアントは POST のみで動作する（Codex は対応済み）
+- BNA ツールだけ失敗: zip に `rcs_ebl/ebl_generator_cache.pkl` と `ebl_data/` があるか確認（`package_lambda` で再ビルド）
+
 ### CloudWatch Logs
 
 ```bash
 aws logs tail /aws/lambda/rcs-api --since 30m --format short --profile rcs-org
+aws logs tail /aws/lambda/rcs-mcp --since 30m --format short --profile rcs-org
+aws logs tail /aws/lambda/rcs-ebl-api --since 30m --format short --profile rcs-org
 ```
 
 ---
@@ -332,6 +463,7 @@ aws logs tail /aws/lambda/rcs-api --since 30m --format short --profile rcs-org
 - `ALLOWED_ORIGIN` を CloudFront URL に限定する（現行どおり）
 - S3 バケットはパブリックアクセスブロックを維持する（CloudFront OAC 経由のみ配信）
 - 追加のアクセス制限が必要な場合は CloudFront Functions または Cognito を検討する
+- MCP トークンはサーバー側（cobrac-web worker の環境変数等）にのみ置き、ブラウザに出さない。漏洩時は 4-1b の手順でローテーション
 
 ---
 
@@ -339,6 +471,7 @@ aws logs tail /aws/lambda/rcs-api --since 30m --format short --profile rcs-org
 
 | ドキュメント | 内容 |
 |---|---|
-| [API 仕様](api_specification.md) | リクエスト / レスポンス |
+| [API 仕様](api_specification.md) | リクエスト / レスポンス（REST・MCP） |
+| [SABRA 定義](sabra.md) | BNA＋DHBA 混合アトラスの定義と境界 |
 | [アルゴリズム仕様](rcs_algorithm.md) | 候補生成ロジック |
 | [README](../README.md) | リポジトリ概要 |

@@ -1,4 +1,4 @@
-# Build Lambda zip for RCS_EBL (BNA lookup test API).
+# Build Lambda zip for RCS_EBL (BNA lookup test API; the BNA side of SABRA).
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
@@ -10,6 +10,11 @@ if (-not (Test-Path (Join-Path $ReadyDir "bna_name_candidates.csv"))) {
     throw "Missing EBL rcs_ready tables. Run: python scripts/build_rcs_bna_tables.py"
 }
 
+python (Join-Path $RepoRoot "scripts\build_ebl_generator_cache.py")
+if ($LASTEXITCODE -ne 0) {
+    throw "EBL cache build failed with exit code $LASTEXITCODE"
+}
+
 if (Test-Path $PackageDir) {
     Remove-Item -Recurse -Force $PackageDir
 }
@@ -18,6 +23,7 @@ New-Item -ItemType Directory -Path (Join-Path $PackageDir "ebl_data") -Force | O
 New-Item -ItemType Directory -Path (Join-Path $PackageDir "rcs") -Force | Out-Null
 
 Copy-Item (Join-Path $RepoRoot "web\backend\lambda_function_ebl.py") (Join-Path $PackageDir "lambda_function.py")
+# Includes rcs_ebl/ebl_generator_cache.pkl built above.
 Copy-Item -Recurse (Join-Path $RepoRoot "rcs_ebl") (Join-Path $PackageDir "rcs_ebl")
 
 # Matcher + rules only (no HOMBA ontology / cache).
