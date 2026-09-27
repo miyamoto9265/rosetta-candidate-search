@@ -9,7 +9,11 @@ No confidence scores. Relation is from the QUERY's perspective:
 Wrong candidates are omitted, never listed.
 
 Environment:
-- DEEPSEEK_API_KEY: required for any LLM stage
+- DEEPSEEK_API_KEY_SECRET_ID: Secrets Manager secret holding the DeepSeek API key
+  (plain string; re-read every DEEPSEEK_API_KEY_SECRET_TTL_SEC, default 300)
+- DEEPSEEK_API_KEY: fallback used when the secret id is unset or the secret has
+  never been read successfully (local runs, migration period)
+No key from either source = every LLM stage soft-fails.
 - AI_MODEL: model id (default deepseek-v4-flash)
 - AI_HTTP_TIMEOUT_SEC: per-call timeout seconds (default 8)
 """
@@ -18,6 +22,7 @@ from __future__ import annotations
 
 import csv
 import json
+import logging
 import os
 import re
 import time
@@ -25,6 +30,8 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 DEFAULT_MODEL = "deepseek-v4-flash"
@@ -117,8 +124,29 @@ Schema:
 }"""
 
 
+_SECRET_API_KEY = ""
+_SECRET_FETCHED_AT: float | None = None
+
+
+def _api_key() -> str:
+    global _SECRET_API_KEY, _SECRET_FETCHED_AT
+    secret_id = os.environ.get("DEEPSEEK_API_KEY_SECRET_ID", "").strip()
+    ttl = float(os.environ.get("DEEPSEEK_API_KEY_SECRET_TTL_SEC", "300"))
+    if secret_id and (_SECRET_FETCHED_AT is None or time.monotonic() - _SECRET_FETCHED_AT > ttl):
+        try:
+            import boto3
+
+            value = boto3.client("secretsmanager").get_secret_value(SecretId=secret_id)["SecretString"]
+            _SECRET_API_KEY = value.strip()
+            _SECRET_FETCHED_AT = time.monotonic()
+        except Exception:
+            # Keep the last good key; retry on the next call.
+            logger.exception("Failed to read DeepSeek API key secret %s", secret_id)
+    return _SECRET_API_KEY or os.environ.get("DEEPSEEK_API_KEY", "").strip()
+
+
 def ai_available() -> bool:
-    return bool(os.environ.get("DEEPSEEK_API_KEY"))
+    return bool(_api_key())
 
 
 _DICT_CACHE: list[dict[str, str]] | None = None
@@ -210,9 +238,9 @@ def _extract_json_obj(text: str) -> dict[str, Any]:
 
 
 def _chat(system: str, user: str, retries: int = 2) -> dict[str, Any]:
-    api_key = os.environ.get("DEEPSEEK_API_KEY")
+    api_key = _api_key()
     if not api_key:
-        raise RuntimeError("DEEPSEEK_API_KEY is not set")
+        raise RuntimeError("DeepSeek API key is not configured")
     body: dict[str, Any] = {
         "model": _model(),
         "temperature": 0.0,

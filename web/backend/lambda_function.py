@@ -11,7 +11,8 @@ Environment variables:
 - ABBREV_RULES_KEY: S3 key for homba_abbrev_rules.csv
 - GENERATOR_CACHE_PATH: Optional override for generator_cache.pkl
 - ALLOWED_ORIGIN: CORS origin, e.g. https://example.com or *
-- DEEPSEEK_API_KEY: enables AI preprocess/postprocess when set
+- DEEPSEEK_API_KEY_SECRET_ID: Secrets Manager secret with the DeepSeek API key;
+  enables AI preprocess/postprocess (DEEPSEEK_API_KEY is the fallback, see ai_pipeline)
 - AI_MODEL: LLM model id (default: deepseek-v4-flash)
 - AI_HTTP_TIMEOUT_SEC: per-LLM-call timeout seconds (default: 8)
 """

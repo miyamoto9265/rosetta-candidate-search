@@ -125,16 +125,28 @@ DNS: 個人アカウント Route 53 `cobrac.site`（`Z03061213087DIHGCR2EP`）�
 |---|---|---|
 | `HOMBA_BUCKET` | `rcs-api-data-765959262011` | S3 フォールバック用 |
 | `ALLOWED_ORIGIN` | `https://rcs.cobrac.site` | CORS |
-| `DEEPSEEK_API_KEY` | （秘匿） | AI 統合用。未設定なら AI は自動 soft-fail（RCS のみ返却） |
+| `DEEPSEEK_API_KEY_SECRET_ID` | `rcs/deepseek-api-key` | AI 統合用。DeepSeek API キーを持つ Secrets Manager シークレット。5 分ごとに再読込。キーが得られなければ AI は自動 soft-fail（RCS のみ返却） |
+| `DEEPSEEK_API_KEY` | （移行完了後は未設定） | **移行期間のみ**。シークレット ID が未設定、またはシークレットを一度も読めていないときのフォールバック。キーを Lambda の設定に平文で残さないため、移行後は削除する |
 | `AI_MODEL` | `deepseek-v4-flash` | preprocess / postprocess に使う LLM |
 | `AI_HTTP_TIMEOUT_SEC` | `8` | LLM 呼出しごとのタイムアウト（API GW 30s 制約内） |
 | `MCP_BEARER_SECRET_ID` | `rcs/mcp-bearer-token` | **`rcs-mcp` のみ**。受理する Bearer トークン（カンマ区切り）を持つ Secrets Manager シークレット。5 分ごとに再読込 |
 | `MCP_BEARER_TOKENS` | （未設定） | **`rcs-mcp` のみ・任意**。追加で受理するトークン（ローカル試験用。本番では使わない） |
 
-`rcs-mcp` は上記 `rcs-api` の変数をすべて複製して持つ（`DEEPSEEK_API_KEY` を更新したら両方に反映）。`rcs-ebl-api` は `ALLOWED_ORIGIN` のみ。
+`rcs-mcp` は上記 `rcs-api` の変数をすべて複製して持つ（AI 関連の変数を変えたら両方に反映）。`rcs-ebl-api` は `ALLOWED_ORIGIN` のみ。
 
 MCP トークンの正本は **Secrets Manager `rcs/mcp-bearer-token`**（`arn:aws:secretsmanager:ap-northeast-1:765959262011:secret:rcs/mcp-bearer-token-meaEcW`）。
 `rcs-lambda-role` のインラインポリシー `read-rcs-mcp-secret` がこのシークレットの `GetSecretValue` のみを許可する。
+
+DeepSeek API キーの正本は **Secrets Manager `rcs/deepseek-api-key`**（値はキー文字列のみ）。
+`rcs-lambda-role` のインラインポリシー `read-rcs-deepseek-secret` が `arn:aws:secretsmanager:ap-northeast-1:765959262011:secret:rcs/deepseek-api-key-*` の `GetSecretValue` のみを許可する。
+キーを差し替えるときはシークレットを更新するだけでよい（最大 5 分で `rcs-api` / `rcs-mcp` が再読込。再デプロイ・環境変数の変更は不要）。
+
+```bash
+read -rs DEEPSEEK && aws secretsmanager put-secret-value --secret-id rcs/deepseek-api-key \
+  --secret-string "$DEEPSEEK" --region ap-northeast-1 --profile rcs-org --query VersionId --output text; unset DEEPSEEK
+```
+
+AI を緊急停止するときは、両 Lambda から `DEEPSEEK_API_KEY_SECRET_ID`（と残っていれば `DEEPSEEK_API_KEY`）を外す。`update-function-configuration` は環境変数を丸ごと置き換えるので、現在値を取得・編集してから渡す。`get-function-configuration` の出力をログやチャットに貼らない。
 
 未設定時のデフォルトキー名: `HOMBA_v1_fixed.csv`, `homba_token_rules.csv`, `homba_alias_rules.csv`, `homba_abbrev_rules.csv`
 
@@ -258,7 +270,7 @@ RCS（HOMBA → SABRA の DHBA 部分）と RCS_EBL（→ SABRA の BNA 部分�
 |---|---|
 | ルート | `rcs-http-api` の `ANY /mcp`（統合 `d09zupl`、タイムアウト 30 s） |
 | 認証 | `Authorization: Bearer <token>`。受理トークンは Secrets Manager `rcs/mcp-bearer-token`（カンマ区切り、空なら全拒否） |
-| 環境変数 | `rcs-api` と同じ（`DEEPSEEK_API_KEY` 等）＋ `MCP_BEARER_SECRET_ID` |
+| 環境変数 | `rcs-api` と同じ（`DEEPSEEK_API_KEY_SECRET_ID` 等）＋ `MCP_BEARER_SECRET_ID` |
 | 応答 | POST 1 メッセージ → `application/json` 1 件。通知は 202、GET/DELETE は 405 |
 
 トークン確認:
@@ -439,6 +451,11 @@ S3 フォールバック経路で CSV が欠けている。`aws s3 ls s3://rcs-a
 ### データ更新が反映されない
 
 zip 内の `generator_cache.pkl` が古い。CSV 更新後に `package_lambda` → Lambda 再デプロイを実行する。環境変数の保存し直しだけでは索引は更新されない。
+
+### AI の結果が返らない（`preprocess` / `ai` が無い、または `error` 付き）
+
+- `meta.ai_model` が `null` で `preprocess` / `ai` が無い: キーが得られていない。CloudWatch に `Failed to read DeepSeek API key secret` が出ていれば、`rcs-lambda-role` の `read-rcs-deepseek-secret` ポリシーとシークレット名 `rcs/deepseek-api-key` を確認する
+- `error` に `HTTP 401`: シークレットの値（キー）が無効。値を更新すれば最大 5 分で反映される
 
 ### MCP が 401 / ツールが見えない
 
