@@ -105,15 +105,28 @@ python rcs/rcs_test_list.py
 
 詳細は [AWS 運用ガイド](docs/aws_operations_guide.md)。
 
+**通常は PR を main にマージすると GitHub Actions（`.github/workflows/deploy.yml`、OIDC）が変更箇所に応じて Lambda 3 本・CSV・フロントをデプロイし、スモークテストを実行する**（[運用ガイド 4-0](docs/aws_operations_guide.md#4-0-通常のデプロイgithub-actions)）。PR では `ci`（AWS 認証なしのビルドとオフライン検査）が走る。
+以下の手動手順は緊急時用。手動でデプロイしたら同じ内容を PR で main に戻す。
+
+```bash
+# macOS / Linux
+./scripts/package_lambda.sh && ./scripts/package_lambda_ebl.sh
+export AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1
+./scripts/deploy_lambda_code.sh rcs-api dist/lambda.zip
+./scripts/deploy_lambda_code.sh rcs-mcp dist/lambda.zip
+./scripts/deploy_lambda_code.sh rcs-ebl-api dist/lambda_ebl.zip
+./scripts/smoke_test.sh
+```
+
 ```powershell
 # Lambda（rcs-api と rcs-mcp は共通 zip）
 .\scripts\package_lambda.ps1
-aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1 --profile rcs-org
-aws lambda update-function-code --function-name rcs-mcp --zip-file fileb://dist/lambda.zip --region ap-northeast-1 --profile rcs-org
+aws lambda update-function-code --function-name rcs-api --zip-file fileb://dist/lambda.zip --region ap-northeast-1 --profile rcs-org --query LastUpdateStatus --output text
+aws lambda update-function-code --function-name rcs-mcp --zip-file fileb://dist/lambda.zip --region ap-northeast-1 --profile rcs-org --query LastUpdateStatus --output text
 
 # RCS_EBL
 .\scripts\package_lambda_ebl.ps1
-aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org
+aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org --query LastUpdateStatus --output text
 
 # フロント
 aws s3 sync web/frontend/ s3://rcs-api-web-765959262011/ --exclude ".DS_Store" --profile rcs-org

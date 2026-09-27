@@ -1,0 +1,42 @@
+# PR checks without AWS credentials: lint the scripts, build both Lambda zips and
+# invoke their handlers offline with the Lambda Python runtime.
+name: ci
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  LAMBDA_IMAGE: public.ecr.aws/lambda/python:3.14
+
+jobs:
+  ci:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Lint shell scripts
+        run: shellcheck scripts/*.sh
+
+      - name: Build packages
+        run: |
+          scripts/package_lambda.sh
+          scripts/package_lambda_ebl.sh
+
+      - name: Check packages offline
+        run: |
+          for kind in main ebl; do
+            docker run --rm --entrypoint python --user "$(id -u):$(id -g)" -e PYTHONDONTWRITEBYTECODE=1 \
+              -v "$PWD:/repo" -w /repo "$LAMBDA_IMAGE" scripts/check_lambda_packages.py "$kind"
+          done
