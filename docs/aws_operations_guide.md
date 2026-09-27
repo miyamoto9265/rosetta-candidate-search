@@ -1,8 +1,10 @@
 # ROSETTA Candidate Search — AWS 運用ガイド
 
-**バージョン**: v0.5.0  
+**バージョン**: v0.6.0  
 **最終更新**: 2026-09-27
 
+> **v0.6.0:** main へのマージで GitHub Actions がデプロイする（[4-0](#4-0-通常のデプロイgithub-actions)）。Linux 用 `package_lambda_ebl.sh` を追加。以下の手動手順は緊急時用。
+>
 > **v0.5.0:** MCP サーバー `rcs-mcp`（`/mcp`）を追加。RCS_EBL 索引キャッシュを導入。SABRA 用語を採用（[SABRA 定義](sabra.md)）。
 
 本ドキュメントは、**構築済みの RCS 本番環境**を AWS CLI で運用・更新する手順を記す。GUI 操作手順は対象外とする。
@@ -90,7 +92,7 @@ API Gateway → Lambda rcs-mcp
 | CloudFront | HTTPS 配信（`rcs.cobrac.site`） |
 | API Gateway HTTP API | `POST /candidates`・`POST /candidates-ebl`・`ANY /mcp` の HTTPS エンドポイント |
 | Lambda `rcs-api` | 候補生成。デプロイ zip 内の `generator_cache.pkl` を優先ロード |
-| Lambda `rcs-ebl-api` | RCS_EBL（BNA 候補。SABRA の BNA 部分）。別 zip（`package_lambda_ebl.ps1`） |
+| Lambda `rcs-ebl-api` | RCS_EBL（BNA 候補。SABRA の BNA 部分）。別 zip（`package_lambda_ebl.ps1` / `.sh`） |
 | S3 `rcs-api-data-765959262011` | CSV のフォールバック保管。Lambda IAM ロールから読み取り |
 | Lambda `rcs-mcp` | リモート MCP サーバー（`ANY /mcp`）。`rcs-api` と同じ zip。HOMBA（RCS）と BNA（RCS_EBL）の検索＝SABRA 化の部品 |
 
@@ -171,7 +173,7 @@ AI を緊急停止するときは、両 Lambda から `DEEPSEEK_API_KEY_SECRET_I
 | 実装 | `rcs/generator_cache.py` |
 | エンジンバージョン | `ENGINE_VERSION`（`rcs/rosetta_candidate_generator.py` と一致必須） |
 
-`package_lambda` 実行時にキャッシュを自動生成する。Docker が利用可能なら `public.ecr.aws/lambda/python:3.14` でビルドし、Lambda ランタイムと Python バージョンを揃える（Docker なしのローカル Python 3.13 ビルドでも 3.14 で読み込めることを確認済み）。
+`package_lambda` 実行時にキャッシュを自動生成する。Docker が利用可能なら `public.ecr.aws/lambda/python:3.14` でビルドし、Lambda ランタイムと Python バージョンを揃える（Docker なしのローカル Python 3.13 ビルドでも 3.14 で読み込めることを確認済み）。`.sh` 版で Docker を使わずにビルドするときは `RCS_USE_DOCKER=0` を付ける。
 
 ### RCS_EBL 索引キャッシュ
 
@@ -180,7 +182,7 @@ RCS_EBL の照合器は CSV から構築すると約 30 s かかり API Gateway 
 
 | 項目 | 値 |
 |---|---|
-| 生成スクリプト | `scripts/build_ebl_generator_cache.py`（`package_lambda.*` / `package_lambda_ebl.ps1` が自動実行） |
+| 生成スクリプト | `scripts/build_ebl_generator_cache.py`（`package_lambda.*` / `package_lambda_ebl.*` が自動実行） |
 | 出力先 | `rcs_ebl/ebl_generator_cache.pkl`（約 6 MB、git 管理外） |
 | 実装 | `rcs_ebl/ebl_cache.py` |
 | 検証キー | `rcs_ebl.ENGINE_VERSION` と `rcs` の `ENGINE_VERSION` |
@@ -190,6 +192,43 @@ EBL テーブル（`ebl_for_rcs_v1.0_20260722/rcs_ready/`）やルール CSV を
 ---
 
 ## 4. デプロイ手順
+
+**通常は main へのマージで GitHub Actions がデプロイする（4-0）。4-1 以降の手動手順は、CI が使えないときの緊急時用。** 手動でデプロイしたら、同じ内容を PR で main に戻す。
+
+### 4-0. 通常のデプロイ（GitHub Actions）
+
+| ワークフロー | 起動 | AWS 認証 | 内容 |
+|---|---|---|---|
+| `.github/workflows/ci.yml`（ジョブ `ci`） | PR | なし | `shellcheck`、両 zip のビルド、Lambda と同じ Python 3.14 イメージでのハンドラのオフライン実行（`scripts/check_lambda_packages.py`） |
+| `.github/workflows/deploy.yml` | main への push（= PR のマージ）、`workflow_dispatch` | OIDC（ロール `gha-rcs-deploy`） | 変更パスに応じたデプロイ → スモークテスト |
+
+main の変更パスとデプロイ対象（`scripts/plan_deploy.sh`）:
+
+| 対象 | 変更パス | 処理 |
+|---|---|---|
+| `rcs-api` / `rcs-mcp` | `rcs/`、`rcs_ebl/`、`web/backend/`、`ebl_for_rcs_v1.0_20260722/rcs_ready/`、`scripts/package_lambda.sh`、キャッシュ生成スクリプト | `package_lambda.sh` → オフライン検査 → 両関数のコード更新 |
+| `rcs-ebl-api` | `rcs/rosetta_candidate_generator.py`、`rcs/homba_{token,alias,abbrev}_rules.csv`、`rcs_ebl/`、`web/backend/lambda_function_ebl.py`、`rcs_ready/`、`scripts/package_lambda_ebl.sh` 等 | `package_lambda_ebl.sh` → オフライン検査 → コード更新 |
+| データバケット | `rcs/HOMBA_v1_fixed.csv`、`rcs/homba_{token,alias,abbrev}_rules.csv` | 4 ファイルを `rcs-api-data-<account>` に `s3 cp`（4-3 の手順 2） |
+| フロントエンド | `web/frontend/` | `rcs-api-web-<account>` に `s3 sync`（削除はしない）→ CloudFront `/*` 無効化 → 完了待ち |
+
+- **スモークテスト**（`scripts/smoke_test.sh`、毎回）: `POST /candidates`（AI オフで `HOMBA:10409` が 1 位）、`POST /candidates-ebl`（`A8vl` を含む）、`POST /mcp` がトークンなし・不正トークンで 401、UI（`/`・`/ebl/index.html`・`/config.js`）が 200。結果はジョブサマリーに出る。ローカルでも認証なしで実行できる。
+- **手動実行**: Actions → deploy → Run workflow（main のみ）。`target` で `all` / `lambda` / `ebl` / `data` / `frontend` / `smoke`（スモークテストのみ）を選ぶ。変更の有無にかかわらず選んだ対象をデプロイする。
+- **直列化**: `concurrency: deploy-production` で、デプロイは同時に 1 本だけ走る（後続は待つ）。
+- **設定**: リポジトリ Variables `AWS_DEPLOY_ROLE_ARN` のみ。Secrets は使わない。バケット名は実行時に `sts get-caller-identity` から組み立て、アカウント ID はログでマスクする。
+
+**public リポジトリのためのガード（変更時も維持する）**
+
+| ガード | 実装 |
+|---|---|
+| AssumeRole は main だけ | ロールの信頼ポリシーの `sub` が `repo:miyamoto9265/rosetta-candidate-search:ref:refs/heads/main`。ワークフロー側も `github.ref == 'refs/heads/main'` とリポジトリ名で限定。GitHub の `environment:` は使わない（`sub` が変わり AssumeRole できなくなる） |
+| フォーク | deploy は `push`（main）と `workflow_dispatch` だけで起動し、`pull_request` / `pull_request_target` では動かない。`ci` は AWS 認証・Secrets・Variables を使わない。外部コラボレーターのフォーク PR は承認制 |
+| 権限 | ワークフロー既定は `permissions: {}`。deploy は `contents: read` + `id-token: write`、ci は `contents: read` のみ。checkout は `persist-credentials: false` |
+| Actions の固定 | 外部 Action はコミット SHA で固定（タグはコメント）。更新するときは SHA を差し替える |
+| Lambda の応答を出さない | `UpdateFunctionCode` / `GetFunctionConfiguration` の応答には環境変数が入る。`scripts/deploy_lambda_code.sh` は `--query` で状態・`CodeSha256`・キー名だけを取り、更新の応答は `> /dev/null`。`set -x` や `--debug` を使わない |
+| 平文の秘密が環境変数に残っていたら止める | デプロイ前に対象の全関数を検査し、`DEEPSEEK_API_KEY` または `MCP_BEARER_TOKENS` が環境変数にあれば、どの関数も更新せずに失敗する |
+| 反映の確認 | 更新後に `LastUpdateStatus=Successful` と、`CodeSha256` がビルドした zip と一致することを確認する |
+
+失敗時は Actions のログとジョブサマリーを見る。CloudTrail ではセッション名 `rcs-deploy-<run_id>` で CI の操作を追える。
 
 ### 4-1. Lambda（バックエンド）を更新する
 
@@ -207,14 +246,13 @@ aws lambda update-function-code `
 ```
 
 ```bash
-# macOS / Linux
+# macOS / Linux（CI と同じスクリプト。応答を出さず、反映まで待って CodeSha256 を照合する）
 ./scripts/package_lambda.sh
-aws lambda update-function-code \
-  --function-name rcs-api \
-  --zip-file fileb://dist/lambda.zip \
-  --region ap-northeast-1 \
-  --profile rcs-org
+AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1 ./scripts/deploy_lambda_code.sh rcs-api dist/lambda.zip
+AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1 ./scripts/deploy_lambda_code.sh rcs-mcp dist/lambda.zip
 ```
+
+PowerShell の `aws lambda update-function-code` は応答（環境変数を含む）をそのまま表示する。ログやチャットに貼らないか、`--query LastUpdateStatus --output text` を付ける。
 
 索引キャッシュだけ再生成する場合:
 
@@ -251,7 +289,8 @@ aws lambda update-function-code `
   --function-name rcs-mcp `
   --zip-file fileb://dist/lambda.zip `
   --region ap-northeast-1 `
-  --profile rcs-org
+  --profile rcs-org `
+  --query LastUpdateStatus --output text
 ```
 
 ### 4-1b. MCP サーバー（`rcs-mcp`）
@@ -298,9 +337,18 @@ bearer_token_env_var = "RCS_MCP_TOKEN"
 ### 4-1c. RCS_EBL（`rcs-ebl-api`）
 
 ```powershell
+# Windows
 .\scripts\package_lambda_ebl.ps1
-aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org
+aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org --query LastUpdateStatus --output text
 ```
+
+```bash
+# macOS / Linux
+./scripts/package_lambda_ebl.sh
+AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1 ./scripts/deploy_lambda_code.sh rcs-ebl-api dist/lambda_ebl.zip
+```
+
+`package_lambda.sh` と `package_lambda_ebl.sh` は互いの出力を消さないので、どちらを先に実行してもよい（`.ps1` 版の `package_lambda.ps1` は `dist/` を丸ごと消す）。
 
 `rcs-ebl-api` の zip は `lambda_function_ebl.py` を `lambda_function.py` として同梱する別構成。詳細は [rcs_ebl/README.md](../rcs_ebl/README.md)。
 
@@ -343,11 +391,19 @@ aws s3 cp rcs/homba_abbrev_rules.csv s3://rcs-api-data-765959262011/homba_abbrev
 ```
 
 3. `package_lambda` → `rcs-api` と `rcs-mcp` を再デプロイ（**必須**。キャッシュ再生成込み）
-4. `homba_*_rules.csv` を変えた場合は RCS_EBL も同じルールで照合するため、`package_lambda_ebl.ps1` → `rcs-ebl-api` も再デプロイ
+4. `homba_*_rules.csv` を変えた場合は RCS_EBL も同じルールで照合するため、`package_lambda_ebl` → `rcs-ebl-api` も再デプロイ
+
+CI（4-0）では、CSV を変更した PR をマージすれば 2〜4 がまとめて実行される。
 
 ---
 
 ## 5. 検証コマンド
+
+CI と同じスモークテスト（認証不要。応答本文は表示しない）:
+
+```bash
+./scripts/smoke_test.sh
+```
 
 ### API（本番）
 
@@ -413,7 +469,11 @@ aws s3 ls s3://rcs-api-web-765959262011/ --recursive --human-readable --summariz
 | スクリプト | 用途 |
 |---|---|
 | `scripts/package_lambda.ps1` / `.sh` | HOMBA・EBL キャッシュ生成 + `rcs-api` / `rcs-mcp` 共通 zip 作成 |
-| `scripts/package_lambda_ebl.ps1` | EBL キャッシュ生成 + `rcs-ebl-api` 用 zip 作成 |
+| `scripts/package_lambda_ebl.ps1` / `.sh` | EBL キャッシュ生成 + `rcs-ebl-api` 用 zip 作成 |
+| `scripts/check_lambda_packages.py` | ビルドした zip（`dist/package*`）のハンドラを AWS なしで実行して検査（`main` / `ebl`） |
+| `scripts/deploy_lambda_code.sh` | Lambda のコード更新（応答を出さない・平文の秘密の検査・反映待ち・`CodeSha256` 照合）。`--check` で検査のみ |
+| `scripts/plan_deploy.sh` | CI のデプロイ対象を変更パスから決める |
+| `scripts/smoke_test.sh` | 公開エンドポイントのスモークテスト |
 | `scripts/build_generator_cache.py` | `generator_cache.pkl` のみ再生成 |
 | `scripts/build_ebl_generator_cache.py` | `rcs_ebl/ebl_generator_cache.pkl` のみ再生成 |
 | `scripts/update_cloudfront_rcs.py` | **廃止**（独自ドメイン設定用。使わない） |

@@ -27,9 +27,12 @@ python rcs_ebl/local_server.py
 
 ## 再デプロイ
 
+通常は main へのマージで GitHub Actions が `rcs-ebl-api` を更新する（[運用ガイド 4-0](../docs/aws_operations_guide.md#4-0-通常のデプロイgithub-actions)）。以下は緊急時の手動手順。
+Linux / macOS では `./scripts/package_lambda_ebl.sh` と `./scripts/deploy_lambda_code.sh rcs-ebl-api dist/lambda_ebl.zip` を使う。
+
 ```powershell
 .\scripts\package_lambda_ebl.ps1
-aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org
+aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org --query LastUpdateStatus --output text
 aws s3 sync web/frontend/ s3://rcs-api-web-765959262011/ --exclude ".DS_Store" --profile rcs-org
 aws cloudfront create-invalidation --distribution-id EQ1U5DPE1OAUA --paths "/*" --profile rcs-org
 ```
