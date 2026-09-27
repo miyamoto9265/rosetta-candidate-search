@@ -23,6 +23,7 @@
 | 作業ディレクトリ | リポジトリルート |
 | アカウント ID | `765959262011` |
 | IAM ユーザー | `miyamoto` |
+| Cursor Cloud Agent | `--profile rcs-org` を付けない（`default` が運用ロール `cursor-cloud-agent-ops`。DNS は `--profile dns`）。削除などの破壊的操作はガードレールで拒否される。詳細は wbai-repos の `docs/cloud-operations.md` |
 
 ```bash
 aws login --profile rcs-org
@@ -138,6 +139,7 @@ DNS: 個人アカウント Route 53 `cobrac.site`（`Z03061213087DIHGCR2EP`）�
 
 MCP トークンの正本は **Secrets Manager `rcs/mcp-bearer-token`**（`arn:aws:secretsmanager:ap-northeast-1:765959262011:secret:rcs/mcp-bearer-token-meaEcW`）。
 `rcs-lambda-role` のインラインポリシー `read-rcs-mcp-secret` がこのシークレットの `GetSecretValue` のみを許可する。
+cobrac-web（同アカウントの `CobracAgents`）の worker がこのシークレットを使うときは、cobrac-web の CDK で worker タスクのロールに `GetSecretValue` を付ける（`ecs.Secret.fromSecretsManager` なら自動で付く）。RCS 側の変更は不要。
 
 DeepSeek API キーの正本は **Secrets Manager `rcs/deepseek-api-key`**（値はキー文字列のみ）。
 `rcs-lambda-role` のインラインポリシー `read-rcs-deepseek-secret` が `arn:aws:secretsmanager:ap-northeast-1:765959262011:secret:rcs/deepseek-api-key-*` の `GetSecretValue` のみを許可する。
@@ -476,8 +478,6 @@ aws s3 ls s3://rcs-api-web-765959262011/ --recursive --human-readable --summariz
 | `scripts/smoke_test.sh` | 公開エンドポイントのスモークテスト |
 | `scripts/build_generator_cache.py` | `generator_cache.pkl` のみ再生成 |
 | `scripts/build_ebl_generator_cache.py` | `rcs_ebl/ebl_generator_cache.pkl` のみ再生成 |
-| `scripts/update_cloudfront_rcs.py` | **廃止**（独自ドメイン設定用。使わない） |
-| `scripts/route53_rcs_change.json` | **廃止**（DNS 移行参考。使わない） |
 
 ---
 
