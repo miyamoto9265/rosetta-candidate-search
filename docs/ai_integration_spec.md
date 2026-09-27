@@ -1,7 +1,7 @@
 # RCS AI 統合仕様
 
 **バージョン**: v0.9.0  
-**最終更新**: 2026-08-12  
+**最終更新**: 2026-09-27  
 **関連**: [API 仕様](api_specification.md) · [RCS アルゴリズム](rcs_algorithm.md)
 
 ---
@@ -344,8 +344,10 @@ candidates:
 
 ## 7. 運用・セキュリティ
 
-- env: `DEEPSEEK_API_KEY`、`AI_MODEL`、`AI_HTTP_TIMEOUT_SEC=8`
-- 既定 ON は API 契約。緊急停止はキー未設定で soft-fail
+- env: `DEEPSEEK_API_KEY_SECRET_ID=rcs/deepseek-api-key`、`AI_MODEL`、`AI_HTTP_TIMEOUT_SEC=8`
+- API キーは Secrets Manager `rcs/deepseek-api-key` から実行時に読み、5 分キャッシュする（`DEEPSEEK_API_KEY_SECRET_TTL_SEC`）。キーの差し替えに再デプロイは不要。読込失敗時は前回の値を使い続ける
+- `DEEPSEEK_API_KEY`（平文の環境変数）はフォールバック。シークレット ID が未設定、またはシークレットを一度も読めていないときだけ使う（ローカル実行・移行期間用。本番の Lambda には置かない）
+- 既定 ON は API 契約。緊急停止は両方の変数を外してキー無しで soft-fail
 - Lambda timeout 60s でも実効上限は API GW 30s
 - ログに API キー・プロンプト全文を出さない
 - コスト目安: 最大 2 calls/query × flash。catalog 全載せ禁止
