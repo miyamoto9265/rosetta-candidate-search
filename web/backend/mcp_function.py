@@ -11,7 +11,10 @@ session id is issued and no SSE stream is offered (GET returns 405), which the
 spec permits for stateless servers.
 
 Environment variables (in addition to those read by ``lambda_function``):
-- MCP_BEARER_TOKENS: comma-separated accepted bearer tokens. Unset = reject all.
+- MCP_BEARER_SECRET_ID: Secrets Manager secret holding comma-separated accepted
+  bearer tokens (re-read every MCP_BEARER_SECRET_TTL_SEC, default 300).
+- MCP_BEARER_TOKENS: optional extra comma-separated tokens (local testing).
+Neither set / both empty = reject all.
 """
 
 from __future__ import annotations
@@ -21,6 +24,7 @@ import hmac
 import json
 import logging
 import os
+import time
 from collections import defaultdict
 
 import lambda_function
@@ -201,8 +205,33 @@ def _rpc_error(msg_id: object, code: int, message: str) -> dict:
     return {"jsonrpc": "2.0", "id": msg_id, "error": {"code": code, "message": message}}
 
 
+_SECRET_TOKENS: list[str] = []
+_SECRET_FETCHED_AT: float | None = None
+
+
+def _split_tokens(value: str) -> list[str]:
+    return [t.strip() for t in value.split(",") if t.strip()]
+
+
+def _accepted_tokens() -> list[str]:
+    global _SECRET_TOKENS, _SECRET_FETCHED_AT
+    secret_id = os.environ.get("MCP_BEARER_SECRET_ID", "").strip()
+    ttl = float(os.environ.get("MCP_BEARER_SECRET_TTL_SEC", "300"))
+    if secret_id and (_SECRET_FETCHED_AT is None or time.monotonic() - _SECRET_FETCHED_AT > ttl):
+        try:
+            import boto3
+
+            value = boto3.client("secretsmanager").get_secret_value(SecretId=secret_id)["SecretString"]
+            _SECRET_TOKENS = _split_tokens(value)
+            _SECRET_FETCHED_AT = time.monotonic()
+        except Exception:
+            # Keep the last good tokens; retry on the next request.
+            logger.exception("Failed to read MCP bearer secret %s", secret_id)
+    return _SECRET_TOKENS + _split_tokens(os.environ.get("MCP_BEARER_TOKENS", ""))
+
+
 def _authorized(headers: dict[str, str]) -> bool:
-    tokens = [t.strip() for t in os.environ.get("MCP_BEARER_TOKENS", "").split(",") if t.strip()]
+    tokens = _accepted_tokens()
     auth = headers.get("authorization", "")
     if not tokens or not auth.lower().startswith("bearer "):
         return False

@@ -5,16 +5,14 @@ RCS を組織アカウントへ移植済み（2026-09-23）。MCP サーバー�
 • API: https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/candidates
 • MCP: https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp（Lambda `rcs-mcp`）
 
-## 追加の権限依頼（未付与・2026-09-27）
+## 権限依頼の履歴
 
-MCP の Bearer トークンを Secrets Manager で管理し、cobrac-web（同アカウントの CDK スタック `CobracAgents`）の
-worker に ECS secrets として渡すため、IAM ユーザー `miyamoto` に次の権限が必要。現状は拒否されるため、
-トークンは Lambda `rcs-mcp` の環境変数にのみ保存している。
+| 日付 | 内容 | 状態 |
+|---|---|---|
+| 2026-09-27 | Secrets Manager（MCP Bearer トークン管理） | **付与済み**。シークレット `rcs/mcp-bearer-token` を作成し、`rcs-mcp` はここから読む |
 
-| アクション | リソース |
-|---|---|
-| `secretsmanager:CreateSecret`, `PutSecretValue`, `GetSecretValue`, `DescribeSecret`, `TagResource` | `arn:aws:secretsmanager:ap-northeast-1:765959262011:secret:rcs/*` |
-
-（代替: `ssm:PutParameter` / `GetParameter` on `arn:aws:ssm:ap-northeast-1:765959262011:parameter/rcs/*`）
+cobrac-web（同アカウントの CDK スタック `CobracAgents`）の worker がこのシークレットを使う場合は、
+cobrac-web 側の CDK で worker タスクのロールに `rcs/mcp-bearer-token` の `secretsmanager:GetSecretValue` を付与する
+（`ecs.Secret.fromSecretsManager` を使えば CDK が自動付与）。RCS 側で追加の権限依頼は不要。
 
 運用手順は `docs/aws_operations_guide.md` を参照。

@@ -128,11 +128,13 @@ DNS: 個人アカウント Route 53 `cobrac.site`（`Z03061213087DIHGCR2EP`）�
 | `DEEPSEEK_API_KEY` | （秘匿） | AI 統合用。未設定なら AI は自動 soft-fail（RCS のみ返却） |
 | `AI_MODEL` | `deepseek-v4-flash` | preprocess / postprocess に使う LLM |
 | `AI_HTTP_TIMEOUT_SEC` | `8` | LLM 呼出しごとのタイムアウト（API GW 30s 制約内） |
-| `MCP_BEARER_TOKENS` | （秘匿） | **`rcs-mcp` のみ**。受理する Bearer トークン（カンマ区切り） |
+| `MCP_BEARER_SECRET_ID` | `rcs/mcp-bearer-token` | **`rcs-mcp` のみ**。受理する Bearer トークン（カンマ区切り）を持つ Secrets Manager シークレット。5 分ごとに再読込 |
+| `MCP_BEARER_TOKENS` | （未設定） | **`rcs-mcp` のみ・任意**。追加で受理するトークン（ローカル試験用。本番では使わない） |
 
 `rcs-mcp` は上記 `rcs-api` の変数をすべて複製して持つ（`DEEPSEEK_API_KEY` を更新したら両方に反映）。`rcs-ebl-api` は `ALLOWED_ORIGIN` のみ。
 
-MCP トークンの保管先は現状 **`rcs-mcp` の環境変数のみ**。IAM ユーザー `miyamoto` に `secretsmanager:CreateSecret` / `ssm:PutParameter` 権限がないため（[権限依頼](aws_org_account_permission_request.md)）。付与後は Secrets Manager `rcs/mcp-bearer-token` を正本に移す。
+MCP トークンの正本は **Secrets Manager `rcs/mcp-bearer-token`**（`arn:aws:secretsmanager:ap-northeast-1:765959262011:secret:rcs/mcp-bearer-token-meaEcW`）。
+`rcs-lambda-role` のインラインポリシー `read-rcs-mcp-secret` がこのシークレットの `GetSecretValue` のみを許可する。
 
 未設定時のデフォルトキー名: `HOMBA_v1_fixed.csv`, `homba_token_rules.csv`, `homba_alias_rules.csv`, `homba_abbrev_rules.csv`
 
@@ -255,17 +257,23 @@ RCS（HOMBA → SABRA の DHBA 部分）と RCS_EBL（→ SABRA の BNA 部分�
 | 項目 | 値 |
 |---|---|
 | ルート | `rcs-http-api` の `ANY /mcp`（統合 `d09zupl`、タイムアウト 30 s） |
-| 認証 | `Authorization: Bearer <token>`。受理トークンは環境変数 `MCP_BEARER_TOKENS`（カンマ区切り、未設定なら全拒否） |
-| 環境変数 | `rcs-api` と同じ（`DEEPSEEK_API_KEY` 等）＋ `MCP_BEARER_TOKENS` |
+| 認証 | `Authorization: Bearer <token>`。受理トークンは Secrets Manager `rcs/mcp-bearer-token`（カンマ区切り、空なら全拒否） |
+| 環境変数 | `rcs-api` と同じ（`DEEPSEEK_API_KEY` 等）＋ `MCP_BEARER_SECRET_ID` |
 | 応答 | POST 1 メッセージ → `application/json` 1 件。通知は 202、GET/DELETE は 405 |
 
-トークン確認・ローテーション（旧新を併記 → 利用側更新 → 旧を削除）:
+トークン確認:
 
 ```powershell
-aws lambda get-function-configuration --function-name rcs-mcp --query "Environment.Variables.MCP_BEARER_TOKENS" --output text --profile rcs-org
+aws secretsmanager get-secret-value --secret-id rcs/mcp-bearer-token --query SecretString --output text --profile rcs-org
 ```
 
-`update-function-configuration --environment` は**全変数の置き換え**なので、既存値を取得してから `MCP_BEARER_TOKENS` だけ書き換えて渡すこと。
+ローテーション（無停止）:
+
+1. シークレットを `旧,新` に更新（`aws secretsmanager put-secret-value --secret-id rcs/mcp-bearer-token --secret-string "<旧>,<新>"`）
+2. 最大 5 分で `rcs-mcp` が再読込。利用側（cobrac-web worker 等）を新トークンに切替
+3. シークレットを `新` のみに更新
+
+Lambda の再デプロイや環境変数の変更は不要。
 
 Codex（`~/.codex/config.toml`）からの接続例:
 
@@ -350,7 +358,7 @@ curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/ca
 ### MCP（本番）
 
 ```bash
-TOKEN=$(aws lambda get-function-configuration --function-name rcs-mcp --query "Environment.Variables.MCP_BEARER_TOKENS" --output text --profile rcs-org)
+TOKEN=$(aws secretsmanager get-secret-value --secret-id rcs/mcp-bearer-token --query SecretString --output text --profile rcs-org)
 curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/mcp" \
   -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
@@ -434,7 +442,8 @@ zip 内の `generator_cache.pkl` が古い。CSV 更新後に `package_lambda` �
 
 ### MCP が 401 / ツールが見えない
 
-- 401: `Authorization: Bearer` のトークンが `rcs-mcp` の `MCP_BEARER_TOKENS` と一致しているか確認（未設定なら全拒否）
+- 401: `Authorization: Bearer` のトークンがシークレット `rcs/mcp-bearer-token` の値と一致しているか確認。
+  シークレット更新直後は最大 5 分反映待ち。読込失敗時は CloudWatch に `Failed to read MCP bearer secret` が出る（`rcs-lambda-role` の `read-rcs-mcp-secret` ポリシーを確認）
 - 405: GET（SSE）は非対応。クライアントは POST のみで動作する（Codex は対応済み）
 - BNA ツールだけ失敗: zip に `rcs_ebl/ebl_generator_cache.pkl` と `ebl_data/` があるか確認（`package_lambda` で再ビルド）
 
