@@ -1,0 +1,156 @@
+# Deploy RCS to AWS when main changes (PR merge = approval).
+# AWS access: OIDC → role in vars.AWS_DEPLOY_ROLE_ARN, whose trust policy accepts only
+# repo:miyamoto9265/rosetta-candidate-search:ref:refs/heads/main.
+#
+# This repository is public, so the Actions logs are public too. Lambda API responses
+# include environment variables: never print them (see scripts/deploy_lambda_code.sh),
+# never use `set -x` or `--debug`, and never add pull_request_target / pull_request here.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Components to deploy regardless of changes (smoke = smoke test only)"
+        type: choice
+        options: [all, lambda, ebl, data, frontend, smoke]
+        default: all
+
+permissions: {}
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ap-northeast-1
+  AWS_PAGER: ""
+  CLOUDFRONT_DISTRIBUTION_ID: EQ1U5DPE1OAUA
+  LAMBDA_IMAGE: public.ecr.aws/lambda/python:3.14
+
+jobs:
+  deploy:
+    if: github.repository == 'miyamoto9265/rosetta-candidate-search' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Plan
+        id: plan
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          TARGET: ${{ inputs.target }}
+        run: |
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            plan="$(scripts/plan_deploy.sh --target "$TARGET")"
+          else
+            plan="$(scripts/plan_deploy.sh "$BEFORE" "$GITHUB_SHA")"
+          fi
+          echo "$plan"
+          echo "$plan" >> "$GITHUB_OUTPUT"
+          if grep -q '=true$' <<<"$plan"; then echo "aws=true"; else echo "aws=false"; fi >> "$GITHUB_OUTPUT"
+          {
+            echo "### Deploy plan (\`${GITHUB_SHA::7}\`, $EVENT_NAME)"
+            echo
+            echo "| Component | Deploy |"
+            echo "| --------- | ------ |"
+            sed -E 's/^([a-z]+)=(.*)$/| \1 | \2 |/' <<<"$plan"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Build rcs-api / rcs-mcp package
+        if: steps.plan.outputs.lambda == 'true'
+        run: |
+          scripts/package_lambda.sh
+          docker run --rm --entrypoint python --user "$(id -u):$(id -g)" -e PYTHONDONTWRITEBYTECODE=1 \
+            -v "$PWD:/repo" -w /repo "$LAMBDA_IMAGE" scripts/check_lambda_packages.py main
+
+      - name: Build rcs-ebl-api package
+        if: steps.plan.outputs.ebl == 'true'
+        run: |
+          scripts/package_lambda_ebl.sh
+          docker run --rm --entrypoint python --user "$(id -u):$(id -g)" -e PYTHONDONTWRITEBYTECODE=1 \
+            -v "$PWD:/repo" -w /repo "$LAMBDA_IMAGE" scripts/check_lambda_packages.py ebl
+
+      - name: Check deploy role variable
+        if: steps.plan.outputs.aws == 'true'
+        env:
+          ROLE_ARN: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+        run: |
+          if [[ -z "$ROLE_ARN" ]]; then
+            echo "::error::Repository variable AWS_DEPLOY_ROLE_ARN is not set"
+            exit 1
+          fi
+
+      - name: Configure AWS credentials (OIDC)
+        if: steps.plan.outputs.aws == 'true'
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          role-session-name: rcs-deploy-${{ github.run_id }}
+          role-duration-seconds: 1800
+          aws-region: ${{ env.AWS_REGION }}
+          mask-aws-account-id: true
+
+      - name: Resolve bucket names
+        if: steps.plan.outputs.aws == 'true'
+        run: |
+          account_id="$(aws sts get-caller-identity --query Account --output text)"
+          echo "::add-mask::$account_id"
+          {
+            echo "DATA_BUCKET=rcs-api-data-$account_id"
+            echo "WEB_BUCKET=rcs-api-web-$account_id"
+          } >> "$GITHUB_ENV"
+
+      - name: Preflight (no plaintext secrets in Lambda environment)
+        if: steps.plan.outputs.lambda == 'true' || steps.plan.outputs.ebl == 'true'
+        env:
+          DEPLOY_LAMBDA: ${{ steps.plan.outputs.lambda }}
+          DEPLOY_EBL: ${{ steps.plan.outputs.ebl }}
+        run: |
+          functions=()
+          if [[ "$DEPLOY_LAMBDA" == "true" ]]; then functions+=(rcs-api rcs-mcp); fi
+          if [[ "$DEPLOY_EBL" == "true" ]]; then functions+=(rcs-ebl-api); fi
+          for fn in "${functions[@]}"; do
+            scripts/deploy_lambda_code.sh --check "$fn"
+          done
+
+      - name: Sync HOMBA CSVs to the data bucket (S3 fallback)
+        if: steps.plan.outputs.data == 'true'
+        run: |
+          for f in HOMBA_v1_fixed.csv homba_token_rules.csv homba_alias_rules.csv homba_abbrev_rules.csv; do
+            aws s3 cp "rcs/$f" "s3://$DATA_BUCKET/$f" --only-show-errors
+            echo "Uploaded $f"
+          done
+
+      - name: Deploy rcs-api and rcs-mcp
+        if: steps.plan.outputs.lambda == 'true'
+        run: |
+          scripts/deploy_lambda_code.sh rcs-api dist/lambda.zip
+          scripts/deploy_lambda_code.sh rcs-mcp dist/lambda.zip
+
+      - name: Deploy rcs-ebl-api
+        if: steps.plan.outputs.ebl == 'true'
+        run: scripts/deploy_lambda_code.sh rcs-ebl-api dist/lambda_ebl.zip
+
+      - name: Deploy frontend and invalidate CloudFront
+        if: steps.plan.outputs.frontend == 'true'
+        run: |
+          aws s3 sync web/frontend/ "s3://$WEB_BUCKET/" --exclude ".DS_Store" --only-show-errors
+          invalidation_id="$(aws cloudfront create-invalidation --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths "/*" --query 'Invalidation.Id' --output text)"
+          echo "Created invalidation $invalidation_id; waiting for completion ..."
+          aws cloudfront wait invalidation-completed --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" --id "$invalidation_id"
+          echo "Invalidation $invalidation_id completed"
+
+      - name: Smoke test
+        run: scripts/smoke_test.sh
