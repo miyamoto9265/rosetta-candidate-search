@@ -93,7 +93,7 @@ API Gateway → Lambda rcs-mcp
 | CloudFront | HTTPS 配信（`rcs.cobrac.site`） |
 | API Gateway HTTP API | `POST /candidates`・`POST /candidates-ebl`・`ANY /mcp` の HTTPS エンドポイント |
 | Lambda `rcs-api` | 候補生成。デプロイ zip 内の `generator_cache.pkl` を優先ロード |
-| Lambda `rcs-ebl-api` | RCS_EBL（BNA 候補。SABRA の BNA 部分）。別 zip（`package_lambda_ebl.ps1` / `.sh`） |
+| Lambda `rcs-ebl-api` | RCS_EBL（BNA 候補。SABRA の BNA 部分）。別 zip（`package_lambda_ebl.sh`） |
 | S3 `rcs-api-data-765959262011` | CSV のフォールバック保管。Lambda IAM ロールから読み取り |
 | Lambda `rcs-mcp` | リモート MCP サーバー（`ANY /mcp`）。`rcs-api` と同じ zip。HOMBA（RCS）と BNA（RCS_EBL）の検索＝SABRA 化の部品 |
 
@@ -237,24 +237,14 @@ main の変更パスとデプロイ対象（`scripts/plan_deploy.sh`）:
 コアロジックは `rcs/` に1か所だけあり、Lambda には zip 同梱で import する。`web/backend/lambda_function.py` はキャッシュ/CSV 読込・HTTP・CORS の薄いアダプター。
 `dist/lambda.zip` は **`rcs-api` と `rcs-mcp` の共通 zip**。`rcs/` や `web/backend/` を変えたら両方に反映する（下記）。
 
-```powershell
-# Windows
-.\scripts\package_lambda.ps1
-aws lambda update-function-code `
-  --function-name rcs-api `
-  --zip-file fileb://dist/lambda.zip `
-  --region ap-northeast-1 `
-  --profile rcs-org
-```
-
 ```bash
-# macOS / Linux（CI と同じスクリプト。応答を出さず、反映まで待って CodeSha256 を照合する）
+# CI と同じスクリプト（bash。Windows では WSL を使う）。応答を出さず、反映まで待って CodeSha256 を照合する
 ./scripts/package_lambda.sh
 AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1 ./scripts/deploy_lambda_code.sh rcs-api dist/lambda.zip
 AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1 ./scripts/deploy_lambda_code.sh rcs-mcp dist/lambda.zip
 ```
 
-PowerShell の `aws lambda update-function-code` は応答（環境変数を含む）をそのまま表示する。ログやチャットに貼らないか、`--query LastUpdateStatus --output text` を付ける。
+`aws lambda update-function-code` を直接実行すると応答（環境変数を含む）がそのまま表示される。`deploy_lambda_code.sh` を使うか、`--query LastUpdateStatus --output text` を付ける。
 
 索引キャッシュだけ再生成する場合:
 
@@ -284,16 +274,7 @@ rcs/
   homba_*_rules.csv
 ```
 
-同じ zip を MCP サーバーにも反映する（ハンドラは `mcp_function.lambda_handler`）:
-
-```powershell
-aws lambda update-function-code `
-  --function-name rcs-mcp `
-  --zip-file fileb://dist/lambda.zip `
-  --region ap-northeast-1 `
-  --profile rcs-org `
-  --query LastUpdateStatus --output text
-```
+同じ zip を MCP サーバー `rcs-mcp` にも反映する（ハンドラは `mcp_function.lambda_handler`。上の `deploy_lambda_code.sh rcs-mcp`）。
 
 ### 4-1b. MCP サーバー（`rcs-mcp`）
 
@@ -316,7 +297,7 @@ RCS（HOMBA → SABRA の DHBA 部分）と RCS_EBL（→ SABRA の BNA 部分�
 
 トークン確認:
 
-```powershell
+```bash
 aws secretsmanager get-secret-value --secret-id rcs/mcp-bearer-token --query SecretString --output text --profile rcs-org
 ```
 
@@ -338,19 +319,12 @@ bearer_token_env_var = "RCS_MCP_TOKEN"
 
 ### 4-1c. RCS_EBL（`rcs-ebl-api`）
 
-```powershell
-# Windows
-.\scripts\package_lambda_ebl.ps1
-aws lambda update-function-code --function-name rcs-ebl-api --zip-file fileb://dist/lambda_ebl.zip --region ap-northeast-1 --profile rcs-org --query LastUpdateStatus --output text
-```
-
 ```bash
-# macOS / Linux
 ./scripts/package_lambda_ebl.sh
 AWS_PROFILE=rcs-org AWS_REGION=ap-northeast-1 ./scripts/deploy_lambda_code.sh rcs-ebl-api dist/lambda_ebl.zip
 ```
 
-`package_lambda.sh` と `package_lambda_ebl.sh` は互いの出力を消さないので、どちらを先に実行してもよい（`.ps1` 版の `package_lambda.ps1` は `dist/` を丸ごと消す）。
+`package_lambda.sh` と `package_lambda_ebl.sh` は互いの出力を消さないので、どちらを先に実行してもよい。
 
 `rcs-ebl-api` の zip は `lambda_function_ebl.py` を `lambda_function.py` として同梱する別構成。詳細は [rcs_ebl/README.md](../rcs_ebl/README.md)。
 
@@ -470,8 +444,8 @@ aws s3 ls s3://rcs-api-web-765959262011/ --recursive --human-readable --summariz
 
 | スクリプト | 用途 |
 |---|---|
-| `scripts/package_lambda.ps1` / `.sh` | HOMBA・EBL キャッシュ生成 + `rcs-api` / `rcs-mcp` 共通 zip 作成 |
-| `scripts/package_lambda_ebl.ps1` / `.sh` | EBL キャッシュ生成 + `rcs-ebl-api` 用 zip 作成 |
+| `scripts/package_lambda.sh` | HOMBA・EBL キャッシュ生成 + `rcs-api` / `rcs-mcp` 共通 zip 作成 |
+| `scripts/package_lambda_ebl.sh` | EBL キャッシュ生成 + `rcs-ebl-api` 用 zip 作成 |
 | `scripts/check_lambda_packages.py` | ビルドした zip（`dist/package*`）のハンドラを AWS なしで実行して検査（`main` / `ebl`） |
 | `scripts/deploy_lambda_code.sh` | Lambda のコード更新（応答を出さない・平文の秘密の検査・反映待ち・`CodeSha256` 照合）。`--check` で検査のみ |
 | `scripts/plan_deploy.sh` | CI のデプロイ対象を変更パスから決める |
