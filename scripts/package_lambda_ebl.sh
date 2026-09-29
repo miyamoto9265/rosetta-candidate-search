@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Build Lambda zip for RCS_EBL (BNA lookup test API; the BNA side of SABRA).
-# Linux / macOS counterpart of package_lambda_ebl.ps1.
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
