@@ -79,6 +79,25 @@ def check_main(pkg: Path) -> bool:
     )
     text = json.dumps(json.loads(res["body"]).get("result", {})) if res["statusCode"] == 200 else ""
     ok &= _check("rcs-mcp search_bna_candidates", "A8vl" in text, f"status={res['statusCode']}")
+
+    def call(rpc_id: int, name: str, arguments: dict) -> dict:
+        res = mcp_function.lambda_handler(
+            _event({"jsonrpc": "2.0", "id": rpc_id, "method": "tools/call",
+                    "params": {"name": name, "arguments": arguments}}, headers=auth),
+            None,
+        )
+        if res["statusCode"] != 200:
+            return {}
+        content = json.loads(res["body"]).get("result", {}).get("content") or [{}]
+        return json.loads(content[0].get("text") or "{}")
+
+    atlases = {hid: (call(10 + i, "get_homba_term", {"homba_id": hid}).get("sabra") or {}).get("atlas")
+               for i, hid in enumerate(("HOMBA:10339", "HOMBA:10297", "HOMBA:10317", "HOMBA:10172"))}
+    expected = {"HOMBA:10339": "DHBA", "HOMBA:10297": "DHBA", "HOMBA:10317": "DHBA", "HOMBA:10172": "BNA"}
+    ok &= _check("rcs-mcp get_homba_term SABRA boundary (neocortex = BNA)", atlases == expected, json.dumps(atlases))
+    definition = call(20, "get_sabra_definition", {})
+    ok &= _check("rcs-mcp get_sabra_definition boundary_version",
+                 definition.get("boundary_version") == "2026-10-04", str(definition.get("boundary_version")))
     return ok
 
 

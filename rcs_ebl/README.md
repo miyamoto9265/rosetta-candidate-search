@@ -1,7 +1,7 @@
 # RCS_EBL（ローカル / 本番テスト）
 
 文献上の領域名 → BNA（Brainnetome Atlas）候補を返すエンジン。現行 RCS（HOMBA）とは独立。
-**SABRA における BNA 部分**（新皮質 210 ＋ 皮質下核 36）の解決に使う。DHBA 部分は RCS（HOMBA）が担う。
+**SABRA における BNA 部分**（新皮質）の解決に使う。BNA の皮質下核 36 ラベルと A28/34・TI も返すが、SABRA の領域ではない（2026-10-04 から）。DHBA 部分は RCS（HOMBA）が担う。
 定義は [SABRA 定義](../docs/sabra.md)。
 
 - 照合: `RosettaCandidateGenerator`（normalize / variants / exact / fuzzy / BM25）

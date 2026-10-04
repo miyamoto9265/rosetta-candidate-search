@@ -309,7 +309,8 @@ AI エージェント（cobrac-web の Codex SDK 等）向けのリモート MCP
 |---|---|
 | `{"atlas":"DHBA","dhba_name","dhba_acronym","dhba_homba_id","dhba_exact"}` | SABRA では DHBA 名で表す。`dhba_exact: false` は祖先の DHBA 名 |
 | `{"atlas":"BNA","bna_territory","bna_territory_root"}` | HOMBA 項が BNA 担当範囲。SABRA 名は `search_bna_candidates` で得る |
-| `{"atlas":"BNA","bna_division":"cortical"\|"subcortical"}` | BNA 候補（ラベル 1–210 / 211–246） |
+| `{"atlas":"BNA","bna_division":"cortical","sabra_unit":true}` | 新皮質の BNA 候補（SABRA の領域） |
+| `{"atlas":"DHBA","bna_division":"cortical"\|"subcortical","sabra_unit":false,"dhba_homba_id","dhba_acronym","note"}` | 新皮質でない BNA 候補（皮質下 211–246、A28/34、TI）。SABRA の領域ではない。`dhba_homba_id` はそれを含む DHBA の項（2026-10-04 から） |
 
 ---
 

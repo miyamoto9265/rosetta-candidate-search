@@ -27,7 +27,7 @@ curl -sS -X POST "https://hg2se72l61.execute-api.ap-northeast-1.amazonaws.com/ca
 ## SABRA との関係
 
 組織内の標準領域名 **SABRA**（Standardized Ontology of Anatomies for Brain Reference Architecture）は
-**BNA 246 ラベル（新皮質 210 ＋ 皮質下核 36: 扁桃体・海馬・大脳基底核・視床）＋ それ以外は DHBA** の混合アトラス。
+**新皮質は BNA、それ以外（扁桃体・海馬などの不等皮質、大脳基底核、視床、脳幹など）は DHBA** の混合アトラス（2026-10-04 の境界）。
 DHBA は HOMBA の一部（`DHBA_name` を持つ項）。本リポジトリでは **RCS（HOMBA）が DHBA 部分**、**RCS_EBL が BNA 部分**を担い、
 MCP サーバーが両方を提供する。定義・境界・手順は [SABRA 定義](docs/sabra.md)（コード上の正本は `rcs/sabra.py`）。
 
@@ -70,6 +70,12 @@ docs/             仕様書
 
 - 出典: [CCF-MAP — HOMBA ontology](https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html)
 - 本リポジトリの `rcs/HOMBA_v1_fixed.csv` は公式 CSV に対しタイポ修正等を加えた派生物です
+
+## 2026-10-04 の変更（SABRA の BNA/DHBA 境界）
+
+- SABRA で BNA を使うのは**新皮質だけ**になった。扁桃体・海馬・大脳基底核・視床（BNA の皮質下 36 ラベル）と、嗅内皮質（A28/34）・TI などの不等皮質は DHBA で表す
+- `get_homba_term` / `search_homba_candidates` の `sabra.atlas` は新しい境界で返る（例: `HOMBA:10339` 側坐核は `DHBA`）。`search_bna_candidates` の新皮質でない候補は `sabra: {atlas: "DHBA", sabra_unit: false, dhba_homba_id}` になる。`get_sabra_definition` に `boundary_version: "2026-10-04"`
+- 定義と対応表は [SABRA 定義](docs/sabra.md)。既存データは書き換えない
 
 ## 2026-09-27 の追加（MCP・SABRA）
 
