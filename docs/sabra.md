@@ -73,6 +73,9 @@ HOMBA の `non-neocortex (allocortex and periallocortex)`（`HOMBA:AA30084`。�
 | 225/226, 229/230 | vmPu, dlPu | `HOMBA:10338` Pu（putamen） |
 | 231–246 | 視床 8 亜領域 | `HOMBA:10391` DTH（dorsal thalamus） |
 
+- 海馬全体は `HOMBA:12170` HiF で表す。文献が特定の領域（CA1、CA3、DG、海馬台など）を挙げていれば、HiF ではなくその DHBA の項を使う（`search_bna_candidates` の Hipp の候補の `note` にも書いてある）。
+- BNA の L2 群 `PhG`（parahippocampal gyrus）は、新皮質の A35/36r・A35/36c・TL・TH と、DHBA になった A28/34（EC）・TI を含む。そのため、群全体では SABRA の単位にならない（`BNA_MIXED_L2`。`level: "l2"` の `PhG` の候補は `sabra_unit: false`）。亜領域（`BNA:109-110`、`111-112`、`113-114`、`119-120`）か、DHBA の `EC`・`TI` で表す。
+
 2026-10-04 より前の担当範囲（`PREVIOUS_BNA_TERRITORY_HOMBA_ROOTS`）は、`HOMBA:10159` cerebral cortex（不等皮質を含む）・脳回・脳溝・`HOMBA:10361` 扁桃体・`HOMBA:AA30190` 大脳基底核・`HOMBA:10391` 背側視床だった。
 
 境界を変える場合は `rcs/sabra.py` と本表を同時に更新する。

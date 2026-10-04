@@ -128,7 +128,9 @@ TOOLS = [
             "`eff_n` (1 = peaked, larger = diffuse). `sabra`: {atlas: 'BNA', sabra_unit: true} for "
             "neocortical areas; subcortical, hippocampal and other non-neocortical areas have "
             "{atlas: 'DHBA', sabra_unit: false, dhba_homba_id} and are not SABRA regions: name them "
-            "with search_homba_candidates instead. "
+            "with search_homba_candidates instead (whole hippocampus: HiF; a named field such as CA1, "
+            "CA3, DG or subiculum: that DHBA term). The l2 group PhG mixes neocortical and DHBA areas "
+            "and is not a SABRA unit as a whole (sabra_unit: false): name its subregions. "
             "No AI; typical latency <2 s."
         ),
         "inputSchema": {
@@ -385,6 +387,7 @@ def _tool_sabra_definition(args: dict) -> dict:
                     sabra.BNA_SUBCORTICAL_LABEL_IDS.stop - 1,
                 ],
                 "subcortical_groups_not_sabra": sabra.BNA_SUBCORTICAL_L2,
+                "mixed_groups_not_sabra": sabra.BNA_MIXED_L2,
                 "tool": "search_bna_candidates",
             },
             sabra.ATLAS_DHBA: {

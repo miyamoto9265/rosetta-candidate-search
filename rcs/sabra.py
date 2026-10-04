@@ -54,6 +54,19 @@ BNA_NON_NEOCORTICAL_CORTICAL_AREAS = {
     117: "TI (temporal agranular insular cortex; HOMBA peripaleocortex)",
 }
 
+# Neocortical BNA L2 groups that also contain non-neocortical areas: not usable as a whole-gyrus SABRA unit.
+BNA_MIXED_L2: dict[str, str] = {
+    "PhG": "parahippocampal gyrus: neocortical A35/36r, A35/36c, TL, TH plus A28/34 (EC) and TI, which are DHBA",
+}
+# Neocortical subregions of each mixed L2 group (left label -> area).
+BNA_MIXED_L2_NEOCORTICAL_AREAS: dict[str, dict[int, str]] = {
+    "PhG": {109: "A35/36r", 111: "A35/36c", 113: "TL", 119: "TH"},
+}
+HIPPOCAMPUS_HINT = (
+    "use HiF (HOMBA:12170) for the whole hippocampus; when the source names a field "
+    "(CA1, CA3, DG, subiculum, ...) use that finer DHBA term instead"
+)
+
 # DHBA term that contains each non-neocortical BNA area (left label ID -> (HOMBA ID, DHBA acronym)).
 # A container, not an equivalent: BNA's subcortical subregions are connectivity-defined, so pick the
 # DHBA nucleus the literature describes (search_homba_candidates) and use these only as a fallback.
@@ -129,19 +142,35 @@ def sabra_for_bna_area(bna_l2_abbr: str, label_id_l: str = "", label_id_r: str =
     division = bna_label_division(label)
     if division is None and bna_l2_abbr:
         division = "subcortical" if bna_l2_abbr in BNA_SUBCORTICAL_L2 else "cortical"
+    if not label and bna_l2_abbr in BNA_MIXED_L2:
+        areas = ", ".join(
+            f"{name} (BNA:{left}-{left + 1})" for left, name in BNA_MIXED_L2_NEOCORTICAL_AREAS[bna_l2_abbr].items()
+        )
+        return {
+            "atlas": ATLAS_BNA,
+            "bna_division": "cortical",
+            "sabra_unit": False,
+            "note": f"{BNA_MIXED_L2[bna_l2_abbr]}; not a SABRA unit as a whole: name a subregion "
+            f"({areas}) or the DHBA term (HOMBA:10317 EC, HOMBA:10330 TI)",
+        }
     neocortex = bna_label_is_neocortex(label) if label else division == "cortical"
     if neocortex:
         return {"atlas": ATLAS_BNA, "bna_division": division, "sabra_unit": True}
     left = label if label is None or label % 2 == 1 else label - 1
     homba_id, acronym = BNA_DHBA_COUNTERPARTS.get(left or 0, ("", ""))
+    note = (
+        "not neocortex: SABRA uses DHBA here; resolve the region with search_homba_candidates "
+        "(dhba_homba_id is only the DHBA term that contains this BNA area)"
+    )
+    if homba_id == "HOMBA:12170" or (not label and bna_l2_abbr == "Hipp"):
+        note += "; " + HIPPOCAMPUS_HINT
     return {
         "atlas": ATLAS_DHBA,
         "bna_division": division,
         "sabra_unit": False,
         "dhba_homba_id": homba_id,
         "dhba_acronym": acronym,
-        "note": "not neocortex: SABRA uses DHBA here; resolve the region with search_homba_candidates "
-        "(dhba_homba_id is only the DHBA term that contains this BNA area)",
+        "note": note,
     }
 
 

@@ -126,6 +126,20 @@ class BnaAreaTest(unittest.TestCase):
         self.assertEqual(sabra.sabra_for_bna_area("MFG")["atlas"], "BNA")
         self.assertIsNone(sabra.bna_label_is_neocortex(247))
 
+    def test_mixed_gyrus_is_not_a_unit(self) -> None:
+        note = sabra.sabra_for_bna_area("PhG")
+        self.assertFalse(note["sabra_unit"])
+        for area in ("A35/36r (BNA:109-110)", "TL (BNA:113-114)", "TH (BNA:119-120)", "HOMBA:10317 EC"):
+            self.assertIn(area, str(note["note"]))
+        # its neocortical areas stay SABRA units
+        self.assertTrue(sabra.sabra_for_bna_area("PhG", "113", "114")["sabra_unit"])
+        self.assertTrue(sabra.sabra_for_bna_area("MFG")["sabra_unit"])
+
+    def test_hippocampus_hint(self) -> None:
+        for args in (("Hipp", "215", "216"), ("Hipp",)):
+            self.assertIn("CA1, CA3, DG, subiculum", str(sabra.sabra_for_bna_area(*args)["note"]))
+        self.assertNotIn("CA1", str(sabra.sabra_for_bna_area("BG", "223", "224")["note"]))
+
 
 if __name__ == "__main__":
     unittest.main()
