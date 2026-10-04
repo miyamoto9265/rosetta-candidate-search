@@ -29,6 +29,9 @@ jobs:
       - name: Lint shell scripts
         run: shellcheck scripts/*.sh
 
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+
       - name: Build packages
         run: |
           scripts/package_lambda.sh

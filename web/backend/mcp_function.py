@@ -38,18 +38,21 @@ SERVER_INFO = {"name": "rcs", "title": "ROSETTA Candidate Search (SABRA: HOMBA/D
 
 SABRA_SUMMARY = (
     "SABRA (Standardized Ontology of Anatomies for Brain Reference Architecture) is a mixed "
-    "atlas of region names: BNA (Brainnetome, 246 labels = neocortex 210 + subcortical nuclei 36: "
-    "amygdala, hippocampus, basal ganglia, thalamus) plus DHBA for every other region "
-    "(hypothalamus, brainstem, cerebellum, ...). DHBA terms are the HOMBA terms that have a DHBA name. "
-    "SABRA has no IDs of its own: a SABRA region is either a BNA area or a DHBA term."
+    "atlas of region names: BNA (Brainnetome) for the neocortex only (cortical labels 1-210 "
+    "except A28/34 entorhinal and TI) plus DHBA for every other region: subcortical nuclei "
+    "(amygdala, basal ganglia, thalamus, ...), hippocampal formation and other allocortex, "
+    "hypothalamus, brainstem, cerebellum, ... (boundary of 2026-10-04; BNA's subcortical labels "
+    "211-246 are no longer SABRA regions). DHBA terms are the HOMBA terms that have a DHBA name. "
+    "SABRA has no IDs of its own: a SABRA region is either a neocortical BNA area or a DHBA term."
 )
 
 INSTRUCTIONS = (
     SABRA_SUMMARY
     + " Tools: search_homba_candidates resolves a name to HOMBA (and DHBA) terms; every HOMBA "
     "result carries `sabra.atlas` telling whether SABRA represents that region with BNA or DHBA. "
-    "search_bna_candidates resolves a (possibly vague) cortical/subcortical name to a probability "
-    "distribution over BNA areas learned from literature coordinates. "
+    "search_bna_candidates resolves a (possibly vague) cortical name to a probability "
+    "distribution over BNA areas learned from literature coordinates; each result's `sabra.atlas` "
+    "is BNA only for neocortical areas. "
     "To express a region in SABRA: if `sabra.atlas` is DHBA use `sabra.dhba_name`; if it is BNA, "
     "use search_bna_candidates and pick BNA area(s). get_homba_term shows HOMBA ancestors/children; "
     "get_sabra_definition returns the full definition. "
@@ -114,7 +117,7 @@ TOOLS = [
         "name": "search_bna_candidates",
         "title": "Search BNA candidates (SABRA BNA side)",
         "description": (
-            "Resolve a cortical or subcortical-nucleus region name to Brainnetome Atlas (BNA) areas "
+            "Resolve a neocortical region name to Brainnetome Atlas (BNA) areas "
             "(RCS_EBL). The name is matched against ~3,700 literature region names, then expanded "
             "to the BNA areas where papers reported coordinates for that name, so results are a "
             "probability distribution (`p_raw`), not a single definitive label. "
@@ -122,7 +125,12 @@ TOOLS = [
             "`level` 'l3' returns BNA areas (e.g. A9/46d), 'l2' returns gyri (e.g. MFG; more reliable "
             "when one label is needed). Laterality words in the query (left/right/bilateral) select "
             "`bna_label_id`; otherwise use bna_label_id_l / _r. Reliability: `k_papers` (support) and "
-            "`eff_n` (1 = peaked, larger = diffuse). Every result is a SABRA region (atlas BNA). "
+            "`eff_n` (1 = peaked, larger = diffuse). `sabra`: {atlas: 'BNA', sabra_unit: true} for "
+            "neocortical areas; subcortical, hippocampal and other non-neocortical areas have "
+            "{atlas: 'DHBA', sabra_unit: false, dhba_homba_id} and are not SABRA regions: name them "
+            "with search_homba_candidates instead (whole hippocampus: HiF; a named field such as CA1, "
+            "CA3, DG or subiculum: that DHBA term). The l2 group PhG mixes neocortical and DHBA areas "
+            "and is not a SABRA unit as a whole (sabra_unit: false): name its subregions. "
             "No AI; typical latency <2 s."
         ),
         "inputSchema": {
@@ -130,7 +138,7 @@ TOOLS = [
             "properties": {
                 "query": {
                     "type": "string",
-                    "description": "Region name as used in literature, e.g. 'left DLPFC', 'putamen'. "
+                    "description": "Region name as used in literature, e.g. 'left DLPFC', 'FEF'. "
                     "Drop gene / cell-type / method words.",
                 },
                 "top_k": {"type": "integer", "minimum": 1, "maximum": 30, "default": 10},
@@ -364,24 +372,36 @@ def _tool_sabra_definition(args: dict) -> dict:
     return {
         "name": sabra.SABRA_NAME,
         "full_name": sabra.SABRA_FULL_NAME,
+        "boundary_version": sabra.SABRA_BOUNDARY_VERSION,
         "summary": SABRA_SUMMARY,
         "atlases": {
             sabra.ATLAS_BNA: {
+                "scope": "neocortex only",
                 "label_count": sabra.BNA_LABEL_COUNT,
                 "cortical_label_ids": [sabra.BNA_CORTICAL_LABEL_IDS.start, sabra.BNA_CORTICAL_LABEL_IDS.stop - 1],
-                "subcortical_label_ids": [
+                "non_neocortical_cortical_areas": {
+                    f"{left}-{left + 1}": area for left, area in sabra.BNA_NON_NEOCORTICAL_CORTICAL_AREAS.items()
+                },
+                "subcortical_label_ids_not_sabra": [
                     sabra.BNA_SUBCORTICAL_LABEL_IDS.start,
                     sabra.BNA_SUBCORTICAL_LABEL_IDS.stop - 1,
                 ],
-                "subcortical_groups": sabra.BNA_SUBCORTICAL_L2,
+                "subcortical_groups_not_sabra": sabra.BNA_SUBCORTICAL_L2,
+                "mixed_groups_not_sabra": sabra.BNA_MIXED_L2,
                 "tool": "search_bna_candidates",
             },
             sabra.ATLAS_DHBA: {
-                "scope": "all regions outside BNA territory; HOMBA terms that have a DHBA name",
+                "scope": "all regions outside BNA territory (everything but the neocortex); HOMBA terms that have a DHBA name",
                 "tool": "search_homba_candidates",
             },
         },
         "bna_territory_homba_roots": sabra.BNA_TERRITORY_HOMBA_ROOTS,
+        "bna_territory_excluded_homba": sabra.BNA_TERRITORY_EXCLUDED_HOMBA,
+        "dhba_counterparts_of_non_neocortical_bna": {
+            f"{left}-{left + 1}": {"dhba_homba_id": hid, "dhba_acronym": acr}
+            for left, (hid, acr) in sabra.BNA_DHBA_COUNTERPARTS.items()
+        },
+        "previous_bna_territory_homba_roots": sabra.PREVIOUS_BNA_TERRITORY_HOMBA_ROOTS,
     }
 
 
