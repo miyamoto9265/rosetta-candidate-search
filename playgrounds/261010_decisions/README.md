@@ -23,6 +23,8 @@ python playgrounds/261010_decisions/decisions_harness.py --stage post --post dec
 python playgrounds/261010_decisions/decisions_harness.py --mock          # API なしの動作確認
 ```
 
+Claude Code のクラウド環境で回す場合は、キーを環境変数ではなくネットワークシークレット（`api.openai.com` と `api.deepseek.com` に 1 つずつ）に入れてもよい。環境変数が空ならハーネスは Authorization を付けずに送り、プロキシが付ける。
+
 出力は `runs/<dataset>/`: `summary.md`（表）、`summary.json`、`pre_records.json`・`post_records.json`（1 件ずつ）、`cache.json`（API 応答。再実行では失敗分と新しい方式だけ呼ぶ）。
 
 注意:

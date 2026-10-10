@@ -20,6 +20,10 @@ rcs_core.csv instead.
 Every API response is cached under runs/<dataset>/cache.json, so reruns and new
 arms only pay for what is missing. --mock answers without any API (offline check).
 
+Keys come from DEEPSEEK_API_KEY / OPENAI_API_KEY; when unset, requests go out
+without Authorization so a Claude Code cloud environment's network secrets for
+api.deepseek.com / api.openai.com can add it.
+
 Usage (repo root):
     export DEEPSEEK_API_KEY=... OPENAI_API_KEY=...
     python playgrounds/261010_decisions/decisions_harness.py --limit 10
@@ -146,7 +150,7 @@ def _post_json(url: str, key: str, body: dict[str, Any], timeout: float = 30.0) 
         req = urllib.request.Request(
             url,
             data=data,
-            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+            headers={"Content-Type": "application/json", **({"Authorization": f"Bearer {key}"} if key else {})},
             method="POST",
         )
         started = time.perf_counter()
@@ -165,10 +169,9 @@ def _post_json(url: str, key: str, body: dict[str, Any], timeout: float = 30.0) 
 
 
 def _env_key(name: str) -> str:
-    key = os.environ.get(name, "").strip()
-    if not key:
-        raise RuntimeError(f"{name} is not set")
-    return key
+    """Key from the environment, or "" to send no Authorization header and let a
+    cloud environment's network secret (agent proxy) add it."""
+    return os.environ.get(name, "").strip()
 
 
 def _usage(payload: dict[str, Any]) -> dict[str, int]:
