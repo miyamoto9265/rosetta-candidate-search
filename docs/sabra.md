@@ -98,6 +98,7 @@ HOMBA の `non-neocortex (allocortex and periallocortex)`（`HOMBA:AA30084`。�
 | `search_bna_candidates` | RCS_EBL。BNA 領域の分布（`p_raw`・`k_papers`・`eff_n`）、各候補に `sabra`（新皮質は `atlas: BNA`、それ以外は `atlas: DHBA` と `sabra_unit: false`） |
 | `get_homba_term` | HOMBA 項の祖先・子・`sabra` 注釈 |
 | `get_sabra_definition` | 本定義の機械可読版（`boundary_version: "2026-10-04"`） |
+| `map_coordinates` | CBM。論文の座標から SABRA の領域を引く（下記「座標から引く（CBM）」） |
 
 `sabra` 注釈の形:
 
@@ -119,3 +120,22 @@ HOMBA の `non-neocortex (allocortex and periallocortex)`（`HOMBA:AA30084`。�
    左右が分かる場合はクエリに left/right を含めると `bna_label_id` が決まる。
 
 BNA 側の選び方（上位 1 件 / 累積確率 / l2 への丸めなど）は運用未確定。現状はエージェント判断とする。
+
+## 座標から引く（CBM）
+
+CBM（Coordinate-to-Brain Mapper）は、論文が報告した座標（ピーク・フォーカス、mm）を SABRA の領域へ対応づける。
+2026-10-09 の BRA 駆動 MTG で RCS に統合することになった。ボリュームは鈴木さんの CBM_v0（2026-09-08）の
+`SABRA.nii.gz`（MNI152 2009、0.5 mm、BNA 210 ＋ DHBA 314 ラベル）と `SABRA_labels.csv` で、`cbm_data/` に置いている。
+皮質の灰白質は BNA、それ以外（皮質下、白質、脳室、BNA の区画のまわりの DHBA の脳回ラベル）は DHBA。
+
+- Talairach の座標は MNI に変換してから引く。既定は Lancaster（BrainMap icbm_spm2tal の逆）、論文が Brett の mni2tal で変換したと書いていれば `tal_transform: "brett"`。ROSETTA `rosetta/coords.py` と同じ式。
+- `status`: `gray_matter`（UC を置ける）/ `white_matter` / `ventricle` / `cortex_outside_bna`（BNA の区画のまわり約 1 mm の DHBA 脳回ラベル。多くは灰白質と白質の境界）/ `other`（透明中隔など）/ `unassigned`（ラベルなし。脳の外など）/ `out_of_bounds`（ボリュームの外）。
+- `region.anchor`: 新皮質の BNA 領域は `BNA:<左>-<右>`、DHBA の灰白質は `HOMBA:<id>`（その項に DHBA 名がなければ、DHBA 名を持つ最も近い祖先）。A28/34・TI は `sabra_unit: false` で、含む DHBA の項がアンカーになる。白質などは `null`。
+- `overlap`: 半径 `radius_mm` の球に占める各領域の割合。境界に近い点ほど割合が分かれる。
+- `nearest_gray_matter`: 灰白質でない点について、`search_mm` 以内の灰白質の領域と距離（最大 3 件）。
+- `regions`: 灰白質の点をアンカーごとにまとめたもの（CBM_v0 の集計済み records に相当: `peak_count`、`max_stat`）。
+
+DHBA のラベル値は HOMBA の `unified_ontology_label_value` と一致するので、その値で HOMBA の項に対応づけている（314 件すべて対応）。
+座標はピークの位置を示すだけなので、論文が述べる集団の名前と食い違うときは名前（`search_homba_candidates` / `search_bna_candidates`）を優先する。
+
+CBM_v0 のうち、DOI から座標を集める部分（pubget による表の解析、NeuroVault の統計マップのピーク検出）はまだ移していない。

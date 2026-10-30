@@ -287,6 +287,7 @@ RCS（HOMBA → SABRA の DHBA 部分）と RCS_EBL（→ SABRA の BNA 部分�
 | `search_bna_candidates` | `POST /candidates-ebl` と同一処理（UI 互換の HOMBA 形フィールドは除去）＋ `sabra` 注釈 |
 | `get_homba_term` | HOMBA ID → 祖先・子・`sabra` 注釈 |
 | `get_sabra_definition` | SABRA 定義（`rcs/sabra.py`） |
+| `map_coordinates` | CBM。MNI / Talairach 座標 → SABRA の領域（`rcs/cbm.py`、`rcs/cbm_atlas.bin` はパッケージ時に `cbm_data/` から生成） |
 
 | 項目 | 値 |
 |---|---|
