@@ -24,3 +24,4 @@ rcs_ebl/ebl_generator_cache.pkl
 # Auto-improve local cache / heavy run dumps (keep scripts + summaries tracked)
 archive/
 *.pyc
+rcs/cbm_atlas.bin

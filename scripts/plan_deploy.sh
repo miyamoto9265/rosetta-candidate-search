@@ -8,7 +8,7 @@ set -euo pipefail
 
 COMPONENTS=(lambda ebl data frontend)
 declare -A PATTERNS=(
-  [lambda]='^(rcs/|rcs_ebl/|web/backend/|ebl_for_rcs_v1\.0_20260722/rcs_ready/|scripts/(package_lambda\.sh|build_generator_cache\.py|build_ebl_generator_cache\.py)$)'
+  [lambda]='^(rcs/|rcs_ebl/|web/backend/|cbm_data/|ebl_for_rcs_v1\.0_20260722/rcs_ready/|scripts/(package_lambda\.sh|build_generator_cache\.py|build_ebl_generator_cache\.py|build_cbm_atlas\.py)$)'
   [ebl]='^(rcs/rosetta_candidate_generator\.py|rcs/homba_(token|alias|abbrev)_rules\.csv|rcs_ebl/|web/backend/lambda_function_ebl\.py|ebl_for_rcs_v1\.0_20260722/rcs_ready/|scripts/(package_lambda_ebl\.sh|build_ebl_generator_cache\.py)$)'
   [data]='^rcs/(HOMBA_v1_fixed|homba_token_rules|homba_alias_rules|homba_abbrev_rules)\.csv$'
   [frontend]='^web/frontend/'

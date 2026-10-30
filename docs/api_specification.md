@@ -300,6 +300,7 @@ AI エージェント（cobrac-web の Codex SDK 等）向けのリモート MCP
 | `search_bna_candidates` | `query`（必須）, `top_k`（既定 10）, `level`, `name_top_k` | §7 と同じ本文（UI 互換別名を除く）＋ 各候補に `sabra` |
 | `get_homba_term` | `homba_id`（`HOMBA:10339` / `10339`） | 名称・DHBA 対応・`sabra`・`ancestors`（ルートから）・`children` |
 | `get_sabra_definition` | なし | SABRA 定義（`rcs/sabra.py`） |
+| `map_coordinates` | `points`（必須、1–100 件の `{x, y, z, space?, label?, stat?}`）, `space`（`MNI` 既定 / `TAL`）, `tal_transform`（`lancaster` 既定 / `brett`）, `radius_mm`（既定 3、最大 10）, `search_mm`（既定 10、最大 20） | `results[]`（点ごとの `status`・`region`・`overlap`・`nearest_gray_matter`）, `regions[]`（灰白質の点をアンカーごとにまとめたもの: `peak_count`・`max_stat`・`labels`）, `atlas` |
 
 ツール結果は `structuredContent`（JSON）と同内容の `content[0].text` で返す。入力不正は `isError: true`。
 

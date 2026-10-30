@@ -67,7 +67,7 @@ def check_main(pkg: Path) -> bool:
         _event({"jsonrpc": "2.0", "id": 2, "method": "tools/list"}, headers=auth), None
     )
     tools = [t["name"] for t in json.loads(res["body"])["result"]["tools"]] if res["statusCode"] == 200 else []
-    ok &= _check("rcs-mcp tools/list", len(tools) == 4, ",".join(tools))
+    ok &= _check("rcs-mcp tools/list", len(tools) == 5 and "map_coordinates" in tools, ",".join(tools))
 
     res = mcp_function.lambda_handler(
         _event(
@@ -98,6 +98,11 @@ def check_main(pkg: Path) -> bool:
     definition = call(20, "get_sabra_definition", {})
     ok &= _check("rcs-mcp get_sabra_definition boundary_version",
                  definition.get("boundary_version") == "2026-10-04", str(definition.get("boundary_version")))
+    mapped = call(30, "map_coordinates", {"points": [{"x": -38, "y": -22, "z": 56}, {"x": -22, "y": -4, "z": -18}]})
+    anchors = [(r.get("region") or {}).get("anchor") for r in mapped.get("results") or []]
+    ok &= _check("rcs-mcp map_coordinates (hand knob -> BNA:57-58, amygdala -> DHBA)",
+                 len(anchors) == 2 and anchors[0] == "BNA:57-58" and str(anchors[1]).startswith("HOMBA:"),
+                 json.dumps(anchors))
     return ok
 
 

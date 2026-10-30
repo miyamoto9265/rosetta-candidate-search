@@ -71,6 +71,12 @@ docs/             仕様書
 - 出典: [CCF-MAP — HOMBA ontology](https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html)
 - 本リポジトリの `rcs/HOMBA_v1_fixed.csv` は公式 CSV に対しタイポ修正等を加えた派生物です
 
+## 2026-10-31 の追加（CBM: 座標 → SABRA）
+
+- MCP ツール `map_coordinates`: 論文の MNI / Talairach 座標を SABRA の領域へ対応づける CBM（Coordinate-to-Brain Mapper）。鈴木さんの CBM_v0 の SABRA ボリューム（`cbm_data/`）を使う
+- 点ごとに `status`（灰白質・白質・脳室・BNA の外の皮質帯・ラベルなし・範囲外）、その位置の領域と UC のアンカー（`BNA:<l>-<r>` / `HOMBA:<id>`）、周囲の球内の領域の割合（`overlap`）、灰白質でないときは近くの灰白質（`nearest_gray_matter`）を返す
+- ボリュームは `scripts/build_cbm_atlas.py` が `rcs/cbm_atlas.bin` に変換する（パッケージ時に自動）。詳しくは [SABRA 定義](docs/sabra.md#座標から引くcbm)
+
 ## 2026-10-04 の変更（SABRA の BNA/DHBA 境界）
 
 - SABRA で BNA を使うのは**新皮質だけ**になった。扁桃体・海馬・大脳基底核・視床（BNA の皮質下 36 ラベル）と、嗅内皮質（A28/34）・TI などの不等皮質は DHBA で表す

@@ -3,7 +3,8 @@
 Deployed as Lambda ``rcs-mcp`` behind API Gateway ``ANY /mcp``. It shares the
 deployment zip with ``rcs-api`` and reuses the RCS (HOMBA) and RCS_EBL (BNA)
 pipelines, so tool results match ``POST /candidates`` and ``POST /candidates-ebl``.
-Together the two cover the SABRA mixed atlas (see ``rcs/sabra.py``).
+Together the two cover the SABRA mixed atlas (see ``rcs/sabra.py``). ``map_coordinates`` is CBM
+(Coordinate-to-Brain Mapper, ``rcs/cbm.py``): MNI / Talairach coordinates -> SABRA regions.
 
 Only the subset of MCP needed for tools is implemented: every POST carries one
 JSON-RPC message and is answered with a single ``application/json`` body. No
@@ -28,7 +29,7 @@ import time
 from collections import defaultdict
 
 import lambda_function
-from rcs import sabra
+from rcs import cbm, sabra
 from rcs.rosetta_candidate_generator import ENGINE_VERSION
 
 logger = logging.getLogger(__name__)
@@ -56,10 +57,27 @@ INSTRUCTIONS = (
     "To express a region in SABRA: if `sabra.atlas` is DHBA use `sabra.dhba_name`; if it is BNA, "
     "use search_bna_candidates and pick BNA area(s). get_homba_term shows HOMBA ancestors/children; "
     "get_sabra_definition returns the full definition. "
+    "map_coordinates (CBM) maps MNI or Talairach coordinates reported in a paper to the SABRA "
+    "region at each point (BNA area or DHBA term, with the UC anchor), the regions around it, and "
+    "the nearest gray matter when the point falls in white matter or outside the atlas. "
     "HOMBA data: research / non-commercial use only; cite the Allen Institute."
 )
 
 _ANNOTATIONS = {"readOnlyHint": True, "idempotentHint": True, "openWorldHint": False}
+
+_POINT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "z": {"type": "number"},
+        "space": {"type": "string", "enum": [cbm.SPACE_MNI, cbm.SPACE_TAL], "description": "Overrides the call's `space` for this point."},
+        "label": {"type": "string", "description": "The paper's name for the region (echoed back)."},
+        "stat": {"type": "number", "description": "Peak statistic (Z / T), used for max_stat in `regions`."},
+    },
+    "required": ["x", "y", "z"],
+    "additionalProperties": False,
+}
 
 TOOLS = [
     {
@@ -183,7 +201,52 @@ TOOLS = [
         "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
         "annotations": _ANNOTATIONS,
     },
+    {
+        "name": "map_coordinates",
+        "title": "Map coordinates to SABRA (CBM)",
+        "description": (
+            "CBM (Coordinate-to-Brain Mapper): map stereotaxic coordinates reported in a paper "
+            "(peak / focus coordinates in mm, e.g. from a results table) to SABRA regions using the "
+            "SABRA volume (MNI152, 0.5 mm; BNA for neocortical gray matter, DHBA for everything else). "
+            "Talairach points are converted to MNI first (Lancaster by default). Per point: `status` "
+            "(gray_matter / white_matter / ventricle / cortex_outside_bna = DHBA gyrus band next to BNA "
+            "areas / other / unassigned = no label, e.g. outside the brain / out_of_bounds), `region` at "
+            "the point with `anchor` (UC anchor: BNA:<l>-<r> for a neocortical area, HOMBA:<id> for a "
+            "DHBA gray-matter term; null for white matter etc.) and `sabra`, `overlap` (share of each "
+            "region in a sphere of radius_mm; how cleanly the point sits in its region) and, when the "
+            "point is not in gray matter, `nearest_gray_matter` within search_mm. `regions` groups the "
+            "gray-matter points by anchor (peak_count, max_stat). Coordinates only locate the reported "
+            "peak: name the population the paper describes, and prefer the paper's own region name "
+            "(search_homba_candidates / search_bna_candidates) when the two disagree. Human brains only. "
+            "No AI; typical latency <1 s."
+        ),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "points": {"type": "array", "items": _POINT_SCHEMA, "minItems": 1, "maxItems": 100},
+                "space": {
+                    "type": "string",
+                    "enum": [cbm.SPACE_MNI, cbm.SPACE_TAL],
+                    "default": cbm.SPACE_MNI,
+                    "description": "Coordinate space the paper reports. Use TAL only when the paper says Talairach.",
+                },
+                "tal_transform": {
+                    "type": "string",
+                    "enum": [cbm.TAL_LANCASTER, cbm.TAL_BRETT],
+                    "default": cbm.TAL_LANCASTER,
+                    "description": "TAL -> MNI transform; brett only when the paper converted MNI to TAL with Brett's mni2tal.",
+                },
+                "radius_mm": {"type": "number", "minimum": 0, "maximum": cbm.MAX_RADIUS_MM, "default": cbm.DEFAULT_RADIUS_MM},
+                "search_mm": {"type": "number", "minimum": 0, "maximum": cbm.MAX_SEARCH_MM, "default": cbm.DEFAULT_SEARCH_MM},
+            },
+            "required": ["points"],
+            "additionalProperties": False,
+        },
+        "annotations": _ANNOTATIONS,
+    },
 ]
+
+_CBM_ATLAS: cbm.CbmAtlas | None = None
 
 # Fields of RCS_EBL candidates that only exist for the HOMBA-shaped web UI.
 _EBL_UI_ALIAS_FIELDS = ("homba_id", "name", "acronym", "dhba_name", "dhba_acronym")
@@ -405,11 +468,71 @@ def _tool_sabra_definition(args: dict) -> dict:
     }
 
 
+def _cbm_atlas() -> cbm.CbmAtlas:
+    global _CBM_ATLAS
+    if _CBM_ATLAS is None:
+        _CBM_ATLAS = cbm.load_atlas(os.environ.get("CBM_ATLAS_PATH") or cbm.DEFAULT_ATLAS_PATH)
+    return _CBM_ATLAS
+
+
+def _number(value: object, name: str, lo: float, hi: float) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ToolInputError(f"{name} must be a number")
+    if not lo <= float(value) <= hi:
+        raise ToolInputError(f"{name} must be between {lo} and {hi}")
+    return float(value)
+
+
+def _tool_map_coordinates(args: dict) -> dict:
+    points = args.get("points")
+    if not isinstance(points, list) or not 1 <= len(points) <= 100:
+        raise ToolInputError("points must be a list of 1-100 {x, y, z} objects")
+    space = str(args.get("space") or cbm.SPACE_MNI).upper()
+    if space not in (cbm.SPACE_MNI, cbm.SPACE_TAL):
+        raise ToolInputError("space must be MNI or TAL")
+    transform = str(args.get("tal_transform") or cbm.TAL_LANCASTER).lower()
+    if transform not in (cbm.TAL_LANCASTER, cbm.TAL_BRETT):
+        raise ToolInputError("tal_transform must be lancaster or brett")
+    radius = _number(args.get("radius_mm", cbm.DEFAULT_RADIUS_MM), "radius_mm", 0, cbm.MAX_RADIUS_MM)
+    search = _number(args.get("search_mm", cbm.DEFAULT_SEARCH_MM), "search_mm", 0, cbm.MAX_SEARCH_MM)
+    for i, p in enumerate(points):
+        if not isinstance(p, dict):
+            raise ToolInputError(f"points[{i}] must be an object")
+        for axis in ("x", "y", "z"):
+            _number(p.get(axis), f"points[{i}].{axis}", -1000, 1000)
+        if p.get("space") and str(p["space"]).upper() not in (cbm.SPACE_MNI, cbm.SPACE_TAL):
+            raise ToolInputError(f"points[{i}].space must be MNI or TAL")
+
+    atlas = _cbm_atlas()
+    results = cbm.map_coordinates(
+        atlas,
+        points,
+        space=space,
+        tal_transform=transform,
+        radius_mm=radius,
+        search_mm=search,
+        generator=lambda_function.get_generator(),
+    )
+    return {
+        "results": results,
+        "regions": cbm.summarize(results),
+        "atlas": {
+            "source": atlas.source,
+            "voxel_mm": atlas.voxel_mm[0],
+            "sabra_boundary_version": sabra.SABRA_BOUNDARY_VERSION,
+            "radius_mm": radius,
+            "search_mm": search,
+        },
+        "meta": {"rcs_version": ENGINE_VERSION},
+    }
+
+
 TOOL_HANDLERS = {
     "search_homba_candidates": _tool_search_homba,
     "search_bna_candidates": _tool_search_bna,
     "get_homba_term": _tool_get_term,
     "get_sabra_definition": _tool_sabra_definition,
+    "map_coordinates": _tool_map_coordinates,
 }
 
 

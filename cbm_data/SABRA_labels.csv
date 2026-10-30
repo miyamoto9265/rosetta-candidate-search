@@ -1,0 +1,525 @@
+sabra_id,source,orig_id,name
+1,BNA,1,SFG_L_7_1
+2,BNA,2,SFG_R_7_1
+3,BNA,3,SFG_L_7_2
+4,BNA,4,SFG_R_7_2
+5,BNA,5,SFG_L_7_3
+6,BNA,6,SFG_R_7_3
+7,BNA,7,SFG_L_7_4
+8,BNA,8,SFG_R_7_4
+9,BNA,9,SFG_L_7_5
+10,BNA,10,SFG_R_7_5
+11,BNA,11,SFG_L_7_6
+12,BNA,12,SFG_R_7_6
+13,BNA,13,SFG_L_7_7
+14,BNA,14,SFG_R_7_7
+15,BNA,15,MFG_L_7_1
+16,BNA,16,MFG_R_7_1
+17,BNA,17,MFG_L_7_2
+18,BNA,18,MFG_R_7_2
+19,BNA,19,MFG_L_7_3
+20,BNA,20,MFG_R_7_3
+21,BNA,21,MFG_L_7_4
+22,BNA,22,MFG_R_7_4
+23,BNA,23,MFG_L_7_5
+24,BNA,24,MFG_R_7_5
+25,BNA,25,MFG_L_7_6
+26,BNA,26,MFG_R_7_6
+27,BNA,27,MFG_L_7_7
+28,BNA,28,MFG_R_7_7
+29,BNA,29,IFG_L_6_1
+30,BNA,30,IFG_R_6_1
+31,BNA,31,IFG_L_6_2
+32,BNA,32,IFG_R_6_2
+33,BNA,33,IFG_L_6_3
+34,BNA,34,IFG_R_6_3
+35,BNA,35,IFG_L_6_4
+36,BNA,36,IFG_R_6_4
+37,BNA,37,IFG_L_6_5
+38,BNA,38,IFG_R_6_5
+39,BNA,39,IFG_L_6_6
+40,BNA,40,IFG_R_6_6
+41,BNA,41,OrG_L_6_1
+42,BNA,42,OrG_R_6_1
+43,BNA,43,OrG_L_6_2
+44,BNA,44,OrG_R_6_2
+45,BNA,45,OrG_L_6_3
+46,BNA,46,OrG_R_6_3
+47,BNA,47,OrG_L_6_4
+48,BNA,48,OrG_R_6_4
+49,BNA,49,OrG_L_6_5
+50,BNA,50,OrG_R_6_5
+51,BNA,51,OrG_L_6_6
+52,BNA,52,OrG_R_6_6
+53,BNA,53,PrG_L_6_1
+54,BNA,54,PrG_R_6_1
+55,BNA,55,PrG_L_6_2
+56,BNA,56,PrG_R_6_2
+57,BNA,57,PrG_L_6_3
+58,BNA,58,PrG_R_6_3
+59,BNA,59,PrG_L_6_4
+60,BNA,60,PrG_R_6_4
+61,BNA,61,PrG_L_6_5
+62,BNA,62,PrG_R_6_5
+63,BNA,63,PrG_L_6_6
+64,BNA,64,PrG_R_6_6
+65,BNA,65,PCL_L_2_1
+66,BNA,66,PCL_R_2_1
+67,BNA,67,PCL_L_2_2
+68,BNA,68,PCL_R_2_2
+69,BNA,69,STG_L_6_1
+70,BNA,70,STG_R_6_1
+71,BNA,71,STG_L_6_2
+72,BNA,72,STG_R_6_2
+73,BNA,73,STG_L_6_3
+74,BNA,74,STG_R_6_3
+75,BNA,75,STG_L_6_4
+76,BNA,76,STG_R_6_4
+77,BNA,77,STG_L_6_5
+78,BNA,78,STG_R_6_5
+79,BNA,79,STG_L_6_6
+80,BNA,80,STG_R_6_6
+81,BNA,81,MTG_L_4_1
+82,BNA,82,MTG_R_4_1
+83,BNA,83,MTG_L_4_2
+84,BNA,84,MTG_R_4_2
+85,BNA,85,MTG_L_4_3
+86,BNA,86,MTG_R_4_3
+87,BNA,87,MTG_L_4_4
+88,BNA,88,MTG_R_4_4
+89,BNA,89,ITG_L_7_1
+90,BNA,90,ITG_R_7_1
+91,BNA,91,ITG_L_7_2
+92,BNA,92,ITG_R_7_2
+93,BNA,93,ITG_L_7_3
+94,BNA,94,ITG_R_7_3
+95,BNA,95,ITG_L_7_4
+96,BNA,96,ITG_R_7_4
+97,BNA,97,ITG_L_7_5
+98,BNA,98,ITG_R_7_5
+99,BNA,99,ITG_L_7_6
+100,BNA,100,ITG_R_7_6
+101,BNA,101,ITG_L_7_7
+102,BNA,102,ITG_R_7_7
+103,BNA,103,FuG_L_3_1
+104,BNA,104,FuG_R_3_1
+105,BNA,105,FuG_L_3_2
+106,BNA,106,FuG_R_3_2
+107,BNA,107,FuG_L_3_3
+108,BNA,108,FuG_R_3_3
+109,BNA,109,PhG_L_6_1
+110,BNA,110,PhG_R_6_1
+111,BNA,111,PhG_L_6_2
+112,BNA,112,PhG_R_6_2
+113,BNA,113,PhG_L_6_3
+114,BNA,114,PhG_R_6_3
+115,BNA,115,PhG_L_6_4
+116,BNA,116,PhG_R_6_4
+117,BNA,117,PhG_L_6_5
+118,BNA,118,PhG_R_6_5
+119,BNA,119,PhG_L_6_6
+120,BNA,120,PhG_R_6_6
+121,BNA,121,pSTS_L_2_1
+122,BNA,122,pSTS_R_2_1
+123,BNA,123,pSTS_L_2_2
+124,BNA,124,pSTS_R_2_2
+125,BNA,125,SPL_L_5_1
+126,BNA,126,SPL_R_5_1
+127,BNA,127,SPL_L_5_2
+128,BNA,128,SPL_R_5_2
+129,BNA,129,SPL_L_5_3
+130,BNA,130,SPL_R_5_3
+131,BNA,131,SPL_L_5_4
+132,BNA,132,SPL_R_5_4
+133,BNA,133,SPL_L_5_5
+134,BNA,134,SPL_R_5_5
+135,BNA,135,IPL_L_6_1
+136,BNA,136,IPL_R_6_1
+137,BNA,137,IPL_L_6_2
+138,BNA,138,IPL_R_6_2
+139,BNA,139,IPL_L_6_3
+140,BNA,140,IPL_R_6_3
+141,BNA,141,IPL_L_6_4
+142,BNA,142,IPL_R_6_4
+143,BNA,143,IPL_L_6_5
+144,BNA,144,IPL_R_6_5
+145,BNA,145,IPL_L_6_6
+146,BNA,146,IPL_R_6_6
+147,BNA,147,PCun_L_4_1
+148,BNA,148,PCun_R_4_1
+149,BNA,149,PCun_L_4_2
+150,BNA,150,PCun_R_4_2
+151,BNA,151,PCun_L_4_3
+152,BNA,152,PCun_R_4_3
+153,BNA,153,PCun_L_4_4
+154,BNA,154,PCun_R_4_4
+155,BNA,155,PoG_L_4_1
+156,BNA,156,PoG_R_4_1
+157,BNA,157,PoG_L_4_2
+158,BNA,158,PoG_R_4_2
+159,BNA,159,PoG_L_4_3
+160,BNA,160,PoG_R_4_3
+161,BNA,161,PoG_L_4_4
+162,BNA,162,PoG_R_4_4
+163,BNA,163,INS_L_6_1
+164,BNA,164,INS_R_6_1
+165,BNA,165,INS_L_6_2
+166,BNA,166,INS_R_6_2
+167,BNA,167,INS_L_6_3
+168,BNA,168,INS_R_6_3
+169,BNA,169,INS_L_6_4
+170,BNA,170,INS_R_6_4
+171,BNA,171,INS_L_6_5
+172,BNA,172,INS_R_6_5
+173,BNA,173,INS_L_6_6
+174,BNA,174,INS_R_6_6
+175,BNA,175,CG_L_7_1
+176,BNA,176,CG_R_7_1
+177,BNA,177,CG_L_7_2
+178,BNA,178,CG_R_7_2
+179,BNA,179,CG_L_7_3
+180,BNA,180,CG_R_7_3
+181,BNA,181,CG_L_7_4
+182,BNA,182,CG_R_7_4
+183,BNA,183,CG_L_7_5
+184,BNA,184,CG_R_7_5
+185,BNA,185,CG_L_7_6
+186,BNA,186,CG_R_7_6
+187,BNA,187,CG_L_7_7
+188,BNA,188,CG_R_7_7
+189,BNA,189,MVOcC _L_5_1
+190,BNA,190,MVOcC _R_5_1
+191,BNA,191,MVOcC _L_5_2
+192,BNA,192,MVOcC _R_5_2
+193,BNA,193,MVOcC _L_5_3
+194,BNA,194,MVOcC _R_5_3
+195,BNA,195,MVOcC _L_5_4
+196,BNA,196,MVOcC _R_5_4
+197,BNA,197,MVOcC _L_5_5
+198,BNA,198,MVOcC _R_5_5
+199,BNA,199,LOcC_L_4_1
+200,BNA,200,LOcC_R_4_1
+201,BNA,201,LOcC _L_4_2
+202,BNA,202,LOcC _R_4_2
+203,BNA,203,LOcC _L_4_3
+204,BNA,204,LOcC _R_4_3
+205,BNA,205,LOcC_L_4_4
+206,BNA,206,LOcC_R_4_4
+207,BNA,207,LOcC_L_2_1
+208,BNA,208,LOcC_R_2_1
+209,BNA,209,LOcC_L_2_2
+210,BNA,210,LOcC_R_2_2
+100003,DHBA,3,precentral gyrus
+100004,DHBA,4,superior frontal gyrus
+100005,DHBA,5,middle frontal gyrus
+100007,DHBA,7,"inferior frontal gyrus, triangular part"
+100008,DHBA,8,"inferior frontal gyrus, opercular part"
+100010,DHBA,10,rectus gyrus
+100011,DHBA,11,medial orbital gyrus
+100012,DHBA,12,anterior intermediate orbital gyrus
+100013,DHBA,13,posterior intermediate orbital gyrus
+100014,DHBA,14,lateral orbital gyrus
+100015,DHBA,15,"paracentral lobule, rostral part"
+100016,DHBA,16,frontal operculum
+100021,DHBA,21,postcentral gyrus
+100022,DHBA,22,superior parietal lobule (gyrus)
+100024,DHBA,24,supramarginal gyrus
+100025,DHBA,25,angular gyrus
+100026,DHBA,26,precuneaus (gyrus)
+100027,DHBA,27,"paracentral lobule, caudal part"
+100029,DHBA,29,superior temporal gyrus
+100030,DHBA,30,middle temporal gyrus
+100031,DHBA,31,inferior temporal gyrus
+100033,DHBA,33,transverse temporal gyrus (Heschl's gyrus)
+100034,DHBA,34,planum temporale
+100035,DHBA,35,temporal pole (temporopolar cortex)
+100036,DHBA,36,planum polare
+100038,DHBA,38,occipital pole
+100039,DHBA,39,cuneus (gyrus)
+100040,DHBA,40,lingual gyrus
+100042,DHBA,42,inferior occipital gyrus
+100043,DHBA,43,superior occipital gyrus
+100046,DHBA,46,"cingulate gyrus, rostral (anterior) part"
+100047,DHBA,47,"cingulate gyrus, caudal (posterior) part"
+100048,DHBA,48,cingulate-parahippocampal isthmus
+100049,DHBA,49,subcallosal (subgenual) gyrus (parolfactory gyrus)
+100052,DHBA,52,anterior parahippocampal gyrus
+100053,DHBA,53,posterior parahippocampal gyrus
+100055,DHBA,55,ambiens gyrus
+100060,DHBA,60,head of hippocampus
+100062,DHBA,62,body of hippocampus
+100063,DHBA,63,tail of hippocampus
+100066,DHBA,66,long insular gyri
+100067,DHBA,67,short insular gyri
+100069,DHBA,69,parietal operculum
+100073,DHBA,73,paracingulate gyrus
+100074,DHBA,74,rostral gyrus
+100075,DHBA,75,frontomarginal gyrus
+100076,DHBA,76,frontal pole
+100077,DHBA,77,perirhinal gyrus
+100090,DHBA,90,agranular temporal insular cortex (area TI)
+100092,DHBA,92,olfactory bulb (main olfactory bulb)
+100093,DHBA,93,anterior olfactory nuclear complex
+100094,DHBA,94,lateral olfactory area
+100095,DHBA,95,piriform cortex
+100097,DHBA,97,amygdaloid complex
+100098,DHBA,98,anterior amygdaloid area
+100102,DHBA,102,anterior (rostral) cortical nucleus of amygdala
+100103,DHBA,103,posterior (caudal) cortical nucleus of amygdala
+100105,DHBA,105,amygdalohippocampal area
+100108,DHBA,108,basolateral nucleus (basal nucleus) of amygdala
+100111,DHBA,111,amygdalohippocampal transition area
+100112,DHBA,112,amygdalostriatal transition area
+100113,DHBA,113,amygdalocortical transition area (amygdalopiriform transition area)
+100115,DHBA,115,bed nucleus of stria terminalis
+100121,DHBA,121,head of caudate nucleus
+100122,DHBA,122,body of caudate nucleus
+100123,DHBA,123,tail of caudate nucleus (caudolateral division of the CP)
+100125,DHBA,125,rostral putamen
+100126,DHBA,126,caudal putamen
+100127,DHBA,127,ventral subdivision of PuC
+100128,DHBA,128,nucleus accumbens
+100132,DHBA,132,external division of globus pallidus
+100133,DHBA,133,internal division of globus pallidus
+100134,DHBA,134,ventral pallidum
+100135,DHBA,135,claustrum
+100138,DHBA,138,temporal claustrum
+100147,DHBA,147,substantia innominata
+100153,DHBA,153,anteromedial nucleus of thalamus
+100154,DHBA,154,anteroventral nucleus of thalamus
+100155,DHBA,155,lateral dorsal nucleus of thalamus
+100157,DHBA,157,mediodorsal nucleus of thalamus
+100158,DHBA,158,reuniens (medioventral) nucleus of thalamus
+100159,DHBA,159,parataenial nucleus of thalamus
+100162,DHBA,162,lateral posterior nucleus of thalamus
+100169,DHBA,169,ventral posterior medial nucleus
+100170,DHBA,170,ventral posterior inferior nucleus
+100171,DHBA,171,basal ventral medial nucleus
+100172,DHBA,172,ventral medial nucleus of thalamus
+100174,DHBA,174,lateral geniculate nucleus (dorsal lateral geniculate nucleus)
+100177,DHBA,177,medial geniculate nucleus
+100178,DHBA,178,posterior nucleus of thalamus
+100183,DHBA,183,centromedian nucleus of thalamus
+100184,DHBA,184,parafascicular nucleus of thalamus
+100185,DHBA,185,subparafascicular nucleus of thalamus
+100189,DHBA,189,lateral habenular nucleus
+100190,DHBA,190,medial habenular nucleus
+100192,DHBA,192,pineal body
+100194,DHBA,194,nucleus of the field of Forel
+100196,DHBA,196,reticular nucleus of thalamus
+100198,DHBA,198,subthalamic nucleus
+100199,DHBA,199,hypothalamus
+100200,DHBA,200,preoptic region of HTH
+100201,DHBA,201,supraoptic region of HTH
+100203,DHBA,203,dorsomedial hypothalamic nucleus
+100204,DHBA,204,ventromedial hypothalamic nucleus
+100206,DHBA,206,arcuate nucleus of hypothalamus
+100208,DHBA,208,"lateral hypothalamic area, tuberal part"
+100209,DHBA,209,median eminence
+100214,DHBA,214,medial mammillary nucleus
+100215,DHBA,215,lateral mammillary nucleus
+100216,DHBA,216,posterior hypothalamic nucleus
+100219,DHBA,219,retromammillary area
+100220,DHBA,220,forebrain white matter (unspecified region)
+100222,DHBA,222,anterior commissure
+100223,DHBA,223,corpus callosum
+100224,DHBA,224,habenular commissure
+100231,DHBA,231,fimbria
+100233,DHBA,233,column of the fornix
+100234,DHBA,234,body of the fornix
+100235,DHBA,235,crus of the fornix
+100239,DHBA,239,caudal limb of internal capsule
+100244,DHBA,244,mammillothalamic tract
+100245,DHBA,245,olfactory tract
+100246,DHBA,246,optic chiasm
+100247,DHBA,247,optic nerve
+100249,DHBA,249,optic tract
+100251,DHBA,251,external sagittal stratum (optic radiation)
+100253,DHBA,253,stria medullaris of thalamus
+100258,DHBA,258,rostral horn of lateral ventricles
+100259,DHBA,259,body of lateral ventricles
+100260,DHBA,260,atrium of lateral ventricles
+100261,DHBA,261,caudal horn of lateral ventricles
+100262,DHBA,262,inferior horn of lateral ventricles
+100264,DHBA,264,third ventricle
+100270,DHBA,270,interventricular foramen
+100332,DHBA,332,septum pellucidum
+100335,DHBA,335,pretectal region
+100338,DHBA,338,midbrain tegmentum
+100345,DHBA,345,periaqueductal gray substance
+100349,DHBA,349,dorsal raphe nucleus
+100359,DHBA,359,red nucleus
+100360,DHBA,360,substantia nigra
+100365,DHBA,365,superior colliculus
+100366,DHBA,366,inferior colliculus
+100367,DHBA,367,midbrain white matter (unspecified region)
+100369,DHBA,369,brachium of superior colliculus
+100370,DHBA,370,cerebral peduncle (crus cerebri)
+100372,DHBA,372,decussation of superior cerebellar peduncle
+100374,DHBA,374,fasciculus retroflexus (habenuno-interpeduncular tract)
+100378,DHBA,378,superior cerebellar peduncle (brachium conjunctivum)
+100382,DHBA,382,cerebral aqueduct
+100388,DHBA,388,cerebellar vermis
+100393,DHBA,393,paravermis of cerebellar hemisphere
+100395,DHBA,395,cerebellar deep nuclei
+100396,DHBA,396,dentate (lateral) nucleus
+100397,DHBA,397,interpositus (intermediate) nucleus
+100398,DHBA,398,fastigial (medial) nucleus
+100400,DHBA,400,basilar part of pons
+100402,DHBA,402,pontine tegmentum
+100404,DHBA,404,abducens nucleus
+100406,DHBA,406,facial nucleus
+100415,DHBA,415,vestibular nuclei in pons
+100423,DHBA,423,Pontine reticular formation
+100424,DHBA,424,parabrachial nuclei
+100435,DHBA,435,pyramidal part of medulla oblongata
+100436,DHBA,436,tegmentum of medulla oblongata
+100439,DHBA,439,hypoglossal nucleus
+100441,DHBA,441,dorsal motor nucleus of the vagus (vagal nerve nucleus)
+100443,DHBA,443,solitary nucleus
+100445,DHBA,445,vestibular nuclei in medulla oblongata
+100448,DHBA,448,cuneate nucleus
+100449,DHBA,449,gracile nucleus
+100452,DHBA,452,inferior olive
+100457,DHBA,457,medullary reticular formation in  medulla oblongata
+100464,DHBA,464,hindbrain white matter (unspecified region)
+100465,DHBA,465,cuneate fasciculus
+100468,DHBA,468,inferior cerebellar peduncle
+100471,DHBA,471,lateral lemniscus
+100473,DHBA,473,medial lemniscus
+100474,DHBA,474,medial longitudinal fasciculus
+100475,DHBA,475,middle cerebellar peduncle (brachium pontis)
+100476,DHBA,476,pyramidal decussation
+100477,DHBA,477,pyramidal tract
+100482,DHBA,482,fourth ventricle
+100483,DHBA,483,central canal of medulla oblongata
+100825,DHBA,825,piriform-entorhinal-amygdaloid area
+100936,DHBA,936,olfactory tubercle
+100967,DHBA,967,vertical division of nucleus of diagonal band
+100968,DHBA,968,horizontal division of nucleus of diagonal band
+100972,DHBA,972,rostral septal nuclear complex
+100980,DHBA,980,caudal septal nuclear complex
+100991,DHBA,991,medial division of central nucleus
+100992,DHBA,992,lateral division of central nucleus
+100993,DHBA,993,capsular division of central nucleus
+100997,DHBA,997,rostral periamygdaloid cortex (ventral division of CoA)
+100998,DHBA,998,caudal periamygdaloid cortex (ventral division of CoP)
+100999,DHBA,999,nucleus of lateral olfactory tract
+101000,DHBA,1000,rostral medial nucleus
+101005,DHBA,1005,caudal medial nucleus
+101011,DHBA,1011,dorsal division of lateral nucleus
+101014,DHBA,1014,intermediate division of lateral nucleus
+101015,DHBA,1015,ventral division of lateral nucleus
+101019,DHBA,1019,rostral (uncharted) division of BL
+101020,DHBA,1020,magnocellular (dorsal) division of BL
+101024,DHBA,1024,intermediate division of BL
+101026,DHBA,1026,lateral subdivision of BLpc
+101027,DHBA,1027,medial subdivision of BLpc (basoventral nucleus)
+101028,DHBA,1028,paralaminar nucleus of amygdala
+101030,DHBA,1030,rostral (anterior) division of BM
+101031,DHBA,1031,magnocellular (dorsal) division of BM
+101034,DHBA,1034,parvicellular (ventral) division of BM
+101035,DHBA,1035,lateral subdivsion of BMpc
+101049,DHBA,1049,rostral nuclear complex of BNST
+101056,DHBA,1056,caudal nuclear complex of BNST
+101064,DHBA,1064,remaining caudal extension of BNST (along stria terminaris)
+101071,DHBA,1071,endopiriform nucleus
+101089,DHBA,1089,rostral paraventricular nucleus of thalamus
+101090,DHBA,1090,intermediate paraventricular nucleus of thalamus
+101091,DHBA,1091,caudal paraventricular nucleus of thalamus
+101092,DHBA,1092,intermediodorsal  nucleus of thalamus
+101096,DHBA,1096,fasciculosus nucleus of thalamus
+101098,DHBA,1098,rhomboid (central) nucleus of thalamus
+101099,DHBA,1099,periventricular area of posterior thalamus
+101101,DHBA,1101,retrouniens area
+101107,DHBA,1107,rostral division of pulvinar
+101108,DHBA,1108,medial division of pulvinar
+101109,DHBA,1109,lateral division of pulvinar
+101112,DHBA,1112,inferior division of pulvinar
+101118,DHBA,1118,principal division of VA
+101121,DHBA,1121,caudodorsal extension of VA
+101122,DHBA,1122,magocellular division of VA
+101123,DHBA,1123,rostral division of VL
+101124,DHBA,1124,medial division of VL (nucleus x of thalamus)
+101126,DHBA,1126,dorsal subdivision of caudal subdivision of VL
+101127,DHBA,1127,ventral subdivision of caudal subdivision of VL
+101128,DHBA,1128,ventromedial division of VL
+101129,DHBA,1129,rostral division of ventral posterior lateral nucleus
+101130,DHBA,1130,caudal division of ventral posterior lateral nucleus
+101132,DHBA,1132,parvicellular ventral posterior (medial) nucleus (VPMpc)
+101163,DHBA,1163,suprageniculate nucleus
+101165,DHBA,1165,posterior marginal (intralaminar) nucleus of thalamus (PIL)
+101168,DHBA,1168,posterior limitans nucleus
+101171,DHBA,1171,paracentral nucleus of thalamus
+101174,DHBA,1174,central lateral nucleus of thalamus
+101180,DHBA,1180,central dorsal nucleus of thalamus
+101189,DHBA,1189,rostral division of ZI
+101190,DHBA,1190,caudal division of ZI
+101208,DHBA,1208,uncharted (diffuse) region of thalamus
+101214,DHBA,1214,"periventricular nucleus, preoptic part"
+101216,DHBA,1216,anteroventral periventricular nucleus
+101217,DHBA,1217,anteromedial preoptic nucleus
+101218,DHBA,1218,medial preoptic area
+101219,DHBA,1219,medial preoptic nucleus
+101220,DHBA,1220,lateral preoptic area
+101222,DHBA,1222,median preoptic nucleus
+101223,DHBA,1223,organum vasculosum laminae terminalis
+101224,DHBA,1224,"periventricular nucleus, supraoptic part"
+101225,DHBA,1225,anterior hypothalamic nucleus
+101228,DHBA,1228,paraventricular nucleus of hypothalamus
+101234,DHBA,1234,suprachiasmatic nucleus
+101237,DHBA,1237,retrochiasmatic nucleus
+101238,DHBA,1238,supraoptic nucleus
+101267,DHBA,1267,"lateral  hypothalamic area, mammillary part"
+101270,DHBA,1270,dorsal premammillary nulceus
+101271,DHBA,1271,ventral premammillary nulceus
+101304,DHBA,1304,nucleus of the brachium of inferior colliculus
+101321,DHBA,1321,precommissural nucleus
+101358,DHBA,1358,ventral tegmental area
+101376,DHBA,1376,cuneiform nucleus
+101381,DHBA,1381,pedunculo(pontine) tegmental  nucleus
+101386,DHBA,1386,interstitial nucleus of posterior commissure (nucleus of posterior commissure)
+101392,DHBA,1392,uncharted (diffuse) region in midbrain tegmentum
+101405,DHBA,1405,lobule I (lingula) of the vermis
+101407,DHBA,1407,"lobule II (central lobule, rostral part)"
+101408,DHBA,1408,"lobule III (central lobule, caudal part)"
+101410,DHBA,1410,"lobule IV (culmen, rostral part)"
+101411,DHBA,1411,"lobule V (culmen, caudal part)"
+101413,DHBA,1413,lobule II-III (wing of central lobule)
+101417,DHBA,1417,"lobule IV (quadrangular lobule, rostral part)"
+101418,DHBA,1418,"lobule V (quadrangular lobule, caudal part)"
+101421,DHBA,1421,lobule VI (declive)
+101424,DHBA,1424,lobule VII (folium and tuber)
+101426,DHBA,1426,lobule VIIAf (folium)
+101429,DHBA,1429,Lobule VIII (pyramis)
+101432,DHBA,1432,lobule IX (uvula)
+101435,DHBA,1435,"lobule VIA (simple lobule, rostral part)"
+101436,DHBA,1436,"Lobule VIB (simple lobule, caudal part)"
+101440,DHBA,1440,lobule VIIA/crus II (inferior semilunar lobule)
+101441,DHBA,1441,lobule VIIB (gracile lobule)
+101442,DHBA,1442,Lobule VIII (biventral lobule)
+101446,DHBA,1446,lobule IXa (tonsil)
+101447,DHBA,1447,lobule IXb (paraflocculus)
+101449,DHBA,1449,"flocculonodular lobe, vermis part (lobule X-nodulus)"
+101450,DHBA,1450,"flocculonodular lobe, flocculus part"
+101473,DHBA,1473,dorsal tegmental nucleus
+101477,DHBA,1477,laterodorsal tegmental nucleus
+101565,DHBA,1565,reticulotegmental nucleus
+101586,DHBA,1586,central gray of medulla oblongata
+101630,DHBA,1630,"spinal trigeminal nucleus, caudal division"
+101674,DHBA,1674,lateral reticular nucleus
+101756,DHBA,1756,choroid plexus in lateral ventricles
+101765,DHBA,1765,choroid plexus in third ventricle
+101792,DHBA,1792,dorsal hippocampal commissure
+101819,DHBA,1819,corticobulbar tract
+101829,DHBA,1829,alveus
+102032,DHBA,2032,fusiform (occipitotemporal) gyrus
+102047,DHBA,2047,interpeduncular fossa
+102049,DHBA,2049,root of occulomotor nerve
+102066,DHBA,2066,lateral region of cerebellar hemisphere
+102081,DHBA,2081,"rostral (anterior, superior) medullary velum"
+102426,DHBA,2426,velum interpositum
+102442,DHBA,2442,transverse fibers of pons (pontine crossing tract)
+102446,DHBA,2446,middle putamen
+102474,DHBA,2474,central medial nucleus of thalamus
+102481,DHBA,2481,posterior commissure

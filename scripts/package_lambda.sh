@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build Lambda deployment zip shared by rcs-api and rcs-mcp:
-# rcs/ (core) + web/backend adapters, plus rcs_ebl/ + EBL tables for the MCP BNA tool.
+# rcs/ (core) + web/backend adapters, plus rcs_ebl/ + EBL tables for the MCP BNA tool
+# and rcs/cbm_atlas.bin (SABRA volume) for the MCP CBM tool.
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -8,6 +9,7 @@ PACKAGE_DIR="$REPO_ROOT/dist/package"
 ZIP_PATH="$REPO_ROOT/dist/lambda.zip"
 CACHE_PATH="$REPO_ROOT/rcs/generator_cache.pkl"
 EBL_CACHE_PATH="$REPO_ROOT/rcs_ebl/ebl_generator_cache.pkl"
+CBM_ATLAS_PATH="$REPO_ROOT/rcs/cbm_atlas.bin"
 EBL_READY_DIR="$REPO_ROOT/ebl_for_rcs_v1.0_20260722/rcs_ready"
 DOCKER_IMAGE="public.ecr.aws/lambda/python:3.14"
 PYTHON="${PYTHON:-$(command -v python3 || command -v python)}"
@@ -34,8 +36,9 @@ run_cache_build() {
 
 run_cache_build scripts/build_generator_cache.py
 run_cache_build scripts/build_ebl_generator_cache.py
+run_cache_build scripts/build_cbm_atlas.py
 
-for path in "$CACHE_PATH" "$EBL_CACHE_PATH"; do
+for path in "$CACHE_PATH" "$EBL_CACHE_PATH" "$CBM_ATLAS_PATH"; do
   if [[ ! -f "$path" ]]; then
     echo "Missing generator cache: $path" >&2
     exit 1
