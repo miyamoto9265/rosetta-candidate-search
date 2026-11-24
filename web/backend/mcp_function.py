@@ -60,7 +60,10 @@ INSTRUCTIONS = (
     "map_coordinates (CBM) maps MNI or Talairach coordinates reported in a paper to the SABRA "
     "region at each point (BNA area or DHBA term, with the UC anchor), the regions around it, and "
     "the nearest gray matter when the point falls in white matter or outside the atlas. "
-    "HOMBA data: research / non-commercial use only; cite the Allen Institute."
+    "HOMBA terms (IDs, names, acronyms, hierarchy, DHBA names) come from the Allen Institute's "
+    "Harmonized Ontology of Mammalian Brain Anatomy (RRID:SCR_027628), licensed under CC BY 4.0 "
+    "(https://creativecommons.org/licenses/by/4.0/); RCS corrects some typos and adds HOMEX "
+    "subdivisions and aliases. Credit the Allen Institute when you show or publish HOMBA terms."
 )
 
 _ANNOTATIONS = {"readOnlyHint": True, "idempotentHint": True, "openWorldHint": False}

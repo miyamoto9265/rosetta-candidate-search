@@ -49,7 +49,7 @@
         <p>
           論文や atlas から抽出した脳領域・解剖学的構造名（例: <code>Pulvinar nucleus</code>、
           <code>Left basolateral amygdala (BLA)</code>）を入力すると、
-          HOMBA（Human Occipital-and-More Brain Atlas）オントロジー上の候補 ID と名称を
+          HOMBA（Harmonized Ontology of Mammalian Brain Anatomy）オントロジー上の候補 ID と名称を
           スコア付きで返します。ROSETTA プロジェクトの候補生成エンジン（Python v0.8.5）に、
           クエリ清掃と候補裁定を行う AI 補助レイヤ（API v0.9.0、DeepSeek 社 LLM への送信を含む）を
           加えた公開 UI です。
@@ -63,6 +63,20 @@
           <li><strong>公開 URL:</strong> <a href="https://rcs.cobrac.site/">https://rcs.cobrac.site/</a>（CloudFront）</li>
           <li><strong>ホスティング:</strong> Amazon Web Services（CloudFront + S3 + Lambda + API Gateway、リージョン ap-northeast-1）</li>
           <li><strong>ソースコード:</strong> リポジトリ内 <code>rcs/</code>（コア）、<code>web/frontend/</code>（本 UI）</li>
+        </ul>
+      </section>
+
+      <section class="about-card" id="data-license">
+        <h2>データの出典とライセンス</h2>
+        <p>
+          RCS が返す HOMBA の ID・名称・略語・階層（DHBA の名称を含む）は、Allen Institute の
+          Harmonized Ontology of Mammalian Brain Anatomy（HOMBA）によるものです。HOMBA は
+          <a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a> で提供されています。
+        </p>
+        <ul>
+          <li><strong>出典:</strong> <a href="https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html">HOMBA ontology（CCF-MAP）</a>、<a href="https://knowledge.brain-map.org/data/4OGSMDGXKB34DVKGTJW">Allen Brain Knowledge Platform</a>（RRID:SCR_027628）</li>
+          <li><strong>論文:</strong> Ding, S.-L., Bhandiwad, A. A., Rosen, B. Q., Seeman, S. C., et al. (2026). Harmonized brain ontology and 3D atlases for human, macaque, and marmoset basal ganglia. <em>Cell</em>, 189(23). <a href="https://doi.org/10.1016/j.cell.2026.10.033">doi:10.1016/j.cell.2026.10.033</a></li>
+          <li><strong>変更点:</strong> RCS は HOMBA v1 の CSV を使い、表記の誤りを直しています。また、より細かい区分（HOMEX）と検索用の別名・略語を独自に追加しています。これらの変更は Allen Institute によるものではありません。</li>
         </ul>
       </section>
 
@@ -113,6 +127,9 @@
         <p class="disclaimer">
           Official URL: <a href="https://rcs.cobrac.site/">https://rcs.cobrac.site/</a>
           · Engine v0.8.5 · API v0.9.0 · &copy; ROSETTA project
+        </p>
+        <p class="disclaimer">
+          HOMBA の用語データは Allen Institute によるもので、<a href="https://creativecommons.org/licenses/by/4.0/deed.ja">CC BY 4.0</a> で提供されています。RCS では一部を修正・追加して使っています（<a href="./about.html#data-license">出典とライセンス</a>）。
         </p>
       </div>
     </footer>
