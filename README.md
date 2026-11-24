@@ -64,12 +64,14 @@ docs/             仕様書
 | `homba_alias_rules.csv` | HOMBA 側別名 |
 | `homba_abbrev_rules.csv` | クエリ側略語展開 |
 
-## HOMBA ontology（帰属・利用条件）
+## HOMBA ontology（出典・ライセンス）
 
-本リポジトリに含まれる HOMBA（Harmonized Ontology of Mammalian Brain Anatomy）関連データは Allen Institute の著作物です。利用・再配布は [Allen Institute Terms of Use](https://alleninstitute.org/legal/terms-of-use) に従い、**研究・その他非商用目的**に限ります。商用での再配布・組み込みには Allen Institute の書面による許可が必要です（`terms@alleninstitute.org`）。公開利用時は [Citation Policy](https://alleninstitute.org/legal/citation-policy) に従って出典を明示してください。
+本リポジトリと RCS が使う HOMBA（Harmonized Ontology of Mammalian Brain Anatomy）の ID・名称・略語・階層（DHBA の名称を含む）は、Allen Institute によるものです。HOMBA は [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) で提供されています。HOMBA の用語を表示・公開・再配布するときは、出典として Allen Institute と HOMBA を示し、ライセンスへのリンクを付けてください。詳しくは [NOTICE.md](NOTICE.md) にまとめています。
 
-- 出典: [CCF-MAP — HOMBA ontology](https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html)
-- 本リポジトリの `rcs/HOMBA_v1_fixed.csv` は公式 CSV に対しタイポ修正等を加えた派生物です
+- 出典: [HOMBA ontology（CCF-MAP）](https://alleninstitute.github.io/CCF-MAP/docs/HOMBA_ontology_v1.html)、[Allen Brain Knowledge Platform](https://knowledge.brain-map.org/data/4OGSMDGXKB34DVKGTJW)（RRID:SCR_027628）
+- 論文: Ding, S.-L., Bhandiwad, A. A., Rosen, B. Q., Seeman, S. C., et al. (2026). Harmonized brain ontology and 3D atlases for human, macaque, and marmoset basal ganglia. *Cell*, 189(23). https://doi.org/10.1016/j.cell.2026.10.033
+- 変更点: `rcs/HOMBA_v1_fixed.csv` は HOMBA v1 の CSV に表記の修正を加えた派生物です。`homex/`（細分の追加）と `rcs/homba_*_rules.csv`（別名・略語）は本リポジトリ独自の追加で、Allen Institute によるものではありません
+- Allen Institute のサイトや他のデータを使うときは、それぞれの [Terms of Use](https://alleninstitute.org/legal/terms-of-use) と [Citation Policy](https://alleninstitute.org/legal/citation-policy) にも従ってください
 
 ## 2026-10-31 の追加（CBM: 座標 → SABRA）
 

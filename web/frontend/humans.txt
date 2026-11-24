@@ -11,4 +11,4 @@ Software: Python (rcs/rosetta_candidate_generator.py)
 Hosting: Amazon CloudFront + S3 (ap-northeast-1)
 
 /* THANKS */
-HOMBA atlas and DHBA contributors
+HOMBA (Harmonized Ontology of Mammalian Brain Anatomy) and DHBA contributors, Allen Institute — HOMBA is licensed under CC BY 4.0
